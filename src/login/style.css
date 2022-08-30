@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #151414;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 70%;
+    font-size: 0;
+    margin: auto;
+    padding: 2%;
+}
+
+.box-left {
+    width: 50%;
+    height: 100%;
+    background-color: #151414;
+    font-size: 1rem;
+    border-radius: 2%;
+    margin-top: .6%;
+}
+
+.box-right {
+    width: 50%;
+    float: right;
+    background-color: #ffffff;
+    font-size: 1rem;
+    margin-left: 15px;
+    border-radius: 2%;
+}
+
+.box-right .logo {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.box-right .register {
+    width: 80%;
+    margin-left: 60px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#button-gmail {
+    display: inline-flex;
+}
+
+.box-right .button {
+    height: 50px;
+    padding: 10px;
+    width: 90%;
+    background-color: #850a0a;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.1rem;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #C30707;
+}
+
+.button:active {
+    transform: scale(0.99);
+    box-shadow: 3px 2px 10px 1px rgba(176, 186, 195, 0.368);
+}
+
+.button-icon,
+.button-txt {
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 0 0 20px;
+    height: 100%;
+    color: #edebeb;
+}
+
+.seg {
+    display: flex;
+}
+
+.line {
+    height: 1px;
+    background-color: #c3bcbc;
+    width: 45%;
+    margin-top: 10px;
+}
+
+#line-right {
+    float: right;
+}
+
+.or {
+    width: 10%;
+    color: gray;
+}
+
+.form {
+    display: block;
+}
+
+.form input {
+    width: 98%;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#button-register {
+    color: #ffffff;
+}
+
+#register {
+    font-size: 0.8rem;
+    color: #1e1d1d;
+}
+
+#gif-vanellen {
+    height: 25%;
+    width: 35%px;
+    border-radius: 5px;
+}
+
+
+footer {
+    width: 100%;
+    flex-shrink: 0;
+    background-color: #E1DFDF;
+}
+
+.foot {
+    justify-content: space-between;
+    color: #fff;
+    padding: 1%;
+}
+
+.foot p {
+    margin-left: 60%;
+    color: #1e1d1d;
+    font-weight: 500;
+}
+
+.foot img {
+    position: absolute;
+    margin-left: 25%;
+}
+
+
+@media only screen and (max-width: 295px) and (min-width: 280px) {
+
+    footer {
+        width: 100%;
+        flex-shrink: 0;
+        background-color: #E1DFDF;
+        display: block;
+    }
+
+    .foot {
+        padding: 2%;
+        align-items: flex-end;
+    }
+
+    .foot p {
+        font-size: 0.rem;
+    }
+
+    .foot img {
+        width: 65px
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        display: block;
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-left {
+        margin: auto;
+        width: 100%;
+        margin-left: 1%;
+        height: auto;
+    }
+
+    #gif-vanellen {
+        height: 10%;
+        width: 95%;
+        border-radius: 5px;
+    }
+
+    .box-right {
+        width: 95%;
+        font-size: 1rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-right .button {
+        font-size: 0.8rem;
+    }
+
+    .box-right .logo {
+        text-align: center;
+    }
+
+    .box-right .register {
+        width: 78%;
+        font-size: 0.9rem;
+        margin-left: 11%;
+        margin-bottom: 6%;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-left: 50%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
+    }
+
+}
+
+@media only screen and (max-width: 770px) and (min-width: 767px) {
+
+    .container {
+        display: block;
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-left {
+        margin: auto;
+        width: 100%;
+        margin-left: 1%;
+        height: auto;
+    }
+
+    #gif-vanellen {
+        height: 10%;
+        width: 95%;
+        border-radius: 5px;
+    }
+
+    .box-right {
+        width: 95%;
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-right .button {
+        font-size: 1.2rem;
+    }
+
+    .box-right .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    #register {
+        font-size: 1rem;
+        color: #1e1d1d;
+    }
+
+    .foot {
+        padding: 4%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-left: 50%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}
+
+@media only screen and (max-width: 1281px) and (min-width: 1024px) {
+
+    .container {
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-left {
+        margin: auto;
+        width: 100%;
+        margin-left: 5%;
+        height: auto;
+    }
+
+    #gif-vanellen {
+        height: 10%;
+        width: 95%;
+        border-radius: 5px;
+    }
+
+    .box-right {
+        width: 95%;
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-right .button {
+        font-size: 1.2rem;
+    }
+
+    .box-right .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    #register {
+        font-size: 1rem;
+        color: #1e1d1d;
+    }
+
+    .foot {
+        padding: 1%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-left: 50%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}
+
+@media only screen and (max-width: 950px) and (min-width:911px) {
+
+    .container {
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-left {
+        margin: auto;
+        width: 100%;
+        margin-left: 5%;
+        height: auto;
+    }
+
+    #gif-vanellen {
+        height: 10%;
+        width: 95%;
+        border-radius: 5px;
+    }
+
+    .box-right {
+        width: 95%;
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-right .button {
+        font-size: 1.2rem;
+    }
+
+    .box-right .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    #register {
+        font-size: 1rem;
+        color: #1e1d1d;
+    }
+
+    .foot {
+        padding: 1%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-left: 50%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}

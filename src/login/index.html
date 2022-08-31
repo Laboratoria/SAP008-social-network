@@ -32,7 +32,7 @@
           <span class="button-txt">Fazer login com Gmail</span>
         </button>
 
-        <div class="seg">
+        <div class="break">
           <div class="line"></div>
           <div class="or">OU</div>
           <div class="line" id="line-right"></div>
@@ -46,7 +46,7 @@
 
         <div class="register" id="register">
           <button type="button" id="button-enter" class="button">Entrar</button>
-          <p>Não tem uma conta? <p style="color:rgb(41, 73, 201); font-size:1.3rem">Cadastre-se! </p></p>
+          <p>Não tem uma conta?</p>  <a href="#" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p></p>
         </div>
       </div>
     </div>
@@ -62,7 +62,11 @@
     </div>
   </footer>
 
-  <script type="module" src="main.js"></script>
-</body>
+  <script type="module" src="../login/main.js"></script>
+  <script type="module" src="../firebase/firebase-config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
 
+
+</body>
 </html>

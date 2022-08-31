@@ -35,12 +35,18 @@ body {
     margin-top: .6%;
 }
 
+.box-left p {
+    margin-top: 5%;
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
 .box-right {
     width: 50%;
     float: right;
     background-color: #ffffff;
     font-size: 1rem;
-    margin-left: 15px;
+    margin-left: 5px;
     border-radius: 2%;
 }
 
@@ -51,9 +57,13 @@ body {
 
 .box-right .register {
     width: 80%;
-    margin-left: 60px;
+    margin-left: 50px;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+.register p{
+    font-size: 1rem;
 }
 
 #button-gmail {
@@ -72,6 +82,7 @@ body {
     font-size: 1.1rem;
     margin-bottom: 5%;
     cursor: pointer;
+    color: #ffffff;
 }
 
 .button:hover {
@@ -110,10 +121,13 @@ body {
 .or {
     width: 10%;
     color: gray;
+    margin-bottom: 2%;
 }
 
 .form {
     display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .form input {
@@ -140,52 +154,24 @@ body {
     border-radius: 5px;
 }
 
-
 footer {
     width: 100%;
     flex-shrink: 0;
     background-color: #E1DFDF;
 }
 
-.foot {
-    justify-content: space-between;
-    color: #fff;
-    padding: 1%;
-}
-
 .foot p {
-    margin-left: 60%;
-    color: #1e1d1d;
-    font-weight: 500;
+    justify-content: space-between;
+    color: #272525;
+    padding: .2%;
+    text-align: end;
+    margin-right: 18%;
 }
 
 .foot img {
+    margin-top: .5%;
     position: absolute;
-    margin-left: 25%;
-}
-
-
-@media only screen and (max-width: 295px) and (min-width: 280px) {
-
-    footer {
-        width: 100%;
-        flex-shrink: 0;
-        background-color: #E1DFDF;
-        display: block;
-    }
-
-    .foot {
-        padding: 2%;
-        align-items: flex-end;
-    }
-
-    .foot p {
-        font-size: 0.rem;
-    }
-
-    .foot img {
-        width: 65px
-    }
+    margin-left: 18%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -239,12 +225,19 @@ footer {
 
     .foot p {
         font-size: 0.6rem;
-        margin-left: 50%;
+        margin-right: 6%;
     }
 
     .foot img {
         margin-left: 1%;
         width: 180px;
+    }
+
+    .box-left p {
+        margin-top: 14%;
+        font-size: 1.2rem;
+        margin-left: 2%;
+        text-align: center;
     }
 
 }
@@ -264,6 +257,13 @@ footer {
         width: 100%;
         margin-left: 1%;
         height: auto;
+    }
+
+    .box-left p {
+        margin-top: 14%;
+        font-size: 2.5rem;
+        margin-left: 2%;
+        text-align: center;
     }
 
     #gif-vanellen {
@@ -322,8 +322,14 @@ footer {
     .box-left {
         margin: auto;
         width: 100%;
-        margin-left: 5%;
         height: auto;
+    }
+
+    .box-left p {
+        margin-top: 14%;
+        font-size: 1.5rem;
+        margin-left: 2%;
+        text-align: center;
     }
 
     #gif-vanellen {
@@ -360,7 +366,7 @@ footer {
 
     .foot p {
         font-size: 1.3rem;
-        margin-left: 50%;
+        margin-right: 5%;
     }
 
     .foot img {
@@ -370,7 +376,7 @@ footer {
 
 }
 
-@media only screen and (max-width: 950px) and (min-width:911px) {
+@media only screen and (max-width: 950px) and (min-width:820px) {
 
     .container {
         width: auto;
@@ -386,6 +392,12 @@ footer {
         height: auto;
     }
 
+    .box-left p {
+        margin-top: 14%;
+        font-size: 1.4rem;
+        margin-left: 2%;
+    }
+
     #gif-vanellen {
         height: 10%;
         width: 95%;
@@ -420,7 +432,7 @@ footer {
 
     .foot p {
         font-size: 1.3rem;
-        margin-left: 50%;
+        margin-right: 6%;
     }
 
     .foot img {

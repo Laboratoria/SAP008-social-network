@@ -68,10 +68,13 @@ export default () => {
 
   const doLogout = container.querySelector('#logout');
 
-  doLogout.addEventListener('click', () => {
-    firebase.auth().signOut();
-    // eslint-disable-next-line no-return-assign
-    return window.location.replace = ' ';
+  doLogout.addEventListener('click', (e) => {
+    const main = document.querySelector('#root');
+    e.preventDefault();
+    firebase.auth().signOut().then(() => {
+      main.innerHTML = ' ';
+      window.location.hash = '#login';
+    });
   });
 
   return container;

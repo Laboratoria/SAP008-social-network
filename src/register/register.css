@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container-register {
+    display: flex;
+    width: 100%;
+    font-size: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    background-color: #151414;
+}
+
+.box-center {
+    width: 35%;
+    background-color: #ffffff;
+    font-size: 1rem;
+    border-radius: 2%;
+}
+
+.box-center .logo-login {
+    text-align: center;
+}
+
+#logo-login {
+    width: 14vw;
+}
+
+.logo-login {
+    height: 185px;
+}
+
+.box-center .buttonRegister {
+    height: 50px;
+    padding: 10px;
+    width: 90%;
+    background-color: #b45c8f;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.1rem;
+    margin-bottom: 5%;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.buttonRegister:hover {
+    background-color: #C30707;
+}
+
+.form {
+    display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.form input {
+    width: 98%;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.wrapper-register {
+    background-color: #151414;
+    height: 10rem;
+
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.foot p {
+    justify-content: space-between;
+    color: #272525;
+    padding: .2%;
+    text-align: end;
+    margin-right: 18%;
+    font-size: 1rem;
+}
+
+.foot img {
+    margin-top: .5%;
+    position: absolute;
+    margin-left: 18%;
+}

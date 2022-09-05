@@ -65,11 +65,13 @@ body {
     margin-left: 50px;
     text-align: center;
     font-size: 1.2rem;
+    z-index: 1;
 }
 
 .register p {
     font-size: 1rem;
     margin-bottom: 2%;
+    z-index: 0;
 }
 
 #button-gmail {

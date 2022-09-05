@@ -1,6 +1,6 @@
 export default () => {
-  const container = document.createElement('div');
-  const template = `  <div class="container-login">
+    const container = document.createElement('div');
+    const template = `  <div class="container-login">
     <div class="box-left">
       <div class="gif-box-left">
         <img id="gif-vanellen" src="./img/vanellen-gif.jpeg" alt="gif video">
@@ -51,39 +51,56 @@ export default () => {
     </div>
   </footer>`;
 
-  container.innerHTML = template;
+    container.innerHTML = template;
 
-  const inputEmail = container.querySelector('#inputEmail');
-  const inputPassword = container.querySelector('#inputPassword');
-  const buttonEnter = container.querySelector('#button-enter');
-  const signUp = container.querySelector('#signUp');
+    const buttonEnter = container.querySelector('#button-enter');
+    const buttonGmail = container.querySelector('#button-gmail');
+    const inputEmail = container.querySelector('#inputEmail');
+    const inputPassword = container.querySelector('#inputPassword');
 
-  function login() {
-    if (firebase.auth().currentUser) {
-      firebase.auth().signOut();
-    }
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(inputEmail.value, inputPassword.value)
-      .then(() => {
-        window.location.replace('#page');
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  }
 
-  function createAccount() {
-    // eslint-disable-next-line max-len
-    firebase.auth().createUserWithEmailAndPassword(inputEmail.value, inputPassword.value).then(() => {
-      window.location.href = '#page';
-    }).catch(() => {
-      const newLocal = 'Esse e-mail já está cadastrado';
-      alert(newLocal);
+
+    const googleLogin = (provider) => {
+        firebase.auth().signInWithPopup(provider).then((result) => {
+            const user = result.user;
+            firebase.firestore().collection('users').doc(user.email).set({ name: user.displayName }, { merge: true });
+        }).catch((error) => {
+            const errorCode = error.code;
+            if (errorCode) {
+                alert(errorCode);
+            } else window.location.replace('#page');
+        });
+    };
+
+    buttonGmail.addEventListener('click', (event) => {
+        event.preventDefault();
+        const provider = new firebase.auth.GoogleAuthProvider();
+        googleLogin(provider);
     });
-  }
-  buttonEnter.addEventListener('click', login);
-  signUp.addEventListener('click', createAccount);
 
-  return container;
+
+    function login() {
+        if (firebase.auth().currentUser) {
+            firebase.auth().signOut();
+        }
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(inputEmail.value, inputPassword.value)
+            .then(() => {
+                window.location.replace('#page');
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+    }
+
+    buttonEnter.addEventListener('click', login);
+
+    const signUp = container.querySelector('#register');
+
+    signUp.addEventListener('click', () => {
+        window.location.href = '#register';
+    });
+
+    return container;
 };

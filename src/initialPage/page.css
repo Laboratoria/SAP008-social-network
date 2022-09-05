@@ -113,11 +113,18 @@ body {
     width: 2vw;
 }
 
+.wrapper{
+   height: 8rem;
+    background-color: #F8F8F8;  
+}
+
 footer {
     width: 100%;
-    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background-color: #E1DFDF;
-    padding: .2%;
 }
 
 .foot {

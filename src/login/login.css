@@ -9,7 +9,7 @@
 html,
 body {
     height: 100%;
-   
+
 }
 
 body {
@@ -25,7 +25,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2%;
-    /* background-color: #151414;   */
+    background-color: #151414;
 }
 
 .box-left {
@@ -160,10 +160,17 @@ body {
     border-radius: 5px;
 }
 
+.wrapper-login {
+    background-color: #151414;
+    height: 5rem;
+
+}
+
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    flex-shrink: 0;
-    background-color: #E1DFDF;
 }
 
 .foot p {
@@ -181,15 +188,6 @@ footer {
     margin-left: 18%;
 }
 
-
-.teste {
-    display: flex;
-    background-color: #808080;
-    width: 900px;
-    height: 400px;
-    font-size: 2rem;
-}
-
 @media only screen and (max-width: 600px) {
 
     .container-login {
@@ -197,6 +195,14 @@ footer {
         width: 100%;
         font-size: 0;
         padding: 1%;
+    }
+
+    #logo-login {
+        width: 35vw;
+    }
+
+    .logo-login {
+        height: 150px;
     }
 
     .box-left {
@@ -216,6 +222,7 @@ footer {
         font-size: 1rem;
         margin-right: 3%;
         margin-top: 2%;
+        margin-bottom: 20%;
     }
 
     .box-right .button {
@@ -252,6 +259,10 @@ footer {
         font-size: 1.2rem;
         margin-left: 2%;
         text-align: center;
+    }
+
+    .wrapper {
+        margin-bottom: 50%;
     }
 
 }

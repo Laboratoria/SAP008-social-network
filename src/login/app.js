@@ -41,7 +41,7 @@ export default () => {
     </div>
   </div>
   
-  <div class="wrapper"></div>
+  <div class="wrapper-login"></div>
   
   <footer>
     <div class="foot">

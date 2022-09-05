@@ -1,5 +1,3 @@
-// import { logout } from "../firebase/app";
-
 export default () => {
   const container = document.createElement('div');
   const template = `    <div class="container">
@@ -68,11 +66,13 @@ export default () => {
     window.location.href = '#profile';
   });
 
-  //   const logoutTag = container.querySelector('#logout');
+  const doLogout = container.querySelector('#logout');
 
-  //   logoutTag.addEventListener('click', () => {
-
-  //     });
+  doLogout.addEventListener('click', () => {
+    firebase.auth().signOut();
+    // eslint-disable-next-line no-return-assign
+    return window.location.replace = ' ';
+  });
 
   return container;
 };

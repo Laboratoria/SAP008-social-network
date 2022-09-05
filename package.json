@@ -36,6 +36,19 @@
     "node": ">=16.x"
   },
   "dependencies": {
+    "express": "^4.18.1",
     "firebase": "^9.9.3"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EllenCavalcanteBrito/SAP008-social-network.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/EllenCavalcanteBrito/SAP008-social-network/issues"
+  },
+  "homepage": "https://github.com/EllenCavalcanteBrito/SAP008-social-network#readme"
 }

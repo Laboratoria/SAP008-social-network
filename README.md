@@ -35,10 +35,14 @@ PicFemArt é uma rede social voltada para mulheres fotógrafas, aspirantes a fot
 
 - Um desafio relatado por fotógradas mulheres: o mercado ainda é muito masculino
 - Quem são os principais usuários do produto.
-- Qual problema o produto resolve/para que ele serve para esses usuários.
+- Qual problema o produto resolve/para que ele serve para esses usuários: 
+1. Não tem rede social voltada para mulheres fotógrafas que apoie o seu trabalho, já que a área ainda é muito masculina.
+2. Não existe uma comunidade de fotógrafas na qual as mulheres possam se apoiar, tirar dúvidas, aprender e aperfeiçoar suas técnicas.
 
 
 ## 3. Histórias de usuário
+
+### Prototipo
 
 
 

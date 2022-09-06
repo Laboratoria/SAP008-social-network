@@ -9,18 +9,19 @@ const init = () => {
     window.addEventListener('hashchange', () => {
         // eslint-disable-next-line default-case
         switch (window.location.hash) {
-            case ' ':
+            case '':
                 main.appendChild(login());
                 break;
             case '#page':
-                main.innerHTML = ' ';
+                main.innerHTML = '';
                 main.appendChild(initialPage());
                 break;
             case '#profile':
-                main.innerHTML = ' ';
+                main.innerHTML = '';
                 main.appendChild(profile());
+                break;
             case '#register':
-                main.innerHTML = ' ';
+                main.innerHTML = '';
                 main.appendChild(register());
                 break;
             default: main.appendChild(login());

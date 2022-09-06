@@ -33,6 +33,11 @@ determinadas tags ou popularidade, mais recente ou mais comentado.
 
 PicFemArt é uma rede social voltada para mulheres fotógrafas, aspirantes a fotógrafa ou apenas que curtem fotografia. Nessa rede social, o seu objetivo principal é criar uma comunidade de mulheres que amam fotografia para compartilharem seus trabalhos, se apoiarem, fazerem networking e, até mesmo, contratarem mulheres para trabalhos relacionados à fotografia.
 
+- Um desafio relatado por fotógradas mulheres: o mercado ainda é muito masculino
+- Quem são os principais usuários do produto.
+- Qual problema o produto resolve/para que ele serve para esses usuários.
+
+
 ## 3. Histórias de usuário
 
 

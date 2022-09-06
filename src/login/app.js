@@ -29,13 +29,13 @@ export default () => {
         <p>Já tem uma conta?</p>
   
         <div class="form">
-          <input id="inputEmail" type="email" placeholder="Número do celular ou E-mail" name="email" required>
+          <input id="inputEmail" type="email" placeholder="E-mail" name="email" required>
           <input id="inputPassword" type="password" placeholder="Senha" name="password" required>
         </div>
   
-        <div class="register" id="register">
+        <div class="register">
           <button type="button" id="button-enter" class="button">Entrar</button>
-          <p>Não tem uma conta?</p>  <a href="#" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
+          <p>Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
         </div>
       </div>
     </div>
@@ -81,7 +81,8 @@ export default () => {
 
     function login() {
         if (firebase.auth().currentUser) {
-            firebase.auth().signOut();
+            window.location.replace('#page');
+            return ;
         }
         firebase
             .auth()
@@ -96,7 +97,8 @@ export default () => {
 
     buttonEnter.addEventListener('click', login);
 
-    const signUp = container.querySelector('#register');
+   const signUp = container.querySelector('#signUp');
+   console.log(signUp);
 
     signUp.addEventListener('click', () => {
         window.location.href = '#register';

@@ -7,10 +7,10 @@ export default () => {
       </div>
   
         <div class="form">
-            <input type="text" id="nameUser" placeholder="Digite seu nome" required>
-            <input type="email" id="emailUser" placeholder="Digite seu e-mail" required> 
-            <input type="password" id="passwordUser" placeholder="Digite sua senha" required>
-            <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required>
+            <input type="text" id="nameUser" placeholder="Digite seu nome" >
+            <input type="email" id="emailUser" placeholder="Digite seu e-mail" > 
+            <input type="password" id="passwordUser" placeholder="Digite sua senha" >
+            <input type="password" id="confirmPassword" placeholder="Confirme sua senha" >
             <button type="button" class="buttonRegister" id="button-register"> Criar conta </button>
         </div>
     </div>
@@ -28,13 +28,17 @@ export default () => {
 
     container.innerHTML = template;
 
-    const email = container.querySelector('#emailUser');
-    const password = container.querySelector('#passwordUser');
-    const newPassword = container.querySelector('#confirmPassword');
     const buttonRegister = container.querySelector('#button-register');
+    const email = container.querySelector('#emailUser');
+    const newPassword = container.querySelector('#confirmPassword');
+    const password = container.querySelector('#passwordUser');
+    const userName = container.querySelector('#nameUser');
 
     function validatePassword() {
-        if (password.value != newPassword.value) {
+        if (userName.value === "" || email.value === "" || password.value === "" || newPassword.value === ""){
+            alert("Por favor, preencha todos os campos");
+        } 
+       else if (password.value != newPassword.value) {
             alert("Senhas diferentes!");
         } else {
             return register();

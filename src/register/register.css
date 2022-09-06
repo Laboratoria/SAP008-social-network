@@ -29,7 +29,7 @@ body {
 }
 
 .box-center {
-    width: 35%;
+    width: 28%;
     background-color: #ffffff;
     font-size: 1rem;
     border-radius: 2%;
@@ -50,14 +50,15 @@ body {
 .box-center .buttonRegister {
     height: 50px;
     padding: 10px;
-    width: 90%;
-    background-color: #b45c8f;
+    width: 80%;
+    background-color: #850a0a;
     border: none;
     border-radius: 5px;
     text-align: center;
     margin-top: 5%;
     font-size: 1.1rem;
     margin-bottom: 5%;
+    margin-left: 10%;
     cursor: pointer;
     color: #ffffff;
 }
@@ -83,7 +84,7 @@ body {
 
 .wrapper-register {
     background-color: #151414;
-    height: 10rem;
+    height: 11rem;
 
 }
 

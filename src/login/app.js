@@ -62,7 +62,7 @@ export default () => {
   const googleLogin = (provider) => {
     firebase.auth().signInWithPopup(provider).then((result) => {
       const user = result.user;
-      firebase.firestore().collection('users').doc(user.email).set({ name: user.displayName }, { merge: true });
+      firebase.firestore().collection('users').doc(user.email).set({ email: user.email }, { merge: true });
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/popup-closed-by-user') {

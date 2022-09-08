@@ -1,9 +1,11 @@
 export default () => {
   const container = document.createElement('div');
+  const getCurrentUser = () => firebase.auth().currentUser;
+  const user = getCurrentUser();
   const template = `    <div class="container">
   <div class="logo">
       <img id="logo" src="./img/logo.png" alt="logo Vanellen">
-      <span id="testEmail"> E-mail:sdsfsfs  </span>
+      <span id="idUser"> Olá, ${user.email}</span>
       <span class="VanellenMore">Vanellen <span
               style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>
              

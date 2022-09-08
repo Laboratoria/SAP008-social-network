@@ -47,7 +47,7 @@ body {
     height: 185px;
 }
 
-.box-center .buttonRegister {
+.box-center .buttons {
     height: 50px;
     padding: 10px;
     width: 80%;
@@ -63,7 +63,7 @@ body {
     color: #ffffff;
 }
 
-.buttonRegister:hover {
+.buttons:hover {
     background-color: #C30707;
 }
 
@@ -108,4 +108,178 @@ footer {
     margin-top: .5%;
     position: absolute;
     margin-left: 18%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container-register {
+        display: block;
+        width: 100%;
+        font-size: 0;
+        padding: 1%;
+    }
+
+    #logo-login {
+        width: 35vw;
+    }
+
+    .logo-login {
+        height: 150px;
+    }
+
+    .box-center {
+        width: 100%;
+        font-size: 1rem;
+        margin-right: 3%;
+        margin-top: 2%;
+        margin-bottom: 20%;
+    }
+
+    .box-center .buttons {
+        font-size: 0.8rem;
+    }
+
+    .box-center .logo-login {
+        text-align: center;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
+    }
+
+    .wrapper-register {
+        margin-bottom: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 770px) and (min-width: 767px) {
+
+    .container-register {
+        display: block;
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-center {
+        width: 95%;
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-center .button {
+        font-size: 1.2rem;
+    }
+
+    .box-center .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    .foot {
+        padding: 4%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-left: 50%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}
+
+@media only screen and (max-width: 1281px) and (min-width: 1024px) {
+
+    .container-register {
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-center {
+        width: 95%;
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-center .button {
+        font-size: 1.2rem;
+    }
+
+    .box-center .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    .foot {
+        padding: 1%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-right: 5%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}
+
+@media only screen and (max-width: 950px) and (min-width:820px) {
+
+    .container-register {
+        width: auto;
+        font-size: 0;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .box-center {
+        width: 95%;
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+
+    .box-center .button {
+        font-size: 1.2rem;
+    }
+
+    .foot {
+        padding: 1%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
 }

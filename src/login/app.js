@@ -1,6 +1,6 @@
 export default () => {
-    const container = document.createElement('div');
-    const template = `  <div class="container-login">
+  const container = document.createElement('div');
+  const template = `  <div class="container-login">
     <div class="box-left">
       <div class="gif-box-left">
         <img id="gif-vanellen" src="./img/vanellen-gif.jpeg" alt="gif video">
@@ -12,6 +12,7 @@ export default () => {
       <div class="logo-login">
         <img id="logo-login" src="./img/logo.png" alt="logo">
       </div>
+      </br>
       <div class="register">
         <p>Cadastre-se para obter informações de novos filmes e séries, dar a sua opinião e se conectar com pessoas que
           tem tudo a ver com você.</p>
@@ -51,58 +52,63 @@ export default () => {
     </div>
   </footer>`;
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-    const buttonEnter = container.querySelector('#button-enter');
-    const buttonGmail = container.querySelector('#button-gmail');
-    const inputEmail = container.querySelector('#inputEmail');
-    const inputPassword = container.querySelector('#inputPassword');
+  const buttonEnter = container.querySelector('#button-enter');
+  const buttonGmail = container.querySelector('#button-gmail');
+  const inputEmail = container.querySelector('#inputEmail');
+  const inputPassword = container.querySelector('#inputPassword');
 
-
-
-    const googleLogin = (provider) => {
-        firebase.auth().signInWithPopup(provider).then((result) => {
-            const user = result.user;
-            firebase.firestore().collection('users').doc(user.email).set({ name: user.displayName }, { merge: true });
-        }).catch((error) => {
-            const errorCode = error.code;
-            if (errorCode) {
-                alert(errorCode);
-            } else window.location.replace('#page');
-        });
-    };
-
-    buttonGmail.addEventListener('click', (event) => {
-        event.preventDefault();
-        const provider = new firebase.auth.GoogleAuthProvider();
-        googleLogin(provider);
+  const googleLogin = (provider) => {
+    firebase.auth().signInWithPopup(provider).then((result) => {
+      const user = result.user;
+      firebase.firestore().collection('users').doc(user.email).set({ name: user.displayName }, { merge: true });
+    }).catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/popup-closed-by-user') {
+        alert('A janela pop-up foi fechada pelo usuário sem concluir o login no provedor');
+      } else window.location.replace('#page');
     });
+  };
 
+  buttonGmail.addEventListener('click', (event) => {
+    event.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    googleLogin(provider);
+  });
 
-    function login() {
-        if (firebase.auth().currentUser) {
-            window.location.replace('#page');
-            return ;
-        }
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(inputEmail.value, inputPassword.value)
-            .then(() => {
-                window.location.replace('#page');
-            })
-            .catch((error) => {
-                alert(error.message);
-            });
+  function login() {
+    if (firebase.auth().currentUser) {
+      window.location.replace('#page');
+      return;
     }
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(inputEmail.value, inputPassword.value)
+      .then(() => {
+        window.location.replace('#page');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        if (errorCode === 'auth/invalid-email') {
+          alert('Endereço de email não é válido');
+        } else if (errorCode === 'auth/user-not-found') {
+          alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
+        } else if (errorCode === 'auth/wrong-password') {
+          alert('A senha é inválida para o e-mail fornecido.');
+        } else {
+          alert('Algo deu errado. Por favor, tente novamente.');
+        }
+      });
+  }
 
-    buttonEnter.addEventListener('click', login);
+  buttonEnter.addEventListener('click', login);
 
-   const signUp = container.querySelector('#signUp');
-   console.log(signUp);
+  const signUp = container.querySelector('#signUp');
 
-    signUp.addEventListener('click', () => {
-        window.location.href = '#register';
-    });
+  signUp.addEventListener('click', () => {
+    window.location.href = '#register';
+  });
 
-    return container;
+  return container;
 };

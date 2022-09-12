@@ -9,7 +9,6 @@
 html,
 body {
     height: 100%;
-
 }
 
 body {
@@ -74,6 +73,10 @@ body {
 
 #button-gmail {
     display: inline-flex;
+}
+
+#logo-gmail {
+    width: 35px;
 }
 
 .box-right .button {
@@ -163,7 +166,6 @@ body {
 .wrapper-login {
     background-color: #151414;
     height: 5rem;
-
 }
 
 footer {

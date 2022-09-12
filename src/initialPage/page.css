@@ -8,14 +8,12 @@
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    display: grid;
-    background-color: #F8F8F8 !important;
+    background-color: #F8F8F8;
 }
 
 .container {
     display: grid;
     width: 100%;
-    margin: auto;
 }
 
 .logo {
@@ -26,25 +24,25 @@ body {
 }
 
 #idUser {
-    margin-top: 2.2%;
+    margin-top: 3.3%;
     margin-left: 50%;
 }
 
 .VanellenMore {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: rgb(183, 12, 12);
     margin-right: 4%;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 #logo {
-    width: 9vw;
+    width: 10vw;
 }
 
 .navbar {
     background-color: #262424;
-    margin-top: 7.2%;
+    margin-top: 8.2%;
     height: 30%;
     width: 100%;
     z-index: 0;
@@ -54,7 +52,7 @@ body {
     float: right;
     color: #f2f2f2;
     text-align: center;
-    padding: 12px;
+    padding: 15px;
     text-decoration: none;
     font-size: 17px;
     margin-right: 3%;
@@ -66,14 +64,16 @@ body {
 }
 
 .content {
-    display: flex;
-    align-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1px);
+    grid-row-gap: 2px;
+    padding: 2%;
     margin-top: 2%;
     margin-left: 14%;
 }
 
 .content a {
-    margin: auto;
     text-decoration: none;
     color: #101010;
     font-weight: 600;
@@ -81,41 +81,135 @@ body {
 
 .posts {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-top: 6%;
+    grid-template-columns: 4fr 4fr 4fr;
+    margin-left: 1%;
+    margin-top: 4%;
 }
 
-#img-movie {
-    width: 15vw;
-    margin-left: 10%;
-    padding: 0;
+.picture-image {
+    margin-left: 7%;
+}
+
+#testImg {
+    width: 9vw;
+}
+
+.text_share,
+#fill-form {
+    text-align: center;
 }
 
 .name-movies {
-    font-size: 1rem;
+    margin-bottom: 1%;
+    font-size: 0.7rem;
 }
 
 .about-movies {
-    margin-top: 5%;
-    width: 90%;
-}
-
-.name-movies h1 {
-    font-size: 1.5rem;
+    width: 19vw;
+    max-height: 45%;
+    overflow: clip;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
 }
 
 .stars {
-    margin-top: 54%;
+    margin-bottom: 3.5%;
+    margin-top: 3.5%;
+}
+
+.username {
+    font-size: .8rem;
+}
+
+#btn-delete {
+    width: 5vw;
+}
+
+.picture_input {
+    display: none;
+}
+
+.wrapper {
+    height: 7vh;
+    background-color: #F8F8F8;
+}
+
+.text_share {
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+
+#postx {
+    margin-left: 30%;
+}
+
+.picture {
+    font-size: 1rem;
+    color: #0a3f85;
+    cursor: pointer;
+    margin-bottom: 2%;
+    margin-left: 35px;
+}
+
+.picture:hover {
+    color: #2e00d6;
+}
+
+.formInput {
+    width: 60%;
+    height: 50px;
+    display: block;
+    margin-top: 1%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 1%;
+}
+
+#buttonSend {
+    width: 60%;
+    height: 50px;
+}
+
+.buttons-posts {
+    display: grid;
+    grid-template-columns: 6vw 6vw;
+    margin-top: 1%;
+}
+
+#btn-delete,
+#btn-edit {
+    width: 5vw;
+    height: 3vh;
+    font-size: 0.7rem;
+    padding: 5px;
+}
+
+.buttons {
+    background-color: #850a0a;
+    border: none;
+    border-radius: 5px;
+    margin-right: 50%;
+    margin-top: 1%;
+    font-size: 1.1rem;
     margin-bottom: 10%;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
 }
 
-#stars-icon {
-    width: 2vw;
+.buttons:hover {
+    background-color: #C30707;
 }
 
-.wrapper{
-   height: 8rem;
-    background-color: #F8F8F8;  
+.buttons:active {
+    transform: scale(0.99);
+    box-shadow: 3px 2px 10px 1px rgba(176, 186, 195, 0.368);
+}
+
+#message {
+    height: 200px;
+    margin-bottom: 1%;
 }
 
 footer {
@@ -144,7 +238,7 @@ footer {
 }
 
 .foot img {
-    position: absolute;
+    display: grid;
 }
 
 @media only screen and (max-width: 541px) and (min-width: 395px) {
@@ -192,12 +286,6 @@ footer {
         font-size: .7rem;
     }
 
-    .posts {
-        margin-top: 5%;
-        display: grid;
-        grid-template-columns: repeat(2, 12rem);
-    }
-
     #img-movie {
         width: 32vw;
         margin-left: 6%;
@@ -210,7 +298,7 @@ footer {
     }
 
     .about-movies {
-        
+
         width: 300px;
         margin-top: 4%;
         margin-left: 4%;
@@ -226,12 +314,6 @@ footer {
 
     #stars-icon {
         width: 2vw;
-    }
-
-    footer {
-        width: 100%;
-        flex-shrink: 0;
-        background-color: #E1DFDF;
     }
 
     .developers {
@@ -256,240 +338,103 @@ footer {
         width: 150px;
     }
 
+    .posts {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+        grid-template-rows: 40vh 40vh 40vh;
+        margin-left: 1%;
+        margin-top: 4%;
+        gap: 7px;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 100px;
+        height: 190px;
+    }
+
+    .name-movies {
+        font-size: .8rem;
+    }
+
+    .about-movies {
+        width: 18vw;
+        height: auto;
+        overflow: clip;
+        text-overflow: ellipsis;
+        font-size: 16px;
+    }
+
+    .picture {
+        width: 470px;
+        font-size: 1rem;
+        margin-bottom: 2%;
+    }
+
+    .stars {
+        margin-bottom: 3.5%;
+        margin-top: 3.5%;
+    }
+
+    #username {
+        font-size: .8rem;
+    }
+
+    .picture_input {
+        display: none;
+    }
+
+    .wrapper {
+        height: 8rem;
+    }
+
+    .text_share,
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+
+    #postx {
+        margin-left: 35%;
+    }
+
+    .formInput {
+        width: 50%;
+        height: 50px;
+        display: block;
+        margin-top: 1%;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 1%;
+    }
+
+    #buttonSend {
+        height: 50px;
+        width: 50%;
+        margin-right: 50%;
+        margin-top: .5rem;
+        font-size: 1.1rem;
+        margin-bottom: 10%;
+    }
+
+    #message {
+        height: 200px;
+    }
+
 }
 
 @media only screen and (max-width: 770px) and (min-width: 389px) {
 
-    body {
-        display: block;
-    }
-
-    .logo {
-        width: 100%;
-        display: flex;
-        position: absolute;
-        justify-content: space-between;
-    }
-
     .VanellenMore {
         font-size: 1.3rem;
-        margin-right: 1%;
+        margin-right: 5%;
         margin-top: 6%;
-    }
-
-    #logo {
-        width: 25vw;
-    }
-    
-    #idUser {
-        margin-top: 7.5%;
-        margin-left: 7%;
-    }
-
-    .navbar {
-        margin-top: 20%;
-    }
-
-    .navbar a {
-        margin-right: 10%;
-    }
-
-    .content {
-        display: block;
-    }
-
-    .content a {
-        margin-left: 0;
-        font-size: .7rem;
-    }
-
-    .posts {
-        margin-top: 5%;
-        display: grid;
-        justify-content: center;
-        grid-template-columns: repeat(2, 9rem);
-        width: 90%;
-    }
-
-    #img-movie {
-        width: 32vw;
-        margin-left: 6%;
-        padding: 0;
-    }
-
-    .name-movies {
-        width: 200px;
-    }
-
-    .about-movies {
-        margin-top: 4%;
-        width: 200px
-    }
-
-    .name-movies h1 {
-        font-size: 1rem;
-    }
-
-    .stars {
-        margin-top: 54%;
-
-    }
-
-    #stars-icon {
-        width: 2vw;
-    }
-
-    footer {
-        width: 100%;
-        flex-shrink: 0;
-        background-color: #E1DFDF;
-    }
-
-    .developers {
-        margin-right: 8%;
-        font-size: .8rem;
-    }
-
-    .developers {
-        margin-top: 1px;
-    }
-
-    .foot {
-        height: 100%;
-    }
-
-    .wrapper {
-        margin-bottom: 71%;
-    }
-
-    .foot img {
-        margin-left: 0;
-        width: 150px;
-    }
-
-}
-
-@media only screen and (max-width: 1020px) and (min-width: 750px) {
-
-    body {
-        display: block;
-    }
-
-    .logo {
-        width: 100%;
-        display: flex;
-        position: absolute;
-        justify-content: space-between;
-    }
-
-    .VanellenMore {
-        font-size: 2rem;
-        margin-right: 2%;
-        margin-top: 6%;
-    }
-
-    #logo {
-        width: 25vw;
-    }
-
-    .navbar {
-        margin-top: 20%;
-    }
-
-    .navbar a {
-        margin-right: 10%;
-        margin-top: 1.2%;
-    }
-
-    .content {
-        align-items: center;
-    }
-
-    #idUser {
-        font-size: 1.3rem;
-        margin-top: 7.5%;
-        margin-left: 7%;
-    }
-
-    #text {
-        margin-left: 1.5%;
-    }
-
-    .content a {
-        font-size: .9rem;
-    }
-
-    .posts {
-        margin-top: 5%;
-        display: grid;
-        justify-content: center;
-        grid-template-columns: repeat(2, 19rem);
-        width: 90%;
-    }
-
-    #img-movie {
-        width: 32vw;
-        margin-left: 6%;
-        padding: 0;
-    }
-
-    .name-movies {
-        width: 300px;
-    }
-
-    .about-movies {
-        font-size: 1.2rem;
-        margin-top: 4%;
-        width: 300px
-    }
-
-    .name-movies h1 {
-        font-size: 1.6rem;
-    }
-
-    .stars {
-        margin-top: 54%;
-
-    }
-
-    #stars-icon {
-        width: 2vw;
-    }
-
-    footer {
-        width: 100%;
-        flex-shrink: 0;
-        background-color: #E1DFDF;
-    }
-
-    .developers {
-        margin-right: 3%;
-        font-size: .8rem;
-    }
-
-    .developers {
-        margin-top: 1px;
-    }
-
-    .foot {
-        height: 100%;
-    }
-
-    .wrapper {
-        margin-bottom: 50%;
-    }
-
-    .foot img {
-        margin-left: 5%;
-        width: 250px;
-    }
-
-}
-
-@media only screen and (max-width: 380px) and (min-width: 279px) {
-
-    body {
-        display: block;
+        margin-left: 10px;
     }
 
     .logo {
@@ -500,8 +445,9 @@ footer {
     }
 
     #idUser {
-        margin-top: 7.5%;
-        margin-left: 7%;
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
     }
 
     .VanellenMore {
@@ -511,11 +457,11 @@ footer {
     }
 
     #logo {
-        width: 25vw;
+        width: 27vw;
     }
 
     .navbar {
-        margin-top: 20%;
+        margin-top: 22%;
     }
 
     .navbar a {
@@ -532,66 +478,455 @@ footer {
     }
 
     .posts {
-        margin-top: 5%;
-        text-align: center;
-        display: grid;
-        grid-template-columns: repeat(2, 9rem);
+        display: block;
     }
 
-    #img-movie {
-        width: 32vw;
-        margin-left: 6%;
-        padding: 0;
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 70px;
+        height: 100px;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
     }
 
     .name-movies {
-        width: 200px;
+        font-size: 0.6rem;
+        margin-left: 21%;
+        margin-top: 0;
     }
 
     .about-movies {
-        margin-top: 4%;
-        width: 200px;
-        font-size: .9rem;
-    }
-
-    .name-movies h1 {
-        font-size: 1rem;
+        width: 70vw;
+        font-size: 0.8rem;
+        margin-left: 21%;
     }
 
     .stars {
-        margin-bottom: 10%;
+        margin-bottom: 2%;
+        margin-left: 20%;
     }
 
-    #stars-icon {
-        width: 2vw;
-    }
-
-    footer {
-        width: 100%;
-        flex-shrink: 0;
-        background-color: #E1DFDF;
-    }
-
-    .developers {
-        margin-right: 8%;
+    #username {
         font-size: .8rem;
     }
 
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
     .developers {
-        margin-top: 1px;
-    }
-
-    .foot {
-        height: 100%;
-    }
-
-    .wrapper {
-        margin-bottom: 100%;
+        font-size: 0.8rem;
+        margin-right: 3%;
     }
 
     .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 910px) and (min-width: 600px) {
+
+    .VanellenMore {
+        font-size: 2rem;
+        margin-right: 40px;
+        margin-top: 7%;
+    }
+
+    #idUser {
+        font-size: 1.4rem;
+        margin-top: 8%;
+        margin-left: 1%;
+    }
+
+    #logo {
+        width: 25vw;
+    }
+
+    .navbar {
+        margin-top: 22%;
+    }
+
+    .navbar a {
+        margin-right: 10%;
+        font-size: 24px;
+        padding: 2%;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .content a {
+        font-size: 1.3rem;
+    }
+
+    .posts {
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 27vh 27vh;
+        margin-left: 1%;
+        margin-top: 5%;
+    }
+
+    #testImg {
+        width: 12vw;
+    }
+
+    .name-movies {
+        font-size: .9rem;
+    }
+
+    .about-movies {
+        width: 34vw;
+        height: 45%;
+        font-size: 18px;
+    }
+
+    .text_share {
+        font-size: 1.2rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 1.6rem;
+        margin-bottom: 2%;
+        margin-left: 10%;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        height: 50px;
+        width: 100%;
+        margin: auto;
+        padding: 5px;
+        margin-top: 1%;
+        margin-bottom: 20%;
+        font-size: 2rem;
+    }
+
+    #message {
+        margin-bottom: 1%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+
+
+}
+
+@media only screen and (max-width: 415px) and (min-width: 279px) {
+
+    #idUser {
+        font-size: 0.7rem;
         margin-left: 0;
-        width: 150px;
+    }
+
+    .VanellenMore {
+        font-size: 1.3rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    .VanellenMore {
+        font-size: 1.3rem;
+        margin-right: 5%;
+        margin-top: 6%;
+    }
+
+    #logo {
+        width: 27vw;
+    }
+
+    .navbar {
+        margin-top: 22%;
+    }
+
+    .navbar a {
+        margin-right: 10%;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: .7rem;
+    }
+
+    .posts {
+        display: block;
+    }
+
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 70px;
+        height: 100px;
+    }
+
+    .text_share {
+        text-align: center;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
+    }
+
+    .name-movies {
+        font-size: 0.6rem;
+        margin-left: 24%;
+        margin-top: 0;
+    }
+
+    .about-movies {
+        width: 70vw;
+        font-size: 0.8rem;
+        margin-left: 24%;
+    }
+
+    .stars {
+        margin-bottom: 3%;
+        margin-left: 22%;
+    }
+
+    .username {
+        font-size: 0.5rem;
+        margin-left: 1%;
+    }
+
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+
+@media only screen and (min-width: 1023px) and (max-width: 1280px) {
+
+    .content a {
+        font-size: 0.8rem;
+        margin-right: 25%;
+    }
+
+    .posts {
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 45vh 45vh;
+        margin-left: 1%;
+        margin-top: 5%;
+    }
+
+    #testImg {
+        width: 12vw;
+    }
+
+    .name-movies {
+        font-size: .9rem;
+    }
+
+    .about-movies {
+        width: 28vw;
+        height: 55%;
+        font-size: 18px;
+    }
+
+    .text_share {
+        font-size: 1.2rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 1.6rem;
+        margin-bottom: 2%;
+        margin-left: 10%;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        height: 50px;
+        width: 100%;
+        margin: auto;
+        padding: 5px;
+        margin-top: 1%;
+        margin-bottom: 20%;
+        font-size: 2rem;
+    }
+
+    #message {
+        margin-bottom: 1%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+
+    .buttons-posts {
+        grid-template-columns: 18vw 18vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 16vw;
+        height: 4vh;
+        font-size: 0.7;
+
     }
 
 }

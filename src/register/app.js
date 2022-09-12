@@ -55,6 +55,7 @@ export default () => {
       });
   }
 
+  // eslint-disable-next-line consistent-return
   function validatePassword() {
     if (
       userName.value === '' || email.value === '' || password.value === '' || newPassword.value === '') {

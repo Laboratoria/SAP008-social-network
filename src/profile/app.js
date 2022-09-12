@@ -1,7 +1,7 @@
 export default () => {
   const container = document.createElement('div');
   const template = `    <div class="container-profile">
- <h1>TESTE</teste>
+  <h1>Em construção. 🚧 🏗️</h1>
  
   </div>
   
@@ -17,6 +17,7 @@ export default () => {
     </div>
   </footer>
   `;
+
   container.innerHTML = template;
   return container;
 };

@@ -61,8 +61,12 @@ export default () => {
 
   const googleLogin = (provider) => {
     firebase.auth().signInWithPopup(provider).then((result) => {
+      const credential = provider.credentialFromResult(result);
       const user = result.user;
-      firebase.firestore().collection('users').doc(user.email).set({ email: user.email }, { merge: true });
+      const token = credential.accessToken;
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      firebase.firestore().collection('users').doc(user.email).set({ email: user.email, image: user.photoURL, name: user.displayName }, { merge: true });
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/popup-closed-by-user') {

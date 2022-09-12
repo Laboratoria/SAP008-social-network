@@ -40,6 +40,10 @@ export default () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email.value, newPassword.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        return user.updateProfile({displayName: userName.value});
+      })
       .then(() => {
         window.location.replace('#page');
       })

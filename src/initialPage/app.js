@@ -100,7 +100,7 @@ export default () => {
             </div>
             <div class="about-movies">
                 ${post.data().text}
-            </div>
+            </div> 
             <div class="stars">
             ❤️
                 <p class="username">Enviado por: ${post.data().name}</p> <p class="username"> Data de Criação: ${post.createdAt}</p>

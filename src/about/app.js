@@ -8,8 +8,7 @@ export default () => {
       <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
       <span id="idUser"> Olá, ${user.displayName}</span>
       <span class="VanellenMore">Vanellen <span
-              style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>
-             
+              style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>     
   </div>
 
   <div class="navbar">

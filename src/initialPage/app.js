@@ -4,7 +4,7 @@ export default () => {
   const user = getCurrentUser();
   const template = `    <div class="container">
   <div class="logo">
-      <img id="logo" src="./img/logo.png" alt="logo Vanellen">
+      <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
       <span id="idUser"> Olá, ${user.displayName}</span>
       <span class="VanellenMore">Vanellen <span
               style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>
@@ -72,6 +72,7 @@ export default () => {
   const pictureInput = container.querySelector('.picture_input');
   const pictureImgText = 'Você tem uma imagem da capa do filme/série? Sobe aí!';
   pictureImg.innerHTML = pictureImgText;
+
   const doLogout = container.querySelector('#logout');
   const buttonSend = container.querySelector('#buttonSend');
   const formAction = container.querySelector('#myForm');
@@ -99,7 +100,7 @@ export default () => {
             </div>
             <div class="about-movies">
                 ${post.data().text}
-            </div>
+            </div> 
             <div class="stars">
             ❤️
                 <p class="username">Enviado por: ${post.data().name}</p> <p class="username"> Data de Criação: ${post.createdAt}</p>

@@ -25,7 +25,7 @@ body {
 
 #idUser {
     margin-top: 3.3%;
-    margin-left: 50%;
+    margin-left: 40%;
 }
 
 .VanellenMore {
@@ -101,18 +101,19 @@ body {
 
 .name-movies {
     margin-bottom: 1%;
+    margin-left: 1%;
     font-size: 0.7rem;
 }
 
 .about-movies {
     width: 19vw;
     max-height: 45%;
-    overflow: clip;
-    text-overflow: ellipsis;
+    margin-left: 1%;
     font-size: 0.9rem;
 }
 
 .stars {
+    display: grid;
     margin-bottom: 3.5%;
     margin-top: 3.5%;
 }
@@ -156,7 +157,7 @@ body {
 }
 
 .formInput {
-    width: 60%;
+    width: 40vw;
     height: 50px;
     display: block;
     margin-top: 1%;
@@ -167,8 +168,9 @@ body {
 }
 
 #buttonSend {
-    width: 60%;
+    width: 30vw;
     height: 50px;
+    margin-left: 70px;
 }
 
 .buttons-posts {

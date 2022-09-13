@@ -3,7 +3,7 @@ export default () => {
   const user = firebase.auth().currentUser;
   const template = `    <div class="container">
   <div class="logo">
-      <img id="logo" src="./img/logo.png" alt="logo Vanellen">
+      <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
       <span id="idUser"> Olá, ${user.displayName}</span>
       <span class="VanellenMore">Vanellen <span
               style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>
@@ -11,9 +11,9 @@ export default () => {
   </div>
 
   <div class="navbar">
-      <a href="./login/index.html"> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+      <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
       <a href="#profile" id="profile" class="active">Perfil</a>
-      <a href="#newpost">Novo post</a>
+      <a href="#aboutUs">Sobre</a>
   </div>
 </div>
 

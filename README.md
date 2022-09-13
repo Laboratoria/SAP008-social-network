@@ -35,7 +35,8 @@ De acordo com nossas pesquisas, mulheres fotógrafas relataram o desafio que ela
 
 
 ## 5. Desenhos da Interface de Usuário
-
+### Protótipo de baixa fidelidade
+### Protótipo de alta fidelidade
 
 ## 6. xxxx
 

@@ -14,13 +14,15 @@
 
 ## 1. Resumo do projeto
 
-PicFemArt é uma rede social voltada para mulheres fotógrafas, aspirantes a fotógrafa ou apenas que curtem fotografia. Nessa rede social, o seu objetivo principal é criar uma comunidade de mulheres que amam fotografia para compartilharem seus trabalhos, se apoiarem, fazerem networking e, até mesmo, contratarem mulheres para trabalhos relacionados à fotografia. Além disso, essa rede social funciona para sanar as dúvidas técnicas e não técnicas sobre fotografia (stackoverflow de fotografia).
+PicsFem é uma rede social desenvolvida para mulheres amantes de fotografia. O seu objetivo principal é construir uma comunidade segura para que mulheres que amam fotografia possam compartilhar conhecimentos e dicas sobre o tema, se apoiar, e, também, aprender e aperfeiçoar técnicas. Além disso, essa rede social funciona para debater e sanar dúvidas técnicas e não técnicas sobre fotografia.
+
+Nome das usuárias: PicFemers(?).
+
+De acordo com nossas pesquisas, mulheres fotógrafas relataram o desafio que elas possuem para adentrar no mercado de fotografia, que ainda é marjoritariamente masculino. Uma das futuras funcionalidades criadas seria a possibilidade de clientes poderem contratar mulheres fotógrafas para trabalhos freelancers através da PicsFem.
 
 - Um desafio relatado por fotógradas mulheres: o mercado ainda é muito masculino
-- Quem são os principais usuários do produto.
+- Quem são os principais usuários do produto: mulheres amantes de fotografia.
 - Qual problema o produto resolve/para que ele serve para esses usuários: 
-1. Não tem rede social voltada para mulheres fotógrafas que apoie o seu trabalho, já que a área ainda é muito masculina.
-2. Não existe uma comunidade de fotógrafas na qual as mulheres possam se apoiar, tirar dúvidas, aprender e aperfeiçoar suas técnicas.
 
 
 ## 2. Boilerplate
@@ -28,12 +30,8 @@ PicFemArt é uma rede social voltada para mulheres fotógrafas, aspirantes a fot
 
 ## 3. Definição de produto
 
-### Prototipo
-
-
 
 ## 4. Histórias de usuário
-
 
 
 ## 5. Desenhos da Interface de Usuário
@@ -46,6 +44,4 @@ PicFemArt é uma rede social voltada para mulheres fotógrafas, aspirantes a fot
 ## 7. yyyyy
 
 
-
-## 8. zzzzz
 

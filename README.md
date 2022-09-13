@@ -7,8 +7,6 @@
 * [3. Definição de produto](#3-definição-de-produto)
 * [4. Histórias de usuário](#4-histórias-de-usuário)
 * [5. Desenho da Interface de Usuário](#5-desenho-da-interface-de-usuário)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
 
 ***
 
@@ -33,16 +31,31 @@ De acordo com nossas pesquisas, mulheres fotógrafas relataram o desafio que ela
 
 ## 4. Histórias de usuário
 
+### História 1
+Eu como fotógrafa profissional, gostaria de me cadastrar e, em seguida, fazer o meu login, utilizando o meu gmail de forma prática, com o objetivo de otimizar o meu tempo.
+
+### História 2
+Eu como entusiasta de fotografias, gostaria de publicar dicas sobre edição de fotos com o objetivo de compartilhar meus conhecimentos com a comunidade. Porém, também, gostaria de editar ou removê-las depois, para melhorar a qualidade das publicações.
+
+### História 3
+Como PicsFemer, eu gostaria de interagir com as minhas outras colegas de comunidade através de likes e comentários, com o objetivo de me conectar melhor com elas.
+
+### História 4
+Eu, como usuária de redes sociais, gostaria de poder sair da minha conta da PicsFem, com o objetivo de não deixar tantas contas de redes sociais abertas ao mesmo tempo. 
 
 ## 5. Desenhos da Interface de Usuário
+
 ### Protótipo de baixa fidelidade
-### Protótipo de alta fidelidade
 
-## 6. xxxx
+![baixafidelidade](baixa-fidelidade.png)
 
+### Protótipos de alta fidelidade
 
+![1altafidelidade](1-altafidelidade.png)
+![2altafidelidade](2-altafidelidade.png)
+![3altafidelidade](3-altafidelidade.png)
+![4altafidelidade](4-altafidelidade.png)
 
-## 7. yyyyy
 
 
 

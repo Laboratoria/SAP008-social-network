@@ -7,7 +7,7 @@
 * [3. Definição de produto](#3-definição-de-produto)
 * [4. Histórias de usuário](#4-histórias-de-usuário)
 * [5. Desenho da Interface de Usuário](#5-desenho-da-interface-de-usuário)
-* [6. Autoras](#5-autoras)
+* [6. Autoras](#6-autoras)
 
 ***
 
@@ -57,7 +57,7 @@ Eu, como usuária de redes sociais, gostaria de poder sair da minha conta da Pic
 ![3altafidelidade](3-altafidelidade.png)
 ![4altafidelidade](4-altafidelidade.png)
 
-##6. Autoras
+## 6. Autoras
 
 
 

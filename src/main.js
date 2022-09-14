@@ -1,5 +1,34 @@
-// Este es el punto de entrada de tu aplicacion
+import homepage from './pages/homepage/main.js';
+import about from './pages/about/main.js';
+import register from './pages/register/main.js';
+import login from './pages/login/main.js';
 
-import { myFunction } from './lib/index.js';
+const main = document.querySelector('#root');
 
-myFunction();
+const init = () => {
+    window.addEventListener('hashchange', () => { 
+        main.innerHTML = '';
+        switch (window.location){
+            case ' ':
+                main.appendChild(homepage());
+                break;
+            case '#about':
+                main.appendChild(about());
+                break;
+            case '#login':
+                main.appendChild(login());
+                break;
+            case '#register':
+                main.appendChild(register());
+                break;
+            default:
+                main.appendChild(homepage());    
+        }
+    })
+}
+
+window.addEventListener('load', () => {
+    main.appendChild(homepage());
+    init();
+})
+

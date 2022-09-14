@@ -7,6 +7,7 @@ export default () => {
         </figure>
 
         <form class="form-login">
+            <div class="form-background">
             <section class="inputs">
             <label for="email">Digite seu e-mail</label>
             <input type="email" placeholder="seuemail@gmail.com" id="email" class="input-email" />
@@ -22,6 +23,7 @@ export default () => {
             <button type="submit" class="btn-google"><img src="./Imagens/google.png"/> Entrar com Google</button>
             <button type="submit" class="btn-register">Criar nova conta</button>
             </section>
+            </div>
         </form>
     `
 

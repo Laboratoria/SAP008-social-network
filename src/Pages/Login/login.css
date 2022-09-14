@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0fbff;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+/* mobile first - responsividade */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .img-logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

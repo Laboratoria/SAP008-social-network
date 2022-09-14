@@ -4,9 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css"> 
   <title>Document</title>
 </head>
 <body>
+  <main>
+    <section class="login">
+        <div class="wallpaper">
+            <img src="./img/foto.png">
+        </div>
+      <div class="wrapper">
+        <img src="./img/picsfem.png" class="login__logo">
+        <h1 class="login__title">Fazer login</h1>
+        <label class="login__label">
+          <span>nome de usuário</span>
+          <input type="text" name="username" class="input">
+        </label>
+        <label class="login__label">
+          <span>senha</span>
+          <input type="password" name="password" class="input">
+        </label>
+        <div class="login__icons">
+          <button type="button" class="icons__button">
+            <img src="./img/iconfacebook.png" alt="facebok">
+          </button>
+          <button type="button" class="icons__button">
+            <img src="./img/icongmail.png" alt="facebok">
+          </button>
+        <label class="login__label--checkbox">
+          <input type="checkbox" class="input--checkbox">
+          Manter login
+        </label>
+      </div>
+      <div class="wrapper">
+        <button type="button" class="login__button" disabled></button>
+        <a href="#" class="login__link">não consegue iniciar sessão?</a>
+        <a href="#" class="login__link">criar conta</a>
+      </div>
+    </section>
+    <section class="wallpaper"></section>
+  </main>
   <script type="module" src="main.js"></script>
 </body>
 </html>

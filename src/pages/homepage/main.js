@@ -1,6 +1,6 @@
 export default () => {
-    const container = document.createElement('div');
-    const template = `
+  const container = document.createElement('div');
+  const template = `
         <main id="initial-page" class="initial-page">
             <h1 class="logo-initial-page"><img class="img-logo" src="img/Rebu.png" alt="Rebu Logo"></h1>
             <nav class="button-initial-page">
@@ -23,6 +23,6 @@ export default () => {
             </nav>
         </footer>
     `;
-    container.innerHTML = template;
-    return container;
-}
+  container.innerHTML = template;
+  return container;
+};

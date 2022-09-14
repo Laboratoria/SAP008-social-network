@@ -3,11 +3,14 @@
 //myFunction();
 
 import login from "./login/login.js";
+import register from "./cadastro/cadastro.js";
 
 const content = document.querySelector("#root");
 
 window.addEventListener("load",  () => {
     content.appendChild(login());
+    content.appendChild(register());
     
 
 })
+

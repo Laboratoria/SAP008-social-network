@@ -14,7 +14,7 @@ html, body {
 
 .logo-initial-page {
     margin: 0;
-    height: 85vh;
+    height: 82vh;
     width: 100%;
     /* background-image: url(img/gif-inital-page.gif); */
     background-size: contain;
@@ -38,7 +38,7 @@ html, body {
     align-items: center;
     background-color: #FFFFFF;
     position: absolute;
-    top: 85%;
+    top: 82%;
 }
 
 .btn-initial-page {
@@ -59,15 +59,24 @@ html, body {
 footer {
     width: 100%;
     position: absolute;
-    top: 95%;
-    display: flex;
-    justify-content: space-between;
+    top: 92%;
     font-size: small;
     border-top: solid 1px black;
-    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer li, .footer ul {
+    padding: 0;
+}
+
+footer nav {
+    width: 100%;
 }
 
 .list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
     padding: 0;
 }
@@ -75,4 +84,14 @@ footer {
 footer a {
     list-style: none;
     text-decoration: none;
+}
+
+.developed-by {
+    width: 8rem;
+}
+
+.about {
+    margin-inline-start: 1rem;
+    font-size: 1rem;
+    text-decoration: underline;
 }

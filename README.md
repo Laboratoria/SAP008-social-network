@@ -58,7 +58,7 @@ Eu, como usuária de redes sociais, gostaria de poder sair da minha conta da Pic
 ![4altafidelidade](4-altafidelidade.png)
 
 ## 6. Sobre as Desenvolvedoras
-Projeto desenvolvido por Amanda Holanda [Linkedin]() | [GitHub](), Isabella Lima [Linkedin]() | [GitHub]() & Gleyciane Macena [Linkedin]() | [GitHub]().
+Projeto desenvolvido por Amanda Holanda [Linkedin](https://www.linkedin.com/in/amandaholanda/) | [GitHub](https://github.com/amanda-holanda), Isabella Lima [Linkedin]() | [GitHub]() & Gleyciane Macena [Linkedin]() | [GitHub]().
 
 
 

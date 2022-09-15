@@ -54,9 +54,14 @@ body {
     font-weight: 100;
 }
 
-.link-text, .google-login-legend {
+.link-text-login, .password-reset-login {
     color: #EE2C12;
     font-size: 0.8em;
+    font-weight: 300;
+}
+
+.link-text-login {
+    margin-top: 1.5rem;
 }
 
 .link-text {
@@ -64,6 +69,7 @@ body {
 }
 
 .input-text-login{
+    padding-left: 1rem;
     font-size: 1.05em;
     background: white;
     border: transparent;
@@ -97,13 +103,14 @@ body {
     color: white;
 }
 
-.google-btn {
-    background-color: rgba(255, 255, 255, 0.612);
-    border-radius: 90px 90px 90px 90px;
-    border: solid 2px white;
-    padding: 1rem;
-    width: 7vw;
-    height: 3vh;
-    margin-top: 0.1rem;
-    margin-bottom: 0.8rem;
+.btn-google-login {
+    height: 5vh;
+    width: 73vw;
+    background-color: #ee2c12af;
+    border: none;
+    box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
+    border-radius: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: -2rem;
 }

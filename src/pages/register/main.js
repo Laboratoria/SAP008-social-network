@@ -1,7 +1,6 @@
 export default () => {
-    const container = document.createElement('div');
-    console.log('container');
-    const template = `
+  const container = document.createElement('div');
+  const template = `
         <header class="register-login-header display-flex">
             <img class="return-btn" src="img/returnBtn.png" alt="back arrow">
             <h1><img class="img-logo-register" src="img/Rebu.png" alt="rebu logo"></h1>
@@ -17,8 +16,6 @@ export default () => {
             </form>
         </main>
     `;
-    container.innerHTML = template;
-    return container;
-}
-
-
+  container.innerHTML = template;
+  return container;
+};

@@ -2,7 +2,7 @@ export default () => {
   const registerContainer = document.createElement('div');
   const template = `
         <header id="return-btn" class="register-login-header display-flex">
-            <img class="return-btn" src="img/returnBtn.png" alt="back arrow">
+        <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
             <h1><img class="img-logo-register" src="img/Rebu.png" alt="rebu logo"></h1>
         </header>
         <main class="register-content display-flex">
@@ -19,6 +19,6 @@ export default () => {
   registerContainer.innerHTML = template;
 
   const returnBtn = registerContainer.querySelector('#return-btn');
-  returnBtn.addEventListener('click', () => window.location.replace('#homepage'))
+  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
   return registerContainer;
 };

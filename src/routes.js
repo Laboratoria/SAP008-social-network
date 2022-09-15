@@ -1,8 +1,8 @@
-import login from './login/app.js';
-import register from './register/app.js';
-import initialPage from './initialPage/app.js';
-import profile from './profile/app.js';
-import about from './about/app.js';
+import login from './pages/login/app.js';
+import register from './pages/register/app.js';
+import initialPage from './pages/initialPage/app.js';
+import profile from './pages/profile/app.js';
+import about from './pages/about/app.js';
 
 const main = document.querySelector('#root');
 

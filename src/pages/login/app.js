@@ -66,7 +66,10 @@ export default () => {
       const token = credential.accessToken;
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
-      firebase.firestore().collection('users').doc(user.email).set({ email: user.email, image: user.photoURL, name: user.displayName }, { merge: true });
+      firebase.firestore().collection('users').doc(user.email).set(
+        { email: user.email, image: user.photoURL, name: user.displayName },
+        { merge: true },
+      );
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/popup-closed-by-user') {
@@ -107,9 +110,7 @@ export default () => {
   }
 
   buttonEnter.addEventListener('click', login);
-
   const signUp = container.querySelector('#signUp');
-
   signUp.addEventListener('click', () => {
     window.location.href = '#register';
   });

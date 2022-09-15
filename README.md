@@ -1,51 +1,33 @@
-# Criando uma Rede Social
+# Espectro - A rede social que conecta vivências com o TEA! 
+
+## Índice
 
 ## Índice
 
 * [1. Prefácio](#1-prefácio)
 * [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-* [4. Considerações gerais](#4-considerações-gerais)
-* [5. Critérios de aceitação mínimos do
-  projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Guias, dicas e leituras
-  complementares](#8-guias-dicas-e-leituras-complementares)
-
+* [2. Definição de pronto](#2-definição-de-pronto)
+* [3. Web Aplicação](#3-web-aplicação)
+* [4. Repositório](#4-repositório)
+* [5. Deploy](#5-deploy)
+* [6. Checklist](#6-checklist)
 ***
 
 ## 1. Prefácio
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
-invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
-viver sem elas.
+Rede social é uma estrutura social composta por pessoas ou organizações, conectadas por um ou vários tipos de relações, que compartilham valores e objetivos comuns. Como exemplo, temos o Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. É um fato que as redes sociais hoje, atuam além de uma plataforma de entretenimento, a possibilidade de conectar-se com outras pessoas, histórias, produtos, informações cria uma rede de negócio. Passou a atribuir valor e credibilidade para uma marca, o bom uso de um perfil no instagram, por exemplo. 
 
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
-
-Há redes sociais de todo tipo para todos os tipos de interesse. Por exemplo: em
-uma rodada de financiamento com investidores, foi apresentada uma rede social
-para químicos onde os usuários podem publicar artigos a respeito de suas
-pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
-determinadas tags ou popularidade, mais recente ou mais comentado.
+![Imagem Ilustrativa](https://cristianethiel.com.br/wp-content/uploads/2017/12/Como-Escolher-a-Melhor-Rede-Social-para-o-seu-Neg%C3%B3cio-Featured.png)
 
 ## 2. Resumo do projeto
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+Dado contexto, foi desenvolvido pelo nosso trio, uma Single Page Application (SPA) voltada para pessoas que vivem no Transtorno do Espectro Autista (TEA), a fim de impactar a vida dessas pessoas positivamente atráves de informação e rede apoio para pais, familiares e amigos. Essa rede social tem como objetivo criar um espaço de acolhimento, trocas, relatos entre pessoas que, de alguma forma, tem vivência com o TEA. Na rede Espectro, apostamos em um layout limpo, simples e intuitivo. Nossos usuários vão deparar-se com a tela de login e a opção de criar uma conta, assim que acessar a página. Após criar uma conta, nossos usuários terão um perfil com acesso ao feed, onde poderão criar postagens, curtir, descurtir e comentar postagens de outros usuários. Além de ter uma segunda aba de "Blog", que é destinada a artigos, matérias e outros documentos de cunho informativo à respeito do autismo.
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
 
-O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
-Application
-(SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-[_responsiva_](https://curriculum.laboratoria.la/pt/topics/css/02-responsive) (com mais de uma tela/ página) na
-qual seja possível **ler e escrever dados**.
+
+A rede Espectro veio como necessidade de ser desenvolvida, a partir de dores pessoais ao deparar-se com o diagnóstico de alguém próximo e não ter muitos canais informativos como respaldo neste primeiro momento. Em suma, esse rede social tem como meta alcançar familiares e amigos que buscam uma rede de apoio após um recém diagnóstico, mas também tem o intuito de trazer artigos, matérias e informações mais assertivas sobre o tema, partindo do ideal que a informação é um presente e pode impactar na qualidade de vida e no desenvolvimento cognitivo de pessoas no espectro autista, uma vez que essas estarão cercadas por familiares e amigos informados. 
+
+![Espectro](https://i.pinimg.com/564x/d3/67/5c/d3675c0ff9a54ef17118d9895abac79d.jpg)
 
 ## 3. Objetivos de aprendizagem
 

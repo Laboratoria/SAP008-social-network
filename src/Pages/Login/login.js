@@ -20,7 +20,7 @@ export default () => {
 
             <section class="buttons">
             <button type="submit" class="btn-login">Iniciar Sessão</button>
-            <button type="submit" class="btn-google"><img src="./Imagens/google.png"/> Entrar com Google</button>
+            <button type="submit" class="btn-google"><img class="img-google" src="./Imagens/google.svg"/> Entrar com Google</button>
             <button type="submit" class="btn-register">Criar nova conta</button>
             </section>
         </form>

@@ -1,6 +1,4 @@
-// Este es el punto de entrada de tu aplicacion
-//import { myFunction } from './lib/index.js';
-//myFunction();
+
 
 import login from './login/login.js';
 import register from './register/register.js';
@@ -18,6 +16,10 @@ const init = () => {
             main.innerHTML = ' ';
             main.appendChild(register());
             break;
+            case '#post':
+            main.innerHTML = ' ';
+            main.appendChild(post());
+            break;
 
             default: main.appendChild(login());
         }   
@@ -25,10 +27,6 @@ const init = () => {
 } ;        
 
 window.addEventListener("load",  () => {
-
-    content.appendChild(login());
-    content.appendChild(register());
-    content.appendChild(post());
-    
-
+    main.appendChild(login( ));
+    init( );
 });

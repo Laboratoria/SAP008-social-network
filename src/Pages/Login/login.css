@@ -14,7 +14,6 @@ body {
 /* mobile first - responsividade */
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-
   .img-logo {
     display: flex;
     width: 100%;
@@ -23,7 +22,7 @@ body {
     margin-bottom: 1rem;
     justify-content: center;
     align-items: center;
-  } 
+  }
 
   .form-login {
     display: flex;
@@ -41,32 +40,69 @@ body {
     font-size: 1rem;
     color: #14617d;
     margin-bottom: 2rem;
-    margin-top: -6rem;
+    margin-top: -1rem;
     margin-right: 1.6rem;
   }
 
-   .inputs {
+  .inputs {
     width: 10rem;
-    color: #14617D;
-    font-size: .9rem;
-    margin: 0 .8rem 1.3rem 0;
+    color: #14617d;
+    font-size: 0.9rem;
+    margin: 0 0.8rem 1.4rem -2rem;
   }
 
-  .input-email , .input-password {
+  .input-email,
+  .input-password {
     width: 12.5rem;
     height: 2rem;
     border-radius: 0.2rem;
     border: none;
-    padding-left: .3rem;
+    padding-left: 0.3rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
   }
 
-  .input-email:focus , .input-password:focus {
+  .input-email:focus,
+  .input-password:focus {
     outline: none;
   }
 
   .buttons {
     display: flex;
     flex-direction: column;
+  }
+
+  .btn-login {
+    width: 9.6rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: #2E94B9;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: .8rem;
+    margin-top: .5rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .btn-google {
+    width: 9.6rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: #fff;
+    color: #2E94B9;
+    font-size: 0.9rem;
+    margin-bottom: .8rem;
+    margin-top: .5rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .img-google {
+    width: 1rem;
+    height: 1.2rem;
+    margin-left: .2rem;
+    margin-top: .2rem;
+  }
 }
-} 

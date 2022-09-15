@@ -1,0 +1,109 @@
+img { 
+    position: absolute;
+    width: 330px;
+    height: 90px;
+    left: 15px;
+    top: 77px;
+}
+
+.sub-title-register {
+    color: #A6634B;  
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    left: 32px;
+    top: 147px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    mix-blend-mode: darken;
+}
+
+.box-name-register {
+    position: absolute;
+    width: 145px;
+    height: 25px;
+    left: 106px;
+    top: 215px;
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.box-email-register {
+    position: absolute;
+    width: 142px;
+    height: 16px;
+    left: 105px;
+    top: 304px;
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border: none; 
+}
+
+.box-password-register  {
+    position: absolute;
+    width: 139px;
+    height: 16px;
+    left: 108px;
+    top: 392px;
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border: none;
+}
+
+#box-register-password{
+    position: absolute;
+    width: 124px;
+    height: 16px;
+    left: 108px;
+    top: 494px;
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.btn-register {
+    position: absolute;
+    width: 265px;
+    height: 44px;
+    left: 51px;
+    top: 490px;
+    background: linear-gradient(0deg, #8C8080, #8C8080), linear-gradient(0deg, #163440, #163440), #8C4A5C;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+.user {
+    position: absolute;
+    width: 323px;
+    height: 47px;
+    left: 29px;
+    top: 585px;
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+

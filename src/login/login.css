@@ -1,0 +1,94 @@
+img { 
+    position: absolute;
+    width: 330px;
+    height: 90px;
+    left: 15px;
+    top: 77px;
+}
+
+.sub-title{
+    color: #081E26;  
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    left: 32px;
+    top: 147px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    mix-blend-mode: darken;
+}
+
+.box-name{
+    position: absolute;
+    width: 300px;
+    height: 61px;
+    left: 30px;
+    top: 215px;
+    background: rgba(217, 217, 217, 0.4);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+    border: none;
+}
+
+.box-password{
+    position: absolute;
+    width: 300px;
+    height: 61px;
+    left: 30px;
+    top: 304px;
+    background: rgba(217, 217, 217, 0.4);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+    border: none;
+}
+
+.box-enter {
+    position: absolute;
+    width: 300px;
+    height: 61px;
+    left: 30px;
+    top: 396px;
+    background: rgba(56, 77, 89, 0.6);
+}
+
+.new-password {
+    color: #081E26;  
+    position: absolute;
+    width: 148px;
+    height: 22px;
+    left: 114px;
+    top: 484px;
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    mix-blend-mode: darken;
+}
+
+.box-login-google{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    left: 30px;
+    top: 557px;
+    background: rgba(56, 77, 89, 0.6);
+    font-family: 'Carrois Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.box-register{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    left: 30px;
+    top: 633px;
+    background: rgba(56, 77, 89, 0.6);
+}
+

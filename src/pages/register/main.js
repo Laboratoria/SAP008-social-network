@@ -1,7 +1,7 @@
 export default () => {
-  const container = document.createElement('div');
+  const registerContainer = document.createElement('div');
   const template = `
-        <header class="register-login-header display-flex">
+        <header id="return-btn" class="register-login-header display-flex">
             <img class="return-btn" src="img/returnBtn.png" alt="back arrow">
             <h1><img class="img-logo-register" src="img/Rebu.png" alt="rebu logo"></h1>
         </header>
@@ -12,10 +12,13 @@ export default () => {
                 <input type="password" id="password-register" class="input-style" placeholder="SENHA">
                 <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
                 <input type="submit" class="btn-register" value="CADASTRAR">
-                <button class="btn-google-register display-flex"><img class="google-btn-register" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
             </form>
+            <button class="btn-google-register display-flex"><img class="google-btn-register" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
         </main>
     `;
-  container.innerHTML = template;
-  return container;
+  registerContainer.innerHTML = template;
+
+  const returnBtn = registerContainer.querySelector('#return-btn');
+  returnBtn.addEventListener('click', () => window.location.replace('#homepage'))
+  return registerContainer;
 };

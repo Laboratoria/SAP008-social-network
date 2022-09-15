@@ -75,7 +75,7 @@ footer nav {
 
 .list-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
     padding: 0;
@@ -84,6 +84,7 @@ footer nav {
 footer a {
     list-style: none;
     text-decoration: none;
+    color: #000000;
 }
 
 .developed-by {
@@ -91,7 +92,8 @@ footer a {
 }
 
 .about {
-    margin-inline-start: 1rem;
+    /* margin-inline-start: 1rem; */
     font-size: 1rem;
     text-decoration: underline;
+    padding-left: 2.5rem;
 }

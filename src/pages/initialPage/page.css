@@ -427,7 +427,6 @@ footer {
     #message {
         height: 200px;
     }
-
 }
 
 @media only screen and (max-width: 770px) and (min-width: 389px) {
@@ -681,8 +680,6 @@ footer {
         width: 37vw;
         margin-left: 2%;
     }
-
-
 }
 
 @media only screen and (max-width: 415px) and (min-width: 279px) {
@@ -843,7 +840,6 @@ footer {
     }
 }
 
-
 @media only screen and (min-width: 1023px) and (max-width: 1280px) {
 
     .content a {
@@ -930,5 +926,4 @@ footer {
         font-size: 0.7;
 
     }
-
 }

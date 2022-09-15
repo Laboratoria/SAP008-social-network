@@ -19,7 +19,7 @@ export default () => {
 
     <div class="profile-data">
     <center>
-        <img id="img_redonda" src="${user.photoURL || './img/gif-avatar-vanellen.gif'}" width="450vw"; height="450vh"; alt="A foto do usuário">
+        <img id="img_redonda" src="${user.photoURL || './img/gif-avatar-vanellen.gif'}" alt="A foto do usuário">
         <h3> Olá, ${user.displayName} </h3>
         </br>
         <h2> Senta que lá vem spoiler 🎞️ </h2>

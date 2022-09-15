@@ -1,10 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
+  display: flex;
   background-color: #f0fbff;
   font-family: "Roboto", sans-serif;
   width: 100%;
@@ -14,6 +14,7 @@ body {
 /* mobile first - responsividade */
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
+
   .img-logo {
     display: flex;
     width: 100%;
@@ -22,25 +23,50 @@ body {
     margin-bottom: 1rem;
     justify-content: center;
     align-items: center;
-  }
+  } 
 
   .form-login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(../../Imagens/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 65vh;
   }
 
-  .inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .title-login {
+    font-size: 1rem;
+    color: #14617d;
+    margin-bottom: 2rem;
+    margin-top: -6rem;
+    margin-right: 1.6rem;
+  }
+
+   .inputs {
     width: 10rem;
+    color: #14617D;
+    font-size: .9rem;
+    margin: 0 .8rem 1.3rem 0;
+  }
+
+  .input-email , .input-password {
+    width: 12.5rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border: none;
+    padding-left: .3rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .input-email:focus , .input-password:focus {
+    outline: none;
   }
 
   .buttons {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
 }
+} 

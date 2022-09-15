@@ -3,13 +3,13 @@ export default () => {
 
     const template = `
         <figure class="img-logo">
-            <img src="./Imagens/Logo.png" alt="logo">
+            <img src="./Imagens/logo-mobile.png" alt="logo">
         </figure>
 
         <form class="form-login">
-            <div class="form-background">
+            <h1 class="title-login">Inicie a sua sessão</h1>
             <section class="inputs">
-            <label for="email">Digite seu e-mail</label>
+            <label for="email" class="label">Digite seu e-mail</label>
             <input type="email" placeholder="seuemail@gmail.com" id="email" class="input-email" />
             </section>
 
@@ -23,7 +23,6 @@ export default () => {
             <button type="submit" class="btn-google"><img src="./Imagens/google.png"/> Entrar com Google</button>
             <button type="submit" class="btn-register">Criar nova conta</button>
             </section>
-            </div>
         </form>
     `
 

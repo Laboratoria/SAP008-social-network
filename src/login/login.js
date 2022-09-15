@@ -3,23 +3,24 @@ export default () => {
     const template = `  
     <div class="container-login">
     
-        <img src="./images/logo_02_azul_081E26.png" alt="logo do título"
+        <img  src="./images/logo_02_azul_081E26.png" alt="logo do título"
         <br>
-        <p>Momentos musicais inesqueciveis</p>                     
+        <p class = "sub-title">Momentos musicais inesqueciveis</p>                     
         <form>
-            <input type="e-mail" id="e-mail" placeholder="Nome de usuário ou e-mail"/>
-            <input type="senha" id="senha" placeholder="Digite sua senha"/> 
-            <input type="button" id="btn-submit" class="btn-submit" value="Entrar"/>       
+            <input class="box-name" type="e-mail" id="e-mail" placeholder="Nome de usuário ou e-mail"/>
+            <input class= "box-password" type="senha" id="senha" placeholder="Digite sua senha"/> 
+            <input class="box-enter" type="button" id="btn-submit" class="btn-submit" value="Entrar"/>       
         </form>
            
-        <a href="">Esqueci a senha</a>
+        <a class="new-password" "href="">Esqueci a senha</a>
         </br>
-        <a href="">Continuar com sua conta do google</a>
+        <a class="box-login-google" placeholder=" " href="">Continuar com sua conta do google</a>
         </br>
-        <a href="">Cadastre-se</a>
+        <p class="box-register"><a href = '#register'>Cadastre-se</p>
 
     </div>     
  `;
+
 
  container.innerHTML = template;
  return container;

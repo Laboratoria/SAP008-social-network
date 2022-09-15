@@ -31,5 +31,4 @@ window.addEventListener("load",  () => {
     content.appendChild(post());
     
 
-
-
+});

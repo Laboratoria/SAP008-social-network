@@ -1,10 +1,10 @@
 export default () => {
-    const container = document.createElement('div');
-    const template = `
+  const container = document.createElement('div');
+  const template = `
         <main id="initial-page" class="initial-page">
             <h1 class="logo-initial-page"><img class="img-logo" src="img/Rebu.png" alt="Rebu Logo"></h1>
             <nav class="button-initial-page">
-                <a href="/#login" ><button id="btn-login" class="btn-initial-page">ENTRAR</button></a>
+                <a href="/#login"><button id="btn-login" class="btn-initial-page">ENTRAR</button></a>
                 <a href="/#register"><button id="btn-register" class="btn-initial-page">CADASTRAR</button></a>
             </nav>
         </main>
@@ -23,6 +23,6 @@ export default () => {
             </nav>
         </footer>
     `;
-    container.innerHTML = template;
-    return container;
-}
+  container.innerHTML = template;
+  return container;
+};

@@ -5,6 +5,7 @@
     padding-top: 3vh;
     height: 10vh;
 }
+
 #about-page{
     background: linear-gradient(180deg, #B0DAF8 0%, #A6F0F4 100%);
     width: 100%;
@@ -12,18 +13,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
+
 #about-title{
     text-align: center;
     margin: 5vh;
 }
-.about-rebu{
+
+.about-rebu, .about-rebu-title {
     color: #EE2C12;
+    font-family: Blanka;
 }
+
+.about-rebu-title {
+    font-size: 1.1em;
+}
+
+.about-rebu {
+    font-size: 1.3em;
+}
+
 .about-paragraph{
     text-align: justify;
     line-height: 5vh;
     width: 80vw;
 }
 
+@font-face {
+    font-family: Blanka;
+    src: url(/src/fonts/Blanka-Regular.otf);
+  }

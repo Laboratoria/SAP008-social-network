@@ -11,7 +11,7 @@ export default () => {
         <footer class="footer">
             <nav>
                 <ul class="list-footer">
-                  <li><a class="about" href="/#sobre">SOBRE</a></li>
+                  <li><a class="about" href="/#about">SOBRE</a></li>
                   <li class="developed-by">DESENVOLVIDO POR
                     <a href="https://github.com/clasimplicio">CLARISSA</a>
                     , 

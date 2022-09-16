@@ -2,6 +2,7 @@ import homepage from './pages/homepage/main.js';
 import about from './pages/about/main.js';
 import register from './pages/register/main.js';
 import login from './pages/login/main.js';
+import './firebase/firebase-config.js';
 
 const main = document.querySelector('#root');
 

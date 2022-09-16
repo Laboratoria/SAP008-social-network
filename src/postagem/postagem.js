@@ -1,5 +1,7 @@
 export default () => {
     const container = document.createElement('div');
+    const getCurrentUser = () => firebase.auth().currentUser;
+    const user = getCurrentUser();
     const template = `  
     <div class="container-post">
 

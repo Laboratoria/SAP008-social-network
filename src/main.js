@@ -1,8 +1,9 @@
 
 
-import login from './login/login.js';
+import login from './login/app.js';
 import register from './register/register.js';
 import post from "./postagem/postagem.js";
+
 
 const main = document.querySelector('#root');
 

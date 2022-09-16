@@ -31,12 +31,12 @@ A rede Espectro veio como necessidade de ser desenvolvida, a partir de dores pes
 
 A partir de um [formulário](https://docs.google.com/forms/d/e/1FAIpQLScen5FTO1-LLcTDpTtDH3oMjBpC3NO8kGkmqbdb4q_ntTqDuA/viewform) com o intuito de coletar dados de nossos potenciais usuários para entender o processo desde o diagnóstico de alguém próximo no TEA, até a vivência diária, entendemos que a falta de informações e de redes de apoio é uma necessidade para auxiliar familiares e amigos de pessoas que vivem no espectro autista, e também que esse acesso à informação impacta diretamente na qualidade de vida de quem vive no TEA. Dado contexto, definimos alguns pontos principais para a construção dessa rede social: 
 
-  • Criação de uma conta e login com um perfil exclusivo para acessar a rede
-  • Um feed para compartilhar histórias, criar publicações, ler outras, curtir, descurtir e comentar
-  • Uma aba de "informações" para artigos, matérias, estudos e outras coisas de cunho informativo acerca do TEA
-  • Opção de "deslogar" da conta
-  • Um aba "about us" contando brevemente o intuito da rede social e apresentando brevemente as desenvolvedoras
-  • Possibilidade de editar o próprio perfil com foto e uma "bio"
+  * Criação de uma conta e login com um perfil exclusivo para acessar a rede
+  * Um feed para compartilhar histórias, criar publicações, ler outras, curtir, descurtir e comentar
+  * Uma aba de "informações" para artigos, matérias, estudos e outras coisas de cunho informativo acerca do TEA
+  * Opção de "deslogar" da conta
+  * Um aba "about us" contando brevemente o intuito da rede social e apresentando brevemente as desenvolvedoras
+  * Possibilidade de editar o próprio perfil com foto e uma "bio"
  
  ## Histórias de Usuário
  

@@ -24,7 +24,7 @@ export default () => {
             <button type="submit" class="btn-register">Criar nova conta</button>
             </section>
         </form>
-    `
+    `;
 
     container.innerHTML = template;
 

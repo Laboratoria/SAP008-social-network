@@ -40,7 +40,7 @@ A partir de um [formulário](https://docs.google.com/forms/d/e/1FAIpQLScen5FTO1-
  
  ## Histórias de Usuário
  
- A primeira história de usuário foi definida pensando numa pessoa que foi diagnosticada tardiamente, está no espectro autista de nível 1:
+ A primeira história de usuário foi definida pensando numa pessoa que foi diagnosticada tardiamente e está no espectro autista de nível 1:
  
  ![História de usuário 1](https://i.pinimg.com/564x/1a/1f/93/1a1f93c3fa4f1b970c6b5088ed7d91bb.jpg)
  

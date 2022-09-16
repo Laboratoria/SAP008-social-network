@@ -1,0 +1,28 @@
+#about-header{
+    margin:0;
+    background: #bcfff3;
+    height: 10vh;
+}
+#about-page{
+    background: #bcfff3;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#about-title{
+    text-align: center;
+    margin: 5vh;
+}
+.about-rebu{
+    color: #EE2C12;
+}
+.about-paragraph{
+    text-align: justify;
+    line-height: 3vh;
+    width: 80vw;
+}
+

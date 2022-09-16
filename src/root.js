@@ -1,5 +1,5 @@
 import homepage from './pages/homepage/main.js';
-// import about from './pages/about/main.js';
+import about from './pages/about/main.js';
 import register from './pages/register/main.js';
 import login from './pages/login/main.js';
 
@@ -12,9 +12,9 @@ const init = () => {
       case '#homepage':
         main.appendChild(homepage());
         break;
-      // case '#about':
-      //   main.appendChild(about());
-      //   break;
+      case '#about':
+        main.appendChild(about());
+        break;
       case '#login':
         main.appendChild(login());
         break;

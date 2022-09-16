@@ -79,6 +79,9 @@ body {
     background-color: #2E94B9;
     color: #fff;
     font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
     margin-bottom: .8rem;
     margin-top: .5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
@@ -93,6 +96,8 @@ body {
     background-color: #fff;
     color: #2E94B9;
     font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
     margin-bottom: .8rem;
     margin-top: .5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
@@ -105,4 +110,4 @@ body {
     margin-left: .2rem;
     margin-top: .2rem;
   }
-}
+} 

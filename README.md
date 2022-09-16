@@ -36,13 +36,13 @@ A partir de um [formulário](https://docs.google.com/forms/d/e/1FAIpQLScen5FTO1-
   • Uma aba de "informações" para artigos, matérias, estudos e outras coisas de cunho informativo acerca do TEA
   • Opção de "deslogar" da conta
   • Um aba "about us" contando brevemente o intuito da rede social e apresentando brevemente as desenvolvedoras
-  • Possibilidade de editar o prórpio perfil com foto e uma "bio"
+  • Possibilidade de editar o próprio perfil com foto e uma "bio"
  
  ##Histórias de Usuário
  
- A primeira história de usuário foi definida pensando numa pessoa que foi diagnosticada tardiamente, está no espectro autista de nível 1
+ A primeira história de usuário foi definida pensando numa pessoa que foi diagnosticada tardiamente, está no espectro autista de nível 1:
  
- "Meu nome é Cristiane, fui diagnosticada tardiamente com espectro autista de nível 1 e gostaria de participar de uma rede social voltada para este assunto". 
+ [História de usuário 1](https://i.pinimg.com/564x/1a/1f/93/1a1f93c3fa4f1b970c6b5088ed7d91bb.jpg)
  
  A partir dessa história, foi definido os critérios de aceitação voltado ao processo de encontrar uma rede social e se cadastrar. 
 Critérios de aceitação: Ao entrar na primeira página da rede social, o usuário poderá escolher dinamicamente entre se logar diretamente caso já tenha uma conta, ou se cadastrar. Na página "Cadastre-se", deverá inserir nome completo, nome de usuário, e-mail e senha, e clicar no botão "Cadastrar". Além disso, o usuário deve conseguir escolher entre criar uma nova conta ou se logar por meio de uma conta Google, associado a um Gmail.

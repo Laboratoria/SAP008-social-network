@@ -3,7 +3,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-// import { db } from '... firestore.js'
+// import { db } from '... firebase-firestore.js'
 
 import { app } from './firebase-configuration.js';
 

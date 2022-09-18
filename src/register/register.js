@@ -1,3 +1,7 @@
+import { registerUser } from '../firebase/firebase.js' //importei a const registerUser para poder criar o evento de escuta e fazer a funcionalidade
+                                                        //do usuario se cadastrar c/ e-mail e senha. Separei dessa forma para deixar o evento funcionar
+                                                        //logo após do template criado.
+
 export default () => {
     const container = document.createElement('div');
     const template = `  
@@ -10,8 +14,8 @@ export default () => {
             <input class ="box-name-register" type="name" id="name" placeholder="Nome completo"/>
             <input class ="box-email-register"type="e-mail" id="e-mail" placeholder="E-mail"/>
             <input class ="box-password-register" type="password" id="password" placeholder="Digite sua senha"/> 
-            <input class ="box-password-register" id="box-register-password" type="password" id="password" placeholder="Repetir senha"/>   
-            <input class = "btn-register" type="button" id="btn-register" class="btn-register" value="Registrar-se"/>   
+            <input class ="box-password-register" id="box-register-password" type="password" id="password" placeholder="Repetir senha"/>    
+            <input class ="btn-register" type="button" id="btn-register" class="btn-register" value="Registrar-se"/>   
         </form>
 
         <p class="user"><a href="#login">Já possui uma conta? Iniciar sessão</p>
@@ -20,5 +24,15 @@ export default () => {
         `;
         
         container.innerHTML = template;
+
+        // -- EVENTO DE CLICK
+
+        container.querySelector('#btn-register').addEventListener('click', e => {
+            e.preventDefault();
+            const email = document.querySelector('#e-mail').value;
+            const password = document.querySelector('#password').value;
+            registerUser(email, password);
+        });
+
         return container;
 }

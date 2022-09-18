@@ -1,14 +1,15 @@
-import { initializeApp} from "../firebase/app";
+import { initializeApp} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 //import { getAnalytics } from "firebase/analytics";
-import{getAuth, signInWithEmailAndPassword, connectAuthEmulator} from "../firebase/auth";
-//import { async } from "regenerator-runtime";
+import{getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
-
+//UI
 const inputEmail= document.getElementById("e-mail");
 const inputPassword= document.getElementById("password");
 const btnLogin= document.getElementById("btn-login");
 const btnLoginGoogle= document.getElementById("btn-login-Google");
 const btnCreateAccount= document.getElementById("btn-create-account");
+const form = document.getElementById("form");
+//Objeto de configuração do Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCZJLz1dq8bI3mQvcOxXpbZXEj_dd7dwOE",
     authDomain: "social-network-mia.firebaseapp.com",
@@ -18,7 +19,6 @@ const firebaseConfig = {
     appId: "1:333033318484:web:24c297d8e8efed871d65c1",
     measurementId: "G-KHPWJXZL63"
   };
-const asyncLogin = async();
 
   //iniciando o Firebase
 const firebaseApp = initializeApp(firebaseConfig);
@@ -26,29 +26,43 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 // iniciando autenticação
 const auth = getAuth(firebaseApp);
-//testando o emulador local
-//connectAuthEmulator(auth, "http://127.0.0.1:9099");
 
-// const logInWithEmailAndPassword = async => {
-//   const loginEmail = inputEmail.value;
-//   const loginPassword = inputPassword.value;
-//   const userCredential = await (signInWithEmailAndPassword, loginEmail, loginPassword)
-//   console.log (userCredential.user)
-// }
-btnLogin.addEventListener("click",logInWithEmailAndPassword);
 
-const logInWithEmailAndPassword =() => {
- signInWithEmailAndPassword(auth, "admin@gmail.com", "admin123")
+const logInWithEmailAndPassword =(event) => {
+ event.preventDefault();
+ signInWithEmailAndPassword(auth, inputEmail.value,inputPassword.value)
   .then((userCredential) => {
-    // Signed in
     const user = userCredential.user;
-    console.log (userCredential)
+    console.log (user);
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+  });
+}
+form.addEventListener("submit",logInWithEmailAndPassword);
 
+//login com Google
+const provider = new GoogleAuthProvider;
+const signInWithGoogle= () =>{
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
   });
 }
 
-
+btnLoginGoogle.addEventListener("click",signInWithGoogle);

@@ -15,18 +15,19 @@
     <header>Logo</header>
 
     <main>
-      <form class="login">
+      <form class="login" id="form">
         <div class="email">
           <label for="e-mail">E-mail</label>
           <input type="email" class="input" id="e-mail" />
         </div>
-        <div class="senha">
+        <div class="password">
           <label for="password">Senha</label>
           <input type="password" class="input" id="password" />
         </div>
+        <div class="login-error"></div>
         <div class="btns">
-          <button class="btn" id="btn-login">Entrar</button>
-          <button class="btn" id="btn-login-Google">Entrar com Google</button>
+          <button class="btn" id="btn-login" type="submit">Entrar</button>
+          <button class="btn" id="btn-login-Google" type="button">Entrar com Google</button>
           <button class="btn" id="btn-create-account">Criar conta</button>
         </div>
       </form>

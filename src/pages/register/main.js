@@ -29,7 +29,6 @@ export default () => {
   const btnRegister = registerContainer.querySelector('.btn-register');
 
   btnRegister.addEventListener('click', () => {
-    // event.preventDefault();
     registerWithEmailAndPassword(inputEmail.value, inputPassword.value)
     .then((userCredential) => {
         const user = userCredential.user;

@@ -1,150 +1,175 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: linear-gradient(#5E17EB, #A87CFE);
-  }
-  
-  :root {
-    --branco: #ffffff;
-    --roxo: #5E17EB;
-    --violeta: #9B59B6;
-    --lilas: #A87CFE;
-    --black: #000000;
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .login {
-    color: var(--branco);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 500px;
-    min-height: 100vh;
-    padding: clamp(35px, 8%, 70px);
-    border-radius: var(--black);
-  }
-  .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .login__logo {
-    width: 130px;
-    margin-bottom: 80px;
-  }
-  .login__title {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-  }
-  .login__label {
-    display: block;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  .input {
-    width: 100%;
-    background-color: var(--light-grey);
-    border: 2px solid rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    outline: none;
-    font-size: 0.9em;
-    padding: 25px 10px 10px;
-    font-weight: 600;
-  }
-  .login__label span {
-    position: absolute;
-    font-size: 0.8em;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 20px;
-    cursor: text;
-    transition: all 200ms ease;
-  }
-  .login__label .span-active {
-    font-size: 0.7em;
-    margin: 8px 10px;
-  }
-  .login__icons {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    margin-top: 20px;
-  }
-  .login__icons img {
-    width: 20px;
-  }
-  .icons__button {
-    width: 33.33%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-  }
-  .login__label--checkbox {
-    width: 100%;
-    margin: 15px 0 50px;
-    font-size: 0.9em;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-  }
-  .input--checkbox {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: var(--light-grey);
-    margin-right: 8px;
-    border-radius: 3px;
-  }
-  .input--checkbox:checked {
-    background-color: var(--red);
-  }
-  .input--checkbox:checked::after {
-    content: "";
-    display: block;
-    width: 5px;
-    height: 10px;
-    border: 3px solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-    margin: 2px 6px;
-  }
-  .login__button {
-    width: 60px;
-    height: 60px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 60px;
-  }
-  .login__button svg {
-    fill: white;
-  }
-  .login__button:disabled {
-    cursor: auto;
-    background-color: white;
-  }
-  .login__link {
-    font-size: 0.8em;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    font-weight: 700;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(#5E17EB, #A87CFE);
+}
+
+:root {
+  --branco: #ffffff;
+  --roxo: #5E17EB;
+  --violeta: #9B59B6;
+  --lilas: #A87CFE;
+  --black: #000000;
+}
+
+main {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top:6vw;
+  margin-bottom: 8vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+  .all{
+    background: rgb(255, 255, 255, 0.1);
+}
+.login {
+  color: var(--branco);
+  background: rgb(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 25vw;
+  min-height: 35vw;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.login__logo {
+  width: 130px;
+  background: rgb(255, 255, 255, 0.2);
+}
+
+.login__title {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  background: rgb(255, 255, 255, 0.2);
+}
+
+.login__label {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: 2px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.9em;
+  padding: 25px 10px 10px;
+  font-weight: 600;
+}
+
+.login__label span {
+  position: absolute;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 20px;
+  cursor: text;
+  transition: all 200ms ease;
+}
+
+.login__label .span-active {
+  font-size: 0.7em;
+  margin: 8px 10px;
+}
+
+.login__icons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login__icons img {
+  width: 20px;
+}
+
+.icons__button {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.login__label--checkbox {
+  width: 100%;
+  margin: 15px 0 50px;
+  font-size: 0.9em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.input--checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--light-grey);
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+.input--checkbox:checked {
+  background-color: var(--red);
+}
+
+.input--checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: 3px solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  margin: 2px 6px;
+}
+
+.login__button {
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.login__button svg {
+  fill: white;
+}
+
+.login__button:disabled {
+  cursor: auto;
+  background-color: white;
+}
+
+.login__link {
+  font-size: 0.8em;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.wallpaper img{
+  width: 25vw;
+  height: 35vw;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

@@ -97,10 +97,10 @@ export default () => {
       .then((snapshot) => {
         const postContainer = snapshot.docs.reduce((acc, doc) => {
           const {
-            name, text, movie, createdAt,
+            name, text, movie, createdAt, like,
           } = doc.data();
           // eslint-disable-next-line no-param-reassign
-          acc += ` <div data-id= ${doc.id} class="posts">
+          acc += ` <div class="posts" id="poster-${doc.id}">
                  <div class="img-movie">
                  <img id="testImg" src="./img/loadingimg.png" alt="logo Laboratória">
                  </div>
@@ -110,14 +110,15 @@ export default () => {
                          <h2>${movie}</h2>
                      </div>
                      <div class="about-movies">
-                         ${text}
+                     ${text}
                      </div>
                      <div class="stars">
-                     ❤️
-                         <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
-                     <div class="buttons-posts"> 
-                         <button data-remove=${doc.id}  class="buttons" type="button" id="btn-delete"> Apagar</button>
-                         <button class="buttons" type="button" id="btn-edit"> Editar</button>
+                     <span class="getLike">${like}</span>
+                     <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
+                         <p class="username" id="userCurrent">Enviado por:${name} </p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
+                         <div class="buttons-posts"> 
+                         <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-delete"> Apagar</button>
+                         <button data-edit=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-edit"> Editar</button>
                          </div>
                      </div>
                  </div>
@@ -131,13 +132,17 @@ export default () => {
   }
   postTemplate();
 
+  const userId = firebase.auth().currentUser.uid;
+
   formAction.addEventListener('submit', (event) => {
     event.preventDefault();
     db.collection('test').add({
       name: event.target.name.value,
+      user_id: userId,
       movie: event.target.movie.value,
       createdAt: new Date(),
       text: event.target.text.value,
+      like: 0,
     })
       .then(() => {
         container.querySelector('#message').value = '';
@@ -156,12 +161,75 @@ export default () => {
 
   boxPost.addEventListener('click', (e) => {
     const removeButtonId = e.target.dataset.remove;
+    const userCurrent = e.target.dataset.user;
 
     if (removeButtonId) {
-      db.collection('test').doc(removeButtonId).delete()
+      // eslint-disable-next-line space-before-blocks
+      if (userId !== userCurrent){
+        alert('Não é possivel deletar post de outros usuarios');
+        return false;
+      }
+
+      const resultado = window.confirm('Você deseja apagar essa postagem?');
+      if (resultado === true) {
+        db.collection('test').doc(removeButtonId).delete()
+          .then(() => {
+            const posts = document.querySelector('#poster-'+removeButtonId);
+            posts.remove();
+          });
+      }
+    }
+  });
+
+  boxPost.addEventListener('click', (e) => {
+    const editButton = e.target.dataset.edit;
+    const userCurrent = e.target.dataset.user;
+
+    if (editButton) {
+      if (userId !== userCurrent) {
+        alert('Não é possivel editar post de outros usuarios');
+        return false;
+      }
+
+      const resultado = window.confirm('Você deseja editar essa postagem?');
+
+      if (resultado === true) {
+        const updateMovie = prompt('Digite o nome do filme/série')
+        const updateText = prompt('Digite seu spoiler')
+
+        boxPost.querySelector('#poster-'+editButton).getElementsByTagName('h2')[0].innerHTML = updateMovie;
+        boxPost.querySelector('#poster-'+editButton).getElementsByClassName('about-movies')[0].innerHTML = updateText;
+        db.collection('test').doc(editButton)
+          .update({
+            movie: updateMovie,
+            text: updateText,
+          })
+          .then(() => {
+          })
+          .catch(() => {
+            alert('Algo deu errado. Por favor, tente novamente.');
+          });
+      }
+    }
+  });
+
+  boxPost.addEventListener('click', (e) => {
+    const buttonLike = e.target.dataset.liked;
+    const resultado = window.confirm('Você deseja dar like nessa postagem?');
+
+    if (resultado === true) {
+      const increment = firebase.firestore.FieldValue.increment(1);
+      console.log(increment);
+      boxPost.querySelector('#poster-'+buttonLike).getElementsByClassName('getLike')[0].innerHTML = increment;
+      db.collection('test').doc(buttonLike)
+        .update({
+          like: increment,
+        })
         .then(() => {
-          const posts = document.querySelector(`[data-id="${removeButtonId}"]`);
-          posts.remove();
+          console.log('você curtiu isso');
+        })
+        .catch(() => {
+          console.log('Algo deu errado. Por favor, tente novamente.');
         });
     }
   });

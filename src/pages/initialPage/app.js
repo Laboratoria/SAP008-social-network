@@ -8,7 +8,6 @@ export default () => {
         <span id="idUser"> Olá, ${user.displayName}</span>
         <span class="VanellenMore">Vanellen <span
                 style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>
-               
     </div>
   
     <div class="navbar">
@@ -18,13 +17,13 @@ export default () => {
     </div>
   
     <div class="content">
-        <p> <a href="#best-vanellen-movies"> <span
+        <p> <a href="#movies"> <span
             style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">#</span>
-        Melhores filmes de acordo com os usuários</a></p>
+        Melhores filmes Vanellen</a></p>
         
-        <a id="text" href="#best-user-movies"> <span
-                style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">#</span>
-            Melhores séries de acordo com os usuários</a>
+        <p> <a id="text" href="#series"> <span
+        style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">#</span>
+    Melhores series Vanellen</a></p>
     </div>
   </div>
   
@@ -84,7 +83,7 @@ export default () => {
     e.preventDefault();
     firebase.auth().signOut().then(() => {
       main.innerHTML = ' ';
-      window.location.hash = '#login';
+      window.location.hash = ' ';
     });
   });
   const dateConvert = (dateCvt) => {
@@ -121,6 +120,7 @@ export default () => {
                          </div>
                      </div>
                  </div>
+               
              </div>
              `;
           return acc;

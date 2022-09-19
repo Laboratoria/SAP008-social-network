@@ -1,0 +1,287 @@
+.posts-movies {
+    display: grid;
+    grid-template-columns: 4vw 4vw;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 42vh;
+}
+
+.movies h1 {
+    width: 70%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.picture-image {
+    margin-left: 7%;
+}
+
+#movieImg {
+    width: 14vw;
+    border-radius: 5px;
+    box-shadow: 3px 2px 2px 3px #777474;
+}
+
+.title-movies {
+    width: 16vw;
+    margin-bottom: 2%;
+    margin-left: 11rem;
+    font-size: 0.8rem;
+}
+
+.overview-movies {
+    width: 40vw;
+    max-height: 45%;
+    margin-left: 11rem;
+    font-size: 0.9rem;
+}
+
+.overview-movies p {
+    margin-top: 2%;
+}
+
+.likes {
+    margin-left: 7rem;
+    margin-bottom: 3rem;
+}
+
+#star {
+    margin-left: 10rem;
+}
+
+.username {
+    font-size: .8rem;
+}
+
+footer {
+    z-index: 1;
+}
+
+.wrapper {
+    height: 10vh;
+}
+
+@media only screen and (max-width: 915px) and (min-width: 550px) {
+
+    .posts-movies {
+        display: grid;
+        grid-template-columns: 4vw 4vw;
+        margin-left: 2%;
+        margin-top: 2%;
+        height: 19vh;
+    }
+
+    .movies h1 {
+        width: 70%;
+        margin: auto;
+        margin-top: 2%;
+        text-align: center;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #movieImg {
+        width: 18.5vw;
+    }
+
+    .title-movies {
+        width: 45vw;
+        margin-bottom: 0.4rem;
+        margin-left: 10rem;
+        font-size: 0.8rem;
+    }
+
+    .overview-movies {
+        width: 75vw;
+        margin-left: 10rem;
+    }
+
+    .overview-movies p {
+        margin-top: 2%;
+    }
+
+    .likes {
+        margin-left: 9rem;
+        margin-bottom: 2rem;
+    }
+
+    #star {
+        margin-left: 2rem;
+    }
+
+    .username {
+        font-size: .8rem;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 0;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 415px) and (min-width: 279px) {
+    .VanellenMore {
+        font-size: 1.3rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    .VanellenMore {
+        font-size: 1.3rem;
+        margin-right: 5%;
+        margin-top: 6%;
+    }
+
+    #logo {
+        width: 27vw;
+    }
+
+    .navbar {
+        margin-top: 22%;
+    }
+
+    .navbar a {
+        margin-right: 10%;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: .7rem;
+    }
+    .posts-movies {
+        height: auto;
+        margin-bottom: 5%;
+    }
+
+    .movies h1 {
+        width: 85%;
+        margin-bottom: 10%;
+        font-size: 1.1rem;
+        margin-top: 10%;
+    }
+
+    #movieImg {
+        width: 28vw;
+        margin-left: 5%;
+    }
+
+    .title-movies {
+        width: 60vw;
+        margin-left: 9rem;
+    }
+
+    .overview-movies {
+        width: 60vw;
+        margin-left: 9rem;
+    }
+
+    .overview-movies p {
+        margin-top: 2%;
+    }
+
+    .likes {
+        margin-left: 7.5rem;
+    }
+
+    #star {
+        margin-left: 2rem;
+    }
+
+    .username {
+        font-size: .8rem;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 0;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+
+@media only screen and (max-width: 950px) and (min-width: 760px) {
+
+    .movies h1 {
+        margin-bottom: 10%;
+        font-size: 1.7rem;
+    }
+
+    .overview-movies p {
+        font-size: 1.2rem;
+    }
+
+    .overview-movies {
+        width: 70vw;
+        font-size: 1.2rem;
+    }
+    
+    .posts-movies {
+        height: auto;
+        margin-bottom: auto;
+    }
+
+    .likes{
+        margin-left: 11rem;
+    }
+
+    #movieImg {
+        margin-top: 0;
+    }
+
+    .wrapper{
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1023px) and (max-width: 1280px) {
+    .overview-movies {
+        width: 70vw;
+        font-size: 1.2rem;
+        margin-left: 9rem;
+        height: auto;
+    }
+    
+    .posts-movies {
+        height: auto;
+    }
+
+    .likes{
+        margin-left: 3rem;
+    }
+
+    .title-movies {
+        width: 60vw;
+        margin-left: 9rem;
+    }
+}

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -35,15 +34,15 @@ body {
     border-radius: 2%;
 }
 
-.box-center .logo-login {
+.box-center .logo-register {
     text-align: center;
 }
 
-#logo-login {
+#logo-register {
     width: 14vw;
 }
 
-.logo-login {
+.logo-register {
     height: 185px;
 }
 
@@ -73,7 +72,7 @@ body {
     margin-top: 2%;
 }
 
-.form input {
+.form-register input {
     width: 98%;
     height: 50px;
     margin: 5px;

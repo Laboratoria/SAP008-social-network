@@ -6,11 +6,6 @@
     margin: 0;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -20,6 +15,7 @@ body {
 .container-login {
     display: flex;
     width: 100%;
+    height: 100%;
     font-size: 0;
     align-items: center;
     justify-content: center;
@@ -52,11 +48,11 @@ body {
 }
 
 #logo-login {
-    width: 14vw;
+    width: 16vw;
 }
 
 .logo-login {
-    height: 185px;
+    height: 28vh;
 }
 
 .box-right .register {
@@ -140,7 +136,7 @@ body {
 }
 
 .form input {
-    width: 98%;
+    width: 82%;
     height: 50px;
     margin: 5px;
     border: 1px solid #808080;
@@ -173,24 +169,30 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    background-color: #E1DFDF;
 }
 
-.foot p {
+.foot {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.developers {
     justify-content: space-between;
     color: #272525;
-    padding: .2%;
     text-align: end;
-    margin-right: 18%;
     font-size: 1rem;
 }
 
-.foot img {
-    margin-top: .5%;
-    position: absolute;
-    margin-left: 18%;
+.developers {
+    margin-top: 5px;
 }
 
-@media only screen and (max-width: 600px) {
+.foot img {
+    display: grid;
+}
+
+@media only screen and (max-width: 745px) {
 
     .container-login {
         display: block;
@@ -200,11 +202,7 @@ footer {
     }
 
     #logo-login {
-        width: 35vw;
-    }
-
-    .logo-login {
-        height: 150px;
+        width: 40vw;
     }
 
     .box-left {
@@ -225,6 +223,7 @@ footer {
         margin-right: 3%;
         margin-top: 2%;
         margin-bottom: 20%;
+        padding: 2%;
     }
 
     .box-right .button {
@@ -242,20 +241,6 @@ footer {
         margin-bottom: 6%;
     }
 
-    .foot {
-        padding: 2%;
-    }
-
-    .foot p {
-        font-size: 0.6rem;
-        margin-right: 6%;
-    }
-
-    .foot img {
-        margin-left: 1%;
-        width: 180px;
-    }
-
     .box-left p {
         margin-top: 14%;
         font-size: 1.2rem;
@@ -264,7 +249,7 @@ footer {
     }
 
     .wrapper-login {
-        margin-bottom: 50%;
+        height: 100%;
     }
 
 }
@@ -273,10 +258,15 @@ footer {
 
     .container-login {
         display: block;
-        width: auto;
         font-size: 0;
-        margin: auto;
         padding: 2%;
+    }
+  
+    #logo-login {
+        width: 40vw;
+    }
+    .logo-login{
+        height: 25vh;
     }
 
     .box-left {
@@ -284,6 +274,9 @@ footer {
         width: 100%;
         margin-left: 1%;
         height: auto;
+    }
+    .register p{
+        font-size: 1.5rem;
     }
 
     .box-left p {
@@ -295,15 +288,19 @@ footer {
 
     #gif-vanellen {
         height: 10%;
-        width: 95%;
+        width: 97%;
         border-radius: 5px;
     }
 
     .box-right {
         width: 95%;
-        font-size: 1.2rem;
-        margin-right: 3%;
+        font-size: 1rem;
+        margin-left: 2%;
         margin-top: 2%;
+        padding: 2%;
+    }
+    #logo-gmail{
+        margin-left: 70px;
     }
 
     .box-right .button {
@@ -312,29 +309,16 @@ footer {
 
     .box-right .register {
         width: 78%;
-        font-size: 1.3rem;
+        font-size: 1.7rem;
         margin-left: 11%;
     }
 
-    #register {
-        font-size: 1rem;
-        color: #1e1d1d;
+    .wrapper-login{
+        padding-bottom: 20vh;
     }
-
-    .foot {
-        padding: 4%;
+    .foot{
+        height: 100%;
     }
-
-    .foot p {
-        font-size: 1.3rem;
-        margin-left: 50%;
-    }
-
-    .foot img {
-        margin-left: 5%;
-        width: 270px;
-    }
-
 }
 
 @media only screen and (max-width: 1281px) and (min-width: 1024px) {
@@ -386,30 +370,18 @@ footer {
         font-size: 1rem;
         color: #1e1d1d;
     }
-
-    .foot {
-        padding: 1%;
-    }
-
-    .foot p {
-        font-size: 1.3rem;
-        margin-right: 5%;
-    }
-
-    .foot img {
-        margin-left: 5%;
-        width: 270px;
-    }
-
 }
 
-@media only screen and (max-width: 950px) and (min-width:820px) {
+@media only screen and (max-width: 1000px) and (min-width:820px) {
 
     .container-login {
         width: auto;
         font-size: 0;
         margin: auto;
         padding: 2%;
+        padding-top: 30%;
+        background-color: #151414;
+        border: 1px solid #151414 ;
     }
 
     .box-left {
@@ -423,6 +395,10 @@ footer {
         margin-top: 14%;
         font-size: 1.4rem;
         margin-left: 2%;
+    }
+    .logo-login{
+        height: 8vh;
+        margin-bottom: 10%;
     }
 
     #gif-vanellen {
@@ -439,7 +415,7 @@ footer {
     }
 
     .box-right .button {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .box-right .register {
@@ -448,23 +424,11 @@ footer {
         margin-left: 11%;
     }
 
-    #register {
-        font-size: 1rem;
-        color: #1e1d1d;
-    }
+    .wrapper-login {
+        padding-bottom: 40%;
+        height: 100%;
+        background-color: #151414;
+        border: 1px solid #151414 ;
 
-    .foot {
-        padding: 1%;
-    }
-
-    .foot p {
-        font-size: 1.3rem;
-        margin-right: 6%;
-    }
-
-    .foot img {
-        margin-left: 5%;
-        width: 270px;
-    }
-
+}
 }

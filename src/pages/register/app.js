@@ -2,11 +2,11 @@ export default () => {
   const container = document.createElement('div');
   const template = `  <div class="container-register">
     <div class="box-center">
-      <div class="logo-login">
-        <img id="logo-login" src="./img/logo.png" alt="logo">
+      <div class="logo-register">
+        <img id="logo-register" src="./img/logo.png" alt="logo">
       </div>
   
-        <div class="form">
+        <div class="form-register">
             <input type="text" id="nameUser" placeholder="Digite seu nome" >
             <input type="email" id="emailUser" placeholder="Digite seu e-mail" > 
             <input type="password" id="passwordUser" placeholder="Digite sua senha" >

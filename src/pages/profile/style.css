@@ -5,3 +5,17 @@
     width: 20vw;
     height: 40vh;
 }
+
+@media only screen and (max-width: 700px) and (min-width:270px) {
+    #img_redonda{
+        width: 30vw;
+        height: 20vh;
+    }
+}
+
+@media only screen and (max-width: 940px) and (min-width: 600px) {
+    #img_redonda{
+        width: 35vw;
+        height: 30vh;
+    }
+}

@@ -70,7 +70,7 @@ body {
     grid-row-gap: 2px;
     padding: 2%;
     margin-top: 2%;
-    margin-left: 14%;
+    margin-left: 20%;
 }
 
 .content a {
@@ -243,10 +243,15 @@ footer {
     display: grid;
 }
 
+
+
 @media only screen and (max-width: 541px) and (min-width: 395px) {
 
-    body {
-        display: block;
+    .VanellenMore {
+        font-size: 1.3rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
     }
 
     .logo {
@@ -257,8 +262,9 @@ footer {
     }
 
     #idUser {
-        margin-top: 7.5%;
-        margin-left: 7%;
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
     }
 
     .VanellenMore {
@@ -268,15 +274,15 @@ footer {
     }
 
     #logo {
-        width: 25vw;
+        width: 27vw;
     }
 
     .navbar {
-        margin-top: 20%;
+        margin-top: 22%;
     }
 
     .navbar a {
-        margin-right: 18%;
+        margin-right: 30%;
     }
 
     .content {
@@ -288,22 +294,16 @@ footer {
         font-size: .7rem;
     }
 
-    #img-movie {
-        width: 32vw;
-        margin-left: 6%;
-        padding: 0;
-    }
-
     .name-movies {
-        width: 300px;
+        width: 40vw;
         margin-left: 4%;
+        font-size: 15px;
     }
 
     .about-movies {
-
-        width: 300px;
+        width: 37vw;
         margin-top: 4%;
-        margin-left: 4%;
+        margin-left: 3%;
     }
 
     .name-movies h1 {
@@ -332,7 +332,7 @@ footer {
     }
 
     .wrapper {
-        margin-bottom: 100%;
+        margin-bottom: auto;
     }
 
     .foot img {
@@ -365,8 +365,6 @@ footer {
     .about-movies {
         width: 18vw;
         height: auto;
-        overflow: clip;
-        text-overflow: ellipsis;
         font-size: 16px;
     }
 
@@ -389,15 +387,10 @@ footer {
         display: none;
     }
 
-    .wrapper {
-        height: 8rem;
-    }
-
     .text_share,
     h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 2%;
-        text-align: center;
     }
 
     #postx {
@@ -408,11 +401,6 @@ footer {
         width: 50%;
         height: 50px;
         display: block;
-        margin-top: 1%;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        padding: 1%;
     }
 
     #buttonSend {
@@ -471,6 +459,7 @@ footer {
 
     .content {
         display: block;
+        margin: auto;
     }
 
     .content a {
@@ -578,7 +567,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 910px) and (min-width: 600px) {
+@media only screen and (max-width: 915px) and (min-width: 600px) {
 
     .VanellenMore {
         font-size: 2rem;
@@ -601,13 +590,14 @@ footer {
     }
 
     .navbar a {
-        margin-right: 10%;
+        margin-right: 20%;
         font-size: 24px;
         padding: 2%;
     }
 
     .content {
         display: block;
+        margin: auto;
     }
 
     .content a {
@@ -632,8 +622,8 @@ footer {
 
     .about-movies {
         width: 34vw;
-        height: 45%;
-        font-size: 18px;
+        height: auto;
+        font-size: 20px;
     }
 
     .text_share {
@@ -749,19 +739,6 @@ footer {
         margin-left: 7%;
     }
 
-    #testImg {
-        width: 70px;
-        height: 100px;
-    }
-
-    .text_share {
-        text-align: center;
-    }
-
-    #fill-form {
-        margin-top: 5%;
-        font-size: 1.2rem;
-    }
 
     .name-movies {
         font-size: 0.6rem;
@@ -865,7 +842,7 @@ footer {
 
     .about-movies {
         width: 28vw;
-        height: 55%;
+        height: auto;
         font-size: 18px;
     }
 
@@ -888,16 +865,6 @@ footer {
     .formInput {
         width: 100%;
         margin-top: 2%;
-    }
-
-    #buttonSend {
-        height: 50px;
-        width: 100%;
-        margin: auto;
-        padding: 5px;
-        margin-top: 1%;
-        margin-bottom: 20%;
-        font-size: 2rem;
     }
 
     #message {

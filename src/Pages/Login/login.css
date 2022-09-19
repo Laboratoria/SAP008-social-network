@@ -33,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 65vh;
+    height: 100vh;
   }
 
   .title-login {
@@ -45,10 +45,10 @@ body {
   }
 
   .inputs {
-    width: 10rem;
+    width: 8rem;
     color: #14617d;
     font-size: 0.9rem;
-    margin: 0 0.8rem 1.4rem -2rem;
+    margin: 0 2rem 1.4rem -2rem;
   }
 
   .input-email,
@@ -69,21 +69,21 @@ body {
   .buttons {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   .btn-login {
     width: 9.6rem;
-    height: 2rem;
+    height: 1.5rem;
     border-radius: 0.2rem;
     border: none;
     background-color: #2E94B9;
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
-    text-align: center;
-    justify-content: center;
     margin-bottom: .8rem;
     margin-top: .5rem;
+    padding-top: .7rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
@@ -109,5 +109,22 @@ body {
     height: 1.2rem;
     margin-left: .2rem;
     margin-top: .2rem;
+  }
+
+  .btn-register {
+    width: 8rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: #4BD268;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-bottom: .8rem;
+    margin-top: 2rem;
+    margin-left: .8rem;
+    padding-top: .7rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 } 

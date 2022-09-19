@@ -2,6 +2,7 @@ import homepage from './pages/homepage/main.js';
 import about from './pages/about/main.js';
 import register from './pages/register/main.js';
 import login from './pages/login/main.js';
+import feed from "./pages/feed/main.js";
 import './lib/firebase-configuration.js';
 
 const main = document.querySelector('#root');
@@ -21,6 +22,9 @@ const init = () => {
         break;
       case '#register':
         main.appendChild(register());
+        break;
+      case '#feed':
+        main.appendChild(feed());
         break;
       default:
         main.innerHTML = '';

@@ -36,7 +36,7 @@ export default () => {
   
         <div class="register">
           <button type="button" id="button-enter" class="button">Entrar</button>
-          <p>Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
+          <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
         </div>
       </div>
     </div>

@@ -1,4 +1,7 @@
-import "./config-firebase.js"
-import { myFunction } from './lib/index.js';
+import "./config-firebase"
+/*import { myFunction } from './lib/index.js';
 
-myFunction();
+myFunction();*/
+import login from "./lib/login.js" 
+
+window.addEventListener ("load",)

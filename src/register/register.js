@@ -1,7 +1,5 @@
-import { registerUser } from '../firebase/firebase.js' //importei a const registerUser para poder criar o evento de escuta e fazer a funcionalidade
-                                                        //do usuario se cadastrar c/ e-mail e senha. Separei dessa forma para deixar o evento funcionar
-                                                        //logo após do template criado.
-
+import { registerUser } from '../firebase/firebase.js' 
+                                                                                                             
 export default () => {
     const container = document.createElement('div');
     const template = `  
@@ -25,7 +23,6 @@ export default () => {
         
         container.innerHTML = template;
 
-        // -- EVENTO DE CLICK
 
         container.querySelector('#btn-register').addEventListener('click', e => {
             e.preventDefault();

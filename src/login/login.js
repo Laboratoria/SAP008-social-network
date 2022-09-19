@@ -1,10 +1,4 @@
-import { userLogin } from '../firebase/firebase.js' //importei a const userLogin para poder criar o evento de escuta e fazer a funcionalidade
-                                                    //do usuario logar com e-mail e senha. Separei dessa forma para deixar o evento funcionar
-                                                    //logo após do template criado.
-                                                    //Obs (Andrea): Precisa mudar o nome da pasta do arquivo para login.js, ficou como app.js, 
-                                                        //a não se que a gente adote app.js para todas as pastas como as meninas
-                                                    //O evento e click vc fez de acordo com o vídeo da documentação do firebase?
-                                                 
+import { userLogin, loginGoogle } from '../firebase/firebase.js'                                         
 
 export default () => {
     const container = document.createElement('div');
@@ -16,22 +10,18 @@ export default () => {
             <p class = "sub-title">Momentos musicais inesqueciveis</p>                     
             <form>
                 <input class="box-name" type="e-mail" id="e-mail" placeholder="Nome de usuário ou e-mail"/>
-                <input class= "box-password" type="senha" id="senha" placeholder="Digite sua senha"/> 
-                <input class="box-enter" type="button" id="btn-submit" class="btn-submit" value="Entrar"/>       
+                <input class="box-password" type="senha" id="senha" placeholder="Digite sua senha"/> 
+                <input class="box-enter" type="button" id="btn-submit" value="Entrar"/>
+                <input class="new-password" type="button" id="btn-password" value="Esqueci a senha"/>
+                <input class="box-login-google" type="button" id="btn-google" value="Continuar com conta google"/> 
+                <input class="box-register" type="button" id="btn-register" value="Cadastre-se"<a href = '#register'>/>      
             </form>
             
-            <a class="new-password" "href="">Esqueci a senha</a>
-            </br>
-            <a class="box-login-google" placeholder=" " href="">Continuar com sua conta do google</a>
-            </br>
-            <p class="box-register"><a href = '#register'>Cadastre-se</p>
-
-        </div>     
+               </div>     
     `;
 
     container.innerHTML = template;
 
-    // -- EVENTO DE CLICK
     
     container.querySelector('#btn-submit').addEventListener('click', e => {
         e.preventDefault();
@@ -40,6 +30,14 @@ export default () => {
         userLogin(email, password);
     });
 
-    return container;
-}
 
+    container.querySelector('#btn-google').addEventListener('click', e => {
+        e.preventDefault();
+        loginGoogle();
+    });
+
+
+    return container;
+
+
+}

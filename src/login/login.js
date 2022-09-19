@@ -1,6 +1,4 @@
-import { userLogin } from '../firebase/firebase.js' //importei a const userLogin para poder criar o evento de escuta e fazer a funcionalidade
-                                                    //do usuario logar com e-mail e senha. Separei dessa forma para deixar o evento funcionar
-                                                    //logo após do template criado.
+import { userLogin } from '../firebase/firebase.js' 
 
 export default () => {
     const container = document.createElement('div');

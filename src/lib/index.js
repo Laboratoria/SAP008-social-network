@@ -14,14 +14,7 @@ export function registerWithEmailAndPassword(email, password) {
 }
 
 export function loginWithEmailAndPassword(email, password) {
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+  return signInWithEmailAndPassword(auth, email, password);
 }
 
 // aqui exportaras las funciones que necesites

@@ -35,6 +35,7 @@ export default () => {
         </div>
   
         <div class="register">
+        <span id="recover" style="border:ridge; font-size:1.0rem"> Esqueci a senha 😰 </span>
           <button type="button" id="button-enter" class="button">Entrar</button>
           <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
         </div>
@@ -56,6 +57,7 @@ export default () => {
 
   const buttonEnter = container.querySelector('#button-enter');
   const buttonGmail = container.querySelector('#button-gmail');
+  const buttonRecover = container.querySelector('#recover');
   const inputEmail = container.querySelector('#inputEmail');
   const inputPassword = container.querySelector('#inputPassword');
 
@@ -115,5 +117,19 @@ export default () => {
     window.location.href = '#register';
   });
 
+  function recover() {
+    firebase.auth().sendPasswordResetEmail(inputEmail.value).then(() => {
+      alert('Email enviado com sucesso');
+    }).catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/invalid-email') {
+        alert('E-mail inválido');
+      } else {
+        alert('Algo deu errado. Por favor, tente novamente.');
+      }
+    });
+  }
+
+  buttonRecover.addEventListener('click', recover); 
   return container;
 };

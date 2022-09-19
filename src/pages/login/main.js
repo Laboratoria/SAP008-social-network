@@ -1,3 +1,5 @@
+import { loginWithEmailAndPassword } from '../../lib/index.js';
+
 export default () => {
   const loginContainer = document.createElement('div');
   const template = `
@@ -10,16 +12,17 @@ export default () => {
 
             <form class="login-form display-flex">
 
-                <h2 class="login-text">ENTRAR</h2>
-                <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login"><p>
-                <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login"></p>
-                <a href="/#resetpassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
-                <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
-
-            </form class="login-form">
-
-            <button class="btn-google-login display-flex"><img class="google-btn-register" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
+              <h2 class="login-text">ENTRAR</h2>
+              <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login"><p>
+              <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login"></p>
+              <a href="/#resetpassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
+                
+            </form>
+                
+            <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
             
+            <button class="btn-google-login display-flex"><img class="google-btn-register" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
+      
             <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
 
           </main>
@@ -28,6 +31,21 @@ export default () => {
 
   const returnBtn = loginContainer.querySelector('#return-btn');
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+  
+  const inputEmail = loginContainer.querySelector('#email-input-login');
+  const inputPasssword = loginContainer.querySelector('#password-input-login');
+  const btnLogIn = loginContainer.querySelector('#btn-login-page');
+  btnLogIn.addEventListener('click', () => {
+    loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+  })
 
   return loginContainer;
 };

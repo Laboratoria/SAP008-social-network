@@ -3,7 +3,7 @@ import register from './pages/register/app.js';
 import initialPage from './pages/initialPage/app.js';
 import profile from './pages/profile/app.js';
 import about from './pages/about/app.js';
-import movies from './movies.js';
+import movies from './pages/movies/movies.js';
 import series from './pages/series/app.js';
 
 const main = document.querySelector('#root');

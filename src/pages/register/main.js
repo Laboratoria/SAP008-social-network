@@ -1,3 +1,5 @@
+import {registerWithEmailAndPassword} from '../../lib/index.js'
+
 export default () => {
   const registerContainer = document.createElement('div');
   const template = `
@@ -11,8 +13,8 @@ export default () => {
                 <input id="register-input" class="input-style" type="email" placeholder="E-MAIL">
                 <input type="password" id="password-register" class="input-style" placeholder="SENHA">
                 <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
-                <input type="submit" class="btn-register" value="CADASTRAR">
             </form>
+            <input type="submit" class="btn-register" value="CADASTRAR">
             <button class="btn-google-register display-flex"><img class="google-btn-register" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
         </main>
     `;
@@ -20,5 +22,25 @@ export default () => {
 
   const returnBtn = registerContainer.querySelector('#return-btn');
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+
+  
+  const inputPassword = registerContainer.querySelector('#password-register');
+  const inputEmail = registerContainer.querySelector('#register-input');
+  const btnRegister = registerContainer.querySelector('.btn-register');
+
+  btnRegister.addEventListener('click', () => {
+    // event.preventDefault();
+    registerWithEmailAndPassword(inputEmail.value, inputPassword.value)
+    .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(userCredential);
+        return user;
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  });
+
   return registerContainer;
 };

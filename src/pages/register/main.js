@@ -33,7 +33,7 @@ export default () => {
     registerWithEmailAndPassword(inputEmail.value, inputPassword.value)
     .then((userCredential) => {
         const user = userCredential.user;
-        console.log(userCredential);
+        window.location.hash = "#feed";
         return user;
     })
     .catch((error) => {

@@ -221,7 +221,7 @@ export default () => {
       const resultado = window.confirm('Você deseja dar like nessa postagem?');
 
       if (resultado === true) {
-        const increment = firebase.firestore.FieldValue.increment(1);   
+        const increment = firebase.firestore.FieldValue.increment(1);
         boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = increment;
         db.collection('test').doc(buttonLike)
           .update({

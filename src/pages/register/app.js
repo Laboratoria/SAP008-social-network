@@ -42,7 +42,7 @@ export default () => {
       .createUserWithEmailAndPassword(email.value, newPassword.value)
       .then((userCredential) => {
         const user = userCredential.user;
-        return user.updateProfile({ displayName: userName.value });
+        return user.updateProfile({ displayName: userName.value, uid: user.uid });
       })
       .then(() => {
         window.location.replace('#page');

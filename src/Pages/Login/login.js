@@ -2,11 +2,11 @@ export default () => {
     const container = document.createElement('div');
 
     const template = `
-        <figure class="img-logo">
+        <figure class="img-logo imgFlip">
             <img src="./Imagens/logo-mobile.png" alt="logo">
         </figure>
 
-        <form class="form-login">
+        <form class="form-login bounce">
             <h1 class="title-login">Inicie a sua sessão</h1>
             <section class="inputs">
             <label for="email" class="label">Digite seu e-mail</label>

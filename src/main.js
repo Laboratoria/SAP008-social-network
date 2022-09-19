@@ -5,7 +5,7 @@ import register from './register/register.js';
 //import post from "./post/post.js";
 //import profile from "./profile/profile.js";
 //import about from "./about/about.js";
-//import "./firebase/firebase-config.js";
+
 
 
 const main = document.querySelector('#root');

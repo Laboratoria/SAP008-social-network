@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
-
+import firebaseConfig from "./firebase-config.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -11,7 +11,6 @@ export const userLogin = (email, password) => {
     const user = userCredential.user;                     
     window.alert(`O e-mail logado foi ${user.email}`);    
   })                                                      
-
   .catch((error) => {                                     
     const errorCode = error.code;                         
     const errorMessage = error.message;

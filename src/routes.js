@@ -1,17 +1,25 @@
 import Login from './Pages/Login/login.js';
 import Signup from './Pages/Signup/signup.js';
-
 const main = document.querySelector('#root');
 
 const init = () => {
-    window.addEventListener('hashchange', () => console.log(window.location.hash) )
-}
+    window.addEventListener('hashchange', () => {
+        main.innerHTML = '';
+        switch(window.location.hash) {
+            case " ":
+                main.appendChild(Login());
+                break;
+            case "#Signup":
+                main.appendChild(Signup());
+                break;
+            default: main.appendChild(Login());
 
+        }
+    })
+
+}
 window.addEventListener('load', () => {
     main.appendChild(Login());
     init();
 });
-window.addEventListener('load', () => {
-    main.appendChild(Signup());
-    init();
-});
+

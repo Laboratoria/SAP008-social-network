@@ -13,41 +13,55 @@
 <body>
 
   <main class="all">
+
     <section class="login">
       <div class="wrapper">
+
         <img src="./img/picsfem.png" class="login__logo">
         <h1 class="login__title">Fazer login</h1>
+
+        <div id="form-container"></div>
         <form>
-         <label class="login__label">
+
+        <label class="login__label">
          <span>Email:</span>
-          <input id="txtEmail" type="email" name="email" class="input">
+          <input id="txtEmail" type="email" name="email" class="input" required>
         </label>
+
         <label class="login__label">
           <span>senha</span>
-          <input id="txtPassword" type="password" name="password" class="input">
+          <input id="txtPassword" type="password" name="password" class="input" required>
         </label>
+
         <div class="login__icons">
+
           <button type="button" class="icons__button">
             <img src="./img/iconfacebook.png" alt="facebok">
           </button>
+
           <button type="button" class="icons__button">
             <img src="./img/icongmail.png" alt="facebok">
           </button>
-           <button id="btnLogin" type="button" class="button buttonBlue">Entrar</button>
-           <button id="btnSignup" type="button" class="button buttonBlue">Criar conta</button>
-        <label class="login__label--checkbox">
+
+          <button id="btnLogin" type="button">Entrar</button>
+
+          <button id="btnSignup" type="button">Criar conta</button>
+
+          <label class="login__label--checkbox">            
           <input type="checkbox" class="input--checkbox">
           Manter login
-        </label>
-         <div class="wrapper">
-        <button type="button" class="login__button" disabled></button>
-        <a href="#" class="login__link">não consegue iniciar sessão?</a>
-        <button id="btnLogout" type="button" class="button buttonBlue">Log out</button>
+          </label>
+
+        <div class="wrapper">
+          <button type="button" class="login__button" disabled></button>
+          <a href="#" class="login__link">não consegue iniciar sessão?</a>
+          <button id="btnLogout" type="button" class="button buttonBlue">Log out</button>
         </div> 
+
         </form>
-      </div>
-     
+      </div>     
     </section>
+
     <div class="wallpaper">
       <img src="./img/foto.png">
     </div>

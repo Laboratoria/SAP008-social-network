@@ -1,8 +1,7 @@
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'
-import { btnLogin, btnSignup, btnLogout, txtEmail, txtPassword } from './main.js';
-
+import { btnLogin, btnSignup, btnLogout, txtEmail, txtPassword, formSignup } from './main.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC0LYibd7iDrRSG9t2pNqWjxVVpcZxuyuo",
@@ -12,7 +11,6 @@ const firebaseConfig = {
   messagingSenderId: "584087173369",
   appId: "1:584087173369:web:d5c821c45f15ff5cde0a28"
 };
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -23,14 +21,13 @@ const creatAccount = async () => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
     console.log(userCredential.user);
+    formSignup();
   }
   catch (error) {
     console.log(error)
   }
 }
-
 btnSignup.addEventListener("click", creatAccount);
-
 
 const loginEmailPassword = async () => {
   const loginEmail = txtEmail.value;
@@ -44,10 +41,7 @@ const loginEmailPassword = async () => {
     console.log(error);
   }
 }
-
 btnLogin.addEventListener("click", loginEmailPassword);
-
-
 
 onAuthStateChanged(auth, user => {
   if (user != null) {
@@ -57,10 +51,8 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-
 const logout = async () => {
   await signOut(auth);
 }
-
 btnLogout.addEventListener("click", logout)
 

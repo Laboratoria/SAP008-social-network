@@ -1,6 +1,10 @@
 import { userLogin } from '../firebase/firebase.js' //importei a const userLogin para poder criar o evento de escuta e fazer a funcionalidade
                                                     //do usuario logar com e-mail e senha. Separei dessa forma para deixar o evento funcionar
                                                     //logo após do template criado.
+                                                    //Obs (Andrea): Precisa mudar o nome da pasta do arquivo para login.js, ficou como app.js, 
+                                                        //a não se que a gente adote app.js para todas as pastas como as meninas
+                                                    //O evento e click vc fez de acordo com o vídeo da documentação do firebase?
+                                                 
 
 export default () => {
     const container = document.createElement('div');

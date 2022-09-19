@@ -159,6 +159,7 @@ body {
   padding: 1vw 2vw;
   border-radius: 20px;
   color: var(--roxo);
+  border: 0;
 }
 .criar{
   background-color: rgb(255, 255, 255, 0);

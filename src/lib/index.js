@@ -25,6 +25,7 @@ export function loginWithEmailAndPassword(email, password) {
 //     const credential = GoogleAuthProvider.credentialFromResult(result);
 //     const token = credential.accessToken;
 //     const user = result.user;
+//     return user;
 //   });
 // }
 // aqui exportaras las funciones que necesites

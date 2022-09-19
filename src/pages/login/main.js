@@ -51,8 +51,7 @@ export default () => {
   
   // const googleBtn = loginContainer.querySelector('#google-btn');
   // googleBtn.addEventListener('click', () => {
-  //   loginWithGoogle()
-  //   .then(() => {
+  //   loginWithGoogle().then(() => {
   //     window.location.hash = "#feed";
   //   })
   //   .catch((error) => {

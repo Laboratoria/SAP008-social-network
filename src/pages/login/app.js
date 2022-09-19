@@ -65,9 +65,8 @@ export default () => {
     firebase.auth().signInWithPopup(provider).then((result) => {
       const credential = provider.credentialFromResult(result);
       const user = result.user;
-      const token = credential.accessToken;
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(user));
+      // eslint-disable-next-line no-unused-expressions
+      credential.accessToken;
       firebase.firestore().collection('users').doc(user.email).set(
         { email: user.email, image: user.photoURL, name: user.displayName },
         { merge: true },
@@ -130,6 +129,6 @@ export default () => {
     });
   }
 
-  buttonRecover.addEventListener('click', recover); 
+  buttonRecover.addEventListener('click', recover);
   return container;
 };

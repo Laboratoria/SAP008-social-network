@@ -1,7 +1,6 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background: linear-gradient(#5E17EB, #A87CFE);
 }
 
@@ -13,7 +12,7 @@
   --black: #000000;
 }
 
-main {
+.all{
   display:grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -21,54 +20,45 @@ main {
   text-align: center;
   margin-top:6vw;
   margin-bottom: 8vw;
-  margin-left: 25vw;
+  margin-left: 28vw;
   margin-right: 25vw;
 }
-  .all{
-    background: rgb(255, 255, 255, 0.1);
-}
+
 .login {
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
   justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 25vw;
-  min-height: 35vw;
+  padding: 1.5vw;
+  width: 20vw;
+  height: 32vw;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
 }
-.login__logo {
-  width: 130px;
-  background: rgb(255, 255, 255, 0.2);
+.login-logo {
+  width: 10vw;
 }
-
-.login__title {
+.login-title {
+  margin-top: -10px;
   font-size: 1.5em;
-  margin-bottom: 30px;
-  background: rgb(255, 255, 255, 0.2);
 }
-
-.login__label {
+.login-label {
   margin-bottom: 20px;
   width: 100%;
 }
 
 .input {
-  width: 100%;
-  border: 2px;
-  border-radius: 5px;
-  outline: none;
-  font-size: 0.9em;
-  padding: 25px 10px 10px;
-  font-weight: 600;
+  width: 90%;
+  border: 0;
+  border-bottom: 2px var(--branco);
+  border-radius: 10px;
+  padding: 15px;
+  outline: 0;
+  margin-bottom: 0.2vw;
+  background-color: rgb(255, 255, 255, 0.1);
 }
 
-.login__label span {
+.login-label span {
   position: absolute;
   font-size: 0.8em;
   font-weight: 700;
@@ -78,23 +68,26 @@ main {
   transition: all 200ms ease;
 }
 
-.login__label .span-active {
+.login-label .span-active {
   font-size: 0.7em;
   margin: 8px 10px;
 }
 
-.login__icons {
+.login-icons {
   display: flex;
   gap: 10px;
   width: 100%;
   margin-top: 20px;
 }
 
-.login__icons img {
+.login-icons img {
   width: 20px;
 }
-
-.icons__button {
+.email-pass {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icons-button {
   width: 33.33%;
   display: flex;
   align-items: center;
@@ -104,41 +97,39 @@ main {
   cursor: pointer;
   border: none;
 }
-
-.login__label--checkbox {
-  width: 100%;
+.ads{
+  display: inline;
+  justify-content: center;
+}
+.login-label-checkbox {
+  width: 90%;
   margin: 15px 0 50px;
   font-size: 0.9em;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
+  padding-right: 2vw;
 }
-
-.input--checkbox {
+.input-checkbox {
   appearance: none;
   width: 20px;
   height: 20px;
-  background-color: var(--light-grey);
+  background-color: var(--branco);
   margin-right: 8px;
   border-radius: 3px;
 }
-
-.input--checkbox:checked {
-  background-color: var(--red);
+.input-checkbox:checked {
+  background-color: var(--roxo);
 }
-
-.input--checkbox:checked::after {
+.input-checkbox:checked::after {
   content: "";
   display: block;
   width: 5px;
   height: 10px;
-  border: 3px solid white;
+  border: 3px solid var(--branco);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   margin: 2px 6px;
 }
 
-.login__button {
+.login-button {
   width: 60px;
   height: 60px;
   padding: 20px;
@@ -151,21 +142,33 @@ main {
   margin-bottom: 60px;
 }
 
-.login__button svg {
+.login-button svg {
   fill: white;
 }
 
-.login__button:disabled {
+.login-button:disabled {
   cursor: auto;
   background-color: white;
 }
-
-.login__link {
+.entrar {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  justify-content: center;
+}
+.button {
+  padding: 1vw 2vw;
+  border-radius: 20px;
+  color: var(--roxo);
+}
+.criar{
+  background-color: rgb(255, 255, 255, 0);
+}
+.login-link {
   font-size: 0.8em;
   text-decoration: none;
   text-transform: uppercase;
   margin-bottom: 5px;
-  font-weight: 700;
+  color: var(--branco);
 }
 .wallpaper img{
   width: 25vw;

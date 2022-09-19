@@ -33,7 +33,7 @@ img {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #221d1d;
     border: none;
 }
 
@@ -48,12 +48,12 @@ img {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #0b0808;
     border: none; 
 }
 
 .box-password-register  {
-    position: absolute;
+    /*position: absolute;*/
     width: 139px;
     height: 16px;
     left: 108px;
@@ -63,12 +63,12 @@ img {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #1a1717;
     border: none;
 }
 
-#box-register-password{
-    position: absolute;
+.box-register-password{
+   /* position: absolute;*/
     width: 124px;
     height: 16px;
     left: 108px;
@@ -78,7 +78,7 @@ img {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #FFFFFF;
+    color: #161111;
 }
 
 .btn-register {
@@ -104,6 +104,6 @@ img {
     font-size: 17px;
     line-height: 20px;
     letter-spacing: 0.05em;
-    color: #FFFFFF;
+    color: #151212;
 }
 

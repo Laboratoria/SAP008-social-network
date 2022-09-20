@@ -45,7 +45,7 @@ export default () => {
       <div id="postx">
           <input type="text" class="formInput" id="name" name="name" placeholder="Digite seu nome" />
           <input type="text" class="formInput" name="movie" id="movieName" placeholder="Digite o nome do filme ou série." />
-          <textarea class="formInput" name="text" id="message"> Conte-nos o que achou!</textarea> 
+          <textarea class="formInput" name="text" id="message" placeholder="Conte-nos o que achou!"></textarea> 
          
           <div class="formposts">
           <label class="picture" tabIndex="0">

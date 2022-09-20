@@ -65,8 +65,9 @@ export default () => {
     firebase.auth().signInWithPopup(provider).then((result) => {
       const credential = provider.credentialFromResult(result);
       const user = result.user;
-      // eslint-disable-next-line no-unused-expressions
-      credential.accessToken;
+      const token = credential.accessToken;
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
       firebase.firestore().collection('users').doc(user.email).set(
         { email: user.email, image: user.photoURL, name: user.displayName },
         { merge: true },

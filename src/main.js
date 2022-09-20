@@ -1,7 +1,10 @@
-import "./config-firebase"
-/*import { myFunction } from './lib/index.js';
+import "./config-firebase.js"
 
-myFunction();*/
-import login from "./lib/login.js" 
+import {telaInicialLogin} from "./pages/login.js" 
 
-window.addEventListener ("load",)
+const root= document.getElementById ("root")
+
+window.addEventListener ("load", function(){
+    const page = telaInicialLogin ()
+    root.innerHTML=page
+})

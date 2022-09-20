@@ -1,4 +1,4 @@
-import {registerWithEmailAndPassword} from '../../lib/index.js'
+import {registerWithEmailAndPassword, loginWithGoogle} from '../../lib/index.js'
 
 export default () => {
   const registerContainer = document.createElement('div');
@@ -27,6 +27,7 @@ export default () => {
   const inputPassword = registerContainer.querySelector('#password-register');
   const inputEmail = registerContainer.querySelector('#register-input');
   const btnRegister = registerContainer.querySelector('.btn-register');
+  const btnGoogleRegister = registerContainer.querySelector('.btn-google-register');
 
   btnRegister.addEventListener('click', () => {
     registerWithEmailAndPassword(inputEmail.value, inputPassword.value)
@@ -40,6 +41,21 @@ export default () => {
         const errorMessage = error.message;
       });
   });
+
+  btnGoogleRegister.addEventListener('click', () => {
+    loginWithGoogle()
+    .then((result) => {
+        window.location.hash = '#feed';
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        });
+
+  })
+
 
   return registerContainer;
 };

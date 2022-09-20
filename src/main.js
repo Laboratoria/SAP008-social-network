@@ -1,7 +1,23 @@
-import "./config-firebase"
-/*import { myFunction } from './lib/index.js';
+import "./config-firebase.js"
 
-myFunction();*/
-import login from "./lib/login.js" 
+import login from "./pages/login/login.js" 
+//import cadastro from ".\pages\Cadastro\cadastro.js"
 
-window.addEventListener ("load",)
+const root= document.getElementById ("root")
+
+/*const page = () => {
+  window.addEventListener ('hashchange', () => {
+    switch (window.location.hash) {
+      case '#login':
+        main.appendChild(login());
+        break;
+    }
+  }
+  )  
+}*/
+
+window.addEventListener ("load", load)
+function load (){
+  const form = login()
+  root.appendChild (form)
+}

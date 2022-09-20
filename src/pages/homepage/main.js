@@ -5,6 +5,9 @@ export default () => {
             <video autoplay loop muted plays-inline class="background-video">
               <source src="img/VideoBG.mp4" type="video/mp4">
             </video>
+            <video autoplay loop muted plays-inline class="background-video-mobile">
+              <source src="img/VideoBGMobile.mp4" type="video/mp4">
+            </video>
             <h1 class="logo-initial-page"><img class="img-logo" src="img/Rebu.png" alt="Rebu Logo"></h1>
             <nav class="button-initial-page">
                 <a href="/#login"><button id="btn-login" class="btn-initial-page">ENTRAR</button></a>

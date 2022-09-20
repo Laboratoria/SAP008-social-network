@@ -103,6 +103,10 @@ footer a {
 }
 
 .background-video {
+    display: none;
+}
+
+.background-video-mobile {
     width: 100vw;
     height: 78vh;
     object-fit: cover;

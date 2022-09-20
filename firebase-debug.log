@@ -1,0 +1,25 @@
+[debug] [2022-09-20T18:26:28.227Z] ----------------------------------------------------------------------
+[debug] [2022-09-20T18:26:28.236Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2022-09-20T18:26:28.238Z] CLI Version:   11.8.0
+[debug] [2022-09-20T18:26:28.239Z] Platform:      linux
+[debug] [2022-09-20T18:26:28.240Z] Node Version:  v18.6.0
+[debug] [2022-09-20T18:26:28.249Z] Time:          Tue Sep 20 2022 15:26:28 GMT-0300 (Brasilia Standard Time)
+[debug] [2022-09-20T18:26:28.250Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-20T18:26:28.563Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-20T18:26:28.565Z] > authorizing via signed-in user (ellenzinha127@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/ellenunix/Workspace/SAP008-social-network
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

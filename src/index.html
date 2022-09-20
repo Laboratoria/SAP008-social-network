@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css"> 
   <script src="config-firebase.js" type="module"></script>
-  <title>Document</title>
+  <title>PicsFem</title>
 </head>
 
 <body>
@@ -22,7 +22,8 @@
         <h1 class="login__title">Fazer login</h1>
 
         <div id="form-container"></div>
-        <form>
+
+        <form id="login-form">
 
           <div class="email-pass">
           
@@ -37,6 +38,7 @@
             </label>
             
           </div>
+          <output class="txt-error" id="txt-error"></output>
           
           <div class="ads">
             <label class="login-label-checkbox">
@@ -58,16 +60,14 @@
             <img src="./img/iconfacebook.png" alt="facebok">
           </button>
           
-          <button type="button" class="icons-button">
-            <img src="./img/icongmail.png" alt="facebok">
+          <button id="btn-gmail" type="button" class="icons-button">
+            <img src="./img/icongmail.png" alt="gmail">
           </button>
           
           </div> 
         
         <div class="wrapper">
-
         <button id="btnLogout" type="button" class="button buttonBlue">Log out</button>
-
         </div> 
 
         </form>

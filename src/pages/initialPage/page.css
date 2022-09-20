@@ -118,7 +118,13 @@ body {
     margin-bottom: 3.5%;
     margin-top: 3.5%;
 }
+
 .getLike{
+    font-size: 0.7rem;
+    color: #ea5404;
+}
+
+.getDeslike{
     font-size: 0.7rem;
     color: #ea5404;
 }

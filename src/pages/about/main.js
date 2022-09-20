@@ -9,7 +9,7 @@ export default () => {
       <p class="about-paragraph"><span class="about-rebu">REBU</span> é uma rede social de interação & comunidade feita para mulheres lésbicas.</p> 
       <p class="about-paragraph">Proporcionamos um espaço inclusivo, seguro e afirmativo para nossas usuárias compartilharem experiências, vivências e interesses em comum.</p> 
       <p class="about-paragraph">Não importa onde você more, <span class="about-rebu">REBU</span> te prorporciona se conectar com outras mulheres e criar sua própria rede.</p>
-      <p class="about-paragraph">Feita por mulheres, para mulheres.</p>
+      <p class="about-paragraph made-by">Feita por mulheres, para mulheres.</p>
     </main>
   `;
   aboutContainer.innerHTML = template;

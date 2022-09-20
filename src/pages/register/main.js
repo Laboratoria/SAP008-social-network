@@ -15,7 +15,7 @@ export default () => {
                 <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
             </form>
             <input type="submit" class="btn-register" value="CADASTRAR">
-            <button class="btn-google-register display-flex"><img class="google-btn-register" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
+            <button class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
         </main>
     `;
   registerContainer.innerHTML = template;

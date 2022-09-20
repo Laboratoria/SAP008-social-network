@@ -48,7 +48,8 @@
     border: none;
     padding: 0.55rem 1.5rem;
     box-shadow: 1px 3px 3px rgba(94, 94, 94, 0.438);
-    margin: 0.8rem 0;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -64,11 +65,19 @@
     text-align: center;
 }
 
-.google-btn-register {
+.google-icon {
     margin-right: 0.5rem;
     width: 1rem;
     height: 1rem;
     background-color: #ffffffbe;
     padding: 0.3rem;
     border-radius: 40px;
+}
+
+.btn-register:hover,
+.btn-google-register:hover {
+    background-color: #EE2C12;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
 }

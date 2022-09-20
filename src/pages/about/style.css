@@ -1,4 +1,9 @@
 
+@font-face {
+    font-family: Blanka;
+    src: url(/src/fonts/Blanka-Regular.otf);
+}
+
 #about-header{
     margin:0;
     background:#B0DAF8;
@@ -39,7 +44,6 @@
     width: 80vw;
 }
 
-@font-face {
-    font-family: Blanka;
-    src: url(/src/fonts/Blanka-Regular.otf);
-  }
+.made-by {
+    color: #EE2C12;
+}

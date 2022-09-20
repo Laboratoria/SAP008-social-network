@@ -14,6 +14,7 @@ export default () => {
         <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
         <a href="#profile" id="profile" class="active">Perfil</a>
         <a href="#aboutUs" id="post"> Sobre</a>
+        <a href="#page"><span style="color:rgb(250, 246, 49); font-weight: bold;">+</span></a>
     </div>
   
     <div class="content">
@@ -44,7 +45,7 @@ export default () => {
       <div id="postx">
           <input type="text" class="formInput" id="name" name="name" placeholder="Digite seu nome" />
           <input type="text" class="formInput" name="movie" id="movieName" placeholder="Digite o nome do filme ou série." />
-          <textarea class="formInput" name="text" id="message" placeholder="Conte-nos o que achou!"> </textarea> 
+          <textarea class="formInput" name="text" id="message"> Conte-nos o que achou!</textarea> 
          
           <div class="formposts">
           <label class="picture" tabIndex="0">
@@ -96,7 +97,7 @@ export default () => {
       .then((snapshot) => {
         const postContainer = snapshot.docs.reduce((acc, doc) => {
           const {
-            name, text, movie, createdAt, like,
+            name, text, movie, createdAt, like, deslike,
           } = doc.data();
           // eslint-disable-next-line no-param-reassign
           acc += ` <div id="poster-${doc.id}" class="posts">
@@ -114,6 +115,8 @@ export default () => {
                      <div class="stars">
                      <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
                      <span class="getLike">${like}</span>
+                     <span data-deslike=${doc.id} data-user=${doc.data().user_id}>💔</span>
+                     <span class="getDeslike">${deslike}</span>
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
                      <div class="buttons-posts"> 
                          <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-delete"> Apagar</button>
@@ -143,6 +146,7 @@ export default () => {
       createdAt: new Date(),
       text: event.target.text.value,
       like: 0,
+      deslike: 0,
     })
       .then(() => {
         container.querySelector('#message').value = '';
@@ -166,6 +170,7 @@ export default () => {
 
     if (removeButtonId) {
       if (userId !== userCurrent) {
+        alert('Não é possivel deletar post de outros usuarios');
         return false;
       }
       // eslint-disable-next-line no-alert
@@ -187,6 +192,7 @@ export default () => {
 
     if (editButton) {
       if (userId !== userCurrent) {
+        alert('Não é possivel editar post de outros usuarios');
         return false;
       }
       const resultado = window.confirm('Você deseja editar essa postagem?');
@@ -219,6 +225,20 @@ export default () => {
     db.collection('test').doc(buttonLike)
       .update({
         like: increment,
+      })
+      .then(() => {
+        window.reload = () => window.location.hash('.posts');
+      });
+  });
+
+  boxPost.addEventListener('click', (e) => {
+    const buttonDeslike = e.target.dataset.deslike;
+    const increment = firebase.firestore.FieldValue.increment(1);
+
+    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = increment;
+    db.collection('test').doc(buttonDeslike)
+      .update({
+        deslike: increment,
       })
       .then(() => {
         window.reload = () => window.location.hash('.posts');

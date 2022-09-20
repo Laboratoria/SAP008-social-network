@@ -13,7 +13,7 @@ export default () => {
     </div>
   
     <div class="navbar">
-        <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+        <a href="#login"> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
         <a href="#profile" id="profile" class="active">Perfil</a>
         <a href="#aboutUs">Sobre</a>
     </div>

@@ -35,7 +35,7 @@ export default () => {
         </div>
   
         <div class="register">
-        <span id="recover" style="border:ridge; font-size:1.0rem"> Esqueci a senha 😰 </span>
+        <span id="recover"> Esqueci a senha 😰 </span>
           <button type="button" id="button-enter" class="button">Entrar</button>
           <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
         </div>

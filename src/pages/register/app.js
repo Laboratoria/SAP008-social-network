@@ -73,7 +73,7 @@ export default () => {
   buttonRegister.addEventListener('click', validatePassword);
 
   function backToPage() {
-    return window.location.replace('#login');
+    window.location.reload();
   }
 
   const buttonBack = container.querySelector('#button-back');

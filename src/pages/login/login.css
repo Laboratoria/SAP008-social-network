@@ -37,7 +37,7 @@ body {
 }
 
 .box-right {
-    width: 35%;
+    width: 32%;
     background-color: #ffffff;
     font-size: 1rem;
     border-radius: 2%;
@@ -48,11 +48,11 @@ body {
 }
 
 #logo-login {
-    width: 16vw;
+    width: 12vw;
 }
 
 .logo-login {
-    height: 28vh;
+    height: 20vh;
 }
 
 .box-right .register {
@@ -64,7 +64,7 @@ body {
 
 .register p {
     font-size: 1rem;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 #button-gmail {
@@ -151,6 +151,12 @@ body {
 #register {
     font-size: 0.8rem;
     color: #1e1d1d;
+}
+
+#recover{
+    color: rgb(21, 44, 169);
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
 #gif-vanellen {

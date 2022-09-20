@@ -92,6 +92,7 @@ body {
 
 #testImg {
     width: 9vw;
+    border-radius: 10px;
 }
 
 .text_share,
@@ -113,9 +114,13 @@ body {
 }
 
 .stars {
-    display: grid;
+    display: block;
     margin-bottom: 3.5%;
     margin-top: 3.5%;
+}
+.getLike{
+    font-size: 0.7rem;
+    color: #ea5404;
 }
 
 .username {
@@ -212,6 +217,7 @@ body {
 #message {
     height: 200px;
     margin-bottom: 1%;
+    resize: none;
 }
 
 footer {
@@ -243,10 +249,7 @@ footer {
     display: grid;
 }
 
-
-
 @media only screen and (max-width: 541px) and (min-width: 395px) {
-
     .VanellenMore {
         font-size: 1.3rem;
         margin-right: 5%;

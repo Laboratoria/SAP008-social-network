@@ -11,7 +11,7 @@ export default () => {
     </div>
   
     <div class="navbar">
-        <a href=" "> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+        <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
         <a href="#profile" id="profile" class="active">Perfil</a>
         <a href="#aboutUs" id="post"> Sobre</a>
     </div>
@@ -44,7 +44,7 @@ export default () => {
       <div id="postx">
           <input type="text" class="formInput" id="name" name="name" placeholder="Digite seu nome" />
           <input type="text" class="formInput" name="movie" id="movieName" placeholder="Digite o nome do filme ou série." />
-          <textarea cols='60' rows='8' class="formInput" name="text" id="message" placeholder="Conte-nos o que achou!"> </textarea> 
+          <textarea class="formInput" name="text" id="message" placeholder="Conte-nos o que achou!"> </textarea> 
          
           <div class="formposts">
           <label class="picture" tabIndex="0">
@@ -83,7 +83,7 @@ export default () => {
     e.preventDefault();
     firebase.auth().signOut().then(() => {
       main.innerHTML = ' ';
-      window.location.hash = ' ';
+      window.location.hash = '#login';
     });
   });
   const dateConvert = (dateCvt) => {
@@ -112,8 +112,8 @@ export default () => {
                          ${text}
                      </div>
                      <div class="stars">
-                     <span class="getLike">${like}</span>
                      <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
+                     <span class="getLike">${like}</span>
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
                      <div class="buttons-posts"> 
                          <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-delete"> Apagar</button>
@@ -166,10 +166,9 @@ export default () => {
 
     if (removeButtonId) {
       if (userId !== userCurrent) {
-        alert('Não é possivel deletar post de outros usuarios');
         return false;
       }
-
+      // eslint-disable-next-line no-alert
       const resultado = window.confirm('Você deseja apagar essa postagem?');
       if (resultado === true) {
         db.collection('test').doc(removeButtonId).delete()
@@ -188,10 +187,8 @@ export default () => {
 
     if (editButton) {
       if (userId !== userCurrent) {
-        alert('Não é possivel editar post de outros usuarios');
         return false;
       }
-
       const resultado = window.confirm('Você deseja editar essa postagem?');
 
       if (resultado === true) {
@@ -216,25 +213,16 @@ export default () => {
 
   boxPost.addEventListener('click', (e) => {
     const buttonLike = e.target.dataset.liked;
+    const increment = firebase.firestore.FieldValue.increment(1);
 
-    if (buttonLike) {
-      const resultado = window.confirm('Você deseja dar like nessa postagem?');
-
-      if (resultado === true) {
-        const increment = firebase.firestore.FieldValue.increment(1);
-        boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = increment;
-        db.collection('test').doc(buttonLike)
-          .update({
-            like: increment,
-          })
-          .then(() => {
-            console.log('você curtiu isso');
-          })
-          .catch(() => {
-            console.log('Algo deu errado. Por favor, tente novamente.');
-          });
-      }
-    }
+    boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = increment;
+    db.collection('test').doc(buttonLike)
+      .update({
+        like: increment,
+      })
+      .then(() => {
+        window.reload = () => window.location.hash('.posts');
+      });
   });
 
   return container;

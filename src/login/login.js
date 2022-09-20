@@ -10,11 +10,11 @@ export default () => {
             <p class = "sub-title">Momentos musicais inesqueciveis</p>                     
             <form>
                 <input class="box-name" type="e-mail" id="e-mail" placeholder="Nome de usuário ou e-mail"/>
-                <input class="box-password" type="senha" id="senha" placeholder="Digite sua senha"/> 
-                <input class="box-enter" type="button" id="btn-submit" value="Entrar"/>
-                <input class="new-password" type="button" id="btn-password" value="Esqueci a senha"/>
-                <input class="box-login-google" type="button" id="btn-google" value="Continuar com conta google"/> 
-                <input class="box-register" type="button" id="btn-register" value="Cadastre-se"<a href = '#register'>/>      
+                <input class="box-password" type="password" id="senha" placeholder="Digite sua senha"/> 
+                <button class="box-enter" type="button" id="btn-submit">Entrar</button>
+                <button class="new-password" type="button" id="btn-password">Esqueci a senha</button>
+                <button class="box-login-google" type="button" id="btn-google"> Continuar com conta google</button>
+                <button class="box-register" type="button" id="btn-register" ><a href = "#register">Cadastre-se</button>     
             </form>
             
                </div>     

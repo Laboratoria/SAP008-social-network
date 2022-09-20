@@ -12,8 +12,8 @@ export default () => {
             <input type="text" id="location" placeholder="Local"/> 
             <input id="date" type="date">
             <input type="text" id="post" placeholder="O show + inesquecível"/>
-            <input type="button" id="btn-upload" class="btn-upload" value="Carregar foto"/>  
-            <input type="button" id="btn-post" class="btn-post" value="Enviar"/>  
+            <button type="button" id="btn-upload" class="btn-upload"> Carregar foto</button> 
+            <button type="button" id="btn-post" class="btn-post">Enviar</button>  
         </form>
     </div>     
  `;

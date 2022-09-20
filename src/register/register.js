@@ -13,7 +13,7 @@ export default () => {
             <input class ="box-email-register"type="e-mail" id="e-mail" placeholder="E-mail"/>
             <input class ="box-password-register" type="password" id="password" placeholder="Digite sua senha"/> 
             <input class ="box-password-register" id="box-register-password" type="password" id="password" placeholder="Repetir senha"/>    
-            <input class ="btn-register" type="button" id="btn-register" class="btn-register" value="Registrar-se"/>   
+            <button class ="btn-register" type="button" id="btn-register" class="btn-register">Registrar-se</button>
         </form>
 
         <p class="user"><a href="#login">Já possui uma conta? Iniciar sessão</p>

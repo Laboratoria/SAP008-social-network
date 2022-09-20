@@ -23,7 +23,7 @@ export default () => {
             </section>
 
             <section class="buttons">
-            <button type="submit" class="btn-login">Cadastrar</button>
+            <button type="submit" class="btn-login" id="register">Cadastrar</button>
             <button type="submit" class="btn-google"><img src="./Imagens/google.png"/> Cadastro com Google</button>
             </section>
         </form>

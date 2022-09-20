@@ -1,10 +1,23 @@
 import "./config-firebase.js"
 
-import {telaInicialLogin} from "./pages/login.js" 
+import login from "./pages/login/login.js" 
+//import cadastro from ".\pages\Cadastro\cadastro.js"
 
 const root= document.getElementById ("root")
 
-window.addEventListener ("load", function(){
-    const page = telaInicialLogin ()
-    root.innerHTML=page
-})
+/*const page = () => {
+  window.addEventListener ('hashchange', () => {
+    switch (window.location.hash) {
+      case '#login':
+        main.appendChild(login());
+        break;
+    }
+  }
+  )  
+}*/
+
+window.addEventListener ("load", load)
+function load (){
+  const form = login()
+  root.appendChild (form)
+}

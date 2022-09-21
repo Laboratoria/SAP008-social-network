@@ -97,6 +97,9 @@ body {
   cursor: pointer;
   border: none;
 }
+.txt-error {
+  background-color: red;
+}
 .ads{
   display: inline;
   justify-content: center;

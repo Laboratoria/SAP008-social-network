@@ -5,6 +5,7 @@ export default () => {
     
     const home = `
     <header>Home</header>
+
     `;
     containerHome.innerHTML = home;
   

@@ -16,6 +16,7 @@ export default () => {
         <a href="#login"> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
         <a href="#profile" id="profile" class="active">Perfil</a>
         <a href="#aboutUs">Sobre</a>
+        <a href="#page"><span style="color:rgb(250, 246, 49); font-weight: bold;">+</span></a>
     </div>
   </div>
   

@@ -1,7 +1,7 @@
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, googleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'
-import { btnLogin, btnSignup, btnLogout, txtEmail, txtPassword, displayError, formSignup, hideLoginForm } from './main.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyC0LYibd7iDrRSG9t2pNqWjxVVpcZxuyuo",
@@ -14,12 +14,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const creatAccount = async () => {
-  const loginEmail = txtEmail.value;
-  const loginPassword = txtPassword.value;
-
+export const createAccount = async (email, password) => {
+  
   try {      
-    const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);  
        
   }
@@ -27,21 +25,18 @@ const creatAccount = async () => {
     console.log(error)
   }
 }
-btnSignup.addEventListener("click", creatAccount);
 
-const loginEmailPassword = async () => {
-  const loginEmail = txtEmail.value;
-  const loginPassword = txtPassword.value;
 
+export const loginEmailPassword = async (email, password) => {
+  
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
   }
   catch (error) {    
     console.log(error);    
   }
 }
-btnLogin.addEventListener("click", loginEmailPassword);
 
 onAuthStateChanged(auth, user => {
   if (user != null) {
@@ -51,15 +46,14 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-const logout = async () => {
+export const logout = async () => {
   await signOut(auth);
 }
-btnLogout.addEventListener("click", logout)
 
 //logar com o google
-const provider = new GoogleAuthProvider();
-
-signInWithPopup(auth, provider)
+const provider = new GoogleAuthProvider;
+export const signInGoogle = () => {
+  signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -77,4 +71,7 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
+}
+
+
 

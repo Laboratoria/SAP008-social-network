@@ -240,7 +240,7 @@ export default () => {
   boxPost.addEventListener('click', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
-
+// console.log(increment)
     boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = increment;
     db.collection('test').doc(buttonDeslike)
       .update({

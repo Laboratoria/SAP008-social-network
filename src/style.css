@@ -22,46 +22,42 @@ body {
   margin-bottom: 8vw;
   margin-left: 28vw;
   margin-right: 25vw;
+  font-family: Comic Sans MS;
 }
 
 .login {
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  align-items: center;
-  justify-content: center;
   padding: 1.5vw;
-  width: 20vw;
-  height: 32vw;
+  width: 22vw;
+  height: 28vw;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
 }
 .login-logo {
-  width: 10vw;
+  width: 14vw;
+  font-size: large;
 }
 .login-title {
-  margin-top: -10px;
-  font-size: 1.5em;
+  font-size: larger;
 }
 .login-label {
-  margin-bottom: 20px;
+  margin-bottom: 1vw;
   width: 100%;
 }
 
 .input {
   width: 90%;
   border: 0;
-  border-bottom: 2px var(--branco);
-  border-radius: 10px;
-  padding: 15px;
+  border-bottom:solid 2px var(--branco);
+  padding: 1vw;
   outline: 0;
-  margin-bottom: 0.2vw;
-  background-color: rgb(255, 255, 255, 0.1);
+  background-color: rgb(255, 255, 255, 0);
 }
 
 .login-label span {
   position: absolute;
   font-size: 0.8em;
-  font-weight: 700;
   text-transform: uppercase;
   margin: 20px;
   cursor: text;
@@ -74,12 +70,8 @@ body {
 }
 
 .login-icons {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  margin-top: 20px;
+  justify-content: center;
 }
-
 .login-icons img {
   width: 20px;
 }
@@ -88,15 +80,18 @@ body {
   flex-wrap: wrap;
 }
 .icons-button {
-  width: 33.33%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 35px;
+  width: 25%;
+  height: 1.5vw;
   border-radius: 5px;
   cursor: pointer;
   border: none;
 }
+.icons-button:hover {
+  background-color: var(--roxo);
+  box-shadow: 0px 0px 20px var(--roxo);
+  transform: translate(0px, -2px);
+  transition: transform 0.5s;
+  }
 .ads{
   display: inline;
   justify-content: center;
@@ -109,21 +104,20 @@ body {
 }
 .input-checkbox {
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 1vw;
   background-color: var(--branco);
-  margin-right: 8px;
   border-radius: 3px;
 }
 .input-checkbox:checked {
-  background-color: var(--roxo);
+  background-color: var(--branco);
 }
 .input-checkbox:checked::after {
   content: "";
   display: block;
   width: 5px;
   height: 10px;
-  border: 3px solid var(--branco);
+  border: 3px solid var(--roxo);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   margin: 2px 6px;
@@ -151,8 +145,8 @@ body {
   background-color: white;
 }
 .entrar {
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
   justify-content: center;
 }
 .button {
@@ -160,6 +154,28 @@ body {
   border-radius: 20px;
   color: var(--roxo);
   border: 0;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.button:hover {
+  background-color: var(--roxo);
+  box-shadow: 0px 0px 20px var(--roxo);
+  transform: translate(0px, -2px);
+  transition: transform 0.5s;
+  color: var(--branco);
+}
+.button2 {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255, 0);
+  border: 0;
+  border-radius: 10px;
+  color: var(--branco);
+  margin-bottom: 0.5vw;
+}
+.button2:hover {
+  color: var(--roxo);
+  transition: transform 0.5s;
 }
 .criar{
   background-color: rgb(255, 255, 255, 0);
@@ -168,12 +184,17 @@ body {
   font-size: 0.8em;
   text-decoration: none;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 1vw;
   color: var(--branco);
 }
+.login-link:hover {
+  color: var(--roxo);
+  transform: translate(0px, -2px);
+  transition: transform 0.5s;
+  }
 .wallpaper img{
   width: 25vw;
-  height: 35vw;
+  height: 31vw;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }

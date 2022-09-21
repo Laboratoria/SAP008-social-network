@@ -1,7 +1,5 @@
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'
-import { btnLogin, btnSignup, btnLogout, txtEmail, txtPassword } from './main.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 
 
 const firebaseConfig = {
@@ -12,42 +10,32 @@ const firebaseConfig = {
   messagingSenderId: "584087173369",
   appId: "1:584087173369:web:d5c821c45f15ff5cde0a28"
 };
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const creatAccount = async () => {
-  const loginEmail = txtEmail.value;
-  const loginPassword = txtPassword.value;
-
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
-    console.log(userCredential.user);
+export const createAccount = async (email, password) => {
+  
+  try {      
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(userCredential.user);  
+       
   }
   catch (error) {
     console.log(error)
   }
 }
 
-btnSignup.addEventListener("click", creatAccount);
 
-
-const loginEmailPassword = async () => {
-  const loginEmail = txtEmail.value;
-  const loginPassword = txtPassword.value;
-
+export const loginEmailPassword = async (email, password) => {
+  
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
   }
-  catch (error) {
-    console.log(error);
+  catch (error) {    
+    console.log(error);    
   }
 }
-
-btnLogin.addEventListener("click", loginEmailPassword);
-
-
 
 onAuthStateChanged(auth, user => {
   if (user != null) {
@@ -57,10 +45,32 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-
-const logout = async () => {
+export const logout = async () => {
   await signOut(auth);
 }
 
-btnLogout.addEventListener("click", logout)
+//logar com o google
+const provider = new GoogleAuthProvider;
+export const signInGoogle = () => {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+}
+
+
 

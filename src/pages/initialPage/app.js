@@ -118,7 +118,10 @@ export default () => {
                          ${text}
                      </div>
                      <div class="stars">
-                     <span id="btn-like" data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
+                     <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
+                     <span class="getLike">${like}</span>
+                     <span data-deslike=${doc.id} data-user=${doc.data().user_id}>💔</span>
+                     <span class="getDeslike">${deslike}</span>
                      <span class="getLike"> ${like}</span>
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
                      <div class="buttons-posts"> 

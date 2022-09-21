@@ -3,7 +3,7 @@
     grid-template-columns: 4vw 4vw;
     margin-left: 2%;
     margin-top: 2%;
-    height: 42vh;
+    max-height: 42vh;
 }
 
 .movies h1 {
@@ -33,7 +33,6 @@
 
 .overview-movies {
     width: 40vw;
-    max-height: 45%;
     margin-left: 11rem;
     font-size: 0.9rem;
 }
@@ -44,7 +43,6 @@
 
 .likes {
     margin-left: 7rem;
-    margin-bottom: 3rem;
 }
 
 #star {
@@ -63,29 +61,25 @@ footer {
     height: 10vh;
 }
 
-@media only screen and (max-width: 915px) and (min-width: 550px) {
+@media only screen and (max-width: 915px) and (min-width: 540px) {
 
     .posts-movies {
-        display: grid;
-        grid-template-columns: 4vw 4vw;
-        margin-left: 2%;
-        margin-top: 2%;
-        height: 19vh;
+        height: auto;
     }
 
     .movies h1 {
         width: 70%;
-        margin: auto;
         margin-top: 2%;
-        text-align: center;
     }
 
     .picture-image {
         margin-left: 7%;
+        
+    
     }
 
     #movieImg {
-        width: 18.5vw;
+        width: 20vw;
     }
 
     .title-movies {
@@ -96,8 +90,9 @@ footer {
     }
 
     .overview-movies {
-        width: 75vw;
+        width: 60vw;
         margin-left: 10rem;
+        min-height: 16vh;
     }
 
     .overview-movies p {

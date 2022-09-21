@@ -8,7 +8,6 @@
 html,
 body {
     height: 100%;
-
 }
 
 body {
@@ -18,7 +17,7 @@ body {
 }
 
 .container-register {
-    display: flex;
+    display: grid;
     width: 100%;
     font-size: 0;
     align-items: center;
@@ -28,10 +27,13 @@ body {
 }
 
 .box-center {
-    width: 28%;
+    width: 60%;
+    margin: auto;
     background-color: #ffffff;
     font-size: 1rem;
     border-radius: 2%;
+    margin-bottom: 5%;
+    padding: 10px;
 }
 
 .box-center .logo-register {
@@ -39,24 +41,23 @@ body {
 }
 
 #logo-register {
-    width: 14vw;
+   max-height: 35vh;
 }
 
 .logo-register {
-    height: 185px;
+    max-height: 30vh;
 }
 
 .box-center .buttons {
     height: 50px;
-    padding: 10px;
     width: 80%;
     background-color: #850a0a;
     border: none;
     border-radius: 5px;
     text-align: center;
-    margin-top: 5%;
-    font-size: 1.1rem;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    font-size: 1.7rem;
+    margin-bottom: 1%;
     margin-left: 10%;
     cursor: pointer;
     color: #ffffff;
@@ -83,7 +84,6 @@ body {
 
 .wrapper-register {
     background-color: #151414;
-    height: 11rem;
 
 }
 
@@ -113,25 +113,23 @@ footer {
 
     .container-register {
         display: block;
-        width: 100%;
-        font-size: 0;
         padding: 1%;
     }
 
     #logo-login {
-        width: 35vw;
+        width: 45vw;
     }
 
     .logo-login {
-        height: 150px;
+        height: 45vh;
     }
 
     .box-center {
-        width: 100%;
+        width: 55vw;
+        margin: auto;
         font-size: 1rem;
-        margin-right: 3%;
-        margin-top: 2%;
-        margin-bottom: 20%;
+        margin-top: 10%;
+        margin-bottom: 100%;
     }
 
     .box-center .buttons {
@@ -154,10 +152,6 @@ footer {
     .foot img {
         margin-left: 1%;
         width: 180px;
-    }
-
-    .wrapper-register {
-        margin-bottom: 50%;
     }
 
 }

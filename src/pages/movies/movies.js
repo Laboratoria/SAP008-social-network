@@ -37,8 +37,8 @@ export default () => {
   container.innerHTML = template;
 
   const API_KEY = 'api_key=89c6cfc4ef506ee4df5166ec020a99f2';
-  const BASE_URL = 'https://api.themoviedb.org/3/';
-  const API_URL = `${BASE_URL}movie/popular?${API_KEY}`;
+  const BASE_URL = 'https://api.themoviedb.org/3';
+  const API_URL = `${BASE_URL}/movie/top_rated?language=pt-BR&${API_KEY}`;
   const IMG_URL = 'https://image.tmdb.org/t/p/w500';
   const main = container.querySelector('.movies');
 

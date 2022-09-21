@@ -13,7 +13,7 @@ export default () => {
       </div>
     
       <div class="navbar">
-          <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+          <a href="#login"> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
           <a href="#profile" id="profile" class="active">Perfil</a>
           <a href="#aboutUs">Sobre</a>
       </div>
@@ -35,6 +35,53 @@ export default () => {
     </footer>
         `;
   container.innerHTML = template;
+
+  const API_KEY = 'api_key=89c6cfc4ef506ee4df5166ec020a99f2';
+  const BASE_URL = 'https://api.themoviedb.org/3';
+  const API_URL = `${BASE_URL}/discover/tv?with_network=213&language=pt-BR&${API_KEY}`;
+  const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+  const main = container.querySelector('.movies');
+
+  function showSeries(data) {
+    data.forEach((movie) => {
+      const {
+        name, poster_path, first_air_date, overview,
+      } = movie;
+      const movieElement = document.createElement('div');
+      movieElement.classList.add('movie');
+      movieElement.innerHTML = ` 
+        <div class="box-movies">
+            <div class="posts-movies">
+                <div class="img-movie">
+                <img id="movieImg" src="${IMG_URL + poster_path}" alt="logo Laboratória">
+                </div>
+          
+                <div class="info-movies">
+                    <div class="title-movies">
+                        <h2>${name}</h2>
+                    </div>
+                    <div class="overview-movies">
+                        ${overview}
+                        <p><b>Data de criação:</b>  ${first_air_date}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="likes">
+                    <p id="star">⭐⭐⭐⭐⭐</p> 
+                    </div>
+        </div>
+          `;
+      main.appendChild(movieElement);
+    });
+  }
+
+  function getSeries(url) {
+    fetch(url).then((res) => res.json()).then((data) => {
+      showSeries(data.results);
+      console.log(data);
+    });
+  }
+  getSeries(API_URL);
 
   return container;
 };

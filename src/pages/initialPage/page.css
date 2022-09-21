@@ -426,7 +426,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 770px) and (min-width: 389px) {
+@media only screen and (max-width: 597px) and (min-width: 389px) {
 
     .VanellenMore {
         font-size: 1.3rem;
@@ -509,6 +509,7 @@ footer {
         width: 70vw;
         font-size: 0.8rem;
         margin-left: 21%;
+        margin-top: 0.5rem;
     }
 
     .stars {

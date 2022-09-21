@@ -121,7 +121,7 @@ export default () => {
                      <div class="stars">
                      <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
                      <span class="getLike">${like}</span>
-                     <span data-deslike=${doc.id} data-user=${doc.data().user_id}>💔</span>
+                     <span data-desliked=${doc.id} data-user=${doc.data().user_id}>💔</span>
                      <span class="getDeslike">${deslike}</span>
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
                      <div class="buttons-posts"> 
@@ -238,7 +238,7 @@ export default () => {
   });
 
   boxPost.addEventListener('click', (e) => {
-    const buttonDeslike = e.target.dataset.deslike;
+    const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
 
     boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = increment;

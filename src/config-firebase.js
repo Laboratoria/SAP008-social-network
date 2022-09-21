@@ -1,4 +1,3 @@
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 

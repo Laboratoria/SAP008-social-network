@@ -69,10 +69,10 @@ export default () => {
 
   const db = firebase.firestore();
 
-  const pictureImg = container.querySelector('.picture-image');
-  //   const pictureInput = container.querySelector('.picture_input');
-  const pictureImgText = 'Você tem uma imagem da capa do filme/série? Sobe aí!';
-  pictureImg.innerHTML = pictureImgText;
+  //   const pictureImg = container.querySelector('.picture-image');
+  //     const pictureInput = container.querySelector('.picture_input');
+  //   const pictureImgText = 'Você tem uma imagem da capa do filme/série? Sobe aí!';
+  //   pictureImg.innerHTML = pictureImgText;
 
   const doLogout = container.querySelector('#logout');
   const formAction = container.querySelector('#myForm');
@@ -86,10 +86,16 @@ export default () => {
       window.location.hash = '#login';
     });
   });
-  const dateConvert = (dateCvt) => {
-    const date = dateCvt.toDate();
-    return date.toLocaleString('pt-br');
-  };
+
+  function dateConvert() {
+    const data = new Date();
+    const day = data.getDate().toString();
+    const dayF = (day.length === 1) ? `0${day}` : day;
+    const month = (data.getMonth() + 1).toString();
+    const monthF = (month.length === 1) ? `0${month}` : month;
+    const yearF = data.getFullYear();
+    return `${dayF}/${monthF}/${yearF}`;
+  }
 
   function postTemplate() {
     db.collection('test').get()
@@ -112,8 +118,8 @@ export default () => {
                          ${text}
                      </div>
                      <div class="stars">
-                     <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
-                     <span class="getLike">${like}</span>
+                     <span id="btn-like" data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
+                     <span class="getLike"> ${like}</span>
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
                      <div class="buttons-posts"> 
                          <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-delete"> Apagar</button>
@@ -221,7 +227,7 @@ export default () => {
         like: increment,
       })
       .then(() => {
-        window.reload = () => window.location.hash('.posts');
+        window.location.reload();
       });
   });
 

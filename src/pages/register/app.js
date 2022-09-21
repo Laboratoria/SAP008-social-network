@@ -73,7 +73,7 @@ export default () => {
   buttonRegister.addEventListener('click', validatePassword);
 
   function backToPage() {
-    window.location.reload();
+    window.location.hash = '#login';
   }
 
   const buttonBack = container.querySelector('#button-back');

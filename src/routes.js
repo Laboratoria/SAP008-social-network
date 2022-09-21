@@ -9,42 +9,49 @@ import series from './pages/series/app.js';
 const main = document.querySelector('#root');
 
 const init = () => {
-  window.addEventListener('hashchange', () => {
-    switch (window.location.hash) {
-      case '#login':
-        main.appendChild(login());
-        break;
-      case '#register':
-        main.innerHTML = '';
-        main.appendChild(register());
-        break;
-      case '#page':
-        main.innerHTML = '';
-        main.appendChild(initialPage());
-        break;
-      case '#aboutUs':
-        main.innerHTML = '';
-        main.appendChild(about());
-        break;
-      case '#profile':
-        main.innerHTML = '';
-        main.appendChild(profile());
-        break;
-      case '#movies':
-        main.innerHTML = '';
-        main.appendChild(movies());
-        break;
-      case '#series':
-        main.innerHTML = '';
-        main.appendChild(series());
-        break;
+  main.innerHTML = '';
+  switch (window.location.hash) {
+    case '#login':
+      main.appendChild(login());
+      break;
+    case '#register':
+      main.innerHTML = '';
+      main.appendChild(register());
+      break;
+    case '#page':
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(initialPage());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
+      break;
+    case '#aboutUs':
+      main.innerHTML = '';
+      main.appendChild(about());
+      break;
+    case '#profile':
+      main.innerHTML = '';
+      main.appendChild(profile());
+      break;
+    case '#movies':
+      main.innerHTML = '';
+      main.appendChild(movies());
+      break;
+    case '#series':
+      main.innerHTML = '';
+      main.appendChild(series());
+      break;
 
-      default: main.appendChild(login());
-    }
-  });
+    default: main.appendChild(login());
+  }
 };
 
+window.addEventListener('hashchange', () => {
+  init();
+});
+
 window.addEventListener('load', () => {
-  main.appendChild(login());
   init();
 });

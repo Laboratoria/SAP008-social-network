@@ -12,8 +12,15 @@
 
 ## 1. Resumo do projeto
 
+Sabemos que há redes sociais de todo tipo para todos os tipos de interesse, as redes invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem viver sem elas.
+Para além dos objetivos e características principais já conhecidas das redes como conectar-se com amigos, familiares, clientes e pessoas que compartilham interesses em comum, hoje também são muitos utilizadas como ferramenta profissional dentro dos mais variados setores e é um dos principais meios de comunicação, útil para buscar informações e já tem um impacto direto nas relações modernas.
+Este projeto é sobre construir uma rede social, utilizando a metodologia Single-page Application (SPA), responsiva (com mais de uma tela/ página) na qual seja possível ler e escrever dados.
+
+Neste projeto, foi criada a terceira aplicação web do bootcamp Laboratória , de interface intuitiva, acessível, possui contraste, botões principais em evidência e com visual limpo para facilitar a leitura. Nela, os cadastrados na rede podem publicar a respeito de suas experiências relacionadas ao tema (Críticas gastronômicas), visualizar e interagir através desta circulação de informações entre os usuários, permite criar uma conta de acesso, logar-se com ela, criar, editar, deletar e dar likes em publicações. 
 
 ### Críticas gastronômicas
+
+Uma rede social voltada às experiências em bares e restaurantes, na qual é possível compartilhar críticas, dicas e recomendações gastronômicas, além de outros aspectos vivenciados nestes locais, como atendimento, ambiente, valores, entre outros.
 
 ## 2. Organização de trabalho
 

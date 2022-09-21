@@ -69,7 +69,7 @@ export default () => {
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       firebase.firestore().collection('users').doc(user.email).set(
-        { email: user.email, image: user.photoURL, name: user.displayName },
+        { email: user.email, image: user.photoURL, name: user.displayName, uid: user.uid },
         { merge: true },
       );
     }).catch((error) => {

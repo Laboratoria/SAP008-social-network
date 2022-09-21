@@ -11,7 +11,7 @@ const main = document.querySelector('#root');
 const init = () => {
   window.addEventListener('hashchange', () => {
     switch (window.location.hash) {
-      case '#login':
+      case '':
         main.appendChild(login());
         break;
       case '#register':

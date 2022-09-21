@@ -122,7 +122,6 @@ export default () => {
                      <span class="getLike">${like}</span>
                      <span data-deslike=${doc.id} data-user=${doc.data().user_id}>💔</span>
                      <span class="getDeslike">${deslike}</span>
-                     <span class="getLike"> ${like}</span>
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
                      <div class="buttons-posts"> 
                          <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-delete"> Apagar</button>

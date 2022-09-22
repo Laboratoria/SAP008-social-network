@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Booknotes</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- isso vai pra dentro do js-->
-    <section class="login">
+// Este es el punto de entrada de tu aplicacion
+export const myFunction = () => {
+  const container = document.createElement("div");
+
+  const templateLogin = `
+<section class="login">
       <div>
         <img src="./img/logo.png" alt="Logo Booknotes" />
         <p>
@@ -25,7 +19,8 @@
         <button type="submit">Cadastre-se!</button>
       </div>
     </section>
-    <!---->
-    <script type="module" src="main.js"></script>
-  </body>
-</html>
+`;
+  container.innerHTML = templateLogin;
+  return container;
+  myFunction();
+};

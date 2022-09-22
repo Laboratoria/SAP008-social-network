@@ -37,6 +37,7 @@ export default () => {
   const inputEmail = loginContainer.querySelector('#email-input-login');
   const inputPasssword = loginContainer.querySelector('#password-input-login');
   const btnLogIn = loginContainer.querySelector('#btn-login-page');
+
   btnLogIn.addEventListener("click", () => {
       loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
       .then(() => {
@@ -50,9 +51,10 @@ export default () => {
     })
   
   const googleBtn = loginContainer.querySelector('#google-btn');
+
   googleBtn.addEventListener('click', () => {
     loginWithGoogle()
-    .then((result) => {
+    .then(() => {
       window.location.hash = '#feed';
     })
     .catch((error) => {

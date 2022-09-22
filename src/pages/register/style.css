@@ -18,10 +18,22 @@
     background: linear-gradient(180deg, rgba(188, 255, 243, 0.96) 0%, rgba(241, 234, 174, 0.96) 25%, #FFE6DB 50%, rgba(255, 221, 225, 0.96) 75%, #FFFFFF 100%);
 }
 
+.register-text {
+    align-self: flex-start;
+    color: #EE2C12;
+    font-weight: 400;
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+.register-name {
+    margin-bottom: 0.7rem;
+}
+
 .register-login {
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.3rem;
     text-align: center;
     margin-top: 5rem;
     margin-bottom: 3rem;
@@ -33,11 +45,18 @@
     background: white;
     border: none;
     height: 6vh;
-    width: 73vw;
+    width: 68vw;
     border-radius: 10px;
     text-align: left;
     box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
-    padding-left: 1rem;
+    padding-left: 3rem;
+}
+
+.signup-icons {
+    align-self: flex-start;
+    margin-bottom: -4.3rem;
+    margin-left: 0.7rem;
+    z-index: 1;
 }
 
 .btn-register {

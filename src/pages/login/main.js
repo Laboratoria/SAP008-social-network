@@ -1,6 +1,8 @@
-import { loginWithEmailAndPassword, 
+
+import {
+  loginWithEmailAndPassword,
   loginWithGoogle,
-} from "../../lib/index.js";
+} from '../../lib/index.js';
 
 export default () => {
   const loginContainer = document.createElement('div');
@@ -25,7 +27,7 @@ export default () => {
             <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
             
             <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
-      
+
             <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
 
           </main>
@@ -34,40 +36,38 @@ export default () => {
 
   const returnBtn = loginContainer.querySelector('#return-btn');
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
-  
+
   const inputEmail = loginContainer.querySelector('#email-input-login');
   const inputPasssword = loginContainer.querySelector('#password-input-login');
-  const btnLogIn = loginContainer.querySelector('#btn-login-page');
+  const btnLogin = loginContainer.querySelector('#btn-login-page');
   const btnResetPassword = loginContainer.querySelector('.password-reset-login');
-
-  btnLogIn.addEventListener("click", () => {
-      loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
+    
+  btnLogin.addEventListener('click', () => {
+    loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
       .then(() => {
         // const user = userCredential.user; <- visualiza user
         window.location.hash = '#feed';
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      .catch((/* error */) => {
+        /* const errorCode = error.code;
+        const errorMessage = error.message; */
       });
-    })
+  });
   
   const googleBtn = loginContainer.querySelector('#google-btn');
 
   googleBtn.addEventListener('click', () => {
     loginWithGoogle()
-    .then(() => {
-      window.location.hash = '#feed';
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
-    });
-  })
-
-
+      .then((/* resul */) => {
+        window.location.hash = '#feed';
+      })
+      .catch((/* error */) => {
+      /*  const errorCode = error.code;
+          const errorMessage = error.message;
+          const email = error.customData.email;
+          const credential = GoogleAuthProvider.credentialFromError(error); */
+      });
+  });
 
   return loginContainer;
 };

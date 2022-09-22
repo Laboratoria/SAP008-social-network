@@ -18,6 +18,7 @@ export default () => {
             <label for="passwordsignup">Digite sua senha</label>
             <input type="password-signup" placeholder="****" id="signup-password" class="input-password-signup" />
             </section>
+    
 
             <section class="buttons-signup">
             <button type="submit" class="btn-signup">Cadastrar</button>

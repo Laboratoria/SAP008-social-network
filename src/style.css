@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto+Slab&display=swap');
+
 body {
     background-color: #131b1f;
     color:#ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
   }
   
   .frame {
@@ -41,6 +44,6 @@ body {
     font-size:10px;
   }
   
-  .color-text {
+  .cta {
     color: #ab6930;
   }

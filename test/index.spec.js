@@ -1,8 +1,9 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+import { loginWithGoogle } from '../src/lib/index.js';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+jest.mock('../src/lib/index.js');
+
+describe('loginWithGooglen', () => {
+  it('a função deve ser chamada uma vez', () => {
+    expect(loginWithGoogle).toHaveBeenCalledTimes(1);
   });
 });

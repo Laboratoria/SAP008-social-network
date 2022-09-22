@@ -20,9 +20,9 @@ export default () => {
                   <li><a class="about" href="/#about">SOBRE</a></li>
                   <li class="developed-by">DESENVOLVIDO POR
                     <a href="https://github.com/clasimplicio">CLARISSA</a>
-                    , 
+                    ,
                     <a href="https://github.com/fbasoni">FABIANY</a>
-                    E 
+                    E
                     <a href="https://github.com/dodojoy">JOYCE</a>
                   </li>
                 </ul>

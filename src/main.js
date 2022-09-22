@@ -7,7 +7,6 @@ import profile from "./profile/profile.js";
 import about from "./about/about.js";
 
 
-
 const main = document.querySelector('#root');
 
 const init = () => {
@@ -40,8 +39,9 @@ const init = () => {
             main.innerHTML = ' ';
             main.appendChild(about());
             break;
-
-            default: main.appendChild(login());
+            default: 
+            main.innerHTML = ' ';
+            main.appendChild(login());
         }   
     });
 } ;        

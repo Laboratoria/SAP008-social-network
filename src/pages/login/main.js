@@ -1,3 +1,4 @@
+
 import {
   loginWithEmailAndPassword,
   loginWithGoogle,
@@ -18,9 +19,10 @@ export default () => {
               <h2 class="login-text">ENTRAR</h2>
               <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login"><p>
               <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login"></p>
-              <a href="/#resetpassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
-                
+              
             </form>
+
+            <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
                 
             <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
             
@@ -37,8 +39,10 @@ export default () => {
 
   const inputEmail = loginContainer.querySelector('#email-input-login');
   const inputPasssword = loginContainer.querySelector('#password-input-login');
-  const btnLogIn = loginContainer.querySelector('#btn-login-page');
-  btnLogIn.addEventListener('click', () => {
+  const btnLogin = loginContainer.querySelector('#btn-login-page');
+  const btnResetPassword = loginContainer.querySelector('.password-reset-login');
+    
+  btnLogin.addEventListener('click', () => {
     loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
       .then(() => {
         // const user = userCredential.user; <- visualiza user
@@ -49,7 +53,9 @@ export default () => {
         const errorMessage = error.message; */
       });
   });
+  
   const googleBtn = loginContainer.querySelector('#google-btn');
+
   googleBtn.addEventListener('click', () => {
     loginWithGoogle()
       .then((/* resul */) => {

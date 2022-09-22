@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'; //eslint-disable-line
 
 import { app } from './firebase-configuration.js';
@@ -23,4 +24,8 @@ export function loginWithEmailAndPassword(email, password) {
 
 export function loginWithGoogle() {
   return signInWithPopup(auth, provider);
+}
+
+export function resetPassword(email) {
+  return sendPasswordResetEmail(auth, email);
 }

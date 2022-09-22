@@ -5,7 +5,7 @@ export default () => {
     const template = `  
     <div class="container-register">
 
-    <img src="./images/logo_01_marrom_A6634B.png" alt="logo do título"
+    <img class="logo-marron" src="./images/logo_01_marrom_A6634B.png" alt="logo do título"
         <br>
         <p class = "sub-title-register">Momentos musicais inesqueciveis</p>                     
         <form>

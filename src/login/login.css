@@ -1,4 +1,9 @@
-img { 
+
+body{
+    font-family: 'Carrois Gothic'
+}
+
+.logo-azul-login { 
     position: absolute;
     width: 330px;
     height: 90px;

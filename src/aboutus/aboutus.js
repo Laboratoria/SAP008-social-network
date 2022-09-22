@@ -3,7 +3,7 @@ export default () => {
     const template = `  
         <div class="container-login">
         
-        <h1> AQUI É ABOUT APP </h1>
+        <h1>AQUI É ABOUT US</h1>
 
 
             

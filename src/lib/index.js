@@ -1,6 +1,16 @@
-// aqui exportaras las funciones que necesites
+import templateLogin from './pages/home.js';
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};
+const body = document.querySelector("#root");
+  window.addEventListener("load", () => {
+  body.appendChild(templateLogin());
+  })
+
+const init = () => {
+  window.addEventListener("hashchange", () => {
+    switch(window.location.hash){
+      case " ":
+        MediaDeviceInfo.appendChild(home());
+        break;
+    }
+  })
+}

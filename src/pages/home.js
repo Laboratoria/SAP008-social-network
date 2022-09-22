@@ -1,5 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
-export const myFunction = () => {
+export const homeFunction = () => {
   const container = document.createElement("div");
 
   const templateLogin = `
@@ -22,5 +22,6 @@ export const myFunction = () => {
 `;
   container.innerHTML = templateLogin;
   return container;
-  myFunction();
 };
+
+

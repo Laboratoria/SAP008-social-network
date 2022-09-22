@@ -6,10 +6,10 @@ const init = () => {
     window.addEventListener('hashchange', () => {
         main.innerHTML = '';
         switch (window.location.hash) {
-            case " ":
+            case '':
                 main.appendChild(Login());
                 break;
-            case "#Signup":
+            case '':
                 main.appendChild(Signup());
                 break;
             default: main.appendChild(Login());
@@ -19,6 +19,7 @@ const init = () => {
 
 }
 window.addEventListener('load', () => {
+    window.location.hash = ""
     main.appendChild(Login());
     init();
 });

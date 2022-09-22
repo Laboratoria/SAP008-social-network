@@ -1,5 +1,5 @@
 import { loginWithEmailAndPassword, 
-  loginWithGoogle 
+  loginWithGoogle,
 } from "../../lib/index.js";
 
 export default () => {
@@ -17,9 +17,10 @@ export default () => {
               <h2 class="login-text">ENTRAR</h2>
               <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login"><p>
               <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login"></p>
-              <a href="/#resetpassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
-                
+              
             </form>
+
+            <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
                 
             <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
             
@@ -37,6 +38,7 @@ export default () => {
   const inputEmail = loginContainer.querySelector('#email-input-login');
   const inputPasssword = loginContainer.querySelector('#password-input-login');
   const btnLogIn = loginContainer.querySelector('#btn-login-page');
+  const btnResetPassword = loginContainer.querySelector('.password-reset-login');
 
   btnLogIn.addEventListener("click", () => {
       loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
@@ -64,6 +66,8 @@ export default () => {
       const credential = GoogleAuthProvider.credentialFromError(error);
     });
   })
+
+
 
   return loginContainer;
 };

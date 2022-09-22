@@ -1,0 +1,46 @@
+body {
+    background-color: #131b1f;
+    color:#ffffff;
+  }
+  
+  .frame {
+    width:404px;
+      height:275px;
+      border:1px solid #ffffff;
+      background:transparent 
+  }
+  
+  .lines {
+    display: flex;
+    font-size: 18px;
+  }
+  
+  hr {
+    margin-top:auto;
+    margin-bottom:auto;
+    margin:auto 0 auto 0;
+    width:12%;
+    
+  }
+  
+  button {
+    -webkit-text-stroke-width: 0.5px;
+    border-color: White;
+    background-color: transparent;
+    color:#ffffff;
+    width: 187px;
+    height: 32px;
+    font-size:14px;
+  }
+  
+  .titles {
+    font-size:25px;
+  }
+  
+  .instructions {
+    font-size:10px;
+  }
+  
+  .color-text {
+    color: #ab6930;
+  }

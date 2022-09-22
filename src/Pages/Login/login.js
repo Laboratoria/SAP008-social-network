@@ -19,15 +19,9 @@ export default () => {
             </section>
 
             <section class="buttons">
-<<<<<<< HEAD
             <button type="submit" class="btn-login" id="submit_login">Iniciar Sessão</button>
             <button type="submit" class="btn-google"><img src="./Imagens/google.png"/> Entrar com Google</button>
             <button type="submit" class="btn-register">Criar nova conta</button>
-=======
-            <a href="#Login" class="btn-login">Iniciar Sessão</a>
-            <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./Imagens/google.svg"/> Entrar com Google</a>
-            <a href="#Signup" class="btn-register">Criar nova conta</a>
->>>>>>> ccb28cc33f5521a71013d0a50d19cd55ccc9f7e2
             </section>
         </form>
     `;

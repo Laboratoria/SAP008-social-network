@@ -1,5 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
+
 .logo-marron { 
-    position: absolute;
+    position: relative;
     width: 330px;
     height: 90px;
     left: 15px;
@@ -9,17 +12,12 @@
 .sub-title-register {
     color: #A6634B;  
     position: absolute;
-    width: 308px;
-    height: 21px;
+    position: absolute;
     left: 32px;
     top: 147px;
-    font-family: 'Carrois Gothic SC';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 14px;
     letter-spacing: 0.05em;
-    mix-blend-mode: darken;
+    font-family: "Carrois Gothic SC";
 }
 
 .box-name-register {
@@ -28,13 +26,13 @@
     height: 25px;
     left: 106px;
     top: 215px;
-    font-family: 'Carrois Gothic';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #221d1d;
     border: none;
+    font-family: "Carrois Gothic SC";
 }
 
 .box-email-register {
@@ -43,42 +41,42 @@
     height: 16px;
     left: 105px;
     top: 304px;
-    font-family: 'Carrois Gothic';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #0b0808;
     border: none; 
+    font-family: "Carrois Gothic SC";
 }
 
 .box-password-register  {
-    /*position: absolute;*/
+    position: absolute;
     width: 139px;
     height: 16px;
     left: 108px;
-    top: 392px;
-    font-family: 'Carrois Gothic';
+    top: 372px;
+    font-family: "Carrois Gothic SC";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #1a1717;
     border: none;
 }
 
-.box-register-password{
-   /* position: absolute;*/
+.box-password-repeat{
+   position: relative;
     width: 124px;
     height: 16px;
     left: 108px;
-    top: 494px;
-    font-family: 'Carrois Gothic';
+    top: 350px;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #161111;
+    font-family: "Carrois Gothic SC";
+    border: none;
 }
 
 .btn-register {
@@ -90,6 +88,7 @@
     background: linear-gradient(0deg, #8C8080, #8C8080), linear-gradient(0deg, #163440, #163440), #8C4A5C;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
+    font-family: "Carrois Gothic SC";
 }
 
 .user {
@@ -98,7 +97,7 @@
     height: 47px;
     left: 29px;
     top: 585px;
-    font-family: 'Carrois Gothic';
+    font-family: "Carrois Gothic SC";
     font-style: normal;
     font-weight: 400;
     font-size: 17px;

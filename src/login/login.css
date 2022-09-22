@@ -1,8 +1,9 @@
 
-body{
-    font-family: 'Carrois Gothic'
-}
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
 
+body {
+    font-family: "Carrois Gothic SC";
+}
 .logo-azul-login { 
     position: absolute;
     width: 330px;
@@ -14,17 +15,11 @@ body{
 .sub-title{
     color: #081E26;  
     position: absolute;
-    width: 308px;
-    height: 21px;
     left: 32px;
     top: 147px;
-    font-family: 'Carrois Gothic SC';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 14px;
     letter-spacing: 0.05em;
-    mix-blend-mode: darken;
+    font-family: "Carrois Gothic SC";
 }
 
 .box-name{
@@ -36,6 +31,7 @@ body{
     background: rgba(217, 217, 217, 0.4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
     border: none;
+    font-family: "Carrois Gothic SC";
 }
 
 .box-password{
@@ -47,6 +43,7 @@ body{
     background: rgba(217, 217, 217, 0.4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
     border: none;
+    font-family: "Carrois Gothic SC";
 }
 
 .box-enter {
@@ -56,21 +53,24 @@ body{
     left: 30px;
     top: 396px;
     background: rgba(56, 77, 89, 0.6);
+    font-family: "Carrois Gothic SC";
 }
 
 .new-password {
     color: #081E26;  
     position: absolute;
-    width: 148px;
+    width: 168px;
     height: 22px;
     left: 114px;
     top: 484px;
-    font-family: 'Carrois Gothic';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     mix-blend-mode: darken;
+    border: none;
+     background: #FFFFFF;
+     font-family: "Carrois Gothic SC";
 }
 
 .box-login-google{
@@ -80,12 +80,12 @@ body{
     left: 30px;
     top: 557px;
     background: rgba(56, 77, 89, 0.6);
-    font-family: 'Carrois Gothic';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    font-family: "Carrois Gothic SC";
 }
 
 .box-register{
@@ -95,5 +95,8 @@ body{
     left: 30px;
     top: 633px;
     background: rgba(56, 77, 89, 0.6);
+    font-family: 'Montesserrat';
+    font-size: 20px;
+    font-family: "Carrois Gothic SC";
 }
 

@@ -12,7 +12,7 @@ export default () => {
             <input class ="box-name-register" type="name" id="name" placeholder="Nome completo"/>
             <input class ="box-email-register"type="e-mail" id="e-mail" placeholder="E-mail"/>
             <input class ="box-password-register" type="password" id="password" placeholder="Digite sua senha"/> 
-            <input class ="box-password-register" id="box-register-password" type="password" id="password" placeholder="Repetir senha"/>    
+            <input class ="box-password-repeat" id="box-register-password" type="password" id="password" placeholder="Repetir senha"/>    
             <button class ="btn-register" type="button" id="btn-register" class="btn-register">Registrar-se</button>
         </form>
 

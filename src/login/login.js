@@ -7,7 +7,7 @@ export default () => {
         
             <img  class="logo-azul-login" src="./images/logo_02_azul_081E26.png" alt="logo do título"
             <br>
-            <p class = "sub-title">Momentos musicais inesqueciveis</p>                     
+            <h2 class = "sub-title">MOMENTOS MUSICAIS INESQUECÍVEIS</h2>                     
             <form>
                 <input class="box-name" type="e-mail" id="e-mail" placeholder="Nome de usuário ou e-mail"/>
                 <input class="box-password" type="password" id="senha" placeholder="Digite sua senha"/> 

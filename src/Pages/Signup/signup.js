@@ -2,11 +2,11 @@ export default () => {
     const container = document.createElement('div');
 
     const template = `
-        <figure class="img-logo-signup">
+    <figure class="img-logo-signup imgFlip">
             <img src="./Imagens/logo-mobile.png" alt="logo">
         </figure>
 
-        <form class="form-signup">
+        <form class="form-signup bounce">
             <h1 class="title-signup">Cadastre-se</h1>
             <section class="inputs-signup">
             <label for="name-signup" class="label">Nome completo</label>
@@ -22,7 +22,7 @@ export default () => {
 
             <section class="buttons-signup">
             <button type="submit" class="btn-signup">Cadastrar</button>
-            <button type="submit" class="btn-google-signup"><img src="./Imagens/google.png"/> Cadastro com Google</button>
+            <button type="submit" class="btn-google-signup"><img src="./Imagens/google.svg"/>Cadastro com Google</button>
             </section>
         </form>
     `;

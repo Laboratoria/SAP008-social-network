@@ -113,21 +113,27 @@ export default () => {
          
                  <div class="info-movies">
                      <div class="name-movies">
-                         <h2>${movie}</h2>
+                     <textarea id="name-${doc.id}" style="resize:none" disabled>${movie}</textarea>
                      </div>
                      <div class="about-movies">
-                         ${text}
+                     <textarea id="about-${doc.id}" style="resize:none" disabled>${text}</textarea>
                      </div>
+                    
                      <div class="stars">
                      <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
                      <span class="getLike">${like}</span>
+
                      <span data-desliked=${doc.id} data-user=${doc.data().user_id}>💔</span>
                      <span class="getDeslike">${deslike}</span>
+
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
-                     <div class="buttons-posts"> 
-                         <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-delete"> Apagar</button>
-                         <button data-edit=${doc.id} data-user=${doc.data().user_id} class="buttons" type="button" id="btn-edit"> Editar</button>
-                         </div>
+                     <div class="buttons-posts" id="editButton-${doc.id}"> 
+                         <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-delete"> Apagar</button>
+                         <button data-edit=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-edit"> Editar</button>
+                     </div>
+                     <div class="buttons-posts" id="updateButton-${doc.id}" style="display:none"> 
+                         <button data-update=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-edit">Salvar</button>
+                     </div>
                      </div>
                  </div>
                
@@ -191,7 +197,6 @@ export default () => {
     }
   });
 
-  // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const editButton = e.target.dataset.edit;
     const userCurrent = e.target.dataset.user;
@@ -201,54 +206,41 @@ export default () => {
         alert('Não é possivel editar post de outros usuarios');
         return false;
       }
-      const resultado = window.confirm('Você deseja editar essa postagem?');
 
-      if (resultado === true) {
-        const updateMovie = prompt('Digite o nome do filme/série');
-        const updateText = prompt('Digite seu spoiler');
-
-        boxPost.querySelector(`#poster-${editButton}`).getElementsByTagName('h2')[0].innerHTML = updateMovie;
-        boxPost.querySelector(`#poster-${editButton}`).getElementsByClassName('about-movies')[0].innerHTML = updateText;
-        db.collection('test').doc(editButton)
-          .update({
-            movie: updateMovie,
-            text: updateText,
-          })
-          .then(() => {
-          })
-          .catch(() => {
-            alert('Algo deu errado. Por favor, tente novamente.');
-          });
-      }
+      boxPost.querySelector(`#updateButton-${editButton}`).removeAttribute('style');
+      boxPost.querySelector(`#editButton-${editButton}`).style.display = 'none';
+      boxPost.querySelector(`#name-${editButton}`).removeAttribute('disabled');
+      boxPost.querySelector(`#about-${editButton}`).removeAttribute('disabled');
     }
   });
 
   boxPost.addEventListener('click', (e) => {
-    const buttonLike = e.target.dataset.liked;
-    const increment = firebase.firestore.FieldValue.increment(1);
+    const updateButton = e.target.dataset.update;
+    const userCurrent = e.target.dataset.user;
 
-    boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = increment;
-    db.collection('test').doc(buttonLike)
-      .update({
-        like: increment,
-      })
-      .then(() => {
-        window.location.reload();
-      });
-  });
+    if (updateButton) {
+      if (userId !== userCurrent) {
+        return false;
+      }
 
-  boxPost.addEventListener('click', (e) => {
-    const buttonDeslike = e.target.dataset.desliked;
-    const increment = firebase.firestore.FieldValue.increment(1);
-// console.log(increment)
-    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = increment;
-    db.collection('test').doc(buttonDeslike)
-      .update({
-        deslike: increment,
-      })
-      .then(() => {
-        window.reload = () => window.location.hash('.posts');
-      });
+      const updateMovie = boxPost.querySelector(`#name-${updateButton}`).value;
+      const updateText = boxPost.querySelector(`#about-${updateButton}`).value;
+
+      db.collection('test').doc(updateButton)
+        .update({
+          movie: updateMovie,
+          text: updateText,
+        })
+        .then(() => {
+          boxPost.querySelector(`#updateButton-${updateButton}`).style.display = 'none';
+          boxPost.querySelector(`#editButton-${updateButton}`).removeAttribute('style');
+          boxPost.querySelector(`#name-${updateButton}`).setAttribute('disabled','');
+          boxPost.querySelector(`#about-${updateButton}`).setAttribute('disabled','');
+        })
+        .catch((e) => {
+          alert('Algo deu errado. Por favor, tente novamente.');
+        });
+    }
   });
 
   return container;

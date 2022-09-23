@@ -1,6 +1,6 @@
 
 @font-face {
-    font-family: Blanka;
+    font-family: 'Blanka', sans-serif;
     src: url(/src/fonts/Blanka-Regular.otf);
 }
 
@@ -27,7 +27,7 @@
 
 .about-rebu, .about-rebu-title {
     color: #EE2C12;
-    font-family: Blanka;
+    font-family: 'Blanka', sans-serif;
 }
 
 .about-rebu-title {

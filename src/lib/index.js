@@ -1,17 +1,18 @@
-import { app } from './firebase-configuration.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  sendPasswordResetEmail,
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'; //eslint-disable-line
+
+import { app } from './firebase-configuration.js';
+
 // import { db } from '... firebase-firestore.js'
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
-
 
 export function registerWithEmailAndPassword(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
@@ -28,8 +29,3 @@ export function loginWithGoogle() {
 export function resetPassword(email) {
   return sendPasswordResetEmail(auth, email);
 }
-// aqui exportaras las funciones que necesites
-
-// export const myFunction = () => {
-//   // aqui tu codigo
-//   console.log('Hola mundo!');

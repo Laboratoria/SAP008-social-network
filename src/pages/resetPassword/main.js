@@ -1,6 +1,6 @@
 import {
-    resetPassword 
-  } from "../../lib/index.js";
+  resetPassword,
+} from '../../lib/index.js';
 
 export default () => {
   const resetContainer = document.createElement('div');
@@ -24,6 +24,7 @@ export default () => {
   
           </main>
         `;
+        
   resetContainer.innerHTML = template;
 
   const returnBtn = resetContainer.querySelector('#return-btn');
@@ -31,10 +32,11 @@ export default () => {
   const sendBtn = resetContainer.querySelector('#btn-reset-page');
 
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+  
   sendBtn.addEventListener('click', () => {
     resetPassword(emailValue.value)
       .then(() => {
-        alert('Email enviado')
+        alert('Email enviado');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -44,3 +46,4 @@ export default () => {
 
   return resetContainer;
 }
+

@@ -12,7 +12,7 @@ export default () => {
             <input type="text" id="location" placeholder="Local"/> 
             <input id="date" type="date">
             <input type="text" id="post" placeholder="O show + inesquecível"/>
-            <button type="button" id="btn-upload" class="btn-upload"> Carregar foto</button> 
+            <button type="button" id="btn-upload" class="btn-upload"> Carregue sua foto</button> 
             <button type="button" id="btn-post" class="btn-post">Enviar</button>  
         </form>
     </div>     

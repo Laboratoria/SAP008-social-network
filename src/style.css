@@ -2,48 +2,80 @@
 
 body {
     background-color: #131b1f;
-    color:#ffffff;
+    color: #ffffff;
     font-family: 'Roboto Condensed', sans-serif;
-  }
-  
-  .frame {
-    width:404px;
-      height:275px;
-      border:1px solid #ffffff;
-      background:transparent 
-  }
-  
-  .lines {
+    display:flex;
+    justify-content:center;
+}
+
+.frame {
+    width: 257px;
+    height: 368px;
+    border: 1px solid #ffffff;
+    background: transparent;
+    margin-top: 25%;
+    
+}
+
+.lines {
     display: flex;
     font-size: 18px;
-  }
-  
-  hr {
-    margin-top:auto;
-    margin-bottom:auto;
-    margin:auto 0 auto 0;
-    width:12%;
-    
-  }
-  
-  button {
+}
+
+hr {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: auto 0 auto 0;
+    width: 33%;
+
+}
+
+button {
     -webkit-text-stroke-width: 0.5px;
     border-color: White;
     background-color: transparent;
-    color:#ffffff;
+    color: #ffffff;
     width: 187px;
     height: 32px;
-    font-size:14px;
-  }
-  
-  .titles {
-    font-size:25px;
-  }
-  
-  .instructions {
-    font-size:10px;
-  }
-  
-  .cta {
+    font-size: 14px;
+}
+
+.titles {
+    font-size: 25px;
+}
+
+.instructions {
+    font-size: 10px;
+}
+
+.cta {
     color: #ab6930;
-  }
+}
+
+
+.boxes {
+    color: #ffffff;
+    width: 187px;
+    height: 32px;
+    font-size: 14px;
+}
+
+.pswd-ok {
+    width: 151px;
+    height: 32px;
+    margin-top: 10px;
+}
+
+#btn-ok {
+    width: 36px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    border: none;
+    font-size: 14px;
+    height: 35px;
+}
+
+footer {
+    bottom:0;
+    position: fixed;
+}

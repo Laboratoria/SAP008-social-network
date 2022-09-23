@@ -5,8 +5,7 @@ import timeline from "./timeline/timeline.js";
 import post from "./post/post.js";
 import profile from "./profile/profile.js";
 import about from "./about/about.js";
-
-
+import aboutus from "./aboutus/aboutus.js";    
 
 const main = document.querySelector('#root');
 
@@ -40,8 +39,13 @@ const init = () => {
             main.innerHTML = ' ';
             main.appendChild(about());
             break;
-
-            default: main.appendChild(login());
+            case '#aboutus':                   
+            main.innerHTML = ' ';
+            main.appendChild(aboutus());
+            break;
+            default: 
+            main.innerHTML = ' ';
+            main.appendChild(login());
         }   
     });
 } ;        
@@ -50,3 +54,5 @@ window.addEventListener("load",  () => {
     main.appendChild(login( ));
     init( );
 });
+
+

@@ -7,10 +7,10 @@ export default () => {
   
                 <button id="google-login">Entrar com Google</button>
   
-                <div class ="lines">
-                    <hr>
+                <div class="lines">
+                    <hr style="margin-right: 5%">
                     <p>ou</p>
-                    <hr>
+                    <hr style="margin-left: 5%">
                 </div>
   
                 <input type="text" id="email" class="boxes" placeholder="E-mail"><br>

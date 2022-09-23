@@ -1,19 +1,19 @@
 export default () => {
-  const container = document.createElement('div');
-  const template =
-    `<section class="container">
+    const container = document.createElement('div');
+    const template =
+        `<section class="container">
       <div class="frame">
         <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
 
-        <button id="google-login">Entrar com Google</button>
+        <button id="google-login" class="signin-btn">Entrar com Google</button>
 
         <div class="lines">
-          <hr>
+          <hr style="margin-right: 5%">
           <p>ou</p>
-          <hr>
+          <hr style="margin-left: 5%">
         </div>
 
-        <button id="email-signin">Inscreva-se com e-mail</button>
+        <button id="email-signin" class="signin-btn">Inscreva-se com e-mail</button>
 
         <p class="instructions">Ao se inscrever, você concorda com os
         <a class="cta" href="">Termos<br>de Serviço</a> e a
@@ -25,6 +25,6 @@ export default () => {
       </div>
       <div class="logo"></div>
     </section>`;
-  container.innerHTML = template;
-  return container;
+    container.innerHTML = template;
+    return container;
 }

@@ -6,6 +6,7 @@
 
 import load from './pages/load/load.js'
 import entrar from './pages/entrar/entrar.js'
+import cadastrar from './pages/cadastrar/cadastrar.js'
 
 const main = document.querySelector('#root');
 
@@ -19,7 +20,11 @@ const navegar = () => {
             case '#entrar':
                 main.appendChild(entrar());
                 break;
-
+            case '#cadastre-se':
+                main.appendChild(cadastrar());
+                break;
+            default:
+                main.appendChild(load());
         }
     })
 }

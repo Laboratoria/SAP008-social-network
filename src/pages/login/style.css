@@ -61,7 +61,7 @@ body {
 }
 
 .password-reset-login {
-    margin-bottom: -1rem;
+    margin-bottom: 1rem;
 }
 
 .link-text-login {
@@ -97,7 +97,8 @@ body {
     padding: 0.55rem 1.5rem;
     box-shadow: 1px 3px 3px rgba(94, 94, 94, 0.438);
     padding-top: -2rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    margin: 1rem 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -121,4 +122,20 @@ body {
     color: white;
     transition: 1s;
     cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .img-logo-login {
+        height: 6vh;
+    }
+
+    .password-reset-login, .btn-google-login, .link-text-login, .btn-login {
+        font-size: larger;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header-login{
+        display: none;
+    }
 }

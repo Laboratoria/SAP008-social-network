@@ -1,4 +1,4 @@
-import { loginEmailPassword } from "../../lib/auth.js";
+import { loginEmailPassword, logout } from "../../lib/auth.js";
 
 export default() => {
     const container = document.createElement('div');
@@ -69,12 +69,15 @@ export default() => {
     const txtEmail = container.querySelector('#txtEmail');
     const txtPassword = container.querySelector('#txtPassword');
     const btnLogin = container.querySelector('#btnLogin');
+    const btnLogout = container.querySelector('#btnLogout'); 
 
     btnLogin.addEventListener("click", () => {
         const email = txtEmail.value;
         const password = txtPassword.value;
         loginEmailPassword(email, password);
     });
+
+    btnLogout.addEventListener("click", logout);
 
     return container;
 }

@@ -1,5 +1,5 @@
 import { app } from "./firebase.js"
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 
 const auth = getAuth(app);
 
@@ -35,5 +35,9 @@ const createAccount = async (email, password) => {
     }
   }
 
-export { auth, loginEmailPassword, createAccount};
+const logout = async () => {
+    await signOut(auth);
+    }
+
+export { auth, loginEmailPassword, createAccount, logout};
 

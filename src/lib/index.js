@@ -1,15 +1,16 @@
-import templateLogin from './pages/home.js';
+import {homeFunction} from '../pages/home.js';
 
 const body = document.querySelector("#root");
   window.addEventListener("load", () => {
-  body.appendChild(templateLogin());
+    init()
+  body.appendChild(homeFunction());
   })
 
 const init = () => {
   window.addEventListener("hashchange", () => {
     switch(window.location.hash){
       case " ":
-        MediaDeviceInfo.appendChild(home());
+        body.appendChild(homeFunction());
         break;
     }
   })

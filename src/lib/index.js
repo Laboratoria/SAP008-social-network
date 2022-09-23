@@ -4,14 +4,13 @@ const body = document.querySelector('#root');
 
 const init = () => {
   window.addEventListener('hashchange', () => {
-    // eslint-disable-next-line default-case
     switch (window.location.hash) {
       case '':
-        body.appendChild(homeFunction());
-        break;
-    }
-  });
-};
+    body.appendChild(homeFunction());
+    break;
+      }
+    });
+  };
 
 window.addEventListener('load', () => {
   init();

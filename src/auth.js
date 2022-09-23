@@ -7,14 +7,8 @@ import {
 
 export const auth = getAuth(app);
 
-export const userEmail = document.querySelector('#email')
-export const userPassword = document.querySelector('#password')
-export const form = document.querySelector(".bounce")
-export const user = document.querySelector("#username")
-
-form.addEventListener("submit", (e) => {
-
-    signInWithEmailAndPassword(auth, userEmail.value, userPassword.value)
+export function loginUserEmail(email, password) {
+    signInWithEmailAndPassword(auth, email.value, password.value)
         .then(userCredential => {
             window.location.hash('')
 
@@ -28,7 +22,7 @@ form.addEventListener("submit", (e) => {
             alert('Failure!')
         });
 
-});
+};
 
 function getErrorMessage(error) {
     if (error.code == "auth/user-not-found") {
@@ -37,9 +31,9 @@ function getErrorMessage(error) {
     return error.message;
 }
 
-form.addEventListener("submit", (e) => {
+export function loginUserEmail(email, password, user) {
 
-    createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value, user.value)
+    createUserWithEmailAndPassword(auth, email.value, password.value, user.value)
         .then(userCredential => {
             window.location.hash('#Signup')
 
@@ -53,4 +47,4 @@ form.addEventListener("submit", (e) => {
             alert('Failure!')
         });
 
-});
+};

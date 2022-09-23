@@ -24,7 +24,6 @@ export default () => {
   
           </main>
         `;
-    
   resetContainer.innerHTML = template;
 
   const returnBtn = resetContainer.querySelector('#return-btn');
@@ -32,18 +31,16 @@ export default () => {
   const sendBtn = resetContainer.querySelector('#btn-reset-page');
 
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
-  
   sendBtn.addEventListener('click', () => {
-    resetPassword(emailValue)
+    resetPassword(emailValue.value)
       .then(() => {
         alert('Email enviado')
       })
       .catch((error) => {
-       const errorCode = error.code;
+        const errorCode = error.code;
         const errorMessage = error.message;
-      })
-  })
+      });
+  });
 
   return resetContainer;
 }
-

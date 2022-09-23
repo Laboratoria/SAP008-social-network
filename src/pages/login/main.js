@@ -1,4 +1,5 @@
-import { loginWithEmailAndPassword, 
+import {
+  loginWithEmailAndPassword,
   loginWithGoogle,
 } from "../../lib/index.js";
 
@@ -34,14 +35,14 @@ export default () => {
 
   const returnBtn = loginContainer.querySelector('#return-btn');
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
-  
+
   const inputEmail = loginContainer.querySelector('#email-input-login');
   const inputPasssword = loginContainer.querySelector('#password-input-login');
   const btnLogIn = loginContainer.querySelector('#btn-login-page');
   const btnResetPassword = loginContainer.querySelector('.password-reset-login');
 
   btnLogIn.addEventListener("click", () => {
-      loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
+    loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
       .then(() => {
         // const user = userCredential.user; <- visualiza user
         window.location.hash = '#feed';
@@ -50,23 +51,22 @@ export default () => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-    })
-  
+  })
+
   const googleBtn = loginContainer.querySelector('#google-btn');
 
   googleBtn.addEventListener('click', () => {
     loginWithGoogle()
-    .then(() => {
-      window.location.hash = '#feed';
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
-    });
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
   })
-
 
 
   return loginContainer;

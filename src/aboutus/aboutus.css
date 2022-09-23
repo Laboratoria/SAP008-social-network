@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
+
+#container-aboutus{
+    position: relative;
+    width: 360px;
+    height: 800px;
+    background: linear-gradient(0deg, #163440, #163440), #8C4A5C;
+}
+
+#logo-marron-aboutus{
+    position: absolute;
+    width: 166px;
+    height: 46px;
+    left: 24px;
+    top: 19px;
+}
+
+h1#aboutdevs{
+    position: absolute;
+    width: 329px;
+    height: 34px;
+    left: 21px;
+    top: 99px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    color: #A6634B;
+}
+
+#h2-cla{
+    position: absolute;
+    width: 208px;
+    height: 21px;
+    left: 98px;
+    top: 174px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+#p-cla{
+    position: absolute;
+    width: 229px;
+    height: 52px;
+    left: 98px;
+    top: 207px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+#h2-angelica{
+    position: absolute;
+    width: 164px;
+    height: 23px;
+    left: 106px;
+    top: 328px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+#p-angelica{
+    position: absolute;
+    width: 224px;
+    height: 44px;
+    left: 105px;
+    top: 361px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+#h2-andrea{
+    position: absolute;
+    width: 164px;
+    height: 21px;
+    left: 106px;
+    top: 485px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+#p-andrea{
+    position: absolute;
+    width: 229px;
+    height: 52px;
+    left: 106px;
+    top: 518px;
+    font-family: 'Carrois Gothic SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}

@@ -5,7 +5,7 @@ import timeline from "./timeline/timeline.js";
 import post from "./post/post.js";
 import profile from "./profile/profile.js";
 import about from "./about/about.js";
-
+import aboutus from "./aboutus/aboutus.js";    //tive q incluir
 
 const main = document.querySelector('#root');
 
@@ -38,6 +38,10 @@ const init = () => {
             case '#about':
             main.innerHTML = ' ';
             main.appendChild(about());
+            break;
+            case '#aboutus':                   //tive que incluir
+            main.innerHTML = ' ';
+            main.appendChild(aboutus());
             break;
             default: 
             main.innerHTML = ' ';

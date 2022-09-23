@@ -6,36 +6,35 @@ const main = document.querySelector('#root');
 const init = () => {
     window.addEventListener('hashchange', () => {
         main.innerHTML = '';
-        switch (window.location.hash) {
-            case '':
-                main.appendChild(login());
-                break;
-            case '#login':
-                main.appendChild(login());
-                break;
-            case '#signup':
-                main.appendChild(signup());
-                break;
-            default: main.appendChild(login());
-        }
+        changeHash();
     })
 
 }
 
-// const changeHash = () => {
+const changeHash = () => {
+    switch (window.location.hash) {
+        case '':
+            main.appendChild(login());
+            break;
+        case '#login':
+            main.appendChild(login());
+            break;
+        case '#signup':            
+            main.appendChild(signup());
+            break;
+        default: main.appendChild(login());
+    }
     
-// }
+}
 
-window.addEventListener("load", (e) => {
-    e.preventDefault();
-    window.location.hash = ""
-    main.appendChild(login());
+window.addEventListener("load", () => {
+    changeHash();
     init();
 })
 
 //1. refresh: quando regarregar a página continue na página de #signup
 //2. clique no botão criar conta no signup ele execute a funcao createacount e redirecione pra página login
-
+//3. organização do firebase tá ok? e routes?
 // const reload = () => {
 //     if (window.location.hash = ""){
 //         return main.appendChild(login());

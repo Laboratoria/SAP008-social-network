@@ -4,6 +4,7 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWith
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, user => {
+    console.log(user)
     if (user != null) {
         console.log('logged in!');
     } else {
@@ -11,5 +12,28 @@ onAuthStateChanged(auth, user => {
     }
 });
 
-export { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword };
+const loginEmailPassword = async (email, password) => {
+    
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        console.log(userCredential);
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+const createAccount = async (email, password) => {
+  
+    try {      
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(userCredential.user);  
+            
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
+export { auth, loginEmailPassword, createAccount};
 

@@ -1,6 +1,6 @@
-import { createAccount } from "../../lib/signup.js";
+import { createAccount } from "../../lib/auth.js";
 
-export default() => {
+export default function signUp() {
     const container = document.createElement('div');
     
     const template = `
@@ -19,15 +19,15 @@ export default() => {
     `;
     container.innerHTML = template;
 
-    // const txtEmail = container.querySelector('#txtEmail');
-    // const txtPassword = container.querySelector('#txtPassword');
-    // const btnSignup = document.querySelector("#btnSignup");
+    const txtEmail = container.querySelector('#txtEmail');
+    const txtPassword = container.querySelector('#txtPassword');
+    const btnSignup = container.querySelector("#btnSignup");
 
-    // btnSignup.addEventListener("click", () => {
-    //      const email = txtEmail.value;
-    //      const password = txtPassword.value;
-    //      createAccount(email, password);
-    //  });
+    btnSignup.addEventListener("click", () => {
+         const email = txtEmail.value;
+         const password = txtPassword.value;
+         createAccount(email, password);
+     });
     
     return container;    
 }

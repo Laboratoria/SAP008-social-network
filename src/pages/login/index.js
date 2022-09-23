@@ -1,4 +1,4 @@
-import { loginEmailPassword } from "../../lib/login.js";
+import { loginEmailPassword } from "../../lib/auth.js";
 
 export default() => {
     const container = document.createElement('div');

@@ -32,20 +32,21 @@ export default () => {
   const returnBtn = registerContainer.querySelector('#return-btn');
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
 
-  const inputPassword = registerContainer.querySelector('#password-register');
+  const inputName = registerContainer.querySelector('#name-input');
   const inputEmail = registerContainer.querySelector('#register-input');
+  const inputPassword = registerContainer.querySelector('#password-register');
+  // const inputConfirmPassword = registerContainer.querySelector('#password-register-confirm');
   const btnRegister = registerContainer.querySelector('.btn-register');
   const btnGoogleRegister = registerContainer.querySelector('.btn-google-register');
 
   btnRegister.addEventListener('click', () => {
-    registerWithEmailAndPassword(inputEmail.value, inputPassword.value)
-      .then((userCredential) => {
-        const user = userCredential.user;
+    registerWithEmailAndPassword(inputName.value, inputEmail.value, inputPassword.value)
+      .then(() => {
         window.location.hash = '#feed';
-        return user;
       })
       .catch((/* error */) => {
-        /* const errorCode = error.code;
+      /* aqui a gente trata os erros por ex campo vazio ou senha menor que 6 digitos
+      const errorCode = error.code;
         const errorMessage = error.message; */
       });
   });

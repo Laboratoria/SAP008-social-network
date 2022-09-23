@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 export const homeFunction = () => {
-  const container = document.createElement("div");
+  const container = document.createElement('div');
 
   const templateLogin = `
 <section class="login">
@@ -23,5 +23,3 @@ export const homeFunction = () => {
   container.innerHTML = templateLogin;
   return container;
 };
-
-

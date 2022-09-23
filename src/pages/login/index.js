@@ -1,3 +1,5 @@
+import { loginEmailPassword } from "../../lib/login.js";
+
 export default() => {
     const container = document.createElement('div');
 
@@ -41,7 +43,7 @@ export default() => {
             </div>
             
             <div class="Criar">
-                <button id="btnSignup" type="button" class="button2">Criar conta</button>
+                <a href="#signup" id="btnSignupSpa" type="button" class="button2">Criar conta</a>
             </div>
             <a class="login-link2">Logar como:</a>
             <div class="login-icons">
@@ -63,6 +65,16 @@ export default() => {
         `;
 
     container.innerHTML = template;
+
+    const txtEmail = container.querySelector('#txtEmail');
+    const txtPassword = container.querySelector('#txtPassword');
+    const btnLogin = container.querySelector('#btnLogin');
+
+    btnLogin.addEventListener("click", () => {
+        const email = txtEmail.value;
+        const password = txtPassword.value;
+        loginEmailPassword(email, password);
+    });
 
     return container;
 }

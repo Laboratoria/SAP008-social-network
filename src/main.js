@@ -1,12 +1,16 @@
+import "./lib/firebase.js";
 import login from "./pages/login/index.js"; 
 import signup from "./pages/signup/index.js";
 const main = document.querySelector('#root');
 
 const init = () => {
     window.addEventListener('hashchange', () => {
-        //main.innerHTML = '';
+        main.innerHTML = '';
         switch (window.location.hash) {
             case '':
+                main.appendChild(login());
+                break;
+            case '#login':
                 main.appendChild(login());
                 break;
             case '#signup':
@@ -18,14 +22,31 @@ const init = () => {
 
 }
 
-window.addEventListener("load", () => {
+// const changeHash = () => {
+    
+// }
+
+window.addEventListener("load", (e) => {
+    e.preventDefault();
     window.location.hash = ""
     main.appendChild(login());
     init();
 })
 
+//1. refresh: quando regarregar a página continue na página de #signup
+//2. clique no botão criar conta no signup ele execute a funcao createacount e redirecione pra página login
 
-
+// const reload = () => {
+//     if (window.location.hash = ""){
+//         return main.appendChild(login());
+//     }
+//     else if (window.location.hash = "#signup") {
+//         return main.appendChild(signup());
+//     }
+//     else { 
+//         return console.log('error')
+//     }
+// }
 
 //==========================//
 // import { createAccount, loginEmailPassword, logout, signInGoogle } from "./config-firebase.js";

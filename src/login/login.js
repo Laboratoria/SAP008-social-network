@@ -13,7 +13,7 @@ export default () => {
                 <input class="box-password" type="password" id="senha" placeholder="Digite sua senha"/> 
                 <button class="box-enter" type="button" id="btn-submit">Entrar</button>
                 <button class="new-password" type="button" id="btn-password"><a href = "#password">Esqueci a senha</button>
-                <button class="box-login-google" type="button" id="btn-google"> Continuar com conta google</button>
+                <input class="box-login-google" type="button" id="btn-google" value="Login com Google"><img class="logo-google" src="./images/simbolo-do-google.png">
                 <button class="box-register" type="button" id="btn-register" ><a href = "#register">Cadastre-se</button>     
             </form>
             

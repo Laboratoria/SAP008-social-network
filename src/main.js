@@ -5,6 +5,7 @@ import timeline from "./timeline/timeline.js";
 import post from "./post/post.js";
 import profile from "./profile/profile.js";
 import about from "./about/about.js";
+import about from "./aboutus/aboutus.js";
 
 
 const main = document.querySelector('#root');
@@ -38,6 +39,10 @@ const init = () => {
             case '#about':
             main.innerHTML = ' ';
             main.appendChild(about());
+            break;
+            case '#aboutus':
+            main.innerHTML = ' ';
+            main.appendChild(aboutus());
             break;
             default: 
             main.innerHTML = ' ';

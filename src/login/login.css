@@ -1,9 +1,5 @@
+@import url('https://fonts.googleapis.com/css2? family= Carrois+Gothic & family= Carrois+Gothic+SC & display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
-
-body {
-    font-family: "Carrois Gothic SC";
-}
 .logo-azul-login { 
     position: absolute;
     width: 330px;
@@ -14,9 +10,10 @@ body {
 
 .sub-title{
     color: #081E26;  
-    position: absolute;
+    position: relative;
     left: 32px;
-    top: 147px;
+    top: 157px;
+    left: 55px;
     font-size: 14px;
     letter-spacing: 0.05em;
     font-family: "Carrois Gothic SC";
@@ -31,7 +28,7 @@ body {
     background: rgba(217, 217, 217, 0.4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
     border: none;
-    font-family: "Carrois Gothic SC";
+    font-family: "Carrois Gothic";
 }
 
 .box-password{
@@ -43,7 +40,7 @@ body {
     background: rgba(217, 217, 217, 0.4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
     border: none;
-    font-family: "Carrois Gothic SC";
+    font-family: "Carrois Gothic";
 }
 
 .box-enter {
@@ -61,7 +58,7 @@ body {
     position: absolute;
     width: 168px;
     height: 22px;
-    left: 114px;
+    left: 104px;
     top: 484px;
     font-style: normal;
     font-weight: 400;
@@ -70,8 +67,16 @@ body {
     mix-blend-mode: darken;
     border: none;
      background: #FFFFFF;
-     font-family: "Carrois Gothic SC";
+     font-family: "Carrois Gothic SC"; 
 }
+
+    .logo-google{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        top: 527px;
+        left: 45px;
+    }
 
 .box-login-google{
     position: absolute;

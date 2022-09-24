@@ -23,7 +23,7 @@ export default () => {
                 </div>
             </form>
 
-            <a href="/#" class="instructions">Cancelar</a>
+            <a href="/#" class="instructions cta">Cancelar</a>
         </div>
         <div class="logo"></div>
     </section>`;

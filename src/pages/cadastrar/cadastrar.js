@@ -3,25 +3,27 @@ export default () => {
     const template =
     `<section class="container">
         <div class="frame">
-          <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
-    
-          <button id="google-login" class="signin-btn">Entrar com Google</button>
-    
-          <div class="lines">
-            <hr style="margin-right: 5%">
-            <p>ou</p>
-            <hr style="margin-left: 5%">
-          </div>
-    
-          <button id="email-signin" class="signin-btn">Inscreva-se com e-mail</button>
-    
-          <p class="instructions">Ao se inscrever, você concorda com os
-            <a class="cta" href="">Termos<br>de Serviço</a> e a
-            <a class="cta" href="">Política de Privacidade</a>, incluindo<br>o
-            <a class="cta" href="">Uso de Cookies.</a>
-          </p>
-    
-          <p class="instructions">Já tem uma conta? <a href="/#entrar" class="cta">Entrar</a></p>
+            <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
+            <form action="/firebase.php" method="get">
+                <input type="text" id="name" name="name" class="form-input" placeholder="Digite seu nome"><br>
+                <input type="text" id="email" name="email" class="form-input" placeholder="E-mail"><br>
+                <input type="text" id="password" name="password" class="form-input" placeholder="Senha"><br>
+                <input type="text" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirme sua senha"><br>
+                
+                <div class="policies-container">
+                    <input type="checkbox" id="checkbox">
+
+                    <p class="policies">Concordo com os
+                    <a class="cta" href="">Termos<br>de Serviço</a> e a
+                    <a class="cta" href="">Política de <br>Privacidade</a>, incluindo o<br>
+                    <a class="cta" href="">Uso de Cookies.</a>
+                    </p>
+
+                    <a href="/#home"><button id="ok-form-btn">OK</button></a>
+                </div>
+            </form>
+
+            <a href="/#" class="instructions">Cancelar</a>
         </div>
         <div class="logo"></div>
     </section>`;

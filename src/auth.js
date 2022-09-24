@@ -2,7 +2,8 @@ import { app } from "./config.js";
 import {
     getAuth,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    signOut
 } from "https://www.gstatic.com/firebasejs/6.3.2/firebase-auth.js"
 
 export const auth = getAuth(app);
@@ -12,14 +13,14 @@ export function loginUserEmail(email, password) {
         .then(userCredential => {
             window.location.hash('')
 
-            alert('SUCCESS')
+            alert('Sucesso! Você está logado!')
 
             return userCredential.user;
         })
         .catch((error) => {
             alert(getErrorMessage(error));
 
-            alert('Failure!')
+            alert('Ops! Algo deu errado, tente novamente!')
         });
 
 };
@@ -31,20 +32,26 @@ function getErrorMessage(error) {
     return error.message;
 }
 
-export function loginUserEmail(email, password, user) {
+export function createAccount(email, password, user) {
 
     createUserWithEmailAndPassword(auth, email.value, password.value, user.value)
         .then(userCredential => {
             window.location.hash('#Signup')
 
-            alert('SUCCESS')
+            alert('Sucesso! Conta criada!')
 
             return userCredential.user;
         })
         .catch((error) => {
             alert(getErrorMessage(error));
 
-            alert('Failure!')
+            alert('Ops! Algo deu errado, tente novamente')
         });
 
 };
+
+signOut(auth).then(() => {
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});

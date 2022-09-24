@@ -49,9 +49,6 @@ export function createAccount(email, password, user) {
         });
 
 };
-
-signOut(auth).then(() => {
-  // Sign-out successful.
-}).catch((error) => {
-  // An error happened.
-});
+export function logout() {
+    return signOut(auth)
+};

@@ -7,19 +7,19 @@ export default () => {
   
                 <button id="google-login">Entrar com Google</button>
   
-                <div class ="lines">
-                    <hr>
+                <div class="lines">
+                    <hr style="margin-right: 5%">
                     <p>ou</p>
-                    <hr>
+                    <hr style="margin-left: 5%">
                 </div>
   
                 <input type="text" id="email" class="boxes" placeholder="E-mail"><br>
                 <input type="text" id="password" class="pswd-ok"placeholder="Senha">
-  
-                <button id="btn-ok">OK</button><br>
-  
+                <span>
+                <button id="ok-login-btn">OK</button><br>
+                </span>
                 <a href="" id="forgot-it" class="instructions cta">Esqueci minha senha</a>
-                <p class="instructions">Não tem uma conta?<a id="first-page" class="cta"href=""> Cadastre-se</a></p>
+                <p class="instructions">Não tem uma conta?<a id="first-page" class="cta"href="/#cadastre-se"> Cadastre-se</a></p>
             </div>
         </section>`;
     container.innerHTML = template;

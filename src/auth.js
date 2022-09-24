@@ -8,7 +8,7 @@ import {
 
 export const auth = getAuth(app);
 
-export function loginUserEmail(email, password) {
+export function loginUser(email, password) {
     signInWithEmailAndPassword(auth, email.value, password.value)
         .then(userCredential => {
             window.location.hash('')

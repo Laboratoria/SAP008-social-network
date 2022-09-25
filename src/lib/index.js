@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   sendPasswordResetEmail,
+  updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'; //eslint-disable-line
 
 import { app } from './firebase-configuration.js';
@@ -14,8 +15,21 @@ import { app } from './firebase-configuration.js';
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 
-export function registerWithEmailAndPassword(email, password) {
-  return createUserWithEmailAndPassword(auth, email, password);
+export function registerWithEmailAndPassword(name, email, password) {
+  return createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      return user;
+    })
+    .then(() => {
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 export function loginWithEmailAndPassword(email, password) {

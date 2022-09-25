@@ -71,6 +71,3 @@ export const signInGoogle = () => {
     // ...
   });
 }
-
-
-

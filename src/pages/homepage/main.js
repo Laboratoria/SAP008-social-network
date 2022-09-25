@@ -15,7 +15,7 @@ export default () => {
             </nav>
         </main>
         <footer class="footer">
-            <nav>
+            <nav class="nav-footer">
                 <ul class="list-footer">
                   <li><a class="about" href="/#about">SOBRE</a></li>
                   <li class="developed-by">DESENVOLVIDO POR

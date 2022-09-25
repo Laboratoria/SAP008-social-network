@@ -1,5 +1,5 @@
 import "./lib/firebase.js";
-import login from "./pages/login/index.js"; 
+import login from "./pages/login/index.js";
 import signup from "./pages/signup/index.js";
 const main = document.querySelector('#root');
 
@@ -19,12 +19,15 @@ const changeHash = () => {
         case '#login':
             main.appendChild(login());
             break;
-        case '#signup':            
+        case '#signup':
             main.appendChild(signup());
+            break;
+        case '#login' :
+            main.appendChild(login());
             break;
         default: main.appendChild(login());
     }
-    
+
 }
 
 window.addEventListener("load", () => {
@@ -33,10 +36,6 @@ window.addEventListener("load", () => {
 })
 
 
-//==========================//
-// const btnGmail = document.querySelector('#btn-gmail');
-
-// btnGmail.addEventListener("click", signInGoogle);
 
 
 

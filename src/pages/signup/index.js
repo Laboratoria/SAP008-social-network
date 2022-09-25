@@ -2,7 +2,7 @@ import { createAccount } from "../../lib/auth.js";
 
 export default function signUp() {
     const container = document.createElement('div');
-    
+
     const template = `
         <form>
             <label for="name">Nome:
@@ -14,7 +14,9 @@ export default function signUp() {
             <label for="password">Senha:
                 <input type="password" id="txtPassword" minlength="8" required>
             </label>
-            <button id="btnSignup">CRIAR CONTA</button>            
+            
+            <a href="#login" id="btnSignup" type="button" class="buttonSignup">CRIAR CONTA</a>
+                       
         </form>
     `;
     container.innerHTML = template;
@@ -23,11 +25,12 @@ export default function signUp() {
     const txtPassword = container.querySelector('#txtPassword');
     const btnSignup = container.querySelector("#btnSignup");
 
+
     btnSignup.addEventListener("click", () => {
-         const email = txtEmail.value;
-         const password = txtPassword.value;
-         createAccount(email, password);
-     });
-    
-    return container;    
+        const email = txtEmail.value;
+        const password = txtPassword.value;
+        createAccount(email, password);
+    });
+
+    return container;
 }

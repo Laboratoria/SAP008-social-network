@@ -129,16 +129,16 @@ footer a {
     }
 }
 
-/* imagem estática para BG de mobile (pra cel de telas menores, 
-pra evitar precisar de mt processamento do celular pra acessar nosso site): */
-
-/* @media only screen and (max-width: 480px) {
-    .background-video {
-        display: none;
+@media only screen and (min-width: 768px) {
+    .background-video-mobile {
+        height: 82vh;
+        object-fit: fill;
+        opacity: 75%;
+        /* position: fixed;
+        left: 0;
+        right: 0; */
+        top: 0;
+        bottom: 0;
+        z-index: -1;
     }
-    body {
-        background-image: url('./img/mobileBGpicture.png');
-        background-size: cover;
-        background-blend-mode: 85%;
-    }
-} */
+}

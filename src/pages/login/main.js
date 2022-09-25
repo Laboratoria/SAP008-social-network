@@ -30,10 +30,10 @@ export default () => {
       <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
     </main>
 
-    <div class="gif-side" id="desktop-page">
+    <div class="gif-side-desktop" id="desktop-page">
       <img src="img/Rebu.png" alt="Rebu Logo">
     </div>
-    <main class="login-side">
+    <main class="login-side-desktop">
       <h1>CONECTE-SE</h1>
       <form>
         <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login">

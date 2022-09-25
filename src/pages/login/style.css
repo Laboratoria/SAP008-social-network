@@ -37,6 +37,10 @@ body {
     background: linear-gradient(180deg, rgba(188, 255, 243, 0.96) 0%, rgba(241, 234, 174, 0.96) 25%, #FFE6DB 50%, rgba(255, 221, 225, 0.96) 75%, #FFFFFF 100%);
 }
 
+.gif-side-desktop, .login-side-desktop {
+    display: none;
+}
+
 .login-text {
     align-self: flex-start;
     color: #EE2C12;
@@ -135,7 +139,13 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .header-login{
+    .header-login, .login-page{
         display: none;
+    }
+
+
+
+    .gif-side-desktop, .login-side-desktop {
+        display: block;
     }
 }

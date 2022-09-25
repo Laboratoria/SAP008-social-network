@@ -47,3 +47,19 @@
 .made-by {
     color: #EE2C12;
 }
+
+@media only screen and (min-width: 768px) {
+    #about-title {
+        font-size: 2rem;
+        color: 2D2D2D;
+    }
+    .paragraphs-section {
+        width: 60%;
+    }
+    .about-paragraph {
+        width: fit-content;
+        line-height: 6vh;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+}

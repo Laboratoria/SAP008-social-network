@@ -53,7 +53,6 @@ export default () => {
       });
   });
 
-
   const googleBtn = loginContainer.querySelector('#google-btn');
 
   googleBtn.addEventListener('click', () => {
@@ -67,7 +66,7 @@ export default () => {
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
-  })
-  
+  });
+
   return loginContainer;
 };

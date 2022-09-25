@@ -128,4 +128,23 @@ footer a {
         bottom: 0;
         z-index: -1;
     }
+
+    .footer {
+        height: 6.5vh;
+    }
+
+    .list-footer {
+        margin-top: 0.6rem;
+    }
+
+    .button-initial-page {
+        top: 82.7%;
+        gap: 12rem;
+    }
+
+    .btn-initial-page {
+        width: 12rem;
+        height: 3.8rem;
+        font-size: 1.4rem;
+    }
 }

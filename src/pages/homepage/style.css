@@ -5,7 +5,7 @@ html, body {
 
 .initial-page {
     width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,15 +13,15 @@ html, body {
 }
 
 .logo-initial-page {
-    margin: 0;
-    height: 78vh;
-    width: 100%;
+    margin: 0; 
+    height: 85%; 
+    width: 100%; 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-}
+    align-items: center; 
+    justify-content: center; 
+    position: absolute; 
+    top: 0;  
+ } 
 
 .img-logo {
     width: 15rem;
@@ -89,19 +89,19 @@ footer a {
     padding-left: 2.5rem;
 }
 
-.background-video {
-    display: none;
-}
-
 .background-video-mobile {
+    top: 0;
+    position: absolute;
     width: 100vw;
     height: 82vh;
     object-fit: fill;
     opacity: 82%;
-    position: fixed;
+    /* position: fixed;
     top: 0;
+    left: 0; */
+    z-index: -1;
 }
-
+/* 
 @media (min-aspect-ratio: 16/9) {
     .background-video {
         width: 100%;
@@ -114,19 +114,14 @@ footer a {
         width: auto;
         height: 100%;
     }
-}
+} */
+.video-aside, .vertical-line-text-box {
+    display: none;
 
+}
 @media only screen and (min-width: 768px) {
     .background-video-mobile {
         height: 82vh;
-        object-fit: fill;
-        opacity: 75%;
-        /* position: fixed;
-        left: 0;
-        right: 0; */
-        top: 0;
-        bottom: 0;
-        z-index: -1;
     }
 
     .footer {
@@ -148,3 +143,124 @@ footer a {
         font-size: 1.4rem;
     }
 }
+
+@media only screen and (min-width: 1024px){
+    html, body {
+        margin: 0;
+        bottom: 0;
+        padding: 0;
+    }
+    .intro-text, .video-aside {
+        display: block;
+    }
+
+    .initial-page {
+        background: white;
+    }
+    .background-video-mobile {
+        display: none;
+    }
+
+    .video-aside {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        left: 0;
+        top: 0;
+        position: fixed;
+    }
+
+    .background-video-desktop {
+        object-fit: fill;
+        height: 95vh;
+        width: 58vw;
+        opacity: 90%;
+    }
+
+    .logo-initial-page {
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin-top: 7vh;
+        margin-right: 28vw;
+        height: 12vh;
+    }
+
+    .img-logo {
+        width: 14vw;
+    }
+    
+    .vertical-line-text-box {
+        border-left: 6px solid rgb(0, 0, 0);
+        max-width: 50vw;
+        margin-left: 55vw;
+        margin-top: 15vh;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .connections-headline {
+        color: #DF3B25;
+        font-size: 2.3rem;
+        font-weight: lighter;
+        margin-left: 1rem;
+    }
+
+    .homepage-text {
+        font-size: 1.3rem;
+        font-weight: lighter;
+        margin-left: 1rem;
+    }
+
+    .button-initial-page {
+        max-width: 30vw;
+        margin-left: 55vw;
+        gap: 3rem;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: -10vh;
+        height: 6vh;
+        background: transparent;
+    }
+
+    .btn-initial-page {
+        background: white;
+        width: 10rem;
+        height: 3.5rem;
+        font-size: 1.3rem;
+        border-radius: 5px;
+    }
+
+    .footer {
+        border-top: transparent;
+        height: 5vh;
+    }
+
+    .list-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .developed-by {
+        width: 23vw;
+        margin-right: 2rem;
+        font-size: 0.7rem;
+        color: #5F5656;
+    }
+
+    .about {
+        font-size: 0.7rem;
+        width: 30vw;
+        color: #5F5656;
+    }
+}
+
+
+/* @media (min-aspect-ratio: 16/9) {
+    .background-video-desktop {
+        width: 60%;
+        height: auto;
+    }
+} */

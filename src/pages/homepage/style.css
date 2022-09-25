@@ -145,11 +145,6 @@ footer a {
 }
 
 @media only screen and (min-width: 1024px){
-    html, body {
-        margin: 0;
-        bottom: 0;
-        padding: 0;
-    }
     .intro-text, .video-aside {
         display: block;
     }
@@ -192,7 +187,7 @@ footer a {
     .vertical-line-text-box {
         border-left: 6px solid rgb(0, 0, 0);
         max-width: 50vw;
-        margin-left: 55vw;
+        margin-left: 58vw;
         margin-top: 15vh;
         display: flex;
         flex-direction: column;
@@ -214,12 +209,11 @@ footer a {
 
     .button-initial-page {
         max-width: 30vw;
-        margin-left: 55vw;
-        gap: 3rem;
+        margin-left: 59vw;
+        gap: 6.6rem;
         justify-content: space-evenly;
         align-items: flex-start;
-        flex-wrap: wrap;
-        margin-top: -10vh;
+        margin-top: -11vh;
         height: 6vh;
         background: transparent;
     }

@@ -16,37 +16,39 @@ export default () => {
       <form class="login-form display-flex">
 
         <h2 class="login-text">ENTRAR</h2>
-        <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login">
-        <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login">
+        <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-style">
+        <input type="password" placeholder="SENHA" id="password-input-login" class="input-style">
 
+        <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
+  
+        <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
+  
+        <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
+  
+        <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
       </form>
 
-      <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
-
-      <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
-
-      <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
-
-      <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
     </main>
 
-    <div class="gif-side-desktop" id="desktop-page">
-      <img src="img/Rebu.png" alt="Rebu Logo">
+    <div class="desktop-login">
+      <div class="gif-side-desktop display-flex" id="desktop-page">
+        <img src="img/Rebu.png" alt="Rebu Logo" class="rebu-logo">
+      </div>
+      <main class="login-side-desktop">
+        <h1 class="login-text text-desktop">CONECTE-SE</h1>
+        <form class="desktop-form display-flex">
+          <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-desktop">
+          <input type="password" placeholder="SENHA" id="password-input-login" class="input-desktop">
+          <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
+  
+          <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login btn-login-desktop">ENTRAR</button></a>
+  
+          <button class="btn-google-desktop display-flex" id="google-btn"><img class="google-icon" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
+  
+          <a href="/#register" class="register-desktop">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
+        </form>
+      </main>
     </div>
-    <main class="login-side-desktop">
-      <h1>CONECTE-SE</h1>
-      <form>
-        <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login">
-        <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login">
-      </form>
-      <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
-
-      <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
-
-      <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
-
-      <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
-    </main>
   `;
   loginContainer.innerHTML = template;
 
@@ -58,7 +60,8 @@ export default () => {
   const btnLogin = loginContainer.querySelector('#btn-login-page');
   // const btnResetPassword = loginContainer.querySelector('.password-reset-login');
 
-  btnLogin.addEventListener('click', () => {
+  btnLogin.addEventListener('click', (e) => {
+    e.preventDefault();
     loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
       .then(() => {
         // const user = userCredential.user; <- visualiza user
@@ -70,10 +73,10 @@ export default () => {
       });
   });
 
-
   const googleBtn = loginContainer.querySelector('#google-btn');
 
-  googleBtn.addEventListener('click', () => {
+  googleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     loginWithGoogle()
       .then(() => {
         window.location.hash = '#feed';
@@ -84,7 +87,6 @@ export default () => {
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
-  })
-  
+  });
   return loginContainer;
 };

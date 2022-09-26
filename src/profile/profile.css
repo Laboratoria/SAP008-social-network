@@ -18,6 +18,12 @@
     margin-top: 10px;
 }
 
+.content-profile {
+    background-color: #B6B2B666;
+    height: 100vh;
+
+}
+
 .container-title-profile {
     display: flex;
     text-align: center;
@@ -38,3 +44,55 @@
     /*border: yellow 4px solid;*/
 }
 
+.box-profile-name {
+    display: flex;
+    text-align: center;
+    width: 80vw;
+    height: 4vh;
+    font-family: "Carrois Gothic SC";
+    margin-top: 15px;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border: red solid 1px;
+}
+
+.box-age {
+    display: flex;
+    text-align: center;
+    width: 80vw;
+    height: 4vh;
+    font-family: "Carrois Gothic SC";
+    margin-top: 15px;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border: blue solid 1px;
+}
+
+.about {
+    font-family: "Carrois Gothic SC";
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.box-description {
+    background: rgba(140, 128, 128, 0.23);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    width: 80vw;
+    height: 28vh;
+    font-family: "Carrois Gothic SC";
+    margin-top: 30px;
+    resize: none;
+}
+
+.btn-create-post {
+    background: #163440;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    height: 7vh;
+    font-family: "Carrois Gothic SC";
+    margin-top: 30px;
+    border-radius: 10px;
+}

@@ -1,5 +1,6 @@
 export default () => {
     const container = document.createElement('div');
+    container.className = "content-profile";
     //const getCurrentUser = () => firebase.auth().currentUser;
     //const user = getCurrentUser();
     const template = `  

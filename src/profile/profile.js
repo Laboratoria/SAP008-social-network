@@ -9,8 +9,8 @@ export default () => {
     </div>    
     <div class="container-profile">
         <form>
-            <input type="text" id="name" placeholder="Nome"/>
-            <input type="text" id="age" placeholder="Idade"/>
+            <input class="box-profile-name" type="text" id="name" placeholder="Nome"/>
+            <input class="box-age"type="text" id="age" placeholder="Idade"/>
             <p class="about" id="about"> Sobre mim</p>
             <textarea class="box-description" id="description" placeholder="Nos fale um pouco sobre você"></textarea> 
             <button type="button" id="btn-create-post" class="btn-create-post">Crie um post</button>

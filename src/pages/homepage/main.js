@@ -25,7 +25,7 @@ export default () => {
                 <a href="/#register"><button id="btn-register" class="btn-initial-page">CADASTRAR</button></a>
             </nav>
         </main>
-        <footer class="footer">
+        <footer class="footer footer-tablet">
             <nav class="nav-footer">
                 <ul class="list-footer">
                   <li><a class="about" href="/#about">SOBRE</a></li>

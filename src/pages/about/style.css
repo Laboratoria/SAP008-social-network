@@ -3,7 +3,9 @@
     font-family: 'Blanka', sans-serif;
     src: url(/src/fonts/Blanka-Regular.otf);
 }
-
+body {
+    background: linear-gradient(180deg, #B0DAF8 0%, #A6F0F4 100%);
+}
 #about-header{
     margin:0;
     background:#B0DAF8;
@@ -12,7 +14,6 @@
 }
 
 #about-page{
-    background: linear-gradient(180deg, #B0DAF8 0%, #A6F0F4 100%);
     width: 100%;
     height: 90vh;
     display: flex;
@@ -48,18 +49,103 @@
     color: #EE2C12;
 }
 
+.about-desktop-btn-div, #about-img, .return-button-desktop {
+    display: none;
+}
+
 @media only screen and (min-width: 768px) {
     #about-title {
         font-size: 2rem;
         color: 2D2D2D;
     }
+
     .paragraphs-section {
         width: 60%;
     }
+
     .about-paragraph {
-        width: fit-content;
         line-height: 6vh;
         margin-bottom: 2rem;
         font-size: 1.5rem;
     }
 }
+
+@media only screen and (min-width: 1024px) {
+    #about-header {
+        height: 0vh;
+    }
+
+    #about-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        flex-wrap: wrap;
+        height: 100vh;
+    }
+
+    #about-img {
+        display: block;
+        min-width: 40vw;
+        height: 67vh;
+        margin-top: 8vh;
+    }
+
+    #about-title {
+        align-self: flex-start;
+        margin-left: -0.7rem;
+        color: #2F2F2F;
+        font-size: 2.3rem;
+    }
+
+    #about-text {
+        margin-top: -3vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .about-paragraph {
+        width: 40vw;
+        color: #2F2F2F;
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+    }
+
+    .paragraphs-section {
+        width: 42vw;
+        gap: 0.5rem;
+    }
+
+    .return-btn-tablet-mobile {
+        display: none;
+    }
+
+    .made-by {
+        color: #EE2C12;
+    }
+
+    .return-button-desktop {
+        color: white;
+        display: block;
+        background: #df6352;
+        width: 10vw;
+        height: 5.5vh;
+        font-size: 1.5rem;
+        border-radius: 40px;
+        border: transparent;
+    }
+    
+    #about-desktop-btn-div {
+        height: 15vh;
+        background: transparent;
+        position: absolute;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 1rem;
+    }
+
+}
+

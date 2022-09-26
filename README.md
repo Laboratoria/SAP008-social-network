@@ -3,7 +3,7 @@
 ## Prefácio
 * [1. Resumo do projeto](#1-resumo-do-projeto)
 * [2. Organização de trabalho](#2-organização-de-trabalho)
-* [3. Definição do produto](#3-definição-do-produto)
+* [3. Definição do produto - BatePrato](#3-definição-do-produto---bateprato)
 * [4. Aplicação](#4-aplicação)
 * [5. Repositório](#5-repositório)
 * [6. Deploy](#6-deploy)
@@ -19,13 +19,20 @@ Este projeto é sobre construir uma rede social, utilizando a metodologia Single
 Neste projeto, foi criada a terceira aplicação web do bootcamp Laboratória , de interface intuitiva, acessível, possui contraste, botões principais em evidência e com visual limpo para facilitar a leitura. Nela, os cadastrados na rede podem publicar a respeito de suas experiências relacionadas ao tema (Críticas gastronômicas), visualizar e interagir através desta circulação de informações entre os usuários, permite criar uma conta de acesso, logar-se com ela, criar, editar, deletar e dar likes em publicações. 
 
 ### Críticas gastronômicas
-
 Uma rede social voltada às experiências em bares e restaurantes, na qual é possível compartilhar críticas, dicas e recomendações gastronômicas, além de outros aspectos vivenciados nestes locais, como atendimento, ambiente, valores, entre outros.
 
 ## 2. Organização de trabalho
 
-## 3. Definição do produto
+## 3. Definição do produto - BatePrato
+Com base em uma [pesquisa](https://docs.google.com/forms/d/1GojhH3_rROENVXIHXOlSyFf4zn8yAIgSSKrj4rNo9I0/viewform?edit_requested=true) que conta com 21 respostas, informadas por intermédio do Google Form, 95,2% dos participantes dizem ter o costume de recomendar restaurantes que frequentam a amigos e familiares. Dentre os participantes, 66,7% levam em consideração a opnião de terceiros ao escolher um restaurante ou bar para conhecer, enquanto 23,8% considera tal opinião muito importante, sendo o fator decisivo na escolha de um estabelecimento. A partir disso, conclui-se que as informações mais interessantes para acessar e satisfazer esse público são:
 
+- o nome do estabelecimento;
+- o endereço do estabelecimento;
+- a avaliação do estabelecimento;
+- a nota atribuída ao estabelecimento;
+- o nome do usuário que dá a crítica.
+
+Tais informações podem ser entregues ao usuário por intermédio da aplicação web BatePrato, que conta com timeline na qual é possível escrever uma crítica a um restaurante ou bar e que cujo conteúdo é passível de receber likes.
 
 ### História do usuário
 Foram definidas 02 histórias de usuário para este projeto:
@@ -48,15 +55,21 @@ A fim de definir a aplicação, a partir das histórias de usuário, obtem-se a 
   - button de edição que abre input de texto
 
 ## 4. Aplicação 
-
+Neste projeto foi primordialmente idealizada uma timeline contendo críticas de usuários da rede social BatePrato que, para melhor estarem acomodadas na aplicação, possuem "Ler mais" como um _call to action_ para acessar a crítica integralmente. Na mesma página, cada crítica tem a possibilidade de ser "curtida", clicando no coração ao lado. Além disso, a pessoa que escreve a crítica pode atribuir uma nota, que fica visível logo acima do ícone de _likes_ na publicação. Caso o usuário deseje editar seu post, é possível clicar no ícone de lápis, abaixo do ícone _likes_; mas, se desejar excluir a publicação, basta clicar no ícone de lixeira. 
+Com os ícones de `"menu"`, `"home"` e `"likes"`, o usuário pode fazer _log out_, acessar a página inicial e acessar as críticas curtidas, respectivamente. Já na parte inferior, com os ícones de `soma`, a `logo` da rede social BatePrato e um ícone de `seta para cima`, o usuário pode criar um novo post, acessar a página inicial pela logo e, caso role a página, poder voltar ao topo com o ícone de seta. 
+A primeira tela vista é a de convite para cadastrar-se. Se a pessoa já tiver conta, pode clicar em "Entrar" e acessar com seu e-mail e senha. Se, porém, não for cadastrado, pode escolher preencher um formulário com nome, e-mail, senha e confirmação de senha. Também é possível acessar a conta com o Google Accounts.
+As tipografias escolhidas foram "Roboto Condensed", para títulos e textos pequenos e "Roboto Slab", para textos extensos, por possuir serifa e facilitar a leitura.
 
 ### Prototipagem
-O processo de prototipagem foi dividido em duas etapas; na primeira, em baixa fidelidade, foram feitos sketches para visualizar a ideia, com cada elemento imaginado desenhado à parte para que fosse possível movimentá-los, visualizar possibilidades e chegar ao melhor layout. Já na segunda, em alta fidelidade, foi utilizada a ferramenta Figma. O resultado segue abaixo:
-  - Baixa fidelidade
-  
-  - Alta fidelidade
+O processo de prototipagem foi dividido em duas etapas, a partir do conceito de _mobile first_:
+  - Baixa fidelidade - sketches
+  [mobile_low_prototype]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/low_prototype_mobile.jpeg?raw=true)
+  - Alta fidelidade - ferramenta Figma
+  [mobile_high_prototype]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/mobile_prototype.gif?raw=true)
+  [web_high_prototype]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/web_prototype.gif?raw=true)
 ### Paleta de cores
 A paleta de cores foi feita por intermédio da ferramenta [Adobe Color](https://color.adobe.com/pt/create/color-wheel) e resultou no seguinte:
+[paleta_de_cores]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/paleta_social_network.jpeg)
 
 ## 5. Repositório
 O repositório é o espaço digital que armazena um código e as versões que podem advir dele. Neste caso, o repositório está hospedado no GitHub, onde é possível criar um perfil - um espaço próprio do usuário para guardar códigos. O ideal é ter um repositório por projeto. Para tanto, é possível criar um repositório e nomeá-lo ou forkar um repositório já existente (de outro perfil) para fazer as próprias mudanças sem alterar o arquivo original. No caso de um novo repositório criado, é importante acessar a pasta do computador onde o repositório está por meio do terminal e usar o comando `git init` (no caso de GitBash, terminal do Linux, terminal do Ubuntu). Para este repositório cujo README vos fala, isso não é necessário.

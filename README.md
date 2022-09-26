@@ -29,23 +29,23 @@ Uma rede social voltada às experiências em bares e restaurantes, na qual é po
 
 ### História do usuário
 Foram definidas 02 histórias de usuário para este projeto:
-  01. 
-  02. 
+  01. A fim de receber dicas de bons restaurantes (e restaurantes para evitar), como um novo morador de São Paulo, quero poder ler e curtir o que os clientes andam dizendo sobre os estabelecimentos aos quais vão.
+  02. Como uma influenciadora, eu posso dar meu review e, se necessário, editá-lo, acerca dos pratos que comer nos restaurantes que visitar para que outras pessoas possam conhecer novos estabelecimentos e experiências gastronômicas.
 
 ### Definição de pronto
 A fim de definir a aplicação, a partir das histórias de usuário, obtem-se a definição de pronto referente a cada uma delas
-  01. Para que esta história seja atendida, é necessário:
-  - 
-  - 
-  - 
-  - 
+01. Para que esta história seja atendida, é necessário:
+  - página sign in
+  - página log in
+  - timeline com posts de outros usuários
+  - button de like (1x) nos posts
 
 02. Para que esta história seja atendida, é necessário:
-  - 
-  - 
-  - 
-  - 
-  
+  - página sign in
+  - página log in
+  - input texto para escrever post
+  - contagem de likes nos posts
+  - button de edição que abre input de texto
 
 ## 4. Aplicação 
 

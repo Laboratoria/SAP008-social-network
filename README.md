@@ -11,12 +11,9 @@
 * [8. Desenvolvedoras](#8-desenvolvedoras)
 
 ## 1. Resumo do projeto
+Sabe-se que há redes sociais para todos os tipos de interesse; amadas ou odiadas, elas invadiram a vida do seres humano e muitas pessoas não conseguem viver sem. Para além dos objetivos e características principais já conhecidas das redes, como conectar-se com amigos, familiares e pessoas que compartilham interesses em comum, hoje elas também são amplamente utilizadas como ferramenta profissional dentro dos mais variados setores, sendo um dos principais meios de comunicação: útil para buscar informações e com impacto direto nas relações modernas.
 
-Sabemos que há redes sociais de todo tipo para todos os tipos de interesse, as redes invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem viver sem elas.
-Para além dos objetivos e características principais já conhecidas das redes como conectar-se com amigos, familiares, clientes e pessoas que compartilham interesses em comum, hoje também são muitos utilizadas como ferramenta profissional dentro dos mais variados setores e é um dos principais meios de comunicação, útil para buscar informações e já tem um impacto direto nas relações modernas.
-Este projeto é sobre construir uma rede social, utilizando a metodologia Single-page Application (SPA), responsiva (com mais de uma tela/ página) na qual seja possível ler e escrever dados.
-
-Neste projeto, foi criada a terceira aplicação web do bootcamp Laboratória , de interface intuitiva, acessível, possui contraste, botões principais em evidência e com visual limpo para facilitar a leitura. Nela, os cadastrados na rede podem publicar a respeito de suas experiências relacionadas ao tema (Críticas gastronômicas), visualizar e interagir através desta circulação de informações entre os usuários, permite criar uma conta de acesso, logar-se com ela, criar, editar, deletar e dar likes em publicações. 
+Este é o terceiro projeto do Bootcamp da Laboratória, e tem por intenção construir uma aplicação web no formato de rede social responsiva a partir do método Single-page Application (SPA), de interface intuitiva, acessível, com contraste, botões principais em evidência e visual limpo para fácil leitura. Nela, o usuário pode criar uma conta de acesso, logar-se com ela, criar, editar, deletar e dar likes em publicações, ou seja, interagir a partir da circulação de informações disponibilizadas pelos usuários cadastrados na plataforma.
 
 ### Críticas gastronômicas
 Uma rede social voltada às experiências em bares e restaurantes, na qual é possível compartilhar críticas, dicas e recomendações gastronômicas, além de outros aspectos vivenciados nestes locais, como atendimento, ambiente, valores, entre outros.
@@ -42,17 +39,17 @@ Foram definidas 02 histórias de usuário para este projeto:
 ### Definição de pronto
 A fim de definir a aplicação, a partir das histórias de usuário, obtem-se a definição de pronto referente a cada uma delas
 01. Para que esta história seja atendida, é necessário:
-  - página sign in
-  - página log in
-  - timeline com posts de outros usuários
-  - button de like (1x) nos posts
+  - página _sign in_;
+  - página _log in_;
+  - timeline com posts de outros usuários;
+  - botão de _like_ nas postagens.
 
 02. Para que esta história seja atendida, é necessário:
-  - página sign in
-  - página log in
-  - input texto para escrever post
-  - contagem de likes nos posts
-  - button de edição que abre input de texto
+  página _sign in_;
+  - página _log in_;
+  - contagem de _likes_ nas postagens;
+  - caixa de texto para escrever nvoas postagens;
+  - botão de edição que permite alterar conteúdo da caixa de texto.
 
 ## 4. Aplicação 
 Neste projeto foi primordialmente idealizada uma timeline contendo críticas de usuários da rede social BatePrato que, para melhor estarem acomodadas na aplicação, possuem "Ler mais" como um _call to action_ para acessar a crítica integralmente. Na mesma página, cada crítica tem a possibilidade de ser "curtida", clicando no coração ao lado. Além disso, a pessoa que escreve a crítica pode atribuir uma nota, que fica visível logo acima do ícone de _likes_ na publicação. Caso o usuário deseje editar seu post, é possível clicar no ícone de lápis, abaixo do ícone _likes_; mas, se desejar excluir a publicação, basta clicar no ícone de lixeira. 
@@ -63,13 +60,13 @@ As tipografias escolhidas foram "Roboto Condensed", para títulos e textos peque
 ### Prototipagem
 O processo de prototipagem foi dividido em duas etapas, a partir do conceito de _mobile first_:
   - Baixa fidelidade - sketches
-  [mobile_low_prototype]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/low_prototype_mobile.jpeg?raw=true)
+  ![mobile_low_prototype](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/low_prototype_mobile.jpeg?raw=true)
   - Alta fidelidade - ferramenta Figma
-  [mobile_high_prototype]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/mobile_prototype.gif?raw=true)
-  [web_high_prototype]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/web_prototype.gif?raw=true)
+  ![mobile_high_prototype](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/mobile_prototype.gif?raw=true)
+  ![web_high_prototype](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/web_prototype.gif?raw=true)
 ### Paleta de cores
 A paleta de cores foi feita por intermédio da ferramenta [Adobe Color](https://color.adobe.com/pt/create/color-wheel) e resultou no seguinte:
-[paleta_de_cores]!(https://github.com/nunesisabela/SAP008-social-network/blob/main/external/paleta_social_network.jpeg)
+![paleta_de_cores](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/paleta_social_network.jpeg)
 
 ## 5. Repositório
 O repositório é o espaço digital que armazena um código e as versões que podem advir dele. Neste caso, o repositório está hospedado no GitHub, onde é possível criar um perfil - um espaço próprio do usuário para guardar códigos. O ideal é ter um repositório por projeto. Para tanto, é possível criar um repositório e nomeá-lo ou forkar um repositório já existente (de outro perfil) para fazer as próprias mudanças sem alterar o arquivo original. No caso de um novo repositório criado, é importante acessar a pasta do computador onde o repositório está por meio do terminal e usar o comando `git init` (no caso de GitBash, terminal do Linux, terminal do Ubuntu). Para este repositório cujo README vos fala, isso não é necessário.

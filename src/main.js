@@ -9,6 +9,8 @@ import entrar from './pages/entrar/entrar.js'
 import cadastrar from './pages/cadastrar/cadastrar.js'
 
 const main = document.querySelector('#root');
+const googleBtn = document.querySelector('#google-login');
+const okLoginBtn = document.querySelector('#ok-login-btn');
 
 const navegar = () => {
     window.addEventListener('hashchange', () => {

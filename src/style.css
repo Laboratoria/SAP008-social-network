@@ -38,7 +38,7 @@ form {
   align-items: center;
 }
 
-button {
+.signin-btn {
   -webkit-text-stroke-width: 0.5px;
   border-color: White;
   background-color: transparent;
@@ -110,13 +110,6 @@ input {
   height: 32px;
   font-size: 14px;
 }
-
-.pswd-ok {
-  width: 151px;
-  height: 32px;
-  margin-top: 10px;
-}
-
 
 footer {
   bottom: 0;

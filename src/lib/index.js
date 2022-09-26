@@ -6,9 +6,9 @@ import {
   GoogleAuthProvider,
   sendPasswordResetEmail,
   updateProfile,
-} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'; //eslint-disable-line
+} from './firebase.js';
 
-import { app } from './firebase-configuration.js';
+import { app } from './configuration.js';
 
 // import { db } from '... firebase-firestore.js'
 

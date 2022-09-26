@@ -1,0 +1,21 @@
+body {
+    background-image: url(./img/IMG-20220922-WA0016.jpg);
+    text-align: center;
+}
+
+.container {
+    background-image: url(./img/unknown.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: white;
+    opacity: 85%;
+    height: 45rem;
+    width: 95%;
+    border-radius: 40px;
+    margin-top: 17%;
+    margin-left: 2.5%;
+}
+
+.text-one {
+    margin-bottom: 90%;
+}

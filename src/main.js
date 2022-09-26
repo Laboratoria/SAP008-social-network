@@ -9,6 +9,12 @@ import aboutus from "./aboutus/aboutus.js";
 
 const main = document.querySelector('#root');
 
+
+window.addEventListener("load",  () => {
+    main.appendChild(login( ));
+    init();
+});
+
 const init = () => {
     window.addEventListener('hashchange', () => {
       switch (window.location.hash) {
@@ -50,9 +56,6 @@ const init = () => {
     });
 } ;        
 
-window.addEventListener("load",  () => {
-    main.appendChild(login( ));
-    init( );
-});
+
 
 

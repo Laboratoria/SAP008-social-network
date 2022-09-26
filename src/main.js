@@ -1,9 +1,34 @@
 import "./config-firebase.js"
 
 import login from "./pages/login/login.js" 
-//import cadastro from ".\pages\Cadastro\cadastro.js"
+import cadastro from "./pages/Cadastro/cadastro.js"
 
 const root= document.getElementById ("root")
+
+const init = () => {
+  window.addEventListener("hashchange", () => {
+    root.innerHTML=""
+    switch(window.location.hash){
+      case"":
+        root.appendChild(login());
+        break;
+      case "#cadastro":
+        root.appendChild(cadastro())
+        break;
+
+    }
+  })
+}
+window.addEventListener ("load", () => {
+  root.appendChild (login());
+  init()
+})
+
+// chamando o template de cadastro//
+// window.addEventListener ("load", () => {
+//   root.appendChild (cadastro());
+// })
+
 
 /*const page = () => {
   window.addEventListener ('hashchange', () => {
@@ -16,8 +41,3 @@ const root= document.getElementById ("root")
   )  
 }*/
 
-window.addEventListener ("load", load)
-function load (){
-  const form = login()
-  root.appendChild (form)
-}

@@ -1,0 +1,40 @@
+html{
+  text-align: center;
+  margin:0;
+  background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+.container-registration{
+  
+}
+
+.registration-input{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+#one-logo{s
+  align-self: center;
+}
+.input{
+  width: max-content;
+  height: max-content;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+
+.button{
+  padding: 10px;
+  width: 15rem;
+  background-color: #49AAD7;
+  color: white;
+  font-size: medium;
+  border: 2px #49AAD7 solid;
+  
+}

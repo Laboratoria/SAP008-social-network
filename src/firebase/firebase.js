@@ -12,7 +12,7 @@ const provider = new GoogleAuthProvider();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     alert(user.email)
-    window.location.hash = "#timeline"
+    window.location.hash = "#profile"
   } else {
    window.location.hash = "";
   }

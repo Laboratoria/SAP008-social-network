@@ -1,9 +1,9 @@
 export default () => {
     const container = document.createElement('div');
     const template = `  
-        <div class="container-login">
-        
-        <h1>AQUI É PROFILE</h1>
+        <div class="container-profile">
+            <img src="./images/logo_02_azul_081E26.png" alt="logo do título"
+            <h1>Meu perfil musical</h1>   
 
 
             

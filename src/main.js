@@ -10,6 +10,8 @@ import cadastrar from './pages/cadastrar/cadastrar.js'
 
 const main = document.querySelector('#root');
 
+const googleBtn = document.querySelector('#google-login');
+const okLoginBtn = document.querySelector('#ok-login-btn');
 const signInName = document.querySelector('#name')
 const signInEmail = document.querySelector('#email')
 const signInPassword = document.querySelector('#password')

@@ -9,6 +9,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
 
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    top: 20px
+}
+
 #register {
     position: absolute;
     top: 50%;
@@ -22,12 +34,6 @@
     transition: width .3s, heigth .3s;
     transition-timing-function: ease;
 }
-
-.background-register {
-    height: 0vh;
-    width: 0vw; 
-}
-
 .container-register { 
     display: block;
     padding: 10px;
@@ -37,98 +43,117 @@
     position:relative;
     width: 200px;
     height: 60px;
-    top: 20px;
+    top: 10px;
     margin-left:auto;
     margin-right: auto;
     display: flex;
 }
 
-.sub-title-register{
+.subtitle-register{
     color: #A6634B;  
-    top: 20px;
     position: relative;
+    top: 10px;
     text-align: center;
     font-size: 0.8em;
-    display: flex;
     font-family: "Carrois Gothic SC";
 }
 
+.background-register {
+    height: 0vh;
+    width: 0vw; 
+}
+
 .box-name-register {
+    color: #ffff;  
     position: relative;
-    width: 200px;
+    width: 210px;
     height: 40px;
-    top: 80px;
+    top: 30px;
+    padding-left: 15px;
     margin-left:auto;
     margin-right: auto;
-    font-size: 1.0em;
-    color: #ffff;  
     border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 0.8em;
     display: flex;
     background: none;
    
 }
 
-.box-email-register {
+.material-icons{
+    color: white;
     position: relative;
-    width: 200px;
-    height: 40px;
-    top: 70px;
     margin-left:auto;
     margin-right: auto;
-    font-size: 1.0em;
-    line-height: 21px;
+    display: flex;
+
+}
+
+.box-email-register {
+    position: relative;
+    width: 210px;
+    height: 40px;
+    top: 27px;
+    padding-left: 17px;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 0.8em;
     color: #ffff;  
     border: none; 
+    border-bottom: 2px solid #ccc;
     display: flex;
     background: none;
 }
 
-.box-password-register  {
+#box-new-password {
     position: relative;
-    width: 200px;
+    width: 210px;
     height: 40px;
-    top: 80px;
+    top: 30px;
     margin-left:auto;
     margin-right: auto;
-    color: #ffff;  
-    font-size: 18px;
+    padding-left: 25px;
+    font-size: 0.8em;
     border: none;
+    border-bottom: 2px solid #ccc;
+    color: #ffff; 
     background: none;
 }
 
 .box-password-repeat{
    position: relative;
-   width: 200px;
+   width: 210px;
    height: 40px;
-   top: 90px;
+   top: 30px;
+   padding-left: 25px;
    margin-left:auto;
    margin-right: auto;
    color: #ffff;  
-   font-size: 1.0em;
+   font-size: 0.8em;
     border: none;
+    border-bottom: 2px solid #ccc;
     background: none;
 }
 
 .btn-register {
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 40px;
-    top: 200px;
+    top: 30px;
     margin-left:auto;
     margin-right: auto;
     border: none;
-    background: none;
+    background: #69636357;;
+    color:#ffff;
 }
 
 .user {
     position: relative;
+    text-align: center;
     width: 200px;
-    height: 40px;
-    left: 29px;
-    top: 150px;
+    height: 35px;
+    top: 50px;
     font-size: 1.0em;
-    line-height: 20px;
-    letter-spacing: 0.05em;
     color: #ffff; 
 }
 
@@ -138,7 +163,6 @@
     }
     
     .background-register{
-        background-color: #FFFFFF;
         float: left;
         width: 35vw;
         height: 100vh;

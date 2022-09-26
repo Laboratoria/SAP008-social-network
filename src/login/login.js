@@ -17,8 +17,11 @@ export default () => {
                 <form> 
                     <div>
                         <input class="box-name" type="e-mail" id="e-mail" placeholder="Digite seu e-mail"/>
+                        <span class="material-icons">mail_outline</span>
+                        
                     </ div> 
                     <input class="box-password" type="password" id="senha" placeholder="Digite sua senha"/> 
+                    <span class="material-icons">lock_outline</span>
                     <input class="box-enter" type="submit" id="btn-submit" value="Entrar">
                     <button class="new-password" type="button" id="btn-password"><a href = "#password">Esqueci a senha</button>
                     <input class="box-login-google" type="button" id="btn-google" value="Login com Google"><img class="logo-google" src="./images/simbolo-do-google.png">

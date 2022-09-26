@@ -60,7 +60,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../../Imagens/fundo.png);
+    background-image: url(../../imagens/fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;

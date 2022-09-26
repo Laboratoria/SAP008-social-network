@@ -1,5 +1,5 @@
-import Login from './Pages/Login/login.js';
-import Signup from './Pages/Signup/signup.js';
+import login from './Pages/login/login.js';
+import signup from './pages/signup/signup.js';
 const main = document.querySelector('#root');
 
 const init = () => {
@@ -7,12 +7,12 @@ const init = () => {
         main.innerHTML = '';
         switch (window.location.hash) {
             case '':
-                main.appendChild(Login());
+                main.appendChild(login());
                 break;
             case '#Signup':
-                main.appendChild(Signup());
+                main.appendChild(signup());
                 break;
-            default: main.appendChild(Login());
+            default: main.appendChild(login());
 
         }
     })
@@ -20,7 +20,7 @@ const init = () => {
 }
 window.addEventListener('load', () => {
     window.location.hash = ""
-    main.appendChild(Login());
+    main.appendChild(login());
     init();
 });
 

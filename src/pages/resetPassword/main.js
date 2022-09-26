@@ -15,8 +15,8 @@ export default () => {
             <form class="reset-form display-flex">
   
               <h2 class="reset-text">REDEFINA SUA SENHA</h2>
-              <p>ENVIAREMOS UM E-MAIL PARA REDEFINIÇÃO DE SENHA</p>
-              <input type="email" placeholder="E-MAIL" id="email-input-reset" class="input-text-reset"><p>
+              <p class="message-about-reset">ENVIAREMOS UM E-MAIL PARA REDEFINIÇÃO DE SENHA</p>
+              <input type="email" placeholder="E-MAIL" id="email-input-reset" class="input-style"><p>
                 
             </form>
                   

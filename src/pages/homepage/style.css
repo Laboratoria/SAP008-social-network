@@ -1,0 +1,253 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.initial-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-initial-page {
+    margin: 0; 
+    height: 85%; 
+    width: 100%; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: absolute; 
+    top: 0;  
+ } 
+
+.img-logo {
+    width: 15rem;
+}
+
+.button-initial-page {
+    width: 100%;
+    height: 11vh;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 83%;
+}
+
+.btn-initial-page {
+    border: solid 2px black;
+    padding: 0.5rem;
+    background-color: #FFFFFF;
+    width: 9rem;
+    height: 2.5rem;
+    font-size: medium;
+}
+
+.btn-initial-page:hover {
+    background-color: black;
+    color: #FFFFFF;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.footer {
+    background: #fff;
+    width: 100%;
+    min-height: 6.5vh;
+    position: absolute;
+    font-size: small;
+    border-top: solid 1px black;
+    bottom: 0;
+}
+
+.list-footer {
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+footer a {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+}
+
+.developed-by {
+    width: 8rem;
+}
+
+.about {
+    font-size: 1rem;
+    text-decoration: underline;
+    padding-left: 2.5rem;
+}
+
+.background-video-mobile {
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 85vh;
+    object-fit: fill;
+    opacity: 82%;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+}
+/* 
+@media (min-aspect-ratio: 16/9) {
+    .background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .background-video {
+        width: auto;
+        height: 100%;
+    }
+} */
+
+.video-aside, .vertical-line-text-box {
+    display: none;
+
+}
+@media only screen and (min-width: 768px) {
+    .list-footer {
+        margin-top: 0.6rem;
+    }
+
+    .button-initial-page {
+        top: 82.7%;
+        gap: 12rem;
+    }
+
+    .btn-initial-page {
+        width: 12rem;
+        height: 3.8rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .intro-text, .video-aside {
+        display: block;
+    }
+
+    .initial-page {
+        background: white;
+    }
+    .background-video-mobile {
+        display: none;
+    }
+
+    .video-aside {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        left: 0;
+        top: 0;
+        position: fixed;
+    }
+
+    .background-video-desktop {
+        object-fit: fill;
+        height: 95vh;
+        width: 58vw;
+        opacity: 90%;
+    }
+
+    .logo-initial-page {
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin-top: 7vh;
+        margin-right: 28vw;
+        height: 12vh;
+    }
+
+    .img-logo {
+        width: 14vw;
+    }
+    
+    .vertical-line-text-box {
+        border-left: 6px solid rgb(0, 0, 0);
+        max-width: 50vw;
+        margin-left: 58vw;
+        margin-top: 15vh;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .connections-headline {
+        color: #DF3B25;
+        font-size: 2.3rem;
+        font-weight: lighter;
+        margin-left: 1rem;
+    }
+
+    .homepage-text {
+        font-size: 1.3rem;
+        font-weight: lighter;
+        margin-left: 1rem;
+    }
+
+    .button-initial-page {
+        max-width: 30vw;
+        margin-left: 59vw;
+        gap: 6.6rem;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin-top: -11vh;
+        height: 6vh;
+        background: transparent;
+    }
+
+    .btn-initial-page {
+        background: white;
+        width: 10rem;
+        height: 3.5rem;
+        font-size: 1.3rem;
+        border-radius: 5px;
+    }
+
+    .footer {
+        border-top: transparent;
+        height: 5vh;
+    }
+
+    .list-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.2rem;
+    }
+
+    .developed-by {
+        width: 23vw;
+        margin-right: 2rem;
+        font-size: 0.7rem;
+        color: #5F5656;
+    }
+
+    .about {
+        font-size: 0.7rem;
+        width: 30vw;
+        color: #5F5656;
+    }
+}
+
+
+/* @media (min-aspect-ratio: 16/9) {
+    .background-video-desktop {
+        width: 60%;
+        height: auto;
+    }
+} */

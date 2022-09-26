@@ -88,5 +88,6 @@ export default () => {
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
   });
+  
   return loginContainer;
 };

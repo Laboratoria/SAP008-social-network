@@ -13,7 +13,7 @@
 
 .register-content {
     width: 100%;
-    height: 78.4vh;
+    height:100vh;
     flex-direction: column;
     background: linear-gradient(180deg, rgba(188, 255, 243, 0.96) 0%, rgba(241, 234, 174, 0.96) 25%, #FFE6DB 50%, rgba(255, 221, 225, 0.96) 75%, #FFFFFF 100%);
 }

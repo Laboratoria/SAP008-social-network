@@ -1,169 +1,224 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap');
-
-font-family: 'Poppins', sans-serif;
-font-family: 'Questrial', sans-serif;
-font-family: 'Roboto', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
-    background-color: #ABD9D8;
+  background-color: #abd9d8;
 }
 
 .background-home {
   display: none;
 }
 
-
 .form {
-  background-color: #FFF;
+  background-color: #fff;
   width: 30rem;
   height: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
 }
 
 .text-one {
-    margin-top: -3rem;
+  margin-top: -1rem;
+}
+
+.text-two {
+  padding: 0.6rem;
+  font-size: 1rem;
+  
+}
+
+.text-three {
+  font-size: 1.1rem;
 }
 
 .form picture {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .input-login {
-    font-family: 'Roboto', sans-serif;
-    border-radius: 2rem;
-    background-color: #ABD9D8;
-    padding: 1%;
-    margin-top: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  border-radius: 2rem;
+  background-color: #abd9d8;
+  padding: 1%;
+  margin-top: 0.5rem;
 }
 
 .button-login {
-    border-radius: 2rem;
-    background-color: #D8A370;
-    font-family: 'Poppins', sans-serif;
+  border-radius: 2rem;
+  background-color: #c69b73;
+  font-family: "Poppins", sans-serif;
 }
 
-.button-sign-in{
-    display: flex;
-    align-content: center;
-    margin-top: 1rem;
-    padding: 0 1rem 0;
+.button-login:hover {
+  background-color: #ffcc98;
 }
 
-.button-sign-up{
-    display: flex;
-    align-content: center; 
+.button-sign-in {
+  display: flex;
+  align-content: center;
+  margin-top: 1rem;
+  padding: 0 1rem 0;
+}
+
+
+.button-sign-up {
+  display: flex;
+  align-content: center;
+  padding: 0 1rem 0;
+}
+
+.button-sign-up:hover {
+  background-color: #ffcc98;
 }
 
 .button-google {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-
-
-@media all and (min-width: 1200px) {
-
-
-    .img-woman {
-        margin-top: 6rem;
-        max-width: 70%;
-        max-height: 80%;
-        margin-left: 15rem;
-    }
-    .form {
-        width: 55rem;
-        height: 51rem;
-        font-size: 20px;
-        margin: 1rem 0.5rem;
-       }
+.quote {
+  font-size: 4rem;
 }
 
-@media all and (max-width: 940px) {
+@media screen and (min-width: 1201px) {
 
-  body {
-    background-image: url(/src/img/background.png);
-    background-size: contain;
+  .home-page {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .background-home {
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+  }
+
+  .img-woman {
+    width: 55rem;
+    height: 37rem;
+    margin-left: 4rem;
+    margin-top: 0.5rem;
+  }
+
+  .quote {
+    color: #fff;
+    font-family: "Questrial", sans-serif;
+    text-shadow: #d8a370;
+    padding: 2rem;
+    font-size: 24px;
+    text-justify: inter-cluster;
+  }
+
+  .img-logo {
+    width: 18rem;
+    height: 15rem;
+  }
+
+  .form {
+    width: 40rem;
+    height: 43rem;
+    font-size: 20px;
+    margin: 1rem 0.5rem;
   }
 
   .input-login {
     width: 80%;
+    font-size: 18px;
+  }
+
+  .button-login {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px)  {
+
+  .home-page {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .background-home {
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+  }
+
+  .img-woman {
+    width: 40rem;
+    height: 50rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .quote {
+    color: #fff;
+    font-family: "Questrial", sans-serif;
+    text-shadow: #d8a370;
+    padding: 2rem;
+    font-size: 24px;
   }
 
   .img-logo {
-    width: 12rem;
-    height: 10rem;
-    margin-bottom: 2rem;
-  } 
-  
- .form {
-  width: 20rem;
-  height: 35rem;
-  border-radius: 2rem;
-  margin: 2rem auto;
- } 
-
- .text-one {
-  padding-top: 0.6rem;
- }
-}
-
-@media all and (min-width: 940px) {
-    
-    .home-page {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .background-home {
-        display: flex;
-        flex-direction: column;
-        max-height: 700px;
-      }
-
-    .img-woman {
-        width: 100vw;
-        height: 100vw;
-        margin-right: 6rem;
-        margin-top: 0.5rem;
-    }
-
-   .quote {
-    color: #FFF;
-    font-family: 'Questrial', sans-serif;
-    text-shadow: #D8A370;
-    padding: 2rem;
-    font-size: 24px;
-   }
-
-   .img-logo {
     width: 18rem;
     height: 15rem;
-   }
+  }
 
-   .form {
+  .form {
     width: 50rem;
-    height: 41rem;
+    height: 40rem;
     font-size: 20px;
     margin: 1rem 0.5rem;
-   }
+  }
 
-   .input-login {
+  .input-login {
     width: 80%;
     font-size: 18px;
-   }
+  }
 
-   .button-login {
-    font-size:20px;
-   }
-  
+  .button-login {
+    font-size: 20px;
+  }
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+
+    body {
+      background-image: url(../img/background.png);
+      background-size: contain;
+    }
+  
+    .input-login {
+      width: 80%;
+    }
+  
+    .img-logo {
+      width: 12rem;
+      height: 10rem;
+      margin-bottom: 2rem;
+    }
+    
+    .text-three {
+      font-size: 0.9rem;
+    }
+    .form {
+      width: 20rem;
+      height: 35rem;
+      border-radius: 2rem;
+      margin: 2rem auto;
+    }
+  
+    .text-one {
+      padding-top: 0.6rem;
+    }
+  }

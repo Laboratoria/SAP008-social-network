@@ -12,17 +12,12 @@ export function loginUser(email, password) {
    return signInWithEmailAndPassword(auth, email.value, password.value)
         .then(userCredential => {
             window.location.hash('')
-
-            console.log('sucess!')
-
             alert('Sucesso! Você está logado!')
 
             return userCredential.user;
         })
         .catch((error) => {
             alert(getErrorMessage(error));
-
-            console.log("error!")
 
             alert('Ops! Algo deu errado, tente novamente!')
         });

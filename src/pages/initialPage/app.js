@@ -151,69 +151,6 @@ export default () => {
                
              </div>
              `;
-
-          boxPost.addEventListener('click', (e) => {
-            const buttonLike = e.target.dataset.liked;
-            const increment = firebase.firestore.FieldValue.increment(1);
-            // userOnlineLikedThisPost.get().then((querySnapshot) => {
-            //     querySnapshot.forEach((doc) => {
-            //         if (doc.data().userID === userOnline) {
-            //           postLikedSometime = true;
-            //           alert('Você já curtiu esse post!');
-            // eslint-disable-next-line max-len
-            //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
-            //       }
-            //     });
-
-            if (postLikedSometime === false) {
-              likeFirebase(docRef)
-                .then(() => {
-                  firestore().doc(docRef).collection('posts')
-                    .add(userID)
-                    .then(() => {
-                      boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu! +1';
-                      db.collection('posts').doc(buttonLike)
-                        .update({ like: increment });
-                    });
-                })
-
-                .catch(() => {
-                  alert('Ops! Algo deu errado. Tente novamente!');
-                });
-            }
-          });
-
-          boxPost.addEventListener('click', (e) => {
-            const buttonDeslike = e.target.dataset.desliked;
-            const increment = firebase.firestore.FieldValue.increment(1);
-            // userOnlineLikedThisPost.get().then((querySnapshot) => {
-            //     querySnapshot.forEach((doc) => {
-            //         if (doc.data().userID === userOnline) {
-            //           postLikedSometime = true;
-            //           alert('Você já curtiu esse post!');
-            // eslint-disable-next-line max-len
-            //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
-            //       }
-            //     });
-
-            if (postLikedSometime === false) {
-              likeFirebase(docRef)
-                .then(() => {
-                  firestore().doc(docRef).collection('posts')
-                    .add(userID)
-                    .then(() => {
-                      boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
-                      db.collection('posts').doc(buttonDeslike)
-                        .update({ deslike: increment });
-                    });
-                })
-
-                .catch(() => {
-                  alert('Ops! Algo deu errado. Tente novamente!');
-                });
-            }
-          });
-
           return acc;
         }, '');
 
@@ -232,7 +169,7 @@ export default () => {
       movie: event.target.movie.value,
       createdAt: new Date(),
       text: event.target.text.value,
-      like: [],
+      like: 0,
       deslike: 0,
     })
       .then(() => {
@@ -316,6 +253,68 @@ export default () => {
         })
         .catch(() => {
           alert('Algo deu errado. Por favor, tente novamente.');
+        });
+    }
+  });
+
+  boxPost.addEventListener('click', (e) => {
+    const buttonLike = e.target.dataset.liked;
+    const increment = firebase.firestore.FieldValue.increment(1);
+    // userOnlineLikedThisPost.get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         if (doc.data().userID === userOnline) {
+    //           postLikedSometime = true;
+    //           alert('Você já curtiu esse post!');
+    // eslint-disable-next-line max-len
+    //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
+    //       }
+    //     });
+
+    if (postLikedSometime === false) {
+      likeFirebase(docRef)
+        .then(() => {
+          firestore().doc(docRef).collection('posts')
+            .add(userID)
+            .then(() => {
+              boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu! +1';
+              db.collection('posts').doc(buttonLike)
+                .update({ like: increment });
+            });
+        })
+
+        .catch(() => {
+          alert('Ops! Algo deu errado. Tente novamente!');
+        });
+    }
+  });
+
+  boxPost.addEventListener('click', (e) => {
+    const buttonDeslike = e.target.dataset.desliked;
+    const increment = firebase.firestore.FieldValue.increment(1);
+    // userOnlineLikedThisPost.get().then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         if (doc.data().userID === userOnline) {
+    //           postLikedSometime = true;
+    //           alert('Você já curtiu esse post!');
+    // eslint-disable-next-line max-len
+    //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
+    //       }
+    //     });
+
+    if (postLikedSometime === false) {
+      likeFirebase(docRef)
+        .then(() => {
+          firestore().doc(docRef).collection('posts')
+            .add(userID)
+            .then(() => {
+              boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
+              db.collection('posts').doc(buttonDeslike)
+                .update({ deslike: increment });
+            });
+        })
+
+        .catch(() => {
+          alert('Ops! Algo deu errado. Tente novamente!');
         });
     }
   });

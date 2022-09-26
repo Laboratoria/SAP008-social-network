@@ -1,107 +1,219 @@
-@import url('https://fonts.googleapis.com/css2? family= Carrois+Gothic & family= Carrois+Gothic+SC & display=swap');
+@charset "UTF-8";
 
-.logo-azul-login { 
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    top: 20px
+}
+
+
+#login{
     position: absolute;
-    width: 330px;
-    height: 90px;
-    left: 15px;
-    top: 77px;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #69636357;
+    transform: translate(-50%, -50%);
+    transition: width .3s, heigth .3s;
+    transition-timing-function: ease;
+}
+
+.container-login{
+    display: block; 
+    padding: 10px;
+}
+
+.logo-blue-login { 
+    position:relative;
+    width: 200px;
+    height: 60px;
+    top: 20px;
+    margin-left:auto;
+    margin-right: auto;
+    display: flex;
 }
 
 .sub-title{
     color: #081E26;  
     position: relative;
-    left: 32px;
-    top: 157px;
-    left: 55px;
-    font-size: 14px;
-    letter-spacing: 0.05em;
+    top: 20px;
+    text-align: center;
+    font-size: 0.8em;
     font-family: "Carrois Gothic SC";
+}
+
+.background-login{
+    display: block;
+    position: absolute;
+    opacity: 3%;
+    height: 500px;
+    width: 250px;
+    margin-left: 0px;
+    margin-top: 0px;
+    opacity: 1;
 }
 
 .box-name{
-    position: absolute;
-    width: 300px;
-    height: 61px;
-    left: 30px;
-    top: 215px;
-    background: rgba(217, 217, 217, 0.4);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+    color: #FFFFFF;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    top: 30px;
+    padding-left: 5px;
+    margin-left:auto;
+    margin-right: auto;
     border: none;
-    font-family: "Carrois Gothic";
+    border-radius: 5px;
+    display: flex;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 .box-password{
-    position: absolute;
-    width: 300px;
-    height: 61px;
-    left: 30px;
-    top: 304px;
-    background: rgba(217, 217, 217, 0.4);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+    position: relative;
+    width: 200px;
+    height: 40px;
+    top: 45px;
+    padding-left: 5px;
+    margin-left:auto;
+    margin-right: auto;
+    color: #FFFFFF;
+    border-radius: 5px;
     border: none;
-    font-family: "Carrois Gothic";
+    display: flex;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+input::placeholder{
+    color:#ffffffa3;
 }
 
 .box-enter {
-    position: absolute;
-    width: 300px;
-    height: 61px;
-    left: 30px;
-    top: 396px;
-    background: rgba(56, 77, 89, 0.6);
-    font-family: "Carrois Gothic SC";
+    display: flex;
+    color: rgba(255, 255, 255, 0.69);  
+    position: relative;
+    width: 80px;
+    height: 35px;
+    padding-left: 20px;
+    margin-left:auto;
+    margin-right: auto;
+    top: 55px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 .new-password {
-    color: #081E26;  
-    position: absolute;
-    width: 168px;
-    height: 22px;
-    left: 104px;
-    top: 484px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
+    color: #ffff;  
+    text-align: center;
+    position: relative;
+    top: 75px;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 1.0em;
     mix-blend-mode: darken;
     border: none;
-     background: #FFFFFF;
-     font-family: "Carrois Gothic SC"; 
+    display: flex;
 }
 
     .logo-google{
         position: relative;
-        width: 40px;
-        height: 40px;
-        top: 527px;
-        left: 45px;
+        width: 30px;
+        height: 30px;
+        top: 65px;
+        right: 70px;
+        margin-left:auto;
+        margin-right: auto;
+        display: flex;
     }
 
 .box-login-google{
-    position: absolute;
-    width: 300px;
-    height: 60px;
-    left: 30px;
-    top: 557px;
-    background: rgba(56, 77, 89, 0.6);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    top: 100px;
+    padding-left: 55px;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 0.9em;
     color: #FFFFFF;
-    font-family: "Carrois Gothic SC";
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    background:  rgba(156, 152, 152, 0.815);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 .box-register{
-    position: absolute;
-    width: 300px;
-    height: 60px;
-    left: 30px;
-    top: 633px;
-    background: rgba(56, 77, 89, 0.6);
-    font-family: 'Montesserrat';
-    font-size: 20px;
-    font-family: "Carrois Gothic SC";
+    color: #FFFFFF;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    top: 90px;
+    padding-top: 10px;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background:  rgba(156, 152, 152, 0.815);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
 
+@media screen and (min-width: 768px) and (max-width:992px){
+    #login{
+        width: 80vw;
+    }
+    
+    .background-login{
+        float: left;
+        width: 35vw;
+        height: 100vh;
+    }
+
+    .container-login{
+        float: right;
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 992px){
+    #login{
+        width: 900px;
+    }
+    
+    .background-login{
+        background-color: #FFFFFF;
+        float: left;
+        width: 35vw;
+        height: 100vh;
+    }
+
+    .container-login{
+        float: right;
+        width: 30vw;
+    }
+}
+    

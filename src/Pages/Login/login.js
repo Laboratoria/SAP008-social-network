@@ -1,3 +1,5 @@
+import "../../auth.js"
+
 export default () => {
     const container = document.createElement('div');
 

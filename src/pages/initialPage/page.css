@@ -108,7 +108,6 @@ body {
 
 .about-movies {
     width: 19vw;
-    max-height: 45%;
     margin-left: 1%;
     font-size: 0.9rem;
 }
@@ -119,12 +118,12 @@ body {
     margin-top: 3.5%;
 }
 
-.getLike{
+.getLike {
     font-size: 0.7rem;
     color: #ea5404;
 }
 
-.getDeslike{
+.getDeslike {
     font-size: 0.7rem;
     color: #ea5404;
 }
@@ -616,7 +615,6 @@ footer {
 
     .posts {
         width: 80%;
-        grid-template-columns: 1fr 1fr;
         grid-template-rows: 27vh 27vh;
         margin-left: 1%;
         margin-top: 5%;
@@ -633,7 +631,6 @@ footer {
     .about-movies {
         width: 34vw;
         height: auto;
-        font-size: 20px;
     }
 
     .text_share {
@@ -758,6 +755,7 @@ footer {
 
     .about-movies {
         width: 70vw;
+        height: auto;
         font-size: 0.8rem;
         margin-left: 24%;
     }
@@ -836,7 +834,6 @@ footer {
 
     .posts {
         width: 80%;
-        grid-template-columns: 1fr 1fr;
         grid-template-rows: 45vh 45vh;
         margin-left: 1%;
         margin-top: 5%;

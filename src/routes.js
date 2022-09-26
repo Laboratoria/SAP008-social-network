@@ -15,8 +15,13 @@ const init = () => {
       main.appendChild(login());
       break;
     case '#register':
-      main.innerHTML = '';
-      main.appendChild(register());
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(register());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
       break;
     case '#page':
       firebase.auth().onAuthStateChanged((user) => {
@@ -28,20 +33,40 @@ const init = () => {
       });
       break;
     case '#aboutUs':
-      main.innerHTML = '';
-      main.appendChild(about());
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(about());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
       break;
     case '#profile':
-      main.innerHTML = '';
-      main.appendChild(profile());
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(profile());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
       break;
     case '#movies':
-      main.innerHTML = '';
-      main.appendChild(movies());
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(movies());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
       break;
     case '#series':
-      main.innerHTML = '';
-      main.appendChild(series());
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(series());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
       break;
 
     default: main.appendChild(login());

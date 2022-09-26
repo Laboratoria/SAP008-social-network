@@ -68,8 +68,6 @@ export default () => {
   `;
   container.innerHTML = template;
 
-  const db = firebase.firestore();
-
   //   const pictureImg = container.querySelector('.picture-image');
   //     const pictureInput = container.querySelector('.picture_input');
   //   const pictureImgText = 'Você tem uma imagem da capa do filme/série? Sobe aí!';
@@ -78,6 +76,20 @@ export default () => {
   const doLogout = container.querySelector('#logout');
   const formAction = container.querySelector('#myForm');
   const boxPost = container.querySelector('.posts');
+
+  const db = firebase.firestore();
+  const userID = { whoLike: firebase.auth().currentUser.uid };
+  const postLikedSometime = false;
+  const docRef = db.collection('posts').doc().id;
+  const firestore = () => firebase.firestore().collection('posts');
+  const likeFirebase = (id) => firestore().doc(id).update({
+    like: firebase.firestore.FieldValue.increment(1),
+  })
+    .then(() => true)
+    .catch((error) => error);
+
+  //   const userOnlineLikedThisPost = firebase.firestore().collection('likes')
+  //   const userOnline = firebase.auth().currentUser.uid;
 
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
@@ -99,7 +111,7 @@ export default () => {
   }
 
   function postTemplate() {
-    db.collection('test').get()
+    db.collection('posts').get()
       .then((snapshot) => {
         const postContainer = snapshot.docs.reduce((acc, doc) => {
           const {
@@ -139,6 +151,69 @@ export default () => {
                
              </div>
              `;
+
+          boxPost.addEventListener('click', (e) => {
+            const buttonLike = e.target.dataset.liked;
+            const increment = firebase.firestore.FieldValue.increment(1);
+            // userOnlineLikedThisPost.get().then((querySnapshot) => {
+            //     querySnapshot.forEach((doc) => {
+            //         if (doc.data().userID === userOnline) {
+            //           postLikedSometime = true;
+            //           alert('Você já curtiu esse post!');
+            // eslint-disable-next-line max-len
+            //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
+            //       }
+            //     });
+
+            if (postLikedSometime === false) {
+              likeFirebase(docRef)
+                .then(() => {
+                  firestore().doc(docRef).collection('posts')
+                    .add(userID)
+                    .then(() => {
+                      boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu! +1';
+                      db.collection('posts').doc(buttonLike)
+                        .update({ like: increment });
+                    });
+                })
+
+                .catch(() => {
+                  alert('Ops! Algo deu errado. Tente novamente!');
+                });
+            }
+          });
+
+          boxPost.addEventListener('click', (e) => {
+            const buttonDeslike = e.target.dataset.desliked;
+            const increment = firebase.firestore.FieldValue.increment(1);
+            // userOnlineLikedThisPost.get().then((querySnapshot) => {
+            //     querySnapshot.forEach((doc) => {
+            //         if (doc.data().userID === userOnline) {
+            //           postLikedSometime = true;
+            //           alert('Você já curtiu esse post!');
+            // eslint-disable-next-line max-len
+            //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
+            //       }
+            //     });
+
+            if (postLikedSometime === false) {
+              likeFirebase(docRef)
+                .then(() => {
+                  firestore().doc(docRef).collection('posts')
+                    .add(userID)
+                    .then(() => {
+                      boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
+                      db.collection('posts').doc(buttonDeslike)
+                        .update({ deslike: increment });
+                    });
+                })
+
+                .catch(() => {
+                  alert('Ops! Algo deu errado. Tente novamente!');
+                });
+            }
+          });
+
           return acc;
         }, '');
 
@@ -151,13 +226,13 @@ export default () => {
 
   formAction.addEventListener('submit', (event) => {
     event.preventDefault();
-    db.collection('test').add({
+    db.collection('posts').add({
       name: event.target.name.value,
       user_id: userId,
       movie: event.target.movie.value,
       createdAt: new Date(),
       text: event.target.text.value,
-      like: 0,
+      like: [],
       deslike: 0,
     })
       .then(() => {
@@ -188,7 +263,7 @@ export default () => {
       // eslint-disable-next-line no-alert
       const resultado = window.confirm('Você deseja apagar essa postagem?');
       if (resultado === true) {
-        db.collection('test').doc(removeButtonId).delete()
+        db.collection('posts').doc(removeButtonId).delete()
           .then(() => {
             const posts = document.querySelector(`#poster-${removeButtonId}`);
             posts.remove();
@@ -197,6 +272,7 @@ export default () => {
     }
   });
 
+  // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const editButton = e.target.dataset.edit;
     const userCurrent = e.target.dataset.user;
@@ -214,6 +290,7 @@ export default () => {
     }
   });
 
+  // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const updateButton = e.target.dataset.update;
     const userCurrent = e.target.dataset.user;
@@ -226,7 +303,7 @@ export default () => {
       const updateMovie = boxPost.querySelector(`#name-${updateButton}`).value;
       const updateText = boxPost.querySelector(`#about-${updateButton}`).value;
 
-      db.collection('test').doc(updateButton)
+      db.collection('posts').doc(updateButton)
         .update({
           movie: updateMovie,
           text: updateText,
@@ -234,10 +311,10 @@ export default () => {
         .then(() => {
           boxPost.querySelector(`#updateButton-${updateButton}`).style.display = 'none';
           boxPost.querySelector(`#editButton-${updateButton}`).removeAttribute('style');
-          boxPost.querySelector(`#name-${updateButton}`).setAttribute('disabled','');
-          boxPost.querySelector(`#about-${updateButton}`).setAttribute('disabled','');
+          boxPost.querySelector(`#name-${updateButton}`).setAttribute('disabled', '');
+          boxPost.querySelector(`#about-${updateButton}`).setAttribute('disabled', '');
         })
-        .catch((e) => {
+        .catch(() => {
           alert('Algo deu errado. Por favor, tente novamente.');
         });
     }

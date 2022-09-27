@@ -19,7 +19,7 @@ Este é o terceiro projeto do Bootcamp da Laboratória, e tem por intenção con
 Uma rede social voltada às experiências em bares e restaurantes, na qual é possível compartilhar críticas, dicas e recomendações gastronômicas, além de outros aspectos vivenciados nestes locais, como atendimento, ambiente, valores, entre outros.
 
 ## 2. Organização de trabalho
-
+Para este projeto, foi utilizada a ferramenta de organização Notion em conjunto com o método Ágil, em que tasks foram separadas por sprints. 
 ## 3. Definição do produto - BatePrato
 Com base em uma [pesquisa](https://docs.google.com/forms/d/1GojhH3_rROENVXIHXOlSyFf4zn8yAIgSSKrj4rNo9I0/viewform?edit_requested=true) que conta com 21 respostas, informadas por intermédio do Google Form, 95,2% dos participantes dizem ter o costume de recomendar restaurantes que frequentam a amigos e familiares. Dentre os participantes, 66,7% levam em consideração a opnião de terceiros ao escolher um restaurante ou bar para conhecer, enquanto 23,8% considera tal opinião muito importante, sendo o fator decisivo na escolha de um estabelecimento. A partir disso, conclui-se que as informações mais interessantes para acessar e satisfazer esse público são:
 

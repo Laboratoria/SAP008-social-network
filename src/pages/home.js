@@ -20,10 +20,11 @@ export const homeFunction = () => {
         <p class="text-login text-two">───── Ou entrar com ─────</p>
         <a href=""><img src="img\\google.png" class="button-google" alt="Logo do Google"></a>
         <p class="text-login text-three">Ainda não tem uma conta?</p>
-        <button class="button-sign-up button-login" type="submit">Cadastre-se!</button>
+        <button class="button-sign-up button-login" type="submit" id="buttonSignUp">Cadastre-se!</button>
       </div>
     </section>
 `;
   container.innerHTML = templateLogin;
   return container;
 };
+

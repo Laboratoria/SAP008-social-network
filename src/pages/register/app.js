@@ -1,3 +1,5 @@
+import { register } from '../../lib/authentication.js';
+
 export default () => {
   const container = document.createElement('div');
   const template = `  <div class="container-register">
@@ -29,45 +31,25 @@ export default () => {
 
   container.innerHTML = template;
 
+  const buttonBackToPage = container.querySelector('#button-back');
   const buttonRegister = container.querySelector('#button-register');
-  const email = container.querySelector('#emailUser');
-  const newPassword = container.querySelector('#confirmPassword');
-  const password = container.querySelector('#passwordUser');
-  const userName = container.querySelector('#nameUser');
-
-  function register() {
-    // eslint-disable-next-line max-len
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email.value, newPassword.value)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        return user.updateProfile({ displayName: userName.value, uid: user.uid });
-      })
-      .then(() => {
-        window.location.replace('#page');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        if (errorCode === 'auth/email-already-in-use') {
-          alert('E-mail já cadastrado, insira um e-mail diferente');
-        } else if (errorCode === 'auth/invalid-email') {
-          alert('E-mail inválido');
-        } else {
-          alert('Algo deu errado. Por favor, tente novamente.');
-        }
-      });
-  }
+  const inputEmail = container.querySelector('#emailUser');
+  const inputNewPassword = container.querySelector('#confirmPassword');
+  const inputPassword = container.querySelector('#passwordUser');
+  const inputUserName = container.querySelector('#nameUser');
 
   // eslint-disable-next-line consistent-return
   function validatePassword() {
     if (
-      userName.value === '' || email.value === '' || password.value === '' || newPassword.value === '') {
+      inputUserName.value === '' || inputEmail.value === '' || inputPassword.value === '' || inputNewPassword.value === '') {
       alert('Por favor, preencha todos os campos');
-    } else if (password.value !== newPassword.value) {
+    } else if (inputPassword.value !== inputNewPassword.value) {
       alert('A senha digitada está diferente em um dos campos');
     } else {
-      return register();
+      const email = inputEmail.value;
+      const password = inputPassword.value;
+      const userName = inputUserName.value;
+      return register(email, password, userName);
     }
   }
   buttonRegister.addEventListener('click', validatePassword);
@@ -76,8 +58,7 @@ export default () => {
     window.location.hash = '#login';
   }
 
-  const buttonBack = container.querySelector('#button-back');
-  buttonBack.addEventListener('click', backToPage);
+  buttonBackToPage.addEventListener('click', backToPage);
 
   return container;
 };

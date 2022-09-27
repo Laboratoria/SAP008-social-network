@@ -1,6 +1,8 @@
+import { getCurrentUser } from '../../lib/exports.js';
+
 export default () => {
   const container = document.createElement('div');
-  const user = firebase.auth().currentUser;
+  const user = getCurrentUser();
   const template = `    <div class="container">
   <div class="logo">
       <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>

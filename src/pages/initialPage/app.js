@@ -1,6 +1,7 @@
+import {getCurrentUser, firestore, updatePost, deletePost, likeFirebase} from '../../lib/exports.js';
+
 export default () => {
   const container = document.createElement('div');
-  const getCurrentUser = () => firebase.auth().currentUser;
   const user = getCurrentUser();
   const template = ` <div class="container">
     <div class="logo">
@@ -88,12 +89,6 @@ export default () => {
   const userID = { whoLike: firebase.auth().currentUser.uid };
   const postLikedSometime = false;
   const docRef = db.collection('posts').doc().id;
-  const firestore = () => firebase.firestore().collection('posts');
-  const likeFirebase = (id) => firestore().doc(id).update({
-    like: firebase.firestore.FieldValue.increment(1),
-  })
-    .then(() => true)
-    .catch((error) => error);
 
   // const userLikes = firebase.firestore().collection('posts');
   // const userOnline = firebase.auth().currentUser.uid;

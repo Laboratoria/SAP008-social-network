@@ -21,7 +21,7 @@ export default () => {
 
             <section class="buttons-signup">
             <button type="submit" class="btn-signup">Cadastrar</button>
-            <button type="submit" class="btn-google-signup"><img src="./Imagens/google.svg"/>Cadastro com Google</button>
+            <button type="submit" class="btn-google-signup"><img class="img-google-signup" src="./Imagens/google.svg"/><span class="text-signup-btn">Cadastro com Google</span></button>
             </section>
         </form>
     `;

@@ -5,11 +5,26 @@ import timeline from "./timeline/timeline.js";
 import post from "./post/post.js";
 import profile from "./profile/profile.js";
 import about from "./about/about.js";
-import aboutus from "./aboutus/aboutus.js";    
+import aboutus from "./aboutus/aboutus.js";   
+import  {checkLoggedUser} from "./firebase/firebase.js"
+import  {redirect} from "./redirect.js"
 
 const main = document.querySelector('#root');
 
-const init = () => {
+const redirectLogUser = (user) => {
+    if (user) {
+      alert(user.email)
+      redirect ("#timeline");
+    } else {
+     redirect ("");
+    }
+}
+
+window.addEventListener("load",  () => {
+    checkLoggedUser (redirectLogUser)
+    main.appendChild(login( ));
+});
+
     window.addEventListener('hashchange', () => {
       switch (window.location.hash) {
             case ' ':
@@ -47,12 +62,8 @@ const init = () => {
             main.innerHTML = ' ';
             main.appendChild(login());
         }   
-    });
-} ;        
+    });    
 
-window.addEventListener("load",  () => {
-    main.appendChild(login( ));
-    init( );
-});
+
 
 

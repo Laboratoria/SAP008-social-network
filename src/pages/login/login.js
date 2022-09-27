@@ -1,42 +1,54 @@
 // aqui exportaras las funciones que necesites
-//colocar import
 
-//página inicial- Tela de login
-/*export default () => {
-    const container = document.createElement ("div")
-    const caixaDeLogin = `
-              <div id="inicial" class="caixaLogin">
-                  <form id="caixaDeLogin" class="boxLogin">
-                      <p class="texto">Bem vindo!</p>
-                      <div class="registroInicial">
-                          <input type="text" id="emailLogin" class="dadosAcesso" placeholder="E-mail do usuário" required>
-                      </div>
-                      <div class="registroInicial">
-                          <input type="password" id="senhaLogin" class="dadosAcesso" placeholder="Senha" required>
-                      </div>
-                      <button type="submit" id="botaoDeLogin" class="iniciarSessao">Login</button>
-                  </form>
-              </div>
-              `;
-        container.innerHTML = caixaDeLogin
-        return container;      
-}*/
 
-export default () => {
-    const container = document.createElement("div")
-    const template = ` 
-     <div class="container-login">
-      <div>
-        <input type="email" name="email" id="input-email" placeholder="Email do usuário" required>
-        <input type="password" name="password" id="input-password" placeholder="Senha" required>
-        <a href="/#cadastro">Não tenho um cadastro</a>
-        <button type="button" id="button-login" class="button">Entrar</button>
-      </div>
-     </div>
-    
-    `
+export default function Login() {
+  const login = document.createElement('div');
+  login.classList.add('login-main');
+  login.innerHTML = `   
+      <main class="main">
+      <div class="logotype">
+          <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
+        <p class="tittle-logotype">INspire</p>
+        </div>
+              
+        <form class="login-form">
+          <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
+          <input class="login-input password" type="password" placeholder="Senha" required>
+        </form>
+  
+        <div class="signin">
+          <button id="signin-button" class="signin-button btn">ENTRAR</button>
+          <button id="google-button" class="google-button btn">
+          <img class="google-icon-btn" src="imagens/btngoogle.png" alt="Logo do Google"/>LOGAR COM O GOOGLE</button>        
+        </div>  
 
-    console.log(container)
-    container.innerHTML = template;
-    return container
+        <div>
+        <button id="forgot-password" class="signup-button btn"> Esqueceu sua senha?</button>
+      </div> 
+
+        <div>
+          <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
+          <a href="/#cadastro">Cadastre-se</a>
+        </div> 
+      </main>
+      `;
+
+  const signInButton = login.querySelector('#signin-button');
+  const email = login.querySelector('.email');
+  const password = login.querySelector('.password');
+
+ 
+
+  signInButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (email.value) {
+      signIn(email.value, password.value)
+        .then(() => {
+          window.location.hash = 'feed';
+        });
+    }
+  });
+
+  return login;
 }
+

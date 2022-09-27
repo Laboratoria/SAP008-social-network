@@ -24,7 +24,6 @@ export default () => {
   
           </main>
         `;
-        
   resetContainer.innerHTML = template;
 
   const returnBtn = resetContainer.querySelector('#return-btn');
@@ -32,7 +31,6 @@ export default () => {
   const sendBtn = resetContainer.querySelector('#btn-reset-page');
 
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
-  
   sendBtn.addEventListener('click', () => {
     resetPassword(emailValue.value)
       .then(() => {
@@ -45,5 +43,4 @@ export default () => {
   });
 
   return resetContainer;
-}
-
+};

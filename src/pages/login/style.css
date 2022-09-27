@@ -155,6 +155,7 @@ body {
     width: 45%;
     justify-content: center;
     align-items: center;
+    background-color: #FFFFFF;
 }
 
 .login-side-desktop {
@@ -172,6 +173,7 @@ body {
 .text-desktop {
     align-self: center;
     margin: 2rem 0;
+    color: #EE2C12;
 }
 
 .desktop-form {
@@ -181,6 +183,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-radius: 10px;
     gap: 2rem;
     background: #FFFFFFB5;
@@ -200,6 +203,7 @@ body {
 .btn-login-desktop {
     background-color:#EE2C12;
     color: #FFFFFF;
+    background-image: url(img/);
 }
 
 .btn-google-desktop {
@@ -217,6 +221,16 @@ body {
 }
 
 .rebu-logo {
-    width: 14rem;
-    height: 5rem;
+    width: 10rem;
+    height: 3rem;
+    z-index: 0;
+}
+
+.bg-gif-desktop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 20%;
+    height: 100vh;
 }

@@ -15,13 +15,8 @@ const init = () => {
       main.appendChild(login());
       break;
     case '#register':
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          main.appendChild(register());
-        } else {
-          window.location.hash = '#login';
-        }
-      });
+      main.innerHTML = '';
+      main.appendChild(register());
       break;
     case '#page':
       firebase.auth().onAuthStateChanged((user) => {

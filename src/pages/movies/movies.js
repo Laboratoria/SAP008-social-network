@@ -13,11 +13,17 @@ export default () => {
     </div>
   
     <div class="navbar">
-        <a href="#login"> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
-        <a href="#profile" id="profile" class="active">Perfil</a>
-        <a href="#aboutUs">Sobre</a>
-        <a href="#page"><span style="color:rgb(250, 246, 49); font-weight: bold;">+</span></a>
-    </div>
+    <header id="header">
+       <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+       
+    <nav id="nav">
+       <ul id="menu">
+       <li><a href="#profile" id="profile">Perfil</a></li>
+       <li><a href="#aboutUs" id="post"> Sobre</a></li>
+       <li><a href="#page"><span class="active"> HOME</span></a></li>
+       </ul>
+    </nav>
+   </header>
   </div>
   
    <div class="movies">

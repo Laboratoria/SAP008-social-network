@@ -21,13 +21,12 @@ main{
     top: 20px
 }
 
-
 #login{
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 500px;
-    width: 250px;
+    height: 520px;
+    width: 320px;
     border-radius: 20px;
     overflow: hidden;
     background-color: #69636357;
@@ -64,8 +63,8 @@ main{
     display: block;
     position: absolute;
     opacity: 3%;
-    height: 500px;
-    width: 250px;
+    height: 520px;
+    width: 320px;
     margin-left: 0px;
     margin-top: 0px;
     opacity: 1;
@@ -84,7 +83,7 @@ main{
 .box-name{
     color: #FFFFFF;
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 40px;
     top: 35px;
     padding-left: 5px;
@@ -99,7 +98,7 @@ main{
 
 .box-password{
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 40px;
     top: 35px;
     padding-left: 5px;
@@ -121,7 +120,7 @@ input::placeholder{
     display: flex;
     color: rgba(255, 255, 255, 0.69);  
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 40px;
     top: 30px;
     padding-left: 20px;
@@ -151,7 +150,6 @@ input::placeholder{
         width: 30px;
         height: 30px;
         top: 40px;
-        right: 65px;
         margin-left:auto;
         margin-right: auto;
         display: flex;
@@ -159,7 +157,7 @@ input::placeholder{
 
 .box-login-google{
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 40px;
     top: 75px;
     padding-left: 55px;
@@ -177,7 +175,7 @@ input::placeholder{
 .box-register{
     color: #FFFFFF;
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 40px;
     top: 70px;
     padding-top: 10px;

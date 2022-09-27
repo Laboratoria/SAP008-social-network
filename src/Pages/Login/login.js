@@ -33,3 +33,23 @@ export default () => {
 
     return container;
 }
+
+const buttonLogin = container.querySelector('#btn-login');
+const buttonRegister = container.querySelector('#btn-register');
+const inputEmail = container.querySelector('.email');
+const inputPassword = container.querySelector('.password');
+
+buttonLogin.addEventListener('click', (event) => {
+  event.preventDefault();
+  loginUser(inputEmail.value, inputPassword.value)
+    .then(() => {
+      container.innerHTML = '';
+      window.location.hash = '';
+    })
+    .catch((error) => error);
+});
+
+buttonRegister.addEventListener('click', (event) => {
+    event.preventDefault();
+        window.location.hash = '';
+      });

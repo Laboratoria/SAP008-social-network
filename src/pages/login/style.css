@@ -169,7 +169,6 @@ body {
 
     .login-form {
         width: 65%;
-        height: 80%;
         flex-direction: column;
         align-items: center;
         justify-content: center;

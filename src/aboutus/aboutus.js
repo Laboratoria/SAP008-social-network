@@ -49,25 +49,18 @@ export default () => {
     </div>     
     `;
 
-
     container.innerHTML = template;
-
-
 
 const menu = container.querySelector("#navbar-button");
 window.alert(menu)
 menu.addEventListener('click', () => {
-const itens = container.querySelectorAll(".navbar-item");
-console.log(itens);
+const items = container.querySelectorAll(".navbar-item");
+    items.forEach ( item => {
+        item.classList.toggle("hide");
+    })
+console.log(items);
 });
 
 
     return container;
 }
-
-
-
-
-
-//OBS: qndo coloco a funcionalidade do botao dentro das chaves quebra o cod da pag about us, 
-//     e qndo coloco fora das chaves quebra o código todo!!

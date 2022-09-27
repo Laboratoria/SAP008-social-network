@@ -1,6 +1,7 @@
 .header-reset {
     flex-direction: column;
     background: #bcfff3;
+    height: 30vh;
 }
 
 .btn-cancel-reset {
@@ -16,6 +17,7 @@
 }
 
 .reset-page {
+    height: 50vh;
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -75,20 +77,24 @@
 
 @media (min-width: 768px) {
     .reset-page {
-        justify-content: center;
-        padding-top: 10rem;
+        padding-top: 15rem;
     }
 
     .reset-text {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
     
-    .message-about-reset {
-        font-size: 1.2rem;
+    .message-about-reset, .btn-reset {
+        font-size: 2rem;
     }
     
     .reset-form {
         width: 60vw;
+        gap: 1.8rem;
+    }
+
+    .input-style-reset {
+        font-size: 1.5rem;
     }
 }
 

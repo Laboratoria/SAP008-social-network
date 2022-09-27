@@ -26,10 +26,6 @@
     margin-bottom: 1rem;
 }
 
-.register-name {
-    margin-bottom: 0.7rem;
-}
-
 .register-login {
     flex-wrap: wrap;
     flex-direction: column;
@@ -99,4 +95,117 @@
     color: white;
     transition: 1s;
     cursor: pointer;
+}
+.text-desktop{
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .img-logo-register {
+        height: 6vh;
+    }
+
+    .btn-google-register, .link-text-login, .btn-login {
+        font-size: larger;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .register-login-header, .register-text, .signup-icons {
+        display: none;
+    }
+
+    .text-desktop {
+        display: block;
+        align-self: center;
+        margin: 2rem 0 1rem 0;
+        color: #EE2C12;
+    }
+
+    .gif-side-desktop {
+        display: flex;
+        width: 45%;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFFFF;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+    }
+
+    .register-content {
+        position: absolute;
+        right: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        background: linear-gradient(180deg, #D4F3FD 0%, #D0FCF4 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
+    }
+
+    .register-login {
+        width: 60%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        gap: 2rem;
+        background: #FFFFFFB5;
+        padding: 2rem 0 2rem 0;
+        flex-wrap: nowrap;
+        box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
+        margin-top: 1rem;
+    }
+
+    .input-style {
+        width: 80%;
+        padding-left: 1rem;
+        height: 3.5rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
+        font-size: 1rem;
+    }
+
+    .btn-google-register {
+        color: #A5A5A5;
+        font-size: 0.8rem;
+        max-width: 70%;
+    }
+
+    .link-text-login{
+        margin-top: 0;
+        font-size: 1rem;
+    }
+    .btn-google-register {
+        border: solid 1px #A5A5A5;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        height: 2.5rem;
+        margin: 0;
+    }
+
+    .btn-register {
+        background-color:#EE2C12;
+        color: #FFFFFF;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .rebu-logo-desktop {
+        width: 10rem;
+        height: 3rem;
+        z-index: 0;
+    }
+
+    .bg-gif-desktop {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        width: 20%;
+        height: 100vh;
+    }
 }

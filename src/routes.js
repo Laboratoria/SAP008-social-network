@@ -9,7 +9,7 @@ const init = () => {
             case '':
                 main.appendChild(login());
                 break;
-            case '#Signup':
+            case '#signup':
                 main.appendChild(signup());
                 break;
             default: main.appendChild(login());

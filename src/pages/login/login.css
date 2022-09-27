@@ -62,7 +62,7 @@ body {
     align-items: center;
     background-image: url(../../imagens/fundo.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     width: 100vw;
     height: 100vh;
   }
@@ -159,7 +159,6 @@ body {
   }
 }
 
-
 /* responsividade - tablet */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -211,7 +210,7 @@ body {
     align-items: center;
     background-image: url(../../imagens/fundo.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     width: 100vw;
     height: 100vh;
   }
@@ -250,5 +249,60 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+  }
+
+  btn-login {
+    width: 9.6rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: #2e94b9;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+    padding-top: 0.7rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .btn-google {
+    width: 9.6rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: #fff;
+    color: #2e94b9;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .img-google {
+    width: 1rem;
+    height: 1.2rem;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+  }
+
+  .btn-register {
+    width: 8rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: #4bd268;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: 3rem;
+    margin-left: 0.8rem;
+    padding-top: 0.7rem;
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 }

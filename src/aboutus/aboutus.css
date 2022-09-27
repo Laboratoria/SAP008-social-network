@@ -1,5 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
 
+header{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
+.container-aboutus{
+    display: flex;
+}
+
+/*MENU HAMBURGUER*/
+
+.navbar{
+    background-color:#8C4A5C;
+    color:#FFFFFF;
+}
+
+.navbar-list{  
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.navbar-item{
+    padding: 10px 15px;
+    list-style: none;
+}
+
+.navbar-item.hide{
+    display: none;
+}
+
+.navbar-item:hover{
+    background-color:#A6634B;
+    cursor:pointer;
+}
+
+.navbar-item-button{
+    align-self: flex-end;
+    padding: 10px 15px;
+    list-style: none;
+}
+
+.navbar-button{
+    cursor:pointer;
+}
+
 #container-aboutus{
     position: relative;
     width: 360px;
@@ -8,7 +58,8 @@
 }
 
 #logo-marron-aboutus{
-    position: absolute;
+    flex-direction: column;
+    align-self: flex-start;
     width: 166px;
     height: 46px;
     left: 24px;
@@ -16,7 +67,8 @@
 }
 
 h1#aboutdevs{
-    position: absolute;
+    justify-content: center;
+    align-items: center;
     width: 329px;
     height: 34px;
     left: 21px;

@@ -3,7 +3,6 @@
     grid-template-columns: 4vw 4vw;
     margin-left: 2%;
     margin-top: 2%;
-    max-height: 42vh;
 }
 
 .movies h1 {
@@ -74,8 +73,6 @@ footer {
 
     .picture-image {
         margin-left: 7%;
-        
-    
     }
 
     #movieImg {
@@ -168,8 +165,8 @@ footer {
 
     .content a {
         margin-left: 0;
-        font-size: .7rem;
     }
+
     .posts-movies {
         height: auto;
         margin-bottom: 5%;
@@ -240,13 +237,13 @@ footer {
         width: 70vw;
         font-size: 1.2rem;
     }
-    
+
     .posts-movies {
         height: auto;
         margin-bottom: auto;
     }
 
-    .likes{
+    .likes {
         margin-left: 11rem;
     }
 
@@ -254,7 +251,7 @@ footer {
         margin-top: 0;
     }
 
-    .wrapper{
+    .wrapper {
         margin-bottom: 5rem;
     }
 }
@@ -266,12 +263,12 @@ footer {
         margin-left: 9rem;
         height: auto;
     }
-    
+
     .posts-movies {
         height: auto;
     }
 
-    .likes{
+    .likes {
         margin-left: 3rem;
     }
 

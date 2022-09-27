@@ -17,17 +17,15 @@ body {
 }
 
 .container-register {
-    display: grid;
+    display: flex;
     width: 100%;
     font-size: 0;
-    align-items: center;
-    justify-content: center;
     padding: 2%;
     background-color: #151414;
 }
 
 .box-center {
-    width: 60%;
+    width: 30%;
     margin: auto;
     background-color: #ffffff;
     font-size: 1rem;
@@ -41,7 +39,7 @@ body {
 }
 
 #logo-register {
-   max-height: 35vh;
+    max-height: 35vh;
 }
 
 .logo-register {
@@ -49,7 +47,6 @@ body {
 }
 
 .box-center .buttons {
-    height: 50px;
     width: 80%;
     background-color: #850a0a;
     border: none;
@@ -113,30 +110,23 @@ footer {
 
     .container-register {
         display: block;
-        padding: 1%;
     }
 
-    #logo-login {
+    #logo-register {
         width: 45vw;
     }
 
-    .logo-login {
-        height: 45vh;
-    }
-
     .box-center {
-        width: 55vw;
-        margin: auto;
+        width: 60vw;
         font-size: 1rem;
         margin-top: 10%;
-        margin-bottom: 100%;
     }
 
     .box-center .buttons {
         font-size: 0.8rem;
     }
 
-    .box-center .logo-login {
+    .box-center .logo-register {
         text-align: center;
     }
 
@@ -154,23 +144,17 @@ footer {
         width: 180px;
     }
 
+    .wrapper-register {
+        background-color: #151414;
+        height: 1rem;
+    }
 }
 
 @media only screen and (max-width: 770px) and (min-width: 767px) {
 
-    .container-register {
-        display: block;
-        width: auto;
-        font-size: 0;
-        margin: auto;
-        padding: 2%;
-    }
-
     .box-center {
         width: 95%;
         font-size: 1.2rem;
-        margin-right: 3%;
-        margin-top: 2%;
     }
 
     .box-center .button {
@@ -201,18 +185,10 @@ footer {
 
 @media only screen and (max-width: 1281px) and (min-width: 1024px) {
 
-    .container-register {
-        width: auto;
-        font-size: 0;
-        margin: auto;
-        padding: 2%;
-    }
-
     .box-center {
-        width: 95%;
         font-size: 1.2rem;
-        margin-right: 3%;
         margin-top: 2%;
+        margin-bottom: 2%;
     }
 
     .box-center .button {
@@ -239,6 +215,10 @@ footer {
         width: 270px;
     }
 
+    .wrapper-register {
+        height: 5rem;
+    }
+
 }
 
 @media only screen and (max-width: 950px) and (min-width:820px) {
@@ -251,14 +231,16 @@ footer {
     }
 
     .box-center {
-        width: 95%;
+        width: 60%;
         font-size: 1.2rem;
-        margin-right: 3%;
         margin-top: 2%;
     }
 
     .box-center .button {
         font-size: 1.2rem;
+    }
+    .wrapper-register{
+        height: 50rem;
     }
 
     .foot {

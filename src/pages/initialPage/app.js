@@ -7,23 +7,30 @@ export default () => {
         <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
         <span id="idUser"> Olá, ${user.displayName}</span>
         <span class="VanellenMore">Vanellen <span
-                style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>
+                style="color:rgb(254, 123, 18 ); font-size:1.5rem; font-weight: bold;">+</span>
     </div>
   
-    <div class="navbar">
-        <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
-        <a href="#profile" id="profile" class="active">Perfil</a>
-        <a href="#aboutUs" id="post"> Sobre</a>
-        <a href="#page"><span style="color:rgb(250, 246, 49); font-weight: bold;">+</span></a>
-    </div>
+   <div class="navbar">
+    <header id="header">
+       <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+       
+    <nav id="nav">
+       <ul id="menu">
+       <li><a href="#profile" id="profile"> Perfil</a></li>
+       <li><a href="#aboutUs" id="post"> Sobre</a></li>
+       <li><a href="#page"><span class="active"> HOME</span></a></li>
+       </ul>
+    </nav>
+   </header>
+  </div>
   
     <div class="content">
         <p> <a href="#movies"> <span
-            style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">#</span>
+            style="color:rgb(254, 123, 18 ); font-size:1.5rem; font-weight: bold;">#</span>
         Melhores filmes Vanellen</a></p>
         
         <p> <a id="text" href="#series"> <span
-        style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">#</span>
+        style="color:rgb(254, 123, 18); font-size:1.5rem; font-weight: bold;">#</span>
     Melhores series Vanellen</a></p>
     </div>
   </div>
@@ -88,8 +95,8 @@ export default () => {
     .then(() => true)
     .catch((error) => error);
 
-  //   const userOnlineLikedThisPost = firebase.firestore().collection('likes')
-  //   const userOnline = firebase.auth().currentUser.uid;
+  // const userLikes = firebase.firestore().collection('posts');
+  // const userOnline = firebase.auth().currentUser.uid;
 
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
@@ -101,13 +108,8 @@ export default () => {
   });
 
   function dateConvert() {
-    const data = new Date();
-    const day = data.getDate().toString();
-    const dayF = (day.length === 1) ? `0${day}` : day;
-    const month = (data.getMonth() + 1).toString();
-    const monthF = (month.length === 1) ? `0${month}` : month;
-    const yearF = data.getFullYear();
-    return `${dayF}/${monthF}/${yearF}`;
+    const date = new Date().toLocaleString();
+    return date;
   }
 
   function postTemplate() {
@@ -132,10 +134,10 @@ export default () => {
                      </div>
                     
                      <div class="stars">
-                     <span data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
+                     <span id="heart" data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
                      <span class="getLike">${like}</span>
 
-                     <span data-desliked=${doc.id} data-user=${doc.data().user_id}>💔</span>
+                     <span id="breakHeart" data-desliked=${doc.id} data-user=${doc.data().user_id}>💔</span>
                      <span class="getDeslike">${deslike}</span>
 
                          <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
@@ -169,17 +171,17 @@ export default () => {
       movie: event.target.movie.value,
       createdAt: new Date(),
       text: event.target.text.value,
-      like: 0,
-      deslike: 0,
+      like: [],
+      deslike: [],
     })
       .then(() => {
-        container.querySelector('#message').value = '';
-        container.querySelector('#name').value = '';
-        container.querySelector('#movieName').value = '';
-        const postsCollection = db.collection('test');
+        container.querySelector('#message').value = ' ';
+        container.querySelector('#name').value = ' ';
+        container.querySelector('#movieName').value = ' ';
+        const postsCollection = db.collection('posts');
         container.querySelector('.posts').innerHTML = 'Carregando...';
         postsCollection.get().then(() => {
-          container.querySelector('.posts').innerHTML = '';
+          container.querySelector('.posts').innerHTML = ' ';
           postTemplate();
         });
       });
@@ -194,7 +196,7 @@ export default () => {
 
     if (removeButtonId) {
       if (userId !== userCurrent) {
-        alert('Não é possivel deletar post de outros usuarios');
+        alert('Não é possível deletar post de outros usuários');
         return false;
       }
       // eslint-disable-next-line no-alert
@@ -276,7 +278,8 @@ export default () => {
           firestore().doc(docRef).collection('posts')
             .add(userID)
             .then(() => {
-              boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu! +1';
+              const teste = boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].textContent;
+              boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = `Curtiu! <b> ${Number(teste) + 1} </b} `;
               db.collection('posts').doc(buttonLike)
                 .update({ like: increment });
             });
@@ -291,7 +294,7 @@ export default () => {
   boxPost.addEventListener('click', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
-    // userOnlineLikedThisPost.get().then((querySnapshot) => {
+    // userLikes.get().then((querySnapshot) => {
     //     querySnapshot.forEach((doc) => {
     //         if (doc.data().userID === userOnline) {
     //           postLikedSometime = true;
@@ -307,7 +310,8 @@ export default () => {
           firestore().doc(docRef).collection('posts')
             .add(userID)
             .then(() => {
-              boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
+              const getDeslike = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
+              boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu! 🙁<b> ${Number(getDeslike) + 1}</b} `;
               db.collection('posts').doc(buttonDeslike)
                 .update({ deslike: increment });
             });

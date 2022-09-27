@@ -8,16 +8,22 @@ export default () => {
       <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
       <span id="idUser"> Olá, ${user.displayName}</span>
       <span class="VanellenMore">Vanellen <span
-              style="color:rgb(250, 246, 49); font-size:1.5rem; font-weight: bold;">+</span>     
+              style="color:rgb(254, 123, 18); font-size:1.5rem; font-weight: bold;">+</span>     
   </div>
 
   <div class="navbar">
-      <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
-      <a href="#profile" id="profile" class="active">Perfil</a>
-      <a href="#aboutUs">Sobre</a>
-      <a href="#page"><span style="color:rgb(250, 246, 49); font-weight: bold;">+</span></a>
+    <header id="header">
+       <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
+       
+    <nav id="nav">
+       <ul id="menu">
+       <li><a href="#profile" id="profile">Perfil</a></li>
+       <li><a href="#aboutUs" id="post"> Sobre</a></li>
+       <li><a href="#page"><span class="active"> HOME</span></a></li>
+       </ul>
+    </nav>
+   </header>
   </div>
-</div>
 
   <h1>Em construção. 🚧 🏗️</h1>
 

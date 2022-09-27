@@ -1,25 +1,26 @@
-import Login from './Pages/Login/login.js';
-import Signup from './Pages/Signup/signup.js';
+import login from './pages/login/login.js';
+import signup from './pages/signup/signup.js';
 const main = document.querySelector('#root');
 
 const init = () => {
     window.addEventListener('hashchange', () => {
         main.innerHTML = '';
         switch (window.location.hash) {
-            case " ":
-                main.appendChild(Login());
+            case '':
+                main.appendChild(login());
                 break;
-            case "#Signup":
-                main.appendChild(Signup());
+            case '#Signup':
+                main.appendChild(signup());
                 break;
-            default: main.appendChild(Login());
+            default: main.appendChild(login());
 
         }
     })
 
 }
 window.addEventListener('load', () => {
-    main.appendChild(Login());
+    window.location.hash = ""
+    main.appendChild(login());
     init();
 });
 

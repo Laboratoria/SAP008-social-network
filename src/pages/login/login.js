@@ -3,7 +3,7 @@ export default () => {
 
     const template = `
         <figure class="img-logo imgFlip">
-            <img src="./Imagens/logo-mobile.png" alt="logo">
+            <img src="./imagens/logo-mobile.png" alt="logo">
         </figure>
 
         <form class="form-login bounce">
@@ -20,7 +20,7 @@ export default () => {
 
             <section class="buttons">
             <a href="#Login" class="btn-login">Iniciar Sessão</a>
-            <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./Imagens/google.svg"/> Entrar com Google</a>
+            <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./imagens/google.svg"/> Entrar com Google</a>
             <a href="#Signup" class="btn-register">Criar nova conta</a>
             </section>
         </form>

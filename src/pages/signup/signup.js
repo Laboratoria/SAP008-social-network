@@ -3,7 +3,7 @@ export default () => {
 
     const template = `
     <figure class="img-logo-signup imgFlip">
-            <img src="./Imagens/logo-mobile.png" alt="logo">
+            <img src="./imagens/logo-mobile.png" alt="logo">
         </figure>
 
         <form class="form-signup bounce">
@@ -21,7 +21,11 @@ export default () => {
 
             <section class="buttons-signup">
             <button type="submit" class="btn-signup">Cadastrar</button>
+<<<<<<< HEAD:src/Pages/Signup/signup.js
             <button type="submit" class="btn-google-signup"><img class="img-google-signup" src="./Imagens/google.svg"/><span class="text-signup-btn">Cadastro com Google</span></button>
+=======
+            <button type="submit" class="btn-google-signup"><img src="./imagens/google.svg"/>Cadastro com Google</button>
+>>>>>>> origin:src/pages/signup/signup.js
             </section>
         </form>
     `;

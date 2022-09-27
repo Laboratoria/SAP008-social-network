@@ -19,7 +19,7 @@ export function registerWithEmailAndPassword(name, email, password) {
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log(user);
+      // console.log(user);
       return user;
     })
     .then(() => {
@@ -27,8 +27,8 @@ export function registerWithEmailAndPassword(name, email, password) {
         displayName: name,
       });
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((/* error */) => {
+      // console.log(error);
     });
 }
 

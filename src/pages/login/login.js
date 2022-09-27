@@ -2,9 +2,15 @@ export default () => {
     const container = document.createElement('div');
 
     const template = `
-        <figure class="img-logo imgFlip">
+        <figure class="img-logo-mobile imgFlip">
             <img src="./imagens/logo-mobile.png" alt="logo">
         </figure>
+
+        <figure class="img-logo-desktop">
+            <img src="./imagens/logo-desktop.svg" alt="logo">
+        </figure>
+
+
 
         <form class="form-login bounce">
             <h1 class="title-login">Inicie a sua sessão</h1>

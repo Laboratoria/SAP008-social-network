@@ -3,9 +3,7 @@
     font-family: 'Blanka', sans-serif;
     src: url(/src/fonts/Blanka-Regular.otf);
 }
-body {
-    background: linear-gradient(180deg, #B0DAF8 0%, #A6F0F4 100%);
-}
+
 #about-header{
     margin:0;
     background:#B0DAF8;
@@ -19,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(180deg, #B0DAF8 0%, #A6F0F4 100%);
 }
 
 #about-title{
@@ -76,33 +75,31 @@ body {
     }
 
     #about-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
         flex-wrap: wrap;
         height: 100vh;
     }
 
     #about-img {
         display: block;
-        min-width: 40vw;
+        min-width: 35vw;
         height: 67vh;
-        margin-top: 8vh;
+        margin-top: 13vh;
+        margin-right: 5.5vw;
+        align-self: flex-end;
     }
 
     #about-title {
         align-self: flex-start;
-        margin-left: -0.7rem;
+        margin-left: -0.5vw;
         color: #2F2F2F;
         font-size: 2.3rem;
     }
 
     #about-text {
-        margin-top: -3vh;
+        margin-left: 5vw;
         display: flex;
         flex-direction: column;
+        margin-top: 4vh;
     }
     
     .about-paragraph {
@@ -110,6 +107,7 @@ body {
         color: #2F2F2F;
         font-size: 1.3rem;
         line-height: 2.5rem;
+        margin-bottom: 0;
     }
 
     .paragraphs-section {
@@ -135,16 +133,21 @@ body {
         border-radius: 40px;
         border: transparent;
     }
+
+    .return-button-desktop:hover {
+        cursor: pointer;
+        background-color: #EE2C12;
+    }
     
     #about-desktop-btn-div {
-        height: 15vh;
+        /* height: 15vh; */
         background: transparent;
         position: absolute;
         width: auto;
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        align-items: center;
-        bottom: 1rem;
+        align-items: center; */
+        bottom: 1vh;
     }
 
 }

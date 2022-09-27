@@ -100,3 +100,9 @@
     transition: 1s;
     cursor: pointer;
 }
+
+.warning-message {
+    color: rgb(185, 74, 60);
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+}

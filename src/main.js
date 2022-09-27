@@ -1,41 +1,32 @@
-import "./lib/firebase.js";
-import login from "./pages/login/index.js";
-import signup from "./pages/signup/index.js";
+import './lib/firebase.js';
+import login from './pages/login/index.js';
+import signup from './pages/signup/index.js';
+
 const main = document.querySelector('#root');
 
-const init = () => {
-    window.addEventListener('hashchange', () => {
-        main.innerHTML = '';
-        changeHash();
-    })
-
-}
-
 const changeHash = () => {
-    switch (window.location.hash) {
-        case '':
-            main.appendChild(login());
-            break;
-        case '#login':
-            main.appendChild(login());
-            break;
-        case '#signup':
-            main.appendChild(signup());
-            break;
-        case '#login' :
-            main.appendChild(login());
-            break;
-        default: main.appendChild(login());
-    }
+  switch (window.location.hash) {
+    case '':
+      main.appendChild(login());
+      break;
+    case '#login':
+      main.appendChild(login());
+      break;
+    case '#signup':
+      main.appendChild(signup());
+      break;
+    default: main.appendChild(login());
+  }
+};
 
-}
-
-window.addEventListener("load", () => {
+const init = () => {
+  window.addEventListener('hashchange', () => {
+    main.innerHTML = '';
     changeHash();
-    init();
-})
+  });
+};
 
-
-
-
-
+window.addEventListener('load', () => {
+  changeHash();
+  init();
+});

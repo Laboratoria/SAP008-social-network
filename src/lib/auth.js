@@ -1,11 +1,7 @@
-import { app } from "./firebase.js"
-import { getAuth, 
-    signInWithEmailAndPassword, 
-    onAuthStateChanged, 
-    createUserWithEmailAndPassword, 
-    signOut, 
-    GoogleAuthProvider, 
-    signInWithPopup } from './export.js';
+import { app } from './firebase.js';
+
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup }
+from './export.js';
 
 const auth = getAuth(app);
 
@@ -47,21 +43,21 @@ const logout = async () => {
 
 const provider = new GoogleAuthProvider;
 const signInGoogle = () => {
-    signInWithPopup(auth, provider)
+    return signInWithPopup(auth, provider)
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;            
+            const token = credential.accessToken;
             const user = result.user;
-            
-        }).catch((error) => {            
+
+        }).catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;            
-            const email = error.customData.email;            
-            const credential = GoogleAuthProvider.credentialFromError(error);            
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = GoogleAuthProvider.credentialFromError(error);
         });
 }
 
 
-export { auth, loginEmailPassword, createAccount, logout, signInGoogle};
+export { auth, loginEmailPassword, createAccount, logout, signInGoogle };
 
 

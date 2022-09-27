@@ -37,8 +37,15 @@ export default () => {
             e.preventDefault();
             const email = document.querySelector('#e-mail').value;
             const password = document.querySelector('#password').value;
-            registerUser(email, password);
-    });
+            registerUser(email, password)
+            .then(() => {                                                  
+                window.location.hash = "";   
+              })                                                                                                     
+              .catch((error) => {                                                                 
+                const errorMessage = error.message;
+                window.alert(errorMessage);
+              });
+        });
 
     return container;
 }

@@ -8,41 +8,17 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    alert(user.email)
-    window.location.hash = "#timeline"
-  } else {
-   window.location.hash = "";
-  }
-});
-
+export const checkLoggedUser = (check) => {
+  onAuthStateChanged(auth, check);
+}
 
 export const userLogin = (email, password) => {         
-  signInWithEmailAndPassword(auth, email, password)      
-  .then((userCredential) => {                             
-    const user = userCredential.user;                     
-    window.location.hash = "#timeline";    
-  })                                                      
-  .catch((error) => {                                     
-    const errorCode = error.code;                         
-    const errorMessage = error.message;
-    window.alert(errorMessage);
-  });
+  return signInWithEmailAndPassword(auth, email, password)      
 }
 
 export const registerUser = (email, password) => {        
-  createUserWithEmailAndPassword(auth, email, password)   
-  .then((userCredential) => {                              
-    const user = userCredential.user;                       
-    window.location.hash = "";   
-  })                                                                                                     
-  .catch((error) => {                                         
-    const errorCode = error.code;                           
-    const errorMessage = error.message;
-    window.alert(errorMessage);
-  });
+  return createUserWithEmailAndPassword(auth, email, password)   
+
 }
 
 export const loginGoogle = () => {

@@ -1,4 +1,5 @@
-import { userLogin, loginGoogle } from '../firebase/firebase.js'                                         
+import { userLogin, loginGoogle } from '../firebase/firebase.js' 
+import  {redirect} from "../redirect.js"                                     
 
 export default () => {
     const container = document.createElement('div');
@@ -40,9 +41,15 @@ export default () => {
         e.preventDefault();
         const email = document.querySelector('#e-mail').value;
         const password = document.querySelector('#senha').value;
-        userLogin(email, password);
+        userLogin(email, password)
+        .then(() => {                                          
+            redirect ("#timeline")
+          })                                                      
+          .catch((error) => {                                                            
+            const errorMessage = error.message;
+            window.alert(errorMessage);
+          });
     });
-
 
     container.querySelector('#btn-google').addEventListener('click', e => {
         e.preventDefault();

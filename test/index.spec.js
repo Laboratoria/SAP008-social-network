@@ -5,6 +5,7 @@ jest.mock('../src/lib/export.js');
 
 describe('signInGoogle', () => {
   it('a função deve ser chamada uma vez', () => {
+    signInWithPopup.mockResolvedValue();
     signInGoogle();
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
   });

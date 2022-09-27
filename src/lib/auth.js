@@ -25,8 +25,7 @@ const loginEmailPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential);
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
 };
@@ -35,8 +34,7 @@ const createAccount = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
 };
@@ -45,9 +43,9 @@ const logout = async () => {
   await signOut(auth);
 };
 
-const provider = new GoogleAuthProvider;
+const provider = new GoogleAuthProvider();
 const signInGoogle = () => {
-  return signInWithPopup(auth, provider)
+  signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;

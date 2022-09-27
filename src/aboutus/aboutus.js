@@ -52,10 +52,10 @@ export default () => {
 
 
 
-const menu = document.querySelector("#navbar-button");
+const menu = container.querySelector("#navbar-button");
 window.alert(menu)
 menu.addEventListener('click', () => {
-const itens = document.querySelectorAll(".navbar-item");
+const itens = container.querySelectorAll(".navbar-item");
 console.log(itens);
 });
 

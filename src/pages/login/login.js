@@ -10,8 +10,6 @@ export default () => {
             <img src="./imagens/logo-desktop.svg" alt="logo">
         </figure>
 
-
-
         <form class="form-login bounce">
             <h1 class="title-login">Inicie a sua sessão</h1>
             <section class="inputs">
@@ -21,7 +19,7 @@ export default () => {
 
             <section class="inputs">
             <label for="password">Digite sua senha</label>
-            <input type="password" placeholder="****" id="password" class="input-password" />
+            <input type="password" placeholder="******" id="password" class="input-password" />
             </section>
 
             <section class="buttons">

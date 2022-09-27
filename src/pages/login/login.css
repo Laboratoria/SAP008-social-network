@@ -229,6 +229,11 @@ body {
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
   }
 
+  .input-email:hover,
+  .input-password:hover {
+    background-color: #f0fbff;
+  }
+
   .input-email:focus,
   .input-password:focus {
     outline: none;

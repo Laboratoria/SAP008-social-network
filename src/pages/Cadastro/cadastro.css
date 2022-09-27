@@ -1,3 +1,4 @@
+/* estilização da página principal main */
 html{
   text-align: center;
   margin:0;
@@ -6,10 +7,16 @@ html{
   background-position: center;
   height: 100%;
 }
-.container-registration{
-  
+body{
+  margin: 5%;
 }
 
+.container-registration{
+  border:2px solid black;
+  flex-wrap: wrap;
+}
+
+/* estilização dos campos do nome, email e senha os campos de imput*/
 .registration-input{
   display: flex;
   align-items: center;
@@ -17,9 +24,24 @@ html{
   
 }
 
-#one-logo{s
+/* logo de coração com lampada */
+.one-logo{
   align-self: center;
 }
+
+/* classe da imagem de coração com o botão voltar */
+.btnback{
+  display: flex;
+  align-items: center;
+  margin-left: 32%;
+  width: 50%;
+}
+
+/* botão voltar */
+#btn-back{
+  margin-right: 20%;
+}
+
 .input{
   width: max-content;
   height: max-content;

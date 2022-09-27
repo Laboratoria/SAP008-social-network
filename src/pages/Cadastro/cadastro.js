@@ -1,10 +1,14 @@
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 export default () => {
   const containerRegistration = document.createElement("div")
   const template = `
   <div class="container-registration">
-    <div>
-      <img id="one-logo" src="./imagens/image-2.png">
+    <div class="btnback">
+      <button type="button" id="btn-back" onclick="window.location.href='/#login'">
+        Voltar
+      </button>
+        <img id="one-logo" src="./imagens/image-2.png">
     </div>
     <div>
       <img id="logo-inspire" src="./imagens/INspire.png">
@@ -29,6 +33,23 @@ export default () => {
   const nameProfile = containerRegistration.querySelector("#profile-name")
   const email = containerRegistration.querySelector ("#input-email-registration")
   const password = containerRegistration.querySelector("#password")
+  const btnRegistration = containerRegistration.querySelector("#button-registration")
+
+  btnRegistration.addEventListener("click", function(){
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, nameUser, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    return user
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  })
+
+
 
   return containerRegistration
 

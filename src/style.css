@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container{
+    display: flex;
+    margin: auto;
+    background-image: url(img/back.jpg);
+    width: 700px;
+    border-radius: 10%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.form{
+    display: flex;
+    text-align: center;
+    align-content: center;
+    flex-direction: column;
+    color: black;
+    opacity: 85%;
+    background-color: white;
+    height: 90%;
+    width: 450px;
+    border-radius: 40px;
+    margin: 20px 30px 20px 130px;
+    padding: 10px;
+}
+.logo{
+    margin: auto;
+    opacity: 100%;
+    width: 130px;
+    height: 100px;
+}
+.register{
+    padding: 30px 10px 10px 10px;
+    opacity: 100%;
+}
+.emailSenha{
+    opacity: 100%;
+    width: 250px;
+    height: 20px;
+    text-align: center;
+    border-color: black 10px;
+}
+.esqueciSenhaCadastre{
+    color: rgb(41, 41, 219);
+    text-decoration: none;
+    opacity: 100%;
+}
+.cadastre{
+    color: rgb(41, 41, 219);
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 100%;
+}
+.btnEntrar{
+    color:black;
+    background-color: #1FA48C;
+    text-align: center;
+    width: 100px;
+    border-color: #1FA48C;
+    border-radius: 5px;
+    font-weight: bold;
+    opacity: 120%;
+}
+.textGoogle{
+    font-weight: bold;
+    padding-bottom: 20px;
+    opacity: 100%;
+}
+.imgGoogle{
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    opacity: 100%;
+}
+.sobrePage{
+    color: grey;
+    opacity: 100%;
+}

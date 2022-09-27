@@ -5,14 +5,14 @@ export default function signUp() {
 
     const template = `
         <form>
-            <label for="name">Nome:
-                <input type="text" required>
+            <label class= "name" for="name">Nome:
+                <input class="input" type="text" required>
             </label>
-            <label for="email">Email:
-                <input type="email" id="txtEmail" required>
+            <label class= "email" for="email">Email:
+                <input class="input" type="email" id="txtEmail" required>
             </label>
-            <label for="password">Senha:
-                <input type="password" id="txtPassword" minlength="8" required>
+            <label class= "password" for="password">Senha:
+                <input class="input" type="password" id="txtPassword" minlength="8" required>
             </label>
             
             <a href="#login" id="btnSignup" type="button" class="buttonSignup">CRIAR CONTA</a>

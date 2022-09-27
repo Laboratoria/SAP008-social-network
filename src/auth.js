@@ -1,53 +1,52 @@
 import { app } from "./config.js";
 import {
     getAuth,
-    signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    signOut
+    signInWithEmailAndPassword,
+    updateProfile,
+    signOut,
+    GoogleAuthProvider,
+    signInWithPopup
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js"
 
+
 export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider(app);
+
+export function createAccount(email, password, name) {
+
+    return createUserWithEmailAndPassword(auth, email, password, name)
+        .then(userCredential => {
+            const user = userCredential.user;
+            return user;
+        })
+        .then(() => {
+            updateProfile(auth.currentUser, {
+              displayName: name,
+            });
+          })
+        .catch((error) => {
+            console.log(error)
+            
+        });
+};
 
 export function loginUser(email, password) {
-   return signInWithEmailAndPassword(auth, email.value, password.value)
-        .then(userCredential => {
-            window.location.hash('')
-            alert('Sucesso! Você está logado!')
+   return signInWithEmailAndPassword(auth, email, password);
+};
 
-            return userCredential.user;
-        })
-        .catch((error) => {
-            alert(getErrorMessage(error));
-
-            alert('Ops! Algo deu errado, tente novamente!')
-        });
-
+export function loginGoogle () {
+    return signInWithPopup(auth, provider);
 }
+
 
 function getErrorMessage(error) {
     if (error.code == "auth/user-not-found") {
         return "Usuário não encontrado";
     }
     return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código ${error.code}`;
-}
-
-export function createAccount(email, password, user) {
-
-    return createUserWithEmailAndPassword(auth, email.value, password.value, user.value)
-        .then(userCredential => {
-            window.location.hash('#Signup')
-
-            alert('Sucesso! Conta criada!')
-
-            return userCredential.user;
-        })
-        .catch((error) => {
-            alert(getErrorMessage(error));
-
-            alert('Ops! Algo deu errado, tente novamente')
-        });
-
 };
+
 export function logout() {
     return signOut(auth)
 };

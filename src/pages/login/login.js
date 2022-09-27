@@ -1,4 +1,4 @@
-import "../../auth.js"
+import { loginUser, loginGoogle } from "../../auth.js"
 
 export default () => {
     const container = document.createElement('div');
@@ -21,32 +21,24 @@ export default () => {
             </section>
 
             <section class="buttons">
-<<<<<<< HEAD:src/Pages/Login/login.js
-
-            <a href="#Login" class="btn-login">Iniciar Sessão</a>
-            <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./Imagens/google.svg"/> Entrar com Google</a>
-            <a href="#Signup" class="btn-register">Criar nova conta</a>
-=======
             <a href="#login" class="btn-login">Iniciar Sessão</a>
             <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./imagens/google.svg"/> Entrar com Google</a>
             <a href="#signup" class="btn-register">Criar nova conta</a>
->>>>>>> ad11fca8ba40bad621289cc6e440f5a7efb13986:src/pages/login/login.js
             </section>
         </form>
     `;
 
     container.innerHTML = template;
 
-    return container;
-}
 
-const buttonLogin = container.querySelector('#btn-login');
-const buttonRegister = container.querySelector('#btn-register');
-const inputEmail = container.querySelector('.email');
-const inputPassword = container.querySelector('.password');
+const buttonLogin = container.querySelector('.btn-login');
+const buttonRegister = container.querySelector('.btn-register');
+const inputEmail = container.querySelector('#email');
+const inputPassword = container.querySelector('#password');
+const buttonGoogle = container.querySelector('.btn-google');
 
-buttonLogin.addEventListener('click', (event) => {
-  event.preventDefault();
+buttonLogin.addEventListener('click', (e) => {
+  e.preventDefault();
   loginUser(inputEmail.value, inputPassword.value)
     .then(() => {
       container.innerHTML = '';
@@ -55,7 +47,26 @@ buttonLogin.addEventListener('click', (event) => {
     .catch((error) => error);
 });
 
-buttonRegister.addEventListener('click', (event) => {
-    event.preventDefault();
-        window.location.hash = '';
+buttonRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+        window.location.hash = '#signup';
       });
+
+      buttonGoogle.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginGoogle ()
+          .then(() => {
+            window.location.hash = '';
+          })
+          .catch((error) => {
+            // const getErrorMessage = error.message;
+            // const getErrorCode = error.code;
+            // const email = error.customData.email;
+            // const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+          });
+      });
+
+      
+      return container;
+    }

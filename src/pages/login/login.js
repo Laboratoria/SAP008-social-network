@@ -1,7 +1,5 @@
 // aqui exportaras las funciones que necesites
 
-//página inicial- Tela de login
-//fazer import da função de entrar do firebase (deixar em outra pasta)
 
 export default function Login() {
   const login = document.createElement('div');
@@ -54,6 +52,3 @@ export default function Login() {
   return login;
 }
 
-//fazer um cath para email-senha errado
-//fazer a função auth do firebase
-//criar pasta para as funções do firebase -signInWithEmailAndPassword e ver do google

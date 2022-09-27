@@ -99,13 +99,12 @@ body {
   .background-home {
     display: flex;
     flex-direction: column;
-    max-height: 700px;
   }
 
   .img-woman {
-    width: 55rem;
+    width: 45rem;
     height: 37rem;
-    margin-left: 4rem;
+    margin-left: 17rem;
     margin-top: 0.5rem;
   }
 

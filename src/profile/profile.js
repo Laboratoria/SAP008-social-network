@@ -2,7 +2,7 @@ export default () => {
     const container = document.createElement('div');
     container.className = "content-profile";
     const template = `  
-    <section id="profile">
+    
     <div class="container-logo-profile">
         <img class="logo-img-profile" src="./images/logo_02_azul_081E26.png" alt="logo do título">
     </div>
@@ -18,7 +18,7 @@ export default () => {
             <button type="button" id="btn-create-post" class="btn-create-post">Crie um post</button>
             </form>
         </div>  
-        </section>   
+         
     `;
 
     container.innerHTML = template;

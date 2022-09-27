@@ -5,19 +5,6 @@
     margin: 0;
 }
 
-#profile {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 520px;
-    width: 320px;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #B6B2B666;
-    transform: translate(-50%, -50%);
-    transition: width .3s, heigth .3s;
-    transition-timing-function: ease;
-}
 
 .container-logo-profile {
     display: flex;
@@ -58,7 +45,6 @@
 }
 
 .box-profile-name {
-    display: flex;
     text-align: center;
     width: 80vw;
     height: 4vh;
@@ -71,7 +57,6 @@
 }
 
 .box-age {
-    display: flex;
     text-align: center;
     width: 80vw;
     height: 4vh;
@@ -110,15 +95,3 @@
     border-radius: 10px;
 }
 
-@media screen and (min-width: 768px) and (max-width:992px){
-    #profile{
-        width: 80vw;
-    }
-    
-}
-
-@media screen and (min-width: 992px){
-    #profile{
-        width: 900px;
-    }
-}

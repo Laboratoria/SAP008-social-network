@@ -4,7 +4,7 @@ import register from './pages/register/main.js';
 import login from './pages/login/main.js';
 import feed from './pages/feed/main.js';
 import resetPassword from './pages/resetPassword/main.js';
-import './lib/firebase-configuration.js';
+import './lib/configuration.js';
 
 const main = document.querySelector('#root');
 

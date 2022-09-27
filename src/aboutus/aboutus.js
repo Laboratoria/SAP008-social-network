@@ -2,7 +2,6 @@ export default () => {
     const container = document.createElement('div');
     const template = `  
     <div class="container-aboutus"> 
-    <header>
         <img id="logo-marron-aboutus" src="./images/logo_01_marrom_A6634B.png" alt="logo do título">
             <nav class="navbar">
                 <ul class="navbar-list"> 
@@ -26,10 +25,9 @@ export default () => {
                     </li>
                 </ul>
              </nav>
-    </header>
 
     <h1 id="aboutdevs">SOBRE AS DESENVOLVEDORAS</h1>
-    <main>
+    <section>
         <article id="cla"> 
         <h2 id="h2-cla">Clareana Ribeiro</h2>
         <p id="p-cla">Sua paixão por música vem de berço.<br>
@@ -45,7 +43,7 @@ export default () => {
         <h2 id="h2-andrea">Andrea Santos</h2>
         <p id="p-andrea">Cantora apaixonada pela diversidade da música brasileira e do mundo.</p>
         </article>
-    </main>   
+    </section>   
     </div>     
     `;
 

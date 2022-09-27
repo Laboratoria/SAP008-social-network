@@ -5,7 +5,7 @@ export default () => {
         <div class="frame">
           <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
     
-          <button id="google-login" class="signin-btn">Entrar com Google</button>
+          <button id="google-login" class= "signin-btn">Entrar com Google <img src= "https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/d46e6e8dcc786eb98911e3a332cae8cb1f1baf6a/external/svg_icons_social_network/google-icon.svg" class="google-icon"/></button>
     
           <div class="lines">
             <hr style="margin-right: 5%">

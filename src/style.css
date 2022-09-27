@@ -70,7 +70,17 @@ form {
   color: #ffffff;
   width: 36px;
   border: none;
-  height: 35px;
+  height: 37px;
+  margin-left: -4px;
+}
+
+.google-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.pswd-login {
+  width: 150px;
 }
 
 .titles {

@@ -93,10 +93,10 @@ export default () => {
           //   return handleErrors(errorCode);
           // }
           window.location.hash = '#feed';
-          alert('Bem-vinda ao Rebu');
+          // alert('Bem-vinda ao Rebu');
         })
-        .catch((error) => {
-          console.log(error);
+        .catch((/* error */) => {
+          // console.log(error);
         });
     } else {
       if (name.value === '') {

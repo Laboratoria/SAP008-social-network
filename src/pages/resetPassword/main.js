@@ -34,11 +34,11 @@ export default () => {
   sendBtn.addEventListener('click', () => {
     resetPassword(emailValue.value)
       .then(() => {
-        alert('Email enviado');
+        // alert('Email enviado');
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      .catch((/* error */) => {
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
       });
   });
 

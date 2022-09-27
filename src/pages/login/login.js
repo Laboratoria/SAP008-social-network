@@ -63,7 +63,7 @@ buttonRegister.addEventListener('click', (e) => {
             // const getErrorCode = error.code;
             // const email = error.customData.email;
             // const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
+    // ..
           });
       });
 

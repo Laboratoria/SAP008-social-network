@@ -1,8 +1,5 @@
 export default () => {
     const container = document.createElement('div');
-    container.className = "content-post";
-    //const getCurrentUser = () => firebase.auth().currentUser;
-    //const user = getCurrentUser();
     const template = `  
     <div class="container-logo">
         <img class="logo-img" src="./images/logo_02_azul_081E26.png" alt="logo do título">
@@ -22,17 +19,7 @@ export default () => {
     </div>     
  `;
 
- container.innerHTML = template;  //Eventos de click adicionados - Na linha 18 alterei para textarea para conseguir quebrar o texto dentro do input
-
- container.querySelector('#btn-upload').addEventListener('click', e => {
-    e.preventDefault();
-    window.alert("Vai dar PT")
-});
-
-container.querySelector('#btn-post').addEventListener('click', e => {
-    e.preventDefault();
-    window.alert("Fora Bozo")
-});
+ container.innerHTML = template;  
 
  return container;
 }

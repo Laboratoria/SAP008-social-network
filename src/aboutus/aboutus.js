@@ -1,8 +1,33 @@
 export default () => {
     const container = document.createElement('div');
     const template = `  
-    <div id="container-aboutus">
-    <img id="logo-marron-aboutus" src="./images/logo_01_marrom_A6634B.png" alt="logo do título">
+    <div class="container-aboutus"> 
+    <header>
+        <img id="logo-marron-aboutus" src="./images/logo_01_marrom_A6634B.png" alt="logo do título">
+            <nav class="navbar">
+                <ul class="navbar-list"> 
+                    <li class="navbar-item-button">
+                        <button type="button" id="navbar-button">BOTÃO</button>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#about'>About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#timeline'>Timeline</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#post'>Publicar post</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#profile'>Profile</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a>Sair</a>
+                    </li>
+                </ul>
+             </nav>
+    </header>
+
     <h1 id="aboutdevs">SOBRE AS DESENVOLVEDORAS</h1>
     <main>
         <article id="cla"> 
@@ -25,6 +50,17 @@ export default () => {
     `;
 
     container.innerHTML = template;
+
+const menu = container.querySelector("#navbar-button");
+window.alert(menu)
+menu.addEventListener('click', () => {
+const items = container.querySelectorAll(".navbar-item");
+    items.forEach ( item => {
+        item.classList.toggle("hide");
+    })
+console.log(items);
+});
+
 
     return container;
 }

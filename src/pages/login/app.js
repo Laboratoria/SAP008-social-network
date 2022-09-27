@@ -1,3 +1,5 @@
+import { googleLogin, login, recover } from '../../lib/authentication.js';
+
 export default () => {
   const container = document.createElement('div');
   const template = `  <div class="container-login">
@@ -60,25 +62,14 @@ export default () => {
   const buttonRecover = container.querySelector('#recover');
   const inputEmail = container.querySelector('#inputEmail');
   const inputPassword = container.querySelector('#inputPassword');
+  const signUp = container.querySelector('#signUp');
 
-  const googleLogin = (provider) => {
-    firebase.auth().signInWithPopup(provider).then((result) => {
-      const credential = provider.credentialFromResult(result);
-      const user = result.user;
-      const token = credential.accessToken;
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(user));
-      firebase.firestore().collection('users').doc(user.email).set(
-        { email: user.email, image: user.photoURL, name: user.displayName, uid: user.uid },
-        { merge: true },
-      );
-    }).catch((error) => {
-      const errorCode = error.code;
-      if (errorCode === 'auth/popup-closed-by-user') {
-        alert('A janela pop-up foi fechada pelo usuário sem concluir o login no provedor');
-      } else window.location.replace('#page');
-    });
-  };
+  buttonEnter.addEventListener('click', (event) => {
+    event.preventDefault();
+    const email = inputEmail.value;
+    const password = inputPassword.value;
+    login(email, password);
+  });
 
   buttonGmail.addEventListener('click', (event) => {
     event.preventDefault();
@@ -86,50 +77,15 @@ export default () => {
     googleLogin(provider);
   });
 
-  function login() {
-    if (firebase.auth().currentUser) {
-      window.location.replace('#page');
-      return;
-    }
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(inputEmail.value, inputPassword.value)
-      .then(() => {
-        window.location.replace('#page');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        if (errorCode === 'auth/invalid-email') {
-          alert('Endereço de email não é válido');
-        } else if (errorCode === 'auth/user-not-found') {
-          alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
-        } else if (errorCode === 'auth/wrong-password') {
-          alert('A senha é inválida para o e-mail fornecido.');
-        } else {
-          alert('Algo deu errado. Por favor, tente novamente.');
-        }
-      });
-  }
+  buttonRecover.addEventListener('click', (event) => {
+    event.preventDefault();
+    const email = inputEmail.value;
+    recover(email);
+  });
 
-  buttonEnter.addEventListener('click', login);
-  const signUp = container.querySelector('#signUp');
   signUp.addEventListener('click', () => {
     window.location.href = '#register';
   });
 
-  function recover() {
-    firebase.auth().sendPasswordResetEmail(inputEmail.value).then(() => {
-      alert('Email enviado com sucesso');
-    }).catch((error) => {
-      const errorCode = error.code;
-      if (errorCode === 'auth/invalid-email') {
-        alert('E-mail inválido');
-      } else {
-        alert('Algo deu errado. Por favor, tente novamente.');
-      }
-    });
-  }
-
-  buttonRecover.addEventListener('click', recover);
   return container;
 };

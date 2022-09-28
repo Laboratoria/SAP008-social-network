@@ -1,7 +1,6 @@
 export default () => {
-    const container = document.createElement("div")
-
-    const conteudo = `
+  const container = document.createElement('div');
+  const conteudo = `
     <div class="container-two">
     <form method="post" action="">
 
@@ -27,9 +26,7 @@ export default () => {
       <p class="voltar">
         <a href="#home">Voltar</a>
       </p>
-    </form>
-`
-container.innerHTML = conteudo;
-
-return container;
-}
+  </form>`;
+  container.innerHTML = conteudo;
+  return container;
+};

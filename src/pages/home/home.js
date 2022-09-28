@@ -1,7 +1,7 @@
 export default () => {
-    const container = document.createElement("div")
+  const container = document.createElement('div');
 
-    const conteudo = `
+  const conteudo = `
     <div class="container">
     <form method="post" action="" class="form">
       <img src="img/logo.png" class="logo" alt="Logo Wanderlust">
@@ -29,14 +29,13 @@ export default () => {
       <p class="textGoogle">Entre também com:</p>
 
       <p class="textGoogle">
-        <a href="#login-Google" class="loginGoogle"><img src="img/logoGoogle.jpg" class="imgGoogle"></a>
+        <a href="#logingoogle" class="loginGoogle"><img src="img/logoGoogle.jpg" class="imgGoogle"></a>
       </p>
       <p>
-        <a href="#sobre" class="sobrePage">Sobre</a>
+        <a href="#sobre" class="sobrepage">Sobre</a>
       </p>
-    </form>
-    `
-    container.innerHTML = conteudo;
+    </form>`;
+  container.innerHTML = conteudo;
 
-    return container;
-}
+  return container;
+};

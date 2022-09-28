@@ -29,8 +29,22 @@ export default () => {
                     <button class="box-register" type="button" id="btn-register" ><a href = "#register">Cadastre-se</button>     
                 </form>
             </div>    
+            <footer>
+            <p class="footer-text">Desenvolvido por
+            <a href="https://github.com/AngelMelo12">
+            <span class="name"> Angelica Melo, </span>
+            </a>
+
+            <a href="https://github.com/Canzua">
+            <span class="name"> Andrea dos Santos e </span>
+            </a>
+    
+            <a href="https://github.com/ClareanaRibeiro">
+            <span class="name"> Clareana Ribeiro </span>
+            </a>
+            </p>    
+        </footer>
         </section> 
-            
    
     `;
 

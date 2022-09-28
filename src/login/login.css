@@ -21,6 +21,19 @@ main{
     top: 20px
 }
 
+footer {
+    color: white;
+    font-size: 0.8rem;      
+    margin: 100px 0 auto;
+    padding: 10px 10px;    
+    width: 100%;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 25px;
+}
+
 #login{
     position: absolute;
     top: 50%;
@@ -189,6 +202,8 @@ input::placeholder{
     background:  rgba(156, 152, 152, 0.815);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
+
+
 
 @media screen and (min-width: 768px) and (max-width:992px){
     #login{

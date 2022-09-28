@@ -29,9 +29,9 @@ export default () => {
             <div class="txt-error" id="txt-error"></div>
             
             <div class="ads">
-              <label class="login-label-checkbox">
-                <input type="checkbox" class="input-checkbox">Manter login 
-              </label>
+              <div class="Criar">
+                <a href="#signup" id="btnSignupSpa" type="button" class="button2">Criar conta</a>
+              </div>
 
               <a href="#" class="login-link">Esqueceu a senha?</a>
             </div>
@@ -40,11 +40,7 @@ export default () => {
 
             <div class="entrar">
               <button id="btnLogin" type="button" class="button">Entrar</button>
-            </div>
-            
-            <div class="Criar">
-              <a href="#signup" id="btnSignupSpa" type="button" class="button2">Criar conta</a>
-            </div>
+            </div>          
 
             <a class="login-link2">Logar como:</a>
 
@@ -70,10 +66,6 @@ export default () => {
   const btnLogin = container.querySelector('#btnLogin');
   const btnLogout = container.querySelector('#btnLogout');
   const btnGmail = container.querySelector('#btn-gmail');
-  /* const txtError = container.querySelector('#txt-error');
-  function errormsg(){
-    return txtError;
-  }*/
   btnLogin.addEventListener('click', () => {
     const email = txtEmail.value;
     const password = txtPassword.value;
@@ -83,6 +75,5 @@ export default () => {
   btnLogout.addEventListener('click', logout);
 
   btnGmail.addEventListener('click', signInGoogle);
-  
   return container;
 };

@@ -57,6 +57,7 @@ export default () => {
       </section>
 
       <img class="wallpaper" src="./img/foto.png">       
+
     </div>
     <button id="btnLogout" type="button">Log out</button>
      
@@ -69,6 +70,10 @@ export default () => {
   const btnLogin = container.querySelector('#btnLogin');
   const btnLogout = container.querySelector('#btnLogout');
   const btnGmail = container.querySelector('#btn-gmail');
+  /* const txtError = container.querySelector('#txt-error');
+  function errormsg(){
+    return txtError;
+  }*/
   btnLogin.addEventListener('click', () => {
     const email = txtEmail.value;
     const password = txtPassword.value;
@@ -78,6 +83,6 @@ export default () => {
   btnLogout.addEventListener('click', logout);
 
   btnGmail.addEventListener('click', signInGoogle);
-
+  
   return container;
 };

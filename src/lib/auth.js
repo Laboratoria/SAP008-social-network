@@ -26,14 +26,14 @@ const loginEmailPassword = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential);
   } catch (error) {
-    console.log(error);
+    alert ('Sua senha esta incorreta')
   }
 };
 
 const createAccount = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log(userCredential.user);
+    //console.log(userCredential.user);
   } catch (error) {
     console.log(error);
   }
@@ -52,10 +52,10 @@ const signInGoogle = () => {
       const user = result.user;
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
+      //const errorCode = error.code;
+      //const errorMessage = error.message;
+      //const email = error.customData.email;
+      //const credential = GoogleAuthProvider.credentialFromError(error);
     });
 };
 

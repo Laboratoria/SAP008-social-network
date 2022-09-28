@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(#5E17EB, #A87CFE);
-  border: solid 4px yellowgreen;
+  background: linear-gradient(#5E17EB, #A87CFE);  
 }
   
 :root {
@@ -20,12 +19,10 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;  
-  font-family: Comic Sans MS;
-  border: solid 4px red;
+  font-family: Comic Sans MS;  
 }
 
-.container {
-  border: solid 4px white;
+.container {  
   height: 100vh;
   width: 100vw;
   display: grid;
@@ -37,20 +34,19 @@ body {
 .login {    
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  padding: 1.5vw;
+  padding: 1.6vw; 
   width: 22vw;
   height: 62vh;
   border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;  
+  border-top-left-radius: 20px;    
 }
 
 .login-logo {
-  width: 14vw;
-  font-size: large;
+  width: 13vw;  
 }
 
 .login-title {
-  font-size: larger;
+  font-size: 1.2em;
 }
 
 .login-label {
@@ -94,7 +90,7 @@ body {
   flex-wrap: wrap;
 }
 
-.icons-button {
+.icons-button {  
   width: 25%;
   height: 1.5vw;
   border-radius: 5px;
@@ -222,10 +218,21 @@ body {
   transition: transform 0.5s;
 }
 
-.wallpaper{
+.wallpaper {  
   width: 25vw;
-  height: 68vh;
+  height: 69vh;
   border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;  
+  border-bottom-right-radius: 20px;    
 }
 
+@media screen and (max-width: 768px){
+  .wallpaper{
+    display: none;
+  }
+  
+  .login {
+    border-radius: 20px;
+    width: 35vw;
+    height: 60vh;
+  }
+}

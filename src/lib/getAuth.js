@@ -1,20 +1,21 @@
 // aqui exportaras las funciones que necesites//
-getAuth()
-  .createUser({
-    email: 'user@example.com',
-    emailVerified: false,
-    phoneNumber: '+11234567890',
-    password: 'secretPassword',
-    displayName: 'John Doe',
-    photoURL: 'http://www.example.com/12345678/photo.png',
-    disabled: false,
-  })
-  .then((userRecord) => {
-    // See the UserRecord reference doc for the contents of userRecord.
-    console.log('Successfully created new user:', userRecord.uid);
-  })
-  .catch((error) => {
-    console.log('Error creating new user:', error);
-  });
+import "./config-firebase.js"
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth.js";
+import { app } from "../config-firebase.js";
 
-export {getAuth}
+const auth = getAuth(app);
+export const banana = (auth, email, password)=>
+createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      return userCredential
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      return error
+    });
+
+
+

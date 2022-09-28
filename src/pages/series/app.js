@@ -71,11 +71,11 @@ export default () => {
                         ${overview}
                         <p><b>Data de criação:</b>  ${first_air_date}</p>
                     </div>
-                </div>
-            </div>
-            <div class="likes">
+                    <div class="likes">
                     <p id="star">⭐⭐⭐⭐⭐</p> 
                     </div>
+                </div>
+            </div>   
         </div>
           `;
       main.appendChild(movieElement);
@@ -85,7 +85,6 @@ export default () => {
   function getSeries(url) {
     fetch(url).then((res) => res.json()).then((data) => {
       showSeries(data.results);
-      console.log(data);
     });
   }
   getSeries(API_URL);

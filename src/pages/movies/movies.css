@@ -41,7 +41,8 @@
 }
 
 .likes {
-    margin-left: 7rem;
+    margin-top: 1rem;
+    margin-left: 0.7rem;
 }
 
 #star {
@@ -121,13 +122,6 @@ footer {
 }
 
 @media only screen and (max-width: 415px) and (min-width: 279px) {
-    .VanellenMore {
-        font-size: 1.3rem;
-        margin-right: 5%;
-        margin-top: 6%;
-        margin-left: 10px;
-    }
-
     .logo {
         width: 100%;
         display: flex;
@@ -168,7 +162,7 @@ footer {
     }
 
     .posts-movies {
-        height: auto;
+        min-height: 12rem;
         margin-bottom: 5%;
     }
 
@@ -180,7 +174,7 @@ footer {
     }
 
     #movieImg {
-        width: 28vw;
+        width: 115px;
         margin-left: 5%;
     }
 
@@ -199,7 +193,7 @@ footer {
     }
 
     .likes {
-        margin-left: 7.5rem;
+        margin-left: 6.7rem;
     }
 
     #star {
@@ -240,11 +234,10 @@ footer {
 
     .posts-movies {
         height: auto;
-        margin-bottom: auto;
     }
 
     .likes {
-        margin-left: 11rem;
+        margin-left: 8rem;
     }
 
     #movieImg {

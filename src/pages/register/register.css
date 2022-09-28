@@ -34,16 +34,16 @@ body {
     padding: 10px;
 }
 
+.logo-register {
+    max-height: 30vh;
+}
+
 .box-center .logo-register {
     text-align: center;
 }
 
 #logo-register {
     max-height: 35vh;
-}
-
-.logo-register {
-    max-height: 30vh;
 }
 
 .box-center .buttons {
@@ -146,14 +146,14 @@ footer {
 
     .wrapper-register {
         background-color: #151414;
-        height: 1rem;
+        height: 20rem;
     }
 }
 
 @media only screen and (max-width: 770px) and (min-width: 767px) {
 
     .box-center {
-        width: 95%;
+        width: 60%;
         font-size: 1.2rem;
     }
 
@@ -179,6 +179,9 @@ footer {
     .foot img {
         margin-left: 5%;
         width: 270px;
+    }
+    .wrapper-register{
+        height: 10rem;
     }
 
 }

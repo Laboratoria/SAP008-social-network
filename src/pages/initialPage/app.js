@@ -1,4 +1,4 @@
-import {getCurrentUser, firestore, updatePost, deletePost, likeFirebase} from '../../lib/exports.js';
+import { getCurrentUser, firestore, likeFirebase } from '../../lib/exports.js';
 
 export default () => {
   const container = document.createElement('div');

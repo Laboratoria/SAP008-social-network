@@ -1,20 +1,19 @@
-// aqui exportaras las funciones que necesites//
-getAuth()
-  .createUser({
-    email: 'user@example.com',
-    emailVerified: false,
-    phoneNumber: '+11234567890',
-    password: 'secretPassword',
-    displayName: 'John Doe',
-    photoURL: 'http://www.example.com/12345678/photo.png',
-    disabled: false,
-  })
-  .then((userRecord) => {
-    // See the UserRecord reference doc for the contents of userRecord.
-    console.log('Successfully created new user:', userRecord.uid);
+/*Login de usuários existentes*/
+
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "../config-firebase";
+
+  //verificar se é nesta pasta essa função 
+const auth = getAuth(app)
+export const login = ( email, senha) => signInWithEmailAndPassword (auth, email, password);
+function Login (email, password) {
+    return signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+    const user = userCredential.user;
+    return user;
   })
   .catch((error) => {
-    console.log('Error creating new user:', error);
+    const errorCode = error.code;
+    const errorMessage = error.message;
   });
-
-export {getAuth}
+}

@@ -16,19 +16,20 @@ export default () => {
     <form id="login-form">
 
     <div class="email-pass">
-    
-    <label class="login-label">
-    <span>Email:</span>
-    <input id="txtEmail" type="email" name="email" class="input">
-    </label>
-    
-    <label class="login-label">
-    <span>Senha</span>
-    <input id="txtPassword" type="password" name="password" class="input">
-    </label>
-    
+      <div>
+        <label class="login-label">
+        <span>Email:</span>
+        <input id="txtEmail" type="email" name="email" class="input">
+        </label>
+      </div>
+      <div>
+        <label class="login-label">
+        <span>Senha</span>
+        <input id="txtPassword" type="password" name="password" class="input">
+        </label>
+        <div class="txt-error" id="txt-error">Senha invalida</div>
+      </div>
     </div>
-    <div class="txt-error" id="txt-error"></div>
     
     <div class="ads">
     <label class="login-label-checkbox">
@@ -36,8 +37,6 @@ export default () => {
     </label>
     <a href="#" class="login-link">Esqueceu a senha?</a>
     </div>
-
-    <span id="message" class="message"></span>
 
     <div class="entrar">
     <button id="btnLogin" type="button" class="button">Entrar</button>
@@ -72,6 +71,10 @@ export default () => {
   const btnLogin = container.querySelector('#btnLogin');
   const btnLogout = container.querySelector('#btnLogout');
   const btnGmail = container.querySelector('#btn-gmail');
+  /* const txtError = container.querySelector('#txt-error');
+  function errormsg(){
+    return txtError;
+  }*/
   btnLogin.addEventListener('click', () => {
     const email = txtEmail.value;
     const password = txtPassword.value;
@@ -81,6 +84,6 @@ export default () => {
   btnLogout.addEventListener('click', logout);
 
   btnGmail.addEventListener('click', signInGoogle);
-
+  
   return container;
 };

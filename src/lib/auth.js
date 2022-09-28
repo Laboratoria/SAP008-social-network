@@ -26,7 +26,7 @@ const loginEmailPassword = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential);
   } catch (error) {
-    console.log(error);
+    alert ('Sua senha esta incorreta')
   }
 };
 

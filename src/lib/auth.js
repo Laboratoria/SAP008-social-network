@@ -13,29 +13,28 @@ import {
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
-  console.log(user);
   if (user != null) {
-    console.log('logged in!');
+    alert('logged in!');
   } else {
-    console.log('No user');
+    alert('No user');
   }
 });
 
 const loginEmailPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log(userCredential);
+    console.log(userCredential.user);
   } catch (error) {
-    alert ('Sua senha esta incorreta')
+    alert('Sua senha esta incorreta');
   }
 };
 
 const createAccount = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    //console.log(userCredential.user);
+    console.log(userCredential);
   } catch (error) {
-    console.log(error);
+    alert('erro de criar conta');
   }
 };
 
@@ -48,14 +47,10 @@ const signInGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
+      console.log(credential);
     })
     .catch((error) => {
-      //const errorCode = error.code;
-      //const errorMessage = error.message;
-      //const email = error.customData.email;
-      //const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(error);
     });
 };
 

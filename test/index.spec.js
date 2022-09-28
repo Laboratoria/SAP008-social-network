@@ -20,5 +20,3 @@ describe('createAccount', () => {
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });
-
-

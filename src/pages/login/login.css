@@ -42,6 +42,9 @@ body {
     font-size: 1rem;
     border-radius: 2%;
 }
+.logo-login {
+    height: 20vh;
+}
 
 .box-right .logo-login {
     text-align: center;
@@ -49,10 +52,6 @@ body {
 
 #logo-login {
     width: 12vw;
-}
-
-.logo-login {
-    height: 20vh;
 }
 
 .box-right .register {
@@ -184,14 +183,11 @@ footer {
 }
 
 .developers {
+    margin-top: 5px;
     justify-content: space-between;
     color: #272525;
     text-align: end;
     font-size: 1rem;
-}
-
-.developers {
-    margin-top: 5px;
 }
 
 .foot img {

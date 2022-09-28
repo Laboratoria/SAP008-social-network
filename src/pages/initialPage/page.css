@@ -70,22 +70,6 @@ body {
     z-index: 1;
 }
 
-.navbar a:hover{
-    color: #e88b33;
-}
-.active {
-    color: #e88b33;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.active:hover{
-    color: #fe912a;
-}
-#logout {
-    width: 25px;
-}
-
 .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -103,6 +87,23 @@ body {
 }
 .content a:hover{
     text-shadow: rgb(102, 100, 100) 0.1em 0.1em 0.2em;
+}
+
+.navbar a:hover{
+    color: #e88b33;
+}
+.active {
+    color: #e88b33;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.active:hover{
+    color: #fe912a;
+}
+
+#logout {
+    width: 25px;
 }
 
 .posts {
@@ -282,7 +283,6 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
     background-color: #E1DFDF;
 }
 
@@ -296,9 +296,6 @@ footer {
     color: #272525;
     text-align: end;
     font-size: 1rem;
-}
-
-.developers {
     margin-top: 5px;
 }
 
@@ -332,6 +329,16 @@ footer {
     #logo {
         width: 30vw;
     }
+    
+    .content {
+        display: block;
+        margin: auto;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
 
     .navbar {
         margin-top: 25%;
@@ -360,16 +367,6 @@ footer {
 
     #logout {
         width: 25px;
-    }
-
-    .content {
-        display: block;
-        margin: auto;
-    }
-
-    .content a {
-        margin-left: 0;
-        font-size: 1rem;
     }
 
     .posts {
@@ -599,6 +596,16 @@ footer {
     #logo {
         width: 30vw;
     }
+    
+    .content {
+        display: block;
+        margin: auto;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
 
     .navbar {
         margin-top: 25%;
@@ -627,16 +634,6 @@ footer {
 
     #logout {
         width: 25px;
-    }
-
-    .content {
-        display: block;
-        margin: auto;
-    }
-
-    .content a {
-        margin-left: 0;
-        font-size: 1rem;
     }
 
     .posts {
@@ -765,6 +762,16 @@ footer {
         width: 30vw;
     }
 
+    .content {
+        display: block;
+        margin: auto;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+    
     .navbar {
         margin-top: 25%;
     }
@@ -792,16 +799,6 @@ footer {
 
     #logout {
         width: 25px;
-    }
-
-    .content {
-        display: block;
-        margin: auto;
-    }
-
-    .content a {
-        margin-left: 0;
-        font-size: 1rem;
     }
 
     .posts {

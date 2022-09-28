@@ -1,20 +1,14 @@
 import { googleLogin, login } from '../src/lib/authentication.js';
 
-describe('googleLogin', () => {
+describe('google Login', () => {
   it('is a function', () => {
     expect(typeof googleLogin).toBe('function');
   });
 
-  it('Firebase signInWithPopup function', () => {
-    googleLogin('provider');
-    expect(firebase.auth).toHaveBeenCalledTimes(1);
-  });
-});
-
-describe('googleLogin', () => {
-  it('should be a function', () => {
-    expect(typeof googleLogin).toBe('function');
-  });
+//   it('Firebase signInWithPopup function', () => {
+//     googleLogin('provider');
+//     expect(firebase.auth).toHaveBeenCalledTimes(1);
+//   });
 });
 
 describe('login', () => {

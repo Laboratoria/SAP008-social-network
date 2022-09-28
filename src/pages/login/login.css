@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(#5E17EB, #A87CFE);
+  border: solid 4px yellowgreen;
 }
   
 :root {
@@ -13,16 +14,24 @@ body {
 }
   
 .all {
-  display:grid;
-  grid-template-columns: 1fr 1fr; 
+  height: 100%;
+  width: 100%;
+  display: flex;      
   justify-content: center;
   align-items: center;
-  text-align: center;
-  margin-top:6vw;
-  margin-bottom: 8vw;
-  margin-left: 28vw;
-  margin-right: 25vw;
+  text-align: center;  
   font-family: Comic Sans MS;
+  border: solid 4px red;
+}
+
+.container {
+  border: solid 4px white;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
 }
   
 .login {    
@@ -30,9 +39,9 @@ body {
   background: rgb(255, 255, 255, 0.2);
   padding: 1.5vw;
   width: 22vw;
-  height: 30vw;
+  height: 62vh;
   border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
+  border-top-left-radius: 20px;  
 }
 
 .login-logo {
@@ -213,10 +222,10 @@ body {
   transition: transform 0.5s;
 }
 
-.wallpaper img{
+.wallpaper{
   width: 25vw;
-  height: 31vw;
+  height: 68vh;
   border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;  
 }
 

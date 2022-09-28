@@ -3,16 +3,37 @@ import {signOut} from "../firebase/firebase.js"
 export default () => {
     const container = document.createElement('div');
     const template = `  
-        <div class="container-login">
-        
-        <h1>AQUI É timeline</h1>
-        <button type="button" id="logout">SAIR</button>
-        <button type="button" id="btn-post">POST</button> 
-        <a href="#post"></a>
+    <section>
+        <div class="container-timeline">
+            <div class="menu">
+                <img id="logo-azul-timeline" src="./images/logo_02_blue_081E26.png" alt="logo do título">
+                <nav class="navbar">
+                        <ul class="navbar-list"> 
+                        <li class="navbar-item-button">
+                            <button type="button" id="navbar-button">BOTÃO</button>
+                        </li>
+                        <li class="navbar-item">
+                            <a href='#about'>About</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href='#aboutus>About us</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href='#post'>Publicar post</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href='#profile'>Profile</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a>Sair</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
+        </div>     
 
-            
-               </div>     
+    </section>
     `;
 
     container.innerHTML = template;

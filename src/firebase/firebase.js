@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
 import firebaseConfig from "./firebase-config.js";
 
@@ -31,3 +31,5 @@ export const signOut = () => {
  auth.signOut();
 }
 
+export const sendPasswordResetEmail(auth, email);
+  

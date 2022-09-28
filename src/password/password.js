@@ -1,3 +1,6 @@
+import{resetPassword} from "../firebase/firebasejs"
+import  {redirect} from "../redirect.js"  
+
 export default () => {
 const container = document.createElement('div');
 const template = `  
@@ -9,12 +12,26 @@ const template = `
             <p id="p">E-mail</p>
             <input id="email" type="email" placeholder="Digite seu e-mail"/>
             <hr>
-            <button id="enter" type="button">Enviar</button>
+            <button id="btn-enter" type="button">Enviar</button>
         </form>   
     </div>     
     `;
 
     container.innerHTML = template;
+
+container.querySelector("#btn-enter").addEventListener("click", e => {
+    e.preventDefault();
+    const newPassword = container.querySelector("#email").value;
+    resetPassword(newPassword)
+    .then(() => {
+        redirect ("")
+            })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+})
+
 
     return container;
 }

@@ -1,7 +1,7 @@
 export default () => {
   const container = document.createElement('div');
   const conteudo = `
-    <div class="container-two">
+    <div class="container-two register">
     <form method="post" action="">
 
       <p class="name">

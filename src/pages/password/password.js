@@ -9,6 +9,6 @@ export default () => {
         <button class="btnContinuar" type="submit" >CONTINUAR</button>
       </form>
     </section>`;
-  sectionPassword.innerHtml = content;
+  sectionPassword.innerHTML = content;
   return sectionPassword;
 };

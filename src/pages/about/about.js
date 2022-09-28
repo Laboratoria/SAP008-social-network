@@ -24,6 +24,6 @@ export default () => {
         <img src="img/logoLab" class="logoAbout" alt="Logo Wanderlust"></p>
       </main>
     </div>`;
-  sectionAbout.innerHtml = contentAbout;
+  sectionAbout.innerHTML = contentAbout;
   return sectionAbout;
 };

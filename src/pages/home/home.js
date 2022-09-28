@@ -2,7 +2,7 @@ export default () => {
   const container = document.createElement('div');
 
   const conteudo = `
-    <div class="container">
+    <div class="container home">
     <form method="post" action="" class="form">
       <img src="img/logo.png" class="logo" alt="Logo Wanderlust">
       <p class="register">

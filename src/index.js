@@ -28,7 +28,7 @@ const inicio = () => {
 };
 
 window.addEventListener('load', () => {
-  location.hash = '';
+  window.location.hash = '';
   main.appendChild(home());
   inicio();
 });

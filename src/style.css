@@ -1,9 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    height: 100%;
 }
-
 .container{
     display: flex;
     margin: auto;
@@ -19,26 +17,22 @@
     align-content: center;
     flex-direction: column;
     color: black;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .87);
     height: 90%;
     width: 450px;
     border-radius: 40px;
     margin: 20px 0px 0px 100px;
     padding: 10px;
-    opacity: 87%;
 }
 .logo{
     margin: auto;
-    opacity: 100%;
     width: 40%;
     height: 10rem;
 }
 .register{
     padding: 26px 10px 10px 10px;
-    opacity: 100%;
 }
 .emailSenha{
-    opacity: 100%;
     width: 250px;
     height: 20px;
     text-align: center;
@@ -47,14 +41,11 @@
 .esqueciSenhaCadastre{
     color: rgb(41, 41, 219);
     text-decoration: none;
-
-   
 }
 .cadastre{
     color: rgb(41, 41, 219);
     text-decoration: none;
     font-weight: bold;
-    
 }
 .btnEntrar{
     background-color: #1FA48C;

@@ -1,5 +1,4 @@
 import "./config-firebase.js"
-
 import login from "./pages/login/login.js" 
 import cadastro from "./pages/Cadastro/cadastro.js"
 import feed from "./pages/feed/feed.js";

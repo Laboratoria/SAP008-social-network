@@ -1,6 +1,9 @@
 // aqui exportaras las funciones que necesites
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { app } from "../../config-firebase.js";
+import { signIn } from "../../lib/getAuth.js";
+//export { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+//export { getAuth } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 
 export default function Login() {
@@ -24,9 +27,8 @@ export default function Login() {
           <img class="google-icon-btn" src="imagens/btngoogle.png" alt="Logo do Google"/>LOGAR COM O GOOGLE</button>        
         </div>  
 
-        <div>
+      <div>
         <button id="forgot-password" class="signup-button btn"> Esqueceu sua senha?</button>
-      </div> 
 
         <div>
           <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
@@ -40,16 +42,9 @@ export default function Login() {
   const password = login.querySelector('.password');
 
   signInButton.addEventListener("click", function (e) {
-    e.preventDefault();
-  
-  
+    e.preventDefault(); 
+    signIn(email.value, password.value)
   })
 
- 
-
-  
-
-  
-  return login;
+  return login
 }
-

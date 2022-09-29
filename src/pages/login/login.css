@@ -1,6 +1,14 @@
-html {
+/*respovividade - Typical device breakpoints 
+(pontos que a interface do usuário será adaptada para a nova realidade do tamanho de tela, ou densidade de pixels)
+pequenas telas: até 600px
+celular: de 600px até 768px
+tablete: de 768px até 992px
+desktop: de 992 até 1200
+telas grandes: acima de 1200 */
+
+/*versão mobile first - fazer @mq somente de tablet e desktop*/
+body {
 background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
-  background-size: cover;
   background-position: center;
   height: 100%;
 }
@@ -14,8 +22,8 @@ background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(23
   }
 
   .logo{
-    margin-top: 5%;
-    width: 20%;
+    margin-top: 2%;
+    width: 15%;
     align-items: center;
     justify-items: center;
   }
@@ -95,6 +103,12 @@ background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(23
     font-weight:400;
   }
 
-
+/*tablet*/
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    
+  }
   
-  
+  /*desktop*/
+  @media screen and (min-width: 1200) {
+    
+  }

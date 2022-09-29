@@ -30,10 +30,11 @@ export default () => {
                 <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
                 <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
                 <p id="confirm-password-message" class="warning-message hide"></p>
+                
+                <button type="submit" class="btn-register">CADASTRAR</button>
+                <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
 
             </form>
-            <input type="submit" class="btn-register" value="CADASTRAR">
-            <button class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
         </main>
     `;
 
@@ -41,12 +42,11 @@ export default () => {
 
   const returnBtn = registerContainer.querySelector('#return-btn');
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
-
   const name = registerContainer.querySelector('#name-input');
   const email = registerContainer.querySelector('#register-input');
   const password = registerContainer.querySelector('#password-register');
   const confirmPw = registerContainer.querySelector('#password-register-confirm');
-  const btnRegister = registerContainer.querySelector('.btn-register');
+  const form = registerContainer.querySelector('.register-login');
   const btnGoogleRegister = registerContainer.querySelector('.btn-google-register');
   const nameErrorMessage = registerContainer.querySelector('#name-message');
   const confirmPwErrorMessage = registerContainer.querySelector('#confirm-password-message');
@@ -59,29 +59,30 @@ export default () => {
   //   passwordErrorMessage.classList.add('hide');
   //   emailErrorMessage.classList.add('hide');
   // }
-  // function handleErrors(errorCode) {
-  //   let errorMessage;
-  //   switch (errorCode) {
-  //     case 'auth/email-already-in-use':
-  //       errorMessage = 'Este e-mail já foi registrado.';
-  //       emailErrorMessage.classList.remove('hide');
-  //       emailErrorMessage.innerHTML = errorMessage;
-  //       break;
-  //     case 'auth/invalid-email':
-  //       errorMessage = 'Endereço de e-mail inválido.';
-  //       emailErrorMessage.classList.remove('hide');
-  //       emailErrorMessage.innerHTML = errorMessage;
-  //       break;
-  //     case 'auth/weak-password':
-  //       errorMessage = 'Sua senha deve ter, pelo menos, 6 dígitos.';
-  //       passwordErrorMessage.classList.remove('hide');
-  //       passwordErrorMessage.innerHTML = errorMessage;
-  //       break;
-  //     default:
-  //       alert('Confira se todos os campos foram preenchidos');
-  //   }
-  // }
-  btnRegister.addEventListener('click', () => {
+  function handleErrors(errorCode) {
+    let errorMessage;
+    switch (errorCode) {
+      case 'auth/email-already-in-use':
+        errorMessage = 'Este e-mail já foi registrado.';
+        emailErrorMessage.classList.remove('hide');
+        emailErrorMessage.innerHTML = errorMessage;
+        break;
+      case 'auth/invalid-email':
+        errorMessage = 'Endereço de e-mail inválido.';
+        emailErrorMessage.classList.remove('hide');
+        emailErrorMessage.innerHTML = errorMessage;
+        break;
+      case 'auth/weak-password':
+        errorMessage = 'Sua senha deve ter, pelo menos, 6 dígitos.';
+        passwordErrorMessage.classList.remove('hide');
+        passwordErrorMessage.innerHTML = errorMessage;
+        break;
+      default:
+        alert('Confira se todos os campos foram preenchidos');
+    }
+  }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
     if (name.value !== ''
       && confirmPw.value !== ''
       && password.value === confirmPw.value) {
@@ -95,8 +96,8 @@ export default () => {
           window.location.hash = '#feed';
           // alert('Bem-vinda ao Rebu');
         })
-        .catch((/* error */) => {
-          // console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
     } else {
       if (name.value === '') {

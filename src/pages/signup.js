@@ -10,14 +10,14 @@ export const signUpFunction = () => {
         </p>
         <img class="img-woman" src="img\\reading.png" alt="Mulher sentada e lendo livro">
       </div>
-      <div class="form-signup">
+      <div class="form-signup" id="signUpForm">
         <picture>
           <img src="img\\logo.png" class="img-logo" alt="Logo Booknotes"></picture>
         <input type="text" class="input-signup">
         <p class="name-input">Nome</p>
-        <input type="email" class="input-signup">
+        <input type="email" name=email class="input-signup">
         <p class="name-input">E-mail</p>
-        <input type="text" class="input-signup">
+        <input type="text" name=password class="input-signup">
         <p class="name-input">Senha</p>
         <button type="submit" class="button-signup" id="buttonSignUp">Cadastrar e entrar!</button>
       </div>

@@ -16,7 +16,7 @@ export default () => {
         <a href="#recuperarsenha" class="esqueciSenhaCadastre">Esqueci minha senha!</a>
       </p>
       <p class="register">
-        <a href="#entrar" input type="submit" value="Entrar" class="btnEntrar"/>Entrar</a>
+        <input href="#entrar" type="submit" value="Entrar" class="btnEntrar"/>
       </p>
       <p class="register">
         <a href="#paracadastro" class="cadastre">Cadastre-se</a>

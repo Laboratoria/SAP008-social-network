@@ -17,13 +17,12 @@
     align-content: center;
     flex-direction: column;
     color: black;
-    background-color: white;
+    background-color: rgba(255, 255 , 255, 0.87) ;
     height: 90%;
     width: 450px;
     border-radius: 40px;
     margin: 20px 0px 0px 100px;
     padding: 10px;
-    opacity: 87%;
 }
 .logo{
     margin: auto;
@@ -45,10 +44,8 @@
 }
 .register{
     padding: 26px 10px 10px 10px;
-    opacity: 100%;
 }
 .emailSenha{
-    opacity: 100%;
     width: 250px;
     height: 20px;
     text-align: center;
@@ -65,17 +62,17 @@
 }
 .btnEntrar{
     box-shadow: 0px 1px 8px -1px #1FA48C;
-    background: linear-gradient(to bottom, #006654 5%, #2E8070 100%);
-    background-color: #000000;
+    background-color: #1FA48C;
     border-radius:18px;
-    border:1px solid #1FA48C;
-    cursor:pointer;
-    color:#ffffff;
+    border: 1px solid #1FA48C;
+    color: black;
     font-family:Arial;
     font-size:16px;
     font-weight:bold;
     padding:2px 19px;
-    text-decoration:none;
+}
+.btnEntrar:hover{
+    transform: scale(0.9);
 }
 .textGoogle{
     font-weight: bold;
@@ -85,6 +82,9 @@
     padding: 5px;
     width: 20px;
     height: 20px;
+}
+.imgGoogle:hover{
+    transform: scale(0.9);
 }
 .sobrePage{
     color: grey;

@@ -221,3 +221,118 @@ body {
       padding-top: 0.6rem;
     }
   }
+
+  .form-signup {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    width: 35rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 1.4rem;
+    margin-right: 0.6rem;
+  }
+
+  .name-input {
+    justify-items: left;
+  }
+
+  .input-signup {
+    border-radius: 2rem;
+    background-color: #abd9d8;
+    width: 80%;
+    height: 2.1rem;
+  }
+
+  .button-signup {
+    border-radius: 2rem;
+    background-color: #c69b73;
+    width: 9rem;
+    height: 1.8rem;
+    margin-top: 2rem;
+    font-size: medium;
+  }
+
+
+  .img-logo {
+    margin-top: 2rem;
+  }
+
+
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+
+    body {
+      background-image: url(../img/background.png);
+      background-size: contain;
+    }
+  
+    .input-signup {
+      width: 15rem;
+      height: 1.5rem;
+    }
+  
+    .img-logo {
+      width: 12rem;
+      height: 10rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .form-signup {
+      width: 20rem;
+      height: 35rem;
+      border-radius: 2rem;
+      margin: 2rem auto;
+    }
+
+    .button-signup {
+      margin-top: 2rem;
+      width: 8rem;
+      height: 2rem;
+      font-size: small ;
+    }
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1200px)  {
+
+    .home-page {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .background-home {
+      display: flex;
+      flex-direction: column;
+      max-height: 700px;
+    }
+  
+    .img-woman {
+      width: 40rem;
+      height: 50rem;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    .form-signup {
+      width: 50rem;
+      height: 40rem;
+      font-size: 20px;
+      margin: 1rem 0.5rem;
+    }
+  
+    .input-signup {
+      width: 80%;
+      font-size: 18px;
+    }
+  
+    .button-signup {
+      font-size: 20px;
+      width: 12rem;
+      height: 2rem;
+      margin-top: 2rem;
+    }
+    .img-logo {
+      margin-top: 2rem;
+    }
+  }

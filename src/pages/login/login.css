@@ -1,0 +1,176 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    display: none;
+}
+
+.signup {
+    display: none;
+}
+.login {
+    background: #00A57A;
+}
+
+.login h1 {
+    color: #e9e9e9;
+    padding: 6rem;
+    margin: 0;
+
+}
+
+.form {
+    background: #e9e9e9;
+    height: 46rem;
+    border-radius: 50px 50px 0 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 43px;
+    justify-content: space-around;
+}
+
+.infos {
+    width: 20rem;
+    height: 4rem;
+    border: none;
+    border-radius: 20px;
+}
+.forgot {
+    color: #00A57A;
+    text-align: right;
+}
+.btnLogin, .btnGoogle {
+    width: 20rem;
+    height: 4rem;
+    border: none;
+    border-radius: 20px;
+    font-size: x-large;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnLogin {
+    background: #00A57A;
+    color: #e9e9e9;
+}
+
+.btnGoogle {
+    background: white;
+    color: black;
+}
+
+.create {
+    color: #00A57A;
+    text-align: center;
+
+}
+
+@media screen and (min-device-width: 1200px){
+    #everything {
+        display: flex;
+        min-height: 100vh;
+    }
+    
+    .signup {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(0, 165, 122, 0.46) 0%, rgba(0, 165, 122, 0.64) 17.19%, #00A57A 49.11%, rgba(0, 165, 122, 0.66) 84.4%, rgba(0, 165, 122, 0.47) 100%);
+    
+    }
+    .signup h1 {
+        font-size: 30px;
+        text-align: center;
+        color: white;
+    }
+    .signup p {
+        font-size: xxx-large;
+        color: white;
+        text-align: center;
+
+    }
+    hr {
+        width: 60%;
+        color: white;
+    }
+    .register-desktop {
+        width: 21rem;
+        padding: 3rem;
+        background: transparent;
+        border: #e9e9e9 solid;
+        border-radius: 2rem;
+        color: white;
+        font-size: 2rem;
+        margin-top: 5rem;
+    }
+
+    .login {
+        background: #e9e9e9;
+        width: 60%;
+    }
+    
+
+    .login h1 {
+        color:#00A57A;
+        font-size: 3rem;
+        text-align: center;
+        padding: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -8rem;
+        
+    }
+    .form {
+        display: grid;
+    }
+
+    .infos {
+        width: 36rem;
+        height: 6rem;
+        margin-bottom: 32px;
+
+    }
+
+    .forgot {
+        font-size: large;
+    }
+
+    .btnLogin, .btnGoogle {
+        width: 36rem;
+        height: 6rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .btnLogin {
+        font-size: 2rem;
+    }
+    .btnGoogle {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+    .create {
+        display: none;
+    }
+
+    ::placeholder {
+        font-size: 2em;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        height: 276px;
+    }
+    
+
+}

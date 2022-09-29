@@ -17,13 +17,16 @@ export default () => {
           </div>
   
           <main id="reset-page" class="reset-page">
-          
+            <h1 class="title-desktop">REDEFINIR SENHA</h1>
             <form class="reset-form display-flex">
               <h2 class="reset-text">REDEFINA SUA SENHA</h2>
-              <p class="message-about-reset">ENVIAREMOS UM E-MAIL PARA REDEFINIÇÃO DE SENHA</p>
-              <input type="email" placeholder="E-MAIL" id="email-input-reset" class="input-style-reset"><p>
-              <a href="/#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">CANCELAR</button></a>
-              <a href="/#homepage"><button type="button" id="btn-reset-page" class="btn-reset">ENVIAR</button></a>
+              <p class="message-about-reset">Para redefinir sua senha, 
+              preencha o campo abaixo com seu e-mail cadastrado.</p>
+              <input type="email" placeholder="E-MAIL" id="email-input-reset" class="input-style-reset">
+              <nav class="reset-buttons">
+                <a href="/#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">CANCELAR</button></a>
+                <a href="/#homepage"><button type="button" id="btn-reset-page" class="btn-reset">PROCURAR</button></a>
+              </nav>
             </form>
                   
   

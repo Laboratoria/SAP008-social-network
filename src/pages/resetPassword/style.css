@@ -5,6 +5,15 @@
 }
 
 .btn-cancel-reset {
+    font-size: 1.1em;
+    color: #FFFFFF;
+    background-color: #9D9D9D;
+    border: none;
+    border-radius: 30px;
+    padding: 0.55rem 1.5rem;
+    box-shadow: 1px 3px 3px rgba(94, 94, 94, 0.438);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     display: none;
 }
 
@@ -14,6 +23,10 @@
     justify-content: center;
     gap: 1rem;
     width: 65vw;
+}
+
+.title-desktop {
+    display: none;
 }
 
 .reset-page {
@@ -104,34 +117,42 @@
     }
     
     .reset-page {
+        display: flex;
+        justify-content: center;
+        padding: 0;
         position: absolute;
         width: 55%;
+        height: 100vh;
         right: 0;
+        margin: 0;
         background: linear-gradient(180deg, #D4F3FD 0%, #D0FCF4 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
     }
     
     .reset-text {
-        font-size: 2rem;
-        /* align-self: center; */
+        display: none;
     }
     
     .message-about-reset {
         font-size: 1rem;
         width: 60%;
+        margin-top: 2rem;
     }
     
     .input-style-reset {
         width: 60%;
+        align-self: center;
+        font-size: 1rem;
     }
     
     .btn-cancel-reset {
-        display: flex;
+        display: inline;
+        text-decoration: none;
     }
     
     .reset-form {
         background: #FFFFFFB5;
-        height: 60%;
-        width: 70%;
+        height: auto;
+        width: 80%;
         border-radius: 5px;
         box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
         
@@ -140,20 +161,21 @@
     .btn-reset {
         color: #FFFFFF;
         background-color: #EE2C12;
-        margin-left: 2rem;
+        font-size: 1rem;
+        gap: 0.5rem;
+        margin: 0;
     }
-}
 
-.btn-cancel-reset {
-    font-size: 1.1em;
-    color: #FFFFFF;
-    background-color: #9D9D9D;
-    border: none;
-    border-radius: 30px;
-    padding: 0.55rem 1.5rem;
-    box-shadow: 1px 3px 3px rgba(94, 94, 94, 0.438);
-    padding-top: -2rem;
-    margin: 1rem 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    .title-desktop {
+        display: block;
+        font-size: 2rem;
+        color: #EE2C12;
+        margin-bottom: 2rem;
+    }
+
+    .reset-buttons {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
 }

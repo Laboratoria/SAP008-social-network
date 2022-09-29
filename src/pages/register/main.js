@@ -66,7 +66,7 @@ export default () => {
   // const emailErrorMessage = registerContainer.querySelector('#email-message');
   const passwordErrorMessage = registerContainer.querySelector('#password-message');
 
-  /*function handleErrors(errorCode) {
+  /* function handleErrors(errorCode) {
     let errorMessage;
     switch (errorCode) {
       case 'auth/email-already-in-use':
@@ -87,8 +87,7 @@ export default () => {
       default:
         alert('Confira se todos os campos foram preenchidos');
     }
-  }*/
-  
+  } */
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (name.value !== ''
@@ -104,8 +103,8 @@ export default () => {
           window.location.hash = '#feed';
           // alert('Bem-vinda ao Rebu');
         })
-        .catch((error) => {
-          console.log(error);
+        .catch((/* error */) => {
+          // console.log(error);
         });
     } else {
       if (name.value === '') {

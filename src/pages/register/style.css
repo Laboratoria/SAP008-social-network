@@ -184,18 +184,16 @@
         color: #A5A5A5;
         font-size: 0.8rem;
         max-width: 70%;
-    }
-
-    .link-text-login{
-        margin-top: 0;
-        font-size: 1rem;
-    }
-    .btn-google-register {
         border: solid 1px #A5A5A5;
         background-color: #FFFFFF;
         border-radius: 5px;
         height: 2.5rem;
         margin: 0;
+    }
+
+    .link-text-login{
+        margin-top: 0;
+        font-size: 1rem;
     }
 
     .btn-register {

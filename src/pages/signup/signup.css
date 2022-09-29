@@ -58,15 +58,16 @@ body {
   width: 90%;  
 }
 
-.input {
+.input-signup {
   width: 90%;
   height: 1vh;
-  margin: 1vh 0 1vh;
+  margin: 2vh 0 1vh;
   border: 0;
   border-bottom:solid 2px var(--branco);
   padding: 1vw;
   outline: 0;
   background-color: rgb(255, 255, 255, 0);
+  font-size: 1em;
 }
 
 #txtName,#txtEmail,#txtPassword::placeholder {

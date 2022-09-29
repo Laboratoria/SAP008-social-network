@@ -11,15 +11,15 @@ export default function signUp() {
         <form>
           <div class="signup-container">
             <label class= "signup-label" for="name">              
-              <input class="input" id="txtName" type="text" name="name" placeholder="Nome" required>
+              <input class="input-signup" id="txtName" type="text" name="name" placeholder="Nome" required>
             </label>            
 
             <label class= "signup-label" for="email">              
-              <input class="input" id="txtEmail" type="email" name="email" id="txtEmail" placeholder="Email" required>
+              <input class="input-signup" id="txtEmail" type="email" name="email" id="txtEmail" placeholder="Email" required>
             </label>
           
             <label class= "signup-label" for="password">              
-              <input class="input" id="txtPassword" type="password" name="password" id="txtPassword" minlength="8" placeholder="Senha" required>
+              <input class="input-signup" id="txtPassword" type="password" name="password" id="txtPassword" minlength="8" placeholder="Senha" required>
             </label>
           </div>
 

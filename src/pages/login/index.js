@@ -27,16 +27,20 @@ export default () => {
             
             <button id="btnLogin" type="button" class="button">Entrar</button>               
             
-            <p class="txt-error" id="txt-error"></p>
-
-            <p class="txt-gmail">Entrar com:</p>
-
-            <div class="icon-container">
-              <button id="btn-gmail" type="button" class="icon-button">
-              <img src="./img/icongmail.png" alt="gmail">
-              </button>          
-            </div>
+            <p class="txt-error" id="txt-error"></p>                    
+            
           </form>                
+          <div class="line-container">
+              <hr class="line">
+              <span class="txt-line">ou</span>
+              <hr class="line">            
+          </div>
+            
+          <button id="btn-gmail" type="button" class="icon-button">Continue com
+            <img class="google-icon" src="./img/google-icon.png" alt="google-icon">
+          </button>  
+
+          
       </section>
 
       <img class="wallpaper" src="./img/foto.png">       

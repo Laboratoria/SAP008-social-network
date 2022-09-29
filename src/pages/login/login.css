@@ -109,24 +109,39 @@ body {
   transition: transform 0.5s;
 }
 
-.txt-gmail {
-  font-size: 0.9em;
+.line-container {
+  display: flex;
+  width: 100%;
+  margin: 1vw 0 1vw; 
+} 
+
+.txt-line {
+  flex: 0.3 1 0%;
+  align-self: center;
+  text-align: center;
+  line-height: 1px;  
+  font-size: 12px;
+  text-transform: uppercase; 
 }
 
-.icon-container {
-  justify-content: center;  
-}
+.line {
+  color:aliceblue;
+  flex: 0.4 1 0%;
+} 
 
-.icon-container img {
-  width: 1.5vw;
-}
+.google-icon {
+  width: 10%;
+} 
 
 .icon-button {  
-  width: 25%;
-  height: 1.5vw;
-  border-radius: 5px;
+  width: 11vw;
+  height: 1.7vw;  
+  border-radius: 10px;
+  color: var(--lilas);  
   cursor: pointer;
   border: none;
+  font-size: 0.9em;  
+  text-align: center;  
 }
 
 .icon-button:hover {
@@ -134,6 +149,7 @@ body {
   box-shadow: 0px 0px 20px var(--roxo);
   transform: translate(0px, -2px);
   transition: transform 0.5s;
+  color: var(--branco);
 }
 
 .wallpaper {  

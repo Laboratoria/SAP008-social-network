@@ -31,5 +31,8 @@ export const signOut = () => {
  auth.signOut();
 }
 
-export const sendPasswordResetEmail(auth, email);
+export const resetPassword = (email) => {
+  return sendPasswordResetEmail (auth, email)
+}
+
   

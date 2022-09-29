@@ -1,4 +1,4 @@
-import{resetPassword} from "../firebase/firebasejs"
+import{resetPassword} from "../firebase/firebase.js"
 import  {redirect} from "../redirect.js"  
 
 export default () => {

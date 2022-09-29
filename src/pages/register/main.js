@@ -7,36 +7,49 @@ export default () => {
   const registerContainer = document.createElement('div');
   const template = `
         <header id="return-btn" class="register-login-header display-flex">
-        <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
-            <h1><img class="img-logo-register" src="img/Rebu.png" alt="rebu logo"></h1>
+          <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
+          <img class="img-logo-register" src="img/Rebu.png" alt="rebu logo">
         </header>
+
+        <div class="gif-side-desktop" id="desktop-page">
+          <video autoplay loop class="bg-gif-desktop">
+            <source src="img/gifDesktop.mp4" type="video/mp4">
+          </video>
+          <img src="img/Rebu.png" alt="Rebu Logo" class="rebu-logo-desktop">
+        </div>
+
         <main class="register-content display-flex">
-            <form class="register-login display-flex">
-      
-                <h1 class="register-text">CADASTRAR</h1>
 
-                <img class="signup-icons" src="img/user-icon.png" alt="user icon"></img>
-                <input id="name-input" class="input-style register-name" type="text" placeholder="NOME">
-                <p id="name-message" class="warning-message hide"></p>
+          <h1 class="text-desktop">CADASTRE-SE</h1>
+          
+          <form class="register-login display-flex">
+              
+              <h2 class="register-text">CADASTRAR</h2>
+              <img class="signup-icons" src="img/user-icon.png" alt="user icon"></img>
+              <input id="name-input" class="input-style register-name" type="text" placeholder="NOME">
+              <p id="name-message" class="warning-message hide"></p>
+              
+              <img class="signup-icons" src="img/email-icon.png" alt="email icon"></img>
+              <input id="register-input" class="input-style" type="email" placeholder="E-MAIL">
+              <p id="email-message" class="warning-message hide"></p>
+              
+              <img class="signup-icons" src="img/unlocked-icon.png" alt="password icon"></img>
+              <input type="password" id="password-register" class="input-style" placeholder="SENHA">
+              <p id="password-message" class="warning-message hide"></p>
+              
+              <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
+              <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
+              <p id="confirm-password-message" class="warning-message hide"></p>
+              
+              <input type="submit" class="btn-register" value="CADASTRAR">
+              <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
+              
+              <a href="/#login" class="link-text-login">JÁ POSSUI UMA CONTA? CONECTE-SE!</a>
+              
+          </form>
 
-                <img class="signup-icons" src="img/email-icon.png" alt="email icon"></img>
-                <input id="register-input" class="input-style" type="email" placeholder="E-MAIL">
-                <p id="email-message" class="warning-message hide"></p>
-
-                <img class="signup-icons" src="img/unlocked-icon.png" alt="password icon"></img>
-                <input type="password" id="password-register" class="input-style" placeholder="SENHA">
-                <p id="password-message" class="warning-message hide"></p>
-
-                <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
-                <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
-                <p id="confirm-password-message" class="warning-message hide"></p>
-                
-                <button type="submit" class="btn-register">CADASTRAR</button>
-                <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
-
-            </form>
         </main>
-    `;
+  `;
 
   registerContainer.innerHTML = template;
 
@@ -53,13 +66,7 @@ export default () => {
   // const emailErrorMessage = registerContainer.querySelector('#email-message');
   const passwordErrorMessage = registerContainer.querySelector('#password-message');
 
-  // function hideErrorMessages() {
-  //   nameErrorMessage.classList.add('hide');
-  //   confirmPwErrorMessage.classList.add('hide');
-  //   passwordErrorMessage.classList.add('hide');
-  //   emailErrorMessage.classList.add('hide');
-  // }
-  function handleErrors(errorCode) {
+  /*function handleErrors(errorCode) {
     let errorMessage;
     switch (errorCode) {
       case 'auth/email-already-in-use':
@@ -80,7 +87,8 @@ export default () => {
       default:
         alert('Confira se todos os campos foram preenchidos');
     }
-  }
+  }*/
+  
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (name.value !== ''

@@ -14,9 +14,9 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
-    alert('logged in!');
+    console.log('logged in!');
   } else {
-    alert('No user');
+    console.log('No user');
   }
 });
 
@@ -34,7 +34,7 @@ const createAccount = async (email, password) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log(userCredential);
   } catch (error) {
-    alert('erro de criar conta');
+    console.log('erro de criar conta');
   }
 };
 

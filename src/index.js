@@ -2,7 +2,7 @@ import home from './pages/home/home.js';
 import register from './pages/cadastrar/register.js';
 import password from './pages/password/password.js';
 import about from './pages/about/about.js';
-
+import feed from './pages/feed/feed.js';
 const main = document.querySelector('#root');
 
 const inicio = () => {
@@ -20,15 +20,17 @@ const inicio = () => {
         break;
       case '#sobre':
         main.appendChild(about());
-        break;
+      break;
+      case '#entrar':
+        main.appendChild(feed());
+      break;
       default:
         main.appendChild(home());
     }
   });
 };
-
 window.addEventListener('load', () => {
-  window.location.hash = '';
+  location.hash = '';
   main.appendChild(home());
   inicio();
 });

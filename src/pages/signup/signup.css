@@ -68,17 +68,18 @@ body {
 }
 
 #txtName,#txtEmail,#txtPassword::placeholder {
-    color: var(--branco);
-    text-align: center;       
+  color: var(--branco);
+  text-align: center;       
 }
 
 .btnSignup {
   width: 11vw;
   padding: 1vw 2vw;  
   border-radius: 20px;
-  color: var(--roxo);  
+  color: var(--violeta);  
   font-weight: bolder;    
   background-color: var(--branco);
+  font-size: 0.9em;
 }
 
 .btnSignup:hover {

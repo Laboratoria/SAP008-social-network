@@ -164,13 +164,11 @@ body {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        width: 55%;
         background: linear-gradient(180deg, #D4F3FD 0%, #D0FCF4 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
     }
 
     .login-form {
         width: 65%;
-        height: 80%;
         flex-direction: column;
         align-items: center;
         justify-content: center;

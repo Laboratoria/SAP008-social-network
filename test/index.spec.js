@@ -1,5 +1,8 @@
-import { loginWithGoogle, loginWithEmailAndPassword } from '../src/lib/index.js';
-import { signInWithPopup, signInWithEmailAndPassword } from '../src/lib/firebase.js';
+import { loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword } from '../src/lib/index.js';
+import {
+  signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  getAuth, updateProfile,
+} from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
 
@@ -17,5 +20,27 @@ describe('loginWithEmailAndPassword', () => {
     loginWithEmailAndPassword(email, password);
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, email, password);
+  });
+});
+
+describe('registerWithEmailAndPassword', () => {
+  it('a função deve ser chamada uma vez', async () => {
+    const mockGetAuth = {
+      currentUser: {},
+    };
+    getAuth.mockReturnValueOnce(mockGetAuth);
+    createUserWithEmailAndPassword.mockResolvedValueOnce();
+
+    const email = 'peba@demais.com';
+    const password = 'pebademais';
+    const name = 'peba';
+    await registerWithEmailAndPassword(name, email, password);
+
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(mockGetAuth, email, password);
+    expect(updateProfile).toHaveBeenCalledTimes(1);
+    expect(updateProfile).toHaveBeenCalledWith(mockGetAuth.currentUser, {
+      displayName: name,
+    });
   });
 });

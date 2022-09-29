@@ -96,8 +96,19 @@
     transition: 1s;
     cursor: pointer;
 }
+
 .text-desktop{
     display: none;
+}
+
+.warning-message {
+    color: rgb(185, 74, 60);
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+}
+
+.hide{
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -208,4 +219,5 @@
         width: 20%;
         height: 100vh;
     }
+    
 }

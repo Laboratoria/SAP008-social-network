@@ -48,15 +48,18 @@ export default () => {
         alert ("Bem vindo" + email.value);
         window.location.hash="login";
       })
-      // .then((userCredential) => {
-      //   // Signed in
-      //   const user = userCredential.user;
-      //   // ...
       .catch(function(error){
         console.error(error.code)
         alert("falhou")
-
+        
       });
+      
+      // .then((userCredential) => {
+      //   // Signed in
+      //   const user = userCredential.user;
+      //   console.log(user)
+      //   // ...
+      // })
   
   })
 

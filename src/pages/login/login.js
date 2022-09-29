@@ -38,24 +38,10 @@ export default function Login() {
   const signInButton = login.querySelector('#signin-button');
   const email = login.querySelector('.email');
   const password = login.querySelector('.password');
-  const auth = getAuth(app);
 
   signInButton.addEventListener("click", function (e) {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email.value, password.value)
-      .then(function (){
-        alert ("Bem vindo" + email.value);
-      })
-      // .then((userCredential) => {
-        //   // Signed in
-        //   const user = userCredential.user;
-        //   // ...
-        .catch(function(error){
-          console.error(error.code)
-          alert("falhou")
-          
-        });
-    window.location.hash="feed";
+  
   
   })
 

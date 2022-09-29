@@ -40,7 +40,7 @@ export function loginGoogle () {
 }
 
 
-function getErrorMessage(error) {
+export function getErrorMessage(error) {
     if (error.code == "auth/user-not-found") {
         return "Usuário não encontrado";
     }

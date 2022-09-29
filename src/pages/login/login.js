@@ -1,4 +1,4 @@
-import { loginUser, loginGoogle } from "../../auth.js"
+import { loginUser, loginGoogle, getErrorMessage} from "../../auth.js"
 
 export default () => {
     const container = document.createElement('div');
@@ -44,7 +44,10 @@ buttonLogin.addEventListener('click', (e) => {
       container.innerHTML = '';
       window.location.hash = '';
     })
-    .catch((error) => error);
+    .catch((error) => {
+        console.log(getErrorMessage(error))
+        getErrorMessage(error) 
+    });
 });
 
 buttonRegister.addEventListener('click', (e) => {

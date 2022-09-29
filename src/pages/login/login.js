@@ -37,14 +37,6 @@ export default function Login() {
   const signInButton = login.querySelector('#signin-button');
   const email = login.querySelector('.email');
   const password = login.querySelector('.password');
-  const auth = getAuth (app)
-    if (email.value) {
-      signIn(email.value, password.value)
-        .then(() => {
-          window.location.hash = 'feed';
-        });
-    }
 
-  return login;
-}
+  
 

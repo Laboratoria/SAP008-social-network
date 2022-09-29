@@ -2,6 +2,7 @@ import "./config-firebase.js"
 
 import login from "./pages/login/login.js" 
 import cadastro from "./pages/Cadastro/cadastro.js"
+import feed from "./pages/feed/feed.js";
 
 
 const root = document.querySelector('#root');
@@ -14,7 +15,10 @@ const init = () => {
         root.appendChild(login());
         break;
       case "#cadastro":
-        root.appendChild(cadastro())
+        root.appendChild(cadastro());
+        break;
+      case"#feed":
+        root.appendChild(feed());
         break;
 
     }

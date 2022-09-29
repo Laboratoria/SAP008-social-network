@@ -1,4 +1,6 @@
 // aqui exportaras las funciones que necesites
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+import { app } from "../../config-firebase.js";
 
 
 export default function Login() {
@@ -36,18 +38,30 @@ export default function Login() {
   const signInButton = login.querySelector('#signin-button');
   const email = login.querySelector('.email');
   const password = login.querySelector('.password');
+  const auth = getAuth(app);
+
+  signInButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email.value, password.value)
+      .then(function (){
+        alert ("Bem vindo" + email.value);
+      })
+      // .then((userCredential) => {
+        //   // Signed in
+        //   const user = userCredential.user;
+        //   // ...
+        .catch(function(error){
+          console.error(error.code)
+          alert("falhou")
+          
+        });
+    window.location.hash="feed";
+  
+  })
 
  
 
-  signInButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (email.value) {
-      signIn(email.value, password.value)
-        .then(() => {
-          window.location.hash = 'feed';
-        });
-    }
-  });
+  
 
   
   return login;

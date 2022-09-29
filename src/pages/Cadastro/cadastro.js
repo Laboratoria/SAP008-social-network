@@ -46,14 +46,17 @@ export default () => {
       createUserWithEmailAndPassword(auth, email.value, password.value)
       .then(function (){
         alert ("Bem vindo" + email.value);
-    
+        window.location.hash="login";
       })
+      // .then((userCredential) => {
+      //   // Signed in
+      //   const user = userCredential.user;
+      //   // ...
       .catch(function(error){
         console.error(error.code)
         alert("falhou")
 
       });
-    window.location.hash="login"
   
   })
 

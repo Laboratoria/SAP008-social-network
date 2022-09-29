@@ -8,7 +8,7 @@ export default () => {
   const template = `
         <header id="return-btn" class="register-login-header display-flex">
           <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
-          <h1><img class="img-logo-register" src="img/Rebu.png" alt="rebu logo"></h1>
+          <img class="img-logo-register" src="img/Rebu.png" alt="rebu logo">
         </header>
 
         <div class="gif-side-desktop" id="desktop-page">
@@ -19,9 +19,9 @@ export default () => {
         </div>
 
         <main class="register-content display-flex">
-          <h2 class="text-desktop">CADASTRE-SE</h2>
+          <h1 class="text-desktop">CADASTRE-SE</h1>
           <form class="register-login display-flex">
-              <legend class="register-text">CADASTRAR</legend>
+              <h2 class="register-text">CADASTRAR</h2>
               <img class="signup-icons" src="img/user-icon.png" alt="user icon"></img>
               <input id="name-input" class="input-style register-name" type="text" placeholder="NOME">
               <img class="signup-icons" src="img/email-icon.png" alt="email icon"></img>
@@ -31,7 +31,7 @@ export default () => {
               <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
               <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
               <input type="submit" class="btn-register" value="CADASTRAR">
-              <button class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
+              <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
               <a href="/#login" class="link-text-login">JÁ POSSUI UMA CONTA? CONECTE-SE!</a>
           </form>
         </main>

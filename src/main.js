@@ -1,8 +1,5 @@
-//import './firebase-config.js'
-//import { myFunction } from './lib/index.js';
-
-
-//myFunction(); 
+//import './configuration.js'
+import {addUser} from './lib/index.js';
 
 import load from './pages/load/load.js'
 import entrar from './pages/entrar/entrar.js'
@@ -12,11 +9,12 @@ const main = document.querySelector('#root');
 
 const googleBtn = document.querySelector('#google-login');
 const okLoginBtn = document.querySelector('#ok-login-btn');
-const signInName = document.querySelector('#name')
-const signInEmail = document.querySelector('#email')
-const signInPassword = document.querySelector('#password')
-const signInConfirmPassword = document.querySelector('#confirm-password')
-const checkBox = document.querySelector('#checkbox')
+const signInName = document.querySelector('#name');
+const signInEmail = document.querySelector('#email').value;
+const signInPassword = document.querySelector('#password').value;
+//const signInConfirmPassword = document.querySelector('#confirm-password')
+const okSigninBtn = document.querySelector('#ok-form-btn');
+const checkBox = document.querySelector('#checkbox');
 
 const navegar = () => {
     window.addEventListener('hashchange', () => {
@@ -40,4 +38,10 @@ const navegar = () => {
 window.addEventListener('load', () => {
     main.appendChild(load());
     navegar();
+})
+
+okSigninBtn.addEventListener('click', () => {
+    const cadastro = addUser(signInEmail, signInPassword)
+    return console.log(cadastro)
+
 })

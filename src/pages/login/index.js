@@ -5,47 +5,34 @@ export default () => {
   const template = `
     <div class="container">
       <section class="login">      
-          <img src="./img/picsfem.png" class="login-logo">
-
-          <h1 class="login-title">Fazer login</h1>
-
-          <div id="form-container"></div>
+          <img src="./img/picsfem.png" class="login-logo">                  
 
           <form id="login-form">
-            <div class="email-pass">
-            
-              <label class="login-label">
-                <span>Email:</span>
-                <input id="txtEmail" type="email" name="email" class="input">
+            <div class="email-pass">            
+              <label class="login-label" for="email">                
+                <input id="txtEmail" type="email" name="email" class="input" placeholder="Email" required>
               </label>
               
-              <label class="login-label">
-                <span>Senha</span>
-                <input id="txtPassword" type="password" name="password" class="input">
+              <label class="login-label" for="password">                
+                <input id="txtPassword" type="password" name="password" class="input" placeholder="Senha" minlength="8" required>
               </label>
             
-            </div>
+            </div>           
             
-            <div class="txt-error" id="txt-error"></div>
-            
-            <div class="ads">
-              <div class="Criar">
-                <a href="#signup" id="btnSignupSpa" type="button" class="button2">Criar conta</a>
-              </div>
-
+            <div class="signup-forgot">              
+              <a href="#signup" id="btnSignupSpa" type="button" class="login-link" style="text-decoration:none">Criar conta</a>
+              
               <a href="#" class="login-link">Esqueceu a senha?</a>
-            </div>
+            </div>            
+            
+            <button id="btnLogin" type="button" class="button">Entrar</button>               
+            
+            <p class="txt-error" id="txt-error"></p>
 
-            <span id="message" class="message"></span>
+            <p>Entrar com:</p>
 
-            <div class="entrar">
-              <button id="btnLogin" type="button" class="button">Entrar</button>
-            </div>          
-
-            <a class="login-link2">Logar como:</a>
-
-            <div class="login-icons">
-              <button id="btn-gmail" type="button" class="icons-button">
+            <div class="icon-container">
+              <button id="btn-gmail" type="button" class="icon-button">
               <img src="./img/icongmail.png" alt="gmail">
               </button>          
             </div>

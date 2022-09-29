@@ -4,22 +4,32 @@ export default function signUp() {
   const container = document.createElement('div');
 
   const template = `
-    <form>
-      <label class= "name"  for="name">Nome:
-        <input class="input" type="text" required>
-      </label>
+    <div class="container">
+     <section class="login">      
+        <img src="./img/picsfem.png" class="login-logo">              
 
-      <label class= "email" for="email">Email:
-        <input class="input" type="email" id="txtEmail" required>
-      </label>
-      
-      <label class= "password" for="password">Senha:
-        <input class="input" type="password" id="txtPassword" minlength="8" required>
-      </label>
-      
-      <a href="#login" id="btnSignup" type="button" class="buttonSignup">CRIAR CONTA</a>
-        
-    </form>
+        <form>
+          <div class="signup-container">
+            <label class= "signup-label" for="name">              
+              <input class="input" id="txtName" type="text" name="name" placeholder="Nome" required>
+            </label>            
+
+            <label class= "signup-label" for="email">              
+              <input class="input" id="txtEmail" type="email" name="email" id="txtEmail" placeholder="Email" required>
+            </label>
+          
+            <label class= "signup-label" for="password">              
+              <input class="input" id="txtPassword" type="password" name="password" id="txtPassword" minlength="8" placeholder="Senha" required>
+            </label>
+          </div>
+
+          <a href="#login" id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</a>
+        </form>                
+     </section>
+
+     <img class="wallpaper" src="./img/foto.png">       
+
+    </div>    
     `;
   container.innerHTML = template;
 

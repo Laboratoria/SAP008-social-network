@@ -1,19 +1,18 @@
-/*Login de usuários existentes*/
+import { app } from "../config-firebase.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../config-firebase";
+const auth = getAuth(app);
 
-  //verificar se é nesta pasta essa função 
-const auth = getAuth(app)
-export const login = ( email, senha) => signInWithEmailAndPassword (auth, email, password);
-function Login (email, password) {
+export const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-    const user = userCredential.user;
-    return user;
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+    .then(function (){
+        window.location.hash=("#feed")
+        alert ("Bem vindo" + email.value);
+      })
+      .catch(function(error){
+        console.error(error.code)
+        alert("falhou")
+
+      });
+
 }

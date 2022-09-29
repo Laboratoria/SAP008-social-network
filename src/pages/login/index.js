@@ -29,7 +29,7 @@ export default () => {
             
             <p class="txt-error" id="txt-error"></p>
 
-            <p>Entrar com:</p>
+            <p class="txt-gmail">Entrar com:</p>
 
             <div class="icon-container">
               <button id="btn-gmail" type="button" class="icon-button">

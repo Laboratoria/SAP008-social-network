@@ -109,6 +109,10 @@ body {
   transition: transform 0.5s;
 }
 
+.txt-gmail {
+  font-size: 0.9em;
+}
+
 .icon-container {
   justify-content: center;  
 }

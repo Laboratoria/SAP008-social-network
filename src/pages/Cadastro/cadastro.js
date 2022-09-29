@@ -1,5 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { app } from "../../config-firebase.js";
+import { register } from "../../lib/getAuth.js";
 
 export default () => {
   const containerRegistration = document.createElement("div")
@@ -43,25 +44,25 @@ export default () => {
 
   btnRegistration.addEventListener("click", function (e) {
     e.preventDefault();
-      createUserWithEmailAndPassword(auth, email.value, password.value)
-      .then(function (){
-        alert ("Bem vindo" + email.value);
-        window.location.hash="login";
-      })
-      .catch(function(error){
-        console.error(error.code)
-        alert("falhou")
-        
-      });
-      
-      // .then((userCredential) => {
-      //   // Signed in
-      //   const user = userCredential.user;
-      //   console.log(user)
-      //   // ...
-      // })
-  
+    register (email.value, password.value)
+
   })
+
+  // function validatePassword() {
+  //   if (
+  //     inputUserName.value === '' || inputEmail.value === '' || inputPassword.value === '' || inputNewPassword.value === '') {
+  //     alert('Por favor, preencha todos os campos');
+  //   } else if (inputPassword.value !== inputNewPassword.value) {
+  //     alert('A senha digitada está diferente em um dos campos');
+  //   } else {
+  //     const email = inputEmail.value;
+  //     const password = inputPassword.value;
+  //     const userName = inputUserName.value;
+  //     return register(email, password, userName);
+  //   }
+  // }
+  // buttonRegister.addEventListener('click', validatePassword);
+
 
 
 

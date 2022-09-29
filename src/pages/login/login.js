@@ -1,7 +1,7 @@
 export default () => {
-    const container = document.createElement('div');
-  
-    const telaLogin = `
+  const container = document.createElement('div');
+
+  const telaLogin = `
   <div id="everything">
   <div class="signup">
   <h1>Rede de apoio</h1>
@@ -26,12 +26,12 @@ export default () => {
   </div>
   
   `;
-    container.innerHTML = telaLogin;
-  
-    return container;
-  };
-  
-  // const inputEmail = container.querySelector('#email');
-  // const inputPassword = container.querySelector('#password');
-  // const buttonLogin = container.querySelector('.btnLogin');
-  // const loginError = container.querySelector('#loginError');
+  container.innerHTML = telaLogin;
+
+  return container;
+};
+
+// const inputEmail = container.querySelector('#email');
+// const inputPassword = container.querySelector('#password');
+// const buttonLogin = container.querySelector('.btnLogin');
+// const loginError = container.querySelector('#loginError');

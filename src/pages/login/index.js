@@ -5,9 +5,9 @@ export default () => {
   const template = `
     <div class="container">
       <section class="login">      
-          <img src="./img/picsfem.png" class="login-logo">                  
+          <img src="./img/picsfem.png" class="logo-login">                  
 
-          <form id="login-form">
+          <form class="login-form" id="login-form">
             <div class="email-pass">            
               <label class="login-label" for="email">                
                 <input id="txtEmail" type="email" name="email" class="input" placeholder="Email" required>
@@ -25,7 +25,7 @@ export default () => {
               <a href="#" class="login-link">Esqueceu a senha?</a>
             </div>            
             
-            <button id="btnLogin" type="button" class="button">Entrar</button>               
+            <button id="btnLogin" type="button" class="btn-login">Entrar</button>               
             
             <p class="txt-error" id="txt-error"></p>                    
             
@@ -39,11 +39,10 @@ export default () => {
           <button id="btn-gmail" type="button" class="icon-button">Continue com
             <img class="google-icon" src="./img/google-icon.png" alt="google-icon">
           </button>  
-
           
       </section>
 
-      <img class="wallpaper" src="./img/foto.png">       
+      <img class="wallpaper-login" src="./img/foto.png">       
 
     </div>
     <button id="btnLogout" type="button">Log out</button>

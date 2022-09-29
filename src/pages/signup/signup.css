@@ -31,17 +31,17 @@ body {
   align-items: center;
 }
   
-.login {    
+.signup-box {    
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  padding: 1.6vw; 
+  padding: 1vw; 
   width: 22vw;
-  height: 62vh;
+  height: 70vh;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;    
 }
 
-.login-logo {
+.logo {
   width: 13vw; 
   margin-bottom: 2vw; 
 }
@@ -60,6 +60,8 @@ body {
 
 .input {
   width: 90%;
+  height: 1vh;
+  margin: 1vh 0 1vh;
   border: 0;
   border-bottom:solid 2px var(--branco);
   padding: 1vw;
@@ -91,8 +93,8 @@ body {
 }
 
 .wallpaper {  
-  width: 25vw;
-  height: 69vh;
+  width: 24vw;
+  height: 75vh;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;    
 }

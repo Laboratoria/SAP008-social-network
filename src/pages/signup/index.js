@@ -5,8 +5,8 @@ export default function signUp() {
 
   const template = `
     <div class="container">
-     <section class="login">      
-        <img src="./img/picsfem.png" class="login-logo">              
+     <section class="signup-box">      
+        <img src="./img/picsfem.png" class="logo">              
 
         <form>
           <div class="signup-container">

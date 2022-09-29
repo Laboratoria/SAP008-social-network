@@ -1,7 +1,7 @@
 export default () => {
-    const container = document.createElement('div');
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
     <figure class="img-logo-signup imgFlip">
             <img src="./imagens/logo-mobile.png" alt="logo">
         </figure>
@@ -26,7 +26,7 @@ export default () => {
         </form>
     `;
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-    return container;
-}
+  return container;
+};

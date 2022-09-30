@@ -1,7 +1,8 @@
+import { addUser } from '../../lib/auth.js';
 export default () => {
     const container = document.createElement('div');
     const template =
-    `<section class="container">
+        `<section class="container">
         <div class="frame">
             <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
             <form action="/firebase.php" method="get">
@@ -28,6 +29,15 @@ export default () => {
         <div class="logo"></div>
     </section>`;
 
+    const okSigninBtn = container.querySelector('#ok-form-btn');
+    const signInEmail = container.querySelector('#email').value;
+    const signInPassword = container.querySelector('#password').value;
+
+    okSigninBtn.addEventListener('click', () => {
+        const cadastro = addUser(signInEmail, signInPassword)
+        return console.log(cadastro)
+
+    })
     container.innerHTML = template;
     return container;
 }

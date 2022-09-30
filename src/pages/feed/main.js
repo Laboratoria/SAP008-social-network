@@ -1,3 +1,5 @@
+import { createPost } from '../../lib/index.js';
+
 export default () => {
   const feedContainer = document.createElement('div');
   const template = `
@@ -23,13 +25,13 @@ export default () => {
 
     <main>
 
-      <section>
+      <section id="create-post">
 
         <div id="user-profile-picture-div">
           <img src="" alt="" class="" class="user-profile-picture-post">
         </div>
 
-        <textarea name="" id="" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
+        <textarea name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
 
         <div class="create-post-box-buttons">
           <select>
@@ -49,5 +51,12 @@ export default () => {
     </footer>
   `;
   feedContainer.innerHTML = template;
+
+  const publishBtn = feedContainer.querySelector('#publish-btn');
+  const textPost = feedContainer.querySelector('#text-post');
+  publishBtn.addEventListener('click', () => {
+    createPost(textPost.value);
+  });
+
   return feedContainer;
-};
+}

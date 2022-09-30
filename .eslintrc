@@ -3,6 +3,7 @@
     "browser": true,
     "es6": true,
     "jest/globals": true
+    
   },
   "extends": [
     "airbnb-base"
@@ -28,6 +29,6 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "no-alert":"off"
-    
   }
+  
 }

@@ -1,4 +1,4 @@
-body {
+/*body {
   margin: 0;
   padding: 0;
   background: linear-gradient(#5E17EB, #A87CFE);  
@@ -105,10 +105,11 @@ body {
     display: none;
   }
   
-  .login {
+  .signup-box {
     border-radius: 20px;
     width: 35vw;
     height: 60vh;
   }
 }
 
+*/

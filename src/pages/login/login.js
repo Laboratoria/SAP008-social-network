@@ -1,4 +1,4 @@
-import { loginUser, loginGoogle, getErrorMessage } from "../../auth.js"
+import { loginUser, loginGoogle, getErrorMessage } from '../../auth.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -30,7 +30,6 @@ export default () => {
 
   container.innerHTML = template;
 
-
   const buttonLogin = container.querySelector('.btn-login');
   const buttonRegister = container.querySelector('.btn-register');
   const inputEmail = container.querySelector('#email');
@@ -45,8 +44,8 @@ export default () => {
         window.location.hash = '';
       })
       .catch((error) => {
-        console.log(getErrorMessage(error))
-        getErrorMessage(error)
+        console.log(getErrorMessage(error));
+        getErrorMessage(error);
       });
   });
 
@@ -61,7 +60,7 @@ export default () => {
       .then(() => {
         window.location.hash = '';
       })
-      .catch((error) => {
+      .catch(() => {
         // const getErrorMessage = error.message;
         // const getErrorCode = error.code;
         // const email = error.customData.email;
@@ -70,6 +69,5 @@ export default () => {
       });
   });
 
-
   return container;
-}
+};

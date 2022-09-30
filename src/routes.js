@@ -11,7 +11,7 @@ const main = document.querySelector('#root');
 const init = () => {
   main.innerHTML = '';
   switch (window.location.hash) {
-    case '#login':
+    case ' ':
       main.appendChild(login());
       break;
     case '#register':

@@ -1,4 +1,4 @@
-import { googleLogin, login, recover } from '../../lib/authentication.js';
+import { googleLogin, recover, login } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -73,8 +73,7 @@ export default () => {
 
   buttonGmail.addEventListener('click', (event) => {
     event.preventDefault();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    googleLogin(provider);
+    googleLogin();
   });
 
   buttonRecover.addEventListener('click', (event) => {

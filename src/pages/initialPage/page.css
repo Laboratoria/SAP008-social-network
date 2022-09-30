@@ -74,10 +74,8 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1px);
-    grid-row-gap: 2px;
-    padding: 2%;
-    margin-top: 2%;
-    margin-left: 20%;
+    gap: 16rem;
+    margin: auto;
 }
 
 .content a {

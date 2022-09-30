@@ -8,6 +8,7 @@
     "firebase",
     "jest"
   ],
+
   "license": "MIT",
   "scripts": {
     "htmlhint": "htmlhint dist/*.html ",
@@ -15,30 +16,41 @@
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
-    "start": "serve -s src/"
+    "start": "firebase serve --only hosting"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "firebase": "^9.4.0",
     "@babel/preset-env": "^7.11.0",
+    "@types/firebase": "^3.2.1",
     "babel-jest": "^27.0.1",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^25.3.0",
     "htmlhint": "^1.0.0",
-    "jest": "^27.0.1",
+    "jest": "^27.5.1",
     "regenerator-runtime": "^0.13.1",
     "serve": "^13.0.2",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0"
   },
+
   "engines": {
     "node": ">=16.x"
   },
+  
   "dependencies": {
     "express": "^4.18.1",
-    "firebase": "^9.9.3"
-  },
+    "firebase": "^9.9.4"
+
+},
+"jest": {
+  "setupFiles": [
+    "./jestSetup.js"
+  ]
+},
+
   "directories": {
     "test": "test"
   },

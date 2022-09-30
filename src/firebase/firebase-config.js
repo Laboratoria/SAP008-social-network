@@ -1,6 +1,5 @@
 
 const firebaseConfig = {
-    
     apiKey: "AIzaSyDgjINGIqA3XMCdF9ZWfq9Zw3fsMtEvGm0",
     authDomain: "social-network-f3eab.firebaseapp.com",
     projectId: "social-network-f3eab",

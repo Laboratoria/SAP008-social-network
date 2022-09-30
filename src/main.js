@@ -18,7 +18,7 @@ const redirectLogUser = (user) => {
     } else {
      redirect ("");
     }
-}
+};
 
 window.addEventListener("load",  () => {
     checkLoggedUser (redirectLogUser)

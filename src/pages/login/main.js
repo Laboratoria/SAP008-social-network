@@ -3,6 +3,10 @@ import {
   loginWithGoogle,
 } from '../../lib/index.js';
 
+import {
+  handleFirebaseErrors,
+} from '../../lib/validation.js';
+
 export default () => {
   const loginContainer = document.createElement('div');
   const template = `
@@ -22,11 +26,12 @@ export default () => {
     <main id="login-page" class="login-page display-flex">
     
       <h1 class="text-desktop">CONECTE-SE</h1>
-      <form class="login-form display-flex">
+      <form id="login-form" class="login-form display-flex">
 
         <h2 class="login-text">ENTRAR</h2>
         <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login">
         <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login">
+        <p id="warning-message"></p>
 
         <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
   
@@ -46,19 +51,20 @@ export default () => {
 
   const inputEmail = loginContainer.querySelector('#email-input-login');
   const inputPasssword = loginContainer.querySelector('#password-input-login');
-  const btnLogin = loginContainer.querySelector('#btn-login-page');
+  const form = loginContainer.querySelector('#login-form');
   // const btnResetPassword = loginContainer.querySelector('.password-reset-login');
+  const warningMessage = loginContainer.querySelector('#warning-message');
 
-  btnLogin.addEventListener('click', (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
       .then(() => {
-        // const user = userCredential.user; <- visualiza user
         window.location.hash = '#feed';
       })
-      .catch((/* error */) => {
-        /* const errorCode = error.code;
-        const errorMessage = error.message; */
+      .catch((error) => {
+        console.log(error);
+        const userFriendlyMessage = handleFirebaseErrors(error.code);
+        warningMessage.innerHTML = userFriendlyMessage;
       });
   });
 

@@ -3,6 +3,10 @@ import {
   loginWithGoogle,
 } from '../../lib/index.js';
 
+import {
+  handleFirebaseErrors,
+} from '../../lib/validation.js';
+
 export default () => {
   const registerContainer = document.createElement('div');
   const template = `
@@ -27,19 +31,17 @@ export default () => {
               <h2 class="register-text">CADASTRAR</h2>
               <img class="signup-icons" src="img/user-icon.png" alt="user icon"></img>
               <input id="name-input" class="input-style register-name" type="text" placeholder="NOME">
-              <p id="name-message" class="warning-message hide"></p>
               
               <img class="signup-icons" src="img/email-icon.png" alt="email icon"></img>
               <input id="register-input" class="input-style" type="email" placeholder="E-MAIL">
-              <p id="email-message" class="warning-message hide"></p>
               
               <img class="signup-icons" src="img/unlocked-icon.png" alt="password icon"></img>
               <input type="password" id="password-register" class="input-style" placeholder="SENHA">
-              <p id="password-message" class="warning-message hide"></p>
               
               <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
               <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
-              <p id="confirm-password-message" class="warning-message hide"></p>
+
+              <p id="warning-message" class="warning-message"></p>
               
               <input type="submit" class="btn-register" value="CADASTRAR">
               <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
@@ -65,69 +67,19 @@ export default () => {
   const confirmPwErrorMessage = registerContainer.querySelector('#confirm-password-message');
   // const emailErrorMessage = registerContainer.querySelector('#email-message');
   const passwordErrorMessage = registerContainer.querySelector('#password-message');
+  const warningMessage = registerContainer.querySelector('#warning-message');
 
-  /* function handleErrors(errorCode) {
-    let errorMessage;
-    switch (errorCode) {
-      case 'auth/email-already-in-use':
-        errorMessage = 'Este e-mail já foi registrado.';
-        emailErrorMessage.classList.remove('hide');
-        emailErrorMessage.innerHTML = errorMessage;
-        break;
-      case 'auth/invalid-email':
-        errorMessage = 'Endereço de e-mail inválido.';
-        emailErrorMessage.classList.remove('hide');
-        emailErrorMessage.innerHTML = errorMessage;
-        break;
-      case 'auth/weak-password':
-        errorMessage = 'Sua senha deve ter, pelo menos, 6 dígitos.';
-        passwordErrorMessage.classList.remove('hide');
-        passwordErrorMessage.innerHTML = errorMessage;
-        break;
-      default:
-        alert('Confira se todos os campos foram preenchidos');
-    }
-  } */
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (name.value !== ''
-      && confirmPw.value !== ''
-      && password.value === confirmPw.value) {
-      registerWithEmailAndPassword(name.value, email.value, password.value)
-        .then(() => {
-          // const errorCode = response.code;
-          // console.log(response.code);
-          // if (errorCode) {
-          //   return handleErrors(errorCode);
-          // }
-          window.location.hash = '#feed';
-          // alert('Bem-vinda ao Rebu');
-        })
-        .catch((/* error */) => {
-          // console.log(error);
-        });
-    } else {
-      if (name.value === '') {
-        nameErrorMessage.classList.remove('hide');
-        nameErrorMessage.innerHTML = 'Por favor, digite seu nome.';
-      }
-      if (password.value.length < 6) {
-        passwordErrorMessage.classList.remove('hide');
-        passwordErrorMessage.innerHTML = 'Sua senha deve ter, no mínimo, 6 dígitos.';
-      }
-      if (password.value === '') {
-        confirmPwErrorMessage.classList.remove('hide');
-        confirmPwErrorMessage.innerHTML = 'Por favor, digite sua senha';
-      }
-      if (confirmPw.value === '') {
-        confirmPwErrorMessage.classList.remove('hide');
-        confirmPwErrorMessage.innerHTML = 'Por favor, confirme sua senha';
-      }
-      if (password.value !== confirmPw.value) {
-        confirmPwErrorMessage.classList.remove('hide');
-        confirmPwErrorMessage.innerHTML = 'Senhas não conferem.';
-      }
-    }
+    registerWithEmailAndPassword(name.value, email.value, password.value)
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => {
+        console.log(error);
+        const userFriendlyMessage = handleFirebaseErrors(error.code);
+        warningMessage.innerHTML = userFriendlyMessage;
+      });
   });
 
   btnGoogleRegister.addEventListener('click', () => {

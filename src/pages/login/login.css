@@ -9,8 +9,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;  
 }
 
 body, html {
@@ -56,12 +55,11 @@ main {
   margin-bottom: 3vh;
 }
 
-.login-form {
-  display: block;
+.login-form {  
   margin: 1vh 0 1vh;
-  margin-top: -4vh;
-  
+  margin-top: -4vh; 
 }
+
 .email-pass {  
   display: flex;
   flex-wrap: wrap;

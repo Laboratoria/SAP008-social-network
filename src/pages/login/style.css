@@ -2,6 +2,17 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.hide {
+    display: none;
+}
+
+.form-warning-messages {
+    font-size: 0.9rem;
+    color: #ca250f;
+    margin-top: -0.2rem;
+    margin-bottom: -0.8rem;
+}
+
 .header-login {
     margin: 0;
     flex-wrap: wrap;
@@ -100,8 +111,7 @@ body {
     border: none;
     padding: 0.55rem 1.5rem;
     box-shadow: 1px 3px 3px rgba(94, 94, 94, 0.438);
-    padding-top: -2rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -211,7 +221,6 @@ body {
     .btn-login {
         background-color:#EE2C12;
         color: #FFFFFF;
-        background-image: url(img/);
     }
     
 }

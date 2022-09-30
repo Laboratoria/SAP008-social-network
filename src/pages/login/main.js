@@ -5,6 +5,7 @@ import {
 
 import {
   handleFirebaseErrors,
+  validateLoginForm,
 } from '../../lib/validation.js';
 
 export default () => {
@@ -26,12 +27,14 @@ export default () => {
     <main id="login-page" class="login-page display-flex">
     
       <h1 class="text-desktop">CONECTE-SE</h1>
-      <form id="login-form" class="login-form display-flex">
+      <form class="login-form display-flex">
 
         <h2 class="login-text">ENTRAR</h2>
         <input type="email" placeholder="E-MAIL" id="email-input-login" class="input-text-login">
         <input type="password" placeholder="SENHA" id="password-input-login" class="input-text-login">
-        <p id="warning-message"></p>
+
+        <p id="form-validation-messages" class="form-warning-messages hide"></p>
+        <p id="firebase-warning-messages" class="form-warning-messages hide"></p>
 
         <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
   
@@ -46,26 +49,35 @@ export default () => {
   `;
   loginContainer.innerHTML = template;
 
+  const email = loginContainer.querySelector('#email-input-login');
+  const password = loginContainer.querySelector('#password-input-login');
+  const btnLogin = loginContainer.querySelector('#btn-login-page');
+  // const btnResetPassword = loginContainer.querySelector('.password-reset-login');
+  const formValidationMessages = loginContainer.querySelector('#form-validation-messages');
+  const firebaseWarningMessages = loginContainer.querySelector('#firebase-warning-messages');
   const returnBtn = loginContainer.querySelector('#return-btn');
+
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
 
-  const inputEmail = loginContainer.querySelector('#email-input-login');
-  const inputPasssword = loginContainer.querySelector('#password-input-login');
-  const form = loginContainer.querySelector('#login-form');
-  // const btnResetPassword = loginContainer.querySelector('.password-reset-login');
-  const warningMessage = loginContainer.querySelector('#warning-message');
-
-  form.addEventListener('submit', (e) => {
+  btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    loginWithEmailAndPassword(inputEmail.value, inputPasssword.value)
-      .then(() => {
-        window.location.hash = '#feed';
-      })
-      .catch((error) => {
-        console.log(error);
-        const userFriendlyMessage = handleFirebaseErrors(error.code);
-        warningMessage.innerHTML = userFriendlyMessage;
-      });
+    const formValidation = validateLoginForm(email.value, password.value);
+    if (formValidation) {
+      formValidationMessages.classList.remove('hide');
+      firebaseWarningMessages.classList.add('hide');
+      formValidationMessages.innerHTML = formValidation;
+    } else {
+      loginWithEmailAndPassword(email.value, password.value)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
+        .catch((error) => {
+          const userFriendlyMessage = handleFirebaseErrors(error.code);
+          firebaseWarningMessages.classList.remove('hide');
+          formValidationMessages.classList.add('hide');
+          firebaseWarningMessages.innerHTML = userFriendlyMessage;
+        });
+    }
   });
 
   const googleBtn = loginContainer.querySelector('#google-btn');

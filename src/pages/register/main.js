@@ -5,6 +5,7 @@ import {
 
 import {
   handleFirebaseErrors,
+  validateRegisterForm,
 } from '../../lib/validation.js';
 
 export default () => {
@@ -41,7 +42,9 @@ export default () => {
               <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
               <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
 
-              <p id="warning-message" class="warning-message"></p>
+              <p id="form-validation-messages" class="form-warning-messages hide"></p>
+
+              <p id="firebase-warning-messages" class="form-warning-messages hide"></p>
               
               <input type="submit" class="btn-register" value="CADASTRAR">
               <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
@@ -55,36 +58,46 @@ export default () => {
 
   registerContainer.innerHTML = template;
 
-  const returnBtn = registerContainer.querySelector('#return-btn');
-  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
   const name = registerContainer.querySelector('#name-input');
   const email = registerContainer.querySelector('#register-input');
   const password = registerContainer.querySelector('#password-register');
-  const confirmPw = registerContainer.querySelector('#password-register-confirm');
+  const confirmPassword = registerContainer.querySelector('#password-register-confirm');
   const form = registerContainer.querySelector('.register-login');
   const btnGoogleRegister = registerContainer.querySelector('.btn-google-register');
-  const nameErrorMessage = registerContainer.querySelector('#name-message');
-  const confirmPwErrorMessage = registerContainer.querySelector('#confirm-password-message');
-  // const emailErrorMessage = registerContainer.querySelector('#email-message');
-  const passwordErrorMessage = registerContainer.querySelector('#password-message');
-  const warningMessage = registerContainer.querySelector('#warning-message');
+  const formValidationMessages = registerContainer.querySelector('#form-validation-messages');
+  const firebaseWarningMessages = registerContainer.querySelector('#firebase-warning-messages');
+  const returnBtn = registerContainer.querySelector('#return-btn');
+
+  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    registerWithEmailAndPassword(name.value, email.value, password.value)
-      .then(() => {
-        window.location.hash = '#feed';
-      })
-      .catch((error) => {
-        console.log(error);
-        const userFriendlyMessage = handleFirebaseErrors(error.code);
-        warningMessage.innerHTML = userFriendlyMessage;
-      });
+    const formValidation = validateRegisterForm(
+      name.value,
+      email.value,
+      password.value,
+      confirmPassword.value,
+    );
+    if (formValidation) {
+      formValidationMessages.classList.remove('hide');
+      formValidationMessages.innerHTML = formValidation;
+    } else {
+      registerWithEmailAndPassword(name.value, email.value, password.value)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
+        .catch((error) => {
+          const userFriendlyMessage = handleFirebaseErrors(error.code);
+          firebaseWarningMessages.classList.remove('hide');
+          formValidationMessages.classList.add('hide');
+          firebaseWarningMessages.innerHTML = userFriendlyMessage;
+        });
+    }
   });
 
   btnGoogleRegister.addEventListener('click', () => {
     loginWithGoogle()
-      .then((/* result */) => {
+      .then(() => {
         window.location.hash = '#feed';
       })
       .catch((/* error */) => {

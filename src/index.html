@@ -1,14 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+
   <title>Babysteps</title>
 </head>
+
 <body>
+  <header>
+    <nav class="header-nav">
+      <div class="menu-icon">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
+      <div id="internalContentMenu">
+        <ul>
+          <li>
+            <a class="side-icon-list" href="#notification">
+              <span class="side-internal-icon">
+                <ion-icon name="notifications-outline"></ion-icon>
+              </span>
+              <span class="side-internal-list">Notificaçoes</span>
+            </a>
+          </li>
+          <li>
+            <a class="side-icon-list" href="#guidelines">
+              <span class="side-internal-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </span>
+              <span class="side-internal-list">Diretrizes</span>
+            </a>
+          </li>
+          <li>
+            <a class="side-icon-list" href="#termOfUse">
+              <span class="side-internal-icon">
+                <ion-icon name="checkbox-outline"></ion-icon>
+              </span>
+              <span class="side-internal-list">Termos de uso</span>
+            </a>
+          </li>
+          <li>
+            <a class="side-icon-list" href="#logout">
+              <span class="side-internal-icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="side-internal-list">Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <img class="green-logo" src="img/logo_teste.png">
+  </header>
+
   <main id="root">
   </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <ul>
+        <li>
+          <a href="/#">
+            <span class="footer-icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="footer-list">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#publish">
+            <span class="footer-icon">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </span>
+            <span class="footer-list">Publicar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#profile">
+            <span class="footer-icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="footer-list">Perfil</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
   <script type="module" src="main.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+  <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
 </body>
+
 </html>

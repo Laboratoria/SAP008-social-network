@@ -1,25 +1,44 @@
 import {
   getAuth,
+  // onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
   sendPasswordResetEmail,
   updateProfile,
+  getFirestore,
+  addDoc,
+  collection,
 } from './firebase.js';
 
 import { app } from './configuration.js';
 
-// import { db } from '... firebase-firestore.js'
+const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider(app);
+
+// function userStateChanged() {
+//     const auth = getAuth(app);
+//     onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       // User is signed in, see docs for a list of available properties
+//       // https://firebase.google.com/docs/reference/js/firebase.User
+//       const uid = user.uid;
+//       // ...
+//     } else {
+//       // User is signed out
+//       // ...
+//     }
+//   });
+// }
 
 export function registerWithEmailAndPassword(name, email, password) {
   const auth = getAuth(app);
   return createUserWithEmailAndPassword(auth, email, password)
-    .then(() => updateProfile(auth.currentUser, {
-      displayName: name,
-    }));
+  .then(() => updateProfile(auth.currentUser, {
+    displayName: name,
+  }));
 }
 
 export function loginWithEmailAndPassword(email, password) {
@@ -35,4 +54,20 @@ export function loginWithGoogle() {
 export function resetPassword(email) {
   const auth = getAuth(app);
   return sendPasswordResetEmail(auth, email);
+}
+
+export const createPost = async (textPost) => {
+  const auth = getAuth(app);
+  try {
+    const docRef = await addDoc(collection(db, 'post'), {
+      author: auth.currentUser.uid,
+      data: Date.now(),
+      // tag: category,
+      text: textPost,
+      like: [],
+    });
+    console.log('Document written with ID: ', docRef.id);
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
 }

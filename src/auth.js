@@ -1,7 +1,7 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
   signOut, GoogleAuthProvider, signInWithPopup,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'; // eslint-disable-line import/no-unresolved
 
 import { app } from './config.js';
 

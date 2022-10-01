@@ -4,9 +4,10 @@
 
 // import { pageLogin } from '../src/pages/login/app.js';
 // import * as firebaseFunctions from '../src/lib/authentication.js';
-import { googleLogin } from '../src/lib/authentication.js';
 
-jest.mock('../src/lib/authentication.js');
+import { googleLogin } from '../authentication.js';
+
+jest.mock('../authentication.js');
 
 describe('google Login', () => {
   it('is a function', () => {
@@ -14,7 +15,11 @@ describe('google Login', () => {
   });
 
   it('Firebase signInWithPopup function', () => {
+    // const auth = jest.spyOn(firebase, 'auth');
     googleLogin('provider');
-    expect(firebase.auth).toHaveBeenCalledTimes(1);
+    // firebase.auth();
+    setTimeout(() => {
+      expect(firebase.auth).toHaveBeenCalledTimes(1);
+    }, 1000);
   });
 });

@@ -36,9 +36,9 @@ const provider = new GoogleAuthProvider(app);
 export function registerWithEmailAndPassword(name, email, password) {
   const auth = getAuth(app);
   return createUserWithEmailAndPassword(auth, email, password)
-  .then(() => updateProfile(auth.currentUser, {
-    displayName: name,
-  }));
+    .then(() => updateProfile(auth.currentUser, {
+      displayName: name,
+    }));
 }
 
 export function loginWithEmailAndPassword(email, password) {
@@ -70,4 +70,4 @@ export const createPost = async (textPost) => {
   } catch (e) {
     console.error('Error adding document: ', e);
   }
-}
+};

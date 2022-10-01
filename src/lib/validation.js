@@ -50,12 +50,12 @@ export function validateRegisterForm(name, email, password, confirmPassword) {
     message = 'Digite sua senha.';
     return message;
   }
-  if (confirmPassword === '') {
-    message = 'Confirme sua senha.';
-    return message;
-  }
   if (password.length < 6) {
     message = 'Sua senha deve conter, no mínimo, 6 dígitos.';
+    return message;
+  }
+  if (confirmPassword === '') {
+    message = 'Confirme sua senha.';
     return message;
   }
   if (confirmPassword !== password) {

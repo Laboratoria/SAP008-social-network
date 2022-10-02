@@ -13,6 +13,9 @@ export default () => {
             <input type="email" id="emailUser" placeholder="Digite seu e-mail" > 
             <input type="password" id="passwordUser" placeholder="Digite sua senha" >
             <input type="password" id="confirmPassword" placeholder="Confirme sua senha" >
+
+            <div class="register-error"></div>
+            
             <button type="button" class="buttons" id="button-register"> Criar conta </button>
             <button type="button" class="buttons" id="button-back"> Voltar </button>
         </div>

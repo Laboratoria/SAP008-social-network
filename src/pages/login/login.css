@@ -19,7 +19,7 @@ body {
     font-size: 0;
     align-items: center;
     justify-content: center;
-    padding: 2%;
+    padding: 1%;
     background-color: #151414;
 }
 
@@ -41,9 +41,10 @@ body {
     background-color: #ffffff;
     font-size: 1rem;
     border-radius: 2%;
+    margin-bottom: 3rem;
 }
 .logo-login {
-    height: 20vh;
+    height: 16vh;
 }
 
 .box-right .logo-login {
@@ -51,7 +52,7 @@ body {
 }
 
 #logo-login {
-    width: 12vw;
+    width: 10vw;
 }
 
 .box-right .register {
@@ -72,6 +73,11 @@ body {
 
 #logo-gmail {
     width: 35px;
+}
+
+.login-error-div{
+    font-size: 1rem;
+    color: #C30707;
 }
 
 .box-right .button {
@@ -145,11 +151,6 @@ body {
 
 #button-register {
     color: #ffffff;
-}
-
-#register {
-    font-size: 0.8rem;
-    color: #1e1d1d;
 }
 
 #recover{

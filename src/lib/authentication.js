@@ -1,10 +1,11 @@
+import { showErrors } from '../errors.js';
+
 export const googleLogin = (provider) => {
   firebase.auth().signInWithPopup(provider).then((result) => {
     const credential = provider.credentialFromResult(result);
     const user = result.user;
     const token = credential.accessToken;
     localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(user));
     firebase.firestore().collection('users').doc(user.email).set(
       {
         email: user.email, image: user.photoURL, name: user.displayName, uid: user.uid,
@@ -13,8 +14,8 @@ export const googleLogin = (provider) => {
     );
   }).catch((error) => {
     const errorCode = error.code;
-    if (errorCode === 'auth/popup-closed-by-user') {
-      alert('A janela pop-up foi fechada pelo usuário sem concluir o login no provedor');
+    if (errorCode) {
+      showErrors(error);
     } else window.location.replace('#page');
   });
 };
@@ -32,29 +33,18 @@ export const login = (email, password) => {
         window.location.replace('#page');
       })
       .catch((error) => {
-        const errorCode = error.code;
-        if (errorCode === 'auth/invalid-email') {
-          alert('Endereço de email não é válido');
-        } else if (errorCode === 'auth/user-not-found') {
-          alert('Não há nenhum usuário correspondente ao e-mail fornecido.');
-        } else if (errorCode === 'auth/wrong-password') {
-          alert('A senha é inválida para o e-mail fornecido.');
-        } else {
-          alert('Algo deu errado. Por favor, tente novamente.');
-        }
+        showErrors(error);
       });
   }
 };
 
 export const recover = (email) => {
   firebase.auth().sendPasswordResetEmail(email).then(() => {
-    alert('Email enviado com sucesso');
+    alert('E-mail enviado com sucesso');
   }).catch((error) => {
     const errorCode = error.code;
-    if (errorCode === 'auth/invalid-email') {
-      alert('E-mail inválido');
-    } else {
-      alert('Algo deu errado. Por favor, tente novamente.');
+    if (errorCode) {
+      showErrors(error);
     }
   });
 };

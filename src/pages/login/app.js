@@ -35,11 +35,12 @@ export default () => {
           <input id="inputEmail" type="email" placeholder="E-mail" name="email" required>
           <input id="inputPassword" type="password" placeholder="Senha" name="password" required>
         </div>
-  
+        
         <div class="register">
+        <div class="login-error-div" id="print-error-here"></div> 
         <span id="recover"> Esqueci a senha 😰 </span>
           <button type="button" id="button-enter" class="button">Entrar</button>
-          <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1.3rem"> Cadastre-se! </p>
+          <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1rem"> Cadastre-se! </p>
         </div>
       </div>
     </div>

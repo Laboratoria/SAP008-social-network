@@ -38,9 +38,9 @@ const createAccount = async (email, password) => {
   }
 };
 
-const logout = async () => {
-  await signOut(auth);
-};
+//const logout = async () => {
+//  await signOut(auth);
+//};
 
 const provider = new GoogleAuthProvider();
 const signInGoogle = () => {
@@ -57,7 +57,6 @@ const signInGoogle = () => {
 export {
   auth,
   loginEmailPassword,
-  createAccount,
-  logout,
+  createAccount,  
   signInGoogle,
 };

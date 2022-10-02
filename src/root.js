@@ -8,36 +8,45 @@ import './lib/configuration.js';
 
 const main = document.querySelector('#root');
 
+function verify() {
+  switch (window.location.hash) {
+    case '#homepage':
+      main.appendChild(homepage());
+      break;
+    case '#about':
+      main.appendChild(about());
+      break;
+    case '#login':
+      main.appendChild(login());
+      break;
+    case '#resetPassword':
+      main.appendChild(resetPassword());
+      break;
+    case '#register':
+      main.appendChild(register());
+      break;
+    case '#feed':
+      main.appendChild(feed());
+      break;
+    default:
+      main.innerHTML = '';
+      main.appendChild(homepage());
+  }
+}
+
 const init = () => {
   window.addEventListener('hashchange', () => {
     main.innerHTML = '';
-    switch (window.location.hash) {
-      case '#homepage':
-        main.appendChild(homepage());
-        break;
-      case '#about':
-        main.appendChild(about());
-        break;
-      case '#login':
-        main.appendChild(login());
-        break;
-      case '#resetPassword':
-        main.appendChild(resetPassword());
-        break;
-      case '#register':
-        main.appendChild(register());
-        break;
-      case '#feed':
-        main.appendChild(feed());
-        break;
-      default:
-        main.innerHTML = '';
-        main.appendChild(homepage());
-    }
+    verify();
   });
 };
 
 window.addEventListener('load', () => {
-  main.appendChild(homepage());
-  init();
+  main.innerHTML = '';
+  if (window.location.hash) {
+    verify();
+  } else {
+    main.appendChild(homepage());
+    init();
+  }
 });

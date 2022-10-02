@@ -1,32 +1,224 @@
-.form {
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+  --branco: aliceblue;
+  --roxo: #5E17EB;
+  --violeta: #9B59B6;
+  --lilas: #A87CFE;
+  --black: #000000;
 }
 
-.name,
-.email,
-.password,
-.buttonSignup {
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+  background: linear-gradient(#5E17EB, #A87CFE);
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  color: var(--branco);
+  background: rgb(255, 255, 255, 0.2);
+  padding: 1vw;
+  width: 90vw;
+  height: 72vh;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-signup {
+  display: block;
+  width: 60vw;
+  margin-bottom: 3vh;
+}
+
+.signup-form {
+  margin: 1vh 0 1vh;
+  margin-top: -4vh;
+}
+
+
+.signup-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.signup-label {
+  margin-bottom: 5vh;
+  width: 90%;
+  cursor: text;
+}
+
+.input-signup {
+  width: 90%;
+  height: 3vh;
+  margin: 0;
+  border: 0;
+  border-bottom: solid 2px var(--branco);
+  padding: 1vw;
+  outline: 0;
+  background-color: rgb(255, 255, 255, 0);
+  font-size: 1.3em;
+}
+
+#txtEmail,
+#txtPassword,
+#txtName,
+::placeholder {
+  color: var(--branco);
+  text-align: center;
+}
+
+.btnSignup {
+  width: 56vw;
+  height: 6vh;
+  padding: 1vw 2vw;
+  margin: 4vh 0 -2vh;
+  border-radius: 20px;
+  color: var(--violeta);
+  border: 0;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.btnSignup:hover {
+  background-color: var(--roxo);
+  box-shadow: 0px 0px 20px var(--roxo);
+  transform: translate(0px, -2px);
+  transition: transform 0.5s;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.wallpaper-signup {
+  display: none;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .wallpaper-signup {
+    display: none;
+  }
+
+  .logo-signup {
+    display: block;
+    width: 45vw;
+    margin-bottom: 10vh;
+
+  }
+
+  .signup-container {
+    height: 86vh;
+  }
+
+  .input-signup {
+    font-size: 1rem;
+  }
+
+  .btnSignup {
+    font-size: 1rem;
+  }
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+  .logo-signup {
+    width: 20vw;
+  }
+
+  .signup-container {
+    width: 28vw;
+    height: 78vh;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .input-signup {
+    font-size: 1rem;
+  }
+
+  .btnSignup {
+    width: 16vw;
+    font-size: 1rem;
+  }
+
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: white;
-    margin-top: 10px;
+  }
+
+  .wallpaper-signup {
+    display: grid;
+    width: 33vw;
+    height: 82vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
 }
 
-.buttonSignup {
-    padding: 1vw 2vw;
-    border-radius: 20px;
-    border: 0;
-    font-weight: bolder;
-    text-transform: uppercase;
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  .logo-signup {
+    width: 15vw;
+    margin-bottom: 10vh;
+  }
+
+  .signup-container {
+    width: 27vw;
+    height: 70vh;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-signup {
+    font-size: 1rem;
+  }
+
+  .btnSignup {
+    width: 16vw;
+    font-size: 1rem;
+  }
+
+  .wallpaper-signup {
+    display: grid;
+    width: 30vw;
+    height: 74vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
 }
-
-.buttonSignup:hover {
-    background-color: var(--roxo);
-    box-shadow: 0px 0px 20px var(--roxo);
-    transform: translate(0px, -2px);
-    transition: transform 0.5s;
-}
-
-

@@ -8,7 +8,7 @@ export default function signUp() {
      <section class="signup-container">      
         <img src="./img/picsfem.png" class="logo-signup">              
         <form class="signup-form" >
-          <div class="signup-box">
+          <div class="name-email-pass">
             <label class= "signup-label" for="name">              
               <input class="input-signup" id="txtName" type="text" name="name" placeholder="Nome" required>
             </label>            

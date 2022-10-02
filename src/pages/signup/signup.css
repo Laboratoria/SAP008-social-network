@@ -62,7 +62,7 @@ main {
 }
 
 
-.signup-box {
+.name-email-pass{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

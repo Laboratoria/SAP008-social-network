@@ -13,6 +13,7 @@ import {
   getDoc,
   doc,
   updateDoc,
+  getDocs,
 } from './firebase.js';
 
 import { app } from './configuration.js';
@@ -21,10 +22,10 @@ const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider(app);
 
-// function userStateChanged() {
-//     const auth = getAuth(app);
-//     onAuthStateChanged(auth, (user) => {
-//     if (user) {
+// function userStateChanged(loggedIn) {
+//   const auth = getAuth(app);
+//   onAuthStateChanged(auth, (user) => {
+//     if (loggedIn) {
 //       // User is signed in, see docs for a list of available properties
 //       // https://firebase.google.com/docs/reference/js/firebase.User
 //       const uid = user.uid;
@@ -105,4 +106,17 @@ export const updatePost = async (idPost, textValue, category) => {
     text: textValue,
     tag: category,
   });
+};
+
+export const getAllPosts = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'post'));
+    const arrPosts = [];
+    querySnapshot.forEach((post) => {
+      arrPosts.push({ ...post.data(), id: post.id });
+    });
+    return arrPosts;
+  } catch (a) {
+    return a;
+  }
 };

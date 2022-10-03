@@ -2,9 +2,9 @@
 body {
   text-align: center;
   margin:0;
-  background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
+  /* background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   height: 100%;
 }
 body{

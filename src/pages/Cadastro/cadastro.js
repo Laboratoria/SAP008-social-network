@@ -33,7 +33,7 @@ export default () => {
 
   const auth = getAuth(app);
   const nameUser = containerRegistration.querySelector("#input-name")
-  const nameProfile = containerRegistration.querySelector("#profile-name")
+  const nameProfile = containerRegistration.querySelector("#input-profile-name")
   const email = containerRegistration.querySelector("#input-email-registration")
   const password = containerRegistration.querySelector("#password")
   const btnRegistration = containerRegistration.querySelector("#button-registration")
@@ -44,7 +44,7 @@ export default () => {
 
   btnRegistration.addEventListener("click", function (e) {
     e.preventDefault();
-    register (email.value, password.value)
+    register (email.value, password.value, nameProfile.value, nameUser.value)
 
   })
 

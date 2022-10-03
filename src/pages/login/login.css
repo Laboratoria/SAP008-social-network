@@ -7,11 +7,12 @@ desktop: de 992 até 1200
 telas grandes: acima de 1200 */
 
 /*versão mobile first - fazer @mq somente de tablet e desktop*/
-body {
-background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
+html {
+  background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
   background-position: center;
   height: 100%;
 }
+
 
 .main {
     display: inline-flex;

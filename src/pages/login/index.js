@@ -1,62 +1,55 @@
-import { loginEmailPassword, logout, signInGoogle } from '../../lib/auth.js';
+import { loginEmailPassword, signInGoogle } from '../../lib/auth.js';
 
 export default () => {
   const container = document.createElement('div');
-  const template = `
-    <div class="container">
-      <section class="login">      
-          <img src="./img/picsfem.png" class="login-logo">
+  container.classList.add('wrapper-login');
+  const template = `    
+    <section class="container-login"> 
+      <div class="container-login1">
+        <img src="./img/picsfem.png" class="logo-login">                  
 
-          <h1 class="login-title">Fazer login</h1>
+        <form class="form-login">
+          <div class="email-and-password-container">            
+            <label class="login-label" id="loginLabel" for="email">                
+              <input id="txtEmail" type="email" name="email" class="input-login" placeholder="Email" required>
+            </label>
+                
+            <label class="login-label" id="loginLabel" for="password">                
+              <input id="txtPassword" type="password" name="password" class="input-login" placeholder="Senha" minlength="8" required>
+            </label>              
 
-          <div id="form-container"></div>
-
-          <form id="login-form">
-            <div class="email-pass">
-            
-              <label class="login-label">
-                <span>Email:</span>
-                <input id="txtEmail" type="email" name="email" class="input">
-              </label>
+          </div>           
               
-              <label class="login-label" id="loginLabel">
-                <span>Senha</span>
-                <input id="txtPassword" type="password" name="password" class="input">
-              </label>
-            
-            </div>
-            
-            <div class="txt-error" id="txtError"></div>
-            
-            <div class="ads">
-              <div class="Criar">
-                <a href="#signup" id="btnSignupSpa" type="button" class="button2">Criar conta</a>
-              </div>
+          <div class="signup-and-forgotpassword-container">              
+            <a href="#signup" type="button" class="signup-and-forgotpassword" style="text-decoration:none">Criar conta</a>
+                
+            <a href="#" class="signup-and-forgotpassword">Esqueceu a senha?</a>
+          </div>   
 
-              <a href="#" class="login-link">Esqueceu a senha?</a>
-            </div>
+          <p class="txt-error" id="txtError"></p>   
 
-            <span id="message" class="message"></span>
+          <button id="btnLogin" type="button" class="btn-login">Entrar</button>                   
+                                                  
+        </form>
+      </div>
 
-            <div class="entrar">
-              <button id="btnLogin" type="button" class="button">Entrar</button>
-            </div>          
+      <div class="container-login2">
+        <div class="line-container">
+          <hr class="line">
+            <span class="txt-line">ou</span>
+          <hr class="line">            
+        </div>
+              
+        <button id="btn-gmail" type="button" class="btn-google">
+          <img class="google-icon" src="./img/google-icon.png" alt="google-icon">
+          Continue com google
+        </button>
+      </div>               
+      
+    </section>       
 
-            <a class="login-link2">Logar como:</a>
-
-            <div class="login-icons">
-              <button id="btn-gmail" type="button" class="icons-button">
-              <img src="./img/icongmail.png" alt="gmail">
-              </button>          
-            </div>
-          </form>                
-      </section>
-
-      <img class="wallpaper" src="./img/foto.png">       
-
-    </div>
-    <button id="btnLogout" type="button">Log out</button>
-     
+    <img class="wallpaper-login" src="./img/foto.png">      
+       
     `;
 
   container.innerHTML = template;
@@ -64,7 +57,7 @@ export default () => {
   const txtEmail = container.querySelector('#txtEmail');
   const txtPassword = container.querySelector('#txtPassword');
   const btnLogin = container.querySelector('#btnLogin');
-  const btnLogout = container.querySelector('#btnLogout');
+  //const btnLogout = container.querySelector('#btnLogout');
   const btnGmail = container.querySelector('#btn-gmail');
   btnLogin.addEventListener('click', () => {
     const email = txtEmail.value;
@@ -72,7 +65,7 @@ export default () => {
     loginEmailPassword(email, password);
   });
 
-  btnLogout.addEventListener('click', logout);
+  //btnLogout.addEventListener('click', logout);
 
   btnGmail.addEventListener('click', signInGoogle);
   return container;

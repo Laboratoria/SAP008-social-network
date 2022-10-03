@@ -45,16 +45,30 @@ export default () => {
   function validatePassword() {
     if (
       inputUserName.value === '' || inputEmail.value === '' || inputPassword.value === '' || inputNewPassword.value === '') {
-      alert('Por favor, preencha todos os campos');
+      document.querySelector('.register-error').innerHTML = 'Por favor, preencha todos os campos.';
     } else if (inputPassword.value !== inputNewPassword.value) {
-      alert('A senha digitada está diferente em um dos campos');
+      document.querySelector('.register-error').innerHTML = 'A senha digitada está diferente em um dos campos.';
     } else {
       const email = inputEmail.value;
       const password = inputPassword.value;
       const userName = inputUserName.value;
-      return register(email, password, userName);
+      return register(email, password, userName)
+        .then(() => {
+          window.location.replace('#page');
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          if (errorCode === 'auth/email-already-in-use') {
+            document.querySelector('.register-error').innerHTML = 'E-mail já cadastrado. Insira um e-mail diferente.';
+          } else if (errorCode === 'auth/invalid-email') {
+            document.querySelector('.register-error').innerHTML = 'E-mail inválido';
+          } else {
+            document.querySelector('.register-error').innerHTML = 'Algo deu errado. Por favor, tente novamente.';
+          }
+        });
     }
   }
+
   buttonRegister.addEventListener('click', validatePassword);
 
   function backToPage() {

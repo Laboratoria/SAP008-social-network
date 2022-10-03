@@ -1,5 +1,29 @@
 import { showErrors } from '../errors.js';
 
+export const getCurrentUser = () => firebase.auth().currentUser;
+
+export const firestore = () => firebase.firestore().collection('posts');
+
+export const updatePost = (updateButton, updateMovie, updateText) => {
+  firebase.firestore().collection('posts').doc(updateButton)
+    .update({
+      movie: updateMovie,
+      text: updateText,
+    });
+};
+
+export const deletePost = (removeButtonId) => {
+  firebase.firestore().collection('posts')
+    .doc(removeButtonId)
+    .delete();
+};
+
+export const likeFirebase = (id) => firestore().doc(id).update({
+  like: firebase.firestore.FieldValue.increment(1),
+})
+  .then(() => true)
+  .catch((error) => error);
+
 export const googleLogin = (provider) => {
   firebase.auth().signInWithPopup(provider).then((result) => {
     const credential = provider.credentialFromResult(result);
@@ -22,9 +46,10 @@ export const googleLogin = (provider) => {
 
 export const login = (email, password) => {
   if (!email) {
-    alert('Por favor, digite o endereço de email.');
+    // eslint-disable-next-line no-multi-assign
+    document.querySelector('.login-error-div').innerHTML = 'Por favor, digite o endereço de email.';
   } else if (!password) {
-    alert('Por favor, digite sua senha.');
+    document.querySelector('.login-error-div').innerHTML = 'Por favor, digite sua senha.';
   } else {
     firebase
       .auth()
@@ -64,11 +89,11 @@ export const register = (email, password, userName) => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/email-already-in-use') {
-        alert('E-mail já cadastrado, insira um e-mail diferente');
+        document.querySelector('.register-error').innerHTML = 'E-mail já cadastrado. Insira um e-mail diferente.';
       } else if (errorCode === 'auth/invalid-email') {
-        alert('E-mail inválido');
+        document.querySelector('.register-error').innerHTML = 'E-mail inválido';
       } else {
-        alert('Algo deu errado. Por favor, tente novamente.');
+        document.querySelector('.register-error').innerHTML = 'Algo deu errado. Por favor, tente novamente.';
       }
     });
 };

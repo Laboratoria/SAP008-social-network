@@ -1,4 +1,4 @@
-import { getCurrentUser } from '../../lib/exports.js';
+import { getCurrentUser } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');

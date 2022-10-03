@@ -1,4 +1,8 @@
-export const getCurrentUser = () => firebase.auth().currentUser;
+export const getDisplayName = () => firebase.auth().currentUser.displayName;
+
+export const getUserUid = () => firebase.auth().currentUser.uid;
+
+export const getPhotoUser = () => firebase.auth().currentUser.photoURL;
 
 export const firestore = () => firebase.firestore().collection('posts');
 

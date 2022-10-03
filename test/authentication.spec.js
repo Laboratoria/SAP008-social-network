@@ -1,25 +1,59 @@
-/*
-* @jest-environment jsdom
-*/
+import {
+  login, googleLogin, register, recover, signOut,
+} from '../src/lib/authentication.js';
 
-// import { pageLogin } from '../src/pages/login/app.js';
-// import * as firebaseFunctions from '../src/lib/authentication.js';
-
-import { googleLogin } from '../src/lib/authentication.js';
-
-// jest.mock('../authentication.js');
+// beforeEach(() => jest.clearAllMocks());
 
 describe('google Login', () => {
   it('is a function', () => {
     expect(typeof googleLogin).toBe('function');
   });
 
-  it('Firebase signInWithPopup function', () => {
+  it('should call Firebase signInWithPopup function', () => {
     // const auth = jest.spyOn(firebase, 'auth');
-    googleLogin('provider');
+    googleLogin();
     // firebase.auth();
-    setTimeout(() => {
-      expect(firebase.auth).toHaveBeenCalledTimes(1);
-    }, 1000);
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('login', () => {
+  it('is a function', () => {
+    expect(typeof login).toBe('function');
+  });
+  it('should call Firebase signInWithEmailAndPassword function', () => {
+    const email = 'eutesto@teste.com';
+    const password = 'teste123';
+    login(email, password);
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+    expect(firebase.auth).toHaveBeenCalledWith(undefined, email, password);
+  });
+});
+
+describe('register', () => {
+  it('is a function', () => {
+    expect(typeof register).toBe('function');
+  });
+
+  it('should call Firebase createUserWithEmailAndPassword( function', () => {
+    register();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('recover', () => {
+  it('is a function', () => {
+    expect(typeof recover).toBe('function');
+  });
+
+  it('should call Firebase sendPasswordResetEmail( function', () => {
+    recover();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('signOut', () => {
+  it('is a function', () => {
+    expect(typeof signOut).toBe('function');
   });
 });

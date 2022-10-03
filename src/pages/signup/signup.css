@@ -9,7 +9,10 @@
 * {
   margin: 0px;
   padding: 0px;
+  border: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 body,
@@ -19,19 +22,10 @@ html {
   width: 100vw;
 }
 
-main {
+.wrapper-signup {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;  
   justify-content: center;
   align-items: center;
 }
@@ -39,10 +33,10 @@ main {
 .signup-container {
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  padding: 1vw;
-  width: 90vw;
-  height: 72vh;
-  border-radius: 20px;
+  padding: 3px;
+  width: 90%;
+  height: 75%;
+  border-radius: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -50,39 +44,36 @@ main {
   text-align: center;
 }
 
-.logo-signup {
-  display: block;
-  width: 60vw;
-  margin-bottom: 3vh;
+.logo-signup {  
+  width: 80%;  
 }
 
 .signup-form {
-  margin: 1vh 0 1vh;
-  margin-top: -4vh;
+  margin: -5px 0 0;  
+  width: 80%;
 }
 
 .name-email-pass{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 
 .signup-label {
-  margin-bottom: 5vh;
-  width: 90%;
+  margin-bottom: 35px;
+  width: 100%;
   cursor: text;
 }
 
 .input-signup {
   width: 90%;
-  height: 3vh;
-  margin: 0;
-  border: 0;
+  height: 100%;  
   border-bottom: solid 2px var(--branco);
-  padding: 1vw;
+  padding: 1px;
   outline: 0;
   background-color: rgb(255, 255, 255, 0);
-  font-size: 1.3em;
+  font-size: 1.3rem;
 }
 
 #txtEmail,
@@ -94,15 +85,15 @@ main {
 }
 
 .btnSignup {
-  width: 56vw;
-  height: 6vh;
-  padding: 1vw 2vw;
-  margin: 4vh 0 -2vh;
+  width: 70%;  
+  padding: 10px;
+  margin: 28px 0 0;
   border-radius: 20px;
-  color: var(--violeta);
-  border: 0;
+  color: var(--violeta);  
+  background-color: var(--branco);
   font-weight: bolder;
   text-transform: uppercase;
+  font-size: 1.5rem;
 }
 
 .btnSignup:hover {
@@ -115,109 +106,27 @@ main {
 }
 
 .wallpaper-signup {
-  display: none;
+  display: none;  
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .wallpaper-signup {
-    display: none;
-  }
-
-  .logo-signup {
-    display: block;
-    width: 45vw;
-    margin-bottom: 10vh;
-
-  }
+@media screen and (min-width: 1024px) {
+  .wrapper-signup {
+    padding: 0 40px 0;
+  }  
 
   .signup-container {
-    height: 86vh;
-  }
-
-  .input-signup {
-    font-size: 1rem;
-  }
-
-  .btnSignup {
-    font-size: 1rem;
-  }
-
-}
-
-@media screen and (min-width: 992px) and (max-width: 1024px) {
-  .logo-signup {
-    width: 20vw;
-  }
-
-  .signup-container {
-    width: 28vw;
-    height: 78vh;
     border-radius: 20px 0 0 20px;
-  }
+    width: 30%;
+    height: 70%;
+  }  
 
-  .input-signup {
-    font-size: 1rem;
-  }
-
-  .btnSignup {
-    width: 16vw;
-    font-size: 1rem;
-  }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .wallpaper-signup {
-    display: grid;
-    width: 33vw;
-    height: 82vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
+  .wallpaper-signup {  
+    display: block;     
+    width: 30%;
+    height: 70%;     
+    border-radius: 0 20px 20px 0;
+  }  
 
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1400px) {
-  .logo-signup {
-    width: 15vw;
-    margin-bottom: 10vh;
-  }
 
-  .signup-container {
-    width: 27vw;
-    height: 70vh;
-    border-radius: 20px 0 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .input-signup {
-    font-size: 1rem;
-  }
-
-  .btnSignup {
-    width: 16vw;
-    font-size: 1rem;
-  }
-
-  .wallpaper-signup {
-    display: grid;
-    width: 30vw;
-    height: 74vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-}

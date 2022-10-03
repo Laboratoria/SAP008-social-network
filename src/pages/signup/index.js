@@ -2,9 +2,9 @@ import { createAccount } from '../../lib/auth.js';
 
 export default function signUp() {
   const container = document.createElement('div');
+  container.classList.add('wrapper-signup');
 
-  const template = `
-    <div class="container">
+  const template = `    
      <section class="signup-container">      
         <img src="./img/picsfem.png" class="logo-signup">              
         <form class="signup-form" >
@@ -26,8 +26,6 @@ export default function signUp() {
         </form>                
      </section>
      <img class="wallpaper-signup" src="./img/foto.png">       
-
-    </div>    
     `;
   container.innerHTML = template;
 

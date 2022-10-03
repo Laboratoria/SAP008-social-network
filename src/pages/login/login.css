@@ -65,8 +65,7 @@ body, html {
   width: 80%; 
 }
 
-.form-login {  
-  display: block; 
+.form-login {    
   margin: -5px 0 0;  
   width: 80%;
 }
@@ -188,8 +187,7 @@ body, html {
 }
 
 .wallpaper-login {  
-  display: none;  
-  border-radius: 0 20px 20px 0;   
+  display: none;       
 }
 
 @media screen and (min-width: 1024px) {
@@ -207,5 +205,6 @@ body, html {
     display: block;     
     width: 30%;
     height: 70%;     
+    border-radius: 0 20px 20px 0;
   }  
 }

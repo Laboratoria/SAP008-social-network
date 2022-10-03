@@ -10,6 +10,9 @@ import {
   getFirestore,
   addDoc,
   collection,
+  getDoc,
+  doc,
+  updateDoc,
 } from './firebase.js';
 
 import { app } from './configuration.js';
@@ -71,3 +74,26 @@ export const createPost = async (textPost) => {
     console.error('Error adding document: ', e);
   }
 };
+
+export const postById = async (idPost) => {
+  const docRef = doc(db, 'post', idPost);
+  const docSnap = await getDoc(docRef);
+
+  return docSnap.data();
+};
+
+export const like = async (idPost, idUser) => {
+  const likePost = await postById(idPost);
+  const likes = likePost.like;
+  const userLiked = likes.indexOf(idUser);
+
+  if (userLiked !== -1) {
+    likes.splice(userLiked, 1);
+  } else {
+    likes.push(idUser);
+  }
+
+  await updateDoc(doc(db, 'post', idPost), {
+    like: likes,
+  });
+

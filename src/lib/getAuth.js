@@ -7,9 +7,9 @@ const auth = getAuth(app)
 
 export const register = (email, password, profileName, realName) => {
   return createUserWithEmailAndPassword(auth, email, password)
-    .then((banana) => {
+    .then((userCredential) => {
       // Signed in
-      const user = banana.user;
+      const user = userCredential.user;
       console.log(user)
       updateProfile(auth.currentUser, {
         displayName: profileName,

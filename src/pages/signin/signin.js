@@ -1,4 +1,4 @@
-import { addUser } from '../../lib/auth.js';
+import { newUser } from '../../lib/auth.js';
 export default () => {
     const container = document.createElement('div');
     const template =
@@ -29,15 +29,27 @@ export default () => {
         <div class="logo"></div>
     </section>`;
 
+    container.innerHTML = template;
+    
+    const signInName = document.querySelector('#name');
     const okSigninBtn = container.querySelector('#ok-form-btn');
-    const signInEmail = container.querySelector('#email').value;
-    const signInPassword = container.querySelector('#password').value;
+    const signInEmail = container.querySelector('#email');
+    const signInPassword = container.querySelector('#password');
 
     okSigninBtn.addEventListener('click', () => {
-        const cadastro = addUser(signInEmail, signInPassword)
-        return console.log(cadastro)
+        
+        return console.log(signInEmail.value, signInPassword.value)
 
     })
-    container.innerHTML = template;
-    return container;
+    
+   return container;
 }
+
+
+
+
+
+
+
+
+

@@ -2,20 +2,21 @@
 
 
 import load from './pages/load/load.js'
-import entrar from './pages/entrar/entrar.js'
-import cadastrar from './pages/cadastrar/cadastrar.js'
+import login from './pages/login/login.js'
+import signin from './pages/signin/signin.js'
+import home from './pages/home/home.js'
 
 const main = document.querySelector('#root');
 
 const googleBtn = document.querySelector('#google-login');
 const okLoginBtn = document.querySelector('#ok-login-btn');
-const signInName = document.querySelector('#name');
+
 
 //const signInConfirmPassword = document.querySelector('#confirm-password')
 
 const checkBox = document.querySelector('#checkbox');
 
-const navegar = () => {
+const navigate = () => {
     window.addEventListener('hashchange', () => {
         main.innerHTML = "";
         switch (window.location.hash) {
@@ -23,10 +24,11 @@ const navegar = () => {
                 main.appendChild(load());
                 break;
             case '#entrar':
-                main.appendChild(entrar());
+                main.appendChild(login());
                 break;
             case '#cadastre-se':
-                main.appendChild(cadastrar());
+                main.appendChild(signin());
+                break;
             case '#home':
                 main.appendChild(home());
                 break;
@@ -38,7 +40,7 @@ const navegar = () => {
 
 window.addEventListener('load', () => {
     main.appendChild(load());
-    navegar();
+    navigate();
 })
 
 

@@ -5,7 +5,7 @@ import { app } from './configuration.js';
 
 const auth = getAuth(app)
 
-export const addUser = async (email, password) => {
+export const newUser = async (email, password) => {
   try {
     const newUser = await createUserWithEmailAndPassword(auth, email, password)
     console.log(newUser);

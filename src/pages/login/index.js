@@ -49,7 +49,7 @@ export default () => {
     </section>       
 
     <img class="wallpaper-login" src="./img/foto.png">      
-       
+
     `;
 
   container.innerHTML = template;

@@ -5,14 +5,13 @@ export default function signUp() {
 
   const template = `
     <div class="container">
-     <section class="signup-box">      
-        <img src="./img/picsfem.png" class="logo">              
-
-        <form>
-          <div class="signup-container">
+     <section class="signup-container">      
+        <img src="./img/picsfem.png" class="logo-signup">              
+        <form class="signup-form" >
+          <div class="name-email-pass">
             <label class= "signup-label" for="name">              
               <input class="input-signup" id="txtName" type="text" name="name" placeholder="Nome" required>
-            </label>            
+            </label>
 
             <label class= "signup-label" for="email">              
               <input class="input-signup" id="txtEmail" type="email" name="email" id="txtEmail" placeholder="Email" required>
@@ -22,12 +21,11 @@ export default function signUp() {
               <input class="input-signup" id="txtPassword" type="password" name="password" id="txtPassword" minlength="8" placeholder="Senha" required>
             </label>
           </div>
-
+          
           <a href="#login" id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</a>
         </form>                
      </section>
-
-     <img class="wallpaper" src="./img/foto.png">       
+     <img class="wallpaper-signup" src="./img/foto.png">       
 
     </div>    
     `;

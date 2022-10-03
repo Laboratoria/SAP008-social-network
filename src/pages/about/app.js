@@ -54,8 +54,7 @@ export default () => {
           <div class="networks">
           <div class="social">
           <a href="https://www.instagram.com/ellenccavalcante/"target="_blank"> <img " id="insta-icon" src="../src/img/Instagram-Icon.png.webp"></a>
-          <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAA9o22IBmfM-qL6BQcSHxLDl1U5g
-          rrisKMQ&keywords=ellen%20cavalcante%20brito&origin=RICH_QUERY_SUGGESTION&position=0&searchId=305a1989-6a85-4291-91f4-23657476d075&sid=ujg" target="_blank"><img id="linkedinIcon" src="../src/img/linkedinIcon.png"> </a>
+          <a href="https://www.linkedin.com/in/ellencavalcantebrito/" target="_blank"><img id="linkedinIcon" src="../src/img/linkedinIcon.png"> </a>
            </div>
          </div> 
       </div>
@@ -71,8 +70,8 @@ export default () => {
               Sou organizada, criativa, multitarefas (habilidade adquirida juntamente com a maternidade) e gosto de estar sempre aprendendo algo novo. 
               <div class="networks">
               <div class="social">
-              <a href="https://www.instagram.com/ellenccavalcante/"target="_blank"> <img " id="insta-icon" src="../src/img/Instagram-Icon.png.webp"></a>
-              <img id="linkedinIcon" src="../src/img/linkedinIcon.png">  </div>
+              <a href="https://www.instagram.com/vanessabuecker/"target="_blank"> <img " id="insta-icon" src="../src/img/Instagram-Icon.png.webp"></a>
+              <a href="https://www.linkedin.com/in/vanessa-bueck/"target="_blank"> <img id="linkedinIcon" src="../src/img/linkedinIcon.png">  </div>
               </div> 
           </div>   
      </div>

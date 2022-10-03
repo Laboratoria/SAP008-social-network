@@ -12,12 +12,8 @@ const firebaseConfig = {
   appId: '1:758989628486:web:f90898b4d0d5846a405647',
 };
 
-const btnLoginEnter = document.getElementById('buttonLogin');
-const btnSignUp = document.getElementById('buttonSignUp');
-const signUpForm = document.getElementById('signUpForm')
 const inputLoginEmail = document.getElementById('loginEmail');
-const inputLoginPassword = document.getElementById('loginPassword'); 
-const btnGoogle = document.getElementById('buttonGoogle');
+const inputLoginPassword = document.getElementById('loginPassword');
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -26,15 +22,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 connectAuthEmulator(auth, "http://localhost:9099");
 
-btnGoogle.addEventListener('click', event => {
-  event.preventDefault();
-  const provider = new firebaseConfig.auth.GoogleAuthProvider()
-  firebase.auth().signInWithPopUp(provider)
-});
-
-
-
-/*const loginEmailPassword = async () => {
+  const loginEmailPassword = async () => {
   const loginEmail = inputLoginEmail.value;
   const loginPassword = inputLoginPassword.value;
 
@@ -49,6 +37,6 @@ btnGoogle.addEventListener('click', event => {
   
 };
 
-btnLoginEnter.addEventListener('click', loginEmailPassword);
-buttonSignUp.addEventListener('click', createAccount);*/
+const btnSignUp = document.getElementById('buttonSignUp')
+btnSignUp.addEventListener('click', loginEmailPassword);
 

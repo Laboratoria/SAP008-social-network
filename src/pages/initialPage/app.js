@@ -1,4 +1,5 @@
 import { getCurrentUser, firestore, likeFirebase } from '../../lib/exports.js';
+import { signOut } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -96,7 +97,7 @@ export default () => {
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
     e.preventDefault();
-    firebase.auth().signOut().then(() => {
+    signOut().then(() => {
       main.innerHTML = ' ';
       window.location.hash = '#login';
     });

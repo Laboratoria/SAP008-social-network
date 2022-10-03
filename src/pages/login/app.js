@@ -1,6 +1,8 @@
 import { googleLogin, login, recover } from '../../lib/authentication.js';
+import { showErrors } from '../../errors.js';
+/* eslint-disable max-len */
 
-export default () => {
+export const pageLogin = () => {
   const container = document.createElement('div');
   const template = `  <div class="container-login">
     <div class="box-left">
@@ -69,19 +71,39 @@ export default () => {
     event.preventDefault();
     const email = inputEmail.value;
     const password = inputPassword.value;
-    login(email, password);
+    login(email, password)
+      .then(() => {
+        window.location.replace('#page');
+      }).catch((error) => {
+        showErrors(error);
+      });
   });
 
   buttonGmail.addEventListener('click', (event) => {
     event.preventDefault();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    googleLogin(provider);
+    googleLogin()
+      .then(() => {
+        window.location.replace('#page');
+      }).catch((error) => {
+        const errorCode = error.code;
+        if (errorCode) {
+          showErrors(error);
+        } else window.location.replace('#page');
+      });
   });
 
   buttonRecover.addEventListener('click', (event) => {
     event.preventDefault();
     const email = inputEmail.value;
-    recover(email);
+    recover(email)
+      .then(() => {
+        alert('E-mail enviado com sucesso');
+      }).catch((error) => {
+        const errorCode = error.code;
+        if (errorCode) {
+          showErrors(error);
+        }
+      });
   });
 
   signUp.addEventListener('click', () => {

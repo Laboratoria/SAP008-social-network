@@ -28,7 +28,7 @@ export default () => {
   <div class="parag">
       <p>
           A rede social <b id="vanellen">VANELLEN</b> foi construída como parte do bootcamp da Laboratória, que visa desenvolver
-          mulheres para o mercado tecnologico. <br/> <br/>
+          mulheres para o mercado tecnológico. <br/> <br/>
           Com isso, estudamos sobre qual seria o tema da aplicação e os possíveis usuários e então desenvolvemos o
           site “<b id="vanellen">VANELLEN</b>” que tem como objetivo
           ajudar os usuários a escolherem filmes/séries com base na opinião de outras pessoas, a <b id="vanellen">VANELLEN</b> traz

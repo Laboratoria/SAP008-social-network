@@ -1,4 +1,4 @@
-import login from './pages/login/app.js';
+import { pageLogin } from './pages/login/app.js';
 import register from './pages/register/app.js';
 import initialPage from './pages/initialPage/app.js';
 import profile from './pages/profile/app.js';
@@ -12,7 +12,7 @@ const init = () => {
   main.innerHTML = '';
   switch (window.location.hash) {
     case ' ':
-      main.appendChild(login());
+      main.appendChild(pageLogin());
       break;
     case '#register':
       main.innerHTML = '';
@@ -23,7 +23,7 @@ const init = () => {
         if (user) {
           main.appendChild(initialPage());
         } else {
-          window.location.hash = '#login';
+          window.location.hash = '#pageLogin';
         }
       });
       break;
@@ -32,7 +32,7 @@ const init = () => {
         if (user) {
           main.appendChild(about());
         } else {
-          window.location.hash = '#login';
+          window.location.hash = '#pageLogin';
         }
       });
       break;
@@ -41,7 +41,7 @@ const init = () => {
         if (user) {
           main.appendChild(profile());
         } else {
-          window.location.hash = '#login';
+          window.location.hash = '#pageLogin';
         }
       });
       break;
@@ -50,7 +50,7 @@ const init = () => {
         if (user) {
           main.appendChild(movies());
         } else {
-          window.location.hash = '#login';
+          window.location.hash = '#pageLogin';
         }
       });
       break;
@@ -59,12 +59,12 @@ const init = () => {
         if (user) {
           main.appendChild(series());
         } else {
-          window.location.hash = '#login';
+          window.location.hash = '#pageLogin';
         }
       });
       break;
 
-    default: main.appendChild(login());
+    default: main.appendChild(pageLogin());
   }
 };
 

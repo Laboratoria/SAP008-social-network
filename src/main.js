@@ -27,6 +27,8 @@ const navegar = () => {
                 break;
             case '#cadastre-se':
                 main.appendChild(cadastrar());
+            case '#home':
+                main.appendChild(home());
                 break;
             default:
                 main.appendChild(load());

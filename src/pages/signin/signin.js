@@ -31,15 +31,32 @@ export default () => {
 
     container.innerHTML = template;
     
-    const signInName = document.querySelector('#name');
-    const okSigninBtn = container.querySelector('#ok-form-btn');
+    const signInName = container.querySelector('#name');
     const signInEmail = container.querySelector('#email');
     const signInPassword = container.querySelector('#password');
+    const signInConfPassword = container.querySelector('#confirm-password');
+    const checkBox = container.querySelector('#checkbox')
+    const okSigninBtn = container.querySelector('#ok-form-btn');
 
     okSigninBtn.addEventListener('click', () => {
-        
-        return console.log(signInEmail.value, signInPassword.value)
-
+        if (signInPassword.value !== signInConfPassword.value) {
+            return alert('As senhas devem ser a mesma')
+            .then(() => {
+                container.innerHTML = ''
+                window.location.hash = '#cadastre-se'
+            })
+        } else if (signInName.value, signInEmail.value, signInPassword.value, signInConfPassword.value === '') {
+            return alert('Todos os campos devem ser preenchidos')
+            .then(() => {
+                container.innerHTML = ''
+                window.location.hash = '#cadastre-se'
+            })
+        } else if (checkBox.checked === true && signInPassword.value === signInConfPassword.value) {
+            return newUser(signInEmail.value, signInPassword.value)
+            .then(() => {
+                window.location.hash = '#home'
+            })
+        }
     })
     
    return container;

@@ -73,7 +73,7 @@ export const createPost = async (textPost) => {
   } catch (e) {
     console.error('Error adding document: ', e);
   }
-}
+};
 
 export const postById = async (idPost) => {
   const docRef = doc(db, 'post', idPost);
@@ -96,4 +96,4 @@ export const like = async (idPost, idUser) => {
   await updateDoc(doc(db, 'post', idPost), {
     like: likes,
   });
-};
+

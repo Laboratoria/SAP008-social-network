@@ -16,8 +16,8 @@ export default () => {
 
             <div class="register-error"></div>
             
-            <button type="button" class="buttons" id="button-register"> Criar conta </button>
-            <button type="button" class="buttons" id="button-back"> Voltar </button>
+            <button type="button" class="buttons-register" id="button-register"> Criar conta </button>
+            <button type="button" class="buttons-register" id="button-back"> Voltar </button>
         </div>
     </div>
 </div>

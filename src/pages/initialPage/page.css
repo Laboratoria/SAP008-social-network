@@ -55,6 +55,7 @@ body {
     z-index: 0;
 }
 
+
 .navbar li {
     text-decoration: none;
     list-style: none;
@@ -76,6 +77,7 @@ body {
     grid-template-rows: repeat(1, 1px);
     gap: 16rem;
     margin: auto;
+    margin-top: 2%;
 }
 
 .content a {
@@ -83,6 +85,7 @@ body {
     color: #101010;
     font-weight: 600;
 }
+
 .content a:hover{
     text-shadow: rgb(102, 100, 100) 0.1em 0.1em 0.2em;
 }
@@ -365,6 +368,7 @@ footer {
 
     #logout {
         width: 25px;
+        transform: rotate(180deg);
     }
 
     .posts {
@@ -522,6 +526,7 @@ footer {
     .about-movies textarea {
         width: 30vw;
         height: auto;
+        margin-right: 10px;
     }
 
     .text_share {
@@ -614,6 +619,11 @@ footer {
         font-size: 1.3rem;
     }
 
+    #logout {
+        width: 25px;
+        transform: rotate(180deg);
+    }
+
     .navbar a:hover {
         background: rgb(0, 0, .05);
     }
@@ -628,10 +638,6 @@ footer {
         display: flex;
         align-items: center;
         margin-left: 10%;
-    }
-
-    #logout {
-        width: 25px;
     }
 
     .posts {
@@ -797,6 +803,7 @@ footer {
 
     #logout {
         width: 25px;
+        transform: rotate(180deg);
     }
 
     .posts {

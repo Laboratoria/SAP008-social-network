@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F8F8F8;
+}
+
+.box-about {
+    width: 95%;
+    padding: 2%;
+}
+
+.parag,
+.aboutDev,
+.container-dev {
+    width: 90%;
+    padding: 10px;
+}
+
+.aboutDev h2 {
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.container-dev {
+    display: flex;
+}
+
+#ellen-img {
+    width: 15.3vw;
+    border-radius: 50%;
+    border: 10px solid #1f1e1e;
+}
+
+.dev-one, .dev-two {
+    display: flex;
+    width: 50%;
+    margin-right: 10%;
+    gap: 8px;
+}
+
+#linkedinIcon,
+#insta-icon {
+    width: 2vw;
+    cursor: pointer;
+}
+
+.img {
+    display: block;
+}
+
+.social {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.networks {
+    display: flex;
+}
+
+.wrapper-about {
+    margin-bottom: 10rem;
+}
+
+#vanellen {
+    font-size: 16px;
+    color: #9d0b0b;
+}
+
+@media only screen and (max-width: 500px) and (min-width: 280px) {
+
+    .aboutDev h2 {
+       font-size: 1.3rem;
+    }
+
+    #vanessa-img {
+        width: 30vw;
+    }
+
+    #ellen-img {
+        width: 30vw;
+        border: 5px solid #1f1e1e;
+    }
+
+    .container-dev {
+        display: block;
+    }
+
+    .dev-one, .dev-two {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .networks{
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 950px) and (min-width: 505px) {
+
+    #vanessa-img {
+        width: 30vw;
+    }
+
+    #ellen-img {
+        width: 30vw;
+        border: 11px solid #1f1e1e;
+        margin-bottom: 30px;
+    }
+
+    .container-dev {
+        display: block;
+    }
+
+    .dev-one, .dev-two {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+    }
+
+   .text{
+    margin-top: 5%;
+    margin-left: 1%;
+   }
+
+}

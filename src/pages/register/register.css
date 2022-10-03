@@ -60,6 +60,13 @@ body {
     color: #ffffff;
 }
 
+.register-error{
+    text-align: center;
+    color: #d30a0a;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
 .buttons:hover {
     background-color: #C30707;
 }

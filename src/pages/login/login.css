@@ -195,7 +195,7 @@ footer {
     display: grid;
 }
 
-@media only screen and (max-width: 745px) {
+@media only screen and (max-width: 770px) and (min-width: 280px) {
 
     .container-login {
         display: block;
@@ -206,6 +206,9 @@ footer {
 
     #logo-login {
         width: 40vw;
+    }
+    .logo-login{
+        height: 14vh;
     }
 
     .box-left {
@@ -268,6 +271,7 @@ footer {
     #logo-login {
         width: 40vw;
     }
+
     .logo-login{
         height: 25vh;
     }
@@ -331,6 +335,13 @@ footer {
         font-size: 0;
         margin: auto;
         padding: 2%;
+    }
+    #logo-login {
+        width: 20vw;
+    }
+
+    .logo-login{
+        height: 25vh;
     }
 
     .box-left {
@@ -400,8 +411,11 @@ footer {
         margin-left: 2%;
     }
     .logo-login{
-        height: 8vh;
+        height: 5vh;
         margin-bottom: 10%;
+    }
+    #logo-login {
+        width: 16vw;
     }
 
     #gif-vanellen {

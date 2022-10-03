@@ -10,14 +10,14 @@ export default () => {
 
         <form class="form-login">
           <div class="email-and-password-container">            
-            <label class="login-label" for="email">                
+            <label class="login-label" id="loginLabel" for="email">                
               <input id="txtEmail" type="email" name="email" class="input-login" placeholder="Email" required>
             </label>
                 
-            <label class="login-label" for="password">                
+            <label class="login-label" id="loginLabel" for="password">                
               <input id="txtPassword" type="password" name="password" class="input-login" placeholder="Senha" minlength="8" required>
-            </label>
-              
+            </label>              
+
           </div>           
               
           <div class="signup-and-forgotpassword-container">              
@@ -26,7 +26,7 @@ export default () => {
             <a href="#" class="signup-and-forgotpassword">Esqueceu a senha?</a>
           </div>   
 
-          <p class="txt-error" id="txt-error"></p>   
+          <p class="txt-error" id="txtError"></p>   
 
           <button id="btnLogin" type="button" class="btn-login">Entrar</button>                   
                                                   

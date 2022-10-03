@@ -1,7 +1,7 @@
 export default () => {
-    const container = document.createElement('div');
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
     <figure class="img-logo-signup imgFlip">
             <img src="./imagens/logo-mobile.png" alt="logo">
         </figure>
@@ -18,6 +18,7 @@ export default () => {
             <label for="passwordsignup">Digite sua senha</label>
             <input type="password-signup" placeholder="****" id="signup-password" class="input-password-signup" />
             </section>
+    
 
             <section class="buttons-signup">
             <button type="submit" class="btn-signup">Cadastrar</button>
@@ -26,7 +27,7 @@ export default () => {
         </form>
     `;
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-    return container;
-}
+  return container;
+};

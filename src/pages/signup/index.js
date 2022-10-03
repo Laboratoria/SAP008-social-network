@@ -11,7 +11,8 @@ export default function signUp() {
           <div class="name-email-pass">
             <label class= "signup-label" for="name">              
               <input class="input-signup" id="txtName" type="text" name="name" placeholder="Nome" required>
-            </label>            
+            </label>
+
             <label class= "signup-label" for="email">              
               <input class="input-signup" id="txtEmail" type="email" name="email" id="txtEmail" placeholder="Email" required>
             </label>
@@ -20,10 +21,12 @@ export default function signUp() {
               <input class="input-signup" id="txtPassword" type="password" name="password" id="txtPassword" minlength="8" placeholder="Senha" required>
             </label>
           </div>
+          
           <a href="#login" id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</a>
         </form>                
      </section>
      <img class="wallpaper-signup" src="./img/foto.png">       
+
     </div>    
     `;
   container.innerHTML = template;

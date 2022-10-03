@@ -1,47 +1,55 @@
-import { loginEmailPassword, logout, signInGoogle } from '../../lib/auth.js';
+import { loginEmailPassword, signInGoogle } from '../../lib/auth.js';
 
 export default () => {
   const container = document.createElement('div');
+  container.classList.add('wrapper-login');
   const template = `    
-  <div class="container">
-    <section class="login-container">      
-      <img src="./img/picsfem.png" class="logo-login">                  
-      <form class="login-form" id="login-form">
-        <div class="email-pass">            
-          <label class="login-label" for="email">                
-            <input id="txtEmail" type="email" name="email" class="input" placeholder="Email" required>
-          </label>
+    <section class="container-login"> 
+      <div class="container-login1">
+        <img src="./img/picsfem.png" class="logo-login">                  
+
+        <form class="form-login">
+          <div class="email-and-password-container">            
+            <label class="login-label" id="loginLabel" for="email">                
+              <input id="txtEmail" type="email" name="email" class="input-login" placeholder="Email" required>
+            </label>
+                
+            <label class="login-label" id="loginLabel" for="password">                
+              <input id="txtPassword" type="password" name="password" class="input-login" placeholder="Senha" minlength="8" required>
+            </label>              
+
+          </div>           
               
-          <label class="login-label" for="password">                
-            <input id="txtPassword" type="password" name="password" class="input" placeholder="Senha" minlength="8" required>
-          </label>
-            
-        </div>           
-            
-        <div class="signup-forgot">              
-          <a href="#signup" type="button" class="login-link" style="text-decoration:none">Criar conta</a>
-              
-          <a href="#" class="login-link">Esqueceu a senha?</a>
-        </div>            
-            
-        <button id="btnLogin" type="button" class="btn-login">Entrar</button>                    
-            
-        <p class="txt-error" id="txt-error"></p>                    
-            
-      </form>
-      <div class="line-container">
-        <hr class="line">
-          <span class="txt-line">ou</span>
-        <hr class="line">            
+          <div class="signup-and-forgotpassword-container">              
+            <a href="#signup" type="button" class="signup-and-forgotpassword" style="text-decoration:none">Criar conta</a>
+                
+            <a href="#" class="signup-and-forgotpassword">Esqueceu a senha?</a>
+          </div>   
+
+          <p class="txt-error" id="txtError"></p>   
+
+          <button id="btnLogin" type="button" class="btn-login">Entrar</button>                   
+                                                  
+        </form>
       </div>
-            
-      <button id="btn-gmail" type="button" class="icon-button">Continue com
-        <img class="google-icon" src="./img/google-icon.png" alt="google-icon">
-      </button>
-      <button id="btnLogout" type="button">Log out</button>
-    </section>
-    <img class="wallpaper-login" src="./img/foto.png">  
-  </div>     
+
+      <div class="container-login2">
+        <div class="line-container">
+          <hr class="line">
+            <span class="txt-line">ou</span>
+          <hr class="line">            
+        </div>
+              
+        <button id="btn-gmail" type="button" class="btn-google">
+          <img class="google-icon" src="./img/google-icon.png" alt="google-icon">
+          Continue com google
+        </button>
+      </div>               
+      
+    </section>       
+
+    <img class="wallpaper-login" src="./img/foto.png">      
+
     `;
 
   container.innerHTML = template;
@@ -49,7 +57,7 @@ export default () => {
   const txtEmail = container.querySelector('#txtEmail');
   const txtPassword = container.querySelector('#txtPassword');
   const btnLogin = container.querySelector('#btnLogin');
-  const btnLogout = container.querySelector('#btnLogout');
+  //const btnLogout = container.querySelector('#btnLogout');
   const btnGmail = container.querySelector('#btn-gmail');
   btnLogin.addEventListener('click', () => {
     const email = txtEmail.value;
@@ -57,7 +65,7 @@ export default () => {
     loginEmailPassword(email, password);
   });
 
-  btnLogout.addEventListener('click', logout);
+  //btnLogout.addEventListener('click', logout);
 
   btnGmail.addEventListener('click', signInGoogle);
   return container;

@@ -14,9 +14,9 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
-    alert('logged in!');
+    console.log('logged in!');
   } else {
-    alert('No user');
+    console.log('No user');
   }
 });
 
@@ -25,7 +25,10 @@ const loginEmailPassword = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
   } catch (error) {
-    alert('Sua senha esta incorreta');
+    txtError.setAttribute('style', 'display: block')
+    txtError.setAttribute('style', 'color: red')
+    txtError.innerHTML = 'Usuário ou senha incorretos'
+    txtPassword.focus()
   }
 };
 
@@ -34,13 +37,13 @@ const createAccount = async (email, password) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log(userCredential);
   } catch (error) {
-    alert('erro de criar conta');
+    console.log('erro de criar conta');
   }
 };
 
-const logout = async () => {
-  await signOut(auth);
-};
+//const logout = async () => {
+//  await signOut(auth);
+//};
 
 const provider = new GoogleAuthProvider();
 const signInGoogle = () => {
@@ -57,7 +60,6 @@ const signInGoogle = () => {
 export {
   auth,
   loginEmailPassword,
-  createAccount,
-  logout,
+  createAccount,  
   signInGoogle,
 };

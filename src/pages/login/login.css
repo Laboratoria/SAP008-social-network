@@ -7,81 +7,91 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;  
+  font-size: 16px;
 }
 
 body, html {
   background: linear-gradient(#5E17EB, #A87CFE);  
   height: 100vh;
-  width: 100vw;
+  width: 100vw;  
 }
   
-main {
+.wrapper-login {  
   height: 100vh;
   width: 100vw;
-  display: flex;      
-  justify-content: center;
-  align-items: center;    
-}
-
-.container {  
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login-container {    
+.container-login {    
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  padding: 1vw; 
-  width: 90vw;
-  height: 72vh;
-  border-radius: 20px;   
+  padding: 3px; 
+  width: 90%;
+  height: 75%;
+  border-radius: 50px;   
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
   text-align: center;  
 }
 
-.logo-login {
-  display: block;
-  width: 60vw; 
-  margin-bottom: 3vh;
+.container-login1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
 }
 
-.login-form {  
-  margin: 1vh 0 1vh;
-  margin-top: -4vh; 
+.container-login2 { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
 }
 
-.email-pass {  
+.logo-login {    
+  width: 80%; 
+}
+
+.form-login {  
+  display: block; 
+  margin: -5px 0 0;  
+  width: 80%;
+}
+
+.email-and-password-container {  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;    
+  width: 100%;
 }
 
 .login-label {
-  margin-bottom: 5vh;
-  width: 90%;
+  margin-bottom: 35px;
+  width: 100%;
   cursor: text;  
 }
 
-.input {
+.input-login {
   width: 90%;
-  height: 3vh;
-  margin: 0;
-  border: 0;
+  height: 100%;
   border-bottom:solid 2px var(--branco);
-  padding: 1vw;
+  padding: 1px;
   outline: 0;
   background-color: rgb(255, 255, 255, 0);
-  font-size: 1.3em;
+  font-size: 1.3rem;
 }
 
 #txtEmail,#txtPassword::placeholder {
@@ -89,30 +99,35 @@ main {
   text-align: center;   
 }
 
-.signup-forgot{  
+.signup-and-forgotpassword-container{  
   display: flex;
-  justify-content: space-evenly;   
-  margin: 0 0 2vh;  
-  margin-top: -4vh;
+  justify-content: space-evenly;     
+  width: 100%;
 }
 
-.login-link {
-  font-size: 0.95em;
+.signup-and-forgotpassword {
+  font-size: 0.95rem;
   text-decoration: none;
-  margin-top: 1vh;
+  margin-top: -25px;
   color: var(--branco);
 }
 
+.signup-and-forgotpassword:hover {
+  color: var(--roxo);
+  transform: translate(0px, -2px);
+  transition: transform 0.5s;
+}
+
 .btn-login {
-  width: 56vw;
-  height: 6vh;
-  padding: 1vw 2vw;
-  margin: 4vh 0 -2vh;
+  width: 70%;
+  padding: 10px;
+  margin: 28px 0 0;
   border-radius: 20px;
   color: var(--violeta);
   border: 0;
   font-weight: bolder;
   text-transform: uppercase;    
+  font-size: 1.5rem;
 }
 
 .btn-login:hover {
@@ -124,49 +139,47 @@ main {
   cursor:  pointer;
 }
 
-.login-link:hover {
-  color: var(--roxo);
-  transform: translate(0px, -2px);
-  transition: transform 0.5s;
-}
-
 .line-container {
   display: flex;
-  width: 90%;
-  margin: -3vh 0 2vh;  
+  width: 80%;
+  margin: -4px 0 10px;  
 } 
 
 .txt-line {
   flex: 0.3 1 0%;
   align-self: center;
   text-align: center;   
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-transform: uppercase; 
 }
 
 .line {
-  color:aliceblue;
+  color: var(--branco);
   flex: 0.9 1 0%;
 } 
 
 .google-icon {
-  width: 10%;
+  width: 10%;  
 } 
 
-.icon-button {  
-  width: 40vw;
-  height: 4.5vh;  
+.btn-google {  
+  width: 66%;
+  padding: 4px;    
   border-radius: 13px;
   color: var(--lilas);  
   cursor: pointer;
   border: none;
-  font-size: 0.9em;  
+  font-size: 0.9rem;  
   text-align: center;  
-  margin-top: -7vh;    
+  margin-top: -45px;    
   font-weight: bold;
+  text-transform: uppercase;  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.icon-button:hover {
+.btn-google:hover {
   background-color: var(--roxo);
   box-shadow: 0px 0px 20px var(--roxo);
   transform: translate(0px, -2px);
@@ -175,123 +188,24 @@ main {
 }
 
 .wallpaper-login {  
-  display: none;
-  width: 24vw;
-  height: 75vh;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;    
+  display: none;  
+  border-radius: 0 20px 20px 0;   
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .login-container {
-    height: 86vh;
-  }
-  .input {
-    font-size: 2em;
-  }
-  .login-link {
-    font-size: 1.5em;
-  }
-  .btn-login {
-    font-size: 1.4em;
-  }
-  .icon-button {
-    font-size: 1.4em;
-  }
-  .txt-line {
-    font-size: 1.3em;
-  }
-}
+@media screen and (min-width: 1024px) {
+  .wrapper-login {
+    padding: 0 40px 0;
+  }  
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-  .logo-login {
-    width: 24vw;
-  }
-
-  .login-container {
-    width: 28vw;
-    height: 70vh;
+  .container-login {
     border-radius: 20px 0 0 20px;
-  }
-
-  .input {
-    font-size: 1.5em;
-  }
-
-  .login-link {
-    font-size: 1em;
-  }
-
-  .btn-login {
-    width: 16vw;
-    font-size: 1.5em;
-  }
-
-  .icon-button {
-    width: 15vw;
-    font-size: 1.2em;
-  }
-
-  .line-container {
-    margin: -2vh 0 5vh;
-  }
-
-  .txt-line {
-    font-size: 1em;
-  }
+    width: 30%;
+    height: 70%;
+  }  
 
   .wallpaper-login {  
-    display: block;    
-    width: 30vw;
-    height: 73vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;    
-  } 
-
-}
-
-@media screen and (min-width: 1200px) {
-  .logo-login {
-    width: 24vw;
-  }
-
-  .login-container {
-    width: 30vw;
-    height: 70vh;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .input {
-    font-size: 2em;
-  }
-
-  .login-link {
-    font-size: 1.8em;
-  }
-
-  .btn-login {
-    width: 16vw;
-    font-size: 2em;
-  }
-
-  .icon-button {
-    width: 15vw;
-    font-size: 1.5em;
-  }
-
-  .txt-line {
-    font-size: 1.5em;
-  }
-
-  .line-container {
-    margin: -2vh 0 5vh;
-  }
-
-  .wallpaper-login {  
-    display: grid;    
-    width: 30vw;
-    height: 74vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;    
-  } 
+    display: block;     
+    width: 30%;
+    height: 70%;     
+  }  
 }

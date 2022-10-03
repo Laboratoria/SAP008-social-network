@@ -1,3 +1,4 @@
+import { loginEmailPassword, initWithGoogle } from "../firebase-services/firebase-config.js"
 // Este es el punto de entrada de tu aplicacion
 export const homeFunction = () => {
   const container = document.createElement('div');
@@ -18,13 +19,29 @@ export const homeFunction = () => {
         <input class="input-login" id="loginPassword" type="text" placeholder="***********" />
         <button class="button-sign-in button-login" id="buttonLogin" type="submit">Entrar</button>
         <p class="text-login text-two">───── Ou entrar com ─────</p>
-        <a href=""><img src="img\\google.png" class="button-google" id="buttonGoogle" alt="Logo do Google"></a>
+        <a href=""><img src="img\\/google.png" class="button-google" id="buttonGoogle" alt="Logo do Google"></a>
         <p class="text-login text-three">Ainda não tem uma conta?</p>
         <button class="button-sign-up button-login" type="submit" id="buttonSignUp">Cadastre-se!</button>
       </div>
     </section>
 `;
   container.innerHTML = templateLogin;
+
+   const inputLoginEmail = container.querySelector('#loginEmail');
+   const inputLoginPassword = container.querySelector('#loginPassword');
+   const loginEmail = inputLoginEmail.value;
+   const loginPassword = inputLoginPassword.value;
+   const btnSignUp = container.querySelector('#buttonSignUp');
+   btnSignUp.addEventListener('click', loginEmailPassword);
+
+   const btnGoogle = container.querySelector('#buttonGoogle');
+   event.preventDefault();
+   btnGoogle.addEventListener('click', initWithGoogle());
+
   return container;
+
+  
+
+  
 };
 

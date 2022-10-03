@@ -19,7 +19,9 @@ export const homeFunction = () => {
         <input class="input-login" id="loginPassword" type="text" placeholder="***********" />
         <button class="button-sign-in button-login" id="buttonLogin" type="submit">Entrar</button>
         <p class="text-login text-two">───── Ou entrar com ─────</p>
-        <a href=""><img src="img\\/google.png" class="button-google" id="buttonGoogle" alt="Logo do Google"></a>
+        <button class="button-img">
+          <img src="img\\/google.png" class="button-google" id="buttonGoogle" alt="Logo do Google">
+        </button>
         <p class="text-login text-three">Ainda não tem uma conta?</p>
         <button class="button-sign-up button-login" type="submit" id="buttonSignUp">Cadastre-se!</button>
       </div>
@@ -35,8 +37,7 @@ export const homeFunction = () => {
    btnSignUp.addEventListener('click', loginEmailPassword);
 
    const btnGoogle = container.querySelector('#buttonGoogle');
-   event.preventDefault();
-   btnGoogle.addEventListener('click', initWithGoogle());
+   btnGoogle.addEventListener('click', initWithGoogle);
 
   return container;
 

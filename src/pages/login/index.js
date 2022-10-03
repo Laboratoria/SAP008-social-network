@@ -19,14 +19,14 @@ export default () => {
                 <input id="txtEmail" type="email" name="email" class="input">
               </label>
               
-              <label class="login-label">
+              <label class="login-label" id="loginLabel">
                 <span>Senha</span>
                 <input id="txtPassword" type="password" name="password" class="input">
               </label>
             
             </div>
             
-            <div class="txt-error" id="txt-error"></div>
+            <div class="txt-error" id="txtError"></div>
             
             <div class="ads">
               <div class="Criar">

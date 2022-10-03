@@ -25,7 +25,10 @@ const loginEmailPassword = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
   } catch (error) {
-    alert('Sua senha esta incorreta');
+    txtError.setAttribute('style', 'display: block')
+    txtError.setAttribute('style', 'color: red')
+    txtError.innerHTML = 'Usuário ou senha incorretos'
+    txtPassword.focus()
   }
 };
 

@@ -20,7 +20,7 @@ export default () => {
                     <a class="cta" href="">Uso de Cookies.</a>
                     </p>
 
-                    <a href="/#home"><button id="ok-form-btn">OK</button></a>
+                    <a href="/#home"><button id="ok-form-btn">OK</a></button>
                 </div>
             </form>
 

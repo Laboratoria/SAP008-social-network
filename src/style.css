@@ -125,3 +125,26 @@ footer {
   bottom: 0;
   position: fixed;
 }
+
+.colorful {
+  border-color: #ab6930;
+  width: 100%;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 376px;
+  height: 78px;
+}
+
+.iconsSize {
+  width: 40px;
+  height: 70px; 
+  filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
+}
+
+.timelineContainer {
+  width: 376px;
+  height: 470px;
+}

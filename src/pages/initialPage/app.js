@@ -1,13 +1,15 @@
-import { getCurrentUser, firestore, likeFirebase } from '../../lib/exports.js';
+import {
+  getDisplayName, getUserUid, firestore, likeFirebase,
+} from '../../lib/exports.js';
 import { signOut } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
-  const user = getCurrentUser();
+  const userName = getDisplayName();
   const template = ` <div class="container">
     <div class="logo">
         <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
-        <span id="idUser"> Olá, ${user.displayName}</span>
+        <span id="idUser"> Olá, ${userName}</span>
         <span class="VanellenMore">Vanellen <span
                 style="color:rgb(254, 123, 18 ); font-size:1.5rem; font-weight: bold;">+</span>
     </div>
@@ -157,7 +159,7 @@ export default () => {
   }
   postTemplate();
 
-  const userId = firebase.auth().currentUser.uid;
+  const userId = getUserUid();
 
   formAction.addEventListener('submit', (event) => {
     event.preventDefault();

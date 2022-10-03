@@ -24,7 +24,7 @@ const init = () => {
   window.addEventListener('load', () => {
     init();
     pageChanges()
-    const buttonSignUp = document.getElementById('buttonSignUp');
+    const buttonSignUp = document.querySelector('#buttonSignUp');
     buttonSignUp.addEventListener('click', () => {
       window.location.hash = '#signup';
   });

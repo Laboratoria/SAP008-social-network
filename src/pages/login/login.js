@@ -3,9 +3,14 @@ import { loginUser, loginGoogle, getErrorMessage } from '../../auth.js';
 export default () => {
   const container = document.createElement('div');
 
-  const template = `
-        <figure class="img-logo imgFlip">
+
+    const template = `
+        <figure class="img-logo-mobile imgFlip">
             <img src="./imagens/logo-mobile.png" alt="logo">
+        </figure>
+
+        <figure class="img-logo-desktop">
+            <img src="./imagens/logo-desktop.svg" alt="logo">
         </figure>
 
         <form class="form-login bounce">
@@ -17,7 +22,7 @@ export default () => {
 
             <section class="inputs">
             <label for="password">Digite sua senha</label>
-            <input type="password" placeholder="****" id="password" class="input-password" />
+            <input type="password" placeholder="******" id="password" class="input-password" />
             </section>
 
             <section class="buttons">

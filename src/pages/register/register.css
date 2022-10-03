@@ -46,18 +46,23 @@ body {
     max-height: 35vh;
 }
 
-.box-center .buttons {
+.box-center .buttons-register {
     width: 80%;
+    height: 7vh;
     background-color: #850a0a;
     border: none;
     border-radius: 5px;
     text-align: center;
     margin-top: 2%;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin-bottom: 1%;
     margin-left: 10%;
     cursor: pointer;
     color: #ffffff;
+}
+
+#button-back{
+    background-color: #544f4f;
 }
 
 .register-error{

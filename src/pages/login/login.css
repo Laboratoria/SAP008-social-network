@@ -389,13 +389,10 @@ footer {
 @media only screen and (max-width: 1000px) and (min-width:820px) {
 
     .container-login {
-        width: auto;
         font-size: 0;
-        margin: auto;
         padding: 2%;
         padding-top: 30%;
-        background-color: #151414;
-        border: 1px solid #151414 ;
+        height: 72rem;
     }
 
     .box-left {
@@ -441,11 +438,9 @@ footer {
         margin-left: 11%;
     }
 
-    .wrapper-login {
+    /* .wrapper-login {
         padding-bottom: 40%;
-        height: 100%;
         background-color: #151414;
-        border: 1px solid #151414 ;
 
-}
+} */
 }

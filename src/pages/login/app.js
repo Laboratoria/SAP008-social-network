@@ -98,7 +98,10 @@ export default () => {
     const email = inputEmail.value;
     recover(email)
       .then(() => {
-        alert('E-mail enviado com sucesso');
+        const modalContentElement = document.getElementById('modal_content');
+        const modalElement = document.getElementById('modal');
+        modalElement.classList.add('show-modal');
+        modalContentElement.innerHTML = 'E-mail enviado com sucesso!';
       }).catch((error) => {
         const errorCode = error.code;
         if (errorCode) {
@@ -108,8 +111,15 @@ export default () => {
   });
 
   signUp.addEventListener('click', () => {
-    window.location.href = '#pageRegister';
+    window.location.href = '#register';
   });
+
+  const spanClose = document.querySelector('#close');
+  function hideModal() {
+    const modalElement = document.getElementById('modal');
+    modalElement.classList.remove('show-modal');
+  }
+  spanClose.addEventListener('click', hideModal);
 
   return container;
 };

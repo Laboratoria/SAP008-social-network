@@ -17,8 +17,7 @@ body {
   height: 368px;
   border: 1px solid #ffffff;
   background: transparent;
-  margin-top: 25%;
-
+  margin-top: 45%;
 }
 
 .lines {
@@ -119,6 +118,7 @@ input {
   width: 187px;
   height: 32px;
   font-size: 14px;
+  border: none;
 }
 
 footer {

@@ -24,8 +24,8 @@ export default () => {
               preencha o campo abaixo com seu e-mail cadastrado.</p>
               <input type="email" placeholder="E-MAIL" id="email-input-reset" class="input-style-reset">
               <nav class="reset-buttons">
-                <a href="/#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">CANCELAR</button></a>
-                <a href="/#homepage"><button type="button" id="btn-reset-page" class="btn-reset">PROCURAR</button></a>
+                <a href="/#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">RETORNAR</button></a>
+                <a href="/#homepage"><button type="button" id="btn-reset-page" class="btn-reset">REDEFINIR</button></a>
               </nav>
             </form>
                   

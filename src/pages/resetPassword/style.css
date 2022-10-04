@@ -5,7 +5,7 @@
 }
 
 .btn-cancel-reset {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #FFFFFF;
     background-color: #9D9D9D;
     border: none;
@@ -87,6 +87,9 @@
     height: 7vh;
 }
 
+.btn-cancel-reset:hover, .btn-reset:hover {
+    cursor: pointer;
+}
 
 @media (min-width: 768px) {
     .reset-page {

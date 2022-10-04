@@ -66,15 +66,15 @@ export default () => {
         <div class="post">
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
-            <h2 class="user-name-post">${key.author}</h2>
-            <button class="like-btn-post"><img class="pencil-post" src="" alt="">edit</button>
-            <button class="like-btn-post"><img class="delete-post" src="" alt="">delet</button>
+            <h2 class="user-name-post">${key.name}</h2>
+            <i class="edit-post-btn"><img class="edit-post-icon" src="img/pencil-icon.png" alt="edit button"></i>
+            <i class="delete-post-btn"><img class="delete-post-icon" src="img/trashcan-icon.png" alt="delete button"></i>
           </div>
           <p class="text-post">${key.text}</p>
           <div class="footer-post">
             <p class="date-post"></p>
-            <button class="like-btn-post">like</button>
-            <p class="all-likes-post"></p>
+            <i class="like-btn-post"><img src="img/empty-like-icon.png" class="like-post-icon" alt="like button"></i>
+            <p class="all-likes-post">${key.like.length}</p>
           </div>
         </div>
     `).join('');

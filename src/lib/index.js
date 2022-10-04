@@ -63,6 +63,7 @@ export const createPost = async (textPost) => {
   const auth = getAuth(app);
   try {
     const docRef = await addDoc(collection(db, 'post'), {
+      name: auth.currentUser.displayName,
       author: auth.currentUser.uid,
       data: Date.now(),
       // tag: category,

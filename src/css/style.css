@@ -85,6 +85,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.button-img {
+  background-color: #fff;
+  border: none;
+}
+
 .quote {
   font-size: 4rem;
 }

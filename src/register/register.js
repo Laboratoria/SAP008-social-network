@@ -1,4 +1,5 @@
 import { registerUser } from '../firebase/firebase.js' 
+import { redirect } from "../redirect.js" ;
                                                                                                              
 export default () => {
     const container = document.createElement('div');
@@ -21,7 +22,8 @@ export default () => {
                 <span class="material-icons">key</span>
                 <input class ="box-password-repeat" id="box-password-repeat" type="password" id="password" placeholder="Repetir senha"/> 
                 <span class="material-icons">key</span>
-                <button class ="btn-register" type="button" id="btn-register" class="btn-register">Registar</button>
+                <button class ="btn-register" type="button" id="btn-register">Registar</button>
+                <button class ="btn-back" type="button" id="btn-back">Voltar</button>
             </form>
 
             <p class="user"><a href="#login">Já possui uma conta? Iniciar sessão</p>
@@ -46,6 +48,11 @@ export default () => {
                 window.alert(errorMessage);
               });
         });
+
+        container.querySelector("#btn-back").addEventListener("click", e => {
+          e.preventDefault();
+          redirect("");
+      })
 
     return container;
 }

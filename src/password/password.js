@@ -13,11 +13,13 @@ const template = `
             <input id="email" type="email" placeholder="Digite seu e-mail"/>
             <hr>
             <button id="btn-enter" type="button">Enviar</button>
+            <button id="btn-back" type="button">Voltar</button>
         </form>   
     </div>     
     `;
 
     container.innerHTML = template;
+
 
 container.querySelector("#btn-enter").addEventListener("click", e => {
     e.preventDefault();
@@ -30,6 +32,12 @@ container.querySelector("#btn-enter").addEventListener("click", e => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
+})
+
+
+container.querySelector("#btn-back").addEventListener("click", e => {
+    e.preventDefault();
+    redirect("");
 })
 
 

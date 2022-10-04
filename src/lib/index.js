@@ -15,6 +15,7 @@ import {
   deleteDoc,
   updateDoc,
   getDocs,
+  signOut,
 } from './firebase.js';
 
 import { app } from './configuration.js';
@@ -128,3 +129,8 @@ export const getAllPosts = async () => {
     return a;
   }
 };
+
+export function logoff() {
+  const auth = getAuth(app);
+  return signOut(auth);
+}

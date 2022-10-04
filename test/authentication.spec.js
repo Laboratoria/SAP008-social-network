@@ -12,7 +12,7 @@ describe('google Login', () => {
   });
 
   it('should call Firebase signInWithPopup function', () => {
-    googleLogin();
+    googleLogin('provider');
     expect(firebase.auth).toHaveBeenCalledTimes(1);
   });
 });
@@ -50,14 +50,19 @@ describe('recover', () => {
   });
 
   it('should call Firebase sendPasswordResetEmail( function', () => {
-    const email = 'testevanellen@hotmail.com';
-    recover(email);
+    // const email = 'testevanellen@hotmail.com';
+    recover();
     expect(firebase.auth).toHaveBeenCalled(1);
   });
 });
 
 describe('signOut', () => {
-  it('is a function', () => {
+  it('should be a function', () => {
     expect(typeof signOut).toBe('function');
+  });
+
+  it('should call Firebase signOut function', () => {
+    signOut();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
   });
 });

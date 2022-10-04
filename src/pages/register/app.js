@@ -52,7 +52,10 @@ export default () => {
       const email = inputEmail.value;
       const password = inputPassword.value;
       const userName = inputUserName.value;
-      return register(email, password, userName)
+      return register(email, password, userName).then((userCredential) => {
+        const user = userCredential.user;
+        return user.updateProfile({ displayName: userName });
+      })
         .then(() => {
           window.location.replace('#page');
         })

@@ -1,4 +1,4 @@
-import { pageLogin } from './pages/login/app.js';
+import login from './pages/login/app.js';
 import register from './pages/register/app.js';
 import initialPage from './pages/initialPage/app.js';
 import profile from './pages/profile/app.js';
@@ -12,9 +12,9 @@ const init = () => {
   main.innerHTML = '';
   switch (window.location.hash) {
     case ' ':
-      main.appendChild(pageLogin());
+      main.appendChild(login());
       break;
-    case '#register':
+    case '#pageRegister':
       main.innerHTML = '';
       main.appendChild(register());
       break;
@@ -23,7 +23,7 @@ const init = () => {
         if (user) {
           main.appendChild(initialPage());
         } else {
-          window.location.hash = '#pageLogin';
+          window.location.hash = '#login';
         }
       });
       break;
@@ -32,7 +32,7 @@ const init = () => {
         if (user) {
           main.appendChild(about());
         } else {
-          window.location.hash = '#pageLogin';
+          window.location.hash = '#login';
         }
       });
       break;
@@ -41,7 +41,7 @@ const init = () => {
         if (user) {
           main.appendChild(profile());
         } else {
-          window.location.hash = '#pageLogin';
+          window.location.hash = '#login';
         }
       });
       break;
@@ -50,7 +50,7 @@ const init = () => {
         if (user) {
           main.appendChild(movies());
         } else {
-          window.location.hash = '#pageLogin';
+          window.location.hash = '#login';
         }
       });
       break;
@@ -59,12 +59,12 @@ const init = () => {
         if (user) {
           main.appendChild(series());
         } else {
-          window.location.hash = '#pageLogin';
+          window.location.hash = '#login';
         }
       });
       break;
 
-    default: main.appendChild(pageLogin());
+    default: main.appendChild(login());
   }
 };
 

@@ -1,8 +1,10 @@
 import {
   login, googleLogin, register, recover, signOut,
 } from '../src/lib/authentication.js';
+// import { pageRegister } from '../src/pages/register/app.js';
 
-// beforeEach(() => jest.clearAllMocks());
+beforeEach(() => jest.clearAllMocks());
+// const sendPasswordResetEmail = jest.fn(() => Promise.resolve());
 
 describe('google Login', () => {
   it('is a function', () => {
@@ -10,9 +12,7 @@ describe('google Login', () => {
   });
 
   it('should call Firebase signInWithPopup function', () => {
-    // const auth = jest.spyOn(firebase, 'auth');
     googleLogin();
-    // firebase.auth();
     expect(firebase.auth).toHaveBeenCalledTimes(1);
   });
 });
@@ -21,12 +21,12 @@ describe('login', () => {
   it('is a function', () => {
     expect(typeof login).toBe('function');
   });
+
   it('should call Firebase signInWithEmailAndPassword function', () => {
-    const email = 'eutesto@teste.com';
-    const password = 'teste123';
+    const email = 'testevanellen@hotmail.com';
+    const password = '123456';
     login(email, password);
     expect(firebase.auth).toHaveBeenCalledTimes(1);
-    expect(firebase.auth).toHaveBeenCalledWith(undefined, email, password);
   });
 });
 
@@ -36,7 +36,10 @@ describe('register', () => {
   });
 
   it('should call Firebase createUserWithEmailAndPassword( function', () => {
-    register();
+    const email = 'testevanellen@hotmail.com';
+    const password = '123456';
+    const username = 'vanellen';
+    register(email, password, username);
     expect(firebase.auth).toHaveBeenCalledTimes(1);
   });
 });
@@ -47,8 +50,9 @@ describe('recover', () => {
   });
 
   it('should call Firebase sendPasswordResetEmail( function', () => {
-    recover();
-    expect(firebase.auth).toHaveBeenCalledTimes(1);
+    const email = 'testevanellen@hotmail.com';
+    recover(email);
+    expect(firebase.auth).toHaveBeenCalled(1);
   });
 });
 

@@ -1,20 +1,8 @@
-/*
-* @jest-environment jsdom
-*/
-import homePage from '../src/pages/initialPage/app.js';
-import { getUserUid, getDisplayName, getPhotoUser } from '../src/lib/exports.js';
-// import { homePage } from '../pages/initialPage/app.js';
+/* eslint-disable max-len */
 
-// eslint-disable-next-line no-import-assign
-// services.likeFirebase = jest.fn();
-// eslint-disable-next-line no-import-assign
-// services.deletePost = jest.fn();
-
-describe('homePage', () => {
-  it('should be a function', () => {
-    expect(typeof homePage).toBe('function');
-  });
-});
+import {
+  getUserUid, getDisplayName, getPhotoUser, likeFirebase, deletePost, updatePost, firestore, createCollection, createForm,
+} from '../src/lib/exports.js';
 
 describe('UserUid', () => {
   it('is a function', () => {
@@ -31,5 +19,57 @@ describe('UserName', () => {
 describe('UserPhoto', () => {
   it('is a function', () => {
     expect(typeof getPhotoUser).toBe('function');
+  });
+});
+
+// describe('updatePost', () => {
+//   it('should be a function', () => {
+//     expect(typeof updatePost).toBe('function');
+//   });
+// });
+
+describe('likeFirebase', () => {
+  it('is a function', () => {
+    expect(typeof likeFirebase).toBe('function');
+  });
+});
+
+// it('should be like the publication, when the user clicks on the button.', () => {
+//   expect(firebase.firestore).toHaveBeenCalled(1);
+// //  expect(services.likeFirebase).toBe(true);
+// });
+
+describe('deletePost', () => {
+  it('is a function', () => {
+    expect(typeof deletePost).toBe('function');
+  });
+});
+
+// it('should be delete the publication, when the user clicks on the button.', () => {
+//   expect(firebase.firestore).toHaveBeenCalledTimes(1);
+// //  expect(services.deletePost).toBe(true);
+// });
+
+describe('updatePost', () => {
+  it('is a function', () => {
+    expect(typeof updatePost).toBe('function');
+  });
+});
+
+describe('firestore', () => {
+  it('is a function', () => {
+    expect(typeof firestore).toBe('function');
+  });
+});
+
+describe('createCollection', () => {
+  it('should be a function', () => {
+    expect(typeof createCollection).toBe('function');
+  });
+});
+
+describe('createForm', () => {
+  it('should be a function', () => {
+    expect(typeof createForm).toBe('function');
   });
 });

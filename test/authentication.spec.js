@@ -1,10 +1,16 @@
 import {
-  login, googleLogin, register, signOut,
+  googleLogin,
+  login,
+  register,
+  signOut,
+  getUserUid,
+  getDisplayName,
+  getPhotoUser,
+  firestore,
+  createCollection,
 } from '../src/lib/authentication.js';
-// import { pageRegister } from '../src/pages/register/app.js';
 
 beforeEach(() => jest.clearAllMocks());
-// const sendPasswordResetEmail = jest.fn(() => Promise.resolve());
 
 describe('google Login', () => {
   it('is a function', () => {
@@ -44,18 +50,6 @@ describe('register', () => {
   });
 });
 
-// describe('recover', () => {
-//   it('is a function', () => {
-//     expect(typeof recover).toBe('function');
-//   });
-
-//   it('should call Firebase sendPasswordResetEmail( function', () => {
-//     // const email = 'testevanellen@hotmail.com';
-//     recover();
-//     expect(firebase.auth).toHaveBeenCalled(1);
-//   });
-// });
-
 describe('signOut', () => {
   it('should be a function', () => {
     expect(typeof signOut).toBe('function');
@@ -64,5 +58,55 @@ describe('signOut', () => {
   it('should call Firebase signOut function', () => {
     signOut();
     expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('UserUid', () => {
+  it('is a function', () => {
+    expect(typeof getUserUid).toBe('function');
+  });
+
+  it('should call Firebase getUserUid function', () => {
+    getUserUid();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('UserName', () => {
+  it('is a function', () => {
+    expect(typeof getDisplayName).toBe('function');
+  });
+
+  it('should call Firebase getDisplayName function', () => {
+    getDisplayName();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('UserPhoto', () => {
+  it('is a function', () => {
+    expect(typeof getPhotoUser).toBe('function');
+  });
+
+  it('should call Firebase getPhotoUser function', () => {
+    getPhotoUser();
+    expect(firebase.auth).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('firestore', () => {
+  it('is a function', () => {
+    expect(typeof firestore).toBe('function');
+  });
+});
+
+describe('createCollection', () => {
+  it('should be a function', () => {
+    expect(typeof createCollection).toBe('function');
+  });
+
+  it('should call Firebase createCollection function', () => {
+    createCollection();
+    expect(firebase.firestore).toHaveBeenCalledTimes(1);
   });
 });

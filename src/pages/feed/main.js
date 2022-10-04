@@ -53,9 +53,6 @@ export default () => {
   feedContainer.innerHTML = template;
   const publishBtn = feedContainer.querySelector('#publish-btn');
   const textPost = feedContainer.querySelector('#text-post');
-  publishBtn.addEventListener('click', () => {
-    createPost(textPost.value);
-  });
 
   const printPosts = async () => {
     const postArr = await getAllPosts();
@@ -64,18 +61,23 @@ export default () => {
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${key.author}</h2>
-            <img class="pencil-post" src="" alt="">
-            <img class="delete-post" src="" alt="">
+            <button class="like-btn-post"><img class="pencil-post" src="" alt="">edit</button>
+            <button class="like-btn-post"><img class="delete-post" src="" alt="">delet</button>
           </div>
           <p class="text-post">${key.text}</p>
           <div class="footer-post">
             <p class="date-post"></p>
-            <button class="like-btn-post"></button>
+            <button class="like-btn-post">like</button>
             <p class="all-likes-post"></p>
           </div>
         </div>
     `).join('');
   };
+
+  publishBtn.addEventListener('click', () => {
+    createPost(textPost.value);
+    printPosts();
+  });
 
   printPosts();
 

@@ -41,7 +41,6 @@ body {
     background-color: #ffffff;
     font-size: 1rem;
     border-radius: 2%;
-    margin-bottom: 3rem;
 }
 .logo-login {
     height: 16vh;
@@ -64,7 +63,7 @@ body {
 
 .register p {
     font-size: 1rem;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 
 #button-gmail {
@@ -76,7 +75,8 @@ body {
 }
 
 .login-error-div{
-    font-size: 1rem;
+    font-size: 0.7rem;
+    font-weight: 300;
     color: #C30707;
 }
 
@@ -90,7 +90,7 @@ body {
     text-align: center;
     margin-top: 5%;
     font-size: 1.1rem;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     cursor: pointer;
     color: #ffffff;
 }

@@ -2,7 +2,7 @@ import { googleLogin, login, recover } from '../../lib/authentication.js';
 import { showErrors } from '../../errors.js';
 /* eslint-disable max-len */
 
-export const pageLogin = () => {
+export default () => {
   const container = document.createElement('div');
   const template = `  <div class="container-login">
     <div class="box-left">
@@ -81,7 +81,8 @@ export const pageLogin = () => {
 
   buttonGmail.addEventListener('click', (event) => {
     event.preventDefault();
-    googleLogin()
+    const provider = new firebase.auth.GoogleAuthProvider();
+    googleLogin(provider)
       .then(() => {
         window.location.replace('#page');
       }).catch((error) => {
@@ -107,7 +108,7 @@ export const pageLogin = () => {
   });
 
   signUp.addEventListener('click', () => {
-    window.location.href = '#register';
+    window.location.href = '#pageRegister';
   });
 
   return container;

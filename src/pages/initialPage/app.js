@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import {
   // eslint-disable-next-line max-len
   getDisplayName, getUserUid, firestore, createCollection, signOut,
@@ -80,18 +81,11 @@ export default () => {
   `;
   container.innerHTML = template;
 
-  //   const pictureImg = container.querySelector('.picture-image');
-  //     const pictureInput = container.querySelector('.picture_input');
-  //   const pictureImgText = 'Você tem uma imagem da capa do filme/série? Sobe aí!';
-  //   pictureImg.innerHTML = pictureImgText;
-
   const doLogout = container.querySelector('#logout');
   const formAction = container.querySelector('#myForm');
   const boxPost = container.querySelector('.posts');
 
   const db = firebase.firestore();
-  const userID = { whoLike: firebase.auth().currentUser.uid };
-  const postLikedSometime = false;
   const docRef = db.collection('posts').doc().id;
   const likeFirebase = (id) => firestore().doc(id).update({
     like: firebase.firestore.FieldValue.increment(1),
@@ -99,8 +93,23 @@ export default () => {
     .then(() => true)
     .catch((error) => error);
 
-  // const userLikes = firebase.firestore().collection('posts');
-  // const userOnline = firebase.auth().currentUser.uid;
+  let likedsometime = false;
+  //   const deslikedsometime = false;
+  const userLoggedLikeThisPost = firebase.firestore().collection('posts')
+    .doc(docRef).collection('posts');
+
+  //   const userLoggedDeslikedThisPost = firebase.firestore().collection('posts')
+  //     .doc(docRef).collection('posts');
+
+  const userOnline = firebase.auth().currentUser.uid;
+
+  const userLiked = {
+    wholikes: firebase.auth().currentUser.uid,
+  };
+
+  //   const userDesliked = {
+  //     whodesliked: firebase.auth().currentUser.uid,
+  //   };
 
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
@@ -193,8 +202,7 @@ export default () => {
 
     postTemplate();
   });
-  // eslint-disable-next-line max-len
-  // eslint-disable-next-line consistent-return
+
   boxPost.addEventListener('click', (e) => {
     const removeButtonId = e.target.dataset.remove;
     const userCurrent = e.target.dataset.user;
@@ -263,21 +271,24 @@ export default () => {
   boxPost.addEventListener('click', (e) => {
     const buttonLike = e.target.dataset.liked;
     const increment = firebase.firestore.FieldValue.increment(1);
-    // userOnlineLikedThisPost.get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         if (doc.data().userID === userOnline) {
-    //           postLikedSometime = true;
-    //           alert('Você já curtiu esse post!');
-    // eslint-disable-next-line max-len
-    //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
-    //       }
-    //     });
 
-    if (postLikedSometime === false) {
+    userLoggedLikeThisPost.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (likedsometime === false) {
+          if (doc.data().wholikes === userOnline) {
+            likedsometime = true;
+            alert('Você já curtiu esse post!');
+            boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Já curtiu!';
+          }
+        }
+      });
+    });
+
+    if (likedsometime === false) {
       likeFirebase(docRef)
         .then(() => {
           firestore().doc(docRef).collection('posts')
-            .add(userID)
+            .add(userLiked)
             .then(() => {
               const teste = boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].textContent;
               boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = `Curtiu! <b> ${Number(teste) + 1} </b} `;
@@ -292,37 +303,39 @@ export default () => {
     }
   });
 
-  boxPost.addEventListener('click', (e) => {
-    const buttonDeslike = e.target.dataset.desliked;
-    const increment = firebase.firestore.FieldValue.increment(1);
-    // userLikes.get().then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         if (doc.data().userID === userOnline) {
-    //           postLikedSometime = true;
-    //           alert('Você já curtiu esse post!');
-    // eslint-disable-next-line max-len
-    //           boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
-    //       }
-    //     });
+  //   boxPost.addEventListener('click', (e) => {
+  //     const buttonDeslike = e.target.dataset.desliked;
+  //     const increment = firebase.firestore.FieldValue.increment(1);
 
-    if (postLikedSometime === false) {
-      likeFirebase(docRef)
-        .then(() => {
-          firestore().doc(docRef).collection('posts')
-            .add(userID)
-            .then(() => {
-              const getDeslike = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
-              boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu! 🙁<b> ${Number(getDeslike) + 1}</b} `;
-              db.collection('posts').doc(buttonDeslike)
-                .update({ deslike: increment });
-            });
-        })
+  //     userLoggedDeslikedThisPost.get().then((querySnapshot) => {
+  //       querySnapshot.forEach((doc) => {
+  //         if (deslikedsometime === false) {
+  //           if (doc.data().whodesliked === userOnline) {
+  //             deslikedsometime = true;
+  //             alert('Você já DESCURTIU esse post!');
+  // eslint-disable-next-line max-len
+  //             boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Já <b>descurtiu</b>!';
+  //         }
+  //     }
+  //   });
+  // });
 
-        .catch(() => {
-          alert('Ops! Algo deu errado. Tente novamente!');
-        });
-    }
-  });
+  //     if (deslikedsometime === false) {
+  //       likeFirebase(docRef)
+  //         .then(() => {
+  //           firestore().doc(docRef).collection('posts')
+  //             .add(userDesliked)
+  //             .then(() => {
+  // eslint-disable-next-line max-len
+  //               const teste = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
+  // eslint-disable-next-line max-len
+  //               boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu!😢 <b> ${Number(teste) + 1} </b} `;
+  //               db.collection('posts').doc(buttonDeslike)
+  //                 .update({ deslike: increment });
+  //             });
+  //         });
+  //     }
+  //   })
 
   return container;
 };

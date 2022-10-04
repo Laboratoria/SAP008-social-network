@@ -60,7 +60,7 @@ export default () => {
         <div class="box-movies">
             <div class="posts-movies">
                 <div class="img-movie">
-                <img id="movieImg" src="${IMG_URL + poster_path}" alt="logo Laboratória">
+                <img id="movieImg" src="${IMG_URL + poster_path}" alt="movie">
                 </div>
           
                 <div class="info-movies">

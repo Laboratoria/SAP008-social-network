@@ -1,4 +1,4 @@
-import { getDisplayName, getPhotoUser } from '../../lib/exports.js';
+import { getDisplayName, getPhotoUser } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');

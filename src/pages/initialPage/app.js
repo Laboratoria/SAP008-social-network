@@ -1,8 +1,8 @@
 import {
   // eslint-disable-next-line max-len
-  getDisplayName, getUserUid, firestore, likeFirebase, deletePost, updatePost, createCollection, createForm,
-} from '../../lib/exports.js';
-import { signOut } from '../../lib/authentication.js';
+  getDisplayName, getUserUid, firestore, createCollection, signOut,
+} from '../../lib/authentication.js';
+// import { signOut } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -93,6 +93,11 @@ export default () => {
   const userID = { whoLike: firebase.auth().currentUser.uid };
   const postLikedSometime = false;
   const docRef = db.collection('posts').doc().id;
+  const likeFirebase = (id) => firestore().doc(id).update({
+    like: firebase.firestore.FieldValue.increment(1),
+  })
+    .then(() => true)
+    .catch((error) => error);
 
   // const userLikes = firebase.firestore().collection('posts');
   // const userOnline = firebase.auth().currentUser.uid;
@@ -112,7 +117,7 @@ export default () => {
   }
 
   function postTemplate() {
-    createForm()
+    firebase.firestore().collection('posts').get()
       .then((snapshot) => {
         const postContainer = snapshot.docs.reduce((acc, doc) => {
           const {
@@ -188,7 +193,7 @@ export default () => {
 
     postTemplate();
   });
-
+  // eslint-disable-next-line max-len
   // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const removeButtonId = e.target.dataset.remove;
@@ -202,7 +207,7 @@ export default () => {
       // eslint-disable-next-line no-alert
       const resultado = window.confirm('Você deseja apagar essa postagem?');
       if (resultado === true) {
-        deletePost(removeButtonId)
+        firebase.firestore().collection('posts').doc(removeButtonId).delete()
           .then(() => {
             const posts = document.querySelector(`#poster-${removeButtonId}`);
             posts.remove();
@@ -242,7 +247,7 @@ export default () => {
       const updateMovie = boxPost.querySelector(`#name-${updateButton}`).value;
       const updateText = boxPost.querySelector(`#about-${updateButton}`).value;
 
-      updatePost(updateButton, updateMovie, updateText)
+      firebase.firestore().collection('posts').doc(updateButton).update({ movie: updateMovie, text: updateText })
         .then(() => {
           boxPost.querySelector(`#updateButton-${updateButton}`).style.display = 'none';
           boxPost.querySelector(`#editButton-${updateButton}`).removeAttribute('style');

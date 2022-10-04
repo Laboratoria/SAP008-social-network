@@ -1,4 +1,4 @@
-import { googleLogin, login, recover } from '../../lib/authentication.js';
+import { googleLogin, login } from '../../lib/authentication.js';
 import { showErrors } from '../../errors.js';
 /* eslint-disable max-len */
 
@@ -96,7 +96,7 @@ export default () => {
   buttonRecover.addEventListener('click', (event) => {
     event.preventDefault();
     const email = inputEmail.value;
-    recover(email)
+    firebase.auth().sendPasswordResetEmail(email)
       .then(() => {
         const modalContentElement = document.getElementById('modal_content');
         const modalElement = document.getElementById('modal');

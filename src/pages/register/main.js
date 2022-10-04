@@ -83,9 +83,6 @@ export default () => {
       formValidationMessages.innerHTML = formValidation;
     } else {
       registerWithEmailAndPassword(name.value, email.value, password.value)
-        .then(() => {
-          window.location.hash = '#feed';
-        })
         .catch((error) => {
           const userFriendlyMessage = handleFirebaseErrors(error.code);
           firebaseWarningMessages.classList.remove('hide');
@@ -97,9 +94,6 @@ export default () => {
 
   btnGoogleRegister.addEventListener('click', () => {
     loginWithGoogle()
-      .then(() => {
-        window.location.hash = '#feed';
-      })
       .catch((/* error */) => {
         /* const errorCode = error.code;
         const errorMessage = error.message;

@@ -4,11 +4,21 @@ import register from './pages/register/main.js';
 import login from './pages/login/main.js';
 import feed from './pages/feed/main.js';
 import resetPassword from './pages/resetPassword/main.js';
+import { userStateChanged } from './lib/index.js';
 import './lib/configuration.js';
 
 const main = document.querySelector('#root');
 
+function redirectAuthenticatedUser(user) {
+  if (user) {
+    window.location.hash = '#feed';
+  } else {
+    window.location.hash = '#homepage';
+  }
+}
+
 function verify() {
+  main.innerHTML = '';
   switch (window.location.hash) {
     case '#homepage':
       main.appendChild(homepage());
@@ -29,24 +39,13 @@ function verify() {
       main.appendChild(feed());
       break;
     default:
-      main.innerHTML = '';
       main.appendChild(homepage());
   }
 }
 
-const init = () => {
-  window.addEventListener('hashchange', () => {
-    main.innerHTML = '';
-    verify();
-  });
-};
+window.addEventListener('hashchange', verify);
 
 window.addEventListener('load', () => {
-  main.innerHTML = '';
-  if (window.location.hash) {
-    verify();
-  } else {
-    main.appendChild(homepage());
-    init();
-  }
+  verify();
+  userStateChanged(redirectAuthenticatedUser);
 });

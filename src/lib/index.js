@@ -1,6 +1,6 @@
 import {
   getAuth,
-  // onAuthStateChanged,
+  onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -23,20 +23,10 @@ const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider(app);
 
-// function userStateChanged(loggedIn) {
-//   const auth = getAuth(app);
-//   onAuthStateChanged(auth, (user) => {
-//     if (loggedIn) {
-//       // User is signed in, see docs for a list of available properties
-//       // https://firebase.google.com/docs/reference/js/firebase.User
-//       const uid = user.uid;
-//       // ...
-//     } else {
-//       // User is signed out
-//       // ...
-//     }
-//   });
-// }
+export function userStateChanged(callback) {
+  const auth = getAuth(app);
+  onAuthStateChanged(auth, callback);
+}
 
 export function registerWithEmailAndPassword(name, email, password) {
   const auth = getAuth(app);
@@ -60,6 +50,13 @@ export function resetPassword(email) {
   const auth = getAuth(app);
   return sendPasswordResetEmail(auth, email);
 }
+
+function getUserData(uid) {
+  const auth = getAuth(app);
+  auth.getUser(uid)
+    .then(console.log);
+}
+window.getUserData = getUserData;
 
 export const createPost = async (textPost) => {
   const auth = getAuth(app);

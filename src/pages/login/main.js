@@ -52,7 +52,6 @@ export default () => {
   const email = loginContainer.querySelector('#email-input-login');
   const password = loginContainer.querySelector('#password-input-login');
   const btnLogin = loginContainer.querySelector('#btn-login-page');
-  // const btnResetPassword = loginContainer.querySelector('.password-reset-login');
   const formValidationMessages = loginContainer.querySelector('#form-validation-messages');
   const firebaseWarningMessages = loginContainer.querySelector('#firebase-warning-messages');
   const returnBtn = loginContainer.querySelector('#return-btn');
@@ -68,9 +67,6 @@ export default () => {
       formValidationMessages.innerHTML = formValidation;
     } else {
       loginWithEmailAndPassword(email.value, password.value)
-        .then(() => {
-          window.location.hash = '#feed';
-        })
         .catch((error) => {
           const userFriendlyMessage = handleFirebaseErrors(error.code);
           firebaseWarningMessages.classList.remove('hide');
@@ -85,9 +81,6 @@ export default () => {
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();
     loginWithGoogle()
-      .then(() => {
-        window.location.hash = '#feed';
-      })
       .catch((/* error */) => {
         // const errorCode = error.code;
         // const errorMessage = error.message;

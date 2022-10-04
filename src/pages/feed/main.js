@@ -1,6 +1,6 @@
 import {
   createPost,
-  //  deletePost,
+  // deletePost,
   getAllPosts,
 } from '../../lib/index.js';
 
@@ -42,6 +42,7 @@ export default () => {
             <option selected disabled>Categoria</option>
             </select>
           <button id="publish-btn">Publicar</button>
+          <button id="delete-btn">Deletar</button>
           </div>
           
           </section>
@@ -54,6 +55,7 @@ export default () => {
           <img src="" alt="" >
           </footer>
           `;
+
   feedContainer.innerHTML = template;
   const publishBtn = feedContainer.querySelector('#publish-btn');
   const textPost = feedContainer.querySelector('#text-post');
@@ -84,9 +86,8 @@ export default () => {
   printPosts();
 
   // const deleteBtn = feedContainer.querySelector('#delete-btn');
-  // deleteBtn.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   deletePost('VV1rSdrhaz7PeLb06fDm');
+  // deleteBtn.addEventListener('click', () => {
+  //   deletePost('DgLMx1iolHaRUECdweT6W1TJGEJ3');
   // });
 
   return feedContainer;

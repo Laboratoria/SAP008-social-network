@@ -6,6 +6,28 @@ export default () => {
     <div class="container-logo-profile">
         <img class="logo-img-profile" src="./images/logo_02_azul_081E26.png" alt="logo do título">
     </div>
+    <nav class="navbar">
+                <ul class="navbar-list"> 
+                    <li class="navbar-item-button">
+                        <button type="button" id="navbar-button">BOTÃO</button>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#post'>Publicar Post</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#about'>Show +</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#aboutus'>Sobre Nós</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href='#timeline'>Timeline</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a>Sair</a>
+                    </li>
+                </ul>
+             </nav>
     <div class="container-title-profile">
         <h1>Meu perfil musical</h1>
     </div>    
@@ -22,6 +44,17 @@ export default () => {
     `;
 
     container.innerHTML = template;
+
+    const menu = container.querySelector("#navbar-button");
+    window.alert(menu)
+    menu.addEventListener('click', () => {
+    const items = container.querySelectorAll(".navbar-item");
+    items.forEach ( item => {
+    item.classList.toggle("hide");
+        })
+    console.log(items);
+    });
+
 
     return container;
     

@@ -9,17 +9,17 @@ export default () => {
                         <button type="button" id="navbar-button">BOTÃO</button>
                     </li>
                     <li class="navbar-item">
-                        <a href='#about'>About</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href='#timeline'>Timeline</a>
+                        <a href='#profile'>Perfil</a>
                     </li>
                     <li class="navbar-item">
                         <a href='#post'>Publicar post</a>
                     </li>
                     <li class="navbar-item">
-                        <a href='#profile'>Profile</a>
+                        <a href='#about'>Show +</a>
                     </li>
+                    <li class="navbar-item">
+                    <a href='#timeline'>Timeline</a>
+                </li>
                     <li class="navbar-item">
                         <a>Sair</a>
                     </li>

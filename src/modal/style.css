@@ -18,9 +18,10 @@
   
   .modal_content {
     background-color: rgb(222, 205, 181);
-    padding: 30px 24px;
-    width: 650px;
-    height: 200px;
+    padding: 60px 24px;
+    width: 500px;
+    height: 150px;
+    font-size: 1.3rem;
     border-radius: 0.5rem;
     text-align: center;
   }
@@ -28,14 +29,14 @@
   .modal span {
     position: relative;
     right: 30px;
-    bottom: 90px;
-    width: 24px;
+    bottom: 70px;
+    width: 16px;
     cursor: pointer;
   }
   
   .modal span img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
   
   .show-modal {
@@ -43,3 +44,5 @@
     visibility: visible;
     transform: scale(1.0);
   }
+
+  

@@ -61,11 +61,11 @@ body {
     color: #ffffff;
 }
 
-#button-back{
+#button-back {
     background-color: #544f4f;
 }
 
-.register-error{
+.register-error {
     text-align: center;
     color: #d30a0a;
     font-size: 0.9rem;
@@ -119,9 +119,8 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-
     .container-register {
-        display: block;
+        height: 45rem;
     }
 
     #logo-register {
@@ -129,7 +128,7 @@ footer {
     }
 
     .box-center {
-        width: 60vw;
+        width: 80vw;
         font-size: 1rem;
         margin-top: 10%;
     }
@@ -158,11 +157,15 @@ footer {
 
     .wrapper-register {
         background-color: #151414;
-        height: 20rem;
+        height: 10rem;
     }
 }
 
 @media only screen and (max-width: 770px) and (min-width: 767px) {
+
+    .container-register {
+        height: 60rem;
+    }
 
     .box-center {
         width: 60%;
@@ -192,7 +195,8 @@ footer {
         margin-left: 5%;
         width: 270px;
     }
-    .wrapper-register{
+
+    .wrapper-register {
         height: 10rem;
     }
 
@@ -239,14 +243,11 @@ footer {
 @media only screen and (max-width: 950px) and (min-width:820px) {
 
     .container-register {
-        width: auto;
-        font-size: 0;
-        margin: auto;
-        padding: 2%;
+        height: 72rem;
     }
 
     .box-center {
-        width: 60%;
+        width: 70%;
         font-size: 1.2rem;
         margin-top: 2%;
     }
@@ -256,7 +257,7 @@ footer {
     }
 
     .wrapper-register {
-        height: 50rem;
+        height: 10rem;
     }
 
     .foot {

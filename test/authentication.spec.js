@@ -1,5 +1,5 @@
 import {
-  login, googleLogin, register, recover, signOut,
+  login, googleLogin, register, signOut,
 } from '../src/lib/authentication.js';
 // import { pageRegister } from '../src/pages/register/app.js';
 
@@ -44,17 +44,17 @@ describe('register', () => {
   });
 });
 
-describe('recover', () => {
-  it('is a function', () => {
-    expect(typeof recover).toBe('function');
-  });
+// describe('recover', () => {
+//   it('is a function', () => {
+//     expect(typeof recover).toBe('function');
+//   });
 
-  it('should call Firebase sendPasswordResetEmail( function', () => {
-    // const email = 'testevanellen@hotmail.com';
-    recover();
-    expect(firebase.auth).toHaveBeenCalled(1);
-  });
-});
+//   it('should call Firebase sendPasswordResetEmail( function', () => {
+//     // const email = 'testevanellen@hotmail.com';
+//     recover();
+//     expect(firebase.auth).toHaveBeenCalled(1);
+//   });
+// });
 
 describe('signOut', () => {
   it('should be a function', () => {

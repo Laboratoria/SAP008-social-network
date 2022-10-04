@@ -14,7 +14,7 @@ const init = () => {
     case ' ':
       main.appendChild(login());
       break;
-    case '#pageRegister':
+    case '#register':
       main.innerHTML = '';
       main.appendChild(register());
       break;

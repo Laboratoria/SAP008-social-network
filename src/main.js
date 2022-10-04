@@ -16,31 +16,33 @@ const okLoginBtn = document.querySelector('#ok-login-btn');
 
 const checkBox = document.querySelector('#checkbox');
 
-const navigate = () => {
-    window.addEventListener('hashchange', () => {
-        main.innerHTML = "";
-        switch (window.location.hash) {
-            case '':
-                main.appendChild(load());
-                break;
-            case '#entrar':
-                main.appendChild(login());
-                break;
-            case '#cadastre-se':
-                main.appendChild(signin());
-                break;
-            case '#home':
-                main.appendChild(home());
-                break;
-            default:
-                main.appendChild(load());
-        }
-    })
+const init = () => {
+    main.innerHTML = "";
+    switch (window.location.hash) {
+        case '':
+            main.appendChild(load());
+            break;
+        case '#entrar':
+            main.appendChild(login());
+            break;
+        case '#cadastre-se':
+            main.appendChild(signin());
+            break;
+        case '#home':
+            main.appendChild(home());
+            break;
+        default:
+            main.appendChild(load());
+    }
 }
 
+
+
+
 window.addEventListener('load', () => {
+    window.addEventListener('hashchange', init)
     main.appendChild(load());
-    navigate();
+    init();
 })
 
 

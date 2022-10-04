@@ -1,4 +1,5 @@
 export default () => {
+    //fazer if usuario não estiver logado "currentUser" redirecionar tela login
     const container = document.createElement('div');
     const template = `<section>
     <nav class= "moblieTopIcons iconsContainer">

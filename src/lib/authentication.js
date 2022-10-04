@@ -17,3 +17,4 @@ export const getPhotoUser = () => firebase.auth().currentUser.photoURL;
 export const firestore = () => firebase.firestore().collection('posts');
 
 export const createCollection = (postCollection) => firebase.firestore().collection('posts').add(postCollection);
+// teste commit;

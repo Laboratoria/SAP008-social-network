@@ -1,3 +1,5 @@
+import {signOut} from "../firebase/firebase.js"
+
 export default () => {
     const container = document.createElement('div');
     container.className = "content-profile";
@@ -23,7 +25,7 @@ export default () => {
                     <li class="navbar-item">
                         <a href='#timeline'>Timeline</a>
                     </li>
-                    <li class="navbar-item">
+                    <li class="navbar-item" id="logout">
                         <a>Sair</a>
                     </li>
                 </ul>
@@ -55,6 +57,12 @@ export default () => {
     console.log(items);
     });
 
+    container.querySelector('#logout').addEventListener('click', e => {
+        e.preventDefault();
+        signOut();
+        window.location.hash = ""
+    
+    });
 
     return container;
     

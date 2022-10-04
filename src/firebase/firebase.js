@@ -13,6 +13,7 @@ export const createPost = async(artist, location, date, post,) => {
   try {
 
     const docRef = await addDoc(collection(db, "posts"), {
+      author: auth.currentUser.uid,
       artist, 
       location,
       date,

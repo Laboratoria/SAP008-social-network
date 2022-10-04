@@ -3,7 +3,10 @@ import {signOut} from "../firebase/firebase.js"
 export default () => {
     const container = document.createElement('div');
     const template = `  
-        <div class="container-login">
+        <div class="container-timeline">
+        <div class="container-logo">
+            <img class="logo-img" src="./images/logo_02_blue_081E26.png"alt="logo do título">
+        </div>
         <nav class="navbar">
                 <ul class="navbar-list"> 
                     <li class="navbar-item-button">
@@ -27,6 +30,8 @@ export default () => {
                     </li>
                 </ul>
              </nav>
+
+             <section id="timeline-post"></section>
                    
                </div>     
     `;

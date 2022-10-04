@@ -4,7 +4,7 @@ export default () => {
     const container = document.createElement('div');
     const template = `  
         <div class="container-about">
-        <img  class="logo-brown-about" src="./images/logo_02_azul_081E26.png" alt="logo do título">
+        <img  class="logo-brown-about" src="./images/logo_01_brown_A6634B.png" alt="logo do título">
         <nav class="navbar">
                 <ul class="navbar-list"> 
                     <li class="navbar-item-button">

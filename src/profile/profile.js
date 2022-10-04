@@ -6,7 +6,7 @@ export default () => {
     const template = `  
     
     <div class="container-logo-profile">
-        <img class="logo-img-profile" src="./images/logo_02_azul_081E26.png" alt="logo do título">
+    <img class="logo-img" src="./images/logo_02_blue_081E26.png"alt="logo do título">
     </div>
     <nav class="navbar">
                 <ul class="navbar-list"> 

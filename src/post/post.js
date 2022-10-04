@@ -6,7 +6,7 @@ export default () => {
     const container = document.createElement('div');
     const template = `  
         <div class="container-logo">
-            <img class="logo-img" src="./images/logo_02_azul_081E26.png" alt="logo do título">
+        <img class="logo-img" src="./images/logo_02_blue_081E26.png" alt="logo do título">
         </div>
         <nav class="navbar">
                 <ul class="navbar-list"> 
@@ -48,20 +48,18 @@ export default () => {
     container.innerHTML = template;
 
 
-    container.querySelector("#btn-post").addEventListener('click', e => { //evento trocado de submit p/click
+    container.querySelector("#btn-post").addEventListener('click', e => { 
         e.preventDefault();
-            const artist = container.querySelector("#artist").value; //estávamos usando document, ao invés de container.
+            const artist = container.querySelector("#artist").value; 
             const location = container.querySelector("#location").value;
             const date = container.querySelector("#date").value;
             const post = container.querySelector("#post").value;
                 createPost(artist, location, date, post);
-            alert("Post criado com sucesso") //adicionado
             redirect("#timeline");
     });
 
 
     const menu = container.querySelector("#navbar-button");
-        window.alert(menu)
             menu.addEventListener('click', () => {
             const items = container.querySelectorAll(".navbar-item");
             items.forEach ( item => {

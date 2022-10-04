@@ -18,7 +18,7 @@ export const createPost = async(artist, location, date, post,) => {
       location,
       date,
       post,
-      likes: 0 //adicionado
+      likes: 0,
     });
   
     console.log("Document written with ID: ", docRef.id);
@@ -53,47 +53,3 @@ export const resetPassword = (email) => {
 }
 
   
-/*artist
-"beyonce"
-(string)
-date
-"2022-09-14"
-location
-"brasil"
-post
-"wdadawdawdadda"
-owner
-"YcBVT1LPgBQAgDwRHp3IgOEPErA2"
-likes: [
-  {
-    owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-    post_reference: "vNNV1T37MYdff1ZQNxY6"
-  },
-  {
-    owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-    post_reference: "vNNV1T37MYdff1ZQNxY6"
-  },
-  {
-    owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-    post_reference: "vNNV1T37MYdff1ZQNxY6"
-  }
-  ,{
-    owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-    post_reference: "vNNV1T37MYdff1ZQNxY6"
-  }
-  ,{
-    owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-    post_reference: "vNNV1T37MYdff1ZQNxY6"
-  }
-  ,{
-    owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-    post_reference: "vNNV1T37MYdff1ZQNxY6"
-  }
-
-]
-likes.length
-
-const like = {
-  owner: "YcBVT1LPgBQAgDwRHp3IgOEPErA2",
-  post_reference: "vNNV1T37MYdff1ZQNxY6"
-}*/

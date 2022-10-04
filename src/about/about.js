@@ -38,7 +38,6 @@ export default () => {
     container.innerHTML = template;
 
     const menu = container.querySelector("#navbar-button");
-    window.alert(menu)
     menu.addEventListener('click', () => {
     const items = container.querySelectorAll(".navbar-item");
     items.forEach ( item => {

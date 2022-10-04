@@ -12,6 +12,7 @@ import {
   collection,
   getDoc,
   doc,
+  deleteDoc,
   updateDoc,
   getDocs,
 } from './firebase.js';
@@ -106,6 +107,16 @@ export const updatePost = async (idPost, textValue, category) => {
     text: textValue,
     tag: category,
   });
+};
+
+export const deletePost = async (postId) => {
+  try {
+    const docRef = doc(db, 'post', postId);
+    await deleteDoc(docRef);
+    console.log('Post deletado', docRef.id);
+  } catch (error) {
+    console.log('error');
+  }
 };
 
 export const getAllPosts = async () => {

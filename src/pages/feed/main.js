@@ -1,4 +1,8 @@
-import { createPost, getAllPosts } from '../../lib/index.js';
+import {
+  createPost,
+  //  deletePost,
+  getAllPosts,
+} from '../../lib/index.js';
 
 export default () => {
   const feedContainer = document.createElement('div');
@@ -78,6 +82,12 @@ export default () => {
   };
 
   printPosts();
+
+  // const deleteBtn = feedContainer.querySelector('#delete-btn');
+  // deleteBtn.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   deletePost('VV1rSdrhaz7PeLb06fDm');
+  // });
 
   return feedContainer;
 };

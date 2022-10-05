@@ -1,0 +1,12 @@
+html{
+  background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
+  background-position: center;
+  height: 100%;
+  margin:0;
+  text-align: center;
+}
+
+.root{
+  margin: 5%;
+  
+}

@@ -1,4 +1,4 @@
-/*respovividade - Typical device breakpoints 
+/* respovividade - Typical device breakpoints 
 (pontos que a interface do usuário será adaptada para a nova realidade do tamanho de tela, ou densidade de pixels)
 pequenas telas: até 600px
 celular: de 600px até 768px
@@ -7,11 +7,11 @@ desktop: de 992 até 1200
 telas grandes: acima de 1200 */
 
 /*versão mobile first - fazer @mq somente de tablet e desktop*/
-html {
+/* html {
   background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
   background-position: center;
   height: 100%;
-}
+} */
 
 
 .main {

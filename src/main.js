@@ -4,7 +4,7 @@ import cadastro from "./pages/Cadastro/cadastro.js"
 import feed from "./pages/feed/feed.js";
 
 
-const root = document.querySelector('#root');
+const root = document.querySelector('.root');
 
 const init = () => {
   window.addEventListener("hashchange", () => {

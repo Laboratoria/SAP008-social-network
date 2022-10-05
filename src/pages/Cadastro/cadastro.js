@@ -1,69 +1,49 @@
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
-import { app } from "../../config-firebase.js";
-import { register } from "../../lib/getAuth.js";
+import { register } from "../../lib/auth.js";
 
 export default () => {
   const containerRegistration = document.createElement("div")
-  const template = `
-  <div class="container-registration">
-    <div class="btnback">
-      <button type="button" id="btn-back" onclick="window.location.href='/#login'">
-        Voltar
-      </button>
-        <img id="one-logo" src="./imagens/image-2.png">
-    </div>
-    <div>
-      <img id="logo-inspire" src="./imagens/INspire.png">
-    </div>
-      <div class="registration-input">
-      
-      <p>Apenas o seu nome de perfil ficará visível para outros usuários.</p>
-      <input type="text" name="name" id="input-name" class="input" placeholder="Digite seu nome"required> 
-      <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
-      <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email" required>
-      <input type="password" id="password" class="input" placeholder="Senha" required>
-      <button type="button" id="button-registration" class="button">Finalizar cadastro</button>
+  const template = 
+  `<div class="container-registration">
+      <button type="button" class="btn-back" onclick="window.location.href='/#login'">&#11013 voltar</button>
+
+      <div class="logo-tittle">
+        <img id="one-logo-coração" src="./imagens/image-2.png">
+        <p class="tittle-logotype">INspire</p>
       </div>
+
+      <div class="registration-input">
+        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
+        <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email" required>
+        <input type="password" id="password" class="input" placeholder="Senha" required>
+      </div>
+      <button type="button" id="button-registration" class="button">Finalizar cadastro</button>
   
-   </div>
+    </div>
   
   `
   containerRegistration.innerHTML = template;
 
 
-  const auth = getAuth(app);
-  const nameUser = containerRegistration.querySelector("#input-name")
+
   const nameProfile = containerRegistration.querySelector("#input-profile-name")
   const email = containerRegistration.querySelector("#input-email-registration")
   const password = containerRegistration.querySelector("#password")
   const btnRegistration = containerRegistration.querySelector("#button-registration")
 
-  // function criarUsuario(email, senha, nome) {
-  //   return createUserWithEmailAndPassword(auth, email, password)
-  // }
-
   btnRegistration.addEventListener("click", function (e) {
     e.preventDefault();
-    register (email.value, password.value, nameProfile.value, nameUser.value)
+    register(email.value, password.value, nameProfile.value)
+    .then(function () {
+      alert("Bem vindo" + email.value);
+      window.location.hash = "login";
+    })
+    .catch(function (error) {
+      console.error(error.code)
+      alert("falhou")
 
-  })
+    });
 
-  // function validatePassword() {
-  //   if (
-  //     inputUserName.value === '' || inputEmail.value === '' || inputPassword.value === '' || inputNewPassword.value === '') {
-  //     alert('Por favor, preencha todos os campos');
-  //   } else if (inputPassword.value !== inputNewPassword.value) {
-  //     alert('A senha digitada está diferente em um dos campos');
-  //   } else {
-  //     const email = inputEmail.value;
-  //     const password = inputPassword.value;
-  //     const userName = inputUserName.value;
-  //     return register(email, password, userName);
-  //   }
-  // }
-  // buttonRegister.addEventListener('click', validatePassword);
-
-
+  });
 
 
   return containerRegistration

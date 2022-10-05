@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Dongle';
+    src: url(../fontes/Dongle-Regular\ \(1\).ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #e9e9e9;
+}
+
+header{
+    padding: 6rem;
+    background-color: #00A57A;
+    position: relative;
+    width: 100%;
+    height: 30%;
+    left: 0px;
+    top: 0px;
+    border-radius: 0 0 0 40px;
+}
+
+h1{
+    font-family:'Dongle';
+    font-size: 3rem;
+    color:#ffffff;
+    position: relative;
+    top: 5rem;
+    right: 3.5rem;
+}
+.formCadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2rem;
+    
+}
+#registrationFirstNameAndLastName{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #e9e9e9;
+}
+#registrationUsername{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #e9e9e9;
+}
+#emailRegistration{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #e9e9e9;
+}
+#registrationPassword{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #e9e9e9;
+}
+#PasswordConfirmation{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #e9e9e9;
+}
+#submitCadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #e9e9e9;
+   
+}
+#iamRegistration{
+    margin: 2rem;
+    width: 20rem;
+    height: 3rem;
+    background-color: #e9e9e9;
+}
+::placeholder{
+    font-size: 1.0rem;
+}
+#registrationBox{
+    width: 2rem;
+    height: 2rem;
+}
+.checkBoxRegistration{
+ display: flex;
+ align-content: center;
+ justify-content: center;
+ align-items: center;
+}
+button{
+    color: #ffffff;
+    background-color:#00A57A;
+    width: 20rem;
+    height:4rem;
+    border-radius: 20px;
+    
+}
+input{
+
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
+ 
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -6rem;
+    right: -6.5rem;
+    width: 100px;
+}
+.icone{
+    position: relative;
+    top: 2rem;
+    right: 3.5rem;
+    
+}
+.registrationIcon{
+    width: 2rem;
+}
+.img-error{
+    width: 2rem;
+}
+.formCadastro.success input {
+    border: 3px solid #4ECA64;
+}
+
+.formCadastro.error input {
+    border: 3px solid #DB5A5A;
+}
+
+ /* .formCadastro.error i.img-error {
+    visibility: visible;
+}
+
+.formCadastro.success i.img-success {
+    visibility: visible;
+}
+
+.formCadastro.error small{
+    color: #DB5A5A;
+    visibility: visible;
+} 
+ .formCadastro i {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.formCadastro small {
+    visibility: hidden;
+    position: absolute;
+    margin-top: 5px;
+    font-size: 14px;
+
+} */

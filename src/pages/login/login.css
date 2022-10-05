@@ -8,10 +8,11 @@ telas grandes: acima de 1200 */
 
 /*versão mobile first - fazer @mq somente de tablet e desktop*/
 body {
-background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
+  background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
   background-position: center;
   height: 100%;
 }
+
 
 .main {
     display: inline-flex;
@@ -110,5 +111,5 @@ background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(23
   
   /*desktop*/
   @media screen and (min-width: 1200) {
-    
+    background-image: url(C:\Users\andre\SAP008-social-network\src\imagens\teste.jpg);
   }

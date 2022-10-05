@@ -33,38 +33,17 @@ export default () => {
 
   const auth = getAuth(app);
   const nameUser = containerRegistration.querySelector("#input-name")
-  const nameProfile = containerRegistration.querySelector("#profile-name")
+  const nameProfile = containerRegistration.querySelector("#input-profile-name")
   const email = containerRegistration.querySelector("#input-email-registration")
   const password = containerRegistration.querySelector("#password")
   const btnRegistration = containerRegistration.querySelector("#button-registration")
 
-  // function criarUsuario(email, senha, nome) {
-  //   return createUserWithEmailAndPassword(auth, email, password)
-  // }
 
   btnRegistration.addEventListener("click", function (e) {
     e.preventDefault();
-    register (email.value, password.value)
+    register (email.value, password.value, nameProfile.value, nameUser.value)
 
   })
-
-  // function validatePassword() {
-  //   if (
-  //     inputUserName.value === '' || inputEmail.value === '' || inputPassword.value === '' || inputNewPassword.value === '') {
-  //     alert('Por favor, preencha todos os campos');
-  //   } else if (inputPassword.value !== inputNewPassword.value) {
-  //     alert('A senha digitada está diferente em um dos campos');
-  //   } else {
-  //     const email = inputEmail.value;
-  //     const password = inputPassword.value;
-  //     const userName = inputUserName.value;
-  //     return register(email, password, userName);
-  //   }
-  // }
-  // buttonRegister.addEventListener('click', validatePassword);
-
-
-
 
   return containerRegistration
 

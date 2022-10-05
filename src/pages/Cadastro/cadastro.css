@@ -2,17 +2,17 @@
 body {
   text-align: center;
   margin:0;
-  background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
+  /* background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   height: 100%;
 }
 body{
   margin: 5%;
 }
-
+/*
 .container-registration{
-  border:2px solid black;
+border:2px solid black;
   flex-wrap: wrap;
 }
 
@@ -43,11 +43,15 @@ body{
 }
 
 .input{
-  width: max-content;
-  height: max-content;
-  margin: 20px;
-  padding: 10px;
-  border-radius: 20px;
+  width: 250px;
+  height: 20px;
+  border: none;
+  font-size: 14px;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+  background-color: white;
+  margin: 2% 0;
 }
 
 

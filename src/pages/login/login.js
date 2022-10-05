@@ -26,7 +26,7 @@ export default function Login() {
 
         <div>
           <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
-          <a href="/#cadastro">Cadastre-se</a>
+          <a href="/#register">Cadastre-se</a>
         </div> 
       </main>
       `;

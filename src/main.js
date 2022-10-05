@@ -1,6 +1,6 @@
-import "./config-firebase.js"
+import "./lib/config.js"
 import login from "./pages/login/login.js" 
-import cadastro from "./pages/Cadastro/cadastro.js"
+import register from "./pages/register/register.js"
 import feed from "./pages/feed/feed.js";
 
 
@@ -13,8 +13,8 @@ const init = () => {
       case"#login":
         root.appendChild(login());
         break;
-      case "#cadastro":
-        root.appendChild(cadastro());
+      case "#register":
+        root.appendChild(register());
         break;
       case"#feed":
         root.appendChild(feed());

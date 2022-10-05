@@ -2,6 +2,7 @@ import {
   createPost,
   // deletePost,
   getAllPosts,
+  logoff,
 } from '../../lib/index.js';
 
 export default () => {
@@ -12,7 +13,7 @@ export default () => {
   <img src="img/Rebu.png" alt="rebu logo">
   <input type="search" placeholder="Busque por post">
       <img src="" alt="" id="user-profile-picture-header">
-      <button id="logout-btn"><img src="" alt=""></button>
+      <button id="logout-btn"><img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon"></button>
 
       <nav class="tag-filter">
 
@@ -59,6 +60,7 @@ export default () => {
   feedContainer.innerHTML = template;
   const publishBtn = feedContainer.querySelector('#publish-btn');
   const textPost = feedContainer.querySelector('#text-post');
+  const logoutBtn = feedContainer.querySelector('#logout-btn');
 
   const printPosts = async () => {
     const postArr = await getAllPosts();
@@ -83,6 +85,10 @@ export default () => {
   publishBtn.addEventListener('click', () => {
     createPost(textPost.value);
     printPosts();
+  });
+
+  logoutBtn.addEventListener('click', () => {
+    logoff();
   });
 
   printPosts();

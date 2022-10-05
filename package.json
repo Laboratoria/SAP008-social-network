@@ -37,7 +37,7 @@
     "node": ">=16.x"
   },
   "dependencies": {
-    "firebase": "^9.10.0",
+    "firebase": "^8.10.1",
     "gh-pages": "^4.0.0"
   }
 }

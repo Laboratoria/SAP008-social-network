@@ -62,22 +62,23 @@ export default () => {
 
   const printPosts = async () => {
     const postArr = await getAllPosts();
-    feedContainer.querySelector('#feed-post').innerHTML = postArr.map((key) => `
+    const postsTemplate = postArr.map((post) => `
         <div class="post">
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
-            <h2 class="user-name-post">${key.name}</h2>
-            <i class="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></i>
-            <i class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></i>
+            <h2 class="user-name-post">${post.name}</h2>
+            <button id="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></button>
+            <span class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
           </div>
-          <p class="text-post">${key.text}</p>
+          <p class="text-post">${post.text}</p>
           <div class="footer-post">
             <p class="date-post"></p>
-            <i class="like-btn-post"><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></i>
-            <p class="all-likes-post">${key.like.length}</p>
+            <span class="like-btn-post"><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
+            <p class="all-likes-post">${post.like.length}</p>
           </div>
         </div>
     `).join('');
+    feedContainer.querySelector('#feed-post').innerHTML += postsTemplate;
   };
 
   publishBtn.addEventListener('click', () => {

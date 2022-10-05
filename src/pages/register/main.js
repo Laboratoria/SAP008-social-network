@@ -30,16 +30,16 @@ export default () => {
           <form class="register-login display-flex">
               
               <h2 class="register-text">CADASTRAR</h2>
-              <img class="signup-icons" src="img/user-icon.png" alt="user icon"></img>
+              <img class="signup-icons" src="img/icons/user-icon.png" alt="user icon">
               <input id="name-input" class="input-style register-name" type="text" placeholder="NOME">
               
-              <img class="signup-icons" src="img/email-icon.png" alt="email icon"></img>
+              <img class="signup-icons" src="img/icons/email-icon.png" alt="email icon">
               <input id="register-input" class="input-style" type="email" placeholder="E-MAIL">
               
-              <img class="signup-icons" src="img/unlocked-icon.png" alt="password icon"></img>
+              <img class="signup-icons" src="img/icons/unlocked-icon.png" alt="password icon">
               <input type="password" id="password-register" class="input-style" placeholder="SENHA">
               
-              <img class="signup-icons" src="img/padlock-icon.png" alt="password locked icon"></img>
+              <img class="signup-icons" src="img/icons/padlock-icon.png" alt="password locked icon"></img>
               <input type="password" id="password-register-confirm" class="input-style" placeholder="CONFIRME SUA SENHA">
 
               <p id="form-validation-messages" class="form-warning-messages hide"></p>
@@ -47,7 +47,7 @@ export default () => {
               <p id="firebase-warning-messages" class="form-warning-messages hide"></p>
               
               <input type="submit" class="btn-register" value="CADASTRAR">
-              <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
+              <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
               
               <a href="/#login" class="link-text-login">JÁ POSSUI UMA CONTA? CONECTE-SE!</a>
               

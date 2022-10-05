@@ -67,13 +67,13 @@ export default () => {
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${key.name}</h2>
-            <i class="edit-post-btn"><img class="edit-post-icon" src="img/pencil-icon.png" alt="edit button"></i>
-            <i class="delete-post-btn"><img class="delete-post-icon" src="img/trashcan-icon.png" alt="delete button"></i>
+            <i class="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></i>
+            <i class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></i>
           </div>
           <p class="text-post">${key.text}</p>
           <div class="footer-post">
             <p class="date-post"></p>
-            <i class="like-btn-post"><img src="img/empty-like-icon.png" class="like-post-icon" alt="like button"></i>
+            <i class="like-btn-post"><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></i>
             <p class="all-likes-post">${key.like.length}</p>
           </div>
         </div>

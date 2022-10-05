@@ -13,6 +13,11 @@ export default () => {
             <div>
                 <a href="#feed">Entrar</a>
             </div>
+             
+            <div>
+                <a href="#cadastro">Cadastre-se</a>
+            </div>
+
             
         </form>
         `

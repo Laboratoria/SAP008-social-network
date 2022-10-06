@@ -45,7 +45,7 @@ export default () => {
   <div class="container-dev">
       <div class="dev-one">
           <div class="img">
-          <img id="ellen-img" src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/main/src/img/ellen.png" alt="Ellen Cavalcante">
+          <img id="ellen-img" src="./img/ellen.png" alt="Ellen Cavalcante">
           </div>
           <div class="text">
           <h3>Ellen Cavalcante</h3> <br/>
@@ -62,7 +62,7 @@ export default () => {
 
       <div class="dev-two">
           <div class="img">
-          <img id="vanessa-img" src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/main/src/img/vanessa.png" alt="Vanessa Bueck">
+          <img id="vanessa-img" src="./img/vanessa.png" alt="Vanessa Bueck">
           </div>
           <div class="text">
           <h3>Vanessa Bueck</h3> </br>

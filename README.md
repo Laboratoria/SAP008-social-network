@@ -30,7 +30,7 @@ Para rodar a aplicação [clique aqui](https://ellencavalcantebrito.github.io/SA
 
 Abaixo segue um gif ilustrando a navegação do usuário.
 
-<img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/feature-Vanessa/src/img/2022_10_06_005645.gif" alt="gif-navegação">
+<img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/Feature-Ellen/src/img/navegacao-vanellen.gif%20(1).gif" alt="gif-navegação">
 
 ## 2. Sobre o site
 

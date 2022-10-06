@@ -14,8 +14,6 @@ const init = ()=>{
 
      }
  }
-
-
 window.addEventListener("load", () =>{
     window.addEventListener("hashchange", init)
     init();

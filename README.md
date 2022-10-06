@@ -6,8 +6,8 @@
 * [2. Sobre o site](#2-sobre-o-site)
 * [3. Personas](#3-personas)
 * [4. Protótipo](#4-protótipo)
-* [5. Funcionalidade](#6-funcionalidade)
-* [6. Teste de usabilidade](#4-teste-de-usabilidade)
+* [5. Funcionalidade](#5-funcionalidade)
+* [6. Teste de usabilidade](#6-teste-de-usabilidade)
 * [7. Ferramentas utilizadas](#7-ferramentas-utilizadas)
 * [8. Desenvolvedoras](#8-desenvolvedoras)
 

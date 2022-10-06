@@ -1,6 +1,8 @@
-export const signUpFunction = () => {
-  const containerSignUp = document.createElement('div');
+import { createNewUser } from "../firebase-services/auth.js";
 
+export const signUpFunction = () => {
+  const containerSignUp = document.createElement("section");
+  console.log(containerSignUp);
   const templateSignUp = `
   <section class="home-page" id="sign-up">
       <div class="background-home"> 
@@ -13,18 +15,29 @@ export const signUpFunction = () => {
       <div class="form-signup" id="signUpForm">
         <picture>
           <img src="img\\logo.png" class="img-logo" alt="Logo Booknotes"></picture>
-        <input type="text" class="input-signup">
+        <input type="text" class="input-signup" id="nameUser">
         <p class="name-input">Nome</p>
-        <input type="email" name=email class="input-signup">
+        <input type="email" name=email class="input-signup" id="emailUser">
         <p class="name-input">E-mail</p>
-        <input type="text" name=password class="input-signup">
+        <input type="text" name=password class="input-signup" id="passUser">
         <p class="name-input">Senha</p>
         <button type="submit" class="button-signup" id="buttonSignUp">Cadastrar e entrar!</button>
+        <button type="submit" class="button-back-home" id="backAtHome">Voltar</button>
       </div>
   </section>   
-  
-  
+   
   `;
   containerSignUp.innerHTML = templateSignUp;
+  
+  const btnSignUp = containerSignUp.querySelector("#buttonSignUp");
+
+  btnSignUp.addEventListener("click", () => {
+    const nameRegst = containerSignUp.querySelector("#nameUser").value;
+    const emailRegst = containerSignUp.querySelector("#emailUser").value;
+    const passUser = containerSignUp.querySelector("#passUser").value;
+    createNewUser(nameRegst, emailRegst, passUser);
+  });
+
+
   return containerSignUp;
-}
+};

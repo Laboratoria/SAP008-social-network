@@ -1,6 +1,6 @@
 import {
   createPost,
-  // deletePost,
+  deletePost,
   getAllPosts,
 } from '../../lib/index.js';
 
@@ -48,7 +48,15 @@ export default () => {
           </section>
           
           <section id="feed-post"></section>
-          
+
+          <div id="fade" class="none"></div>
+
+          <div id="modal-delete" class="none">
+            <span class="close-modal">X</span>
+            <span>Tem certeza que deseja deletar?</span>
+            <button class="btn-delete">Deletar</button>
+          </div>
+
           </main>
           
           <footer>
@@ -57,8 +65,16 @@ export default () => {
           `;
 
   feedContainer.innerHTML = template;
+
   const publishBtn = feedContainer.querySelector('#publish-btn');
   const textPost = feedContainer.querySelector('#text-post');
+  const fade = feedContainer.querySelector('#fade');
+  const modal = feedContainer.querySelector('#modal-delete');
+
+  function toggle() {
+    modal.classList.toggle('none');
+    fade.classList.toggle('none');
+  }
 
   const printPosts = async () => {
     const postArr = await getAllPosts();
@@ -68,17 +84,41 @@ export default () => {
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${post.name}</h2>
             <button id="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></button>
-            <span class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
+            <span data-id="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
           </div>
           <p class="text-post">${post.text}</p>
           <div class="footer-post">
-            <p class="date-post"></p>
+            <p class="date-post">${post.id}</p>
             <span class="like-btn-post"><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
             <p class="all-likes-post">${post.like.length}</p>
           </div>
         </div>
     `).join('');
+
     feedContainer.querySelector('#feed-post').innerHTML += postsTemplate;
+
+    const confirmDeletePost = feedContainer.querySelector('.btn-delete');
+    const closeModal = feedContainer.querySelector('.close-modal');
+    const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
+
+    trashcanBtn.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        toggle();
+      });
+    });
+
+    [fade, closeModal].forEach((el) => {
+      el.addEventListener('click', () => {
+        toggle();
+      });
+    });
+
+    confirmDeletePost.addEventListener('click', (el) => {
+      const qlqrcoisa = el.dataset.id;
+      console.log(qlqrcoisa);
+      deletePost();
+      toggle();
+    });
   };
 
   publishBtn.addEventListener('click', () => {
@@ -87,11 +127,6 @@ export default () => {
   });
 
   printPosts();
-
-  // const deleteBtn = feedContainer.querySelector('#delete-btn');
-  // deleteBtn.addEventListener('click', () => {
-  //   deletePost('DgLMx1iolHaRUECdweT6W1TJGEJ3');
-  // });
 
   return feedContainer;
 };

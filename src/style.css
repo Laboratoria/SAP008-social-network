@@ -54,6 +54,10 @@ form {
   cursor: pointer;
 }
 
+#google-login {
+  cursor: pointer;
+}
+
 #ok-form-btn {
   width: fit-content;
   height: fit-content;

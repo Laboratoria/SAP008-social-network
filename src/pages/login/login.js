@@ -1,4 +1,5 @@
 import { loginUser, loginGoogle, getErrorMessage } from '../../auth.js';
+import { modal } from '../../modal.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -49,8 +50,8 @@ export default () => {
         window.location.hash = '';
       })
       .catch((error) => {
-        console.log(getErrorMessage(error));
-        getErrorMessage(error);
+         const msg = getErrorMessage(error);
+         modal(msg);
       });
   });
 

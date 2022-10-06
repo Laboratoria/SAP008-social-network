@@ -55,6 +55,7 @@ body {
 #insta-icon {
     width: 2vw;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .img {

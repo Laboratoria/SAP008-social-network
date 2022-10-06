@@ -46,6 +46,10 @@ body {
     width: 10vw;
 }
 
+#logoutMobile{
+    display: none;
+}
+
 .navbar {
     background-color: #262424;
     margin-top: 8.2%;
@@ -152,7 +156,7 @@ body {
 }
 
 textarea::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
 }
 
 textarea::-webkit-scrollbar-track {
@@ -162,7 +166,7 @@ textarea::-webkit-scrollbar-track {
 textarea::-webkit-scrollbar-thumb {
     background-color: rgb(138, 21, 21);
     border-radius: 10px;
-    border: 3px solid rgb(135, 26, 14);
+    border: 1px solid rgb(135, 26, 14);
 }
 
 .stars {
@@ -332,7 +336,6 @@ footer {
     }
     
     .content {
-        display: block;
         margin: auto;
     }
 
@@ -346,8 +349,8 @@ footer {
     }
 
     .navbar a {
-        padding: 0.6rem;
-        font-size: 1.3rem;
+        padding: 0;
+        font-size: 1.2rem;
     }
 
     .navbar a:hover {
@@ -355,22 +358,18 @@ footer {
     }
 
     #header {
-        display: flex;
-        height: 70px;
+        height: auto;
         justify-content: space-between;
     }
 
     #menu {
-        display: flex;
-        align-items: center;
-        margin-left: 10%;
+        margin-left: 2%;
     }
 
     #logout {
-        width: 25px;
-        transform: rotate(180deg);
+        width: 5vw;
     }
-
+    
     .posts {
         display: block;
     }
@@ -395,9 +394,9 @@ footer {
 
     .name-movies textarea {
         width: 60vw;
-        height: 6vh;
+        height: 2rem;
         margin-left: 7rem;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .about-movies textarea {
@@ -489,6 +488,10 @@ footer {
         width: 25vw;
     }
 
+    #logout{
+        width: 4vw;
+    }
+
     .navbar {
         margin-top: 22%;
     }
@@ -496,6 +499,9 @@ footer {
     .navbar a {
         font-size: 24px;
         padding: 2%;
+    }
+    .active {
+        font-size: 1.6rem;
     }
 
     .content {
@@ -603,25 +609,25 @@ footer {
     .content {
         display: block;
         margin: auto;
+        margin-bottom: 2rem;
     }
 
     .content a {
         margin-left: 0;
-        font-size: 1rem;
-    }
-
-    .navbar {
-        margin-top: 25%;
+        font-size: 0.9rem;
     }
 
     .navbar a {
-        padding: 0.6rem;
-        font-size: 1.3rem;
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+
+    .active {
+        font-size: .8rem;
     }
 
     #logout {
-        width: 25px;
-        transform: rotate(180deg);
+        width: 16px;
     }
 
     .navbar a:hover {
@@ -629,15 +635,8 @@ footer {
     }
 
     #header {
-        display: flex;
-        height: 70px;
+        height: 7vh;
         justify-content: space-between;
-    }
-
-    #menu {
-        display: flex;
-        align-items: center;
-        margin-left: 10%;
     }
 
     .posts {
@@ -671,8 +670,8 @@ footer {
 
     .about-movies textarea {
         width: 60vw;
-        margin-left: 7rem;
         height: auto;
+        margin-left: 7rem;
         font-size: 1rem;
     }
 
@@ -790,7 +789,6 @@ footer {
     }
 
     #header {
-        display: flex;
         height: 70px;
         justify-content: space-between;
     }
@@ -803,7 +801,6 @@ footer {
 
     #logout {
         width: 25px;
-        transform: rotate(180deg);
     }
 
     .posts {

@@ -61,11 +61,11 @@ body {
     color: #ffffff;
 }
 
-#button-back {
+#button-back{
     background-color: #544f4f;
 }
 
-.register-error {
+.register-error{
     text-align: center;
     color: #d30a0a;
     font-size: 0.9rem;
@@ -118,9 +118,11 @@ footer {
     margin-left: 18%;
 }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 395px) and (min-width: 200px) {
     .container-register {
-        height: 45rem;
+     height: 52rem;
+     background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
 
     #logo-register {
@@ -129,8 +131,10 @@ footer {
 
     .box-center {
         width: 80vw;
+        height: 79vh;
         font-size: 1rem;
         margin-top: 10%;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
 
     .box-center .buttons {
@@ -154,22 +158,103 @@ footer {
         margin-left: 1%;
         width: 180px;
     }
+}
 
-    .wrapper-register {
-        background-color: #151414;
-        height: 10rem;
+
+@media only screen and (max-width: 389px) {
+    .container-register {
+     height: 52rem;
+     background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 45vw;
+    }
+
+    .box-center {
+        width: 80vw;
+        height: 90vh;
+        font-size: 1rem;
+        margin-top: 10%;
+        background: transparent;
+    }
+
+    .box-center .buttons {
+        font-size: 0.8rem;
+    }
+
+    .box-center .logo-register {
+        text-align: center;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    .container-register {
+     height: 120vh;
+     background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 45vw;
+    }
+
+    .box-center {
+        background: transparent;
+        width: 80vw;
+        font-size: 1rem;
+        margin-top: 10%;
+        height: 80vh;
+    }
+
+    .box-center .buttons {
+        font-size: 0.8rem;
+    }
+
+    .box-center .logo-register {
+        text-align: center;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
     }
 }
 
 @media only screen and (max-width: 770px) and (min-width: 767px) {
 
     .container-register {
-        height: 60rem;
+        height: 90vh;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
 
     .box-center {
         width: 60%;
+        height: 80vh;
         font-size: 1.2rem;
+        background-color: transparent;
     }
 
     .box-center .button {
@@ -195,19 +280,20 @@ footer {
         margin-left: 5%;
         width: 270px;
     }
-
-    .wrapper-register {
-        height: 10rem;
-    }
-
+    
 }
 
 @media only screen and (max-width: 1281px) and (min-width: 1024px) {
 
+    .container-register{
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+    
     .box-center {
         font-size: 1.2rem;
         margin-top: 2%;
         margin-bottom: 2%;
+        background-color: transparent;   
     }
 
     .box-center .button {
@@ -235,6 +321,7 @@ footer {
     }
 
     .wrapper-register {
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
         height: 5rem;
     }
 
@@ -243,21 +330,29 @@ footer {
 @media only screen and (max-width: 950px) and (min-width:820px) {
 
     .container-register {
-        height: 72rem;
+        font-size: 0;
+        height: 85rem;
+        padding: 2%;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+
     }
 
     .box-center {
-        width: 70%;
+        width: 62%;
+        height: 75vh;
         font-size: 1.2rem;
         margin-top: 2%;
+        background-color: transparent;
     }
+
+    .form-register input {
+        height: 80px;
+        font-size: 1rem;
+    }
+    
 
     .box-center .button {
         font-size: 1.2rem;
-    }
-
-    .wrapper-register {
-        height: 10rem;
     }
 
     .foot {

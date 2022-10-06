@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable consistent-return */
 import {
   // eslint-disable-next-line max-len
@@ -19,7 +20,6 @@ export default () => {
    <div class="navbar">
     <header id="header">
        <a href=""> <img id="logout"  src="./img/logout.png" alt="Ícone de logout"></a>
-       
     <nav id="nav">
        <ul id="menu">
        <li><a href="#profile" id="profile"> Perfil</a></li>
@@ -74,7 +74,7 @@ export default () => {
         <img src="./img/lab.png" alt="logo Laboratória">
         <div class="developers">
             <p> Developed by:</p> 
-            <p>Ellen Cavalcante <spa>&</span> Vanessa Bueck</p>
+            <p>Ellen Cavalcante <span>&</span> Vanessa Bueck</p>
         </div>
     </div>
   </footer>
@@ -93,23 +93,16 @@ export default () => {
     .then(() => true)
     .catch((error) => error);
 
-  let likedsometime = false;
-  //   const deslikedsometime = false;
-  const userLoggedLikeThisPost = firebase.firestore().collection('posts')
-    .doc(docRef).collection('posts');
-
-  //   const userLoggedDeslikedThisPost = firebase.firestore().collection('posts')
-  //     .doc(docRef).collection('posts');
-
-  const userOnline = firebase.auth().currentUser.uid;
+  const likedsometime = false;
+  const deslikedsometime = false;
 
   const userLiked = {
     wholikes: firebase.auth().currentUser.uid,
   };
 
-  //   const userDesliked = {
-  //     whodesliked: firebase.auth().currentUser.uid,
-  //   };
+  const userDesliked = {
+    whodesliked: firebase.auth().currentUser.uid,
+  };
 
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
@@ -174,10 +167,18 @@ export default () => {
   }
   postTemplate();
 
+  const spanClose = document.querySelector('#close');
+  function hideModal() {
+    const modalElement = document.getElementById('modal');
+    modalElement.classList.remove('show-modal');
+  }
+  spanClose.addEventListener('click', hideModal);
+
   const userId = getUserUid();
 
   formAction.addEventListener('submit', (event) => {
     event.preventDefault();
+
     const postCollection = {
       name: event.target.name.value,
       user_id: userId,
@@ -187,18 +188,27 @@ export default () => {
       like: [],
       deslike: [],
     };
-    createCollection(postCollection)
-      .then(() => {
-        container.querySelector('#message').value = ' ';
-        container.querySelector('#name').value = ' ';
-        container.querySelector('#movieName').value = ' ';
-        const postsCollection = db.collection('posts');
-        container.querySelector('.posts').innerHTML = 'Carregando...';
-        postsCollection.get().then(() => {
-          container.querySelector('.posts').innerHTML = ' ';
-          postTemplate();
+
+    if (container.querySelector('#message').value === '') {
+      const modalContentElement = document.getElementById('modal_content');
+      const modalElement = document.getElementById('modal');
+      modalElement.classList.add('show-modal');
+
+      modalContentElement.innerHTML = 'Preencha todos os campos!';
+    } else {
+      createCollection(postCollection)
+        .then(() => {
+          container.querySelector('#message').value = '';
+          container.querySelector('#name').value = '';
+          container.querySelector('#movieName').value = '';
+          const postsCollection = db.collection('posts');
+          container.querySelector('.posts').innerHTML = 'Carregando...';
+          postsCollection.get().then(() => {
+            container.querySelector('.posts').innerHTML = '';
+            postTemplate();
+          });
         });
-      });
+    }
 
     postTemplate();
   });
@@ -209,7 +219,10 @@ export default () => {
 
     if (removeButtonId) {
       if (userId !== userCurrent) {
-        alert('Não é possível deletar post de outros usuários');
+        const modalContentElement = document.getElementById('modal_content');
+        const modalElement = document.getElementById('modal');
+        modalElement.classList.add('show-modal');
+        modalContentElement.innerHTML = 'Não é possível deletar post de outros usuários';
         return false;
       }
       // eslint-disable-next-line no-alert
@@ -231,7 +244,10 @@ export default () => {
 
     if (editButton) {
       if (userId !== userCurrent) {
-        alert('Não é possivel editar post de outros usuarios');
+        const modalElement = document.getElementById('modal');
+        modalElement.classList.add('show-modal');
+        const modalContentElement = document.getElementById('modal_content');
+        modalContentElement.innerHTML = 'Não é possivel editar post de outros usuarios';
         return false;
       }
 
@@ -263,7 +279,10 @@ export default () => {
           boxPost.querySelector(`#about-${updateButton}`).setAttribute('disabled', '');
         })
         .catch(() => {
-          alert('Algo deu errado. Por favor, tente novamente.');
+          const modalElement = document.getElementById('modal');
+          modalElement.classList.add('show-modal');
+          const modalContentElement = document.getElementById('modal_content');
+          modalContentElement.innerHTML = 'Algo deu errado. Por favor, tente novamente.';
         });
     }
   });
@@ -271,18 +290,6 @@ export default () => {
   boxPost.addEventListener('click', (e) => {
     const buttonLike = e.target.dataset.liked;
     const increment = firebase.firestore.FieldValue.increment(1);
-
-    userLoggedLikeThisPost.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (likedsometime === false) {
-          if (doc.data().wholikes === userOnline) {
-            likedsometime = true;
-            alert('Você já curtiu esse post!');
-            boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Já curtiu!';
-          }
-        }
-      });
-    });
 
     if (likedsometime === false) {
       likeFirebase(docRef)
@@ -303,39 +310,25 @@ export default () => {
     }
   });
 
-  //   boxPost.addEventListener('click', (e) => {
-  //     const buttonDeslike = e.target.dataset.desliked;
-  //     const increment = firebase.firestore.FieldValue.increment(1);
+  boxPost.addEventListener('click', (e) => {
+    const buttonDeslike = e.target.dataset.desliked;
+    const increment = firebase.firestore.FieldValue.increment(1);
 
-  //     userLoggedDeslikedThisPost.get().then((querySnapshot) => {
-  //       querySnapshot.forEach((doc) => {
-  //         if (deslikedsometime === false) {
-  //           if (doc.data().whodesliked === userOnline) {
-  //             deslikedsometime = true;
-  //             alert('Você já DESCURTIU esse post!');
-  // eslint-disable-next-line max-len
-  //             boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Já <b>descurtiu</b>!';
-  //         }
-  //     }
-  //   });
-  // });
+    if (deslikedsometime === false) {
+      likeFirebase(docRef)
+        .then(() => {
+          firestore().doc(docRef).collection('posts')
+            .add(userDesliked)
+            .then(() => {
+              const teste = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
 
-  //     if (deslikedsometime === false) {
-  //       likeFirebase(docRef)
-  //         .then(() => {
-  //           firestore().doc(docRef).collection('posts')
-  //             .add(userDesliked)
-  //             .then(() => {
-  // eslint-disable-next-line max-len
-  //               const teste = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
-  // eslint-disable-next-line max-len
-  //               boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu!😢 <b> ${Number(teste) + 1} </b} `;
-  //               db.collection('posts').doc(buttonDeslike)
-  //                 .update({ deslike: increment });
-  //             });
-  //         });
-  //     }
-  //   })
+              boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu!😢 <b> ${Number(teste) + 1} </b} `;
+              db.collection('posts').doc(buttonDeslike)
+                .update({ deslike: increment });
+            });
+        });
+    }
+  });
 
   return container;
 };

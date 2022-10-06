@@ -1,27 +1,31 @@
 import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
-  signOut, GoogleAuthProvider, signInWithPopup,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'; // eslint-disable-line import/no-unresolved
 
 import { app } from './config.js';
 
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
-export function createAccount(email, password, name) {
-  return createUserWithEmailAndPassword(auth, email, password, name)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      return user;
-    })
-    .then(() => {
-      updateProfile(auth.currentUser, {
-        displayName: name,
-      });
-    })
-    .catch(() => {
 
-    });
-}
+export const newUser = async (email, password) => {
+  try {
+    const newUserLocal = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+    return newUserLocal;
+  } catch (error) {
+    return error;
+  }
+};
+
 export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }

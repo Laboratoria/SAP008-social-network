@@ -2,15 +2,16 @@ import routes from './routes.js';
 
 const main = document.querySelector('#root');
 const init = () => window.addEventListener('hashchange', renderPage);
-const validateHash = (hash) => hash === "" ? 'login' : hash.replace('#', '');
+const validateHash = (hash) => (hash === '' ? 'login' : hash.replace('#', ''));
 
 const renderPage = () => {
-    const page = validateHash(window.location.hash);
-    main.innerHTML = '';
-    main.appendChild(routes[page]);
-}
+  const pageName = validateHash(window.location.hash);
+  main.innerHTML = '';
+  const page = routes[pageName]();
+  main.appendChild(page);
+};
 
 window.addEventListener('load', () => {
-    renderPage();
-    init();
+  renderPage();
+  init();
 });

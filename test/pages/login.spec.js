@@ -3,6 +3,8 @@
  */
 import login from '../../src/pages/login/login.js';
 
+jest.mock('../../src/firebase/exports.js')
+
 describe('login', () => {
 
     it('should be a function', () => {

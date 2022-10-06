@@ -1,27 +1,27 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
   signOut, GoogleAuthProvider, signInWithPopup,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'; // eslint-disable-line import/no-unresolved
+} from './exports.js'; 
 
 import { app } from './config.js';
 
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
-export function createAccount(email, password, name) {
-  return createUserWithEmailAndPassword(auth, email, password, name)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      return user;
-    })
-    .then(() => {
-      updateProfile(auth.currentUser, {
-        displayName: name,
-      });
-    })
-    .catch(() => {
+// export function createAccount(email, password, name) {
+//   return createUserWithEmailAndPassword(auth, email, password, name);
+    // .then((userCredential) => {
+    //   const user = userCredential.user;
+    //   return user;
+    // })
+    // .then(() => {
+    //   updateProfile(auth.currentUser, {
+    //     displayName: name,
+    //   });
+    // })
+//     .catch(() => {
 
-    });
-}
+//     });
+// }
 export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
@@ -49,6 +49,6 @@ export function getErrorMessage(error) {
   return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
 }
 
-export function logout() {
-  return signOut(auth);
-}
+// export function logout() {
+//   return signOut(auth);
+// }

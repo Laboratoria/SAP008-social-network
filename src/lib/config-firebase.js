@@ -1,5 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-/*import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";*/
+import { initializeApp } from "./exports.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyC3bxCqhfcT9hZYxdSg-waQ6Mb9FMnM-TI",
@@ -11,6 +11,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+export default app;
 
 /*console.log("antes")
 firebase.auth( ).signInWithEmailAndPassword("juliana.rfernandes12@gmail.com", "123456").then(response=>{

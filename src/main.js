@@ -1,27 +1,20 @@
-import "./config-firebase.js";
-import login from "./Templates/login.js";
+import register from "./Templates/register.js";
 import feed from "./Templates/feed.js";
 
 const main = document.querySelector("#root")
 
-const init = () => {
-    window.addEventListener("hashchange", ()=>{
-       main.innerHTML = " ";
-        switch(window.location.hash){
-            case " ":
-            main.appendChild(login());
-            break;
-            case "#feed":
+const init = ()=>{
+    main.innerHTML = "";
+    switch(window.location.hash){
+        case "#feed":
             main.appendChild(feed());
             break;
-            default:
-            main.appendChild(login()) ;  
+        default:
+            main.appendChild(register()) ;  
 
-        }
-    })
-}
-
+     }
+ }
 window.addEventListener("load", () =>{
-  main.appendChild(login());
-  init();
+    window.addEventListener("hashchange", init)
+    init();
 })

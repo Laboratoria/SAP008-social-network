@@ -2,6 +2,7 @@ import {
   createPost,
   deletePost,
   getAllPosts,
+  updatePost,
   /* getAuth,
   like, */
 } from '../../lib/index.js';
@@ -78,6 +79,7 @@ export default () => {
     fade.classList.toggle('none');
   }
 
+
   const printPosts = async () => {
     const postArr = await getAllPosts();
     const postsTemplate = postArr.map((post) => `
@@ -85,7 +87,7 @@ export default () => {
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${post.name}</h2>
-            <button data-id-post-edit="${post.id}" id="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></button>
+            <button data-id-post-edit="${post.id}"  class="edit-post-icon" id="edit-post-btn"><img src="img/icons/pencil-icon.png" alt="edit button"></button>
             <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
           </div>
           <p class="text-post">${post.text}</p>
@@ -98,6 +100,33 @@ export default () => {
     `).join('');
 
     feedContainer.querySelector('#feed-post').innerHTML = postsTemplate;
+
+    // const editPosts = async () => {
+    // const postTextValue = feedContainer.querySelector('.text-post').value;
+
+    //   const toBeEditedPosts = await updatePost(idPostEdit, postTextValue);
+    //   const editTemplate = toBeEditedPosts.map((post) => `
+    //   <div class="edit-modal">
+    //     <textarea data-id-post-edit="${post.id}" class="edit-post-txtarea">${postTextValue}</textarea>
+    //     <button type="submit">Concluído</button>
+    //     <button type="submit">Cancelar</button>
+    //   </div>
+    //   `).join('');
+    //   return editTemplate;
+    // };
+    // editPosts();
+    // const editedPostText = feedContainer.querySelector('[data-id-post-edit]');
+    // editedPostText.addEventListener('change', toBeEditedPosts)
+    // printPosts(editPosts);
+
+    const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
+
+    editBtn.forEach((btn) => {
+      btn.addEventListener('click', (el) => {
+        const idPostEdit = el.currentTarget.dataset.idPostEdit;
+        console.log(idPostEdit);
+      });
+    });
 
     // const confirmDeletePost = feedContainer.querySelector('.btn-delete');
     const closeModal = feedContainer.querySelector('.close-modal');

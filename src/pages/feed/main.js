@@ -2,6 +2,8 @@ import {
   createPost,
   deletePost,
   getAllPosts,
+  /* getAuth,
+  like, */
 } from '../../lib/index.js';
 
 export default () => {
@@ -83,27 +85,31 @@ export default () => {
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${post.name}</h2>
-            <button id="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></button>
-            <span data-id="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
+            <button data-id-post-edit="${post.id}" id="edit-post-btn"><img class="edit-post-icon" src="img/icons/pencil-icon.png" alt="edit button"></button>
+            <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
           </div>
           <p class="text-post">${post.text}</p>
           <div class="footer-post">
             <p class="date-post">${post.id}</p>
-            <span class="like-btn-post"><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
+            <span class="like-btn-post" data-id-post-like="${post.id}" ><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
             <p class="all-likes-post">${post.like.length}</p>
           </div>
         </div>
     `).join('');
 
-    feedContainer.querySelector('#feed-post').innerHTML += postsTemplate;
+    feedContainer.querySelector('#feed-post').innerHTML = postsTemplate;
 
-    const confirmDeletePost = feedContainer.querySelector('.btn-delete');
+    // const confirmDeletePost = feedContainer.querySelector('.btn-delete');
     const closeModal = feedContainer.querySelector('.close-modal');
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
+    const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
 
     trashcanBtn.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        toggle();
+      btn.addEventListener('click', (el) => {
+        const idPostDelete = el.currentTarget.dataset.idPostTrashcan;
+        deletePost(idPostDelete);
+        printPosts();
+        // toggle();
       });
     });
 
@@ -113,11 +119,18 @@ export default () => {
       });
     });
 
-    confirmDeletePost.addEventListener('click', (el) => {
-      const qlqrcoisa = el.dataset.id;
-      console.log(qlqrcoisa);
-      deletePost();
+    /* confirmDeletePost.addEventListener('click', (el) => {
+      const idPostDelete = el.currentTarget.dataset.idPostTrashcan;
+      console.log(idPostDelete);
+      deletePost(idPostDelete);
       toggle();
+    }); */
+
+    likeBtns.forEach((btn) => {
+      btn.addEventListener('click', (el) => {
+        const idPostLike = el.currentTarget.dataset.idPostLike;
+        console.log(idPostLike);
+      });
     });
   };
 

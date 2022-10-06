@@ -13,7 +13,7 @@ export default () => {
 
       <div class="registration-input">
         <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
-        <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email" required>
+        <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
         <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>
       </div>
       <button type="button" id="button-registration" class="button">Finalizar cadastro</button>
@@ -46,9 +46,10 @@ export default () => {
     .catch((error) => {
       const errorCode = error.code;
       if(errorCode === "auth/email-already-in-use"){
-        alert ("E-mail já cadastrado. Insira um novo e-mail ou faça uma nova senha")
+        alert ("E-mail já cadastrado. Faça seu login"); 
+        window.location.hash = "#login";
       } else if(errorCode === "auth/invalid-email"){
-        alert ("e-mail inválido")
+        alert ("e-mail inválido. Ex: suzana@provedor.com")
       } else {
         alert("Algo deu errado. Por favor, tente novamente.")
       }

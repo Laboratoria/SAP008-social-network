@@ -37,9 +37,10 @@ export default () => {
 
    container.querySelector('#btn-register').addEventListener('click', e => {
             e.preventDefault();
-            const email = document.querySelector('#e-mail').value;
-            const password = document.querySelector('#password').value;
-            registerUser(email, password)
+            const name = container.querySelector('#name').value;
+            const email = container.querySelector('#e-mail').value;
+            const password = container.querySelector('#box-new-password').value;
+            registerUser(name, email, password)
             .then(() => {                                                  
                 window.location.hash = "";   
               })                                                                                                     

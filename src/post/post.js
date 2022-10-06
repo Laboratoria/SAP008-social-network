@@ -1,6 +1,6 @@
 import { createPost } from "../firebase/firebase.js";
 import { redirect } from "../redirect.js" ;
-import {signOut} from "../firebase/firebase.js"
+import { signOut } from "../firebase/firebase.js"
 
 export default () => {
     const container = document.createElement('div');
@@ -54,7 +54,7 @@ export default () => {
             const location = container.querySelector("#location").value;
             const date = container.querySelector("#date").value;
             const post = container.querySelector("#post").value;
-                createPost(artist, location, date, post);
+            createPost(artist, location, date, post);
             redirect("#timeline");
     });
 

@@ -14,14 +14,14 @@ const main = document.querySelector('#root');
 const redirectLogUser = (user) => {
     if (user) {
       alert(user.email)
-      redirect ("#timeline");
+      redirect("#timeline");
     } else {
      redirect ("");
     }
 };
 
 window.addEventListener("load",  () => {
-    checkLoggedUser (redirectLogUser)
+    checkLoggedUser(redirectLogUser)
     main.appendChild(login( ));
 });
 

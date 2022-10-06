@@ -27,7 +27,7 @@ export default () => {
     </div>
     
      <div class="movies">
-     <h1>Abaixo vai uma lista dos 20 melhores séries, selecionadas pela Vanellen, excluviamente pra você! 😎🍿</h1>
+     <h1>Abaixo vai uma lista das 20 melhores séries, selecionadas pela Vanellen, excluviamente pra você! 😎🍿</h1>
      </div>
      <div class="wrapper" /div>
     

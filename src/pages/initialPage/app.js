@@ -4,7 +4,6 @@ import {
   // eslint-disable-next-line max-len
   getDisplayName, getUserUid, firestore, createCollection, signOut,
 } from '../../lib/authentication.js';
-// import { signOut } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -84,25 +83,6 @@ export default () => {
   const doLogout = container.querySelector('#logout');
   const formAction = container.querySelector('#myForm');
   const boxPost = container.querySelector('.posts');
-
-  const db = firebase.firestore();
-  const docRef = db.collection('posts').doc().id;
-  const likeFirebase = (id) => firestore().doc(id).update({
-    like: firebase.firestore.FieldValue.increment(1),
-  })
-    .then(() => true)
-    .catch((error) => error);
-
-  const likedsometime = false;
-  const deslikedsometime = false;
-
-  const userLiked = {
-    wholikes: firebase.auth().currentUser.uid,
-  };
-
-  const userDesliked = {
-    whodesliked: firebase.auth().currentUser.uid,
-  };
 
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
@@ -186,6 +166,7 @@ export default () => {
       createdAt: new Date(),
       text: event.target.text.value,
       like: [],
+      liked: [],
       deslike: [],
     };
 
@@ -201,7 +182,7 @@ export default () => {
           container.querySelector('#message').value = '';
           container.querySelector('#name').value = '';
           container.querySelector('#movieName').value = '';
-          const postsCollection = db.collection('posts');
+          const postsCollection = firestore;
           container.querySelector('.posts').innerHTML = 'Carregando...';
           postsCollection.get().then(() => {
             container.querySelector('.posts').innerHTML = '';
@@ -291,43 +272,20 @@ export default () => {
     const buttonLike = e.target.dataset.liked;
     const increment = firebase.firestore.FieldValue.increment(1);
 
-    if (likedsometime === false) {
-      likeFirebase(docRef)
-        .then(() => {
-          firestore().doc(docRef).collection('posts')
-            .add(userLiked)
-            .then(() => {
-              const teste = boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].textContent;
-              boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = `Curtiu! <b> ${Number(teste) + 1} </b} `;
-              db.collection('posts').doc(buttonLike)
-                .update({ like: increment });
-            });
-        })
-
-        .catch(() => {
-          alert('Ops! Algo deu errado. Tente novamente!');
-        });
-    }
+    boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
+    firestore.doc(buttonLike).update({ like: increment }).catch(() => {
+      alert('Ops! Algo deu errado. Tente novamente!');
+    });
   });
 
   boxPost.addEventListener('click', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
 
-    if (deslikedsometime === false) {
-      likeFirebase(docRef)
-        .then(() => {
-          firestore().doc(docRef).collection('posts')
-            .add(userDesliked)
-            .then(() => {
-              const teste = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
-
-              boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu!😢 <b> ${Number(teste) + 1} </b} `;
-              db.collection('posts').doc(buttonDeslike)
-                .update({ deslike: increment });
-            });
-        });
-    }
+    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu!😢';
+    firestore.doc(buttonDeslike).update({ deslike: increment }).catch(() => {
+      alert('Ops! Algo deu errado. Tente novamente!');
+    });
   });
 
   return container;

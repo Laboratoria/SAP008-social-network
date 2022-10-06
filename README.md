@@ -42,19 +42,26 @@ Com isso, estudamos sobre qual seria o tema da aplicação e os possíveis usuá
 
 <img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/Feature-Ellen/src/img/Usu%C3%A1rios.png" alt="personas">
 
+- Quem são os usuários? Pessoas que gostam de filmes e séries e buscam por opniões de outros usuários sobre determinado filme/série.
+- O que os usuários precisam? De uma aplicação com fáicl cadastro e de simples interação.
+- Por quê? Para que os usuários possam conhecer opniões de outras pessoas sobre determinado filme/série além de compartilhar informações sobre filmes e séries que já assistiram.
+
 Necessidades e objetivos:
 
-Acessar uma plataforma simples e direta;
-Avaliar as publicações por curtir/não curti;
-Criação de cadastro simples, sem pedir muitas informações e validações
+- Acessar uma plataforma simples e direta;
+- Avaliar as publicações por curtir/não curti;
+- Criação de cadastro simples, sem pedir muitas informações e validações.
+
+## Teste de usabilidade
 
 Definição entregue:
 
-Site desenvolvido em singlepage, onde faz com que a aplicação rode de forma mais rápida;
-Criação de conta por meio do site Vanellen ou acesso pelo provedor google;
-Login direto a página de postagens do usuário;
-Opção de curtir ou não curtir determinada publicação;
-Opçao de editar ou deletar postagens feitas pelo user.
+- Site desenvolvido em singlepage, onde faz com que a aplicação rode de forma mais rápida;
+- Criação de conta por meio do site Vanellen ou acesso pelo provedor google;
+- Cadastro simples, solicitando apenas o nome, e-maile  senha de acesso;
+- Login direto a página de postagens do usuário;
+- Opção de curtir ou não curtir determinada publicação;
+- Opçao de editar ou deletar postagens feitas pelo user.
 
 ## 4. Protótipo
 
@@ -81,15 +88,18 @@ Para sair da aplicação o usuário pode clicar no botão"xxx" e será redirecio
 
 ## 7. Ferramenta utilizadas
 
-- JavaScript
-- HTML5
-- CSS3
-- Firebase Hosting
-- Firebase Firestore
-- Firebase Auth
-- EsLint
+- `JavaScript`;
+- `HTML5`;
+- `CSS3`;
+- `Firebase Hosting`;
+- `Firebase Firestore`;
+- `Firebase Auth`;
+- `EsLint`.
 
 ## 8. Desenvolvedoras:
 
 [Ellen Cavalcante](https://www.linkedin.com/in/ellencavalcantebrito/) &
 [Vanessa Bueck](https://www.linkedin.com/in/vanessa-bueck/)
+
+| [<img src="SAP008-social-network/src/img/ellen.png" width=115><br><sub>Ellen Cavalcante</sub>](https://github.com/EllenCavalcanteBrito) |  [<img src="SAP008-social-network/src/img/vanellen-gif.jpeg" width=115><br><sub>Vanessa Bueck</sub>](https://github.com/vanessabuecker) |
+| :---: | :---: | 

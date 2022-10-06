@@ -28,6 +28,10 @@ Para rodar a aplicação [clique aqui](https://ellencavalcantebrito.github.io/SA
 - Email teste: vanellen@teste.com
 - Senha: 123456
 
+Abaixo segue um gif ilustrando a navegação do usuário.
+
+<img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/feature-Vanessa/src/img/2022_10_06_005645.gif" alt="gif-navegação">
+
 ## 2. Sobre o site
 
 A rede social VANELLEN foi construída como parte do conteúdo de aprendizado do bootcamp da Laboratória, que visa desenvolver mulheres para o mercado tecnológico.
@@ -55,9 +59,6 @@ Opçao de editar ou deletar postagens feitas pelo user.
 ## 4. Protótipo
 
 Para o desenvolvimento do protótipo de alta fidelidade, foi usado o Figma, que é um editor gráfico de vetor e prototipagem de projetos de design.
-Abaixo segue um gif ilustrando a navegação do usuário.
-
-<img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/feature-Vanessa/src/img/2022_10_06_005645.gif" alt="gif-navegação">
 
 Protótipo web:
 <img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/feature-Vanessa/src/img/prototipo-web.jpg" alt="prototipo-web">

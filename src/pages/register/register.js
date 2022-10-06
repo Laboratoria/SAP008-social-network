@@ -30,14 +30,6 @@ export default () => {
   const password = containerRegistration.querySelector("#password")
   const btnRegistration = containerRegistration.querySelector("#button-registration")
 
-<<<<<<< HEAD
-
-  btnRegistration.addEventListener("click", function (e) {
-    e.preventDefault();
-    register (email.value, password.value, nameProfile.value, nameUser.value)
-
-  })
-=======
   btnRegistration.addEventListener("click", function (e) {
     e.preventDefault();
     register(email.value, password.value, nameProfile.value)
@@ -53,7 +45,6 @@ export default () => {
 
   });
 
->>>>>>> 673eb3d7955005e72b99a8d50b10e245e2864e52
 
   return containerRegistration
 

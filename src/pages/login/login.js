@@ -1,4 +1,4 @@
-import { signIn } from "../../lib/auth.js";
+import { signIn, signInGoogle } from "../../lib/auth.js";
 
 export default function Login() {
   const login = document.createElement('div');
@@ -26,7 +26,7 @@ export default function Login() {
 
         <div>
           <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
-          <a href="/#cadastro">Cadastre-se</a>
+          <a href="/#register">Cadastre-se</a>
         </div> 
       </main>
       `;
@@ -34,11 +34,21 @@ export default function Login() {
   const signInButton = login.querySelector('#signin-button');
   const email = login.querySelector('.email');
   const password = login.querySelector('.password');
+  const googleBtn = login.querySelector('#google-button');
+
 
   signInButton.addEventListener("click", function (e) {
     e.preventDefault(); 
     signIn(email.value, password.value)
   })
+
+  googleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    signInGoogle()
+      .then(() => {
+        window.location.hash = 'feed';
+      });
+  });
 
   return login
 }

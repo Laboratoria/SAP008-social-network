@@ -1,7 +1,7 @@
-import "./config-firebase.js"
+import "./lib/config.js"
 import login from "./pages/login/login.js" 
-import feed from "./pages/feed/feed.js"
-import register from "./pages/register/register.js";
+import register from "./pages/register/register.js"
+import feed from "./pages/feed/feed.js";
 
 
 const root = document.querySelector('.root');

@@ -8,6 +8,7 @@ export default () => {
         Voltar
       </button>
         <img id="one-logo" src="./imagens/image-2.png">
+        <p>atualizado a main</p>
   
    </div>
   

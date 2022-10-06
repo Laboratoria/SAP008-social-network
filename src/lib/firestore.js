@@ -3,7 +3,7 @@ import { getFirestore, collection, addDoc, getDocs } from './export.js'
 
 const db = getFirestore(app);
 
-const addDocFirestore = () => {
+const addDocFirestore = async () => {
     try {
     const docRef = await addDoc(collection(db, "users"), {
         first: "Ada",
@@ -29,10 +29,10 @@ const addDocFirestore = () => {
 //     console.error("Error adding document: ", e);
 // }
 
-const querySnapshot = await getDocs(collection(db, "users"));
-querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-});
+// const querySnapshot = await getDocs(collection(db, "users"));
+// querySnapshot.forEach((doc) => {
+//     console.log(`${doc.id} => ${doc.data()}`);
+// });
 
 // Allow read/write access on all documents to any user signed in to the application
 // service cloud.firestore {
@@ -43,4 +43,4 @@ querySnapshot.forEach((doc) => {
 //     }
 //   }
 
-export {addDocFirestore, querySnapshot};
+export {addDocFirestore};

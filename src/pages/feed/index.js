@@ -1,4 +1,4 @@
-import { addDocFirestore, querySnapshot } from '../../lib/firestore.js';
+import { addDocFirestore } from './../../lib/firestore.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -12,12 +12,12 @@ export default () => {
 
   container.innerHTML = template;
 
-  const inputPost = document.querySelector("#post");
+  const inputPost = container.querySelector("#post");
 
   inputPost.addEventListener("change", () => {
     const textPost = inputPost.value;
     addDocFirestore(textPost);
-    querySnapshot(textPost);
+    //querySnapshot(textPost);
 
   });
   

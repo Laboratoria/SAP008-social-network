@@ -1,6 +1,7 @@
 import './lib/firebase.js';
 import login from './pages/login/index.js';
 import signup from './pages/signup/index.js';
+import feed from './pages/feed/index.js';
 
 const main = document.querySelector('#root');
 
@@ -14,6 +15,9 @@ const changeHash = () => {
       break;
     case '#signup':
       main.appendChild(signup());
+      break;
+    case '#feed':
+      main.appendChild(feed());
       break;
     default: main.appendChild(login());
   }

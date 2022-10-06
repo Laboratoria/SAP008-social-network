@@ -36,7 +36,7 @@ export default () => {
         
         <p> <a id="text" href="#series"> <span
         style="color:rgb(254, 123, 18); font-size:1.5rem; font-weight: bold;">#</span>
-    Melhores series Vanellen</a></p>
+    Melhores séries Vanellen</a></p>
     </div>
   </div>
   

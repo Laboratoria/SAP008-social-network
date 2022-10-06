@@ -25,8 +25,8 @@ A estratégia para o desenvolvimento foi code review, divisão de tarefas no not
 Ao decorrer dos tópicos você obterá mais informações sobre o projeto.
 
 Para rodar a aplicação [clique aqui](https://ellencavalcantebrito.github.io/SAP008-social-network/)
-Email teste: vanellen@teste.com
-Senha: 123456
+- Email teste: vanellen@teste.com
+- Senha: 123456
 
 ## 2. Sobre o site
 
@@ -80,15 +80,15 @@ Para sair da aplicação o usuário pode clicar no botão"xxx" e será redirecio
 
 ## 7. Ferramenta utilizadas
 
-JavaScript
-HTML5
-CSS3
-Firebase Hosting
-Firebase Firestore
-Firebase Auth
-EsLint
+- JavaScript
+- HTML5
+- CSS3
+- Firebase Hosting
+- Firebase Firestore
+- Firebase Auth
+- EsLint
 
 ## 8. Desenvolvedoras:
 
-[Ellen Cavalcante](https://www.linkedin.com/in/ellencavalcantebrito/)
+[Ellen Cavalcante](https://www.linkedin.com/in/ellencavalcantebrito/) &
 [Vanessa Bueck](https://www.linkedin.com/in/vanessa-bueck/)

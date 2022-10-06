@@ -176,6 +176,7 @@ export default () => {
       modalElement.classList.add('show-modal');
 
       modalContentElement.innerHTML = 'Preencha todos os campos!';
+      window.location.replace = '#page';
     } else {
       createCollection(postCollection)
         .then(() => {
@@ -228,7 +229,7 @@ export default () => {
         const modalElement = document.getElementById('modal');
         modalElement.classList.add('show-modal');
         const modalContentElement = document.getElementById('modal_content');
-        modalContentElement.innerHTML = 'Não é possivel editar post de outros usuarios';
+        modalContentElement.innerHTML = 'Não é possível editar post de outros usuários';
         return false;
       }
 

@@ -4,8 +4,7 @@ import { modal } from '../../modal.js';
 export default () => {
   const container = document.createElement('div');
 
-
-    const template = `
+  const template = `
         <figure class="img-logo-mobile imgFlip">
             <img src="./imagens/logo-mobile.png" alt="logo">
         </figure>
@@ -50,8 +49,8 @@ export default () => {
         window.location.hash = '';
       })
       .catch((error) => {
-         const msg = getErrorMessage(error);
-         modal(msg);
+        const msg = getErrorMessage(error);
+        modal(msg);
       });
   });
 

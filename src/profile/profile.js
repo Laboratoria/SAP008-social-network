@@ -1,6 +1,8 @@
-import {signOut, /*userName*/ } from "../firebase/firebase.js"
+import {signOut, getUserName } from "../firebase/firebase.js"
 
 export default () => {
+    const name = getUserName();
+
     const container = document.createElement('div');
     container.className = "content-profile";
     const template = `  
@@ -35,13 +37,12 @@ export default () => {
     </div>    
     <div class="container-profile">
         <section> 
-            <p class="box-profile-name" type="text" id="name"</p>
-            <input class="box-age"type="text" id="age" placeholder="Idade"/>
+            <h2 id="name">${name}</h2>
             <p class="about" id="about"> Sobre mim</p>
             <textarea class="box-description" id="description" placeholder="Nos fale um pouco sobre você"></textarea> 
             <button type="button" id="btn-create-post" class="btn-create-post">Crie um post</button>
-            <section>
-        </div>  
+        <section>
+    </div>  
          
     `;
 
@@ -55,6 +56,7 @@ export default () => {
     container.innerHTML = template;
 
     const menu = container.querySelector("#navbar-button");
+    
     menu.addEventListener('click', () => {
     const items = container.querySelectorAll(".navbar-item");
     items.forEach ( item => {

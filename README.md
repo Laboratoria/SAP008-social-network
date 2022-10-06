@@ -7,6 +7,7 @@
 * [3. Personas](#3-personas)
 * [4. Protótipo](#4-protótipo)
 * [5. Funcionalidade](#6-funcionalidade)
+* [6. Teste de usabilidade](#4-teste-de-usabilidade)
 * [7. Ferramentas utilizadas](#7-ferramentas-utilizadas)
 * [8. Desenvolvedoras](#8-desenvolvedoras)
 
@@ -52,8 +53,6 @@ Necessidades e objetivos:
 - Avaliar as publicações por curtir/não curti;
 - Criação de cadastro simples, sem pedir muitas informações e validações.
 
-## Teste de usabilidade
-
 Definição entregue:
 
 - Site desenvolvido em singlepage, onde faz com que a aplicação rode de forma mais rápida;
@@ -73,8 +72,7 @@ Protótipo web:
 Protótipo mobile:
 <img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/feature-Vanessa/src/img/prototipo-mobile.jpg" alt="prototipo-mobile">
 
-
-## 6. Funcionalidade
+## 5. Funcionalidade
 
 A rede social Vanellen inicia-se na página de login e o usuário tem duas opções de login sendo com e-mail e senha ou conta do Google. Quando autenticado, o usuário é redirecionado diretamente para a timeline. 
 Caso o usuário ainda não tenha uma conta, há um link de "Cadastre-se!" e quando clicado o user é redirecionado para a página de registro.
@@ -86,20 +84,23 @@ A página sobre contém informações sobre o projeto e as desenvolvedoras.
 A página HOME contém as postagens dos usuários e além disso dois links com as séries e filmes indicados pelos criadores do site Vanellen.
 Para sair da aplicação o usuário pode clicar no botão"xxx" e será redirecionado a tela de login.
 
+## 6. Teste de usabilidade 
+
+- Incluimos no menu um botão "Home", antes ficava um ícone de "+" e os usuários disseram não ser intuitivo.
+- Colocamos na caixa de envio de texto um placeholder indicando as informações que devem ser preenchidas, os usuários alegaram que sentiram falta desta informação.
+- Incluimos na página de registro um botão para voltar na página anterior, os usuários disseram que era mais funcional do que retornar a página direto pelo navegador.
+
 ## 7. Ferramenta utilizadas
 
-- `JavaScript`;
-- `HTML5`;
-- `CSS3`;
-- `Firebase Hosting`;
-- `Firebase Firestore`;
-- `Firebase Auth`;
-- `EsLint`.
+- `JavaScript`
+- `HTML5`
+- `CSS3`
+- `Firebase Hosting`
+- `Firebase Firestore`
+- `Firebase Auth`
+- `EsLint`
 
 ## 8. Desenvolvedoras:
 
-[Ellen Cavalcante](https://www.linkedin.com/in/ellencavalcantebrito/) &
-[Vanessa Bueck](https://www.linkedin.com/in/vanessa-bueck/)
-
-| [<img src="SAP008-social-network/src/img/ellen.png" width=115><br><sub>Ellen Cavalcante</sub>](https://github.com/EllenCavalcanteBrito) |  [<img src="SAP008-social-network/src/img/vanellen-gif.jpeg" width=115><br><sub>Vanessa Bueck</sub>](https://github.com/vanessabuecker) |
-| :---: | :---: | 
+- [Ellen Cavalcante](https://www.linkedin.com/in/ellencavalcantebrito/) 
+- [Vanessa Bueck](https://www.linkedin.com/in/vanessa-bueck/)

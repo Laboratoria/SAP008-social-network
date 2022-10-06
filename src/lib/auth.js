@@ -18,16 +18,6 @@ export const register = (email, password, profileName) => {
 
 export const signIn = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password)
-    .then(function () {
-      window.location.hash = ("#feed")
-      alert("Bem vindo" + email.value);
-    })
-    .catch(function (error) {
-      console.error(error.code)
-      alert("falhou")
-
-    });
-
 }
 
 export const signInGoogle = () => {

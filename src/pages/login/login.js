@@ -40,6 +40,14 @@ export default function Login() {
   signInButton.addEventListener("click", function (e) {
     e.preventDefault(); 
     signIn(email.value, password.value)
+    .then(function () {
+      window.location.hash = ("#feed")
+    })
+    .catch(function (error) {
+      console.error(error.code)
+      alert("falhou")
+
+    });
   })
 
   googleBtn.addEventListener('click', (e) => {

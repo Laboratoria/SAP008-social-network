@@ -20,12 +20,19 @@
   
 
 }
+<<<<<<< HEAD
+/*
+.container-registration{
+border:2px solid black;
+  flex-wrap: wrap;
+=======
 
 /* logo de coração com lampada e nome inspire */
 .logo-tittle{
   margin-top: 0;
   margin-bottom: 3%;
   
+>>>>>>> 673eb3d7955005e72b99a8d50b10e245e2864e52
 }
 
 /* estilização dos campos do nome, email e senha os campos de imput*/
@@ -40,8 +47,13 @@
 /* inputs de email, nome e senha */
 
 .input{
+<<<<<<< HEAD
+  width: 250px;
+  height: 20px;
+=======
   width: 240px;
   height: 38px;
+>>>>>>> 673eb3d7955005e72b99a8d50b10e245e2864e52
   border: none;
   font-size: 14px;
   padding: 2%;
@@ -49,7 +61,10 @@
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: white;
   margin: 2% 0;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 673eb3d7955005e72b99a8d50b10e245e2864e52
 }
 
 .button{

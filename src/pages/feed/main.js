@@ -90,7 +90,7 @@ export default () => {
           </div>
           <p class="text-post">${post.text}</p>
           <div class="footer-post">
-            <p class="date-post">${post.id}</p>
+            <p class="date-post"></p>
             <span class="like-btn-post" data-id-post-like="${post.id}" ><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
             <p class="all-likes-post">${post.like.length}</p>
           </div>

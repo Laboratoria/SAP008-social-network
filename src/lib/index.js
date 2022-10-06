@@ -120,9 +120,9 @@ export const deletePost = async (postId) => {
 
 export const getAllPosts = async () => {
   try {
-    const querySnapshot = await getDocs(collection(db, 'post'));
+    const posts = await getDocs(collection(db, 'post'));
     const arrPosts = [];
-    querySnapshot.forEach((post) => {
+    posts.forEach((post) => {
       arrPosts.push({ ...post.data(), id: post.id });
     });
     return arrPosts;

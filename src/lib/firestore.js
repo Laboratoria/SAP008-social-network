@@ -1,9 +1,5 @@
 import { app } from './firebase.js';
-import { getFirestore, collection, addDoc, firebase, getDocs } from './export.js'
-
-const firebase = require(firebase);
-// Required for side-effects
-require(firebase / firestore);
+import { getFirestore, collection, addDoc, getDocs } from './export.js'
 
 const db = getFirestore(app);
 

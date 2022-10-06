@@ -2,9 +2,8 @@ export{
 getFirestore, 
 collection,
 addDoc,
-firebase,
 getDocs,
-} from 'https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js';//eslint-disable-line
+} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';//eslint-disable-line
 
 export {
   getAuth,

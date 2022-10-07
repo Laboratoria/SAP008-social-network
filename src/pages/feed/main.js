@@ -8,8 +8,6 @@ import {
   like,
 } from '../../lib/index.js';
 
-import { getAuth } from '../../lib/firebase.js';
-
 import { app } from '../../lib/configuration.js';
 
 const auth = getAuth(app);

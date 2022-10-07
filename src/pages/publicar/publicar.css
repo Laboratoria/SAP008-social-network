@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "dongle", sans-serif;
+  font-size: 1.2rem;
+
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.new-post {
+  width: 100%;
+  height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 50px 0;
+  padding: 25px;
+}
+
+.form-post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form textarea {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  resize: none;
+  outline: none;
+  border: 0;
+  font-weight: bold;
+  color: #636363;
+
+  height: 8rem;
+  background-color: #fff;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+ }
+
+.btn-form-options {
+  resize: none;
+  outline: none;
+  border: 0;
+
+  background-color: #E9E9E9;
+}
+
+.btn-form-options ion-icon {
+  color: #00A57A;
+}
+
+select {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 0;
+  padding: 0rem 1rem;
+
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn-form-cancel {
+  background-color: #BFBDBD;
+  border-radius: 10px;
+  border: 0;
+  padding: 0rem 1rem;
+
+  color: black;
+  font-size: 1.4rem;    
+}
+
+.btn-form-publish {
+  background-color: #00A57A;
+  border-radius: 10px;
+  border: 0;
+  padding: 0rem 1rem;
+
+
+  color: #ffff;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 1024px) {
+
+
+
+.new-post {
+    width: 300%;
+    height: 240px;
+}
+}
+
+
+
+
+

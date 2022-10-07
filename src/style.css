@@ -55,21 +55,13 @@ li {
   text-decoration: none;
 }
 
-.side-internal-icon {
-  background-color: purple;
-}
-
-.side-internal-list {
-  background-color: red;
-}
-
 .footer-nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 5rem;
 
-  margin-top: 80vh;
+  margin-top: 50vh;
 }
 
 .footer-nav a {
@@ -104,9 +96,9 @@ li {
   }
 
   header {
-    box-shadow: 0.1rem 0 0 #D2D0D0;
+    box-shadow: 0.1rem 0 0 #d2d0d0;
+    width: 15rem;
     height: 100vh;
-    width: 18rem;
     position: relative;
   }
 
@@ -115,7 +107,7 @@ li {
     border-radius: 0;
     padding: 0;
     display: block;
-    margin-top: 25rem;
+    margin-top: 23rem;
     margin-left: 2rem;
     width: 12rem;
   }
@@ -142,22 +134,20 @@ li {
   .footer-nav ul {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    margin-top: 5rem;
-    /* padding: 0; */
-
-    /* background-color: purple; */
+    margin: 0;
+    margin-left: 3rem;
+    margin-top: 10rem;
   }
 
-  /* .footer-icon {
+  .footer-nav li a {
     display: flex;
-
-  } */
+  }
 
   .footer-icon ion-icon {
     height: 2rem;
     width: 2rem;
     color: #00a57a;
+    margin-right: 0.5rem;
   }
 
   .footer-list {

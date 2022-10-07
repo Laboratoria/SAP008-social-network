@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.hide-btn {
+    display: none;
+}
+
 #fade, #modal-delete {
     transition: 0.5s;
     opacity: 1;

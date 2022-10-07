@@ -20,15 +20,9 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-const loginEmailPassword = async (email, password) => {
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log(userCredential.user);
-    return userCredential;
-  } catch (error) {
-    console.log(error);
-
-  }
+const loginEmailPassword = (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password);
+  
 };
 
 const createAccount = async (email, password) => {
@@ -53,6 +47,7 @@ const signInGoogle = () => {
     })
     .catch((error) => {
       console.log(error);
+      
     });
 };
 

@@ -3,12 +3,10 @@ import { getFirestore, collection, addDoc, getDocs } from './export.js'
 
 const db = getFirestore(app);
 
-const addDocFirestore = async () => {
+const addDocFirestore = async (tema) => {
     try {
-    const docRef = await addDoc(collection(db, "users"), {
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815
+    const docRef = await addDoc(collection(db, "post"), {
+        tema,
     });
     console.log("Document written with ID: ", docRef.id);
     } catch (e) {

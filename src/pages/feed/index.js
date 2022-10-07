@@ -3,12 +3,13 @@ import { addDocFirestore } from './../../lib/firestore.js';
 
 export default () => {
   const container = document.createElement('div');
-  container.classList.add('wrapper-login');
-  const template = `    
-    <div>
-    <input id="post">
-    </input>
-    </div>
+  container.classList.add('wrapper-feed');
+  const template = `      
+    <header>Picsfem</header>
+    <label>
+    <input id="post" class="post-container">
+    </label>    
+    
     `;
 
   container.innerHTML = template;
@@ -21,7 +22,6 @@ export default () => {
     //querySnapshot(textPost);
 
   });
-  
 
   
   return container;

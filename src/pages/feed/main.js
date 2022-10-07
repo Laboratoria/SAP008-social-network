@@ -3,9 +3,14 @@ import {
   deletePost,
   getAllPosts,
   updatePost,
-  /* getAuth,
-  like, */
+  like,
 } from '../../lib/index.js';
+
+import { getAuth } from '../../lib/firebase.js';
+
+import { app } from '../../lib/configuration.js';
+
+const auth = getAuth(app);
 
 export default () => {
   const feedContainer = document.createElement('div');
@@ -92,14 +97,11 @@ export default () => {
     confirmEditBtn.classList.remove('hide-btn');
     console.log(idPostEdit);
 
-    updatePost(idPostEdit, postTextValue.value)
-      .then(() => {
-        confirmEditBtn.addEventListener('click', () => {
-          updatePost(idPostEdit, postTextValue.value);
-          txtArea.setAttribute('disabled', '');
-          confirmEditBtn.classList.add('hide-btn');
-        });
-      });
+    confirmEditBtn.addEventListener('click', () => {
+      updatePost(idPostEdit, postTextValue.value);
+      txtArea.setAttribute('disabled', '');
+      confirmEditBtn.classList.add('hide-btn');
+    });
   }
 
   const printPosts = async () => {
@@ -112,8 +114,9 @@ export default () => {
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${post.name}</h2>
-            <button data-id-post-edit="${post.id}"  class="edit-post-icon" id="edit-post-btn"><img src="img/icons/pencil-icon.png" alt="edit button"></button>
-            <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
+            ${auth.currentUser.uid === post.author ? `<button data-id-post-edit="${post.id}" class="edit-post-icon" id="edit-post-btn"><img src="img/icons/pencil-icon.png" alt="edit button"></button>
+            <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>` : ''}
+            
           </div>
           <textarea disabled class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
           <button class="confirm-edit-btn hide-btn" height="200" width="200">Salvar</button>
@@ -128,11 +131,13 @@ export default () => {
     feedContainer.querySelector('#feed-post').innerHTML = postsTemplate;
 
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
+    const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
+    const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
+
     editBtn.forEach((btn) => {
       btn.addEventListener('click', editPostContent);
     });
 
-    const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     trashcanBtn.forEach((btn) => {
       btn.addEventListener('click', (el) => {
         toggle(el.currentTarget.dataset.idPostTrashcan);
@@ -153,7 +158,6 @@ export default () => {
       printPosts();
     });
 
-    const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
     likeBtns.forEach((btn) => {
       btn.addEventListener('click', (el) => {
         const idPostLike = el.currentTarget.dataset.idPostLike;

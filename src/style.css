@@ -17,7 +17,8 @@ body {
   height: 368px;
   border: 1px solid #ffffff;
   background: transparent;
-  margin-top: 45%;
+  margin-top: 25%;
+
 }
 
 .lines {
@@ -53,6 +54,10 @@ form {
   cursor: pointer;
 }
 
+#google-login {
+  cursor: pointer;
+}
+
 #ok-form-btn {
   width: fit-content;
   height: fit-content;
@@ -69,8 +74,11 @@ form {
   color: #ffffff;
   width: 36px;
   border: none;
-  height: 37px;
+  height: 34px;
   margin-left: -4px;
+  border-top-width: 1px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .google-icon {
@@ -126,25 +134,81 @@ footer {
   position: fixed;
 }
 
-.colorful {
-  border-color: #ab6930;
-  width: 100%;
-}
 
-.iconsContainer {
+.icons-container {
   display: flex;
   justify-content: space-around;
   width: 376px;
   height: 78px;
 }
 
-.iconsSize {
+.icons-size {
   width: 40px;
   height: 70px; 
   filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
 }
 
-.timelineContainer {
+.colorful-line {
+  border-color: #ab6930;
+  width: 100%;
+}
+
+.post-container {
   width: 376px;
   height: 470px;
+  display: flex;
+}
+
+.posts {
+  width: 287px;
+  height: 206px;
+}
+
+.establishment {
+  font-weight: bold;
+}
+
+.infos-container {
+  display: flex;
+  justify-content: center;
+  width: 89px;
+  height: 206px;
+}
+
+#user-image {
+  background-color: #ab6930;
+  border-radius: 100%;
+  border: #ffffff;
+  width: 60px;
+  height: 60px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.name-letter {
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+#grade {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.icons-post {
+  margin-left: 38%;
+}
+
+.icons-post-size {
+  width: 19px;
+  height: 17px;
+  filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
+  display: flex;
+  margin-bottom: 8px;
 }

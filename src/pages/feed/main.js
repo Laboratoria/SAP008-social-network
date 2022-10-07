@@ -1,3 +1,4 @@
+import { getAuth } from '../../lib/firebase.js';
 import {
   createPost,
   deletePost,
@@ -133,6 +134,7 @@ export default () => {
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
+    const numLikes = feedContainer.querySelector('.all-likes-post');
 
     editBtn.forEach((btn) => {
       btn.addEventListener('click', editPostContent);
@@ -159,9 +161,12 @@ export default () => {
     });
 
     likeBtns.forEach((btn) => {
-      btn.addEventListener('click', (el) => {
+      btn.addEventListener('click', async (el) => {
         const idPostLike = el.currentTarget.dataset.idPostLike;
-        console.log(idPostLike);
+        const user = auth.currentUser.uid;
+        const newLike = await like(idPostLike, user);
+
+        numLikes.innerHTML = newLike;
       });
     });
   };

@@ -97,6 +97,8 @@ export const like = async (idPost, idUser) => {
   await updateDoc(doc(db, 'post', idPost), {
     like: likes,
   });
+
+  return likes.length;
 };
 
 export const updatePost = async (idPost, textValue, category) => {

@@ -1,11 +1,14 @@
+import { getAuth } from '../../lib/firebase.js';
 import {
   createPost,
   deletePost,
   getAllPosts,
-  /* getAuth,
-  like, */
+  like,
 } from '../../lib/index.js';
 
+import { app } from '../../lib/configuration.js';
+
+const auth = getAuth(app);
 export default () => {
   const feedContainer = document.createElement('div');
   const template = `
@@ -103,6 +106,7 @@ export default () => {
     const closeModal = feedContainer.querySelector('.close-modal');
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
+    const numLikes = feedContainer.querySelector('.all-likes-post');
 
     trashcanBtn.forEach((btn) => {
       btn.addEventListener('click', (el) => {
@@ -127,9 +131,12 @@ export default () => {
     }); */
 
     likeBtns.forEach((btn) => {
-      btn.addEventListener('click', (el) => {
+      btn.addEventListener('click', async (el) => {
         const idPostLike = el.currentTarget.dataset.idPostLike;
-        console.log(idPostLike);
+        const user = auth.currentUser.uid;
+        const newLike = await like(idPostLike, user);
+
+        numLikes.innerHTML = newLike;
       });
     });
   };

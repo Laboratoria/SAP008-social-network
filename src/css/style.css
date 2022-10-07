@@ -47,7 +47,7 @@ body {
 
 .input-login {
   font-family: "Roboto", sans-serif;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   background-color: #abd9d8;
   padding: 1%;
   margin-top: 0.5rem;
@@ -78,7 +78,7 @@ body {
 }
 
 .button-sign-up:hover {
-  background-color: #ffcc98;
+  background-color: #cdbcac;
 }
 
 .button-google {
@@ -92,6 +92,23 @@ body {
 
 .quote {
   font-size: 4rem;
+}
+
+.button-back-home {
+  background-color: rgb(166, 166, 166);
+  border-radius: 2rem;
+  font-family: "Poppins", sans-serif;
+  width: 20%;
+  height: 5%;
+  margin-top: 0.2rem;
+}
+
+.button-back-home:hover {
+  background-color: #cdbcac;
+}
+
+.button-signup:hover {
+  background-color: #c69b73;
 }
 
 @media screen and (min-width: 1201px) {

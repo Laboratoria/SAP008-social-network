@@ -1,9 +1,72 @@
 body{
-    background: #EDDED7;
-   
+    padding: 0;
+    margin: 0;  
 }
-
-
+.content{    
+    width: 100%;
+    height: 100vh;
+    background: #EDDED7;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    background-color: white;
+    border-radius: 0.8rem;
+    width: 70%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.form-cx{
+    width: 60%;
+}
+.form-cx input{
+    width: 100%;
+    height: 1rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 0.6rem;
+}
+.form-botaoentrar{
+    width: 30%;
+}
+.form-botaoentrar input{
+    border-radius: 10px;
+    width: 100%;  
+    height: 1.2rem;
+    background: #3F5494;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.linha-ou{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.linha{
+    width: 4rem;
+    height: 1%;
+    background-color: black;
+}
+.form-google{
+    background-color: #C71610;
+    border-radius: 2rem;
+    padding: 0.3rem;
+}
+.google{
+    color: white;
+    text-decoration: none;
+    margin: 0 0.7rem;
+}
+.google i{
+    margin-right: 1rem;
+}
     
-
 

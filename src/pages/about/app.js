@@ -27,16 +27,16 @@ export default () => {
   <div class="box-about">
   <div class="parag">
       <p>
-          A rede social <b id="vanellen">VANELLEN</b> foi construída como parte do bootcamp da Laboratória, que visa desenvolver
-          mulheres para o mercado tecnológico. <br/> <br/>
-          Com isso, estudamos sobre qual seria o tema da aplicação e os possíveis usuários e então desenvolvemos o
-          site “<b id="vanellen">VANELLEN</b>” que tem como objetivo
-          ajudar os usuários a escolherem filmes/séries com base na opinião de outras pessoas, a <b id="vanellen">VANELLEN</b> traz
-          como
-          recurso não apenas a
-          opção de compartilhar opinião e ler opinião de outros usuários, mas também curtir ou não curtir tal
-          publicação, desta forma,
-          sendo mais fácil mensurar se determinado filme/série foi bem aceito pelo público.
+      A rede social <b id="vanellen">VANELLEN</b> foi construída como parte do bootcamp da Laboratória, que visa desenvolver
+      mulheres para o mercado tecnológico. <br/> <br/>
+      Com isso, estudamos sobre qual seria o tema da aplicação e os possíveis usuários e então desenvolvemos o
+      site <b id="vanellen">VANELLEN</b> que tem como objetivo
+      ajudar os usuários a escolherem filmes/séries com base na opinião de outras pessoas, a <b id="vanellen">VANELLEN</b> traz
+      como
+      recurso não apenas a
+      opção de compartilhar a sua opnião e ler a dos outros usuários, mas também curtir ou não curtir tal
+      publicação, desta forma,
+      sendo mais fácil mensurar se determinado filme/série foi bem aceito pelo público.
       </p>
   </div>
   <div class="aboutDev">
@@ -53,8 +53,8 @@ export default () => {
           para o nosso crescimento. E claro, amo filmes e séries.
           <div class="networks">
           <div class="social">
-          <a href="https://www.instagram.com/ellenccavalcante/"target="_blank"> <img " id="insta-icon" src="../src/img/Instagram-Icon.png.webp"></a>
-          <a href="https://www.linkedin.com/in/ellencavalcantebrito/" target="_blank"><img id="linkedinIcon" src="../src/img/linkedinIcon.png"> </a>
+          <a href="https://www.instagram.com/ellenccavalcante/"target="_blank"> <img id="insta-icon" src="./img/Instagram-Icon.png.webp" alt="logo Instagram"></a>
+          <a href="https://www.linkedin.com/in/ellencavalcantebrito/" target="_blank"><img id="linkedinIcon" src="./img/linkedinIcon.png" alt="logo LinkedIn"> </a>
            </div>
          </div> 
       </div>
@@ -70,8 +70,8 @@ export default () => {
               Sou organizada, criativa, multitarefas (habilidade adquirida juntamente com a maternidade) e gosto de estar sempre aprendendo algo novo. 
               <div class="networks">
               <div class="social">
-              <a href="https://www.instagram.com/vanessabuecker/"target="_blank"> <img " id="insta-icon" src="../src/img/Instagram-Icon.png.webp"></a>
-              <a href="https://www.linkedin.com/in/vanessa-bueck/"target="_blank"> <img id="linkedinIcon" src="../src/img/linkedinIcon.png">  </div>
+              <a href="https://www.instagram.com/vanessabuecker/"target="_blank"> <img id="insta-icon" src="./img/Instagram-Icon.png.webp" alt="logo Instagram" ></a>
+              <a href="https://www.linkedin.com/in/vanessa-bueck/"target="_blank"> <img id="linkedinIcon" src="./img/linkedinIcon.png" alt="logo LinkedIn">  </div>
               </div> 
           </div>   
      </div>

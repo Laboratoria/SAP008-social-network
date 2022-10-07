@@ -38,7 +38,7 @@ body {
     display: flex;
 }
 
-#ellen-img {
+#ellen-img, #vanessa-img {
     width: 15.3vw;
     border-radius: 50%;
     border: 10px solid #1f1e1e;

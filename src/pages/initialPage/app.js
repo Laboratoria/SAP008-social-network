@@ -2,7 +2,7 @@
 /* eslint-disable consistent-return */
 import {
   // eslint-disable-next-line max-len
-  getDisplayName, getUserUid, firestore, createCollection, signOut,
+  getDisplayName, getUserUid, createCollection, signOut,
 } from '../../lib/authentication.js';
 
 export default () => {
@@ -166,7 +166,6 @@ export default () => {
       createdAt: new Date(),
       text: event.target.text.value,
       like: [],
-      liked: [],
       deslike: [],
     };
 
@@ -183,7 +182,7 @@ export default () => {
           container.querySelector('#message').value = '';
           container.querySelector('#name').value = '';
           container.querySelector('#movieName').value = '';
-          const postsCollection = firestore;
+          const postsCollection = firebase.firestore().collection('posts');
           container.querySelector('.posts').innerHTML = 'Carregando...';
           postsCollection.get().then(() => {
             container.querySelector('.posts').innerHTML = '';
@@ -274,19 +273,29 @@ export default () => {
     const increment = firebase.firestore.FieldValue.increment(1);
 
     boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
-    firestore.doc(buttonLike).update({ like: increment }).catch(() => {
-      alert('Ops! Algo deu errado. Tente novamente!');
-    });
+    firebase.firestore().collection('posts').doc(buttonLike).update({ like: increment })
+      .catch(() => {
+        const modalContentElement = document.getElementById('modal_content');
+        const modalElement = document.getElementById('modal');
+        modalElement.classList.add('show-modal');
+        modalContentElement.innerHTML = 'Ops! Algo deu errado. Tente novamente!';
+      });
   });
 
   boxPost.addEventListener('click', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
+    const test = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
+    console.log(test);
+    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu!😢${Number(test) + 1}`;
 
-    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu!😢';
-    firestore.doc(buttonDeslike).update({ deslike: increment }).catch(() => {
-      alert('Ops! Algo deu errado. Tente novamente!');
-    });
+    firebase.firestore().collection('posts').doc(buttonDeslike).update({ deslike: increment })
+      .catch(() => {
+        const modalContentElement = document.getElementById('modal_content');
+        const modalElement = document.getElementById('modal');
+        modalElement.classList.add('show-modal');
+        modalContentElement.innerHTML = 'Ops! Algo deu errado. Tente novamente!';
+      });
   });
 
   return container;

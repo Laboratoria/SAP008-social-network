@@ -3,10 +3,10 @@ export default () => {
   const conteudo = geraTemplate();
   container.innerHTML = conteudo;
 
-  const inputEmail = container.querySelector("#email-login")
-  const inputSenha = container.querySelector("#senha-login")
-  const formLogin = container.querySelector(".form")
-  configuraSubmitDoForm(formLogin, inputEmail, inputSenha)
+  const inputEmail = container.querySelector('#email-login');
+  const inputSenha = container.querySelector('#senha-login');
+  const formLogin = container.querySelector('#template-form');
+  configuraSubmitDoForm(formLogin, inputEmail, inputSenha);
 
   return container;
 };
@@ -29,7 +29,7 @@ function configuraSubmitDoForm(form, inputEmail, inputSenha) {
 }
 function geraTemplate() {
   return `
-  <div class="container">
+  <div class="container" id="template-form">
   <form class="form">
     <img src="img/logo.png" class="logo" alt="Logo Wanderlust">
     <p class="register">
@@ -56,5 +56,5 @@ function geraTemplate() {
     <p>
       <a href="#sobre" class="sobrepage">Sobre</a>
     </p>
-  </form>`
+  </form>`;
 }

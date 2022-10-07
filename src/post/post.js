@@ -71,7 +71,7 @@ export default () => {
     container.querySelector('#logout').addEventListener('click', e => {
         e.preventDefault();
         signOut();
-        window.location.hash = ""
+        redirect("");
     
     });
 

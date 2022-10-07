@@ -1,5 +1,5 @@
 import { registerUser } from '../firebase/firebase.js' 
-import { redirect } from "../redirect.js" ;
+import { redirect } from "../redirect.js"
                                                                                                              
 export default () => {
     const container = document.createElement('div');
@@ -42,7 +42,7 @@ export default () => {
             const password = container.querySelector('#box-new-password').value;
             registerUser(name, email, password)
             .then(() => {                                                  
-                window.location.hash = "";   
+              redirect("");   
               })                                                                                                     
               .catch((error) => {                                                                 
                 const errorMessage = error.message;

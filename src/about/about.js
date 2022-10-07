@@ -1,4 +1,5 @@
 import {signOut} from "../firebase/firebase.js"
+import { redirect } from "../redirect.js"
 
 export default () => {
     const container = document.createElement('div');
@@ -50,7 +51,7 @@ console.log(items);
 container.querySelector('#logout').addEventListener('click', e => {
     e.preventDefault();
     signOut();
-    window.location.hash = ""
+    redirect("");
 
 });
 

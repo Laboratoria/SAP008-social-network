@@ -1,4 +1,5 @@
 import {signOut, getUserName, getAllPosts, createPost} from "../firebase/firebase.js"
+import { redirect } from "../redirect.js"
 
 export default () => {
     const name = getUserName();
@@ -41,13 +42,13 @@ export default () => {
 
     const showPosts = async () => {
         const groupArr = await getAllPosts();
-        const postsTemplate = groupArr.map((posts) => `
+        const postsTemplate = groupArr.map((post) => `
             <div class="post">
-                <p id="user-name">${posts.name}</p>
-                <p id="artist-name">${posts.artist}</p>
-                <p id="show-location">${posts.location}</p>
-                <p id="show-date">${posts.date}</p>
-                <p id="text-post">${posts.text}</p>
+                <p id="user-name">${post.name}</p>
+                <p id="artist-name">${post.artist}</p>
+                <p id="show-location">${post.location}</p>
+                <p id="show-date">${post.date}</p>
+                <p id="text-post">${post.text}</p>
             </div>
         `).join('');
         container.querySelector("#show-timeline").innerHTML += postsTemplate;
@@ -66,7 +67,7 @@ export default () => {
     container.querySelector('#logout').addEventListener('click', e => {
         e.preventDefault();
         signOut();
-        window.location.hash = ""
+        redirect("");
     });
 
     return container;

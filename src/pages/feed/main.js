@@ -134,7 +134,7 @@ export default () => {
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
-    const numLikes = feedContainer.querySelector('.all-likes-post');
+    const numLikes = Array.from(feedContainer.querySelectorAll('.all-likes-post'));
 
     editBtn.forEach((btn) => {
       btn.addEventListener('click', editPostContent);
@@ -167,6 +167,7 @@ export default () => {
         const newLike = await like(idPostLike, user);
 
         numLikes.innerHTML = newLike;
+        printPosts();
       });
     });
   };

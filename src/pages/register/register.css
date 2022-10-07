@@ -35,7 +35,7 @@ body {
 }
 
 .logo-register {
-    max-height: 30vh;
+    max-height: auto;
 }
 
 .box-center .logo-register {
@@ -43,7 +43,7 @@ body {
 }
 
 #logo-register {
-    max-height: 35vh;
+    width: 9vw;
 }
 
 .box-center .buttons-register {
@@ -61,11 +61,11 @@ body {
     color: #ffffff;
 }
 
-#button-back{
+#button-back {
     background-color: #544f4f;
 }
 
-.register-error{
+.register-error {
     text-align: center;
     color: #d30a0a;
     font-size: 0.9rem;
@@ -93,7 +93,6 @@ body {
 
 .wrapper-register {
     background-color: #151414;
-
 }
 
 footer {
@@ -121,8 +120,8 @@ footer {
 
 @media only screen and (max-width: 395px) and (min-width: 200px) {
     .container-register {
-     height: 52rem;
-     background: linear-gradient(to right, #070707 0%, #740303 90%);
+        height: 52rem;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
 
     #logo-register {
@@ -134,7 +133,7 @@ footer {
         height: 79vh;
         font-size: 1rem;
         margin-top: 10%;
-        background: linear-gradient(to right, #070707 0%, #740303 90%);
+        background: transparent;
     }
 
     .box-center .buttons {
@@ -163,8 +162,8 @@ footer {
 
 @media only screen and (max-width: 389px) {
     .container-register {
-     height: 52rem;
-     background: linear-gradient(to right, #070707 0%, #740303 90%);
+        height: 52rem;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
 
     #logo-register {
@@ -204,12 +203,12 @@ footer {
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
     .container-register {
-     height: 120vh;
-     background: linear-gradient(to right, #070707 0%, #740303 90%);
+        height: 120vh;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
 
     #logo-register {
-        width: 45vw;
+        width: 30vw;
     }
 
     .box-center {
@@ -243,12 +242,24 @@ footer {
     }
 }
 
-@media only screen and (max-width: 770px) and (min-width: 767px) {
+@media only screen and (max-width: 912px) and (min-width: 767px) {
 
     .container-register {
         height: 90vh;
         background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
+
+    #logo-register{
+        width: 20vw;
+        margin-bottom: 3%;
+    }
+
+    .form-register input {
+        width: 100%;
+        height: 7vh;
+        font-size: 1rem;
+    }
+
 
     .box-center {
         width: 60%;
@@ -280,20 +291,21 @@ footer {
         margin-left: 5%;
         width: 270px;
     }
-    
+
 }
 
-@media only screen and (max-width: 1281px) and (min-width: 1024px) {
+@media only screen and (max-width: 1285px) and (min-width: 1024px) {
 
-    .container-register{
+    .container-register {
+        height: 100vh;
         background: linear-gradient(to right, #070707 0%, #740303 90%);
     }
-    
+
     .box-center {
         font-size: 1.2rem;
         margin-top: 2%;
         margin-bottom: 2%;
-        background-color: transparent;   
+        background-color: transparent;
     }
 
     .box-center .button {
@@ -321,8 +333,8 @@ footer {
     }
 
     .wrapper-register {
-        background: linear-gradient(to right, #070707 0%, #740303 90%);
-        height: 5rem;
+        margin-bottom: 0;
+        height: 0;
     }
 
 }
@@ -349,7 +361,6 @@ footer {
         height: 80px;
         font-size: 1rem;
     }
-    
 
     .box-center .button {
         font-size: 1.2rem;

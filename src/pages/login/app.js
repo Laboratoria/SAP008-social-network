@@ -42,7 +42,7 @@ export default () => {
         <div class="login-error-div" id="print-error-here"></div> 
         <span id="recover"> Esqueci a senha 😰 </span>
           <button type="button" id="button-enter" class="button">Entrar</button>
-          <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp" style="color:rgb(41, 73, 201); font-size:1rem"> Cadastre-se! </p>
+          <p id="registerr" >Não tem uma conta?</p>  <a href="#register" id="signUp"> Cadastre-se! </p>
         </div>
       </div>
     </div>

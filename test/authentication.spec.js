@@ -6,7 +6,6 @@ import {
   getUserUid,
   getDisplayName,
   getPhotoUser,
-  firestore,
   createCollection,
 } from '../src/lib/authentication.js';
 
@@ -91,12 +90,6 @@ describe('UserPhoto', () => {
   it('should call Firebase getPhotoUser function', () => {
     getPhotoUser();
     expect(firebase.auth).toHaveBeenCalledTimes(1);
-  });
-});
-
-describe('firestore', () => {
-  it('is a function', () => {
-    expect(typeof firestore).toBe('function');
   });
 });
 

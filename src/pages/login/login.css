@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Ubuntu', sans-serif;
+    height: 100%;
 }
 
 .container-login {
@@ -31,20 +32,21 @@ body {
 }
 
 .box-left p {
-    margin-top: 5%;
     font-size: 1.8rem;
     color: #ffffff;
 }
 
 .box-right {
-    width: 32%;
+    width: 30%;
+    height: 100%;
     background-color: #ffffff;
     font-size: 1rem;
     border-radius: 2%;
 }
 
 .logo-login {
-    height: 16vh;
+    margin-top: 1%;
+    height: auto;
 }
 
 .box-right .logo-login {
@@ -52,19 +54,21 @@ body {
 }
 
 #logo-login {
-    width: 10vw;
+    margin-top: 2%;
+    width: 6vw;
 }
 
 .box-right .register {
-    width: 80%;
-    margin-left: 50px;
+    width: 95%;
+    height: auto;
+    margin: auto;
     text-align: center;
     font-size: 1.2rem;
 }
 
 .register p {
     font-size: 1rem;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 #button-gmail {
@@ -72,7 +76,8 @@ body {
 }
 
 #logo-gmail {
-    width: 35px;
+    width: 2vw;
+    margin-left: 3rem;
 }
 
 .login-error-div {
@@ -82,7 +87,7 @@ body {
 }
 
 .box-right .button {
-    height: 50px;
+    height: 7vh;
     padding: 10px;
     width: 90%;
     background-color: #850a0a;
@@ -109,13 +114,23 @@ body {
 .button-txt {
     display: inline-flex;
     align-items: center;
-    padding: 0px 0 0 20px;
+    padding: 0px 0 0 25px;
     height: 100%;
     color: #ffffff;
 }
 
 .break {
     display: flex;
+}
+
+#registerr{
+    font-size: 1rem;
+}
+
+#signUp{
+    color: blue;
+    font-size: 1rem;
+    text-decoration: none;
 }
 
 .line {
@@ -142,8 +157,8 @@ body {
 }
 
 .form input {
-    width: 82%;
-    height: 50px;
+    width: 90%;
+    height: 7vh;
     margin: 5px;
     border: 1px solid #808080;
     border-radius: 5px;
@@ -166,9 +181,9 @@ body {
     border-radius: 5px;
 }
 
-.wrapper-login{
-    height: 3vh;
-    background-color:#151414;;
+.wrapper-login {
+    padding-bottom: 10%;
+    background-color: #151414;
 }
 
 footer {
@@ -207,26 +222,25 @@ footer {
     }
 
     #logo-login {
-        width: 40vw;
+        width: 25vw;
+    }
+
+    #logo-gmail {
+        width: 6vw;
+        margin-left: 0;
+
     }
 
     .logo-login {
-        height: 16vh;
+        height: auto;
     }
 
     .box-left {
         display: none;
     }
 
-    #gif-vanellen {
-        height: 10%;
-        width: 95%;
-        border-radius: 5px;
-    }
-
     .box-right {
         width: 100%;
-        margin-top: 12%;
         font-size: 1rem;
         color: #ffffff;
         margin-right: 3%;
@@ -237,7 +251,7 @@ footer {
     }
 
     .box-right .button {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .box-right .logo-login {
@@ -250,35 +264,35 @@ footer {
         margin-left: 11%;
         margin-bottom: 6%;
     }
+
+    .login-error-div {
+        color: #eda2a2;
+    }
 }
 
-@media only screen and (max-width: 770px) and (min-width: 502px) {
+@media only screen and (max-width: 780px) and (min-width: 502px) {
 
     .container-login {
         display: block;
         width: 100%;
-        font-size: 0;
         padding: 1%;
-        height: 110vh;
         background: linear-gradient(to right, #070707 0%, #740303 90%);
-     }
+    }
 
     #logo-login {
-        width: 40vw;
+        width: 25vw;
+    }
+
+    #logo-gmail {
+        width: 35px;
     }
 
     .logo-login {
-        height: 23vh;
+        height: auto;
     }
 
     .box-left {
         display: none;
-    }
-
-    #gif-vanellen {
-        height: 10%;
-        width: 95%;
-        border-radius: 5px;
     }
 
     .box-right {
@@ -291,7 +305,7 @@ footer {
     }
 
     .box-right .button {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .box-right .logo-login {
@@ -303,6 +317,13 @@ footer {
         font-size: 0.9rem;
         margin-left: 11%;
         margin-bottom: 6%;
+    }
+    .login-error-div {
+        color: #eda2a2;
+    }
+
+    .wrapper-login{
+        padding-bottom: 1%;
     }
 
 }
@@ -316,21 +337,15 @@ footer {
     }
 
     #logo-login {
-        width: 40vw;
+        width: 30vw;
     }
 
     .logo-login {
-        height: 25vh;
+        height: auto;
     }
 
     .register p {
         font-size: 1.5rem;
-    }
-
-    #gif-vanellen {
-        height: 10%;
-        width: 97%;
-        border-radius: 5px;
     }
 
     .box-right {
@@ -356,13 +371,20 @@ footer {
         font-size: 1.7rem;
         margin-left: 11%;
     }
+    .login-error-div {
+        color: #eda2a2;
+    }
+    .wrapper-login{
+        padding-bottom: 20%;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
 
     .foot {
         height: 120px;
     }
 }
 
-@media only screen and (max-width: 1281px) and (min-width: 1024px) {
+@media only screen and (max-width: 1281px) and (min-width: 1010px) {
 
     .container-login {
         margin: auto;
@@ -372,11 +394,11 @@ footer {
     }
 
     #logo-login {
-        width: 20vw;
+        width: 10vw;
     }
 
     .logo-login {
-        height: 25vh;
+        height: auto;
     }
 
     .box-left {
@@ -399,14 +421,14 @@ footer {
 
     .box-right {
         width: 95%;
-        color: #ffffff;
+        color: #191818;
         font-size: 1.2rem;
         margin-right: 3%;
         background-color: #ffffff;
     }
 
     .box-right .button {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .box-right .register {
@@ -419,15 +441,18 @@ footer {
         font-size: 1rem;
         color: #1e1d1d;
     }
-    
-    .wrapper-login{
-        padding: 10vh;
+    .login-error-div {
+        color: #eda2a2;
+    }
+
+    .wrapper-login {
+        padding-bottom: 6%;
         background-color: #151414;
-        border: 1px solid #151414;;
+        border: 1px solid #151414;
     }
 }
 
-@media only screen and (max-width: 1000px) and (min-width:820px) {
+@media only screen and (max-width: 998px) and (min-width:810px) {
 
     .container-login {
         padding: 2%;
@@ -438,16 +463,47 @@ footer {
 
     .logo-login {
         margin-top: 10%;
-        height: 10vh;
-        margin-bottom: 10%;
     }
-    
-    .box-left p{
+
+    .box-left p {
         display: none;
     }
 
     #logo-login {
         width: 25vw;
+    }
+
+    #logo-gmail {
+        width: 3vw;
+    }
+
+    .button-icon,
+    .button-txt {
+        padding: 0 0 0 10px;
+    }
+
+    .register p {
+        font-size: 1.5rem;
+    }
+
+    .form input {
+        width: 90%;
+        height: 6vh;
+    }
+
+    #registerr{
+        font-size: 1.6rem;
+        color: rgb(237, 237, 237);
+    }
+
+    #signUp{
+        color: blue;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    #recover{
+        font-size: 1.6rem;
     }
 
     #gif-vanellen {
@@ -462,14 +518,22 @@ footer {
         margin-right: 20%;
         background: transparent;
     }
+    .login-error-div {
+        color: #eda2a2;
+        font-size: 0.9rem;
+    }
 
     .box-right .button {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .box-right .register {
         width: 78%;
         font-size: 1.3rem;
         margin-left: 11%;
+    }
+
+    .wrapper-login{
+        padding-bottom: 0;
     }
 }

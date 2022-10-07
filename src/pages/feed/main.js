@@ -47,10 +47,11 @@ export default () => {
           <button id="publish-btn">Publicar</button>
           <button id="delete-btn">Deletar</button>
           </div>
-          
           </section>
           
-          <section id="feed-post"></section>
+          <section id="feed-post">
+            
+          </section>
 
           <div id="fade" class="none"></div>
 
@@ -73,15 +74,39 @@ export default () => {
   const textPost = feedContainer.querySelector('#text-post');
   const fade = feedContainer.querySelector('#fade');
   const modal = feedContainer.querySelector('#modal-delete');
+  const confirmDeletePost = feedContainer.querySelector('.btn-delete');
 
-  function toggle() {
+  function toggle(id) {
     modal.classList.toggle('none');
+    confirmDeletePost.setAttribute('data-idPost', id);
     fade.classList.toggle('none');
   }
 
+  function editPostContent(el) {
+    const idPostEdit = el.currentTarget.dataset.idPostEdit;
+    const postTextValue = feedContainer.querySelector('.text-post');
+    const txtArea = feedContainer.querySelector('.text-post');
+    const confirmEditBtn = feedContainer.querySelector('.confirm-edit-btn');
+
+    txtArea.removeAttribute('disabled');
+    confirmEditBtn.classList.remove('hide-btn');
+    console.log(idPostEdit);
+
+    updatePost(idPostEdit, postTextValue.value)
+      .then(() => {
+        confirmEditBtn.addEventListener('click', () => {
+          updatePost(idPostEdit, postTextValue.value);
+          txtArea.setAttribute('disabled', '');
+          confirmEditBtn.classList.add('hide-btn');
+        });
+      });
+  }
 
   const printPosts = async () => {
+    const closeModal = feedContainer.querySelector('.close-modal');
+
     const postArr = await getAllPosts();
+
     const postsTemplate = postArr.map((post) => `
         <div class="post">
           <div class="header-post">
@@ -90,7 +115,8 @@ export default () => {
             <button data-id-post-edit="${post.id}"  class="edit-post-icon" id="edit-post-btn"><img src="img/icons/pencil-icon.png" alt="edit button"></button>
             <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>
           </div>
-          <p class="text-post">${post.text}</p>
+          <textarea disabled class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
+          <button class="confirm-edit-btn hide-btn" height="200" width="200">Salvar</button>
           <div class="footer-post">
             <p class="date-post"></p>
             <span class="like-btn-post" data-id-post-like="${post.id}" ><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
@@ -101,44 +127,15 @@ export default () => {
 
     feedContainer.querySelector('#feed-post').innerHTML = postsTemplate;
 
-    // const editPosts = async () => {
-    // const postTextValue = feedContainer.querySelector('.text-post').value;
-
-    //   const toBeEditedPosts = await updatePost(idPostEdit, postTextValue);
-    //   const editTemplate = toBeEditedPosts.map((post) => `
-    //   <div class="edit-modal">
-    //     <textarea data-id-post-edit="${post.id}" class="edit-post-txtarea">${postTextValue}</textarea>
-    //     <button type="submit">Concluído</button>
-    //     <button type="submit">Cancelar</button>
-    //   </div>
-    //   `).join('');
-    //   return editTemplate;
-    // };
-    // editPosts();
-    // const editedPostText = feedContainer.querySelector('[data-id-post-edit]');
-    // editedPostText.addEventListener('change', toBeEditedPosts)
-    // printPosts(editPosts);
-
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
-
     editBtn.forEach((btn) => {
-      btn.addEventListener('click', (el) => {
-        const idPostEdit = el.currentTarget.dataset.idPostEdit;
-        console.log(idPostEdit);
-      });
+      btn.addEventListener('click', editPostContent);
     });
 
-    // const confirmDeletePost = feedContainer.querySelector('.btn-delete');
-    const closeModal = feedContainer.querySelector('.close-modal');
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
-    const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
-
     trashcanBtn.forEach((btn) => {
       btn.addEventListener('click', (el) => {
-        const idPostDelete = el.currentTarget.dataset.idPostTrashcan;
-        deletePost(idPostDelete);
-        printPosts();
-        // toggle();
+        toggle(el.currentTarget.dataset.idPostTrashcan);
       });
     });
 
@@ -148,13 +145,15 @@ export default () => {
       });
     });
 
-    /* confirmDeletePost.addEventListener('click', (el) => {
-      const idPostDelete = el.currentTarget.dataset.idPostTrashcan;
+    confirmDeletePost.addEventListener('click', (el) => {
+      const idPostDelete = el.currentTarget.dataset.idpost;
       console.log(idPostDelete);
       deletePost(idPostDelete);
       toggle();
-    }); */
+      printPosts();
+    });
 
+    const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
     likeBtns.forEach((btn) => {
       btn.addEventListener('click', (el) => {
         const idPostLike = el.currentTarget.dataset.idPostLike;

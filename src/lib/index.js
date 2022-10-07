@@ -99,7 +99,7 @@ export const like = async (idPost, idUser) => {
   });
 };
 
-export const updatePost = async (idPost, textValue /* category */) => {
+export const updatePost = async (idPost, textValue) => {
   const newAttPost = doc(db, 'post', idPost);
 
   await updateDoc(newAttPost, {

@@ -1,3 +1,4 @@
+
 export default () => {
   //fazer if usuario não estiver logado "currentUser" redirecionar tela login
   const container = document.createElement('div');
@@ -9,12 +10,12 @@ export default () => {
     </nav>
     <hr class="colorful-line"/>
     <div>
-      <p id="welcome-user">Olá, Isabela! Esta é a Página Inicial!</p>
+      <p id="welcome-user">Olá,Isabela! Esta é a Página Inicial!</p>
     </div>
     <hr class="colorful-line"/>
     <section class="post-container">
       <div class="posts">
-        <p>@Isabela</p>
+        <p>@isabela</p>
         <p class="establishment">Café da Vila</p>
         <p>Rua Dr. Arthur Martins, 243. Sorocaba-
         <p>Atendimento excelente! Garçons simpáticos e dedicados. 
@@ -25,7 +26,7 @@ export default () => {
       </div> 
       <aside class="infos-container">
         <div>
-          <div id="user-image"><p class="name-letter">F</p></div>
+          <div id="user-image"><p class="name-letter">I</p></div>
           <p id="grade">4.7</p>
           <div class="icons-post">
             <img id="heart-icon" class="icons-post-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/ad81ec17c3c4217b5df2b32d27f12f2a6de367ea/external/svg_icons_social_network/heart-icon.svg"/>

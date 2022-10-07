@@ -8,13 +8,7 @@ import home from './pages/home/home.js'
 
 const main = document.querySelector('#root');
 
-const googleBtn = document.querySelector('#google-login');
-const okLoginBtn = document.querySelector('#ok-login-btn');
 
-
-//const signInConfirmPassword = document.querySelector('#confirm-password')
-
-const checkBox = document.querySelector('#checkbox');
 
 const init = () => {
     main.innerHTML = "";

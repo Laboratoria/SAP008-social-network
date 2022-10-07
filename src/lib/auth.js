@@ -1,6 +1,8 @@
-//aqui exportaras las funciones que necesites
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from './firebase.js';
 import { app } from './configuration.js';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithPopup,
+  GoogleAuthProvider, collection, addDoc, getFirestore, onAuthStateChanged
+} from './firebase.js';
 
 
 const auth = getAuth(app)
@@ -15,7 +17,8 @@ export const newUser = async (email, password) => {
   }
 };
 
-const provider = new GoogleAuthProvider();
+
+const provider = new GoogleAuthProvider(app);
 
 export const googleAccess = async () => {
   signInWithPopup(auth, provider)
@@ -35,3 +38,27 @@ export const googleAccess = async () => {
 
     });
 }
+
+export const dataBase = getFirestore(app);
+
+export const create = async () => {
+  const signInName = document.querySelector('#name');
+  const signInEmail = document.querySelector('#email');
+  const signInPassword = document.querySelector('#password');
+  try {
+    const docRef = await addDoc(collection(dataBase, "Users"), {
+      name: signInName.value,
+      email: signInEmail.value,
+      password: signInPassword.value
+
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+
+

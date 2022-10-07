@@ -1,6 +1,6 @@
-import { createUser, auth } from '../../firebase.js'
+import { auth, createUser } from '../../lib/index.js';
 export default () => {
-    const containerRegistration = document.createElement('div')
+    const containerRegistration = document.createElement('div');
     const registration = `
     <header>
       <picture>
@@ -63,34 +63,34 @@ export default () => {
       </div>
       <div class="formCadastro">
          <div class="submitCadastro">
-          <button type="submit" id="CreateAnAccount">Criar Conta</button>
+          <input type="button" id="CreateAnAccount" value="Criar conta">
          </div>
       </div>
     </form>
-    `
-    containerRegistration.innerHTML = registration
-    const btnRegister = containerRegistration.querySelector('#CreateAnAccount')
+    `;
+    containerRegistration.innerHTML = registration;
+    const btnRegister = containerRegistration.querySelector('#CreateAnAccount');
     btnRegister.addEventListener('click', (e) => {
-        const email = containerRegistration.querySelector('#emailRegistration')
+        const email =
+            containerRegistration.querySelector('#emailRegistration').value;
         const password = containerRegistration.querySelector(
             '#registrationPassword'
-        )
+        ).value;
 
-        createUser(auth, email, password)
+        createUser(email, password)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user
+                const user = userCredential.user;
                 // ...
-                // alert('conta criada')
-                console.log('oi')
+                alert('conta criada');
             })
             .catch((error) => {
-                const errorCode = error.code
-                const errorMessage = error.message
+                const errorCode = error.code;
+                const errorMessage = error.message;
                 // ..
-                alert(errorMessage)
-            })
-    })
+                alert(errorMessage);
+            });
+    });
 
     // const formCadastro = document.querySelector('.formCadastro')
     // const form = containerRegistration.querySelector('#form')
@@ -145,5 +145,5 @@ export default () => {
     //     formCadastro.className = 'formCadastro-success'
     // }
 
-    return containerRegistration
-}
+    return containerRegistration;
+};

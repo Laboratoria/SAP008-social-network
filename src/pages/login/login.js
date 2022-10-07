@@ -38,19 +38,6 @@ export default () => {
     const formLogIn = container.querySelector('#ok-login-btn');
     
 
-    // formLogIn.addEventListener('click', async (e) => {
-    //     e.preventDefault()
-    //     try {
-    //         loginUser(logInEmail.value, logInPassword.value)
-    //         .then(() => {
-        //             window.location.hash = '#home'
-        //         });
-    //     }
-    //     catch (error) {
-    //         let erro =;
-    //     }
-    // });
-
     formLogIn.addEventListener('click', async (e) => {
         e.preventDefault()
         await loginUser(logInEmail.value, logInPassword.value);

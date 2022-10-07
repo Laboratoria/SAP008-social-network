@@ -97,14 +97,16 @@ export const like = async (idPost, idUser) => {
   await updateDoc(doc(db, 'post', idPost), {
     like: likes,
   });
+
+  return likes.length;
 };
 
-export const updatePost = async (idPost, textValue, category) => {
+export const updatePost = async (idPost, textValue) => {
   const newAttPost = doc(db, 'post', idPost);
 
   await updateDoc(newAttPost, {
     text: textValue,
-    tag: category,
+    //tag: category,
   });
 };
 
@@ -120,9 +122,9 @@ export const deletePost = async (postId) => {
 
 export const getAllPosts = async () => {
   try {
-    const querySnapshot = await getDocs(collection(db, 'post'));
+    const posts = await getDocs(collection(db, 'post'));
     const arrPosts = [];
-    querySnapshot.forEach((post) => {
+    posts.forEach((post) => {
       arrPosts.push({ ...post.data(), id: post.id });
     });
     return arrPosts;

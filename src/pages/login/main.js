@@ -40,7 +40,7 @@ export default () => {
   
         <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
   
-        <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
+        <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
   
         <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
       </form>

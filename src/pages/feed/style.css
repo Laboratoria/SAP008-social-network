@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+#logout-btn {
+    background-color: black;
+    cursor: pointer;
+}
+
+.logout-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 .hide-btn {
     display: none;
 }

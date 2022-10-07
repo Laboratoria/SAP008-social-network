@@ -3,6 +3,7 @@ import {
   createPost,
   deletePost,
   getAllPosts,
+  logoff,
   updatePost,
   like,
 } from '../../lib/index.js';
@@ -21,7 +22,7 @@ export default () => {
   <img src="img/Rebu.png" alt="rebu logo">
   <input type="search" placeholder="Busque por post">
       <img src="" alt="" id="user-profile-picture-header">
-      <button id="logout-btn"><img src="" alt=""></button>
+      <button id="logout-btn"><img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon"></button>
 
       <nav class="tag-filter">
 
@@ -78,6 +79,7 @@ export default () => {
 
   const publishBtn = feedContainer.querySelector('#publish-btn');
   const textPost = feedContainer.querySelector('#text-post');
+  const logoutBtn = feedContainer.querySelector('#logout-btn');
   const fade = feedContainer.querySelector('#fade');
   const modal = feedContainer.querySelector('#modal-delete');
   const confirmDeletePost = feedContainer.querySelector('.btn-delete');
@@ -174,6 +176,10 @@ export default () => {
   publishBtn.addEventListener('click', () => {
     createPost(textPost.value);
     printPosts();
+  });
+
+  logoutBtn.addEventListener('click', () => {
+    logoff();
   });
 
   printPosts();

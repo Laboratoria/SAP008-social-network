@@ -4,6 +4,7 @@
 
 // myFunction();
 
+// import carregamento from "./pages/carregamento/carregamento.js";
 import publish from "./pages/publicar/publicar.js";
 
 const main = document.querySelector("#root");

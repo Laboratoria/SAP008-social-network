@@ -1,4 +1,5 @@
-import { newUser } from '../../lib/auth.js';
+
+import { newUser, create } from '../../lib/auth.js';
 export default () => {
     const container = document.createElement('div');
     const template =
@@ -8,8 +9,8 @@ export default () => {
             <form class="form-register">
                 <input type="text" id="name" name="name" class="form-input" placeholder="Digite seu nome"><br>
                 <input type="text" id="email" name="email" class="form-input" placeholder="E-mail"><br>
-                <input type="text" id="password" name="password" class="form-input" placeholder="Senha"><br>
-                <input type="text" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirme sua senha"><br>
+                <input type="password" id="password" name="password" class="form-input" placeholder="Senha"><br>
+                <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirme sua senha"><br>
                 
                 <div class="policies-container">
                     <input type="checkbox" id="checkbox">
@@ -39,6 +40,9 @@ export default () => {
     const checkBox = container.querySelector('#checkbox')
     const formRegister = container.querySelector('.form-register');
 
+
+
+
     formRegister.addEventListener('submit', (e) => {
         e.preventDefault()
 
@@ -51,9 +55,13 @@ export default () => {
         }
         return newUser(signInEmail.value, signInPassword.value)
             .then(() => {
+                create()
+            })
+
+            .then(() => {
                 window.location.hash = '#home'
             })
-        
+
     })
 
     return container;

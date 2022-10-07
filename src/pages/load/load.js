@@ -1,6 +1,7 @@
+import { googleAccess} from '../../lib/auth.js'
 export default () => {
-    const container = document.createElement('div');
-    const template =
+  const container = document.createElement('div');
+  const template =
     `<section class="container">
         <div class="frame">
           <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
@@ -25,6 +26,18 @@ export default () => {
         </div>
         <div class="logo"></div>
     </section>`;
-    container.innerHTML = template;
-    return container;
+  container.innerHTML = template;
+
+  const googleBtn = container.querySelector('#google-login');
+
+  googleBtn.addEventListener('click', () => {
+    googleAccess()
+
+    return window.location.hash = '#home'
+
+  })
+
+
+
+  return container;
 }

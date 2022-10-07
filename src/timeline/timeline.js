@@ -1,6 +1,4 @@
-//import { async } from "regenerator-runtime";
 import {signOut, getUserName, getAllPosts, createPost} from "../firebase/firebase.js"
-//import post from "../post/post.js";
 
 export default () => {
     const name = getUserName();
@@ -45,11 +43,11 @@ export default () => {
         const groupArr = await getAllPosts();
         const postsTemplate = groupArr.map((posts) => `
             <div class="post">
-                <p id="user-name">${name}</p>
-                <p id="artist-name">${artist}</p>
-                <p id="show-location">${location}</p>
-                <p id="show-date">${date}</p>
-                <p id="text-post">${text}</p>
+                <p id="user-name">${posts.name}</p>
+                <p id="artist-name">${posts.artist}</p>
+                <p id="show-location">${posts.location}</p>
+                <p id="show-date">${posts.date}</p>
+                <p id="text-post">${posts.text}</p>
             </div>
         `).join('');
         container.querySelector("#show-timeline").innerHTML += postsTemplate;

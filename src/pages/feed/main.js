@@ -17,61 +17,63 @@ export default () => {
   const template = `
   <header>
   
-  <img src="img/Rebu.png" alt="rebu logo">
-  <input type="search" placeholder="Busque por post">
+    <img src="img/Rebu.png" alt="rebu logo">
+
+    <input type="search" placeholder="Busque por post">
+
+    <div id="logout-userpfp-area">
       <img src="" alt="" id="user-profile-picture-header">
       <button id="logout-btn"><img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon"></button>
-
-      <nav class="tag-filter">
-
+    </div>
+    
+    <nav class="tag-filter">
       <button class="tag-button">MÚSICA</button>
       <button class="tag-button">TV</button>
       <button class="tag-button">EVENTOS</button>
       <button class="tag-button">PETS</button>
       <button class="tag-button">HOBBIES</button>
-        <button class="tag-button">POLÍTICA</button>
-        
-        </nav>
+      <button class="tag-button">POLÍTICA</button>  
+    </nav>
 
-        </header>
+  </header>
         
-    <main>
+  <main>
     
     <section id="create-post">
     
-    <div id="user-profile-picture-div">
-    <img src="" alt="" class="" class="user-profile-picture-post">
-    </div>
-    
-        <textarea name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
+      <div id="user-profile-picture-div">
+        <img src="" alt="" class="" class="user-profile-picture-post">
+      </div>
+      
+      <textarea name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
 
-        <div class="create-post-box-buttons">
-          <select>
-            <option selected disabled>Categoria</option>
-            </select>
-          <button id="publish-btn">Publicar</button>
-          <button id="delete-btn">Deletar</button>
-          </div>
-          </section>
+      <div class="create-post-box-buttons">
+        <select>
+          <option selected disabled>Categoria</option>
+        </select>
+
+        <button id="publish-btn">Publicar</button>
+        <button id="delete-btn">Deletar</button>
+      </div>
+
+    </section>
           
-          <section id="feed-post">
-            
-          </section>
+    <section id="feed-post"></section>
 
-          <div id="fade" class="none"></div>
+      <div id="fade" class="none"></div>
 
-          <div id="modal-delete" class="none">
-            <span class="close-modal">X</span>
-            <span>Tem certeza que deseja deletar?</span>
-            <button class="btn-delete">Deletar</button>
-          </div>
+      <div id="modal-delete" class="none">
+        <span class="close-modal">X</span>
+        <span>Tem certeza que deseja deletar?</span>
+        <button class="btn-delete">Deletar</button>
+      </div>
 
-          </main>
+  </main>
           
-          <footer>
-          <img src="" alt="" >
-          </footer>
-          `;
+  <footer>
+    <img src="" alt="" >
+  </footer>
+  `;
 
   feedContainer.innerHTML = template;
 

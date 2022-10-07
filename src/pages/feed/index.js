@@ -1,5 +1,6 @@
 import { addDocFirestore } from './../../lib/firestore.js';
 
+
 export default () => {
   const container = document.createElement('div');
   container.classList.add('wrapper-login');

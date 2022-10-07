@@ -11,9 +11,9 @@ const addDocFirestore = async () => {
         born: 1815
     });
     console.log("Document written with ID: ", docRef.id);
-} catch (e) {
+    } catch (e) {
     console.error("Error adding document: ", e);
-}
+    }
 };
 
 // try {

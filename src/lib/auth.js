@@ -24,11 +24,10 @@ const loginEmailPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
+    return userCredential;
   } catch (error) {
-    txtError.setAttribute('style', 'display: block')
-    txtError.setAttribute('style', 'color: red')
-    txtError.innerHTML = 'Usuário ou senha incorretos'
-    txtPassword.focus()
+    console.log(error);
+
   }
 };
 

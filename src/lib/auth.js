@@ -1,7 +1,7 @@
 import { app } from './configuration.js';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup,
-  GoogleAuthProvider, collection, addDoc, getFirestore, onAuthStateChanged
+  GoogleAuthProvider, collection, addDoc, getFirestore, onAuthStateChanged, signInWithEmailAndPassword
 } from './firebase.js';
 
 
@@ -9,14 +9,12 @@ const auth = getAuth(app)
 
 export const newUser = async (email, password) => {
   try {
-    const newUserLocal = await createUserWithEmailAndPassword(auth, email, password)
-    console.log(newUserLocal);
+    await createUserWithEmailAndPassword(auth, email, password)
   }
   catch (error) {
     console.log(error)
   }
 };
-
 
 const provider = new GoogleAuthProvider(app);
 
@@ -34,7 +32,6 @@ export const googleAccess = async () => {
       const errorMessage = error.message;
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
-
 
     });
 }
@@ -54,11 +51,12 @@ export const create = async () => {
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (error) {
-    console.log(error)
+      console.log(error);
   }
-}
+};
 
-
-
+export const loginUser = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
+};
 
 

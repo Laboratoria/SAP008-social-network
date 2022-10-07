@@ -92,6 +92,7 @@ body {
 }
 
 .wrapper-register {
+    padding-bottom: 10%;
     background-color: #151414;
 }
 
@@ -227,6 +228,10 @@ footer {
         text-align: center;
     }
 
+    .wrapper-register{
+        padding-bottom: 0;
+    }
+
     .foot {
         padding: 2%;
     }
@@ -278,6 +283,10 @@ footer {
         margin-left: 11%;
     }
 
+    .wrapper-register{
+        padding-bottom: 0;
+    }
+
     .foot {
         padding: 4%;
     }
@@ -297,8 +306,13 @@ footer {
 @media only screen and (max-width: 1285px) and (min-width: 1024px) {
 
     .container-register {
-        height: 100vh;
+        height: 100%;
         background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register{
+        width: 17vw;
+        margin-bottom: 3%;
     }
 
     .box-center {
@@ -335,6 +349,7 @@ footer {
     .wrapper-register {
         margin-bottom: 0;
         height: 0;
+        padding-bottom: 5%;
     }
 
 }

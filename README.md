@@ -112,5 +112,3 @@ Para sair da aplicação o usuário pode clicar no botão"xxx" e será redirecio
 
 | [<img src="./img/ellen.png" width=115 alt="foto-ellen"><br><sub>Ellen Cavalcante</sub>](https://www.linkedin.com/in/ellencavalcantebrito/) |  [<img src="./img/vanessa.png" width=115 alt="foto-vanessa"><br><sub>Vanessa Bueck</sub>]https://www.linkedin.com/in/vanessa-bueck/) |
 | :---: | :---: | 
-
-...

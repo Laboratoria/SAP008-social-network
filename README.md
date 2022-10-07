@@ -110,5 +110,5 @@ Para sair da aplicação o usuário pode clicar no botão"xxx" e será redirecio
 
 ## 8. Desenvolvedoras:
 
-| [<img src="./img/ellen.png" width=115 alt="foto-ellen"><br><sub>Ellen Cavalcante</sub>](https://www.linkedin.com/in/ellencavalcantebrito/) |  [<img src="./img/vanessa.png" width=115 alt="foto-vanessa"><br><sub>Vanessa Bueck</sub>]https://www.linkedin.com/in/vanessa-bueck/) |
+| [<img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/main/src/img/ellen.png" alt="foto-ellen"><br><sub>Ellen Cavalcante</sub>](https://www.linkedin.com/in/ellencavalcantebrito/) |  [<img src="https://github.com/EllenCavalcanteBrito/SAP008-social-network/blob/main/src/img/vanessa.png" alt="foto-vanessa"><br><sub>Vanessa Bueck</sub>](https://www.linkedin.com/in/vanessa-bueck/) |
 | :---: | :---: | 

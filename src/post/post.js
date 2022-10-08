@@ -38,7 +38,7 @@ export default () => {
                 <input class="box-artist" type="text" id="artist" placeholder="Artista">
                 <input class="box-location "type="text" id="location" placeholder="Local"> 
                 <input class="box-date" id="date" type="date">
-                <textarea class="box-post" id="post" placeholder="O show + inesquecível"></textarea>
+                <textarea class="box-post" id="text-post" placeholder="O show + inesquecível"></textarea>
                 <input type="submit" id="btn-post" class="btn-post" value="Postar">
             </form>
         </div>     
@@ -53,7 +53,7 @@ export default () => {
             const artist = container.querySelector("#artist").value; 
             const location = container.querySelector("#location").value;
             const date = container.querySelector("#date").value;
-            const post = container.querySelector("#text").value;
+            const text = container.querySelector("#text-post").value;
             createPost(artist, location, date, text);
             redirect("#timeline");
     });

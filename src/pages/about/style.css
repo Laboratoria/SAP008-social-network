@@ -38,15 +38,13 @@ body {
     display: flex;
 }
 
-#ellen-img,
-#vanessa-img {
+#ellen-img, #vanessa-img {
     width: 15.3vw;
     border-radius: 50%;
     border: 10px solid #1f1e1e;
 }
 
-.dev-one,
-.dev-two {
+.dev-one, .dev-two {
     display: flex;
     width: 50%;
     margin-right: 10%;
@@ -85,34 +83,29 @@ body {
 @media only screen and (max-width: 500px) and (min-width: 280px) {
 
     .aboutDev h2 {
-        font-size: 1.3rem;
+       font-size: 1.3rem;
+    }
+
+    #vanessa-img {
+        width: 30vw;
+    }
+
+    #ellen-img {
+        width: 30vw;
+        border: 5px solid #1f1e1e;
     }
 
     .container-dev {
         display: block;
     }
 
-    #ellen-img,
-    #vanessa-img {
-        width: 30vw;
-        border: 5px solid #1f1e1e;
-    }
-
-    #linkedinIcon,
-    #insta-icon {
-        width: 8vw;
-        cursor: pointer;
-        border-radius: 10px;
-    }
-
-    .dev-one,
-    .dev-two {
+    .dev-one, .dev-two {
         display: flex;
         width: 100%;
         gap: 8px;
     }
 
-    .networks {
+    .networks{
         margin-bottom: 20px;
     }
 
@@ -120,34 +113,29 @@ body {
 
 @media only screen and (max-width: 950px) and (min-width: 505px) {
 
+    #vanessa-img {
+        width: 30vw;
+    }
+
+    #ellen-img {
+        width: 30vw;
+        border: 11px solid #1f1e1e;
+        margin-bottom: 30px;
+    }
+
     .container-dev {
         display: block;
     }
 
-    .dev-one,
-    .dev-two {
+    .dev-one, .dev-two {
         display: flex;
         width: 100%;
         gap: 8px;
     }
 
-    .text {
-        margin-top: 5%;
-        margin-left: 1%;
-    }
-
-    #ellen-img,
-    #vanessa-img {
-        width: 20vw;
-        border: 5px solid #1f1e1e;
-        margin-bottom: 3%;
-    }
-
-    #linkedinIcon,
-    #insta-icon {
-        width: 4vw;
-        cursor: pointer;
-        border-radius: 10px;
-    }
+   .text{
+    margin-top: 5%;
+    margin-left: 1%;
+   }
 
 }

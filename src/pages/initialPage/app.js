@@ -207,8 +207,8 @@ export default () => {
         return false;
       }
       // eslint-disable-next-line no-alert
-      const resultado = window.confirm('Você deseja apagar essa postagem?');
-      if (resultado === true) {
+      const result = window.confirm('Você deseja apagar essa postagem?');
+      if (result === true) {
         firebase.firestore().collection('posts').doc(removeButtonId).delete()
           .then(() => {
             const posts = document.querySelector(`#poster-${removeButtonId}`);

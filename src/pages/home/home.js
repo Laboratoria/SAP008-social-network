@@ -5,7 +5,7 @@ export default () => {
 
   const inputEmail = container.querySelector('#email-login');
   const inputSenha = container.querySelector('#senha-login');
-  const formLogin = container.querySelector('#template-form');
+  const formLogin = container.querySelector('.form');
   configuraSubmitDoForm(formLogin, inputEmail, inputSenha);
 
   return container;

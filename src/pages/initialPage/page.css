@@ -312,7 +312,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 500px) and (min-width: 395px) {
+@media only screen and (max-width: 510px) and (min-width: 395px) {
 
     .VanellenMore {
         font-size: 1.5rem;
@@ -340,6 +340,7 @@ footer {
     
     .content {
         margin: auto;
+        display: block;
     }
 
     .content a {
@@ -398,13 +399,13 @@ footer {
     .name-movies textarea {
         width: 60vw;
         height: 2rem;
-        margin-left: 7rem;
+        margin-left: 7.2rem;
         font-size: 1.1rem;
     }
 
     .about-movies textarea {
         width: 60vw;
-        margin-left: 7rem;
+        margin-left: 7.2rem;
         height: auto;
         font-size: 1rem;
     }
@@ -473,7 +474,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 930px) and (min-width: 600px) {
+@media only screen and (max-width: 1025px) and (min-width: 600px) {
 
     .VanellenMore {
         font-size: 2.2rem;

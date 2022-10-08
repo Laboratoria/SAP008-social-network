@@ -1,10 +1,10 @@
-import { app } from "./configuration.js";
+/*import { app } from "./configuration.js";
 
 import {
     getAuth,
     signInWithEmailAndPassword,
     onAuthStateChanged
 }
-    from "./firebase.js";
+    from "./firebase.js";*/
 
   

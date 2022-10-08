@@ -53,8 +53,8 @@ export default () => {
             const artist = container.querySelector("#artist").value; 
             const location = container.querySelector("#location").value;
             const date = container.querySelector("#date").value;
-            const post = container.querySelector("#post").value;
-            createPost(artist, location, date, post);
+            const post = container.querySelector("#text").value;
+            createPost(artist, location, date, text);
             redirect("#timeline");
     });
 

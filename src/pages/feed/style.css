@@ -13,10 +13,6 @@
     height: 1.5rem;
 }
 
-.hide-btn {
-    display: none;
-}
-
 #fade, #modal-delete {
     transition: 0.5s;
     opacity: 1;

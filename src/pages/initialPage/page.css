@@ -312,7 +312,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 510px) and (min-width: 395px) {
+@media only screen and (max-width: 538px) and (min-width: 395px) {
 
     .VanellenMore {
         font-size: 1.5rem;
@@ -335,7 +335,7 @@ footer {
     }
 
     #logo {
-        width: 6vw;
+        width: 20vw;
     }
     
     .content {
@@ -399,13 +399,13 @@ footer {
     .name-movies textarea {
         width: 60vw;
         height: 2rem;
-        margin-left: 7.2rem;
+        margin-left:8rem;
         font-size: 1.1rem;
     }
 
     .about-movies textarea {
         width: 60vw;
-        margin-left: 7.2rem;
+        margin-left: 8rem;
         height: auto;
         font-size: 1rem;
     }
@@ -585,7 +585,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 395px) and (min-width: 279px) {
+@media only screen and (max-width: 330px) and (min-width: 250px) {
     .VanellenMore {
         font-size: 1.5rem;
         margin-right: 5%;
@@ -607,7 +607,167 @@ footer {
     }
 
     #logo {
-        width: 15px;
+        width: 20vw;
+    }
+    
+    .content {
+        display: block;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+    .navbar{
+        margin-top: 10vh;
+    }
+
+    .navbar a {
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+
+    .active {
+        font-size: .8rem;
+    }
+
+    #logout {
+        width: 16px;
+    }
+
+    .navbar a:hover {
+        background: rgb(0, 0, .05);
+    }
+
+    #header {
+        height: 7vh;
+        justify-content: space-between;
+    }
+
+    .posts {
+        display: block;
+    }
+
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 30%;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
+    }
+
+    .name-movies textarea {
+        width: 60vw;
+        margin-left: 30%;
+        font-size: 1rem;
+    }
+
+    .about-movies textarea {
+        width: 60vw;
+        height: auto;
+        margin-left: 30%;
+        font-size: 0.9rem;
+    }
+
+    .stars {
+        margin-bottom: 2%;
+        margin-left: 30%;
+    }
+
+    #username {
+        font-size: .8rem;
+    }
+
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 537px) and (min-width: 331px) {
+    .VanellenMore {
+        font-size: 1.5rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    #logo {
+        width: 20vw;
     }
     
     .content {
@@ -657,7 +817,7 @@ footer {
     }
 
     #testImg {
-        width: 25vw;
+        width: 30%;
     }
 
     #fill-form {
@@ -667,21 +827,21 @@ footer {
 
     .name-movies textarea {
         width: 60vw;
-        min-height: 5.5vh;
-        margin-left: 7rem;
+        height: 4vh;
+        margin-left: 30%;
         font-size: 1rem;
     }
 
     .about-movies textarea {
         width: 60vw;
         height: auto;
-        margin-left: 7rem;
+        margin-left: 30%;
         font-size: 1rem;
     }
 
     .stars {
         margin-bottom: 2%;
-        margin-left: 28%;
+        margin-left: 30%;
     }
 
     #username {
@@ -832,14 +992,14 @@ footer {
 
     .name-movies textarea {
         width: 60vw;
-        height: 6vh;
-        margin-left: 9rem;
+        height: 4vh;
+        margin-left: 28%;
         font-size: 1.3rem;
     }
 
     .about-movies textarea {
         width: 60vw;
-        margin-left: 9rem;
+        margin-left: 28%;
         height: auto;
         font-size: 1rem;
     }

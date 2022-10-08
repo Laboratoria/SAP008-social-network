@@ -90,23 +90,6 @@ export default () => {
     fade.classList.toggle('none');
   }
 
-  function editPostContent(el) {
-    const idPostEdit = el.currentTarget.dataset.idPostEdit;
-    const postTextValue = feedContainer.querySelector('.text-post');
-    const txtArea = feedContainer.querySelector('.text-post');
-    const confirmEditBtn = feedContainer.querySelector('.confirm-edit-btn');
-
-    txtArea.removeAttribute('disabled');
-    confirmEditBtn.classList.remove('hide-btn');
-    console.log(idPostEdit);
-
-    confirmEditBtn.addEventListener('click', () => {
-      updatePost(idPostEdit, postTextValue.value);
-      txtArea.setAttribute('disabled', '');
-      confirmEditBtn.classList.add('hide-btn');
-    });
-  }
-
   const printPosts = async () => {
     const closeModal = feedContainer.querySelector('.close-modal');
 
@@ -121,8 +104,8 @@ export default () => {
             <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>` : ''}
             
           </div>
-          <textarea disabled class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
-          <button class="confirm-edit-btn hide-btn" height="200" width="200">Salvar</button>
+          <textarea disabled data-post="${post.id}" class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
+          <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
           <div class="footer-post">
             <p class="date-post"></p>
             <span class="like-btn-post" data-id-post-like="${post.id}" ><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
@@ -139,7 +122,21 @@ export default () => {
     const numLikes = Array.from(feedContainer.querySelectorAll('.all-likes-post'));
 
     editBtn.forEach((btn) => {
-      btn.addEventListener('click', editPostContent);
+      btn.addEventListener('click', (e) => {
+        const postToBeEdited = e.currentTarget.dataset.idPostEdit;
+        const postTxtarea = feedContainer.querySelector(`[data-post="${postToBeEdited}"]`);
+        const confirmEditBtn = feedContainer.querySelector(`[data-confirm-edit="${postToBeEdited}"]`);
+
+        postTxtarea.removeAttribute('disabled');
+        confirmEditBtn.classList.remove('hide');
+
+        confirmEditBtn.addEventListener('click', async () => {
+          await updatePost(postToBeEdited, postTxtarea.value);
+          postTxtarea.setAttribute('disabled', '');
+          confirmEditBtn.classList.add('hide');
+          printPosts();
+        });
+      });
     });
 
     trashcanBtn.forEach((btn) => {

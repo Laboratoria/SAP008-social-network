@@ -247,8 +247,8 @@ body {
   .form-signup {
     font-family: "Poppins", sans-serif;
     background-color: #fff;
-    width: 35rem;
-    height: 40rem;
+    width: 41rem;
+    height: 42rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,7 +262,7 @@ body {
   }
 
   .input-signup {
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     background-color: #abd9d8;
     width: 80%;
     height: 2.1rem;
@@ -270,11 +270,15 @@ body {
 
   .button-signup {
     border-radius: 2rem;
-    background-color: #c69b73;
-    width: 9rem;
-    height: 1.8rem;
+    background-color: #d6a97e;
+    width: 11rem;
+    height: 2.5rem;
     margin-top: 2rem;
     font-size: medium;
+  }
+
+  .button-signup:hover {
+    background-color: #dcbda0;
   }
 
 

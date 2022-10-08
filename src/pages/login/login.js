@@ -1,4 +1,4 @@
-import { loginUser, loginGoogle, getErrorMessage } from '../../auth.js';
+import { loginUser, loginGoogle, getErrorMessage } from '../../firebase/auth.js';
 
 export default () => {
   const container = document.createElement('div');

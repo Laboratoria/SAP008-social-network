@@ -53,6 +53,11 @@ form textarea {
   align-items: left;
  }
 
+ /* .icon ul li {
+  display: flex;
+  justify-content: space-between;
+} */
+
 .btn-form-options {
   resize: none;
   outline: none;
@@ -75,6 +80,11 @@ select {
   margin-bottom: 2rem;
 }
 
+.btn-cancel-publish {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-form-cancel {
   background-color: #BFBDBD;
   border-radius: 10px;
@@ -90,7 +100,6 @@ select {
   border-radius: 10px;
   border: 0;
   padding: 0rem 1rem;
-
 
   color: #ffff;
   font-size: 1.4rem;

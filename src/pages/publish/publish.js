@@ -1,3 +1,5 @@
+import { db } from '../../lib/index.js';
+
 export default () => {
   const containerPost = document.createElement("div");
 
@@ -21,8 +23,10 @@ export default () => {
                 <option value="vinculoPaterno">Vínculo Paterno</option>
               </select>
             </div>
-            <button class="btn-form-cancel" type="submit">Cancelar</button>
-            <button class="btn-form-publish" type="submit">Publicar</button><br>
+            <div class="btn-cancel-publish">
+              <button class="btn-form-cancel" type="submit">Cancelar</button>
+              <button class="btn-form-publish" type="submit">Publicar</button><br>
+            </div>
           </div>
       </form>
     </div>
@@ -42,3 +46,34 @@ export default () => {
 // //   const openMenu = document.getElementById("internalContentMenu");
 // //   openMenu.style.display = "block";
 // }
+
+
+
+
+
+////////////////
+
+
+
+// async function getCities(db) {
+//     const citiesCol = collection(db, 'cities');
+//     const citySnapshot = await getDocs(citiesCol);
+//     const cityList = citySnapshot.docs.map(doc => doc.data());
+//     return cityList;
+// }
+
+
+
+
+// const db = firebase.firestore();
+
+// const form = document.querySelector('form');
+
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     let tarefa = document.querySelector('[name=post]').value;
+//     db.collection('post').add({
+//         post:post
+//     })
+//     form.reset();
+// })

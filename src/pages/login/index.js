@@ -35,9 +35,9 @@ export default () => {
 
       <div class="container-login2">
         <div class="line-container">
-          <hr class="line">
-            <span class="txt-line">ou</span>
-          <hr class="line">            
+          <span class="line"></span>
+          <span class="txt-line">ou</span>
+          <span class="line"></span>        
         </div>
               
         <button id="btn-gmail" type="button" class="btn-google">

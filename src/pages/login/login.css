@@ -140,7 +140,7 @@ body, html {
 
 .line-container {
   display: flex;
-  width: 80%;
+  width: 72%;
   margin: -4px 0 10px;  
 } 
 
@@ -152,9 +152,11 @@ body, html {
   text-transform: uppercase; 
 }
 
-.line {
-  color: var(--branco);
+.line {  
   flex: 0.9 1 0%;
+  background: aliceblue;
+  height: 1px;
+  margin: 2% auto;
 } 
 
 .google-icon {

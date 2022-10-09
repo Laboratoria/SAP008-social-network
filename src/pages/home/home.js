@@ -1,3 +1,4 @@
+import { logoutUser } from "../../lib/auth.js";
 
 export default () => {
   //fazer if usuario não estiver logado "currentUser" redirecionar tela login
@@ -29,20 +30,30 @@ export default () => {
           <div id="user-image"><p class="name-letter">I</p></div>
           <p id="grade">4.7</p>
           <div class="icons-post">
-            <img id="heart-icon" class="icons-post-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/ad81ec17c3c4217b5df2b32d27f12f2a6de367ea/external/svg_icons_social_network/heart-icon.svg"/>
-            <img id="pencil-icon" class="icons-post-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/ad81ec17c3c4217b5df2b32d27f12f2a6de367ea/external/svg_icons_social_network/pencil-icon.svg"/>
-            <img id="trash-icon" class="icons-post-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/ad81ec17c3c4217b5df2b32d27f12f2a6de367ea/external/svg_icons_social_network/trash-icon.svg"/>
+            <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
+            <img id="pencil-icon" class="icons-post-size" src="./external/svg/pencil-icon.svg"/>
+            <img id="trash-icon" class="icons-post-size" src="./external/svg/trash-icon.svg"/>
           </div>
         </div>
       </aside>
     </section>  
     <hr class="colorful-line"/>
     <nav id="mobile-footer-icons" class="icons-container">
-      <img id="plus-icon" class="icons-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/0442f1be51cd71480d7dcb6acbaf76779ee5450e/external/svg_icons_social_network/plus-icon.svg"/>
-      <img id="plate-icon" class="icons-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/0442f1be51cd71480d7dcb6acbaf76779ee5450e/external/svg_icons_social_network/heart-icon.svg"/>
-      <img id="up-icon" class="icons-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/0442f1be51cd71480d7dcb6acbaf76779ee5450e/external/svg_icons_social_network/chevron-up-icon.svg"/>
+      <img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/>
+      <img id="plate-icon" class="icons-size" src="./external/svg/heart-icon.svg"/>
+      <img id="up-icon" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
     </nav>
+    <button id="logout">Sair</button>
   </section>`;
+  
   container.innerHTML = template;
+  
+  const logout = container.querySelector('#logout');
+  
+  logout.addEventListener('click', (e) => {
+    e.preventDefault;
+    logoutUser();
+  });
+  
   return container;
 }

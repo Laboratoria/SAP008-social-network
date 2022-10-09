@@ -61,13 +61,13 @@ As tipografias escolhidas foram "Roboto Condensed", para títulos e textos peque
 ### Prototipagem
 O processo de prototipagem foi dividido em duas etapas, a partir do conceito de _mobile first_:
   - Baixa fidelidade - sketches
-  ![mobile_low_prototype](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/low_prototype_mobile.jpeg?raw=true)
+  ![mobile_low_prototype](./external/prototypes/low_prototype_mobile.jpeg)
   - Alta fidelidade - ferramenta Figma
-  ![mobile_high_prototype](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/mobile_prototype.gif?raw=true)
-  ![web_high_prototype](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/prototypes_social_network/web_prototype.gif?raw=true)
+  ![mobile_high_prototype](./external/prototypes/mobile_prototype.gif)
+  ![web_high_prototype](./external/prototypes/web_prototype.gif)
 ### Paleta de cores
 A paleta de cores foi feita por intermédio da ferramenta [Adobe Color](https://color.adobe.com/pt/create/color-wheel) e resultou no seguinte:
-![paleta_de_cores](https://github.com/nunesisabela/SAP008-social-network/blob/main/external/paleta_social_network.jpeg)
+![paleta_de_cores](./external/paleta_social_network.jpeg)
 
 ## 5. Repositório
 O repositório é o espaço digital que armazena um código e as versões que podem advir dele. Neste caso, o repositório está hospedado no GitHub, onde é possível criar um perfil - um espaço próprio do usuário para guardar códigos. O ideal é ter um repositório por projeto. Para tanto, é possível criar um repositório e nomeá-lo ou forkar um repositório já existente (de outro perfil) para fazer as próprias mudanças sem alterar o arquivo original. No caso de um novo repositório criado, é importante acessar a pasta do computador onde o repositório está por meio do terminal e usar o comando `git init` (no caso de GitBash, terminal do Linux, terminal do Ubuntu). Para este repositório cujo README vos fala, isso não é necessário.

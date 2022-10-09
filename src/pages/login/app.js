@@ -1,6 +1,5 @@
 import { googleLogin, login } from '../../lib/authentication.js';
 import { showErrors } from '../../errors.js';
-/* eslint-disable max-len */
 
 export default () => {
   const container = document.createElement('div');

@@ -115,8 +115,8 @@ export const deletePost = async (postId) => {
     const docRef = doc(db, 'post', postId);
     await deleteDoc(docRef);
     console.log('Post deletado', docRef.id);
-  } catch (error) {
-    console.log('error');
+  } catch (e) {
+    console.log(e);
   }
 };
 

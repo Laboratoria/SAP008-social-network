@@ -1,7 +1,10 @@
-import { loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword } from '../src/lib/index.js';
+import {
+  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword, deletePost,
+} from '../src/lib/index.js';
+
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  getAuth, updateProfile,
+  getAuth, updateProfile, getFirestore, deleteDoc, doc,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -42,5 +45,24 @@ describe('registerWithEmailAndPassword', () => {
     expect(updateProfile).toHaveBeenCalledWith(mockGetAuth.currentUser, {
       displayName: name,
     });
+  });
+});
+
+describe('deletePost', () => {
+  it('a função deve deletar post de id abcdefghi', async () => {
+    const mockPostCollection = {
+      posts: {
+        postId: 'abcdefghi',
+      },
+    };
+    const mockDb = getFirestore.mockReturnValueOnce(mockPostCollection);
+
+    const mockDocRef = doc(mockDb, 'posts', mockPostCollection.posts.postId);
+    deleteDoc.mockResolvedValueOnce(mockDocRef);
+
+    await deletePost(mockPostCollection.posts.postId);
+
+    expect(deleteDoc).toHaveBeenCalledTimes(1);
+    expect(deleteDoc).toHaveBeenCalledWith(mockDb);
   });
 });

@@ -12,9 +12,8 @@ const pageChanges = () => {
       case '#signup':
       body.appendChild(signUpFunction());
     break;
-      }
     };
-  
+};
 const init = () => {
   window.addEventListener('hashchange', () => {
     console.log(window.location.hash)
@@ -28,9 +27,9 @@ const init = () => {
     buttonSignUp.addEventListener('click', () => {
       window.location.hash = '#signup';
   });
-});
 
-
-
-
-    
+    const buttonBackHome = document.querySelector('#backAtHome');
+    buttonBackHome.addEventListener('click', () => {
+      window.location.hash = '';
+    });
+  });

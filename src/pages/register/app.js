@@ -40,14 +40,15 @@ export default () => {
   const inputNewPassword = container.querySelector('#confirmPassword');
   const inputPassword = container.querySelector('#passwordUser');
   const inputUserName = container.querySelector('#nameUser');
+  const divErrors = container.querySelector('.register-error');
 
   // eslint-disable-next-line consistent-return
   function validatePassword() {
     if (
       inputUserName.value === '' || inputEmail.value === '' || inputPassword.value === '' || inputNewPassword.value === '') {
-      document.querySelector('.register-error').innerHTML = 'Por favor, preencha todos os campos.';
+      divErrors.innerHTML = 'Por favor, preencha todos os campos.';
     } else if (inputPassword.value !== inputNewPassword.value) {
-      document.querySelector('.register-error').innerHTML = 'A senha digitada está diferente em um dos campos.';
+      divErrors.innerHTML = 'A senha digitada está diferente em um dos campos.';
     } else {
       const email = inputEmail.value;
       const password = inputPassword.value;
@@ -62,11 +63,11 @@ export default () => {
         .catch((error) => {
           const errorCode = error.code;
           if (errorCode === 'auth/email-already-in-use') {
-            document.querySelector('.register-error').innerHTML = 'E-mail já cadastrado. Insira um e-mail diferente.';
+            divErrors.innerHTML = 'E-mail já cadastrado. Insira um e-mail diferente.';
           } else if (errorCode === 'auth/invalid-email') {
-            document.querySelector('.register-error').innerHTML = 'E-mail inválido';
+            divErrors.innerHTML = 'E-mail inválido';
           } else {
-            document.querySelector('.register-error').innerHTML = 'Algo deu errado. Por favor, tente novamente.';
+            divErrors.innerHTML = 'Algo deu errado. Por favor, tente novamente.';
           }
         });
     }

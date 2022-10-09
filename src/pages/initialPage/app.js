@@ -1,14 +1,12 @@
-/* eslint-disable max-len */
-/* eslint-disable consistent-return */
 import {
-  // eslint-disable-next-line max-len
   getDisplayName, getUserUid, createCollection, signOut,
 } from '../../lib/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
   const userName = getDisplayName();
-  const template = ` <div class="container">
+  const template = ` 
+  <div class="container">
     <div class="logo">
         <a href="#page"> <img id="logo" src="./img/logo.png" alt="logo Vanellen"></a>
         <span id="idUser"> Olá, ${userName}</span>
@@ -83,6 +81,9 @@ export default () => {
   const doLogout = container.querySelector('#logout');
   const formAction = container.querySelector('#myForm');
   const boxPost = container.querySelector('.posts');
+  const message = container.querySelector('#message');
+  const username = container.querySelector('#name');
+  const title = container.querySelector('#movieName');
 
   doLogout.addEventListener('click', (e) => {
     const main = document.querySelector('#root');
@@ -116,7 +117,7 @@ export default () => {
                      <textarea id="name-${doc.id}" style="resize:none" disabled>${movie}</textarea>
                      </div>
                      <div class="about-movies">
-                     <textarea id="about-${doc.id}" style="resize:none" disabled>${text}</textarea>
+                     <textarea id="about-${doc.id}"  style="resize:none" disabled>${text}</textarea>
                      </div>
                     
                      <div class="stars">
@@ -179,9 +180,9 @@ export default () => {
     } else {
       createCollection(postCollection)
         .then(() => {
-          container.querySelector('#message').value = '';
-          container.querySelector('#name').value = '';
-          container.querySelector('#movieName').value = '';
+          message.value = '';
+          username.value = '';
+          title.value = '';
           const postsCollection = firebase.firestore().collection('posts');
           container.querySelector('.posts').innerHTML = 'Carregando...';
           postsCollection.get().then(() => {
@@ -194,6 +195,7 @@ export default () => {
     postTemplate();
   });
 
+  // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const removeButtonId = e.target.dataset.remove;
     const userCurrent = e.target.dataset.user;
@@ -231,7 +233,6 @@ export default () => {
         modalContentElement.innerHTML = 'Não é possível editar post de outros usuários';
         return false;
       }
-
       boxPost.querySelector(`#updateButton-${editButton}`).removeAttribute('style');
       boxPost.querySelector(`#editButton-${editButton}`).style.display = 'none';
       boxPost.querySelector(`#name-${editButton}`).removeAttribute('disabled');
@@ -285,11 +286,10 @@ export default () => {
   boxPost.addEventListener('click', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
-    const test = boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].textContent;
-    console.log(test);
-    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = `Não curtiu!😢${Number(test) + 1}`;
 
-    firebase.firestore().collection('posts').doc(buttonDeslike).update({ deslike: increment })
+    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
+    firebase.firestore().collection('posts').doc(buttonDeslike)
+      .update({ deslike: increment })
       .catch(() => {
         const modalContentElement = document.getElementById('modal_content');
         const modalElement = document.getElementById('modal');

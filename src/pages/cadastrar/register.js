@@ -15,6 +15,7 @@ export default () => {
   return containing;
 };
 
+
 function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha){
   form.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -26,12 +27,9 @@ function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha)
   })
   .catch((error) => {
     alert("Ops confira seus dados !" );
-  
   });
-    
   }
   )
-
 }
 
 function templateScreen() {

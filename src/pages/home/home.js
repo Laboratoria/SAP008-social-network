@@ -1,3 +1,7 @@
+import { app } from "../../lib/configuration.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider} from "../../lib/firebase.js";
+
+
 export default () => {
   const container = document.createElement('div');
   const conteudo = geraTemplate();
@@ -6,10 +10,9 @@ export default () => {
   const inputEmail = container.querySelector('#email-login');
   const inputSenha = container.querySelector('#senha-login');
   const formLogin = container.querySelector('.form');
-  configuraSubmitDoForm(formLogin, inputEmail, inputSenha);
 
-  return container;
-};
+  configuraSubmitDoForm(formLogin, inputEmail, inputSenha);
+ 
 
 function configuraSubmitDoForm(form, inputEmail, inputSenha) {
   form.addEventListener('submit', (e) => {
@@ -27,6 +30,64 @@ function configuraSubmitDoForm(form, inputEmail, inputSenha) {
       });
   })
 }
+
+
+
+const btnGoogle = container.querySelector('#btn-google');
+initWithGoogle(btnGoogle);
+
+function initWithGoogle(){
+  btnGoogle.addEventListener('submit', (e) =>{
+    e.preventDefault(app);
+    const authgoogle = getAuth();
+    signInWithPopup(authgoogle, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // ...
+      alert("Bem vindo(a)!");
+      window.location.hash = "#entrar";
+    }).catch((error) => {
+      alert("Ops confira seus dados!" );
+    });
+})}
+
+
+
+
+
+return container;
+};
+
+
+
+
+/*const btnGoogle = container.querySelector('#btn-google');
+initWithGoogle(btnGoogle);
+
+function initWithGoogle(){
+  btnGoogle.addEventListener('submit', (e) =>{
+    e.preventDefault(app);
+    const authgoogle = getAuth();
+    signInWithPopup(authgoogle, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // ...
+      alert("Bem vindo(a)!");
+      window.location.hash = "#entrar";
+    }).catch((error) => {
+      alert("Ops confira seus dados!" );
+    });
+})}*/
+
+
 function geraTemplate() {
   return `
   <div class="container" id="template-form">
@@ -51,10 +112,14 @@ function geraTemplate() {
     </p>
     <p class="textGoogle">Entre também com:</p>
     <p class="textGoogle">
-      <a href="#logingoogle" class="loginGoogle"><img src="img/logoGoogle.jpg" class="imgGoogle"></a>
+      <input class="loginGoogle" type="button" id="btn-google" value="Google" class="imgGoogle">
     </p>
     <p>
       <a href="#sobre" class="sobrepage">Sobre</a>
     </p>
   </form>`;
 }
+
+
+
+

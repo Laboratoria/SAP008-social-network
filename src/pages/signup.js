@@ -42,3 +42,4 @@ export const signUpFunction = () => {
 
   return containerSignUp;
 };
+

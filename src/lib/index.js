@@ -52,12 +52,11 @@ export function resetPassword(email) {
   return sendPasswordResetEmail(auth, email);
 }
 
-function getUserData(uid) {
-  const auth = getAuth(app);
-  auth.getUser(uid)
-    .then(console.log);
-}
-window.getUserData = getUserData;
+// function getUserData(uid) {
+//   const auth = getAuth(app);
+//   auth.getUser(uid);
+// }
+// window.getUserData = getUserData;
 
 export const createPost = async (textPost) => {
   const auth = getAuth(app);
@@ -114,9 +113,9 @@ export const deletePost = async (postId) => {
   try {
     const docRef = doc(db, 'post', postId);
     await deleteDoc(docRef);
-    console.log('Post deletado', docRef.id);
+    // console.log('Post deletado', docRef.id);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };
 

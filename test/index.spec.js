@@ -1,10 +1,10 @@
 import {
-  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword, deletePost,
+  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword, deletePost, createPost,
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  getAuth, updateProfile, getFirestore, deleteDoc, doc,
+  getAuth, updateProfile, getFirestore, deleteDoc, doc, collection, addDoc,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -63,6 +63,7 @@ describe('deletePost', () => {
     await deletePost(mockPostCollection.posts.postId);
 
     expect(deleteDoc).toHaveBeenCalledTimes(1);
-    expect(deleteDoc).toHaveBeenCalledWith(mockDb);
+    expect(deleteDoc).toHaveBeenCalledWith(mockDb.posts);
   });
 });
+

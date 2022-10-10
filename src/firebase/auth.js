@@ -1,27 +1,29 @@
 import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
-  signOut, GoogleAuthProvider, signInWithPopup,
-} from './exports.js'; 
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from './exports.js'; // eslint-disable-line import/no-unresolved
 
 import { app } from './config.js';
 
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
-// export function createAccount(email, password, name) {
-//   return createUserWithEmailAndPassword(auth, email, password, name);
-    // .then((userCredential) => {
-    //   const user = userCredential.user;
-    //   return user;
-    // })
-    // .then(() => {
-    //   updateProfile(auth.currentUser, {
-    //     displayName: name,
-    //   });
-    // })
-//     .catch(() => {
 
-//     });
-// }
+export const newUser = async (email, password) => {
+  try {
+    const newUserLocal = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+    return newUserLocal;
+  } catch (error) {
+    return error;
+  }
+};
+
 export function loginUser(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
@@ -48,7 +50,3 @@ export function getErrorMessage(error) {
   }
   return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
 }
-
-// export function logout() {
-//   return signOut(auth);
-// }

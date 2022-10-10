@@ -138,13 +138,15 @@ body {
     margin-top: 0.5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+
   }
 
   .img-google {
     width: 1rem;
     height: 1.2rem;
-    margin-left: 0.2rem;
-    margin-top: 0.2rem;
   }
 
   .btn-register {
@@ -273,6 +275,9 @@ body {
     margin-top: 0.5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
   }
 
   .img-google {
@@ -295,5 +300,11 @@ body {
     padding-top: 0.7rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+  }
+
+  .btn-login:focus,
+  .btn-google:focus,
+  .btn-register:focus {
+    outline: none;
   }
 }

@@ -73,6 +73,7 @@ describe('createPost', () => {
       posts: {
         docPost: {
           text: 'oie galera',
+          tag: 'musica',
         },
       },
     };
@@ -80,13 +81,14 @@ describe('createPost', () => {
     const mockDocRef = addDoc(collection(mockDb, 'posts'), mockPostCollection.posts.docPost);
     addDoc.mockResolvedValueOnce(mockDocRef);
 
-    await createPost(mockPostCollection.posts.docPost);
+    await createPost(mockPostCollection.posts.docPost.text, mockPostCollection.posts.docPost.tag);
 
     expect(addDoc).toHaveBeenCalledTimes(1);
     expect(addDoc).toHaveBeenCalledWith(mockDb);
     expect(collection).toHaveBeenCalledTimes(1);
     expect(collection).toHaveBeenCalledWith(mockPostCollection.posts.docPost, {
       text: 'oie galera',
+      tag: 'musica',
     });
   });
 });

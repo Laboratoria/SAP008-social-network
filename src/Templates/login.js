@@ -1,3 +1,5 @@
+import { loginEmailPassword } from "../lib/index.js";
+
 export default () => {
     const container = document.createElement("div");
 
@@ -16,7 +18,7 @@ export default () => {
          </div>
 
          <div class="form-botaoentrar">
-            <input type="submit" value="Entrar" class="submit">
+            <input type="submit" value="Entrar" class="botaoEntrar" id="botaoEntrar">
          </div>
          
          <div class="linha-ou">
@@ -33,13 +35,34 @@ export default () => {
          </div>
 
          <div class="form-cadastre">
-            Não tem uma conta? <a href="#" class="cadastrar-se">Cadastre-se</a>
+            Não tem uma conta? <a href="#register" class="cadastrar-se">Cadastre-se</a>
          </div>
 
          </form>
       </section>
    `
     container.innerHTML = template;
-    return container;
+    
 
-}
+
+   const login = container.querySelector("#botaoEntrar")
+   const email = container.querySelector("#email")
+   const password = container.querySelector("#password")
+
+   login.addEventListener("click", (e)=>{
+      e.preventDefault();
+      console.log(email.value)
+      console.log(password.value)
+
+      loginEmailPassword(email.value, password.value)
+      .then(()=>{
+         window.location.hash = "#feed";
+      })
+      .catch((error)=>{
+         console.log(error)
+      })
+   }) 
+   return container;
+ }
+
+

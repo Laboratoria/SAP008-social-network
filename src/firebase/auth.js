@@ -2,11 +2,9 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile,
-  signOut,
   GoogleAuthProvider,
   signInWithPopup,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'; // eslint-disable-line import/no-unresolved
+} from './exports.js'; // eslint-disable-line import/no-unresolved
 
 import { app } from './config.js';
 
@@ -51,8 +49,4 @@ export function getErrorMessage(error) {
     default:
   }
   return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
-}
-
-export function logout() {
-  return signOut(auth);
 }

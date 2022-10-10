@@ -1,7 +1,7 @@
 import routes from './routes.js';
 
 const main = document.querySelector('#root');
-const init = () => window.addEventListener('hashchange', renderPage);
+
 const validateHash = (hash) => (hash === '' ? 'login' : hash.replace('#', ''));
 
 const renderPage = () => {
@@ -10,6 +10,8 @@ const renderPage = () => {
   const page = routes[pageName]();
   main.appendChild(page);
 };
+
+const init = () => window.addEventListener('hashchange', renderPage);
 
 window.addEventListener('load', () => {
   renderPage();

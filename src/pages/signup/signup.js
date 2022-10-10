@@ -1,11 +1,15 @@
-import { loginGoogle, newUser } from '../../auth.js';
+import { loginGoogle, newUser } from '../../firebase/auth.js';
 
 export default () => {
   const container = document.createElement('div');
 
   const template = `
-    <figure class='img-logo-signup imgFlip'>
-            <img src='./imagens/logo-mobile.png' alt='logo'>
+      <figure class='img-logo-mobile imgFlip'>
+          <img src='./imagens/logo-mobile.png' alt='logo'>
+      </figure>
+
+        <figure class='img-logo-desktop'>
+          <img src='./imagens/logo-desktop.svg' alt='logo'>
         </figure>
 
         <form class='form-signup bounce'>

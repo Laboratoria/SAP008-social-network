@@ -31,15 +31,17 @@ export default function signUp() {
     `;
   container.innerHTML = template;
 
+  const txtName = container.querySelector('#txtName');
   const txtEmail = container.querySelector('#txtEmail');
   const txtPassword = container.querySelector('#txtPassword');
   const btnSignup = container.querySelector('#btnSignup');
   
 
   btnSignup.addEventListener('click', () => {
+    const name = txtName.value;
     const email = txtEmail.value;
     const password = txtPassword.value;
-    createAccount(email, password);
+    createAccount(name, email, password);
   });
 
   

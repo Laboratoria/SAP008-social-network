@@ -2,23 +2,23 @@ import { register } from "../../lib/auth.js";
 
 export default () => {
   const containerRegistration = document.createElement("div")
-  const template = 
-  `<div class="container-registration">
+  const template = `
+    <main class="container-registration">
       <button type="button" class="btn-back">&#11013 voltar</button>
 
-      <div class="logo-tittle">
+      <figure class="logo-tittle">
         <img id="one-logo-coração" src="./imagens/image-2.png">
         <p class="tittle-logotype">INspire</p>
-      </div>
+      </figure>
 
-      <div class="registration-input">
+      <forms class="registration-input">
         <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
         <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
         <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>
-      </div>
+      </forms>
       <button type="button" id="button-registration" class="button">Finalizar cadastro</button>
   
-    </div>
+    </main>
   
   `
   containerRegistration.innerHTML = template;

@@ -1,12 +1,12 @@
 body {
-    font-family: 'Times New Roman';
+    font-family: 'Arimo';
     background: #EDDED7;
     margin: 0 auto;
     width: 60%;
     
 }
 h1 {
-    position: absolute;
+    position: relative;
     width: 240.52px;
     height: 85.21px;
     left: 72px;
@@ -35,7 +35,7 @@ h1 {
 form {
     box-sizing: border-box;
 
-    position: absolute;
+    position: relative;
     width: 361px;
     height: 615px;
     left: 34px;
@@ -50,7 +50,7 @@ form {
 #name {
     box-sizing: border-box;
 
-    position: absolute;
+    position: relative;
     width: 277.25px;
     height: 47.14px;
     left: 82.13px;
@@ -64,7 +64,7 @@ form {
 #date {
     box-sizing: border-box;
 
-    position: absolute;
+    position: relative;
     width: 277.25px;
     height: 47.14px;
     left: 82.13px;

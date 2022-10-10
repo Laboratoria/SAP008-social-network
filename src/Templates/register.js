@@ -20,11 +20,7 @@ export default () => {
 
             <input type="email" class="btn-texto"  id="username" placeholder="example@gmail.com">
 
-            <input type="email" id="usernameConfirme" placeholder="Confirme seu email">
-
             <input type="password"  id="password" placeholder="Senha">
-
-            <input type="password"  id="passwordConfirme" placeholder="Confirme sua senha">
 
             <label id="termosUso" >Confirme os termos de uso</label>
             <input type="radio" id="termos" value="termos de uso"> 
@@ -40,17 +36,15 @@ export default () => {
   const name = container.querySelector("#name");
   const date = container.querySelector("#date");
   const email = container.querySelector("#username");
-  const emailConfirme = container.querySelector("#usernameConfirme");
   const senha = container.querySelector("#password");
-  const senhaConfirme = container.querySelector("#passwordConfirme");
-
+  
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("submter o form")
+    console.log('submter o form')
     console.log(email.value);
     console.log(date.value);
     console.log(senha.value);
-    createUser(name.value, date.value, email.value, emailConfirme.value, senha.value, senhaConfirme.value)
+    createUser( email.value, senha.value)
         .then(user => {
         console.log(user);
       });

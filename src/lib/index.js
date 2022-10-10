@@ -52,21 +52,20 @@ export function resetPassword(email) {
   return sendPasswordResetEmail(auth, email);
 }
 
-function getUserData(uid) {
-  const auth = getAuth(app);
-  auth.getUser(uid)
-    .then(console.log);
-}
-window.getUserData = getUserData;
+// function getUserData(uid) {
+//   const auth = getAuth(app);
+//   auth.getUser(uid);
+// }
+// window.getUserData = getUserData;
 
-export const createPost = async (textPost) => {
+export const createPost = async (textPost, category) => {
   const auth = getAuth(app);
   try {
     const docRef = await addDoc(collection(db, 'post'), {
       name: auth.currentUser.displayName,
       author: auth.currentUser.uid,
       data: Date.now(),
-      // tag: category,
+      tag: category,
       text: textPost,
       like: [],
     });
@@ -106,7 +105,6 @@ export const updatePost = async (idPost, textValue) => {
 
   await updateDoc(newAttPost, {
     text: textValue,
-    //tag: category,
   });
 };
 
@@ -114,9 +112,9 @@ export const deletePost = async (postId) => {
   try {
     const docRef = doc(db, 'post', postId);
     await deleteDoc(docRef);
-    console.log('Post deletado', docRef.id);
-  } catch (error) {
-    console.log('error');
+    // console.log('Post deletado', docRef.id);
+  } catch (e) {
+    // console.log(e);
   }
 };
 

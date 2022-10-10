@@ -15,7 +15,7 @@ const auth = getAuth(app);
 export default () => {
   const feedContainer = document.createElement('div');
   const template = `
-  <header>
+    <header>
   
     <img src="img/Rebu.png" alt="rebu logo">
 
@@ -119,7 +119,7 @@ export default () => {
           <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
           <div class="footer-post">
             <p class="date-post"></p>
-            <span class="like-btn-post" data-id-post-like="${post.id}" ><img src="img/icons/empty-like-icon.png" class="like-post-icon" alt="like button"></span>
+            <span class="like-btn-post" data-id-post-like="${post.id}" ><img ${post.like.includes(auth.currentUser.uid) ? `src="img/icons/filled-like-icon.png"` : `src="img/icons/empty-like-icon.png"`} class="like-post-icon" alt="like button"></span>
             <p class="all-likes-post">${post.like.length}</p>
           </div>
         </div>
@@ -130,7 +130,6 @@ export default () => {
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
-    const numLikes = Array.from(feedContainer.querySelectorAll('.all-likes-post'));
 
     // searchBar.addEventListener('keyup', (e) => {
     //   postArr = postArr.filter((post) => post.text.includes(e.target.value));
@@ -184,10 +183,15 @@ export default () => {
       btn.addEventListener('click', async (el) => {
         const idPostLike = el.currentTarget.dataset.idPostLike;
         const user = auth.currentUser.uid;
-        const newLike = await like(idPostLike, user);
+        const newLikes = await like(idPostLike, user);
+        const elementLikes = el.target.parentElement.nextElementSibling;
+        let img = el.target;
 
-        numLikes.innerHTML = newLike;
-        printPosts('allposts');
+        newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/filled-like-icon.png') : img.setAttribute('src', 'img/icons/empty-like-icon.png'); 
+
+        elementLikes.innerHTML = newLikes.length;
+        // printPosts();
+
       });
     });
   };

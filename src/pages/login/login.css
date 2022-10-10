@@ -11,7 +11,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;  
+  font-family: GirlsStory;  
   font-size: 16px;
 }
 
@@ -71,7 +71,6 @@ body, html {
 }
 
 .email-and-password-container {  
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;    
   width: 100%;
@@ -79,18 +78,28 @@ body, html {
 
 .login-label {
   margin-bottom: 35px;
-  width: 100%;
+  width: 90%;
   cursor: text;  
 }
 
 .input-login {
-  width: 90%;
+  width: 100%;
   height: 100%;
   border-bottom:solid 2px var(--branco);
   padding: 1px;
   outline: 0;
   background-color: rgb(255, 255, 255, 0);
   font-size: 1.3rem;
+}
+
+.iconmail{
+  display: flex;
+  align-items: flex-start;
+}
+.mail{
+  text-align: left;
+  width: 30px;
+  height: 30px;
 }
 
 #txtEmail,#txtPassword::placeholder {
@@ -118,7 +127,7 @@ body, html {
 }
 
 .btn-login {
-  width: 70%;
+  width: 57%;
   padding: 10px;
   margin: 28px 0 0;
   border-radius: 20px;

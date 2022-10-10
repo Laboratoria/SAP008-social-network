@@ -1,3 +1,5 @@
+
+
 import { googleAccess} from '../../lib/auth.js'
 export default () => {
   const container = document.createElement('div');
@@ -31,13 +33,32 @@ export default () => {
   const googleBtn = container.querySelector('#google-login');
 
   googleBtn.addEventListener('click', () => {
-    googleAccess()
 
-    return window.location.hash = '#home'
+    googleAccess().then(() => {
+      window.location.hash = '#home'
+       
+    }) 
+     
+  })  
 
-  })
+    return container;
+  }
+   
+      
+    
+    
+    
 
 
 
-  return container;
-}
+
+
+    
+    
+    
+  // if(googleAccess() === true){
+  
+  //   return window.location.hash = '#home'
+  // }
+
+// })

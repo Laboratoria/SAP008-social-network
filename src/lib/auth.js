@@ -19,7 +19,7 @@ export const newUser = async (email, password) => { // função criar usuário
 };
 
 export const googleAccess = async () => { // função acessar com google
-  signInWithPopup(auth, provider)
+  return signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
@@ -33,15 +33,13 @@ export const googleAccess = async () => { // função acessar com google
     });
 };
 
-export const create = async () => { // função criar novo dado (nome)
-  const signInName = document.querySelector('#name');
-  const signInEmail = document.querySelector('#email');
-  const signInPassword = document.querySelector('#password');
+export const create = async (displayName, createEmail, createPassword) => { // função criar novo dado (nome)
+
   try {
     const docRef = await addDoc(collection(dataBase, "Users"), {
-      name: signInName.value,
-      email: signInEmail.value,
-      password: signInPassword.value
+      name: displayName,
+      email: createEmail,
+      password: createPassword
 
     });
     console.log("Document written with ID: ", docRef.id);

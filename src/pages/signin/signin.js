@@ -55,7 +55,7 @@ export default () => {
         }
         return newUser(signInEmail.value, signInPassword.value)
             .then(() => {
-                create()
+                create(signInName.value, signInEmail.value, signInPassword.value)
             })
 
             .then(() => {

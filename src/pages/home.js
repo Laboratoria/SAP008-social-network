@@ -29,19 +29,16 @@ export const homeFunction = () => {
     </section>
 `;
   container.innerHTML = templateLogin;
-
-   const inputLoginEmail = container.querySelector('#loginEmail');
-   const inputLoginPassword = container.querySelector('#loginPassword');
-   const loginEmail = inputLoginEmail.value;
-   const loginPassword = inputLoginPassword.value;
-
-   const btnGoogle = container.querySelector('#buttonGoogle');
-   btnGoogle.addEventListener('click', initWithGoogle);
-
+  const btnGoogle = container.querySelector('#buttonGoogle');
+  btnGoogle.addEventListener('click', initWithGoogle);
+  
+  const btnLogin = container.querySelector('#buttonLogin')
+  
+  btnLogin.addEventListener("click", () => {
+    const inputLoginEmail = container.querySelector('#loginEmail').value;
+    const inputLoginPassword = container.querySelector('#loginPassword').value;
+    loginEmailPassword(inputLoginEmail,inputLoginPassword);
+  })
   return container;
-
-  
-
-  
 };
 

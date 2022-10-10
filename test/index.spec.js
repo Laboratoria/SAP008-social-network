@@ -67,3 +67,26 @@ describe('deletePost', () => {
   });
 });
 
+describe('createPost', () => {
+  it('a função deve criar um post', async () => {
+    const mockPostCollection = {
+      posts: {
+        docPost: {
+          text: 'oie galera',
+        },
+      },
+    };
+    const mockDb = getFirestore.mockReturnValueOnce(mockPostCollection);
+    const mockDocRef = addDoc(collection(mockDb, 'posts'), mockPostCollection.posts.docPost);
+    addDoc.mockResolvedValueOnce(mockDocRef);
+
+    await createPost(mockPostCollection.posts.docPost);
+
+    expect(addDoc).toHaveBeenCalledTimes(1);
+    expect(addDoc).toHaveBeenCalledWith(mockDb);
+    expect(collection).toHaveBeenCalledTimes(1);
+    expect(collection).toHaveBeenCalledWith(mockPostCollection.posts.docPost, {
+      text: 'oie galera',
+    });
+  });
+});

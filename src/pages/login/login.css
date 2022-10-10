@@ -84,7 +84,7 @@ body {
     width: 8rem;
     color: #14617d;
     font-size: 0.9rem;
-    margin: 0 2rem 1.4rem -2rem;
+    margin: 0 2rem 0.5rem -2rem;
   }
 
   .input-email,
@@ -110,7 +110,7 @@ body {
 
   .btn-login {
     width: 9.6rem;
-    height: 1.5rem;
+    height: 2rem;
     border-radius: 0.2rem;
     border: none;
     background-color: #2e94b9;
@@ -118,8 +118,7 @@ body {
     font-size: 0.9rem;
     text-decoration: none;
     margin-bottom: 0.8rem;
-    margin-top: 0.5rem;
-    padding-top: 0.7rem;
+    margin-top: 1rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
@@ -134,8 +133,7 @@ body {
     font-size: 0.9rem;
     text-decoration: none;
     text-align: center;
-    margin-bottom: 0.8rem;
-    margin-top: 0.5rem;
+    margin-bottom: 2rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
     display: inline-flex;
@@ -151,18 +149,25 @@ body {
 
   .btn-register {
     width: 8rem;
-    height: 1.5rem;
+    height: 2rem;
     border-radius: 0.2rem;
     border: none;
     background-color: #4bd268;
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
-    margin-top: 3rem;
-    margin-left: 0.8rem;
-    padding-top: 0.7rem;
+    margin-top: 0.5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+  }
+  #error-code {
+    color: red;
+    font-size: 10px;
+    bottom: 2rem;
+  }
+
+  .text {
+    font-weight: normal;
   }
 }
 
@@ -218,7 +223,7 @@ body {
     width: 8rem;
     color: #14617d;
     font-size: 0.9rem;
-    margin: 0 7rem 1.4rem -2rem;
+    margin: 0 7rem 0.5rem -2rem;
   }
 
   .input-email,
@@ -249,15 +254,14 @@ body {
 
   .btn-login {
     width: 9.6rem;
-    height: 1.5rem;
+    height: 2rem;
     border: none;
     background-color: #2e94b9;
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
-    margin-bottom: 0.8rem;
-    margin-top: 0.5rem;
-    padding-top: 0.7rem;
+    margin-bottom: 0.2rem;
+    margin-top: 1rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
@@ -289,17 +293,25 @@ body {
 
   .btn-register {
     width: 8rem;
-    height: 1.5rem;
+    height: 2rem;
     border: none;
     background-color: #4bd268;
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
-    margin-top: 3rem;
-    margin-left: 0.8rem;
-    padding-top: 0.7rem;
+    margin-top: 0.5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    text-align: center;
+  }
+
+  #error-code {
+    color: red;
+    font-size: 10px;
+  }
+
+  .text {
+    font-weight: normal;
   }
 
   .btn-login:focus,

@@ -284,4 +284,9 @@ body {
     margin-left: 0.2rem;
     margin-top: 0.2rem;
   }
+
+  .btn-google-signup:focus,
+  .btn-signup:focus {
+    outline: none;
+  }
 }

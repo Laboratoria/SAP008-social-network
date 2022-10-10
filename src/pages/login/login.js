@@ -1,4 +1,4 @@
-import { loginUser, loginGoogle} from '../../auth.js'
+import { loginUser, loginGoogle } from '../../auth.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -12,7 +12,7 @@ export default () => {
             <img src="./imagens/logo-desktop.svg" alt="logo">
         </figure>
 
-        <form class="form-login bounce">
+        <form id="form" class="form-login bounce">
             <h1 class="title-login">Inicie a sua sessão</h1>
             <section class="inputs">
             <label for="email" class="label">Digite seu e-mail</label>
@@ -25,12 +25,13 @@ export default () => {
             </section>
             <p id="error-code"></p>
             <section class="buttons">
-            <a href="#login" class="btn-login">Iniciar Sessão</a>
-            <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./imagens/google.svg"/> Entrar com Google</a>
+            <button type='submit' class="btn-login">Iniciar Sessão</button>
+            <button type='submit' class="btn-google"><img class="img-google" src="./imagens/google.svg"/> Entrar com Google</button>
             </section>
 
             <h6 class="text"> Não possui conta?</h6>
-            <a href="#signup" class="btn-register">Criar nova conta</a>
+            <button type='submit' class="btn-register">Criar nova conta</button>
+
             </form>
             
         
@@ -38,18 +39,17 @@ export default () => {
 
   container.innerHTML = template;
 
-  const buttonLogin = container.querySelector('.btn-login');
+  const form = container.querySelector('#form');
   const buttonRegister = container.querySelector('.btn-register');
   const inputEmail = container.querySelector('#email');
   const inputPassword = container.querySelector('#password');
   const buttonGoogle = container.querySelector('.btn-google');
-  const getErrorMessage =  container.querySelector('#error-code')
+  const getErrorMessage = container.querySelector('#error-code');
 
-  buttonLogin.addEventListener('click', (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     loginUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        // container.innerHTML = '';
         window.location.hash = '';
       })
       .catch((error) => {
@@ -68,6 +68,7 @@ export default () => {
             break;
           default:
         }
+        return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
       });
   });
 
@@ -82,10 +83,7 @@ export default () => {
       .then(() => {
         window.location.hash = '';
       })
-      .catch(() => {
-        const msg = getErrorMessage(error);
-        modal(msg);
-      });
+      .catch((error) => error);
   });
 
   return container;

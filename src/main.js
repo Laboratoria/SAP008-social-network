@@ -8,14 +8,14 @@ const main = document.querySelector("#root")
 const init = ()=>{
     main.innerHTML = "";
     switch(window.location.hash){
-        case "#login":
-            main.appendChild(login());
+        case "#register":
+            main.appendChild(register());
             break;
         case "#feed":
             main.appendChild(feed());
             break;
         default:
-            main.appendChild(register()) ;  
+            main.appendChild(login()) ;  
 
      }
  }

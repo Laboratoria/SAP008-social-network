@@ -22,7 +22,7 @@ const inicio = () => {
       case '#sobre':
         main.appendChild(about());
         break;
-      case '#entrar':
+      case '#feed':
         main.appendChild(feed());
         break;
       default:

@@ -1,5 +1,6 @@
 import {getAuth, createUserWithEmailAndPassword} from "../../lib/firebase.js"
 import { app } from "../../lib/configuration.js";
+import { redirecionaParaOFeed } from "../../lib/redirect.js";
 
 export default () => {
   const containing = document.createElement('div');
@@ -22,8 +23,7 @@ function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha)
     const auth = getAuth(app);
     createUserWithEmailAndPassword(auth, inputEmail.value, inputSenha.value)
   .then(() => {
-    alert("Bem vindo(a) " + inputName.value + "!");
-    window.location.hash = "#entrar";
+    redirecionaParaOFeed()
   })
   .catch((error) => {
     alert("Ops confira seus dados !" );

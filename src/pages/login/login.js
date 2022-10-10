@@ -4,8 +4,8 @@ export default () => {
   const container = document.createElement('div');
 
   const template = `
-        <figure class="img-logo-mobile imgFlip">
-            <img src="./imagens/logo-mobile.png" alt="logo">
+        <figure class='img-logo-mobile imgFlip'>
+            <img src='./imagens/logo-mobile.png' alt='logo'>
         </figure>
 
         <figure class="img-logo-desktop">
@@ -19,9 +19,9 @@ export default () => {
             <input type="email" placeholder="seuemail@gmail.com" id="email" class="input-email" />
             </section>
 
-            <section class="inputs">
-            <label for="password">Digite sua senha</label>
-            <input type="password" placeholder="******" id="password" class="input-password" />
+            <section class='inputs'>
+            <label for='password'>Digite sua senha</label>
+            <input type='password' placeholder='******' id='password' class='input-password' />
             </section>
             <p id="error-code"></p>
             <section class="buttons">

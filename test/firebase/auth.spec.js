@@ -25,22 +25,22 @@ describe('loginGoogle', () => {
   });
 });
 
-const codes = [
-  'auth/user-not-found',
-  'auth/email-already-in-use',
-  'auth/invalid-email',
-  'auth/wrong-password',
-  'auth/invalid-display-name',
-  'auth/invalid-email-verified',
-  'default',
-];
+// const codes = [
+//   'auth/user-not-found',
+//   'auth/email-already-in-use',
+//   'auth/invalid-email',
+//   'auth/wrong-password',
+//   'auth/invalid-display-name',
+//   'auth/invalid-email-verified',
+//   'default',
+// ];
 
-describe('getErrorMessage', () => {
-  it('should be a function', () => {
-    codes.forEach((codeValue) => {
-      const error = { code: codeValue };
-      const result = getErrorMessage(error);
-      expect(typeof result).toBe('string');
-    });
-  });
-});
+// describe('getErrorMessage', () => {
+//   it('should be a function', () => {
+//     codes.forEach((codeValue) => {
+//       const error = { code: codeValue };
+//       const result = getErrorMessage(error);
+//       expect(typeof result).toBe('string');
+//     });
+//   });
+// });

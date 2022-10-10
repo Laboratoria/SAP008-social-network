@@ -102,7 +102,6 @@ export default () => {
             <h2 class="user-name-post">${post.name}</h2>
             ${auth.currentUser.uid === post.author ? `<button data-id-post-edit="${post.id}" class="edit-post-icon" id="edit-post-btn"><img src="img/icons/pencil-icon.png" alt="edit button"></button>
             <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>` : ''}
-            
           </div>
           <textarea disabled data-post="${post.id}" class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
           <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>

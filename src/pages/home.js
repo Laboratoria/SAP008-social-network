@@ -34,8 +34,7 @@ export const homeFunction = () => {
    const inputLoginPassword = container.querySelector('#loginPassword');
    const loginEmail = inputLoginEmail.value;
    const loginPassword = inputLoginPassword.value;
-   const btnSignUp = container.querySelector('#buttonSignUp');
-   btnSignUp.addEventListener('click', loginEmailPassword);
+   
 
    const btnGoogle = container.querySelector('#buttonGoogle');
    btnGoogle.addEventListener('click', initWithGoogle);

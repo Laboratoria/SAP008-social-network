@@ -32,7 +32,7 @@ export default () => {
 
           <p class="txt-error" id="txtError"></p>   
 
-          <button id="btnLogin" type="button" class="btn-login">Entrar</button>                   
+          <button id="btnLogin" type="button" class="btn-login">Entrar</button>                  
                                                   
         </form>
       </div>
@@ -53,7 +53,7 @@ export default () => {
     </section>       
 
     <img class="wallpaper-login" src="./img/foto.png">      
-
+       
     `;
 
   container.innerHTML = template;
@@ -63,11 +63,21 @@ export default () => {
   const btnLogin = container.querySelector('#btnLogin');
   //const btnLogout = container.querySelector('#btnLogout');
   const btnGmail = container.querySelector('#btn-gmail');
-  btnLogin.addEventListener('click', () => {
-    const email = txtEmail.value;
-    const password = txtPassword.value;
-    loginEmailPassword(email, password);
-  });
+  btnLogin.addEventListener('click', (e) => {
+    e.preventDefault();     
+    loginEmailPassword(txtEmail.value, txtPassword.value)
+      .then(() => {
+      window.location.hash = '#feed';
+       })
+      .catch((error) => {     
+      txtError.setAttribute('style', 'display: block');
+      txtError.setAttribute('style', 'color: red');
+      txtError.innerHTML = 'Usuário ou senha incorretos';
+      txtPassword.focus();
+      console.log('senha errada');
+      });       
+    
+    });
 
   //btnLogout.addEventListener('click', logout);
 

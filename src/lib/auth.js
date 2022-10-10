@@ -20,16 +20,9 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-const loginEmailPassword = async (email, password) => {
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log(userCredential.user);
-  } catch (error) {
-    txtError.setAttribute('style', 'display: block')
-    txtError.setAttribute('style', 'color: red')
-    txtError.innerHTML = 'Usuário ou senha incorretos'
-    txtPassword.focus()
-  }
+const loginEmailPassword = (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password);
+  
 };
 
 const createAccount = async (email, password) => {
@@ -54,6 +47,7 @@ const signInGoogle = () => {
     })
     .catch((error) => {
       console.log(error);
+      
     });
 };
 

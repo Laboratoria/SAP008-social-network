@@ -16,9 +16,9 @@ export default () => {
             <form class='container-form-login'> 
                 <div class='container-email-password>            
                     <input class='box-email' id='email-user' type='email' placeholder='Digite seu e-mail'/>
-                    <span class='icon-mail'>mail_outline</span>                         
+                    <span id='icon-mail'>mail_outline</span>                         
                     <input class='box-password 'id='password-user' type='password' placeholder='Digite sua senha'/>
-                    <span class='icon-password'>lock_outline</span>  
+                    <span id='icon-password'>lock_outline</span>  
                 </ div> 
                 <div class='container-buttons'>
                     <button class='box-enter'  type='submit' id='btn-submit'>Entrar</button>

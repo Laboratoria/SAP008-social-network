@@ -4,72 +4,81 @@
 
 * [1. Prefácio](#1-prefácio)
 * [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-* [4. Considerações gerais](#4-considerações-gerais)
-* [5. Critérios de aceitação mínimos do
-  projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
-* [6. Hacker edition](#6-hacker-edition)
+* [3. Histórias do usuário](#3-historia-do-usuario)
+* [4. Interface do usuário](#4-interface-do-usuario)
+* [5. Estrutura lógica](#5-estrutura-logica)
+* [6. Code Reviews](#6-code-review)
 * [7. Entrega](#7-entrega)
 * [8. Guias, dicas e leituras
   complementares](#8-guias-dicas-e-leituras-complementares)
 
 ***
 
-## 1. Prefácio
+## 1. Prefácio / Introdução sobre o projeto
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
-invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
-viver sem elas.
+Seja em palcos gigantescos ou em uma roda de samba na praça, seja em um festival milionário ou na rua da sua casa, pode ter acontecido ontem ou há muitos anos atrás, alguns shows marcam nossas vidas para sempre e se tornam inesquecíveis. 
 
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
+Criamos este espaço para compartilharmos esses momentos, aqui, você pode contar um pouco do que viveu, encontrar pessoas que assistiram os mesmos shows ou conhecer um pouco de outras vivências sonoras.
 
-Há redes sociais de todo tipo para todos os tipos de interesse. Por exemplo: em
-uma rodada de financiamento com investidores, foi apresentada uma rede social
-para químicos onde os usuários podem publicar artigos a respeito de suas
-pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
-determinadas tags ou popularidade, mais recente ou mais comentado.
+Que bom te ver por aqui, agora conta pra gente quais os seus Shows + inesquecíveis.
 
 ## 2. Resumo do projeto
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+Quem são os principais usuários do produto?
+Pessoas que curtem a vibe e a adrenalina de estar numa multidão ou em uma apresentação intimista curtindo o mesmo som ou descobrindo novas possibilidades.
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+Quais são os objetivos do usuário em relação com o produto?
+Se conectar com outras pessoas com o objetivo de compartilhar suas experiências vividas em shows e conhecer novas aventuras sonoras.
 
-O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
-Application
-(SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-[_responsiva_](https://curriculum.laboratoria.la/pt/topics/css/02-responsive) (com mais de uma tela/ página) na
-qual seja possível **ler e escrever dados**.
+Como você acredita que o produto está resolvendo os problemas do usuário?
+Em outras redes sociais, a música é só mais um tema, onde as experiências acabam se diluindo no meio de tantos assuntos, dificultando um acesso mais próximo com outras pessoas com o mesmo perfil.
+Queremos possibilitar que o público de shows possa indicar, fazer uma análise, guardar,  compartilhar memórias  e sentimentos em depoimentos sobre suas vivências.
 
-## 3. Objetivos de aprendizagem
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
+## 3. Histórias do usuário
 
-### HTML
+História do usuário 1: 
+"Como potencial usuário, quero ter a opção de criar uma conta onde crio meu login e senha ou utilizo meu email, para acessar a plataforma"
 
-- [ ] **Uso de HTML semântico**
+História do usuário 2: 
+"Como potencial usuário, quero utilizar minha conta google para acessar o site e evitar gastar tempo cadastrando uma nova conta."
 
-  <details><summary>Links</summary><p>
+História do usuário 3: 
+"Como usuário quero saber se as informações que preencho no cadastro ou login estão sendo validadas e autenticadas, para eu acessar o site."
 
-  * [HTML semântico](https://curriculum.laboratoria.la/pt/topics/html/02-html5/02-semantic-html)
-  * [Semantics in HTML - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+História do usuário 4: 
+"Como amante de música quero poder acessar a plataforma, postar e compartilhar depoimentos de shows que foram inesquecíveis na minha vida"
 
-### CSS
+Historia do usuário 5:
+"Como usuário eu quero que o site me alerte caso eu tente postar algo sem conteúdo, para que todos os meus posts tenham um texto escrito."
 
-- [ ] **Uso de seletores de CSS**
+Historia do usuário 6:
+"Como usuário quero ter liberdade de modificar o que escrevi e poder editar um post, caso eu perceba algum erro ortográfico, e quero que sinalize quais posts foram alterados"
 
-  <details><summary>Links</summary><p>
+Historia do usuário 7:
+"Como usuário do site, gostaria de poder excluir algum post que não deu tanto engajamento, mas quero ser avisado se tenho certeza caso eu mude de ideia na hora."
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/pt/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/pt_BR/docs/Web/CSS/CSS_Selectors)
-</p></details>
+Historia do usuário 8:
+"Como amante de música quero interagir com outros usuários que possuem os mesmo gostos que eu, dando ou removendo like nas postagens"
+
+Historia do usuário 9:
+"Como usuário quero saber quantas pessoas gostaram do meu post, pois é importante pra mim saber o impacto do meu conteúdo."
+
+
+### Interface do Usuário
+
+Protótipo de baixa fidelidade
+(foto da clare)
+
+Protótipo de alta fidelidade
+(unir todas as fotos pelo menos das pages de login, cadastro e timeline, sendo em mobile e desktop).
+
+Paleta de cores
+A paleta de cores foi definida utilizando a ferramenta Adobe Color. A foto abaixo foi a escolhida para representar nossa escolha. 
+(imagem)
+
+
+### Estrutura lógica
 
 - [ ] **Modelo de caixa (box model): borda, margem, preenchimento**
 

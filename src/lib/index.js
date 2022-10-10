@@ -98,7 +98,7 @@ export const like = async (idPost, idUser) => {
     like: likes,
   });
 
-  return likes.length;
+  return likes;
 };
 
 export const updatePost = async (idPost, textValue) => {

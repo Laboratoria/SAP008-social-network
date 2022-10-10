@@ -1,4 +1,4 @@
-import { loginUser, loginGoogle, getErrorMessage } from '../../auth.js';
+import { loginUser, loginGoogle} from '../../auth.js';
 import { modal } from '../../modal.js';
 
 export default () => {
@@ -24,13 +24,17 @@ export default () => {
             <label for="password">Digite sua senha</label>
             <input type="password" placeholder="******" id="password" class="input-password" />
             </section>
-
+            <p id="error-code"></p>
             <section class="buttons">
             <a href="#login" class="btn-login">Iniciar Sessão</a>
             <a href="#loginGoogle" class="btn-google"><img class="img-google" src="./imagens/google.svg"/> Entrar com Google</a>
-            <a href="#signup" class="btn-register">Criar nova conta</a>
             </section>
-        </form>
+
+            <h6 class="text"> Não possui conta?</h6>
+            <a href="#signup" class="btn-register">Criar nova conta</a>
+            </form>
+            
+        
     `;
 
   container.innerHTML = template;
@@ -40,17 +44,31 @@ export default () => {
   const inputEmail = container.querySelector('#email');
   const inputPassword = container.querySelector('#password');
   const buttonGoogle = container.querySelector('.btn-google');
+  const getErrorMessage =  container.querySelector('#error-code')
 
   buttonLogin.addEventListener('click', (e) => {
     e.preventDefault();
     loginUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        container.innerHTML = '';
+        // container.innerHTML = '';
         window.location.hash = '';
       })
       .catch((error) => {
-        const msg = getErrorMessage(error);
-        modal(msg);
+        switch (error.code) {
+          case 'auth/user-not-found':
+            getErrorMessage.innerHTML = 'Ops! Usuário não encontrado!';
+            break;
+          case 'auth/invalid-email':
+            getErrorMessage.innerHTML = 'Ops! O endereço de e-mail não é válido!';
+            break;
+          case 'auth/wrong-password':
+            getErrorMessage.innerHTML = 'Ops! Senha incorreta!';
+            break;
+          case 'auth/invalid-display-name':
+            getErrorMessage.innerHTML = 'Ops! O nome do usuário é inválido.';
+            break;
+          default:
+        }
       });
   });
 
@@ -66,11 +84,8 @@ export default () => {
         window.location.hash = '';
       })
       .catch(() => {
-        // const getErrorMessage = error.message;
-        // const getErrorCode = error.code;
-        // const email = error.customData.email;
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // ..
+        const msg = getErrorMessage(error);
+        modal(msg);
       });
   });
 

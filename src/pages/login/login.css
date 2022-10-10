@@ -290,10 +290,19 @@ body {
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
-    margin-top: 3rem;
-    margin-left: 0.8rem;
+    margin-top: 1rem;
     padding-top: 0.7rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    text-align: center;
+  }
+
+  #error-code {
+    color: red;
+    font-size: 10px;
+  }
+
+  .text {
+    font-weight: normal;
   }
 }

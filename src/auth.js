@@ -31,20 +31,23 @@ export function loginGoogle() {
   return signInWithPopup(auth, provider);
 }
 
-export function getErrorMessage(error) {
-  switch (error.code) {
-    case 'auth/user-not-found':
-      return 'Ops! Usuário não encontrado!';
-    case 'auth/invalid-email':
-      return 'Ops! O endereço de e-mail não é válido!';
-    case 'auth/wrong-password':
-      return 'Ops! Senha incorreta!';
-    case 'auth/invalid-display-name':
-      return 'Ops! O nome do usuário é inválido.';
-    default:
-  }
-  return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
-}
+// export function getErrorMessage(error) {
+//   switch (error.code) {
+//     case 'auth/user-not-found':
+//       errorMessage.innerHTML = 'Ops! Usuário não encontrado!';
+//       break;
+//     case 'auth/invalid-email':
+//       errorMessage.innerHTML = 'Ops! O endereço de e-mail não é válido!';
+//       break;
+//     case 'auth/wrong-password':
+//       errorMessage.innerHTML = 'Ops! Senha incorreta!';
+//       break;
+//     case 'auth/invalid-display-name':
+//       errorMessage.innerHTML = 'Ops! O nome do usuário é inválido.';
+//       break;
+//     default:
+//   }
+// }
 
 export function logout() {
   return signOut(auth);

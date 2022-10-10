@@ -27,7 +27,7 @@ Nossas sprints foram planejadas conforme as necessidades apresentadas em nossas 
 ## 2. Definição do produto e escolha do tema
 
 Sabemos que, infelizmente, mulheres são expostas, cotidianamente, a situações de discriminação, exclusão e abuso resultantes de uma sociedade misógina e intolerante. 
-Para mulheres lésbicas, essas situações têm ainda o agravante da interseção entre misoginia e homofobia - a lesbofobia. Segundo pesquisa realizada e publicada pelo [Lesbocenso Nacional (2021-2022)](https://lesbocenso.com.br/), 78,6% das entrevistadas já sofreu lesbofobia, e 77,3% conhece alguma mulher lésbica que já foi vítima. 
+Para mulheres lésbicas, essas situações têm ainda o agravante da interseção entre misoginia e homofobia - a lesbofobia. Segundo pesquisa coordenada pelo [Lesbocenso Nacional (2021-2022)](https://lesbocenso.com.br/) - que mapeia o perfil sócio-demográfico e as vivências de mulheres lésbicas e sapatão no Brasil -, 78,6% das entrevistadas já sofreu lesbofobia, e 77,3% conhece alguma mulher lésbica que já foi vítima. 
 
 Sendo assim, percebemos, na criação deste projeto, uma oportunidade para criar uma iniciativa que propõe solucionar o problema que é a escassez por espaços inclusivos e feitos exclusivamente para mulheres lésbicas, objetivando proporcionar a elas uma experiência online livre das diversas formas de preconceito que sofrem enquanto mulheres, casais e grupo social, cotidianamente. 
 

@@ -27,8 +27,4 @@ const init = () => {
     buttonSignUp.addEventListener('click', () => {
       window.location.hash = '#signup';
   });
-    const buttonBackHome = document.querySelector('#backAtHome');
-    buttonBackHome.addEventListener('click', () => {
-      history.back()
-    });
   });

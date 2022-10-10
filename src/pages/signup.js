@@ -39,6 +39,10 @@ export const signUpFunction = () => {
     createNewUser(nameRegst, emailRegst, passUser);
   });
 
+  const btnBackHome = containerSignUp.querySelector("#backAtHome");
+  btnBackHome.addEventListener('click', () => {
+    location.assign(`/`)
+  });
 
   return containerSignUp;
 };

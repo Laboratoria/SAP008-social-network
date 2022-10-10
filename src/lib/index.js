@@ -10,4 +10,3 @@ export function loginEmailPassword(email, password) {
     const auth= getAuth(app)
     return signInWithEmailAndPassword(auth, email, password)
 }
-   

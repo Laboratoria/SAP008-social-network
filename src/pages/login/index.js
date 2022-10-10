@@ -9,15 +9,19 @@ export default () => {
         <img src="./img/picsfem.png" class="logo-login">                  
 
         <form class="form-login">
-          <div class="email-and-password-container">            
-            <label class="login-label" id="loginLabel" for="email">                
+          <div class="email-and-password-container">
+            <div class="iconmail"> 
+            <img class="mail" src="/img/icons8-mail-48.png">      
+            <label class="login-label" id="loginLabel" for="email">              
               <input id="txtEmail" type="email" name="email" class="input-login" placeholder="Email" required>
             </label>
-                
+            </div> 
+            <div class="iconmail"> 
+            <img class="mail" src="/img/icons8-heart-lock-50.png">
             <label class="login-label" id="loginLabel" for="password">                
               <input id="txtPassword" type="password" name="password" class="input-login" placeholder="Senha" minlength="8" required>
             </label>              
-
+            </div>
           </div>           
               
           <div class="signup-and-forgotpassword-container">              
@@ -35,9 +39,9 @@ export default () => {
 
       <div class="container-login2">
         <div class="line-container">
-          <hr class="line">
-            <span class="txt-line">ou</span>
-          <hr class="line">            
+          <span class="line"></span>
+          <span class="txt-line">ou</span>
+          <span class="line"></span>        
         </div>
               
         <button id="btn-gmail" type="button" class="btn-google">

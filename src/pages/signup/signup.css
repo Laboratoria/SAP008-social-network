@@ -33,9 +33,9 @@ html {
 .signup-container {
   color: var(--branco);
   background: rgb(255, 255, 255, 0.2);
-  padding: 3px;
+  padding: 4%;
   width: 90%;
-  height: 75%;
+  height: 70%;
   border-radius: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -45,12 +45,12 @@ html {
 }
 
 .logo-signup {  
-  width: 80%;  
+  width: 90%;  
 }
 
-.signup-form {
-  margin: -5px 0 0;  
-  width: 80%;
+.signup-form {  
+  width: 100%;
+  height: 50%;
 }
 
 .name-email-pass{
@@ -58,10 +58,11 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-bottom: 10%;
 }
 
 .signup-label {
-  margin-bottom: 35px;
+  margin-bottom: 10%;
   width: 100%;
   cursor: text;
 }
@@ -86,8 +87,7 @@ html {
 
 .btnSignup {
   width: 70%;  
-  padding: 10px;
-  margin: 28px 0 0;
+  padding: 10px;  
   border-radius: 20px;
   color: var(--violeta);  
   background-color: var(--branco);
@@ -151,4 +151,22 @@ html {
 
 }
 
+@media screen and (min-width: 1024px) and (max-height: 768px){
+  .wrapper-signup {
+    padding: 0 40px 0;
+  }  
 
+  .signup-container {
+    border-radius: 20px 0 0 20px;
+    width: 30%;
+    height: 80%;
+    padding: 3%;
+  }  
+
+  .wallpaper-signup {  
+    display: block;     
+    width: 30%;
+    height: 80%;     
+    border-radius: 0 20px 20px 0;
+  }  
+}

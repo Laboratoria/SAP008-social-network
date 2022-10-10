@@ -1,8 +1,11 @@
 @import url('./pages/login/login.css');
 @import url('./pages/signup/signup.css');
-@import url('./pages/feed/feed.css');
 
 @font-face {
-    font-family: Girls Story;
-    src: url(./fonts/Girls\ Story.ttf);
-}
+    font-family: "girlsStory";
+    src: url("./letra/girlsStory.ttf") format("truetype"); 
+  }
+  *{
+    font-family: girlsStory;  
+  }
+

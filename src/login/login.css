@@ -3,22 +3,166 @@
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
 
 *{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 0px;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;       
 }
 
-body{
+body, html {  
+    height: 100vh;
+    width: 100vw; 
+}
+    
+.wrapper-login {  
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url('../images/image_back_login.jpg'); 
+}
+  
+.container-login { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+    text-align: center;  
 }
 
-main{
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    top: 20px
+.container-form-login{
+    margin-top: 15%;
+}
+
+.container-logo { 
+    display: flex;
+    justify-content: center;
+}
+
+#logo-login{
+    width: 70vw;
+}
+
+.container-subtitle {
+    display: flex;
+    justify-content: center
+}
+
+#sub-title{
+    color: #081E26;
+    font-size: 0.8em; 
+    text-align: center;
+    align-items: flex-start;
+    font-family: "Carrois Gothic SC";
+}
+
+.container-email-password{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    width: 100%;
+    height: 50%;
+}
+
+#password-user {
+    margin-top: 17%;
+}
+
+#btn-submit{
+    margin-top: 4%; 
+}
+
+.container-form-login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
+}
+
+input::placeholder{
+    color:#ffffffa3;
+    text-align: center;   
+}
+
+.icon-email{
+    padding: 8px;
+    display: flex;
+}
+
+#icon-password {
+    padding: 8px;
+    display: flex;
+}
+
+#email-user{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+#password-user{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+.box-enter {  
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+#btn-password {
+    color: #081E26;
+}
+
+.new-password{
+    margin: 10%;
+}
+
+.logo-google{
+    width: 30px;
+    height: 30px;
+    top: 40px;
+    margin-left:auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.box-login-google{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+.box-register{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    background: rgba(45, 43, 43, 0.647);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 footer {
@@ -34,209 +178,19 @@ footer {
     padding-top: 25px;
 }
 
-#login{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 520px;
-    width: 320px;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #69636357;
-    transform: translate(-50%, -50%);
-    transition: width .3s, heigth .3s;
-    transition-timing-function: ease;
-}
-
-.container-login{
-    display: block; 
-    padding: 10px;
-}
-
-.logo-blue-login { 
-    position:relative;
-    width: 200px;
-    height: 60px;
-    top: 20px;
-    margin-left:auto;
-    margin-right: auto;
-    display: flex;
-}
-
-.sub-title{
-    color: #081E26;  
-    position: relative;
-    top: 20px;
-    text-align: center;
-    font-size: 0.8em;
-    font-family: "Carrois Gothic SC";
-}
-
-.background-login{
-    display: block;
-    position: absolute;
-    opacity: 3%;
-    height: 520px;
-    width: 320px;
-    margin-left: 0px;
-    margin-top: 0px;
-    opacity: 1;
-}
-
-.material-icons{
-    color: black;
-    position: relative;
-    margin-left:auto;
-    margin-right: auto;
-    display: flex;
-
-
-}
-
-.box-name{
-    color: #FFFFFF;
-    position: relative;
-    width: 250px;
-    height: 40px;
-    top: 35px;
-    padding-left: 5px;
-    margin-left:auto;
-    margin-right: auto;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    background: rgba(45, 43, 43, 0.647);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-}
-
-.box-password{
-    position: relative;
-    width: 250px;
-    height: 40px;
-    top: 35px;
-    padding-left: 5px;
-    margin-left:auto;
-    margin-right: auto;
-    color: #FFFFFF;
-    border-radius: 5px;
-    border: none;
-    display: flex;
-    background: rgba(45, 43, 43, 0.647);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-}
-
-input::placeholder{
-    color:#ffffffa3;
-}
-
-.box-enter {
-    display: flex;
-    color: rgba(255, 255, 255, 0.69);  
-    position: relative;
-    width: 250px;
-    height: 40px;
-    top: 30px;
-    padding-left: 20px;
-    margin-left:auto;
-    margin-right: auto;
-    border-radius: 5px;
-    border: none;
-    background: rgba(45, 43, 43, 0.647);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-}
-
-.new-password {
-    color: #ffff;  
-    text-align: center;
-    position: relative;
-    top: 50px;
-    margin-left:auto;
-    margin-right: auto;
-    font-size: 1.0em;
-    mix-blend-mode: darken;
-    border: none;
-    display: flex;
-}
-
-    .logo-google{
-        position: relative;
-        width: 30px;
-        height: 30px;
-        top: 40px;
-        margin-left:auto;
-        margin-right: auto;
-        display: flex;
-    }
-
-.box-login-google{
-    position: relative;
-    width: 250px;
-    height: 40px;
-    top: 75px;
-    padding-left: 55px;
-    margin-left:auto;
-    margin-right: auto;
-    font-size: 0.9em;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    background:  rgba(156, 152, 152, 0.815);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-}
-
-.box-register{
-    color: #FFFFFF;
-    position: relative;
-    width: 250px;
-    height: 40px;
-    top: 70px;
-    padding-top: 10px;
-    margin-left:auto;
-    margin-right: auto;
-    font-size: 0.9em;
-    display: flex;
-    justify-content: center;
-    border: none;
-    border-radius: 5px;
-    background:  rgba(156, 152, 152, 0.815);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-}
-
-
-
-@media screen and (min-width: 768px) and (max-width:992px){
-    #login{
-        width: 80vw;
-    }
-    
-    .background-login{
-        float: left;
-        width: 35vw;
-        height: 100vh;
-    }
+@media screen and (min-width: 1024px) { 
 
     .container-login{
         float: right;
-        width: 40vw;
-    }
-}
-
-@media screen and (min-width: 992px){
-    #login{
-        width: 900px;
     }
     
-    .background-login{
-        background-color: #FFFFFF;
+    #image_back_login{
         float: left;
         width: 35vw;
-        height: 100vh;
+        height: 90vh;
     }
 
-    .container-login{
-        float: right;
-        width: 30vw;
+    #logo{
+        width: 30%;
     }
 }
-    

@@ -1,5 +1,4 @@
-import { loginUser, loginGoogle} from '../../auth.js';
-import { modal } from '../../modal.js';
+import { loginUser, loginGoogle} from '../../auth.js'
 
 export default () => {
   const container = document.createElement('div');

@@ -19,7 +19,7 @@ export default () => {
   
     <img src="img/Rebu.png" alt="rebu logo">
 
-    <input type="search" placeholder="Busque por post">
+    <input type="search" id="search-bar" placeholder="Busque por post">
 
     <div id="logout-userpfp-area">
       <img src="" alt="" id="user-profile-picture-header">
@@ -27,12 +27,12 @@ export default () => {
     </div>
     
     <nav class="tag-filter">
-      <button class="tag-button">MÚSICA</button>
-      <button class="tag-button">TV</button>
-      <button class="tag-button">EVENTOS</button>
-      <button class="tag-button">PETS</button>
-      <button class="tag-button">HOBBIES</button>
-      <button class="tag-button">POLÍTICA</button>  
+      <button data-button="musica" class="tag-button">MÚSICA</button>
+      <button data-button="tv" class="tag-button">TV</button>
+      <button data-button="eventos" class="tag-button">EVENTOS</button>
+      <button data-button="pets" class="tag-button">PETS</button>
+      <button data-button="hobbies" class="tag-button">HOBBIES</button>
+      <button data-button="politica" class="tag-button">POLÍTICA</button>  
     </nav>
 
   </header>
@@ -48,12 +48,17 @@ export default () => {
       <textarea name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
 
       <div class="create-post-box-buttons">
-        <select>
-          <option selected disabled>Categoria</option>
+        <select id="select-tags">
+          <option value="allposts" selected>SEM CATEGORIA</option>
+          <option value="musica">MÚSICA</option>
+          <option value="tv">TV</option>
+          <option value="eventos">EVENTOS</option>
+          <option value="pets">PETS</option>
+          <option value="hobbies">HOBBIES</option>
+          <option value="politica">POLÍTICA</option>
         </select>
 
         <button id="publish-btn">Publicar</button>
-        <button id="delete-btn">Deletar</button>
       </div>
 
     </section>
@@ -83,6 +88,9 @@ export default () => {
   const fade = feedContainer.querySelector('#fade');
   const modal = feedContainer.querySelector('#modal-delete');
   const confirmDeletePost = feedContainer.querySelector('.btn-delete');
+  const selectTags = feedContainer.querySelector('#select-tags');
+  const menuBtns = Array.from(feedContainer.querySelectorAll('.tag-button'));
+  // const searchBar = feedContainer.querySelector('#search-bar');
 
   function toggle(id) {
     modal.classList.toggle('none');
@@ -90,10 +98,14 @@ export default () => {
     fade.classList.toggle('none');
   }
 
-  const printPosts = async () => {
+  const printPosts = async (category) => {
     const closeModal = feedContainer.querySelector('.close-modal');
 
-    const postArr = await getAllPosts();
+    let postArr = await getAllPosts();
+
+    if (category !== 'allposts') {
+      postArr = postArr.filter((post) => post.tag.includes(category));
+    }
 
     const postsTemplate = postArr.map((post) => `
         <div class="post">
@@ -120,6 +132,16 @@ export default () => {
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
     const numLikes = Array.from(feedContainer.querySelectorAll('.all-likes-post'));
 
+    // searchBar.addEventListener('keyup', (e) => {
+    //   postArr = postArr.filter((post) => post.text.includes(e.target.value));
+    // });
+
+    menuBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        printPosts(btn.dataset.button);
+      });
+    });
+
     editBtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const postToBeEdited = e.currentTarget.dataset.idPostEdit;
@@ -133,7 +155,7 @@ export default () => {
           await updatePost(postToBeEdited, postTxtarea.value);
           postTxtarea.setAttribute('disabled', '');
           confirmEditBtn.classList.add('hide');
-          printPosts();
+          printPosts('allposts');
         });
       });
     });
@@ -155,7 +177,7 @@ export default () => {
       console.log(idPostDelete);
       deletePost(idPostDelete);
       toggle();
-      printPosts();
+      printPosts('allposts');
     });
 
     likeBtns.forEach((btn) => {
@@ -165,21 +187,21 @@ export default () => {
         const newLike = await like(idPostLike, user);
 
         numLikes.innerHTML = newLike;
-        printPosts();
+        printPosts('allposts');
       });
     });
   };
 
   publishBtn.addEventListener('click', () => {
-    createPost(textPost.value);
-    printPosts();
+    createPost(textPost.value, selectTags.value);
+    printPosts('allposts');
   });
 
   logoutBtn.addEventListener('click', () => {
     logoff();
   });
 
-  printPosts();
+  printPosts('allposts');
 
   return feedContainer;
 };

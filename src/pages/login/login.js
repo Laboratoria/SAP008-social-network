@@ -19,10 +19,8 @@ export default () => {
                     <input type="text" id="email" class="email-login" placeholder="E-mail"><br>
                     <p id="msg-error"></p>
                     <div>
-                    <input type="text" id="password" class="pswd-login" placeholder="Senha">
-                    <span>
+                        <input type="text" id="password" class="pswd-login" placeholder="Senha">
                         <button id="ok-login-btn">OK</button><br>
-                        </span>
                     </div>
                     </form>
                 <a href="" id="forgot-it" class="instructions cta">Esqueci minha senha</a>
@@ -31,18 +29,26 @@ export default () => {
             <div class="logo"></div>
             </section>`;
         
-            container.innerHTML = template;
+    container.innerHTML = template;
 
-            const logInEmail = container.querySelector('#email');
-            const logInPassword = container.querySelector('#password');
-    const formLogIn = container.querySelector('#ok-login-btn');
+    const logInEmail = container.querySelector('#email');
+    const logInPassword = container.querySelector('#password');
+    const loginBtn = container.querySelector('#ok-login-btn');
     
-
-    formLogIn.addEventListener('click', async (e) => {
-        e.preventDefault()
-        await loginUser(logInEmail.value, logInPassword.value);
-        window.location.hash = '#home';
-    });
+    loginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginUser(logInEmail.value, logInPassword.value)
+          .then((user) => {
+            localStorage.setItem('userEmail', user.email);
+            localStorage.setItem('userId', user.uid);
+            window.location.hash = '#home';
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+            alert('Algo deu errado, tente novamente mais tarde.');
+            return errorMessage;
+          });
+      });    
 
     return container;
 }

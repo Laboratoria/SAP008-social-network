@@ -5,12 +5,18 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  updateProfile,
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
 } from './export.js';
 
 const auth = getAuth(app);
+
+
+export const getUserName = () => { 
+  return auth.currentUser.displayName
+}
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
@@ -25,19 +31,17 @@ const loginEmailPassword = (email, password) => {
   
 };
 
-const createAccount = async (email, password) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log(userCredential);
-  } catch (error) {
-    console.log('erro de criar conta');
-  }
+const createAccount = async (name, email, password) => {
+  return await createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      updateProfile(auth.currentUser, {
+        displayName: name, 
+    })
+    })
 };
-
-//const logout = async () => {
-//  await signOut(auth);
-//};
-
+  
 const provider = new GoogleAuthProvider();
 const signInGoogle = () => {
   signInWithPopup(auth, provider)
@@ -51,9 +55,14 @@ const signInGoogle = () => {
     });
 };
 
+const logout = async () => {
+  await signOut(auth);
+};
+
 export {
   auth,
   loginEmailPassword,
   createAccount,  
   signInGoogle,
+  logout,
 };

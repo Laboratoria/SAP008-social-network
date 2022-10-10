@@ -59,14 +59,14 @@ function getUserData(uid) {
 }
 window.getUserData = getUserData;
 
-export const createPost = async (textPost) => {
+export const createPost = async (textPost, category) => {
   const auth = getAuth(app);
   try {
     const docRef = await addDoc(collection(db, 'post'), {
       name: auth.currentUser.displayName,
       author: auth.currentUser.uid,
       data: Date.now(),
-      // tag: category,
+      tag: category,
       text: textPost,
       like: [],
     });
@@ -106,7 +106,6 @@ export const updatePost = async (idPost, textValue) => {
 
   await updateDoc(newAttPost, {
     text: textValue,
-    //tag: category,
   });
 };
 

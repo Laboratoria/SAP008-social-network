@@ -1,10 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-// import { myFunction } from './lib/index.js';
-
-// myFunction();
-
-// import carregamento from "./pages/carregamento/carregamento.js";
+import { openMenu, closeMenu } from "./lib/index.js";
 import feed from "./pages/feed/feed.js";
 import publish from "./pages/publish/publish.js";
 
@@ -33,4 +29,16 @@ const init = () => {
 window.addEventListener("load", () => {
   main.appendChild(publish());
   init();
-})
+});
+
+const menu = document.querySelector("#menu");
+
+menu.addEventListener("click", function () {
+  const contentMenu = document.querySelector("#internalContentMenu");
+
+  if (contentMenu.style.display == "block") {
+    closeMenu(contentMenu);
+  } else {
+    openMenu(contentMenu);
+  }
+});

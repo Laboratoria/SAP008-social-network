@@ -42,8 +42,8 @@ li {
 #internalContentMenu {
   background-color: #d9d9d9;
   border-radius: 0 0.5rem 0.5rem 0.5rem;
-  height: 14rem;
-  width: 12rem;
+  height: 9rem;
+  width: 10rem;
   margin-top: 0.5rem;
   padding: 1.5rem;
 
@@ -114,8 +114,8 @@ li {
 
   .header-nav ion-icon {
     color: #00a57a;
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   .side-internal-icon {
@@ -144,8 +144,8 @@ li {
   }
 
   .footer-icon ion-icon {
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     color: #00a57a;
     margin-right: 0.5rem;
   }

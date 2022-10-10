@@ -5,8 +5,24 @@
 //   console.log('Hola mundo!');
 // };
 
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
-import { app } from '../firebase.js';
+import { app } from "../firebase.js";
 
-export const db = getFirestore(app);
+const db = getFirestore(app);
+
+function openMenu(contentMenu) {
+  contentMenu.style.display = "block";
+}
+
+function closeMenu(contentMenu) {
+  contentMenu.style.display = "none";
+}
+
+function publishPost(post) {
+  addDoc(collection(db, "post"), {
+    post: post,
+  });
+}
+
+export { openMenu, closeMenu, publishPost };

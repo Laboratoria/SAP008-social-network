@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -51,9 +51,9 @@ form textarea {
   display: flex;
   flex-direction: column;
   align-items: left;
- }
+}
 
- /* .icon ul li {
+/* .icon ul li {
   display: flex;
   justify-content: space-between;
 } */
@@ -63,11 +63,11 @@ form textarea {
   outline: none;
   border: 0;
 
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
 }
 
 .btn-form-options ion-icon {
-  color: #00A57A;
+  color: #00a57a;
 }
 
 select {
@@ -86,17 +86,17 @@ select {
 }
 
 .btn-form-cancel {
-  background-color: #BFBDBD;
+  background-color: #bfbdbd;
   border-radius: 10px;
   border: 0;
   padding: 0rem 1rem;
 
   color: black;
-  font-size: 1.4rem;    
+  font-size: 1.4rem;
 }
 
 .btn-form-publish {
-  background-color: #00A57A;
+  background-color: #00a57a;
   border-radius: 10px;
   border: 0;
   padding: 0rem 1rem;
@@ -106,16 +106,8 @@ select {
 }
 
 @media screen and (min-width: 1024px) {
-
-
-
-.new-post {
+  .new-post {
     width: 300%;
     height: 240px;
+  }
 }
-}
-
-
-
-
-

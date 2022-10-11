@@ -22,12 +22,12 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-export const getUserName = () => { 
-  return auth.currentUser.displayName
+const getUserName = async () => { 
+  return await auth.currentUser.displayName
 }
 
-const loginEmailPassword = (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password);
+const loginEmailPassword = async (email, password) => {
+  return await signInWithEmailAndPassword(auth, email, password);
   
 };
 
@@ -42,9 +42,8 @@ const createAccount = async (name, email, password) => {
     })
 };
 
-const signInGoogle = () => {
-  return signInWithPopup(auth, provider);
-    
+const signInGoogle = async () => {
+  return await signInWithPopup(auth, provider);    
 };
 
 const logout = async () => {
@@ -53,6 +52,7 @@ const logout = async () => {
 
 export {
   auth,
+  getUserName,
   loginEmailPassword,
   createAccount,  
   signInGoogle,

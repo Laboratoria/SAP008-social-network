@@ -218,3 +218,37 @@ footer {
   margin-bottom: 8px;
   cursor: pointer;
 }
+
+#cancel{
+  background-color: #ffffff;
+  color: #ab6930;
+  border: none;
+}
+
+#ok {
+  background-color: #ab6930;
+  color: #ffffff;
+  border: none;
+}
+
+#modal-delete {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  max-width: 80%;
+  background-color: #fff;
+  color: #131b1f;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+#modal-delete.hide {
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+}
+

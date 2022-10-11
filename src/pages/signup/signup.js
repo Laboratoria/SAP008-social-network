@@ -22,8 +22,7 @@ export default () => {
             <label for='passwordsignup'class='label'>Digite sua senha</label>
             <input type='password-signup' placeholder='****' id='signup-password' class='input-password-signup' />
             </section>
-    
-
+            <p id='error-code'></p>
             <section class='buttons-signup'>
             <button type='submit' class='btn-signup'>Cadastrar</button>
             <button type='submit' class='btn-google-signup'><img src='./imagens/google.svg'/>Cadastro com Google</button>
@@ -37,13 +36,29 @@ export default () => {
   const inputPassword = container.querySelector('#signup-password');
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
+  const getErrorMessage = container.querySelector('#error-code');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    await newUser(inputEmail.value, inputPassword.value);
-    window.location.hash = '#login';
+    newUser(inputEmail.value, inputPassword.value)
+      .then(() => {
+        window.location.hash = '#login';
+      })
+      .catch((error) => {
+        switch (error.code) {
+          case 'auth/invalid-email':
+            getErrorMessage.innerHTML = 'Ops! O e-mail inserido não é válido!';
+            break;
+          case 'auth/weak-password':
+            getErrorMessage.innerHTML = 'Ops! A senha deve ter 6 ou mais caracteres!';
+            break;
+          case 'auth/email-already-in-use':
+            getErrorMessage.innerHTML = 'Ops! O e-mail inserido já possui cadastro!';
+            break;
+          default:
+        } return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
+      });
   });
-
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
     await loginGoogle();

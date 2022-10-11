@@ -83,7 +83,7 @@ body {
     width: 8rem;
     color: #14617d;
     font-size: 0.9rem;
-    margin: 0 2rem 1.4rem -2rem;
+    margin: 0 2rem 0.5rem -2rem;
   }
 
   .input-email-signup,
@@ -153,6 +153,11 @@ body {
     margin-right: 0.2rem;
     margin-bottom: 1rem;
   }
+
+  #error-code {
+    color: red;
+    font-size: 10px;
+  }
 }
 
 /* desktop cadastro */
@@ -190,16 +195,15 @@ body {
   }
 
   .btn-signup {
-    width: 9.68rem;
-    height: 1.875rem;
-    border-radius: 0.2rem;
+    width: 9.6rem;
+    height: 2rem;
     border: none;
     background-color: #2e94b9;
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
-    margin-bottom: 0.8rem;
-    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+    margin-top: 1.5rem;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
@@ -248,7 +252,7 @@ body {
     width: 8rem;
     color: #14617d;
     font-size: 0.9rem;
-    margin: 0 7rem 1.4rem -2rem;
+    margin: 0 7rem 0.5rem -2rem;
   }
 
   .input-email-signup,
@@ -291,5 +295,11 @@ body {
   .btn-google-signup:focus,
   .btn-signup:focus {
     outline: none;
+  }
+
+  #error-code {
+    color: red;
+    font-size: 12px;
+    bottom: 2rem;
   }
 }

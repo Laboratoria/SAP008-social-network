@@ -3,7 +3,12 @@
 import { app } from './configuration.js';
 
 import {
-  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signInWithPopup, GoogleAuthProvider,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  signInWithPopup,
+  GoogleAuthProvider,
 } from './firebase.js';
 import { redirectFeed } from './redirect.js';
 
@@ -34,4 +39,15 @@ const signInWithGoogle = () => {
     });
 };
 
-export { logInUser, signInWithGoogle };
+const logOutUser = () => {
+  signOut(auth)
+    .then(() => {
+      window.location.hash = '#home';
+      console.log('Deu certo caramba, user deslogou kkk');
+    })
+    .catch((error) => {
+      console.log('Ocorreu um erro ao deslogar usuário', error);
+    });
+};
+
+export { logInUser, signInWithGoogle, logOutUser };

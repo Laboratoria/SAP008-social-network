@@ -49,8 +49,12 @@ html {
 }
 
 .signup-form {  
-  width: 100%;
-  height: 50%;
+  width: 100%;  
+  margin: 2% 0 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  
 }
 
 .name-email-pass{
@@ -106,22 +110,19 @@ html {
 }
 
 .btnVoltar {
-  width: 50%;  
+  width: 32%;  
   padding: 10px;
-  margin: 28px 0 0;
+  margin: 0 68% 0 0;
   border-radius: 20px;
-  color: var(--violeta);  
-  background-color: var(--branco);
-  font-weight: bolder;
+  color: var(--branco);
+  background-color: var(--lilas);
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 0.88rem;
 }
 
 .btnVoltar:hover {
   background-color: var(--roxo);
-  box-shadow: 0px 0px 20px var(--roxo);
-  transform: translate(0px, -2px);
-  transition: transform 0.5s;
+  box-shadow: 0px 0px 20px var(--roxo);  
   color: var(--branco);
   cursor: pointer;
 }

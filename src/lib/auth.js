@@ -8,15 +8,11 @@ import {
   updateProfile,
   signOut,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithPopup,  
 } from './export.js';
 
 const auth = getAuth(app);
-
-
-export const getUserName = () => { 
-  return auth.currentUser.displayName
-}
+const provider = new GoogleAuthProvider();
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
@@ -26,9 +22,12 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-const loginEmailPassword = (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password);
-  
+const getUserName = async () => { 
+  return await auth.currentUser.displayName;
+};
+
+const loginEmailPassword = async (email, password) => {
+  return await signInWithEmailAndPassword(auth, email, password);  
 };
 
 const createAccount = async (name, email, password) => {
@@ -39,20 +38,11 @@ const createAccount = async (name, email, password) => {
       updateProfile(auth.currentUser, {
         displayName: name, 
     })
-    })
+  })
 };
-  
-const provider = new GoogleAuthProvider();
-const signInGoogle = () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      console.log(credential);
-    })
-    .catch((error) => {
-      console.log(error);
-      
-    });
+
+const signInGoogle = async () => {
+  return await signInWithPopup(auth, provider);    
 };
 
 const logout = async () => {
@@ -61,6 +51,7 @@ const logout = async () => {
 
 export {
   auth,
+  getUserName,
   loginEmailPassword,
   createAccount,  
   signInGoogle,

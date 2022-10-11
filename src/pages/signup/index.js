@@ -5,7 +5,8 @@ export default function signUp() {
   container.classList.add('wrapper-signup');
 
   const template = `    
-     <section class="signup-container">      
+     <section class="signup-container">    
+        <a href= "#login" type="button" class="btnVoltar" style="text-decoration:none">Voltar</a>  
         <img src="./img/picsfem.png" class="logo-signup">              
         <form class="signup-form" >
           <div class="name-email-pass">
@@ -22,9 +23,8 @@ export default function signUp() {
             </label>
           </div>
           
-          <a href="#login" id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</a>
-          <a href= "#login"><button id="btnVoltar" type="button" class="btnVoltar">Voltar</button></a>
-          
+          <button id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</button>
+                    
         </form>                
      </section>
      <img class="wallpaper-signup" src="./img/foto.png">       
@@ -37,14 +37,17 @@ export default function signUp() {
   const btnSignup = container.querySelector('#btnSignup');
   
 
-  btnSignup.addEventListener('click', () => {
-    const name = txtName.value;
-    const email = txtEmail.value;
-    const password = txtPassword.value;
-    createAccount(name, email, password);
-  });
-
-  
+  btnSignup.addEventListener('click', (e) => {    
+    e.preventDefault();
+    createAccount(txtName.value, txtEmail.value, txtPassword.value)
+    .then(() => {
+      window.location.hash = '#login';
+      alert('conta criada!')
+      })
+      .catch((error) => {     
+      console.log('erro na criação de conta');
+      }); 
+  });  
 
   return container;
 }

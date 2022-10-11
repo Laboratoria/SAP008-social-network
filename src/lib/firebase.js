@@ -1,6 +1,12 @@
-// aqui exportaras las funciones que necesites
+// eslint-disable-next-line import/no-unresolved
+export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
 
-export const myFunction = () => {
-// aqui tu codigo
-// console.log('Hola mundo!');
-};
+export {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+// eslint-disable-next-line import/no-unresolved
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';

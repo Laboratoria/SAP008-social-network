@@ -10,7 +10,7 @@ export default () => {
       <a href="#login"><button id="btnLogout" type="button">Logout</button></a>
     </header>
 
-    <form class="form-feed">
+    <form id="formFeed" class="form-feed">
       <label class="label-input-publish" for="text">
         <input id="post" class="input-publish" name="text" type="text">
       </label>
@@ -29,7 +29,7 @@ export default () => {
     `;
 
   container.innerHTML = template;
-
+  
   const showPost = async () => {
     const arrayPost = await printPost();
     const postTemplate = arrayPost.map((post) => `
@@ -41,23 +41,24 @@ export default () => {
     `).join('');
     container.querySelector("#postContainer").innerHTML += postTemplate;
   }
-  showPost(createPost);
+  showPost();
 
   const btnPublish = container.querySelector("#btnPublish");
   const txtInputPost = container.querySelector('#post');
-  const btnLogout = container.querySelector('#btnLogout');
+  const btnLogout = container.querySelector('#btnLogout');  
+  const formFeed = container.querySelector('#formFeed');
+  
+  btnPublish.addEventListener("click", (e) => {
+    e.preventDefault();
+    const textPost = txtInputPost.value;
+    createPost(textPost);    
+    showPost(createPost);
+    formFeed.reset();
+  });
 
   btnLogout.addEventListener("click", () => {
     logout();
   });
-
-  btnPublish.addEventListener("click", () => {
-    const textPost = txtInputPost.value;
-    createPost(textPost);    
-    showPost(createPost);
-    //querySnapshot(textPost);
-
-  });  
 
   return container;
 };

@@ -64,7 +64,7 @@ export const createPost = async (textPost, category) => {
     const docRef = await addDoc(collection(db, 'post'), {
       name: auth.currentUser.displayName,
       author: auth.currentUser.uid,
-      data: Date.now(),
+      data: new Date().toLocaleDateString(),
       tag: category,
       text: textPost,
       like: [],

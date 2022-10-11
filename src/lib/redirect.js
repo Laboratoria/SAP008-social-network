@@ -1,3 +1,3 @@
-export function redirecionaParaOFeed(){
-    window.location.hash = '#feed';
+export function redirectFeed() {
+  window.location.hash = '#feed';
 }

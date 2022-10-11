@@ -19,7 +19,7 @@ export default () => {
             <input type='name-signup' placeholder='Nome e sobrenome' id='name-signup' class='input-name-signup' />
             <label for='email-signup' class='label'>E-mail</label>
             <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-email-signup' />
-            <label for='passwordsignup'>Digite sua senha</label>
+            <label for='passwordsignup'class='label'>Digite sua senha</label>
             <input type='password-signup' placeholder='****' id='signup-password' class='input-password-signup' />
             </section>
     

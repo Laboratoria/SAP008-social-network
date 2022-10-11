@@ -13,14 +13,14 @@ export default () => {
         </figure>
 
         <form id='form' class='form-login bounce'>
-            <h1 class='title-login'>Inicie a sua sessão</h1>
+            <h1 class='title-login'>Acesse a sua conta</h1>
             <section class='inputs'>
             <label for='email' class='label'>Digite seu e-mail</label>
             <input type='email' placeholder='seuemail@gmail.com' id='email' class='input-email' />
             </section>
 
             <section class='inputs'>
-            <label for='password'>Digite sua senha</label>
+            <label for='password' class='label'>Digite sua senha</label>
             <input type='password' placeholder='******' id='password' class='input-password' />
             </section>
             <p id='error-code'></p>

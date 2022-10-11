@@ -1,4 +1,4 @@
-import { loginUser, loginGoogle, getErrorMessage } from '../../src/firebase/auth.js';
+import { loginUser, loginGoogle } from '../../src/firebase/auth.js';
 import { signInWithEmailAndPassword, signInWithPopup } from '../../src/firebase/exports.js';
 
 jest.mock('../../src/firebase/exports.js');

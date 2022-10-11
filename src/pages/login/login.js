@@ -1,4 +1,5 @@
 import { loginUser, loginGoogle } from '../../firebase/auth.js';
+import { getErrorMessage } from '../../firebase/errors.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -41,7 +42,7 @@ export default () => {
   const inputEmail = container.querySelector('#email');
   const inputPassword = container.querySelector('#password');
   const buttonGoogle = container.querySelector('.btn-google');
-  const getErrorMessage = container.querySelector('#error-code');
+  const errorMessage = container.querySelector('#error-code');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -50,22 +51,7 @@ export default () => {
         window.location.hash = '';
       })
       .catch((error) => {
-        switch (error.code) {
-          case 'auth/user-not-found':
-            getErrorMessage.innerHTML = 'Ops! Usuário não encontrado!';
-            break;
-          case 'auth/invalid-email':
-            getErrorMessage.innerHTML = 'Ops! O endereço de e-mail não é válido!';
-            break;
-          case 'auth/wrong-password':
-            getErrorMessage.innerHTML = 'Ops! Senha incorreta!';
-            break;
-          case 'auth/invalid-display-name':
-            getErrorMessage.innerHTML = 'Ops! O nome do usuário é inválido.';
-            break;
-          default:
-        }
-        return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
+        errorMessage.innerHTML = getErrorMessage(error);
       });
   });
 

@@ -1,4 +1,5 @@
 import { loginGoogle, newUser } from '../../firebase/auth.js';
+import { getErrorMessage } from '../../firebase/errors.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -36,7 +37,7 @@ export default () => {
   const inputPassword = container.querySelector('#signup-password');
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
-  const getErrorMessage = container.querySelector('#error-code');
+  const errorMessage = container.querySelector('#error-code');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -45,18 +46,7 @@ export default () => {
         window.location.hash = '#login';
       })
       .catch((error) => {
-        switch (error.code) {
-          case 'auth/invalid-email':
-            getErrorMessage.innerHTML = 'Ops! O e-mail inserido não é válido!';
-            break;
-          case 'auth/weak-password':
-            getErrorMessage.innerHTML = 'Ops! A senha deve ter 6 ou mais caracteres!';
-            break;
-          case 'auth/email-already-in-use':
-            getErrorMessage.innerHTML = 'Ops! O e-mail inserido já possui cadastro!';
-            break;
-          default:
-        } return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
+        errorMessage.innerHTML = getErrorMessage(error);
       });
   });
   btnGoogle.addEventListener('click', async (e) => {

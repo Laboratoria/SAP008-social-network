@@ -23,7 +23,7 @@ export default function signUp() {
             </label>
           </div>
           
-          <a href="#login" id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</a>
+          <button id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</button>
                     
         </form>                
      </section>
@@ -37,14 +37,17 @@ export default function signUp() {
   const btnSignup = container.querySelector('#btnSignup');
   
 
-  btnSignup.addEventListener('click', () => {
-    const name = txtName.value;
-    const email = txtEmail.value;
-    const password = txtPassword.value;
-    createAccount(name, email, password);
-  });
-
-  
+  btnSignup.addEventListener('click', (e) => {    
+    e.preventDefault();
+    createAccount(txtName.value, txtEmail.value, txtPassword.value)
+    .then(() => {
+      window.location.hash = '#login';
+      alert('conta criada!')
+      })
+      .catch((error) => {     
+      console.log('erro na criação de conta');
+      }); 
+  });  
 
   return container;
 }

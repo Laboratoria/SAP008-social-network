@@ -185,13 +185,11 @@ export default () => {
         const user = auth.currentUser.uid;
         const newLikes = await like(idPostLike, user);
         const elementLikes = el.target.parentElement.nextElementSibling;
-        let img = el.target;
+        const img = el.target;
 
         newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/filled-like-icon.png') : img.setAttribute('src', 'img/icons/empty-like-icon.png'); 
 
         elementLikes.innerHTML = newLikes.length;
-        // printPosts();
-
       });
     });
   };

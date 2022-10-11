@@ -47,29 +47,6 @@ form textarea {
   background-color: #fff;
 }
 
-.icon {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-
-/* .icon ul li {
-  display: flex;
-  justify-content: space-between;
-} */
-
-.btn-form-options {
-  resize: none;
-  outline: none;
-  border: 0;
-
-  background-color: #e9e9e9;
-}
-
-.btn-form-options ion-icon {
-  color: #00a57a;
-}
-
 select {
   background-color: #fff;
   border-radius: 10px;

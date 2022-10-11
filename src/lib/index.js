@@ -5,7 +5,7 @@
 //   console.log('Hola mundo!');
 // };
 
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 import { app } from "../firebase.js";
 
@@ -19,10 +19,11 @@ function closeMenu(contentMenu) {
   contentMenu.style.display = "none";
 }
 
-function publishPost(post) {
-  addDoc(collection(db, "post"), {
-    post: post,
-  });
+async function publishPost(post) {
+  console.log(post)
+  await addDoc(collection(db, "posts"), {
+    post: post
+  }) 
 }
 
 export { openMenu, closeMenu, publishPost };

@@ -6,8 +6,7 @@ import publish from "./pages/publish/publish.js";
 
 const main = document.querySelector("#root");
 
-const init = () => {
-  window.addEventListener("hashchange", () => {
+const init = () => {  
     main.innerHTML = "";
 
     switch(window.location.hash){
@@ -23,13 +22,15 @@ const init = () => {
       default:
         main.appendChild(feed());
     }
-  })
 };
 
 window.addEventListener("load", () => {
-  main.appendChild(publish());
   init();
 });
+
+window.addEventListener("hashchange", () => {
+  init();
+})
 
 const menu = document.querySelector("#menu");
 

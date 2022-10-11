@@ -73,8 +73,7 @@ export default () => {
       txtError.setAttribute('style', 'display: block');
       txtError.setAttribute('style', 'color: red');
       txtError.innerHTML = 'Usuário ou senha incorretos';
-      txtPassword.focus();
-      console.log('senha errada');
+      txtPassword.focus();      
       });       
     
     });
@@ -87,7 +86,11 @@ export default () => {
         window.location.hash = '#feed';
       })
       .catch((error) => {
-        console.log('erro no google');
+        window.location.hash = '#login';
+        txtError.setAttribute('style', 'display: block');
+        txtError.setAttribute('style', 'color: red');
+        txtError.innerHTML = 'Erro ao logar com sua conta do google';
+        txtPassword.focus();      
       })
   });
 

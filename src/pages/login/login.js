@@ -34,6 +34,7 @@ export default () => {
     const logInEmail = container.querySelector('#email');
     const logInPassword = container.querySelector('#password');
     const loginBtn = container.querySelector('#ok-login-btn');
+    const pMsg = container.querySelector('#msg-error');
     
     loginBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -45,8 +46,12 @@ export default () => {
           })
           .catch((error) => {
             const errorMessage = error.message;
-            alert('Algo deu errado, tente novamente mais tarde.');
-            return errorMessage;
+            if (errorMessage === 'Firebase: Error (auth/user-not-found).') {
+              return pMsg.innerHTML = 'Usuário não cadastrado'
+            } 
+            if (errorMessage === 'Firebase: Error (auth/wrong-password).') {
+              return pMsg.innerHTML = 'Senha inválida'
+            }
           });
       });    
 

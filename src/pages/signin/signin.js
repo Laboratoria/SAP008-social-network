@@ -9,9 +9,12 @@ export default () => {
             <form class="form-register">
                 <input type="text" id="name" name="name" class="form-input" placeholder="Digite seu nome"><br>
                 <input type="text" id="email" name="email" class="form-input" placeholder="E-mail"><br>
+                <p id="msg-error-email"></p>
                 <input type="password" id="password" name="password" class="form-input" placeholder="Senha"><br>
+                <p id="msg-error-pswd"></p>
                 <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirme sua senha"><br>
-                
+                <p id="msg-error-pswd-ok"></p>
+
                 <div class="policies-container">
                     <input type="checkbox" id="checkbox">
 
@@ -32,42 +35,67 @@ export default () => {
 
     container.innerHTML = template;
 
-
     const signInName = container.querySelector('#name');
     const signInEmail = container.querySelector('#email');
     const signInPassword = container.querySelector('#password');
     const signInConfPassword = container.querySelector('#confirm-password');
     const checkBox = container.querySelector('#checkbox')
     const formRegister = container.querySelector('.form-register');
+    const pMsgEmail = container.querySelector('#msg-error-email');
+    const pMsgPswd = container.querySelector('#msg-error-pswd');
+    const pMsgPswdOk = container.querySelector('#msg-error-pswd-ok');
 
 
 
-
+    // create dspara mesmo com e-mail inválido. #home aparece mesmo sem autenticar
     formRegister.addEventListener('submit', (e) => {
         e.preventDefault()
 
         if (signInPassword.value !== signInConfPassword.value) {
-            return alert('As senhas devem ser a mesma')
+            return pMsgPswdOk.innerHTML = 'As senhas devem ser iguais'
 
         } else if (signInName.value === "" || signInEmail.value === "" || signInPassword.value === "" || signInConfPassword.value === '' || checkBox.checked === false) {
             return alert('Todos os campos devem ser preenchidos')
-
         }
-        return newUser(signInEmail.value, signInPassword.value)
-            .then(() => {
-                create(signInName.value, signInEmail.value, signInPassword.value)
-            })
-
-            .then(() => {
-                window.location.hash = '#home'
-            })
-
+        return newUser(signInEmail.value, signInPassword.value).then(() => {
+            window.location.hash = '#home';
+        })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+                if (errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
+                    return pMsgEmail.innerHTML = 'E-mail já cadastrado'
+                }
+                if (errorMessage === 'FirebaseError: Firebase: Error (auth/invalid-email).') {
+                    return pMsgEmail.innerHTML = 'Endereço de e-mail inválido'
+                }
+                if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
+                    return pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos'
+                }
+            });
     })
 
     return container;
 }
 
 
+// newUser(signInEmail.value, signInPassword.value).then((create(signInName.value, signInEmail.value, signInPassword.value)) => {
+//     
+// })
+// .catch((error) => {
+//     const errorMessage = error.message;
+//         console.log(errorMessage)
+//         if (errorMessage === '') {
+//             return pMsgEmail.innerHTML = 'E-mail já cadastrado'
+//         } 
+//         if (errorMessage === 'FirebaseError: Firebase: Error (auth/invalid-email).') {
+//             return pMsgEmail.innerHTML = 'Endereço de e-mail inválido'
+//         }
+//         if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
+//             return pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos'
+//         }
+//     });
+//     create(signInName, signInEmail.value, signInPassword.value)
 
 
 

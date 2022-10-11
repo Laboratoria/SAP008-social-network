@@ -23,12 +23,11 @@ onAuthStateChanged(auth, (user) => {
 });
 
 const getUserName = async () => { 
-  return await auth.currentUser.displayName
-}
+  return await auth.currentUser.displayName;
+};
 
 const loginEmailPassword = async (email, password) => {
-  return await signInWithEmailAndPassword(auth, email, password);
-  
+  return await signInWithEmailAndPassword(auth, email, password);  
 };
 
 const createAccount = async (name, email, password) => {
@@ -39,7 +38,7 @@ const createAccount = async (name, email, password) => {
       updateProfile(auth.currentUser, {
         displayName: name, 
     })
-    })
+  })
 };
 
 const signInGoogle = async () => {

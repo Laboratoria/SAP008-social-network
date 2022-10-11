@@ -5,7 +5,8 @@ export default function signUp() {
   container.classList.add('wrapper-signup');
 
   const template = `    
-     <section class="signup-container">      
+     <section class="signup-container">    
+        <a href= "#login" type="button" class="btnVoltar" style="text-decoration:none">Voltar</a>  
         <img src="./img/picsfem.png" class="logo-signup">              
         <form class="signup-form" >
           <div class="name-email-pass">
@@ -23,8 +24,7 @@ export default function signUp() {
           </div>
           
           <a href="#login" id="btnSignup" type="button" class="btnSignup" style="text-decoration:none">CRIAR CONTA</a>
-          <a href= "#login"><button id="btnVoltar" type="button" class="btnVoltar">Voltar</button></a>
-          
+                    
         </form>                
      </section>
      <img class="wallpaper-signup" src="./img/foto.png">       

@@ -127,19 +127,3 @@
     height: 48px;
     top: 185px;
 }
-.boxModel{
-    background-image: url(img/back.jpg);
-    margin:auto;
-}
-.formPassword{ 
-    display: flex;
-    
-    background-color: rgba(255, 255 , 255, 0.87);
-    width: 500px;
-    height: 50%;
-    align-content: center;
-    border-radius: 10%;
-    align-content: center;
-    flex-direction: column;
-    height: 80%;
-}

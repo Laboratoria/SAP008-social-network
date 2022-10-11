@@ -1,5 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-use-before-define */
 import { app } from '../../lib/configuration.js';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from '../../lib/firebase.js';
 import { redirectFeed } from '../../lib/redirect.js';
@@ -9,30 +7,26 @@ export default () => {
   const container = document.createElement('div');
   const conteudo = createTemplate();
   container.innerHTML = conteudo;
-  const formLogin = container.querySelector('#form');
-  const inputEmail = container.querySelector('#email-login').value;
-  const inputSenha = container.querySelector('#senha-login').value;
-  const btnlogin = container.querySelector('#btn-Login-User');
   const btnGoogle = container.querySelector('#btn-google');
   initWithGoogle(btnGoogle);
-  logInUser(formLogin, btnlogin, inputEmail, inputSenha);
-  return container;
-};
+  const inputEmail = container.querySelector('#email-login');
+  const inputSenha = container.querySelector('#senha-login');
+  const btnlogin = container.querySelector('#btn-Login-User');
 
-function LoginUserFeed(btnlogin, email, password) {
   btnlogin.addEventListener('click', (e) => {
-    e.preventDefault(app);
-    logInUser(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
+    e.preventDefault();
+    logInUser(inputEmail.value, inputSenha.value)
+      .then(() => {
         redirectFeed();
       })
-      .cath((error) => {
+      .catch((error) => {
         const errorMessage = error.message;
         return errorMessage;
       });
+
+    return container;
   });
-}
+};
 
 function initWithGoogle(btnGoogle) {
   btnGoogle.addEventListener('click', (e) => {
@@ -55,7 +49,7 @@ function initWithGoogle(btnGoogle) {
 function createTemplate() {
   return `
   <div class='container' id='template-form'>
-  <form class='form' id="form">
+  <form class='form' id='form'>
     <img src='img/logo.png' class='logo' alt='Logo Wanderlust'>
     <p class='register'>
       <label for='email-login' >Email:</label>
@@ -70,7 +64,7 @@ function createTemplate() {
     </p>
   </form>
   <p class='register'>
-    <input type='submit' id="btn-Login-User" value='Entrar' class='btnEntrar'/>
+    <button class='btnEntrar' id='btn-Login-User'>Entrar</button>
   </p>
   <p class='register'>
     <a href='#paracadastro' class='cadastre'>Cadastre-se</a>

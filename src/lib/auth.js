@@ -3,19 +3,17 @@
 import { app } from "./config.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup, } from "./export.js";
 const auth = getAuth(app)
-const provider = new GoogleAuthProvider(app);
 
 
 export const register = (email, password, profileName) => {
-  const auth = getAuth(app)
   return createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       return updateProfile(auth.currentUser, {
         displayName: profileName,
       })
     })
-}
 
+}
 
 
 export const signIn = (email, password) => {
@@ -23,5 +21,6 @@ export const signIn = (email, password) => {
 }
 
 export const signInGoogle = () => {
+  const provider = new GoogleAuthProvider();
   return signInWithPopup(auth, provider);
 };

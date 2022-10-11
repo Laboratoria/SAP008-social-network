@@ -1,35 +1,6 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-use-before-define */
 import { getAuth, createUserWithEmailAndPassword } from '../../lib/firebase.js';
 import { app } from '../../lib/configuration.js';
 import { redirectFeed } from '../../lib/redirect.js';
-
-export default () => {
-  const containing = document.createElement('div');
-  const contentScreen = templateScreen();
-  containing.innerHTML = contentScreen;
-  const inputName = containing.querySelector('#name-cadastro');
-  const inputEmail = containing.querySelector('#email-cadastro');
-  const inputSenha = containing.querySelector('#senha-cadastro');
-  const inputCadastro = containing.querySelector('.form');
-  configuraSubmitDoFormRegistrar(inputCadastro, inputName, inputEmail, inputSenha);
-
-  return containing;
-};
-
-function configuraSubmitDoFormRegistrar( form, inputName, inputEmail, inputSenha) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const auth = getAuth(app);
-    createUserWithEmailAndPassword(auth, inputEmail.value, inputSenha.value)
-      .then(() => {
-        redirectFeed();
-      })
-      .catch((error) => {
-        alert('Ops confira seus dados !');
-      });
-  });
-}
 
 function templateScreen() {
   return `
@@ -58,3 +29,30 @@ function templateScreen() {
     </p>
 </form>`;
 }
+
+function configuraSubmitDoFormRegistrar( form, inputName, inputEmail, inputSenha) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const auth = getAuth(app);
+    createUserWithEmailAndPassword(auth, inputEmail.value, inputSenha.value)
+      .then(() => {
+        redirectFeed();
+      })
+      .catch((error) => {
+        alert('Ops confira seus dados !');
+      });
+  });
+}
+
+export default () => {
+  const containing = document.createElement('div');
+  const contentScreen = templateScreen();
+  containing.innerHTML = contentScreen;
+  const inputName = containing.querySelector('#name-cadastro');
+  const inputEmail = containing.querySelector('#email-cadastro');
+  const inputSenha = containing.querySelector('#senha-cadastro');
+  const inputCadastro = containing.querySelector('.form');
+  configuraSubmitDoFormRegistrar(inputCadastro, inputName, inputEmail, inputSenha);
+
+  return containing;
+};

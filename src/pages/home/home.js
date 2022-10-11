@@ -3,49 +3,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from '../../lib/firebase
 import { redirectFeed } from '../../lib/redirect.js';
 import { logInUser } from '../../lib/auth.js';
 
-export default () => {
-  const container = document.createElement('div');
-  const conteudo = createTemplate();
-  container.innerHTML = conteudo;
-  const btnGoogle = container.querySelector('#btn-google');
-  initWithGoogle(btnGoogle);
-  const inputEmail = container.querySelector('#email-login');
-  const inputSenha = container.querySelector('#senha-login');
-  const btnlogin = container.querySelector('#btn-Login-User');
-
-  btnlogin.addEventListener('click', (e) => {
-    e.preventDefault();
-    logInUser(inputEmail.value, inputSenha.value)
-      .then(() => {
-        redirectFeed();
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        return errorMessage;
-      });
-
-    return container;
-  });
-};
-
-function initWithGoogle(btnGoogle) {
-  btnGoogle.addEventListener('click', (e) => {
-    e.preventDefault(app);
-    const authgoogle = getAuth();
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(authgoogle, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        redirectFeed();
-      })
-      .catch((error) => {
-        alert('Ops confira seus dados!');
-      });
-  });
-}
-
 function createTemplate() {
   return `
   <div class='container' id='template-form'>
@@ -77,3 +34,42 @@ function createTemplate() {
   <a href='#sobre' class='sobrepage'>Sobre</a>
   </p>`;
 }
+
+export default () => {
+  const container = document.createElement('div');
+  const conteudo = createTemplate();
+  container.innerHTML = conteudo;
+  const btnGoogle = container.querySelector('#btn-google');
+  const inputEmail = container.querySelector('#email-login');
+  const inputSenha = container.querySelector('#senha-login');
+  const btnlogin = container.querySelector('#btn-Login-User');
+
+  btnlogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    logInUser(inputEmail.value, inputSenha.value)
+      .then(() => {
+        redirectFeed();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        return errorMessage;
+      });
+  });
+  btnGoogle.addEventListener('click', (e) => {
+    e.preventDefault(app);
+    const authgoogle = getAuth();
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(authgoogle, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        redirectFeed();
+      })
+      .catch((error) => {
+        alert('Ops confira seus dados!');
+        console.error.bind(error);
+      });
+  });
+  return container;
+};

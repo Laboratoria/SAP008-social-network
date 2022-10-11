@@ -16,14 +16,16 @@ export default () => {
     <hr class="colorful-line"/>
     <section class="post-container">
       <div class="posts">
+
         <p>@isabela</p>
-        <p class="establishment">Café da Vila</p>
-        <p>Rua Dr. Arthur Martins, 243. Sorocaba-
-        <p>Atendimento excelente! Garçons simpáticos e dedicados. 
+        <p id="local" class="editable-post establishment">Café da Vila </p>
+        <p id="adress" class="editable-post">Rua Dr. Arthur Martins, 243. Sorocaba-SP </p>
+        <p id="review" class="editable-post">Atendimento excelente! Garçons simpáticos e dedicados. 
         Coquetéis muito bem preparados e de acordo com o gosto do cliente. 
         A comida é original e o lugar é muito charmoso, com decoração 
         caprichada. Acomoda bem grupo de amigos, casais e famílias.
         </p>
+
       </div> 
       <aside class="infos-container">
         <div>
@@ -45,15 +47,38 @@ export default () => {
     </nav>
     <button id="logout">Sair</button>
   </section>`;
-  
+
   container.innerHTML = template;
-  
+
   const logout = container.querySelector('#logout');
-  
+  const toTheTop = container.querySelector("#up-icon");
+  const newPost = container.querySelector('#plus-icon');
+
+
   logout.addEventListener('click', (e) => {
     e.preventDefault;
     logoutUser();
   });
-  
+
+  toTheTop.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+  });
+
+  newPost.addEventListener('click', () => {
+    window.location.hash = '#new_post';
+  })
+
   return container;
 }
+
+
+
+
+
+
+
+
+
+
+
+

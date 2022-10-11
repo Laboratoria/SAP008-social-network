@@ -19,7 +19,7 @@ export default () => {
                     <input type="text" id="email" class="email-login" placeholder="E-mail"><br>
                     <p id="msg-error"></p>
                     <div>
-                        <input type="text" id="password" class="pswd-login" placeholder="Senha">
+                        <input type="password" id="password" class="pswd-login" placeholder="Senha">
                         <button id="ok-login-btn">OK</button><br>
                     </div>
                     </form>

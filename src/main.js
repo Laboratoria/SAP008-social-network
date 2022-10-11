@@ -2,6 +2,7 @@ import load from './pages/load/load.js'
 import login from './pages/login/login.js'
 import signin from './pages/signin/signin.js'
 import home from './pages/home/home.js'
+import new_post from './pages/new_post/new_post.js'
 
 const main = document.querySelector('#root');
 
@@ -19,6 +20,9 @@ const init = () => {
             break;
         case '#home':
             main.appendChild(home());
+            break;
+        case '#new_post':
+            main.appendChild(new_post());
             break;
         default:
             main.appendChild(load());

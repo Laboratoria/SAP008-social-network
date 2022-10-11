@@ -38,6 +38,10 @@ form {
   align-items: center;
 }
 
+.form-login {
+  display: table-column;
+}
+
 .signin-btn {
   -webkit-text-stroke-width: 0.5px;
   border-color: White;
@@ -146,6 +150,7 @@ footer {
   width: 40px;
   height: 70px; 
   filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
+  cursor: pointer;
 }
 
 .colorful-line {
@@ -211,4 +216,5 @@ footer {
   filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
   display: flex;
   margin-bottom: 8px;
+  cursor: pointer;
 }

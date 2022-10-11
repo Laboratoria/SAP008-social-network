@@ -61,3 +61,4 @@ export function logoutUser() { // função logout
     window.location.hash = '#entrar';
   }).catch((error) => error);
 };
+

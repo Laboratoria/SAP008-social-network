@@ -67,7 +67,7 @@ Historia do usuário 9:
 "Como usuário quero saber quantas pessoas gostaram do meu post, pois é importante pra mim saber o impacto do meu conteúdo."
 
 
-### Interface do Usuário
+## 4. Interface do Usuário
 
 Protótipo de baixa fidelidade
 (foto da clare)
@@ -83,7 +83,7 @@ Responsividade
 
 Mobile first
 
-### Estrutura lógica
+## 5. Estrutura lógica
 
 - Os filtros (buttons) devem apresentar na página os personagens correspondentes a cada uma das categorias.
 Deve ser possível cruzar as características dos filtros (ex: espécie + gênero + status).
@@ -96,11 +96,11 @@ Deve ser possível cruzar as características dos filtros (ex: espécie + gêner
 - A responsividade do site deve se adequar proporcionalmente ao tamanho de cada mídia.
 
 
-### Code Reviews
+## 6. Code Reviews
 
 obs.: Colocar os dois resumos da Cla - digitar e colocar em formato de link.
 
-### Processo do Desenvolvimento do Produto
+## 7. Processo do Desenvolvimento do Produto
 
 - Escolha do tema
 - Levantamento de problemas
@@ -113,14 +113,14 @@ obs.: Colocar os dois resumos da Cla - digitar e colocar em formato de link.
 - Testes unitários;
 - Deploy.
 
-### Objetivos de aprendizagem
+## 8. Objetivos de aprendizagem
 Copiar o que já está no trello
 
-### Testes
+## 9. Testes
 
 realização os testes
 
-### Firebase e Firestore
+## 10. Firebase e Firestore
 
 - [ ] **Firebase Auth**
 
@@ -139,7 +139,7 @@ realização os testes
   * [Receber atualizações em tempo real com o Cloud Firestore - Documentação oficial](https://firebase.google.com/docs/firestore/query-data/listen?hl=pt-BR)
 </p></details>
 
-## 6. Hacker Edition
+## 11. Hacker Edition
 
 As seções chamadas _Hacker Edition_ são **opcionais**. Se **você terminou** e
 cumpriu todos os requisitos acima e sobrou tempo, tente concluí-las. Dessa
@@ -154,7 +154,7 @@ projeto.
 * Permitir comentar ou responder a uma postagem.
 * Editar perfil.
 
-## 7. Entrega
+## 12. Entrega
 
 O projeto será entregue subindo seu código no GitHub (`commit` /`push`) e a
 interface será hospedada usando o GitHub pages ou outro serviço de hospedagem

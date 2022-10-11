@@ -1,9 +1,10 @@
-import { registerUser } from '../firebase/firebase.js' 
-import { redirect } from "../redirect.js"
-                                                                                                             
+import {registerUser} from '../firebase/firebase.js';
+import {redirect} from '../redirect.js';
+
 export default () => {
-    const container = document.createElement('div');
-    const template = `  
+  const container = document.createElement('div');
+  container.classList.add('wrapper-register');
+  const template = `  
     <section id="register"> 
 
       <div class="image"> 
@@ -11,49 +12,48 @@ export default () => {
       </div>
 
       <div class="container-register">
-          <img class="logo-brown-register" src="./images/logo_01_brown_A6634B.png" alt="logo do título"/>
-          <h1 class = "subtitle-register">MOMENTOS MUSICAIS INESQUECÍVEIS</h1>                     
-          <form>
-              <input class ="box-name-register" type="name" id="name" placeholder="Nome completo"/>
-              <span class="material-icons">person</span>
-              <input class ="box-email-register" type="e-mail" id="e-mail" placeholder="E-mail"/>
-              <span class="material-icons">email</span>
-              <input class ="box-password-register" id="box-new-password" type="password" placeholder="Digite sua senha"/> 
-              <span class="material-icons">key</span>
-              <input class ="box-password-repeat" id="box-password-repeat" type="password" placeholder="Repetir senha"/> 
-              <span class="material-icons">key</span>
-              <button class ="btn-register" type="button" id="btn-register">Registar</button>
-              <button class ="btn-back" type="button" id="btn-back">Voltar</button>
-          </form>
+        <img class="logo-brown-register" src="./images/logo_01_brown_A6634B.png" alt="logo do título"/>
+        <h1 class = "subtitle-register">MOMENTOS MUSICAIS INESQUECÍVEIS</h1>                     
+        <form>
+          <input class ="box-name-register" type="name" id="name" placeholder="Nome completo"/>
+          <span class="material-icons">person</span>
+          <input class ="box-email-register" type="e-mail" id="e-mail" placeholder="E-mail"/>
+          <span class="material-icons">email</span>
+          <input class ="box-password-register" id="box-new-password" type="password" placeholder="Digite sua senha"/> 
+          <span class="material-icons">key</span>
+          <input class ="box-password-repeat" id="box-password-repeat" type="password" placeholder="Repetir senha"/> 
+          <span class="material-icons">key</span>
+          <button class ="btn-register" type="button" id="btn-register">Registar</button>
+          <button class ="btn-back" type="button" id="btn-back">Voltar</button>
+        </form>
 
-          <a href="#login" class="user">Já possui uma conta? Iniciar sessão</a>
+        <a href="#login" class="user">Já possui uma conta? Iniciar sessão</a>
               
       </div>    
     </section> 
-    `;
+  `;
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-
-   container.querySelector('#btn-register').addEventListener('click', e => {
-            e.preventDefault();
-            const name = container.querySelector('#name').value;
-            const email = container.querySelector('#e-mail').value;
-            const password = container.querySelector('#box-new-password').value;
-            registerUser(name, email, password)
-            .then(() => {                                                  
-              redirect("");   
-              })                                                                                                     
-              .catch((error) => {                                                                 
-                const errorMessage = error.message;
-                window.alert(errorMessage);
-              });
-        });
-
-        container.querySelector("#btn-back").addEventListener("click", e => {
-          e.preventDefault();
-          redirect("");
+  container.querySelector('#btn-register').addEventListener('click', (e) => {
+    e.preventDefault();
+    const name = container.querySelector('#name').value;
+    const email = container.querySelector('#e-mail').value;
+    const password = container.querySelector('#box-new-password').value;
+    registerUser(name, email, password)
+      .then(() => {
+        redirect('');
       })
+      .catch((error) => {
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
+  });
 
-    return container;
-}
+  container.querySelector('#btn-back').addEventListener('click', (e) => {
+    e.preventDefault();
+    redirect('');
+  });
+
+  return container;
+};

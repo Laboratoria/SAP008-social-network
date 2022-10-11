@@ -38,6 +38,10 @@ form {
   align-items: center;
 }
 
+.form-login {
+  display: table-column;
+}
+
 .signin-btn {
   -webkit-text-stroke-width: 0.5px;
   border-color: White;
@@ -146,6 +150,7 @@ footer {
   width: 40px;
   height: 70px; 
   filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
+  cursor: pointer;
 }
 
 .colorful-line {
@@ -211,4 +216,39 @@ footer {
   filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
   display: flex;
   margin-bottom: 8px;
+  cursor: pointer;
 }
+
+#cancel{
+  background-color: #ffffff;
+  color: #ab6930;
+  border: none;
+}
+
+#ok {
+  background-color: #ab6930;
+  color: #ffffff;
+  border: none;
+}
+
+#modal-delete {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  max-width: 80%;
+  background-color: #fff;
+  color: #131b1f;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+#modal-delete.hide {
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+}
+

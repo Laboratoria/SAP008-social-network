@@ -5,7 +5,7 @@ export default () => {
               <video autoplay loop muted plays-inline class="background-video-mobile">
                 <source src="img/VideoBGMobileTablet.mp4" type="video/mp4">
               </video>
-            <h1 class="logo-initial-page"><img class="img-logo" src="img/Rebu.png" alt="Rebu Logo"></h1>
+            <h1 class="logo-initial-page"><img class="img-logo" src="img/Rebu.svg" alt="Rebu Logo"></h1>
             <aside class="video-aside">
               <video autoplay loop muted plays-inline class="background-video-desktop">
                 <source src="img/videoBGDesktop.mp4" type="video/mp4">

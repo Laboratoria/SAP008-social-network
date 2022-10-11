@@ -2,7 +2,7 @@
     margin: 0;
     flex-wrap: wrap;
     flex-direction: column;
-    background: #bcfff3;
+    background: #F7DAFF;
 }
 
 .img-logo-register {
@@ -15,12 +15,12 @@
     width: 100%;
     height:100vh;
     flex-direction: column;
-    background: linear-gradient(180deg, rgba(188, 255, 243, 0.96) 0%, rgba(241, 234, 174, 0.96) 25%, #FFE6DB 50%, rgba(255, 221, 225, 0.96) 75%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #F7DAFF 0%, #F7E5FC 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
 }
 
 .register-text {
     align-self: flex-start;
-    color: #EE2C12;
+    color: #7B2292;
     font-weight: 400;
     font-size: 2em;
     margin-bottom: 1rem;
@@ -57,7 +57,7 @@
 
 .btn-register {
     font-size: 1.1em;
-    color: #EE2C12;
+    color: #7B2292;
     background-color: white;
     border-radius: 30px;
     border: none;
@@ -72,7 +72,7 @@
 .btn-google-register {
     height: 5vh;
     width: 73vw;
-    background-color: #ee2c12af;
+    background-color: #7B2292;
     border: none;
     box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
     border-radius: 30px;
@@ -91,7 +91,7 @@
 
 .btn-register:hover,
 .btn-google-register:hover {
-    background-color: #EE2C12;
+    background-color: #9e36b9;
     color: white;
     transition: 1s;
     cursor: pointer;
@@ -102,7 +102,7 @@
 }
 
 .warning-message {
-    color: rgb(185, 74, 60);
+    color: rgb(242, 28, 0);
     font-size: 0.9rem;
     margin-top: -0.5rem;
 }
@@ -131,7 +131,7 @@
         display: block;
         align-self: center;
         margin: 2rem 0 1rem 0;
-        color: #EE2C12;
+        color: #7B2292;
     }
 
     .gif-side-desktop {
@@ -152,7 +152,6 @@
         display: flex;
         flex-direction: column;
         width: 55%;
-        background: linear-gradient(180deg, #D4F3FD 0%, #D0FCF4 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
     }
 
     .register-login {
@@ -197,7 +196,7 @@
     }
 
     .btn-register {
-        background-color:#EE2C12;
+        background-color:#7B2292;
         color: #FFFFFF;
         margin-top: 0;
         margin-bottom: 0;

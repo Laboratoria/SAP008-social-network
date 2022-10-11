@@ -17,7 +17,7 @@ export default () => {
   const template = `
     <header>
   
-    <img src="img/Rebu.png" alt="rebu logo">
+    <img src="img/Rebu.svg" alt="rebu logo">
 
     <input type="search" id="search-bar" placeholder="Busque por post">
 
@@ -119,7 +119,7 @@ export default () => {
           <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
           <div class="footer-post">
             <p class="date-post"></p>
-            <span class="like-btn-post" data-id-post-like="${post.id}" ><img ${post.like.includes(auth.currentUser.uid) ? `src="img/icons/filled-like-icon.png"` : `src="img/icons/empty-like-icon.png"`} class="like-post-icon" alt="like button"></span>
+            <span class="like-btn-post" data-id-post-like="${post.id}" ><img ${post.like.includes(auth.currentUser.uid) ? 'src="img/icons/filled-like-icon.png"' : 'src="img/icons/empty-like-icon.png"'} class="like-post-icon" alt="like button"></span>
             <p class="all-likes-post">${post.like.length}</p>
           </div>
         </div>
@@ -187,7 +187,8 @@ export default () => {
         const elementLikes = el.target.parentElement.nextElementSibling;
         const img = el.target;
 
-        newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/filled-like-icon.png') : img.setAttribute('src', 'img/icons/empty-like-icon.png'); 
+        // eslint-disable-next-line no-unused-expressions
+        newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/filled-like-icon.png') : img.setAttribute('src', 'img/icons/empty-like-icon.png');
 
         elementLikes.innerHTML = newLikes.length;
       });

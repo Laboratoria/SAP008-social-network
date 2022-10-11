@@ -1,4 +1,4 @@
-import { register } from "../../lib/auth.js";
+import { register } from '../../lib/auth.js';
 
 export default () => {
   const containerRegistration = document.createElement("div")
@@ -25,33 +25,33 @@ export default () => {
 
 
 
-  const nameProfile = containerRegistration.querySelector("#input-profile-name")
-  const email = containerRegistration.querySelector("#input-email-registration")
-  const password = containerRegistration.querySelector("#password")
-  const btnRegistration = containerRegistration.querySelector("#button-registration")
-  const btnBack = containerRegistration.querySelector(".btn-back")
+  const nameProfile = containerRegistration.querySelector("#input-profile-name");
+  const email = containerRegistration.querySelector("#input-email-registration");
+  const password = containerRegistration.querySelector("#password");
+  const btnRegistration = containerRegistration.querySelector("#button-registration");
+  const btnBack = containerRegistration.querySelector(".btn-back");
 
-  btnBack.addEventListener("click", function(){
-    window.location.hash  = "#login"
-  })
+  btnBack.addEventListener('click', () => {
+    window.location.hash  = '#login';
+  });
 
 
-  btnRegistration.addEventListener("click", function (e) {
+  btnRegistration.addEventListener('click', function (e) {
     e.preventDefault();
     register(email.value, password.value, nameProfile.value)
     .then(function () {
-      alert("Bem vindo(a) " + nameProfile.value + "!");
+      alert('Bem vindo(a) ' + nameProfile.value + '!');
       window.location.hash = "#welcome";
     })
     .catch((error) => {
       const errorCode = error.code;
-      if(errorCode === "auth/email-already-in-use"){
-        alert ("E-mail já cadastrado. Faça seu login"); 
-        window.location.hash = "#login";
-      } else if(errorCode === "auth/invalid-email"){
-        alert ("e-mail inválido. Ex: suzana@provedor.com")
+      if(errorCode === 'auth/email-already-in-use'){
+        alert ('E-mail já cadastrado. Faça seu login'); 
+        window.location.hash = '#login';
+      } else if(errorCode === 'auth/invalid-email'){
+        alert ('e-mail inválido. Ex: suzana@provedor.com')
       } else {
-        alert("Algo deu errado. Por favor, tente novamente.")
+        alert('Algo deu errado. Por favor, tente novamente.')
       }
     });
 
@@ -59,6 +59,6 @@ export default () => {
 
 
 
-  return containerRegistration
+  return containerRegistration;
 
 }

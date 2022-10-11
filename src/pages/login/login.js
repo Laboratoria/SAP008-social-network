@@ -1,4 +1,4 @@
-import { signIn, signInGoogle } from "../../lib/auth.js";
+import { signIn, signInGoogle } from '../../lib/auth.js';
 
 export default function Login() {
   const login = document.createElement('div');
@@ -45,10 +45,10 @@ export default function Login() {
     })
     .catch(function (error) {
       console.error(error.code)
-      alert("falhou")
+      alert('falhou')
 
     });
-  })
+  });
 
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -58,5 +58,5 @@ export default function Login() {
       });
   });
 
-  return login
+  return login;
 }

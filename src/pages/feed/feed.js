@@ -19,6 +19,6 @@ export default () => {
 
 
 
-  return containerRegistration
+  return containerRegistration;
 
 }

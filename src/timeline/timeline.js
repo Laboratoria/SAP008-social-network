@@ -1,11 +1,11 @@
-import {signOut, getUserName, getAllPosts, createPost} from "../firebase/firebase.js"
-import { redirect } from "../redirect.js"
+import {
+  signOut, getAllPosts, createPost,
+} from '../firebase/firebase.js';
+import { redirect } from '../redirect.js';
 
 export default () => {
-    const name = getUserName();
-
-    const container = document.createElement('div');
-    const template = `  
+  const container = document.createElement('div');
+  const template = `  
         <div class="container-timeline">
             <div class="container-logo">
                 <img class="logo-img" src="./images/logo_02_blue_081E26.png"alt="logo do título">
@@ -16,13 +16,7 @@ export default () => {
                             <button type="button" id="navbar-button">BOTÃO</button>
                         </li>
                         <li class="navbar-item">
-                            <a href='#profile'>Perfil</a>
-                        </li>
-                        <li class="navbar-item">
                             <a href='#post'>Publicar Post</a>
-                        </li>
-                        <li class="navbar-item">
-                            <a href='#about'>Show +</a>
                         </li>
                         <li class="navbar-item">
                             <a href='#aboutus'>Sobre Nós</a>
@@ -37,12 +31,12 @@ export default () => {
         </div>     
     `;
 
-    container.innerHTML = template;
-    const menu = container.querySelector("#navbar-button");
+  container.innerHTML = template;
+  const menu = container.querySelector('#navbar-button');
 
-    const showPosts = async () => {
-        const groupArr = await getAllPosts();
-        const postsTemplate = groupArr.map((post) => `
+  const showPosts = async () => {
+    const groupArr = await getAllPosts();
+    const postsTemplate = groupArr.map((post) => `
             <div class="post">
                 <p id="user-name">${post.name}</p>
                 <p id="artist-name">${post.artist}</p>
@@ -51,24 +45,24 @@ export default () => {
                 <p id="text-post">${post.text}</p>
             </div>
         `).join('');
-        container.querySelector("#show-timeline").innerHTML += postsTemplate;
-    };
+    container.querySelector('#show-timeline').innerHTML += postsTemplate;
+  };
 
-    showPosts(createPost);
+  showPosts(createPost);
 
-    menu.addEventListener('click', () => {
-        const items = container.querySelectorAll(".navbar-item");
-        items.forEach ( item => {
-            item.classList.toggle("hide");
-        })
-        console.log(items);
+  menu.addEventListener('click', () => {
+    const items = container.querySelectorAll('.navbar-item');
+    items.forEach((item) => {
+      item.classList.toggle('hide');
     });
+    console.log(items);
+  });
 
-    container.querySelector('#logout').addEventListener('click', e => {
-        e.preventDefault();
-        signOut();
-        redirect("");
-    });
+  container.querySelector('#logout').addEventListener('click', (e) => {
+    e.preventDefault();
+    signOut();
+    redirect('');
+  });
 
-    return container;
-}
+  return container;
+};

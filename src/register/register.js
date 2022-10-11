@@ -1,9 +1,9 @@
-import { registerUser } from '../firebase/firebase.js' 
-import { redirect } from "../redirect.js"
-                                                                                                             
+import { registerUser } from '../firebase/firebase.js';
+import { redirect } from '../redirect.js';
+
 export default () => {
-    const container = document.createElement('div');
-    const template = `  
+  const container = document.createElement('div');
+  const template = `  
     <section id="register"> 
 
       <div class="image"> 
@@ -32,28 +32,27 @@ export default () => {
     </section> 
     `;
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-
-   container.querySelector('#btn-register').addEventListener('click', e => {
-            e.preventDefault();
-            const name = container.querySelector('#name').value;
-            const email = container.querySelector('#e-mail').value;
-            const password = container.querySelector('#box-new-password').value;
-            registerUser(name, email, password)
-            .then(() => {                                                  
-              redirect("");   
-              })                                                                                                     
-              .catch((error) => {                                                                 
-                const errorMessage = error.message;
-                window.alert(errorMessage);
-              });
-        });
-
-        container.querySelector("#btn-back").addEventListener("click", e => {
-          e.preventDefault();
-          redirect("");
+  container.querySelector('#btn-register').addEventListener('click', (e) => {
+    e.preventDefault();
+    const name = container.querySelector('#name').value;
+    const email = container.querySelector('#e-mail').value;
+    const password = container.querySelector('#box-new-password').value;
+    registerUser(name, email, password)
+      .then(() => {
+        redirect('');
       })
+      .catch((error) => {
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
+  });
 
-    return container;
-}
+  container.querySelector('#btn-back').addEventListener('click', (e) => {
+    e.preventDefault();
+    redirect('');
+  });
+
+  return container;
+};

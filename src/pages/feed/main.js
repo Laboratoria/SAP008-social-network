@@ -112,14 +112,14 @@ export default () => {
           <div class="header-post">
             <img class="user-photo-post" src="" alt="">
             <h2 class="user-name-post">${post.name}</h2>
-            ${auth.currentUser.uid === post.author ? `<button data-id-post-edit="${post.id}" class="edit-post-icon" id="edit-post-btn"><img src="img/icons/pencil-icon.png" alt="edit button"></button>
-            <span data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.png" alt="delete button"></span>` : ''}
+            ${auth.currentUser.uid === post.author ? `<button data-id-post-edit="${post.id}" class="edit-post-btn" id="edit-post-btn"><img src="img/icons/pencil-icon.svg" alt="edit button" class="edit-post-icon"></button>
+            <button data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.svg" alt="delete button"></button>` : ''}
           </div>
           <textarea disabled data-post="${post.id}" class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
           <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
           <div class="footer-post">
             <p class="date-post"></p>
-            <span class="like-btn-post" data-id-post-like="${post.id}" ><img ${post.like.includes(auth.currentUser.uid) ? 'src="img/icons/filled-like-icon.png"' : 'src="img/icons/empty-like-icon.png"'} class="like-post-icon" alt="like button"></span>
+            <button class="like-btn-post" data-id-post-like="${post.id}"><img ${post.like.includes(auth.currentUser.uid) ? 'src="img/icons/redHeart.svg"' : 'src="img/icons/blackHeart.svg"'} class="like-post-icon" alt="like button"></button>
             <p class="all-likes-post">${post.like.length}</p>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default () => {
         const img = el.target;
 
         // eslint-disable-next-line no-unused-expressions
-        newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/filled-like-icon.png') : img.setAttribute('src', 'img/icons/empty-like-icon.png');
+        newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/redHeart.svg') : img.setAttribute('src', 'img/icons/blackHeart.svg');
 
         elementLikes.innerHTML = newLikes.length;
       });

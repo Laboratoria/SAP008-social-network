@@ -8,15 +8,11 @@ import {
   updateProfile,
   signOut,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithPopup,  
 } from './export.js';
 
 const auth = getAuth(app);
-
-
-export const getUserName = () => { 
-  return auth.currentUser.displayName
-}
+const provider = new GoogleAuthProvider();
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
@@ -25,6 +21,10 @@ onAuthStateChanged(auth, (user) => {
     console.log('No user');
   }
 });
+
+export const getUserName = () => { 
+  return auth.currentUser.displayName
+}
 
 const loginEmailPassword = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
@@ -41,18 +41,10 @@ const createAccount = async (name, email, password) => {
     })
     })
 };
-  
-const provider = new GoogleAuthProvider();
+
 const signInGoogle = () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      console.log(credential);
-    })
-    .catch((error) => {
-      console.log(error);
-      
-    });
+  return signInWithPopup(auth, provider);
+    
 };
 
 const logout = async () => {

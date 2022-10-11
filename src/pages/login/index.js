@@ -60,9 +60,9 @@ export default () => {
 
   const txtEmail = container.querySelector('#txtEmail');
   const txtPassword = container.querySelector('#txtPassword');
-  const btnLogin = container.querySelector('#btnLogin');
-  //const btnLogout = container.querySelector('#btnLogout');
+  const btnLogin = container.querySelector('#btnLogin');  
   const btnGmail = container.querySelector('#btn-gmail');
+
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();     
     loginEmailPassword(txtEmail.value, txtPassword.value)
@@ -79,8 +79,17 @@ export default () => {
     
     });
 
-  //btnLogout.addEventListener('click', logout);
+  
+  btnGmail.addEventListener('click', (e) => {
+    e.preventDefault();
+    signInGoogle()
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => {
+        console.log('erro no google');
+      })
+  });
 
-  btnGmail.addEventListener('click', signInGoogle);
   return container;
 };

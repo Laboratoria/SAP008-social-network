@@ -1,5 +1,5 @@
-import { loginUser, loginGoogle, getErrorMessage } from '../../src/firebase/auth.js';
-import { signInWithEmailAndPassword, signInWithPopup } from '../../src/firebase/exports.js';
+import { loginUser, loginGoogle, newUser } from '../../src/firebase/auth.js';
+import { signInWithEmailAndPassword, signInWithPopup, createUserWithEmailAndPassword } from '../../src/firebase/exports.js';
 
 jest.mock('../../src/firebase/exports.js');
 
@@ -25,22 +25,13 @@ describe('loginGoogle', () => {
   });
 });
 
-// const codes = [
-//   'auth/user-not-found',
-//   'auth/email-already-in-use',
-//   'auth/invalid-email',
-//   'auth/wrong-password',
-//   'auth/invalid-display-name',
-//   'auth/invalid-email-verified',
-//   'default',
-// ];
-
-// describe('getErrorMessage', () => {
-//   it('should be a function', () => {
-//     codes.forEach((codeValue) => {
-//       const error = { code: codeValue };
-//       const result = getErrorMessage(error);
-//       expect(typeof result).toBe('string');
-//     });
-//   });
-// });
+describe('newUser', () => {
+  it('should be a function', () => {
+    expect(typeof newUser).toBe('function');
+  });
+  it('should call another function one time', () => {
+    newUser('email', 'password');
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
+  });
+});

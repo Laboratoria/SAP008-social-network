@@ -1,4 +1,5 @@
 import { loginGoogle, newUser } from '../../firebase/auth.js';
+import { getErrorMessage } from '../../firebase/errors.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -19,11 +20,10 @@ export default () => {
             <input type='name-signup' placeholder='Nome e sobrenome' id='name-signup' class='input-name-signup' />
             <label for='email-signup' class='label'>E-mail</label>
             <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-email-signup' />
-            <label for='passwordsignup'>Digite sua senha</label>
+            <label for='passwordsignup'class='label'>Digite sua senha</label>
             <input type='password-signup' placeholder='****' id='signup-password' class='input-password-signup' />
             </section>
-    
-
+            <p id='error-code'></p>
             <section class='buttons-signup'>
             <button type='submit' class='btn-signup'>Cadastrar</button>
             <button type='submit' class='btn-google-signup'><img src='./imagens/google.svg'/>Cadastro com Google</button>
@@ -37,13 +37,18 @@ export default () => {
   const inputPassword = container.querySelector('#signup-password');
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
+  const errorMessage = container.querySelector('#error-code');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    await newUser(inputEmail.value, inputPassword.value);
-    window.location.hash = '#login';
+    newUser(inputEmail.value, inputPassword.value)
+      .then(() => {
+        window.location.hash = '#login';
+      })
+      .catch((error) => {
+        errorMessage.innerHTML = getErrorMessage(error);
+      });
   });
-
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
     await loginGoogle();

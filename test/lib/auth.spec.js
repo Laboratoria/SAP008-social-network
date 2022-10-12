@@ -44,5 +44,3 @@ describe("signInGoogle", () =>{
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
   })
 })
-
-

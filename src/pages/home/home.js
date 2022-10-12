@@ -1,38 +1,41 @@
-import { app } from '../../lib/configuration.js';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from '../../lib/firebase.js';
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 import { redirectFeed } from '../../lib/redirect.js';
-import { logInUser } from '../../lib/auth.js';
+import { logInUser, signInWithGoogle } from '../../lib/auth.js';
 
 function createTemplate() {
   return `
   <div class='container' id='template-form'>
-  <form class='form' id='form'>
-    <img src='img/logo.png' class='logo' alt='Logo Wanderlust'>
-    <p class='register'>
-      <label for='email-login' >Email:</label>
-      <input id='email-login' class='emailSenha' name='email-login' required='required' type='text' placeholder='Digite seu email'/>
+    <form class='form' id='form'>
+      <img class='logo' alt='Logo Wanderlust'>
+      <p class='register'>
+        <label for='email-login' >Email:</label>
+        <input id='email-login' class='emailSenha' name='email-login' required='required' type='text' placeholder='Digite seu email'/>
+      </p>
+      <p class='register'>
+        <label for='senha-login'>Senha:</label>
+        <input id='senha-login' class='emailSenha' name='senha-login' required='required' type='password' placeholder='Digite sua senha'/>
+      </p>
+      <p class='register'>
+        <a href='#recuperarsenha' class='esqueciSenhaCadastre'>Esqueci minha senha!</a>
+      </p>
+    </form>
+    <p class='form'>
+      <button class='btnEntrar' id='btn-Login-User'>Entrar</button>
     </p>
-    <p class='register'>
-      <label for='senha-login'>Senha:</label>
-      <input id='senha-login' class='emailSenha' name='senha-login' required='required' type='password' placeholder='Digite sua senha'/>
+    <p class='form'>
+      <a href='#paracadastro' class='cadastre'>Cadastre-se</a>
     </p>
-    <p class='register'>
-      <a href='#recuperarsenha' class='esqueciSenhaCadastre'>Esqueci minha senha!</a>
+    <p class='form'>
+      Entre também com:
     </p>
-  </form>
-  <p class='register'>
-    <button class='btnEntrar' id='btn-Login-User'>Entrar</button>
-  </p>
-  <p class='register'>
-    <a href='#paracadastro' class='cadastre'>Cadastre-se</a>
-  </p>
-  <p class='textGoogle'>Entre também com:</p>
-  <p class='textGoogle'>
-    <button class='loginGoogle' id='btn-google' class='imgGoogle'> Google</button>
-  </p>
-  <p>
-  <a href='#sobre' class='sobrepage'>Sobre</a>
-  </p>`;
+    <p class='form'>
+      <button class='loginGoogle' id='btn-google' class='imgGoogle'> Google</button>
+    </p>
+    <p class='form'>
+      <a href='#sobre' class='sobrepage'>Sobre</a>
+    </p>
+  </div> `;
 }
 
 export default () => {
@@ -51,25 +54,9 @@ export default () => {
         redirectFeed();
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        return errorMessage;
+        alert('Algo deu errado', error);
       });
   });
-  btnGoogle.addEventListener('click', (e) => {
-    e.preventDefault(app);
-    const authgoogle = getAuth();
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(authgoogle, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        redirectFeed();
-      })
-      .catch((error) => {
-        alert('Ops confira seus dados!');
-        console.error.bind(error);
-      });
-  });
+  btnGoogle.addEventListener('click', signInWithGoogle);
   return container;
 };

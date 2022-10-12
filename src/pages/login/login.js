@@ -44,8 +44,8 @@ export default () => {
   const buttonGoogle = container.querySelector('.btn-google');
   const errorMessage = container.querySelector('#error-code');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
     loginUser(inputEmail.value, inputPassword.value)
       .then(() => {
         window.location.hash = '';

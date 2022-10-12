@@ -12,8 +12,7 @@ export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
 
 export async function newUser(email, password) {
-  const newUserLocal = await createUserWithEmailAndPassword(auth, email, password);
-  return newUserLocal;
+  return createUserWithEmailAndPassword(auth, email, password);
 }
 
 export function loginUser(email, password) {

@@ -3,6 +3,8 @@
  */
 import signup from '../../src/pages/signup/signup.js';
 
+jest.mock('../../src/firebase/exports.js');
+
 describe('signup', () => {
   it('should be a function', () => {
     expect(typeof signup).toBe('function');

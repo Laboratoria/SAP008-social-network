@@ -72,8 +72,8 @@ export default () => {
 
   </main>
           
-  <footer>
-    <img src="" alt="" >
+  <footer class="feed-footer">
+    <img class="homepage-icon" src="img/icons/home-icon.svg" alt="homepage icon">
   </footer>
   `;
 
@@ -106,17 +106,23 @@ export default () => {
     const postsTemplate = postArr.map((post) => `
         <div class="post">
           <div class="header-post">
-            <img class="user-photo-post" src="" alt="">
-            <h2 class="user-name-post">${post.name}</h2>
-            ${auth.currentUser.uid === post.author ? `<button data-id-post-edit="${post.id}" class="edit-post-btn" id="edit-post-btn"><img src="img/icons/pencil-icon.svg" alt="edit button" class="edit-post-icon"></button>
-            <button data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.svg" alt="delete button"></button>` : ''}
+            <div class="profile-info-post">
+              <img class="user-photo-post" src="img/icons/frog.png" alt="frog icon">
+              <h2 class="user-name-post">${post.name}</h2>
+            </div>
+            <div class="post-options">
+              ${auth.currentUser.uid === post.author ? `<button data-id-post-edit="${post.id}" class="edit-post-btn" id="edit-post-btn"><img src="img/icons/pencil-icon.svg" alt="edit button" class="edit-post-icon"></button>
+              <button data-id-post-trashcan="${post.id}" class="delete-post-btn"><img class="delete-post-icon" src="img/icons/trashcan-icon.svg" alt="delete button"></button>` : ''}
+            </div>
           </div>
-          <textarea disabled data-post="${post.id}" class="text-post" cols="30" rows="10" style="resize:none" maxlength="200">${post.text}</textarea>
+          <textarea disabled data-post="${post.id}" class="text-post" style="resize:none" maxlength="200">${post.text}</textarea>
           <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
           <div class="footer-post">
-            <p class="date-post"></p>
-            <button class="like-btn-post" data-id-post-like="${post.id}"><img ${post.like.includes(auth.currentUser.uid) ? 'src="img/icons/redHeart.svg"' : 'src="img/icons/blackHeart.svg"'} class="like-post-icon" alt="like button"></button>
-            <p class="all-likes-post">${post.like.length}</p>
+            <p class="date-post">${post.data}</p>
+            <div class="like-container">
+              <button class="like-btn-post" data-id-post-like="${post.id}"><img ${post.like.includes(auth.currentUser.uid) ? 'src="img/icons/redHeart.svg"' : 'src="img/icons/blackHeart.svg"'} class="like-post-icon" alt="like button"></button>
+              <p class="all-likes-post">${post.like.length}</p>
+            </div>
           </div>
         </div>
     `).join('');

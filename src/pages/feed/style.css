@@ -68,7 +68,12 @@
 }
 
 #create-post {
-    margin-bottom: 2rem;
+    margin: 1rem 0;
+}
+
+.user-photo-post{
+    width: 2rem;
+    height: 2rem;
 }
 
 .post-textarea {
@@ -110,8 +115,87 @@
 .post {
     background-color: #FFFFFF;
     width: 75vw;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
     margin-bottom: 2rem;
+}
+
+.header-post, .profile-info-post, .post-options {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info-post, .post-options {
+    gap: 0.5rem;
+}
+
+.user-name-post {
+    font-size: 1rem;
+    color: #837E7E;
+    font-weight: 400;
+}
+
+.header-post {
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.text-post {
+    border: none;
+    background: transparent;
+    width: 100%;
+    max-height: 100%;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.edit-post-btn, .delete-post-btn, .like-btn-post {
+    background: none;
+    border: none;
+}
+
+.like-post-icon, .edit-post-icon, .delete-post-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-post {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-post {
+    font-size: 0.7rem;
+    color: #837E7E;
+}
+
+.like-container {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.confirm-edit-btn {
+    border: none;
+    background-color: #7B2292;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.feed-footer {
+    background-color: #FFFFFF;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.homepage-icon {
+    width: 2rem;
+    height: 2rem;
 }
 
 #fade, #modal-delete {
@@ -151,9 +235,4 @@
 
 #modal-delete.none{
     top: 0;
-}
-
-.like-post-icon, .edit-post-icon, .delete-post-icon {
-    width: 28px;
-    height: 28px;
 }

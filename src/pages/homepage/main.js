@@ -21,8 +21,8 @@ export default () => {
          
 
             <nav class="button-initial-page">
-                <a href="/#login"><button id="btn-login" class="btn-initial-page">ENTRAR</button></a>
-                <a href="/#register"><button id="btn-register" class="btn-initial-page">CADASTRAR</button></a>
+                <a href="#login"><button id="btn-login" class="btn-initial-page">ENTRAR</button></a>
+                <a href="#register"><button id="btn-register" class="btn-initial-page">CADASTRAR</button></a>
             </nav>
         </main>
         <footer class="footer footer-tablet">

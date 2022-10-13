@@ -12,22 +12,22 @@ import { auth, app } from '../firebase-services/firebase-config.js';
 
   export function createNewUser(name, email, password) {
     return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-      return user;
-    })
-    .then(() => {
-      updateProfile(auth.currentUser, {
-        displayName: name,
-      });
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+    // .then((userCredential) => {
+    //   // Signed in
+    //   const user = userCredential.user;
+    //   // ...
+    //   return user;
+    // })
+    // .then(() => {
+    //   updateProfile(auth.currentUser, {
+    //     displayName: name,
+    //   });
+    // })
+    // .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
     
-    })
+    // })
   };
   
   export function loginEmailPassword(email , password) {

@@ -10,7 +10,7 @@ const createPost = async (texto) => {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
             texto,
-            date: Date.now(),
+            //date: Date.now(),
         });
         console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -25,6 +25,7 @@ const getPost = async () => {
         querySnapshot.forEach((post) => {
             postArray.push({ ...post.data(), id: post.id });
         });
+        console.log(postArray)
         return postArray;
     } catch (error) {
         return error;

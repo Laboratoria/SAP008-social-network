@@ -10,7 +10,6 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from './firebase.js';
-import { redirectFeed } from './redirect.js';
 
 const auth = getAuth(app);
 
@@ -25,9 +24,7 @@ onAuthStateChanged(auth, (user) => {
 });
 
 const provider = new GoogleAuthProvider();
-const signInWithGoogle = () => {
-  return signInWithPopup(auth, provider);
-};
+const signInWithGoogle = () => signInWithPopup(auth, provider);
 
 const logOutUser = () => {
   signOut(auth)
@@ -40,4 +37,8 @@ const logOutUser = () => {
     });
 };
 
-export { logInUser, signInWithGoogle, logOutUser };
+export {
+  logInUser,
+  signInWithGoogle,
+  logOutUser,
+};

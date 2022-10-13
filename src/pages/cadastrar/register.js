@@ -1,6 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword } from '../../lib/firebase.js';
-import { app } from '../../lib/configuration.js';
+/* eslint-disable no-alert */
 import { redirectFeed } from '../../lib/redirect.js';
+import { registerCreate } from '../../lib/auth.js';
 
 function templateScreen() {
   return `
@@ -30,20 +30,6 @@ function templateScreen() {
 </form>`;
 }
 
-function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const auth = getAuth(app);
-    createUserWithEmailAndPassword(auth, inputEmail.value, inputSenha.value)
-      .then(() => {
-        redirectFeed();
-      })
-      .catch((error) => {
-        alert('Ops confira seus dados!', error);
-      });
-  });
-}
-
 export default () => {
   const containing = document.createElement('div');
   const contentScreen = templateScreen();
@@ -51,8 +37,19 @@ export default () => {
   const inputName = containing.querySelector('#name-cadastro');
   const inputEmail = containing.querySelector('#email-cadastro');
   const inputSenha = containing.querySelector('#senha-cadastro');
-  const inputCadastro = containing.querySelector('.form');
-  configuraSubmitDoFormRegistrar(inputCadastro, inputName, inputEmail, inputSenha);
+  const inputCadastro = containing.querySelector('#btn-cadastro');
+  inputCadastro.addEventListener('click', (e) => {
+    e.preventDefault();
+    registerCreate(inputName.value, inputEmail.value, inputSenha.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        redirectFeed();
+        return user;
+      })
+      .catch((error) => {
+        alert('Ops confira seus dados!', error);
+      });
+  })
 
   return containing;
 };

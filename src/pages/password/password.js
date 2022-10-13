@@ -12,7 +12,7 @@ export default () => {
           <input class="ResetPassword" type="button" value="Continuar">
         </p>
       </form>
-    </section>`
+    </section>`;
   sectionPassword.innerHTML = content;
   return sectionPassword;
 };

@@ -13,7 +13,6 @@
     "htmlhint": "htmlhint dist/*.html ",
     "eslint": "eslint --ext .js src/ test/",
     "stylelint": "stylelint --aei src/**/*.css",
-    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
     "start": "serve -s src/"
   },
@@ -36,6 +35,6 @@
     "node": ">=16.x"
   },
   "dependencies": {
-    "firebase": "^9.11.0"
+    "firebase": "^9.12.1"
   }
 }

@@ -129,7 +129,7 @@ export default () => {
 
     feedContainer.querySelector('#feed-post').innerHTML = postsTemplate;
 
-    const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
+    const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-btn'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
 

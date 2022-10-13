@@ -1,4 +1,3 @@
-
 import { newUser, create } from '../../lib/auth.js';
 export default () => {
     const container = document.createElement('div');
@@ -48,29 +47,34 @@ export default () => {
 
 
     // create dspara mesmo com e-mail inválido. #home aparece mesmo sem autenticar
-    formRegister.addEventListener('submit', (e) => {
+    formRegister.addEventListener('submit', async (e) => {
         e.preventDefault()
 
         if (signInPassword.value !== signInConfPassword.value) {
             return pMsgPswdOk.innerHTML = 'As senhas devem ser iguais'
 
-        } else if (signInName.value === "" || signInEmail.value === "" || signInPassword.value === "" || signInConfPassword.value === '' || checkBox.checked === false) {
+        } 
+        if (signInName.value === "" || signInEmail.value === "" || signInPassword.value === "" || signInConfPassword.value === '' || checkBox.checked === false) {
             return alert('Todos os campos devem ser preenchidos')
         }
-        return newUser(signInEmail.value, signInPassword.value).then(() => {
+        return await newUser(signInEmail.value, signInPassword.value).then(() => {
+            create(signInName.value, signInEmail.value, signInPassword.value)
             window.location.hash = '#home';
         })
             .catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
                 if (errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
-                    return pMsgEmail.innerHTML = 'E-mail já cadastrado'
+                    pMsgEmail.innerHTML = 'E-mail já cadastrado'
+                    return
                 }
-                if (errorMessage === 'FirebaseError: Firebase: Error (auth/invalid-email).') {
-                    return pMsgEmail.innerHTML = 'Endereço de e-mail inválido'
+                if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
+                    pMsgEmail.innerHTML = 'Endereço de e-mail inválido'
+                    return
                 }
                 if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
-                    return pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos'
+                    pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos'
+                    return
                 }
             });
     })

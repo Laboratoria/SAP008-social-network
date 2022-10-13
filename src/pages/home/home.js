@@ -1,4 +1,4 @@
-import { logoutUser } from "../../lib/auth.js";
+import { logoutUser, auth } from "../../lib/auth.js";
 
 export default () => {
   //fazer if usuario não estiver logado "currentUser" redirecionar tela login
@@ -11,7 +11,7 @@ export default () => {
     </nav>
     <hr class="colorful-line"/>
     <div>
-      <p id="welcome-user">Olá,Isabela! Esta é a Página Inicial!</p>
+      <p id="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial!</p>
     </div>
     <hr class="colorful-line"/>
     <section class="post-container">

@@ -5,16 +5,16 @@ import {
 } from './firebase.js';
 
 
-const auth = getAuth(app)
-const provider = new GoogleAuthProvider(app);
+export const auth = getAuth(app)
 export const dataBase = getFirestore(app);
+const provider = new GoogleAuthProvider(app);
 
 export const newUser = async (email, password) => { // função criar usuário
   try {
     await createUserWithEmailAndPassword(auth, email, password)
   }
   catch (error) {
-    console.log(error)
+    throw error 
   }
 };
 
@@ -33,18 +33,18 @@ export const googleAccess = async () => { // função acessar com google
     });
 };
 
-export const create = async (displayName, createEmail, createPassword) => { // função criar novo dado (nome)
+export const create = async (userName, createEmail, createPassword) => { // função criar novo dado (nome)
 
   try {
     const docRef = await addDoc(collection(dataBase, "Users"), {
-      name: displayName,
+      displayName: userName,
       email: createEmail,
       password: createPassword
 
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (error) {
-      console.log(error);
+      throw error;
   }
 };
 

@@ -11,22 +11,22 @@ export default () => {
       </div>
 
       <div class="container-register">
-          <img class="logo-brown-register" src="./images/logo_01_brown_A6634B.png" alt="logo do título"/>
-          <h1 class = "subtitle-register">MOMENTOS MUSICAIS INESQUECÍVEIS</h1>                     
-          <form>
-              <input class ="box-name-register" type="name" id="name" placeholder="Nome completo"/>
-              <span class="material-icons">person</span>
-              <input class ="box-email-register" type="e-mail" id="e-mail" placeholder="E-mail"/>
-              <span class="material-icons">email</span>
-              <input class ="box-password-register" id="box-new-password" type="password" placeholder="Digite sua senha"/> 
-              <span class="material-icons">key</span>
-              <input class ="box-password-repeat" id="box-password-repeat" type="password" placeholder="Repetir senha"/> 
-              <span class="material-icons">key</span>
-              <button class ="btn-register" type="button" id="btn-register">Registar</button>
-              <button class ="btn-back" type="button" id="btn-back">Voltar</button>
-          </form>
+        <img class="logo-brown-register" src="./images/logo_01_brown_A6634B.png" alt="logo do título"/>
+        <h1 class = "subtitle-register">MOMENTOS MUSICAIS INESQUECÍVEIS</h1>                     
+        <form>
+          <input class ="box-name-register" type="name" id="name" placeholder="Nome completo"/>
+          <span class="material-icons">person</span>
+          <input class ="box-email-register" type="e-mail" id="e-mail" placeholder="E-mail"/>
+          <span class="material-icons">email</span>
+          <input class ="box-password-register" id="box-new-password" type="password" placeholder="Digite sua senha"/> 
+          <span class="material-icons">key</span>
+          <input class ="box-password-repeat" id="box-password-repeat" type="password" placeholder="Repetir senha"/> 
+          <span class="material-icons">key</span>
+          <button class ="btn-register" type="button" id="btn-register">Registar</button>
+          <button class ="btn-back" type="button" id="btn-back">Voltar</button>
+        </form>
 
-          <a href="#login" class="user">Já possui uma conta? Iniciar sessão</a>
+        <a href="#login" class="user">Já possui uma conta? Iniciar sessão</a>
               
       </div>    
     </section> 

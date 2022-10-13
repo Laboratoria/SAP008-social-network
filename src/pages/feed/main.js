@@ -40,21 +40,23 @@ export default () => {
         <img src="" alt="" class="" class="user-profile-picture-post">
       </div>
       
-      <textarea class="post-textarea" placeholder="Escreva algo..." name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
+      <form id="create-post-form">
+        <textarea class="post-textarea" placeholder="Escreva algo..." name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
 
-      <div class="create-post-box-buttons">
-        <select id="select-tags">
-          <option class="option-tag" value="allposts" selected>Sem categoria</option>
-          <option value="musica">Música</option>
-          <option value="tv">TV</option>
-          <option value="eventos">Eventos</option>
-          <option value="pets">Pets</option>
-          <option value="hobbies">Hobbies</option>
-          <option value="politica">Política</option>
-        </select>
+        <div class="create-post-box-buttons">
+          <select id="select-tags">
+            <option class="option-tag" value="allposts" selected>Sem categoria</option>
+            <option value="musica">Música</option>
+            <option value="tv">TV</option>
+            <option value="eventos">Eventos</option>
+            <option value="pets">Pets</option>
+            <option value="hobbies">Hobbies</option>
+            <option value="politica">Política</option>
+          </select>
 
-        <button id="publish-btn">Publicar</button>
-      </div>
+          <button type="submit" id="publish-btn">Publicar</button>
+        </div>
+      </form>
 
     </section>
           
@@ -77,7 +79,7 @@ export default () => {
 
   feedContainer.innerHTML = template;
 
-  const publishBtn = feedContainer.querySelector('#publish-btn');
+  const postForm = feedContainer.querySelector('#create-post-form');
   const textPost = feedContainer.querySelector('#text-post');
   const logoutBtn = feedContainer.querySelector('#logout-btn');
   const fade = feedContainer.querySelector('#fade');
@@ -121,7 +123,7 @@ export default () => {
 
     feedContainer.querySelector('#feed-post').innerHTML = postsTemplate;
 
-    const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-icon'));
+    const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-btn'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
 
@@ -167,7 +169,6 @@ export default () => {
 
     confirmDeletePost.addEventListener('click', (el) => {
       const idPostDelete = el.currentTarget.dataset.idpost;
-      console.log(idPostDelete);
       deletePost(idPostDelete);
       toggle();
       printPosts('allposts');
@@ -189,9 +190,10 @@ export default () => {
     });
   };
 
-  publishBtn.addEventListener('click', () => {
+  postForm.addEventListener('submit', () => {
     createPost(textPost.value, selectTags.value);
     printPosts('allposts');
+    postForm.reset();
   });
 
   logoutBtn.addEventListener('click', () => {

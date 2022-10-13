@@ -36,13 +36,13 @@ export default () => {
         <p id="form-validation-messages" class="form-warning-messages hide"></p>
         <p id="firebase-warning-messages" class="form-warning-messages hide"></p>
 
-        <a href="/#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
+        <a href="#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
   
-        <a href="/#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
+        <a href="#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
   
         <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
   
-        <a href="/#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
+        <a href="#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
       </form>
 
     </main>

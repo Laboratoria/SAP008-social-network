@@ -1,10 +1,10 @@
 import {
-  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword, deletePost, createPost,
+  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword, deletePost, createPost, updatePost,
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc,
+  getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -95,6 +95,24 @@ describe('createPost', () => {
       tag: post.tag,
       text: post.text,
       like: [],
+    });
+  });
+});
+
+describe('updatePost', () => {
+  it('a função deve atualizar um post', async () => {
+    const post = {
+      idpost: '455455',
+      text: 'eai',
+    };
+
+    const newText = 'novo texto';
+
+    await updatePost(post.idpost, newText);
+
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      text: newText,
     });
   });
 });

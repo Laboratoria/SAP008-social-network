@@ -1,11 +1,19 @@
-// eslint-disable-next-line import/no-unresolved
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, sendPasswordResetEmail, updateProfile} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";//eslint-disable-line
-// eslint-disable-next-line import/no-unresolved
 import {
-  getFirestore, collection, addDoc, getDocs,
-// eslint-disable-next-line import/no-unresolved
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+  initializeApp,
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  updateProfile,
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+} from './export.js';
+
 import firebaseConfig from './firebase-config.js';
 
 const app = initializeApp(firebaseConfig);

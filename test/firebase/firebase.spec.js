@@ -1,9 +1,12 @@
 import {
-  createUserWithEmailAndPassword, signInWithRedirect, signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signInWithRedirect,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from '../../src/firebase/export.js';
 
 import {
-  registerUser, loginGoogle, userLogin,
+  registerUser, loginGoogle, userLogin, checkLoggedUser,
 } from '../../src/firebase/firebase.js';
 
 jest.mock('../../src/firebase/export.js');
@@ -34,5 +37,12 @@ describe('userLogin', () => {
     });
     userLogin('teste@teste.com', 'teste123');
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('checkLoggedUser', () => {
+  it('deve verificar se o usuário está autenticado', () => {
+    checkLoggedUser();
+    expect(onAuthStateChanged).toHaveBeenCalledTimes(1);
   });
 });

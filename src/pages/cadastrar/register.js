@@ -30,7 +30,7 @@ function templateScreen() {
 </form>`;
 }
 
-function configuraSubmitDoFormRegistrar( form, inputName, inputEmail, inputSenha) {
+function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const auth = getAuth(app);
@@ -39,7 +39,7 @@ function configuraSubmitDoFormRegistrar( form, inputName, inputEmail, inputSenha
         redirectFeed();
       })
       .catch((error) => {
-        alert('Ops confira seus dados !');
+        alert('Ops confira seus dados!', error);
       });
   });
 }

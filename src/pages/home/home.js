@@ -57,6 +57,14 @@ export default () => {
         alert('Algo deu errado', error);
       });
   });
-  btnGoogle.addEventListener('click', signInWithGoogle);
+  btnGoogle.addEventListener('click', () => {
+    signInWithGoogle()
+      .then(() => {
+        redirectFeed();
+      })
+      .catch((error) => {
+        alert('Algo deu errado', error);
+      });
+  });
   return container;
 };

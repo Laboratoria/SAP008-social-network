@@ -6,7 +6,7 @@ export default () => {
   const resetContainer = document.createElement('div');
   const template = `
           <header class="header-reset display-flex">
-              <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
+              <a href="#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
               <h1><img class="img-logo-login" src="img/Rebu.png" alt="Rebu Logo"></h1>
           </header>
           <div class="gif-side-desktop" id="desktop-page">
@@ -24,8 +24,8 @@ export default () => {
               preencha o campo abaixo com seu e-mail cadastrado.</p>
               <input type="email" placeholder="E-MAIL" id="email-input-reset" class="input-style-reset">
               <nav class="reset-buttons">
-                <a href="/#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">RETORNAR</button></a>
-                <a href="/#homepage"><button type="button" id="btn-reset-page" class="btn-reset">REDEFINIR</button></a>
+                <a href="#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">RETORNAR</button></a>
+                <a href="#homepage"><button type="button" id="btn-reset-page" class="btn-reset">REDEFINIR</button></a>
               </nav>
             </form>
                   

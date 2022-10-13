@@ -1,9 +1,8 @@
-import {registerUser} from '../firebase/firebase.js';
-import {redirect} from '../redirect.js';
+import { registerUser } from '../firebase/firebase.js';
+import { redirect } from '../redirect.js';
 
 export default () => {
   const container = document.createElement('div');
-  container.classList.add('wrapper-register');
   const template = `  
     <section id="register"> 
 
@@ -31,7 +30,7 @@ export default () => {
               
       </div>    
     </section> 
-  `;
+    `;
 
   container.innerHTML = template;
 

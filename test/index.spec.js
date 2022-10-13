@@ -1,8 +1,15 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+// eslint-disable-next-line import/no-unresolved
+import { createUserWithEmailAndPassword } from '../src/lib/__mocks__/firebase.js';
+import { registerUser } from '../src/firebase/firebase.js';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+jest.mock('../src/lib/firebase.js');
+
+describe('registerUser', () => {
+  it('deve criar um usuário', () => {
+    createUserWithEmailAndPassword.mockResolvedValue({
+      user: {},
+    });
+    registerUser('teste@teste.com', 'teste123');
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });

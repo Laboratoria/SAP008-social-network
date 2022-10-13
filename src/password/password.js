@@ -1,9 +1,9 @@
-import{resetPassword} from "../firebase/firebase.js"
-import  {redirect} from "../redirect.js"  
+import { resetPassword } from '../firebase/firebase.js';
+import { redirect } from '../redirect.js';
 
 export default () => {
-const container = document.createElement('div');
-const template = `  
+  const container = document.createElement('div');
+  const template = `  
     <div id="container-password">
     <img class="logo-img" src="./images/logo_02_blue_081E26.png"alt="logo do título">
         <h1 id="title">Insira o e-mail que você usa para acessar o aplicativo.</h1>
@@ -18,28 +18,25 @@ const template = `
     </div>     
     `;
 
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-
-container.querySelector("#btn-enter").addEventListener("click", e => {
+  container.querySelector('#btn-enter').addEventListener('click', (e) => {
     e.preventDefault();
-    const newPassword = container.querySelector("#email").value;
+    const newPassword = container.querySelector('#email').value;
     resetPassword(newPassword)
-    .then(() => {
-        redirect ("")
-            })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      .then(() => {
+        redirect('');
+      })
+      .catch(() => {
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
       });
-})
+  });
 
-
-container.querySelector("#btn-back").addEventListener("click", e => {
+  container.querySelector('#btn-back').addEventListener('click', (e) => {
     e.preventDefault();
-    redirect("");
-})
+    redirect('');
+  });
 
-
-    return container;
-}
+  return container;
+};

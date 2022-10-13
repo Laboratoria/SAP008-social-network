@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap'); */
 
 header{
     display: flex;
@@ -73,7 +73,7 @@ h1#aboutdevs{
     height: 34px;
     left: 21px;
     top: 99px;
-    font-family: 'Carrois Gothic SC';
+   /* font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
@@ -88,7 +88,7 @@ h1#aboutdevs{
     height: 21px;
     left: 98px;
     top: 174px;
-    font-family: 'Carrois Gothic SC';
+    /*font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -103,7 +103,7 @@ h1#aboutdevs{
     height: 52px;
     left: 98px;
     top: 207px;
-    font-family: 'Carrois Gothic SC';
+    /*font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -118,7 +118,7 @@ h1#aboutdevs{
     height: 23px;
     left: 106px;
     top: 328px;
-    font-family: 'Carrois Gothic SC';
+    /*font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -133,7 +133,7 @@ h1#aboutdevs{
     height: 44px;
     left: 105px;
     top: 361px;
-    font-family: 'Carrois Gothic SC';
+    /*font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -148,7 +148,7 @@ h1#aboutdevs{
     height: 21px;
     left: 106px;
     top: 485px;
-    font-family: 'Carrois Gothic SC';
+    /*font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -163,7 +163,7 @@ h1#aboutdevs{
     height: 52px;
     left: 106px;
     top: 518px;
-    font-family: 'Carrois Gothic SC';
+    /*font-family: 'Carrois Gothic SC';*/
     font-style: normal;
     font-weight: 400;
     font-size: 12px;

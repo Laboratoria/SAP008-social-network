@@ -12,7 +12,7 @@ export default () => {
   const registerContainer = document.createElement('div');
   const template = `
         <header id="return-btn" class="register-login-header display-flex">
-          <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.svg" alt="back arrow"></a>
+          <a href="#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.svg" alt="back arrow"></a>
           <img class="img-logo-register" src="img/Rebu.svg" alt="rebu logo">
         </header>
 
@@ -49,7 +49,7 @@ export default () => {
               <input type="submit" class="btn-register" value="CADASTRAR">
               <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
               
-              <a href="/#login" class="link-text-login">JÁ POSSUI UMA CONTA? CONECTE-SE!</a>
+              <a href="#login" class="link-text-login">JÁ POSSUI UMA CONTA? CONECTE-SE!</a>
               
           </form>
 

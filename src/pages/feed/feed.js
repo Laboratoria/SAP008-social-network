@@ -2,9 +2,9 @@ export default () => {
   const containerFeed = document.createElement("div");
 
   const feed = `
-  <div>
-    teste
-  </div> 
+    <div>
+      teste
+    </div> 
   `;
 
   containerFeed.innerHTML = feed;

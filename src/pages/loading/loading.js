@@ -2,7 +2,7 @@ export default () => {
   const containerLoading = document.createElement("div");
 
   const loading = `
-    <div id="allReady"><h1>tudo pronto...</h1></div>
+    <div id="allReady"><h1 class="title-loading">tudo pronto...</h1></div>
     <div id="loading"></div>
   `;
 

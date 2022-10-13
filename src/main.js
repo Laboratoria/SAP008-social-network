@@ -3,6 +3,8 @@
 import { openMenu, closeMenu } from './lib/index.js';
 import feed from './pages/feed/feed.js';
 import publish from './pages/publish/publish.js';
+import guidelines from './pages/guidelines/guidelines.js';
+import terms from './pages/terms/terms.js';
 
 const main = document.querySelector('#root');
 
@@ -17,8 +19,17 @@ const init = () => {
       main.appendChild(publish());
       break;
     case '#profile':
-      main.appendChild(profile());
+      main.appendChild(feed());
       break;
+    case '#guidelines':
+      main.appendChild(guidelines());
+      break;
+    case '#termsOfUse':
+      main.appendChild(terms());
+      break;
+      case '#logout':
+        main.appendChild(feed());
+        break;
     default:
       main.appendChild(feed());
   }
@@ -35,7 +46,7 @@ window.addEventListener('hashchange', () => {
 const menu = document.querySelector('#menu');
 
 menu.addEventListener('click', () => {
-  const contentMenu = document.querySelector('#internalContentMenu');
+  const contentMenu = document.querySelector('#bodyMenu');
 
   if (contentMenu.style.display === 'block') {
     closeMenu(contentMenu);

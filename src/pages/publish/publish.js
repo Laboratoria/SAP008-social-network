@@ -4,25 +4,21 @@ export default () => {
   const containerPost = document.createElement('div');
 
   const formPost = `
-  <div class="main">
-    <div class="new-post">
-      <form class="form-post">
+    <div class="body-post">
+      <form class="main-post">
         <textarea id="textAreaPost" name="textarea" placeholder="O que deseja compartilhar?"></textarea>
-          <div class="icons-and-button">
-              <select>
-                <option value="typeTitle" disabled selected style="display: none"># Selecionar assunto</option>
-                <option value="gravidez">Gravidez</option>
-                <option value="puerpério">Puerpério</option>
-                <option value="vinculoPaterno">Vínculo Paterno</option>
-              </select>
-            <div class="btn-cancel-publish">
-              <button class="btn-form-cancel">Cancelar</button>
-              <button id="submitPublish" class="btn-form-publish">Publicar</button>
-            </div>
+          <select>
+            <option value="typeTitle" disabled selected style="display: none">Selecionar assunto</option>
+            <option value="gravidez">Gravidez</option>
+            <option value="puerpério">Puerpério</option>
+            <option value="vinculoPaterno">Vínculo Paterno</option>
+          </select>
+          <div class="btns-form">
+            <button class="btn-form-cancel">Cancelar</button>
+            <button id="submitPublish" class="btn-form-publish">Publicar</button>
           </div>
       </form>
-    </div>
-  </div> 
+    </div> 
   `;
 
   containerPost.innerHTML = formPost;

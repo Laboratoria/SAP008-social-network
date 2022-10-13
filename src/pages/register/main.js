@@ -12,7 +12,7 @@ export default () => {
   const registerContainer = document.createElement('div');
   const template = `
         <header id="return-btn" class="register-login-header display-flex">
-          <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.svg" alt="back arrow"></a>
+          <a href="#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.svg" alt="back arrow"></a>
           <img class="img-logo-register" src="img/Rebu.svg" alt="rebu logo">
         </header>
 

@@ -3,14 +3,115 @@
     padding: 0;
 }
 
-#logout-btn {
-    background-color: black;
+.feed-header {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-images {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
+
+.rebu-logo-feed {
+    width: 5rem;
+    height: 3rem;
+}
+
+.tag-filter {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    gap: 2.5em;
+    max-height: 3rem;
+    scrollbar-width: none;
+    border-bottom: solid 1px #989898;
+    padding: 0.5rem;
+}
+
+.tag-filter::-webkit-scrollbar { 
+    display: none;
+}
+
+
+.tag-button {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #7B2292;
     cursor: pointer;
+}
+
+.tag-button:focus {
+    border-bottom: solid 1.5px #7B2292;
+}
+
+#logout-btn {
+    background: transparent;
+    cursor: pointer;
+    border: none;
 }
 
 .logout-icon {
     width: 1.5rem;
     height: 1.5rem;
+}
+
+.main-container {
+    background-color: #F5F7F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#create-post {
+    margin-bottom: 2rem;
+}
+
+.post-textarea {
+    width: 75vw;
+    height:5rem;
+    border: none;
+    border-bottom: solid 1px #989898;
+    outline: none;
+    padding: 1rem;
+}
+
+.post-textarea::placeholder {
+    color: #5F5656;
+}
+
+.create-post-box-buttons {
+    background-color: #FFFFFF;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+#publish-btn {
+    background-color: #7B2292;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+#select-tags {
+    background-color: #D9D9D9;
+    color: #5F5656;
+    border: none;
+}
+
+.post {
+    background-color: #FFFFFF;
+    width: 75vw;
+    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
 #fade, #modal-delete {

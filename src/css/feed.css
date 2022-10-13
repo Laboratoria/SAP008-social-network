@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.form-feed {
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #fff;
+  width: 50rem;
+  height: 18rem;
+  border-radius: 2rem;
+}
+
+.question-feed {
+  width: 100%;
+  height: 80%;
+  background-color: #EDE2E2;
+  border: none;
+  border-radius: 2rem;
+}
+
+.author, .book {
+  background-color: #F2CC84;
+  width: 40%;
+  height: 10%;
+  border-radius: 0.5rem;
+  border: none;
+  margin-top: 1rem;
+} 
+
+.inputs-feed {
+  margin-top: 2rem;
+  background-color: #EDE2E2;
+  width: 30rem;
+  height: 15rem;
+  margin-top: 2rem;
+  margin-left: 16rem;
+  border-radius: 2rem;
+}
+
+.input-space {
+  margin: auto;
+}
+
+.logout{
+    display: flex;
+    flex-direction: row;
+    margin: 0.6rem;
+}
+
+.btnFeed {
+  border-radius: 2rem;
+  background-color: #c69b73;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  padding: 0rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btnFeed:hover {
+    background-color: #ffcc98;
+}
+
+.button-logout {
+  display: flex;
+  align-content: center;
+  padding: 0 2rem 0;
+  margin-top: 0.5rem;
+}
+
+.button-publish {
+  margin-left: 42rem;
+}

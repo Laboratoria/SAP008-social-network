@@ -43,7 +43,7 @@ export default () => {
     e.preventDefault();
     newUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        window.location.hash = '#login';
+        window.location.hash = '#timeline';
       })
       .catch((error) => {
         errorMessage.innerHTML = getErrorMessage(error);
@@ -52,7 +52,7 @@ export default () => {
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
     await loginGoogle();
-    window.location.hash = '#login';
+    window.location.hash = '#timeline';
   });
 
   return container;

@@ -1,4 +1,4 @@
-import { createPost, printPost} from './../../lib/firestore.js';
+import { createPost, getPost} from './../../lib/firestore.js';
 import { logout } from '../../lib/auth.js';
 
 export default () => {
@@ -31,7 +31,7 @@ export default () => {
   container.innerHTML = template;
   
   const showPost = async () => {
-    const arrayPost = await printPost();
+    const arrayPost = await getPost();
     const postTemplate = arrayPost.map((post) => `
       <div class="post">
         <p class="postTxt name" id="user-name">${post.name}</p>
@@ -39,7 +39,7 @@ export default () => {
       </div>
 
     `).join('');
-    container.querySelector("#postContainer").innerHTML += postTemplate;
+    container.querySelector("#postContainer").innerHTML = postTemplate;
   }
   showPost();
 
@@ -52,7 +52,7 @@ export default () => {
     e.preventDefault();
     const textPost = txtInputPost.value;
     createPost(textPost);    
-    showPost(createPost);
+    showPost();
     formFeed.reset();
   });
 

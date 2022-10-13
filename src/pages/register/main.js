@@ -12,15 +12,15 @@ export default () => {
   const registerContainer = document.createElement('div');
   const template = `
         <header id="return-btn" class="register-login-header display-flex">
-          <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
-          <img class="img-logo-register" src="img/Rebu.png" alt="rebu logo">
+          <a href="/#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.svg" alt="back arrow"></a>
+          <img class="img-logo-register" src="img/Rebu.svg" alt="rebu logo">
         </header>
 
         <div class="gif-side-desktop" id="desktop-page">
           <video autoplay loop class="bg-gif-desktop">
             <source src="img/gifDesktop.mp4" type="video/mp4">
           </video>
-          <img src="img/Rebu.png" alt="Rebu Logo" class="rebu-logo-desktop">
+          <img src="img/Rebu.svg" alt="Rebu Logo" class="rebu-logo-desktop">
         </div>
 
         <main class="register-content display-flex">

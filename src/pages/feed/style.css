@@ -51,3 +51,8 @@
 #modal-delete.none{
     top: 0;
 }
+
+.like-post-icon, .edit-post-icon, .delete-post-icon {
+    width: 28px;
+    height: 28px;
+}

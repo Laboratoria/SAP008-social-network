@@ -8,7 +8,7 @@ body {
 
 .form-warning-messages {
     font-size: 0.9rem;
-    color: #ca250f;
+    color: #7B2292;
     margin-top: -0.2rem;
     margin-bottom: -0.8rem;
 }
@@ -17,7 +17,7 @@ body {
     margin: 0;
     flex-wrap: wrap;
     flex-direction: column;
-    background: #bcfff3;
+    background: #F7DAFF;
 }
 
 .display-flex {
@@ -45,7 +45,7 @@ body {
     width: 100%;
     height: 100vh;
     flex-direction: column;
-    background: linear-gradient(180deg, rgba(188, 255, 243, 0.96) 0%, rgba(241, 234, 174, 0.96) 25%, #FFE6DB 50%, rgba(255, 221, 225, 0.96) 75%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #F7DAFF 0%, #F7E5FC 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
 }
 
 .gif-side-desktop, .text-desktop{
@@ -54,7 +54,7 @@ body {
 
 .login-text {
     align-self: flex-start;
-    color: #EE2C12;
+    color: #7B2292;
     font-weight: 400;
     font-size: 2em;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .link-text-login, .password-reset-login {
-    color: #EE2C12;
+    color: #7B2292;
     font-size: 0.8em;
     font-weight: 300;
 }
@@ -105,7 +105,7 @@ body {
 
 .btn-login {
     font-size: 1.1em;
-    color: #EE2C12;
+    color: #7B2292;
     background-color: white;
     border-radius: 30px;
     border: none;
@@ -119,7 +119,7 @@ body {
 .btn-google-login {
     height: 5vh;
     width: 73vw;
-    background-color: #ee2c12af;
+    background-color: #7B2292;
     border: none;
     box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
     border-radius: 30px;
@@ -131,7 +131,7 @@ body {
 
 .btn-login:hover,
 .btn-google-login:hover {
-    background-color: #EE2C12;
+    background-color: #942eae;
     color: white;
     transition: 1s;
     cursor: pointer;
@@ -174,7 +174,6 @@ body {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(180deg, #D4F3FD 0%, #D0FCF4 37.5%, rgba(227, 252, 249, 0.993333) 62.5%, rgba(228, 255, 247, 0.99) 76.56%, rgba(221, 243, 255, 0) 100%);
     }
 
     .login-form {
@@ -219,7 +218,7 @@ body {
     }
 
     .btn-login {
-        background-color:#EE2C12;
+        background-color:#7B2292;
         color: #FFFFFF;
     }
     
@@ -228,7 +227,7 @@ body {
 .text-desktop {
     align-self: center;
     margin: 2rem 0 1rem 0;
-    color: #EE2C12;
+    color: #7B2292;
 }
 
 .rebu-logo-desktop {

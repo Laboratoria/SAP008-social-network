@@ -1,7 +1,7 @@
 import { register } from '../../lib/auth.js';
 
 export default () => {
-  const containerRegistration = document.createElement("div")
+  const containerRegistration = document.createElement('div');
   const template = `
     <main class="container-registration">
       <button type="button" class="btn-back">&#11013 voltar</button>
@@ -20,45 +20,38 @@ export default () => {
   
     </main>
   
-  `
+  `;
   containerRegistration.innerHTML = template;
 
-
-
-  const nameProfile = containerRegistration.querySelector("#input-profile-name");
-  const email = containerRegistration.querySelector("#input-email-registration");
-  const password = containerRegistration.querySelector("#password");
-  const btnRegistration = containerRegistration.querySelector("#button-registration");
-  const btnBack = containerRegistration.querySelector(".btn-back");
+  const nameProfile = containerRegistration.querySelector('#input-profile-name');
+  const email = containerRegistration.querySelector('#input-email-registration');
+  const password = containerRegistration.querySelector('#password');
+  const btnRegistration = containerRegistration.querySelector('#button-registration');
+  const btnBack = containerRegistration.querySelector('.btn-back');
 
   btnBack.addEventListener('click', () => {
-    window.location.hash  = '#login';
+    window.location.hash = '#login';
   });
 
-
-  btnRegistration.addEventListener('click', function (e) {
+  btnRegistration.addEventListener('click', (e) => {
     e.preventDefault();
     register(email.value, password.value, nameProfile.value)
-    .then(function () {
-      alert('Bem vindo(a) ' + nameProfile.value + '!');
-      window.location.hash = "#welcome";
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      if(errorCode === 'auth/email-already-in-use'){
-        alert ('E-mail já cadastrado. Faça seu login'); 
-        window.location.hash = '#login';
-      } else if(errorCode === 'auth/invalid-email'){
-        alert ('e-mail inválido. Ex: suzana@provedor.com')
-      } else {
-        alert('Algo deu errado. Por favor, tente novamente.')
-      }
-    });
-
+      .then(() => {
+        alert('Bem vindo(a) ' + nameProfile.value + '!');
+        window.location.hash = "#welcome";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        if (errorCode === 'auth/email-already-in-use') {
+          containerRegistration.innerHTML = ('E-mail já cadastrado. Faça seu login');
+          window.location.hash = '#login';
+        } else if (errorCode === 'auth/invalid-email') {
+          alert('e-mail inválido. Ex: suzana@provedor.com')
+        } else {
+          alert('Algo deu errado. Por favor, tente novamente.')
+        }
+      });
   });
 
-
-
   return containerRegistration;
-
-}
+};

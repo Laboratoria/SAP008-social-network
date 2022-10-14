@@ -141,21 +141,21 @@ describe('postById', () => {
   });
 });
 
-describe('like', () => {
-  it('a função deve modificar o like do post', async () => {
-    const like = 
+// describe('like', () => {
+//   it('a função deve modificar o like do post', async () => {
+//     const like =
 
-    const post = {
-      postId: 'idPost',
-      author: 'idUser',
-      like: [],
-    };
+//     const post = {
+//       postId: 'idPost',
+//       author: 'idUser',
+//       like: [],
+//     };
 
-    await like(post.postId, post.author);
+//     await like(post.postId, post.author);
 
-    expect(updateDoc).toHaveBeenCalledTimes(1);
-    expect(updateDoc).toHaveBeenCalledWith(doc(undefined, 'post', post.postId), {
-      like: ['idUser'],
-    });
-  });
-});
+//     expect(updateDoc).toHaveBeenCalledTimes(1);
+//     expect(updateDoc).toHaveBeenCalledWith(doc(undefined, 'post', post.postId), {
+//       like: ['idUser'],
+//     });
+//   });
+// });

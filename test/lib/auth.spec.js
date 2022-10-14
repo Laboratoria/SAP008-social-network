@@ -1,9 +1,15 @@
-import {register, signIn, signInGoogle} from "../../src/lib/auth.js"
-import {createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, getAuth, mockAuth, GoogleAuthProvider, signInWithPopup} from "../../src/lib/export.js"
+import { register, signIn, signInGoogle } from '../../src/lib/auth.js';
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+  mockAuth, // eslint-disable-line
+  signInWithPopup,
+} from '../../src/lib/export.js';
 
-jest.mock("../../src/lib/export.js")
+jest.mock('../../src/lib/export.js');
 
-//teste da função de cadastro//
+// teste da função de cadastro//
 
 describe('register', () => {
   it('a função deve ser chamada uma vez', async () => {
@@ -23,11 +29,10 @@ describe('register', () => {
   });
 });
 
+// teste da função de login com email e senha//
 
-//teste da função de login com email e senha//
-
-describe("signIn", ()=>{
-  it("a função deve ser chamada uma vez", ()=>{
+describe('signIn', () => {
+  it('a função deve ser chamada uma vez', () => {
     const email = 'teste@teste.com';
     const password = 'teste123';
 
@@ -38,9 +43,9 @@ describe("signIn", ()=>{
 });
 
 // teste da função de login com o google//
-describe("signInGoogle", () =>{
-  it("a função deve ser chamada uma vez", ()=>{
+describe('signInGoogle', () => {
+  it('a função deve ser chamada uma vez', () => {
     signInGoogle();
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
-  })
-})
+  });
+});

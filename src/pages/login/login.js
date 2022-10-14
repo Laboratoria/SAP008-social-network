@@ -1,4 +1,4 @@
-import { signIn, signInGoogle } from "../../lib/auth.js";
+import { signIn, signInGoogle } from '../../lib/auth.js';
 
 export default function Login() {
   const login = document.createElement('div');
@@ -36,19 +36,16 @@ export default function Login() {
   const password = login.querySelector('.password');
   const googleBtn = login.querySelector('#google-button');
 
-
-  signInButton.addEventListener("click", function (e) {
-    e.preventDefault(); 
+  signInButton.addEventListener('click', (e) => {
+    e.preventDefault();
     signIn(email.value, password.value)
-    .then(function () {
-      window.location.hash = ("#feed")
-    })
-    .catch(function (error) {
-      console.error(error.code)
-      alert("falhou")
-
-    });
-  })
+      .then(() => {
+        window.location.hash = ('#feed');
+      })
+      .catch(() => {
+        alert('falhou');
+      });
+  });
 
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -58,5 +55,5 @@ export default function Login() {
       });
   });
 
-  return login
+  return login;
 }

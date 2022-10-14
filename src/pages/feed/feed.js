@@ -1,6 +1,5 @@
-
 export default () => {
-  const containerRegistration = document.createElement("div")
+  const containerRegistration = document.createElement('div');
   const template = `
   <div class="container-registration">
     <div class="btnback">
@@ -12,13 +11,8 @@ export default () => {
   
    </div>
   
-  `
+  `;
   containerRegistration.innerHTML = template;
 
-
-
-
-
-  return containerRegistration
-
-}
+  return containerRegistration;
+};

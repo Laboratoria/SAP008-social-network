@@ -84,7 +84,6 @@ telas grandes: acima de 1200 */
     justify-content: space-evenly;
     align-items: center;
     background-color: rgb(75, 75, 205);
-    font-weight: bold;
     color: rgb(238, 237, 248);
     font-size: 14px;
     font-weight:400;
@@ -104,11 +103,11 @@ telas grandes: acima de 1200 */
     font-weight:400;
   }
 
-/*tablet*/
+/*tablet
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    
+   
   }
   
-  /*desktop*/
+  /*desktop
   @media screen and (min-width: 1200) {
-  }
+  }*/

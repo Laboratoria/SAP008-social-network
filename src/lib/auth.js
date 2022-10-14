@@ -5,11 +5,14 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile, GoogleAuthProvider,
+
+  updateProfile,
+  GoogleAuthProvider,
   signInWithPopup,
 } from './export.js';
 
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider(app);
 
 export const register = (
   email,
@@ -22,7 +25,4 @@ export const register = (
 
 export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-export const signInGoogle = () => {
-  const provider = new GoogleAuthProvider();
-  return signInWithPopup(auth, provider);
-};
+export const signInGoogle = () => signInWithPopup(auth, provider);

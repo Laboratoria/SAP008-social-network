@@ -49,8 +49,7 @@ export default () => {
           alert('e-mail inválido. Ex: suzana@provedor.com');
         } else {
           alert('Algo deu errado. Por favor, tente novamente.');
-        }
-      });
+
   });
 
   return containerRegistration;

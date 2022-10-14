@@ -8,14 +8,14 @@ import {
 export const auth = getAuth(app)
 export const dataBase = getFirestore(app);
 const provider = new GoogleAuthProvider(app);
-//export const user = auth.currentUser;
+const user = auth.currentUser;
 //const uid = user.uid;
 
 
 export const newUser = async (email, password, name) => { // função criar usuário
   try {
     await createUserWithEmailAndPassword(auth, email, password)
-    updateProfile(auth.currentUser, {
+    await updateProfile(auth.currentUser, {
       displayName: name,
     })
 
@@ -41,13 +41,15 @@ export const googleAccess = async () => { // função acessar com google
     });
 };
 
-export const create = async (local, adress, review) => { // função criar novo dado (nome)
+export const create = async (nomeRest, endRest, critica) => { // função criar novo dado (posts)
 
   try {
     const docRef = await addDoc(collection(dataBase, 'Posts' ), {
-      nomeRest: local,
-      endRest: adress,
-      critica: review
+      name: auth.currentUser.displayName,
+      author: auth.currentUser.uid,
+      nomeRest,
+      endRest,
+      critica,
 
     });
     console.log('Document written with ID: ', docRef.id);

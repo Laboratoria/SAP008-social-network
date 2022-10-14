@@ -3,10 +3,15 @@ import {
   signInWithRedirect,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
 } from '../../src/firebase/export.js';
 
 import {
-  registerUser, loginGoogle, userLogin, checkLoggedUser,
+  registerUser,
+  loginGoogle,
+  userLogin,
+  checkLoggedUser,
+  resetPassword,
 } from '../../src/firebase/firebase.js';
 
 jest.mock('../../src/firebase/export.js');
@@ -41,8 +46,16 @@ describe('userLogin', () => {
 });
 
 describe('checkLoggedUser', () => {
-  it('deve verificar se o usuário está autenticado', () => {
+  it('deve verificar se o usuário logado está autenticado', () => {
     checkLoggedUser();
     expect(onAuthStateChanged).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('resetPassword', () => {
+  it('deve enviar o email para escolha de nova senha', () => {
+    sendPasswordResetEmail.mockResolvedValue();
+    resetPassword();
+    expect(sendPasswordResetEmail).toHaveBeenCalledTimes(1);
   });
 });

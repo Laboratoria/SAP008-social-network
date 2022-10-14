@@ -10,3 +10,4 @@ export const signOut = jest.fn();
 export const onAuthStateChanged = jest.fn();
 export const collection = jest.fn();
 export const addDoc = jest.fn();
+export const sendPasswordResetEmail = jest.fn();

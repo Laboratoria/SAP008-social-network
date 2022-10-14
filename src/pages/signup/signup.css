@@ -1,0 +1,173 @@
+:root {
+  --branco: aliceblue;
+  --roxo: #5E17EB;
+  --violeta: #9B59B6;
+  --lilas: #A87CFE;
+  --black: #000000;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body,
+html {
+  background: linear-gradient(#5E17EB, #A87CFE);
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper-signup {
+  height: 100vh;
+  width: 100vw;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  color: var(--branco);
+  background: rgb(255, 255, 255, 0.2);
+  padding: 4%;
+  width: 90%;
+  height: 70%;
+  border-radius: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-signup {  
+  width: 90%;  
+}
+
+.signup-form {  
+  width: 100%;  
+  margin: 2% 0 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  
+}
+
+.name-email-pass{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.signup-label {
+  margin-bottom: 10%;
+  width: 100%;
+  cursor: text;
+}
+
+.input-signup {
+  width: 90%;
+  height: 100%;  
+  border-bottom: solid 2px var(--branco);
+  padding: 1px;
+  outline: 0;
+  background-color: rgb(255, 255, 255, 0);
+  font-size: 1.3rem;
+}
+
+#txtEmail,
+#txtPassword,
+#txtName,
+::placeholder {
+  color: var(--branco);
+  text-align: center;
+}
+
+.btnSignup {
+  width: 70%;  
+  padding: 10px;  
+  border-radius: 20px;
+  color: var(--violeta);  
+  background-color: var(--branco);
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.btnSignup:hover {
+  background-color: var(--roxo);
+  box-shadow: 0px 0px 20px var(--roxo);
+  transform: translate(0px, -2px);
+  transition: transform 0.5s;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.btnVoltar {
+  width: 32%;  
+  padding: 10px;
+  margin: 0 68% 0 0;
+  border-radius: 20px;
+  color: var(--branco);
+  background-color: var(--lilas);
+  text-transform: uppercase;
+  font-size: 0.88rem;
+}
+
+.btnVoltar:hover {
+  background-color: var(--roxo);
+  box-shadow: 0px 0px 20px var(--roxo);  
+  color: var(--branco);
+  cursor: pointer;
+}
+
+
+.wallpaper-signup {
+  display: none;  
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper-signup {
+    padding: 0 40px 0;
+  }  
+
+  .signup-container {
+    border-radius: 20px 0 0 20px;
+    width: 30%;
+    height: 70%;
+  }  
+
+  .wallpaper-signup {  
+    display: block;     
+    width: 30%;
+    height: 70%;     
+    border-radius: 0 20px 20px 0;
+  }  
+
+}
+
+@media screen and (min-width: 1024px) and (max-height: 768px){
+  .wrapper-signup {
+    padding: 0 40px 0;
+  }  
+
+  .signup-container {
+    border-radius: 20px 0 0 20px;
+    width: 30%;
+    height: 80%;
+    padding: 3%;
+  }  
+
+  .wallpaper-signup {  
+    display: block;     
+    width: 30%;
+    height: 80%;     
+    border-radius: 0 20px 20px 0;
+  }  
+}

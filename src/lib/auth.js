@@ -9,6 +9,8 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  updateProfile,
 } from './firebase.js';
 
 const auth = getAuth(app);
@@ -26,19 +28,16 @@ onAuthStateChanged(auth, (user) => {
 const provider = new GoogleAuthProvider();
 const signInWithGoogle = () => signInWithPopup(auth, provider);
 
-const logOutUser = () => {
-  signOut(auth)
-    .then(() => {
-      window.location.hash = '#home';
-      console.log('Deu certo caramba, user deslogou kkk');
-    })
-    .catch((error) => {
-      console.log('Ocorreu um erro ao deslogar usuário', error);
-    });
-};
+const logOutUser = () => signOut(auth);
+
+const createRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+
+const updateDisplayName = (user, displayName) => updateProfile(user, { displayName });
 
 export {
   logInUser,
   signInWithGoogle,
   logOutUser,
+  createRegister,
+  updateDisplayName,
 };

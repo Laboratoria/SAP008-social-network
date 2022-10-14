@@ -1,5 +1,5 @@
 import home from './pages/home/home.js';
-import register from './pages/cadastrar/register.js';
+import register from './pages/register/register.js';
 import password from './pages/password/password.js';
 import about from './pages/about/about.js';
 import feed from './pages/feed/feed.js';

@@ -1,6 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword } from '../../lib/firebase.js';
-import { app } from '../../lib/configuration.js';
+/* eslint-disable no-alert */
 import { redirectFeed } from '../../lib/redirect.js';
+import { createRegister, updateDisplayName } from '../../lib/auth.js';
 
 function templateScreen() {
   return `
@@ -33,13 +33,13 @@ function templateScreen() {
 function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const auth = getAuth(app);
-    createUserWithEmailAndPassword(auth, inputEmail.value, inputSenha.value)
+    createRegister(inputEmail.value, inputSenha.value)
+      .then((userCredential) => updateDisplayName(userCredential.user, inputName.value))
       .then(() => {
         redirectFeed();
       })
       .catch((error) => {
-        alert('Ops confira seus dados !');
+        alert('Ops confira seus dados !', error);
       });
   });
 }

@@ -7,6 +7,7 @@ export {
   signOut,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
 // eslint-disable-next-line import/no-unresolved

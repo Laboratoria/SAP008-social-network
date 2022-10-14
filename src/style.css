@@ -4,126 +4,77 @@
 }
 .container{
     display: flex;
-    margin: auto;
-    background-image: url(img/back.jpg);
-    width: 700px;
+    margin: 0% 10% 0% 20%;
+    padding: 1% 0% 1% 0%;
+    height: 100%;
+    width: 60%;
     border-radius: 10%;
+    background-image: url(img/back.jpg);
     background-repeat: no-repeat;
-    background-position: top;
+    justify-content: center;
 }
-.form{
+.boxModelForm{
     display: flex;
     text-align: center;
+    height: 100%;
     align-content: center;
     flex-direction: column;
     color: black;
     background-color: rgba(255, 255 , 255, 0.87) ;
-    height: 90%;
-    width: 450px;
+    width: 70%;
     border-radius: 40px;
-    margin: 20px 0px 0px 100px;
-    padding: 10px;
+    margin: 1% 5% 1% 5%;
+}
+.form{
+    height: 100%;
+    margin: 2%;
+    justify-content: center;
 }
 .logo{
-    margin: auto;
-    width: 40%;
-    height: 10rem;
-}
-.header{
-    border-top-left-radius: 10%;
-    border-top-right-radius: 10%;
-    background-repeat: no-repeat;
-    background-position: top;
-    height: 20%;
-}
-.loginho{
-    position: absolute;
-    margin: auto;
-    width: 12%;
-    height: 12%;
-}
-.register{
-    padding: 26px 10px 10px 10px;
+    height: 60%;
+    width: 50%;
 }
 .emailSenha{
-    width: 250px;
-    height: 20px;
+    width: 80%;
+    height: 25px;
     text-align: center;
-    border-color: black 10px;
+    border-color: black;
+    border-radius: 6px;
+    margin: 2%;
 }
 .esqueciSenhaCadastre{
-    color: rgb(41, 41, 219);
+    color: black;
     text-decoration: none;
+    margin: 1%;
 }
 .cadastre{
-    color: rgb(41, 41, 219);
+    color: black;
     text-decoration: none;
     font-weight: bold;
 }
 .btnEntrar{
     box-shadow: 0px 1px 8px -1px #1FA48C;
-    border-radius:18px;
+    border-radius: 18px;
     border: 1px solid #1FA48C;
     color: black;
     font-family:Arial;
     font-size: 17px;
     font-weight: bold;
     padding: 2px 19px;
-    background: linear-gradient(to right, #91ebd9, #5dd6c0, #28c4a7);
-    cursor: pointer;
+    background-color: #1FA48C;
 }
-
-@keyframes botão-entrar {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-.btnEntrar:hover {
-    animation-name: botão-entrar;
-    animation-duration: 0.7s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-    box-shadow: 0 0 30px 15px #1FA48C;
-}
-
 .btnEntrar:hover{
     transform: scale(0.9);
 }
-.textGoogle{
+.textEntrarGlg{
     font-weight: bold;
-    padding-bottom: 20px;
 }
-.imgGoogle{
-    padding: 5px;
-    width: 20px;
-    height: 20px;
+.loginGoogle img{
+    height: 25px;
+    width: 25px;
 }
-.imgGoogle:hover{
-    transform: scale(0.9);
-}
-.sobrePage{
+.sobrepage{
     color: grey;
-}
-.navbar{
-    box-sizing: border-box;
-    position: absolute;
-    width: 828px;
-    height: 52px;
-    top: 181px;
-    background: #1FA48C;
-    border: 1px solid #000000;
-    box-shadow: 7px 8px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
-    text-align: center;
-}
-.hamburguer{
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    top: 185px;
+    text-decoration: none;
+    margin: 5%;
 }

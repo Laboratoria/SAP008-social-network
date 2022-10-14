@@ -1,14 +1,13 @@
 /* eslint-disable no-console */
 import { logOutUser } from '../../lib/auth.js';
-import { redirectFeed } from '../../lib/redirect.js';
 
 export default () => {
   const sectionFeed = document.createElement('div');
   const contentFeed = `
     <div>
       <header>
-          <img src='img/header.jpg' class='header' alt='header'>
-          <img src='img/logo.png' class='loginho' alt='Logo Peq Wanderlust'>
+          <img src='' class='header' alt='header'>
+          <img src='/src/img/logoTranp.png' class='loginho' alt='Logo Peq Wanderlust'>
           <nav class='navbar'>
             <input id='logOut' class='btnSIgnInOut' type='button' value='Sair'>
           </nav>
@@ -19,14 +18,10 @@ export default () => {
   sectionFeed.innerHTML = contentFeed;
 
   const btnLogOut = sectionFeed.querySelector('#logOut');
-  btnLogOut.addEventListener('click', (e) => {
-    e.preventDefault();
+  btnLogOut.addEventListener('click', () => {
     logOutUser()
       .then(() => {
-        redirectFeed();
-      })
-      .cath((error) => {
-        console.log('Usuário não deslogou', error);
+        window.location.hash = '#home';
       });
   });
 

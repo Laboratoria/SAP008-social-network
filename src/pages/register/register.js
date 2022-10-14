@@ -25,7 +25,7 @@ function templateScreen() {
       <input class='btn-cadastre' type='submit' id='btn-cadastro' value='cadastre-se'>
     </p>
     <p class='voltar'>
-      <input class='btn-back' type='button' value='voltar'>
+      <a href="index.html" class="btnBack">voltar</a>
     </p>
 </form>`;
 }

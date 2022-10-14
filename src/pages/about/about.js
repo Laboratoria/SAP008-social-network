@@ -4,7 +4,7 @@ export default () => {
     <div>
       <header>
         <img src="img/logo.png" class="logoAbout" alt="Logo Wanderlust">
-        <input id="btn-voltar" class="btnVoltar" type="button" value="voltar">
+        <a href="index.html" class="btnBack">voltar</a>
       </header>
       <main>
         <p>O Wanderlust chega para revolucionar o modo que as mulheres viajam, fazendo com que mais e mais mulheres tenham a possibilidade de conhecer novos lugares de um modo econômico.</p>

@@ -37,6 +37,7 @@ export const signUpFunction = () => {
     const emailRegst = containerSignUp.querySelector('#emailUser').value;
     const passUser = containerSignUp.querySelector('#passUser').value;
     createNewUser(nameRegst, emailRegst, passUser);
+    window.location.hash = '#feed';
   });
 
   const btnBackHome = containerSignUp.querySelector('#backAtHome');

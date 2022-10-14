@@ -1,8 +1,7 @@
 @import url(/src/pages/about/about.css);
 @import url(/src/pages/feed/feed.css);
-@import url(/src/pages/password/password.js);
-@import url(/src/pages/register/register.js);
-
+@import url(/src/pages/password/password.css);
+@import url(/src/pages/register/register.css);
 *{
     margin: 0;
     padding: 0;

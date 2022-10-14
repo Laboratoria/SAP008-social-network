@@ -1,13 +1,19 @@
 import {
-  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword, deletePost, createPost, updatePost,
+  loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
+  deletePost, createPost, updatePost, postById, like,
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
+  getDoc,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('loginWithGooglen', () => {
   it('a função deve ser chamada uma vez', () => {
@@ -78,10 +84,7 @@ describe('createPost', () => {
       text: 'oie galera',
       tag: 'musica',
     };
-    const now = Date.now;
-    Date.now = function () {
-      return 1665433765409;
-    };
+    const now = new Date().toLocaleDateString();
 
     await createPost(post.text, post.tag);
 
@@ -91,7 +94,7 @@ describe('createPost', () => {
     expect(addDoc).toHaveBeenCalledWith(undefined, {
       name: 'nome',
       author: '123',
-      data: 1665433765409,
+      data: now,
       tag: post.tag,
       text: post.text,
       like: [],
@@ -113,6 +116,46 @@ describe('updatePost', () => {
     expect(updateDoc).toHaveBeenCalledTimes(1);
     expect(updateDoc).toHaveBeenCalledWith(undefined, {
       text: newText,
+    });
+  });
+});
+
+describe('postById', () => {
+  it('a função deve pegar o id de um post', async () => {
+    const id = 'abc123';
+    const ref = {};
+    const post = {
+      data: jest.fn(),
+    };
+
+    doc.mockReturnValueOnce(ref);
+    getDoc.mockResolvedValueOnce(post);
+
+    await postById(id);
+
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'post', id);
+    expect(getDoc).toHaveBeenCalledTimes(1);
+    expect(getDoc).toHaveBeenCalledWith(ref);
+    expect(post.data).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('like', () => {
+  it('a função deve modificar o like do post', async () => {
+    const like = 
+
+    const post = {
+      postId: 'idPost',
+      author: 'idUser',
+      like: [],
+    };
+
+    await like(post.postId, post.author);
+
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(doc(undefined, 'post', post.postId), {
+      like: ['idUser'],
     });
   });
 });

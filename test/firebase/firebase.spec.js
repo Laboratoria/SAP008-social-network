@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   sendPasswordResetEmail,
+  addDoc,
 } from '../../src/firebase/export.js';
 
 import {
@@ -12,6 +13,7 @@ import {
   userLogin,
   checkLoggedUser,
   resetPassword,
+  createPost,
 } from '../../src/firebase/firebase.js';
 
 jest.mock('../../src/firebase/export.js');
@@ -57,5 +59,18 @@ describe('resetPassword', () => {
     sendPasswordResetEmail.mockResolvedValue();
     resetPassword();
     expect(sendPasswordResetEmail).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('createPost', () => {
+  it('deve criar um post', async () => {
+    addDoc.mockResolvedValue();
+    const artist = 'Beyoncé';
+    const location = 'São Paulo';
+    const date = '30-08-2022';
+    const text = 'SHOW';
+
+    createPost(artist, location, date, text);
+    await expect(addDoc).tohaveBeenCalled();
   });
 });

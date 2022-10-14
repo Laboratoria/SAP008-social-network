@@ -52,12 +52,6 @@ export function resetPassword(email) {
   return sendPasswordResetEmail(auth, email);
 }
 
-// function getUserData(uid) {
-//   const auth = getAuth(app);
-//   auth.getUser(uid);
-// }
-// window.getUserData = getUserData;
-
 export const createPost = async (textPost, category) => {
   const auth = getAuth(app);
   try {
@@ -69,9 +63,9 @@ export const createPost = async (textPost, category) => {
       text: textPost,
       like: [],
     });
-    console.log('Document written with ID: ', docRef.id);
+    return docRef.id;
   } catch (e) {
-    console.error('Error adding document: ', e);
+    return e;
   }
 };
 

@@ -38,7 +38,7 @@ export default () => {
     register(email.value, password.value, nameProfile.value)
       .then(() => {
         alert('Bem vindo(a) ' + nameProfile.value + '!');
-        window.location.hash = "#welcome";
+        window.location.hash = '#feed';
       })
       .catch((error) => {
         const errorCode = error.code;

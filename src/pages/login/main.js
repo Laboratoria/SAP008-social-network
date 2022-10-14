@@ -68,7 +68,6 @@ export default () => {
     } else {
       loginWithEmailAndPassword(email.value, password.value)
         .catch((error) => {
-          console.log(error);
           const userFriendlyMessage = handleFirebaseErrors(error.code);
           firebaseWarningMessages.classList.remove('hide');
           formValidationMessages.classList.add('hide');

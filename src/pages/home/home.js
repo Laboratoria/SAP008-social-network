@@ -69,11 +69,11 @@ export default () => {
   const modalDelete = container.querySelector('#modal-delete');
   const warnDelete = container.querySelector('#trash-icon');
   const closeModalDelete = container.querySelector('#no-close');
-  
+
 
   cancel.hidden = true;
   ok.hidden = true;
-  
+
 
   logout.addEventListener('click', (e) => {
     e.preventDefault;
@@ -120,7 +120,7 @@ export default () => {
   closeModalDelete.addEventListener('click', () => {
     modalDelete.classList.toggle('hide')
   })
-  
+
 
   return container;
 }

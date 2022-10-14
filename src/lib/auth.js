@@ -1,21 +1,29 @@
 import { app } from './configuration.js';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup,
-  GoogleAuthProvider, collection, addDoc, getFirestore, onAuthStateChanged, signInWithEmailAndPassword, signOut
+  GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword, signOut, updateProfile
 } from './firebase.js';
 
 
 export const auth = getAuth(app)
 export const dataBase = getFirestore(app);
 const provider = new GoogleAuthProvider(app);
+//export const user = auth.currentUser;
+//const uid = user.uid;
 
-export const newUser = async (email, password) => { // função criar usuário
+
+export const newUser = async (email, password, name) => { // função criar usuário
   try {
     await createUserWithEmailAndPassword(auth, email, password)
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
+
   }
   catch (error) {
-    throw error 
+    throw error
   }
+
 };
 
 export const googleAccess = async () => { // função acessar com google
@@ -33,18 +41,18 @@ export const googleAccess = async () => { // função acessar com google
     });
 };
 
-export const create = async (userName, createEmail, createPassword) => { // função criar novo dado (nome)
+export const create = async (local, adress, review) => { // função criar novo dado (nome)
 
   try {
-    const docRef = await addDoc(collection(dataBase, "Users"), {
-      displayName: userName,
-      email: createEmail,
-      password: createPassword
+    const docRef = await addDoc(collection(dataBase, 'Posts' ), {
+      nomeRest: local,
+      endRest: adress,
+      critica: review
 
     });
-    console.log("Document written with ID: ", docRef.id);
+    console.log('Document written with ID: ', docRef.id);
   } catch (error) {
-      throw error;
+    throw error;
   }
 };
 
@@ -54,7 +62,7 @@ export function loginUser(email, password) { // função login
       const user = userCredential.user;
       return user;
     });
-  };
+};
 
 export function logoutUser() { // função logout
   signOut(auth).then(() => {

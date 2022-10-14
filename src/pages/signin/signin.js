@@ -1,4 +1,4 @@
-import { newUser, create } from '../../lib/auth.js';
+import { newUser} from '../../lib/auth.js';
 export default () => {
     const container = document.createElement('div');
     const template =
@@ -57,8 +57,9 @@ export default () => {
         if (signInName.value === "" || signInEmail.value === "" || signInPassword.value === "" || signInConfPassword.value === '' || checkBox.checked === false) {
             return alert('Todos os campos devem ser preenchidos')
         }
-        return await newUser(signInEmail.value, signInPassword.value).then(() => {
-            create(signInName.value, signInEmail.value, signInPassword.value)
+        return await newUser(signInEmail.value, signInPassword.value, signInName.value).then(() => {
+            
+            // create(signInName.value, signInEmail.value, signInPassword.value)
             window.location.hash = '#home';
         })
             .catch((error) => {

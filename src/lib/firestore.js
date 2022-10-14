@@ -1,15 +1,15 @@
 import { app } from './firebase.js';
-import { auth } from './auth.js';
-import { getFirestore, collection, addDoc, getDocs } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getAuth } from './export.js'
 
 const db = getFirestore(app);
 
 const createPost = async (texto) => {
+    const auth = getAuth(app);
     try {
-        const docRef = await addDoc(collection(db, "post"), {
+        const docRef = await addDoc(collection(db, 'post'), {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
-            texto,
+            text: texto,
         });
         console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -17,7 +17,7 @@ const createPost = async (texto) => {
     }
 };
 
-const printPost = async () => {
+const getPost = async () => {
     try {
         const querySnapshot = await getDocs(collection(db, "post"));
         const postArray = [];
@@ -54,4 +54,4 @@ const printPost = async () => {
 //     }
 //   }
 
-export { createPost, printPost };
+export { createPost, getPost};

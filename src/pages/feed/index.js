@@ -1,4 +1,4 @@
-import { createPost, printPost} from './../../lib/firestore.js';
+import { createPost, getPost} from './../../lib/firestore.js';
 import { logout } from '../../lib/auth.js';
 
 export default () => {
@@ -31,7 +31,7 @@ export default () => {
   container.innerHTML = template;
 
   const showPost = async () => {
-    const arrayPost = await printPost();
+    const arrayPost = await getPost();
     const postTemplate = arrayPost.map((post) => `
       <div class="post">
         <p class="postTxt name" id="user-name">${post.name}</p>
@@ -41,11 +41,12 @@ export default () => {
     `).join('');
     container.querySelector("#postContainer").innerHTML += postTemplate;
   }
-  showPost(createPost);
+  showPost();
 
   const btnPublish = container.querySelector("#btnPublish");
   const txtInputPost = container.querySelector('#post');
   const btnLogout = container.querySelector('#btnLogout');
+  const formFeed = container.querySelector('#form-feed');
 
   btnLogout.addEventListener("click", () => {
     logout();
@@ -54,7 +55,8 @@ export default () => {
   btnPublish.addEventListener("click", () => {
     const textPost = txtInputPost.value;
     createPost(textPost);    
-    showPost(createPost);
+    showPost();
+    formFeed.reset();
     //querySnapshot(textPost);
 
   });  

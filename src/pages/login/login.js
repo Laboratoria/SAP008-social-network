@@ -36,10 +36,15 @@ export default function Login() {
   const password = login.querySelector('.password');
   const googleBtn = login.querySelector('#google-button');
 
-
-  signInButton.addEventListener("click", function (e) {
-    e.preventDefault(); 
+  signInButton.addEventListener('click', (e) => {
+    e.preventDefault();
     signIn(email.value, password.value)
+      .then(() => {
+        window.location.hash = ('#feed');
+      })
+      .catch(() => {
+        alert('falhou');
+      });
     .then(function () {
       window.location.hash = ("#feed")
     })
@@ -59,4 +64,4 @@ export default function Login() {
   });
 
   return login;
-}
+

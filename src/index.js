@@ -1,4 +1,3 @@
-import timeline from './pages/timeline/timeline.js';
 import routes from './routes.js';
 
 const main = document.querySelector('#root');

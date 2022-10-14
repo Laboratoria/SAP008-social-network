@@ -1,3 +1,5 @@
+import { logout } from "../../firebase/auth.js";
+
 export default () => {
 	const container = document.createElement('div');
 
@@ -7,30 +9,36 @@ export default () => {
         </figure>
 				
 				<header>
-				<img src="" alt="" id="icon-logout">
-				<button id="logout-btn"><img class="logout-icon" src='./imagens/logout.svg' alt="signout-icon"></button>
+				<button id='logout-btn'><img class='logout-icon' src='./imagens/logout.svg' alt='signout-icon'></button>
 				<header>
 
-        <form method='post' id="create-post" class='page-home'>
-        <div id="icon-div">
-        <img src="" alt="" class="" class="user-icon-post">
+        <main id='create-post' class='page-home'>
+        <div id='icon-div'>
+        <img src='' alt='' class='' class='user-icon-post'>
         </div>
       
-        <textarea name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
-				<input type='file'>iconeAqui</input>
-       
-        <button id="publish-btn">Publicar</button>
-        </form>
+        <textarea placeholder='Compartilhe sua vivência...' id='post-publish' cols='60' rows='10' style='resize:none' maxlength='200'></textarea>
 
-   			<section id="feed-post"></section>
-      	<div id="fade" class="none"></div>
-      <div id="modal-delete" class="none">
-        <span class="close-modal">X</span>
-        <span>Tem certeza que deseja deletar?</span>
-        <button class="btn-delete">Deletar</button>
-      </div>
+				<button id='add-image'><img class='add-photo' src='./imagens/icon-photo.svg' alt='add-image'></button>
+       
+        <button id='publish-btn'><img class='btn-post' src='./imagens/btn-post.svg' alt='add-image'></button>
+
+   			<section id='post-timeline'></section>
+			</main>
     `;
 
 	container.innerHTML = template;
+
+  const btnLogout = container.querySelector('#logout-btn');
+
+	 btnLogout.addEventListener('click', (e) => {
+		e.preventDefault();
+    logout()
+		.then(() => {
+			window.location.hash = '#login';
+		})
+		.catch((error) => error);
+  });
+
 	return container;
 };

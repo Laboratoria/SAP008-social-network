@@ -10,6 +10,7 @@ export default () => {
         </p>
         <p>
           <input class="ResetPassword" type="button" value="Continuar">
+          <a href="index.html" class="btnBack">voltar</a>
         </p>
       </form>
     </section>`;

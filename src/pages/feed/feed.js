@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { logOutUser } from '../../lib/auth.js';
 
 export default () => {
@@ -5,10 +6,10 @@ export default () => {
   const contentFeed = `
     <div>
       <header>
-          <img src="img/header.jpg" class="header" alt="header">
-          <img src="img/logo.png" class="loginho" alt="Logo Peq Wanderlust">
-          <nav class="navbar">
-            <input id="logOut" class="btnSIgnInOut" type="button" value="Sair">
+          <img src='' class='header' alt='header'>
+          <img src='/src/img/logoTranp.png' class='loginho' alt='Logo Peq Wanderlust'>
+          <nav class='navbar'>
+            <input id='logOut' class='btnSIgnInOut' type='button' value='Sair'>
           </nav>
       </header>
       <main>
@@ -17,6 +18,12 @@ export default () => {
   sectionFeed.innerHTML = contentFeed;
 
   const btnLogOut = sectionFeed.querySelector('#logOut');
-  btnLogOut.addEventListener('click', logOutUser);
+  btnLogOut.addEventListener('click', () => {
+    logOutUser()
+      .then(() => {
+        window.location.hash = '#home';
+      });
+  });
+
   return sectionFeed;
 };

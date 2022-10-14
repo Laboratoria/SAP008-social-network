@@ -43,9 +43,9 @@ export default function Login() {
         window.location.hash = ('#feed');
       })
       .catch(() => {
-        alert('falhou');
+        
       });
-  });
+  };
 
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();

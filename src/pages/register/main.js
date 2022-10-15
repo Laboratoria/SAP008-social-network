@@ -46,8 +46,8 @@ export default () => {
 
               <p id="firebase-warning-messages" class="form-warning-messages hide"></p>
               
-              <input type="submit" class="btn-register" value="CADASTRAR">
-              <button type="button" class="btn-google-register display-flex"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
+              <button class="btn-register">CADASTRAR</button>
+              <button class="btn-google-register display-flex"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">CADASTRE-SE COM O GOOGLE</button>
               
               <a href="#login" class="link-text-login">JÁ POSSUI UMA CONTA? CONECTE-SE!</a>
               
@@ -83,6 +83,9 @@ export default () => {
       formValidationMessages.innerHTML = formValidation;
     } else {
       registerWithEmailAndPassword(name.value, email.value, password.value)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
         .catch((error) => {
           const userFriendlyMessage = handleFirebaseErrors(error.code);
           firebaseWarningMessages.classList.remove('hide');

@@ -39,11 +39,11 @@ export default () => {
 
         <a href="#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
   
-        <a href="#feed"><button type="button" id="btn-login-page" class="btn-login">ENTRAR</button></a>
-  
-        <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
+        <button id="btn-login-page" class="btn-login">ENTRAR</button>
   
         <a href="#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
+
+        <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
 
       </form>
 
@@ -60,8 +60,7 @@ export default () => {
 
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
 
-  btnLogin.addEventListener('click', (e) => {
-    e.preventDefault();
+  btnLogin.addEventListener('click', () => {
     const formValidation = validateLoginForm(email.value, password.value);
     if (formValidation) {
       formValidationMessages.classList.remove('hide');
@@ -69,6 +68,9 @@ export default () => {
       formValidationMessages.innerHTML = formValidation;
     } else {
       loginWithEmailAndPassword(email.value, password.value)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
         .catch((error) => {
           const userFriendlyMessage = handleFirebaseErrors(error.code);
           firebaseWarningMessages.classList.remove('hide');
@@ -80,8 +82,7 @@ export default () => {
 
   const googleBtn = loginContainer.querySelector('#google-btn');
 
-  googleBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+  googleBtn.addEventListener('click', () => {
     loginWithGoogle()
       .catch((error) => error);
   });

@@ -11,6 +11,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   updateProfile,
+  sendPasswordResetEmail,
 } from './firebase.js';
 
 const auth = getAuth(app);
@@ -34,10 +35,13 @@ const createRegister = (email, password) => createUserWithEmailAndPassword(auth,
 
 const updateDisplayName = (user, displayName) => updateProfile(user, { displayName });
 
+const resetPassword = (email) => sendPasswordResetEmail(auth, email);
+
 export {
   logInUser,
   signInWithGoogle,
   logOutUser,
   createRegister,
   updateDisplayName,
+  resetPassword,
 };

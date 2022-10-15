@@ -1,12 +1,12 @@
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, /* like */
+  deletePost, createPost, updatePost, postById, getAllPosts, /* like */, 
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
-  getDoc,
+  getDoc, getDocs,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -138,6 +138,19 @@ describe('postById', () => {
     expect(getDoc).toHaveBeenCalledTimes(1);
     expect(getDoc).toHaveBeenCalledWith(ref);
     expect(post.data).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('getAllPosts', () => {
+  it('a função deve pegar todos os posts', async () => {
+    const post = {};
+
+    getDocs.mockResolvedValueOnce(post);
+
+    await getAllPosts();
+
+    expect(getDocs).toHaveBeenCalledTimes(1);
+    expect(getDocs).toHaveBeenCalledWith(undefined);
   });
 });
 

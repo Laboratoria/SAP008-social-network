@@ -142,6 +142,7 @@ describe('postById', () => {
   });
 });
 
+
 describe('getAllPosts', () => {
   it('a função deve pegar todos os posts', async () => {
     const post = {};
@@ -155,6 +156,7 @@ describe('getAllPosts', () => {
   });
 });
 
+
 describe('like', () => {
   it('a função deve modificar o like do post', async () => {
     const post = {
@@ -166,6 +168,7 @@ describe('like', () => {
     const idUser = 'id';
 
     getDoc.mockResolvedValueOnce(post);
+
     await like(post.postId, idUser);
 
     expect(updateDoc).toHaveBeenCalledTimes(1);
@@ -182,3 +185,4 @@ describe('logoff', () => {
     expect(signOut).toHaveBeenCalledTimes(1);
   });
 });
+

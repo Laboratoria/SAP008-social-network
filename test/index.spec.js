@@ -1,6 +1,6 @@
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, getAllPosts,
+  deletePost, createPost, updatePost, postById, getAllPosts, /* like */, 
 } from '../src/lib/index.js';
 
 import {
@@ -153,3 +153,22 @@ describe('getAllPosts', () => {
     expect(getDocs).toHaveBeenCalledWith(undefined);
   });
 });
+
+// describe('like', () => {
+//   it('a função deve modificar o like do post', async () => {
+//     const like =
+
+//     const post = {
+//       postId: 'idPost',
+//       author: 'idUser',
+//       like: [],
+//     };
+
+//     await like(post.postId, post.author);
+
+//     expect(updateDoc).toHaveBeenCalledTimes(1);
+//     expect(updateDoc).toHaveBeenCalledWith(doc(undefined, 'post', post.postId), {
+//       like: ['idUser'],
+//     });
+//   });
+// });

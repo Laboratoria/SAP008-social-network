@@ -1,13 +1,13 @@
+/* eslint-disable object-shorthand */
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, getAllPosts, like,
-  logoff,
+  deletePost, createPost, updatePost, postById, like,
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
-  getDoc, getDocs, signOut,
+  getDoc,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -142,44 +142,50 @@ describe('postById', () => {
   });
 });
 
-describe('getAllPosts', () => {
-  it('a função deve pegar todos os posts', async () => {
-    const post = {};
-
-    getDocs.mockResolvedValueOnce(post);
-
-    await getAllPosts();
-
-    expect(getDocs).toHaveBeenCalledTimes(1);
-    expect(getDocs).toHaveBeenCalledWith(undefined);
-  });
-});
-
 describe('like', () => {
-  it('a função deve modificar o like do post', async () => {
+  it('a função deve adicionar like no post', async () => {
     const post = {
-      postId: 'idPost',
-      author: 'alguem',
-      like: ['algum'],
-      data: jest.fn(),
+    // eslint-disable-next-line func-names
+      data: function () {
+        const likeArr = {
+          like: [],
+        };
+        return likeArr;
+      },
     };
+    const postId = 'idPost';
     const idUser = 'id';
 
     getDoc.mockResolvedValueOnce(post);
 
-    await like(post.postId, idUser);
+    await like(postId, idUser);
 
     expect(updateDoc).toHaveBeenCalledTimes(1);
     expect(updateDoc).toHaveBeenCalledWith(undefined, {
-      like: ['algum', idUser],
+      like: [idUser],
     });
   });
-});
 
-describe('logoff', () => {
-  it('a função deve deslogar o usuário', async () => {
-    logoff();
+  it('a função deve remover like no post', async () => {
+    const post = {
+      // eslint-disable-next-line func-names
+      data: function () {
+        const likeArr = {
+          like: ['id'],
+        };
+        return likeArr;
+      },
+    };
+    const postId = 'idPost';
+    const idUser = 'id';
 
-    expect(signOut).toHaveBeenCalledTimes(1);
+    getDoc.mockResolvedValueOnce(post);
+
+    await like(postId, idUser);
+
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      like: [],
+    });
   });
 });

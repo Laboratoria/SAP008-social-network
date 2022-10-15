@@ -15,6 +15,11 @@
     margin: 0 1rem;
 }
 
+#rebu-logo-btn, #feed-homepage-btn {
+    background: transparent;
+    border: none;
+}
+
 .rebu-logo-feed {
     width: 5rem;
     height: 3rem;

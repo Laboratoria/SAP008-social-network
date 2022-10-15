@@ -27,6 +27,7 @@ export default () => {
     <main id="login-page" class="login-page display-flex">
     
       <h1 class="text-desktop">CONECTE-SE</h1>
+
       <form class="login-form display-flex">
 
         <h2 class="login-text">ENTRAR</h2>
@@ -43,6 +44,7 @@ export default () => {
         <button class="btn-google-login display-flex" id="google-btn"><img class="google-icon" src="img/icons/googleIcon.png" alt="google logo">ENTRE COM O GOOGLE</button>
   
         <a href="#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>
+
       </form>
 
     </main>

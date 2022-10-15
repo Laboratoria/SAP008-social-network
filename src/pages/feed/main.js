@@ -17,8 +17,12 @@ export default () => {
   const template = `
   <header class="feed-header">
     <div class="header-images">
-      <img src="img/Rebu.svg" alt="rebu logo" class="rebu-logo-feed">
-      <button id="logout-btn"><img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon"></button>
+      <button id="rebu-logo-btn">
+        <img src="img/Rebu.svg" alt="rebu logo" class="rebu-logo-feed">
+      </button>
+      <button id="logout-btn">
+        <img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon">
+      </button>
     </div>
 
     <nav class="tag-filter">
@@ -75,12 +79,16 @@ export default () => {
   </main>
           
   <footer class="feed-footer">
-    <img class="homepage-icon" src="img/icons/home-icon.svg" alt="homepage icon">
+    <button id="feed-homepage-btn">
+      <img class="homepage-icon" src="img/icons/home-icon.svg" alt="homepage icon">
+    </button>
   </footer>
   `;
 
   feedContainer.innerHTML = template;
 
+  const homepageBtn = feedContainer.querySelector('#feed-homepage-btn');
+  const rebuBtn = feedContainer.querySelector('#rebu-logo-btn');
   const postForm = feedContainer.querySelector('#create-post-form');
   const textPost = feedContainer.querySelector('#text-post');
   const logoutBtn = feedContainer.querySelector('#logout-btn');
@@ -89,6 +97,12 @@ export default () => {
   const confirmDeletePost = feedContainer.querySelector('.btn-delete');
   const selectTags = feedContainer.querySelector('#select-tags');
   const menuBtns = Array.from(feedContainer.querySelectorAll('.tag-button'));
+
+  [homepageBtn, rebuBtn].forEach((btn) => {
+    btn.addEventListener('click', () => {
+      window.location.reload();
+    });
+  });
 
   function toggle(id) {
     modal.classList.toggle('none');

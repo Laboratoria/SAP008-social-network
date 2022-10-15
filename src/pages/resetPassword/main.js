@@ -39,6 +39,7 @@ export default () => {
   const sendBtn = resetContainer.querySelector('#btn-reset-page');
 
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+
   sendBtn.addEventListener('click', (e) => {
     e.preventDefault();
     resetPassword(emailValue.value)

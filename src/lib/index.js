@@ -29,6 +29,12 @@ export function userStateChanged(callback) {
   onAuthStateChanged(auth, callback);
 }
 
+function getUserData(uid) {
+  const auth = getAuth(app);
+  auth.getUser(uid);
+}
+window.getUserData = getUserData;
+
 export function registerWithEmailAndPassword(name, email, password) {
   const auth = getAuth(app);
   return createUserWithEmailAndPassword(auth, email, password)

@@ -267,6 +267,11 @@
     top: 0;
 }
 
+.null-post-message {
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+}
+
 @media (min-width: 768px) {
     .feed-header {
         font-size: 3rem;

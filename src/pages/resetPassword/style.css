@@ -93,6 +93,10 @@
     transition: 1.5s;
 }
 
+.reset-message {
+    color: #5F5656;
+}
+
 @media (min-width: 768px) {
     .reset-page {
         padding-top: 15rem;
@@ -178,5 +182,9 @@
         display: flex;
         gap: 6rem;
         margin-bottom: 2rem;
+    }
+
+    .reset-message {
+        margin-top: 2rem;
     }
 }

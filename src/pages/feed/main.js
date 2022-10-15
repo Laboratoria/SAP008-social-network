@@ -187,9 +187,11 @@ export default () => {
 
     confirmDeletePost.addEventListener('click', (el) => {
       const idPostDelete = el.currentTarget.dataset.idpost;
-      deletePost(idPostDelete);
-      toggle();
-      printPosts('allposts');
+      deletePost(idPostDelete)
+        .then(() => {
+          toggle();
+          window.location.reload();
+        });
     });
 
     likeBtns.forEach((btn) => {
@@ -200,8 +202,11 @@ export default () => {
         const elementLikes = el.target.parentElement.nextElementSibling;
         const img = el.target;
 
-        // eslint-disable-next-line no-unused-expressions
-        newLikes.indexOf(user) !== -1 ? img.setAttribute('src', 'img/icons/redHeart.svg') : img.setAttribute('src', 'img/icons/blackHeart.svg');
+        if (newLikes.indexOf(user) !== -1) {
+          img.setAttribute('src', 'img/icons/redHeart.svg');
+        } else {
+          img.setAttribute('src', 'img/icons/blackHeart.svg');
+        }
 
         elementLikes.innerHTML = newLikes.length;
       });
@@ -209,9 +214,11 @@ export default () => {
   };
 
   postForm.addEventListener('submit', () => {
-    createPost(textPost.value, selectTags.value);
-    printPosts('allposts');
-    postForm.reset();
+    createPost(textPost.value, selectTags.value)
+      .then(() => {
+        postForm.reset();
+        printPosts('allposts');
+      });
   });
 
   logoutBtn.addEventListener('click', () => {

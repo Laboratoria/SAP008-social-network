@@ -94,12 +94,10 @@ export default () => {
 
   btnGoogleRegister.addEventListener('click', () => {
     loginWithGoogle()
-      .catch((/* error */) => {
-        /* const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error); */
-      });
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => error);
   });
   return registerContainer;
 };

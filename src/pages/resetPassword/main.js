@@ -2,6 +2,10 @@ import {
   resetPassword,
 } from '../../lib/index.js';
 
+import {
+  handleFirebaseErrors,
+} from '../../lib/validation.js';
+
 export default () => {
   const resetContainer = document.createElement('div');
   const template = `
@@ -27,8 +31,10 @@ export default () => {
                 <a href="#homepage"><button type="button" id="btn-cancel-reset" class="btn-cancel-reset">RETORNAR</button></a>
                 <a href="#homepage"><button type="button" id="btn-reset-page" class="btn-reset">REDEFINIR</button></a>
               </nav>
+        
             </form>
-                  
+
+            <p class="hide reset-message"></p>
   
           </main>
         `;
@@ -37,6 +43,7 @@ export default () => {
   const returnBtn = resetContainer.querySelector('#return-btn');
   const emailValue = resetContainer.querySelector('#email-input-reset');
   const sendBtn = resetContainer.querySelector('#btn-reset-page');
+  const resetMessage = resetContainer.querySelector('.reset-message');
 
   returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
 
@@ -44,11 +51,14 @@ export default () => {
     e.preventDefault();
     resetPassword(emailValue.value)
       .then(() => {
-        // alert('Email enviado');
+        resetMessage.textContent = 'Email enviado com sucesso.';
+        resetMessage.classList.remove('hide');
       })
-      .catch((/* error */) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
+      .catch((error) => {
+        resetMessage.classList.remove('hide');
+        const errorCode = error.code;
+        const errorMessage = handleFirebaseErrors(errorCode);
+        resetMessage.textContent = errorMessage;
       });
   });
 

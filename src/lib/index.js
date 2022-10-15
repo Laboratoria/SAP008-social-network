@@ -70,8 +70,8 @@ export const createPost = async (textPost, category) => {
       like: [],
     });
     return docRef.id;
-  } catch (e) {
-    return e;
+  } catch (error) {
+    return error;
   }
 };
 
@@ -112,8 +112,8 @@ export const deletePost = async (postId) => {
     const docRef = doc(db, 'post', postId);
     await deleteDoc(docRef);
     return docRef.id;
-  } catch (e) {
-    return e;
+  } catch (error) {
+    return error;
   }
 };
 
@@ -125,8 +125,8 @@ export const getAllPosts = async () => {
       arrPosts.push({ ...post.data(), id: post.id });
     });
     return arrPosts;
-  } catch (a) {
-    return a;
+  } catch (error) {
+    return error;
   }
 };
 

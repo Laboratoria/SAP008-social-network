@@ -1,3 +1,4 @@
+// import '../css/feed.css';
 export const feedFunction = () => {
   const containerFeed = document.createElement('section');
 
@@ -6,9 +7,10 @@ export const feedFunction = () => {
   <div class='form-feed'>
     <div class="img-user"></div>
     <div class='inputs-feed'>
-      <input class='question-feed input-space' type=text placeholder= 'Qual trecho você gostaria de compartilhar hoje?' />
-      <input type='text' class='author input-space' placeholder='Autora' />
-      <input type='text' class='book input-space' placeholder='Livro'/>
+    <input class='question-feed ipt-general' type='text' placeholder='Qual trecho você gostaria de compartilhar hoje?' />
+    <div class='inputs-source'>
+      <input type='text' class='author input-space ipt-general' placeholder='Autora' />
+      <input type='text' class='book input-space ipt-general' placeholder='Livro'/>
     </div>
     <button type='submit' class='button-publish btnFeed'>Publicar 
     </button>
@@ -17,7 +19,7 @@ export const feedFunction = () => {
     <button type='submit' class='button-logout btnFeed'>Sair
     </button>
     </div>
-  <div class='posts-feed'>
+  <section class='posts-feed'>
   
   
   

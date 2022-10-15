@@ -72,7 +72,6 @@ export const createPost = async (textPost, category) => {
 export const postById = async (idPost) => {
   const docRef = doc(db, 'post', idPost);
   const docSnap = await getDoc(docRef);
-
   return docSnap.data();
 };
 

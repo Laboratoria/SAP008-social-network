@@ -27,7 +27,7 @@ export default () => {
       <button data-button="eventos" class="tag-button">Eventos</button>
       <button data-button="pets" class="tag-button">Pets</button>
       <button data-button="hobbies" class="tag-button">Hobbies</button>
-      <button data-button="politica" class="tag-button">Política</button>  
+      <button data-button="politica" class="tag-button politica">Política</button>  
     </nav>
 
   </header>
@@ -65,9 +65,11 @@ export default () => {
     <div id="fade" class="none"></div>
 
     <div id="modal-delete" class="none">
-      <span class="close-modal">X</span>
       <span>Tem certeza que deseja deletar?</span>
-      <button class="btn-delete">Deletar</button>
+      <div class="delete-modal-btns">
+        <button class="btn-delete">Deletar</button>
+        <button class="close-modal">Cancelar</button>
+      </div>
     </div>
 
   </main>
@@ -132,10 +134,6 @@ export default () => {
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-btn'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
-
-    // searchBar.addEventListener('keyup', (e) => {
-    //   postArr = postArr.filter((post) => post.text.includes(e.target.value));
-    // });
 
     menuBtns.forEach((btn) => {
       btn.addEventListener('click', () => {

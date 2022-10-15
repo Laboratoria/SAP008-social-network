@@ -7,13 +7,13 @@ export default () => {
   const template = `
           <header class="header-reset display-flex">
               <a href="#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
-              <h1><img class="img-logo-login" src="img/Rebu.png" alt="Rebu Logo"></h1>
+              <h1><img class="img-logo-login" src="img/Rebu.svg" alt="Rebu Logo"></h1>
           </header>
           <div class="gif-side-desktop" id="desktop-page">
           <video autoplay loop class="bg-gif-desktop">
             <source src="img/gifDesktop.mp4" type="video/mp4">
           </video>
-          <img src="img/Rebu.png" alt="Rebu Logo" class="rebu-logo-desktop">
+          <img src="img/Rebu.svg" alt="Rebu Logo" class="rebu-logo-desktop">
           </div>
   
           <main id="reset-page" class="reset-page">

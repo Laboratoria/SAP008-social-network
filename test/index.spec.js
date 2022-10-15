@@ -1,6 +1,6 @@
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, like,
+  deletePost, createPost, updatePost, postById, /* like */
 } from '../src/lib/index.js';
 
 import {

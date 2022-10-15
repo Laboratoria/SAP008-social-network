@@ -30,8 +30,3 @@ export default () => {
 
   return container;
 };
-
-// const inputEmail = container.querySelector('#email');
-// const inputPassword = container.querySelector('#password');
-// const buttonLogin = container.querySelector('.btnLogin');
-// const loginError = container.querySelector('#loginError');

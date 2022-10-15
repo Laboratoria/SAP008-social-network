@@ -169,7 +169,9 @@ html, body {
     .logo {
         display: flex;
         justify-content: center;
-        height: 276px;
+        height: 120px;
+        width: 120px;
+        
     }
     
 

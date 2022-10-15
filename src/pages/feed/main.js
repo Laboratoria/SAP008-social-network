@@ -131,12 +131,17 @@ export default () => {
             </div>
           </div>
           <textarea disabled data-post="${post.id}" class="text-post" style="resize:none" maxlength="200">${post.text}</textarea>
-          <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
           <div class="footer-post">
-            <p class="date-post">${post.data}</p>
-            <div class="like-container">
+            <div class="date-like-div">
+              <p class="date-post">${post.data}</p>
+              <div class="like-container">
               <button class="like-btn-post" data-id-post-like="${post.id}"><img ${post.like.includes(auth.currentUser.uid) ? 'src="img/icons/redHeart.svg"' : 'src="img/icons/blackHeart.svg"'} class="like-post-icon" alt="like button"></button>
               <p class="all-likes-post">${post.like.length}</p>
+            </div>
+            </div>
+          
+            <div class="confirm-edit-div">
+              <button data-confirm-edit="${post.id}" class="confirm-edit-btn hide" height="200" width="200">Salvar</button>
             </div>
           </div>
         </div>

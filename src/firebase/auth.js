@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  signOut
+  signOut,
 } from './exports.js'; // eslint-disable-line import/no-unresolved
 
 import { app } from './config.js';

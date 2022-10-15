@@ -31,13 +31,10 @@ export default () => {
 
   const btnLogout = container.querySelector('#logout-btn');
 
-	 btnLogout.addEventListener('click', (e) => {
-		e.preventDefault();
-    logout()
-		.then(() => {
-			window.location.hash = '#login';
-		})
-		.catch((error) => error);
+	btnLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+		logout();
+    window.location.hash = '#login';
   });
 
 	return container;

@@ -142,7 +142,6 @@ describe('postById', () => {
   });
 });
 
-
 describe('getAllPosts', () => {
   it('a função deve pegar todos os posts', async () => {
     const post = {};
@@ -155,7 +154,6 @@ describe('getAllPosts', () => {
     expect(getDocs).toHaveBeenCalledWith(undefined);
   });
 });
-
 
 describe('like', () => {
   it('a função deve modificar o like do post', async () => {
@@ -185,4 +183,3 @@ describe('logoff', () => {
     expect(signOut).toHaveBeenCalledTimes(1);
   });
 });
-

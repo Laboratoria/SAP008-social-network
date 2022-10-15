@@ -1,12 +1,13 @@
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, getAllPosts, /* like */, 
+  deletePost, createPost, updatePost, postById, getAllPosts, like,
+  logoff,
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
-  getDoc, getDocs,
+  getDoc, getDocs, signOut,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -154,21 +155,30 @@ describe('getAllPosts', () => {
   });
 });
 
-// describe('like', () => {
-//   it('a função deve modificar o like do post', async () => {
-//     const like =
+describe('like', () => {
+  it('a função deve modificar o like do post', async () => {
+    const post = {
+      postId: 'idPost',
+      author: 'alguem',
+      like: ['algum'],
+      data: jest.fn(),
+    };
+    const idUser = 'id';
 
-//     const post = {
-//       postId: 'idPost',
-//       author: 'idUser',
-//       like: [],
-//     };
+    getDoc.mockResolvedValueOnce(post);
+    await like(post.postId, idUser);
 
-//     await like(post.postId, post.author);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      like: ['algum', idUser],
+    });
+  });
+});
 
-//     expect(updateDoc).toHaveBeenCalledTimes(1);
-//     expect(updateDoc).toHaveBeenCalledWith(doc(undefined, 'post', post.postId), {
-//       like: ['idUser'],
-//     });
-//   });
-// });
+describe('logoff', () => {
+  it('a função deve deslogar o usuário', async () => {
+    logoff();
+
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});

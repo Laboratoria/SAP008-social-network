@@ -412,7 +412,7 @@
         cursor: pointer;
     }
 
-    #publish-btn:hover, .btn-delete:hover, .close-modal:hover {
+    #publish-btn:hover, .btn-delete:hover, .close-modal:hover, .confirm-edit-btn:hover {
         background-color: black;
         transition: 2s;
     }
@@ -420,7 +420,6 @@
     .post-textarea,
     .post {
         width: 70vw;
-        height: 18vh;
         margin-bottom: -0.3rem;
     }
     
@@ -430,7 +429,7 @@
         padding-left: 1rem;
     }
 
-    .header-post, .footer-post {
+    .header-post, .footer-post, .text-post {
         padding: 0.5rem 0.8rem;
     }
 
@@ -439,14 +438,13 @@
     }
 
     .post {
-        height: 40vh;
+        min-height: 40vh;
         margin-bottom: 4vh;
     }
 
     .text-post {
-        min-height: 18vh;
-        width: 47.8vw;
-        padding: 1rem 0 1rem 2rem;
+        min-height: 15vh;
+        width: 68.5vw;
     }
 
     .like-container {
@@ -469,7 +467,37 @@
         width: 20rem;
     }
 
+    .confirm-edit-btn {
+        padding: 0.1rem 1rem;
+        font-size: 1.5rem;
+    }
+
     .feed-footer {
         display: none;
     }
+}
+
+@media (min-width: 1800px) {
+
+    #publish-btn, #select-tags, .text-post {
+        font-size: 1.6rem;
+    }
+
+    .post {
+        height: 32vh;
+    }
+
+    .date-post {
+        font-size: 1.3rem;
+    }
+
+    .footer-post {
+        margin-top: -2rem;
+    }
+
+    .confirm-edit-btn {
+        padding: 0.3rem 1.5rem;
+    }
+
+
 }

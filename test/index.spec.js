@@ -1,12 +1,13 @@
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, like,
+  deletePost, createPost, updatePost, postById, getAllPosts, like,
+  logoff,
 } from '../src/lib/index.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
-  getDoc,
+  getDoc, getDocs, signOut,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -141,6 +142,21 @@ describe('postById', () => {
   });
 });
 
+
+describe('getAllPosts', () => {
+  it('a função deve pegar todos os posts', async () => {
+    const post = {};
+
+    getDocs.mockResolvedValueOnce(post);
+
+    await getAllPosts();
+
+    expect(getDocs).toHaveBeenCalledTimes(1);
+    expect(getDocs).toHaveBeenCalledWith(undefined);
+  });
+});
+
+
 describe('like', () => {
   it('a função deve modificar o like do post', async () => {
     const post = {
@@ -151,7 +167,8 @@ describe('like', () => {
     };
     const idUser = 'id';
 
-    // getDoc.mockResolvedValueOnce(post);
+    getDoc.mockResolvedValueOnce(post);
+
     await like(post.postId, idUser);
 
     expect(updateDoc).toHaveBeenCalledTimes(1);
@@ -160,3 +177,12 @@ describe('like', () => {
     });
   });
 });
+
+describe('logoff', () => {
+  it('a função deve deslogar o usuário', async () => {
+    logoff();
+
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});
+

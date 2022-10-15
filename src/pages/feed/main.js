@@ -17,8 +17,12 @@ export default () => {
   const template = `
   <header class="feed-header">
     <div class="header-images">
-      <img src="img/Rebu.svg" alt="rebu logo" class="rebu-logo-feed">
-      <button id="logout-btn"><img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon"></button>
+      <button id="rebu-logo-btn">
+        <img src="img/Rebu.svg" alt="rebu logo" class="rebu-logo-feed">
+      </button>
+      <button id="logout-btn">
+        <img class="logout-icon" src="img/icons/signout-icon.png" alt="signout icon">
+      </button>
     </div>
 
     <nav class="tag-filter">
@@ -27,7 +31,7 @@ export default () => {
       <button data-button="eventos" class="tag-button">Eventos</button>
       <button data-button="pets" class="tag-button">Pets</button>
       <button data-button="hobbies" class="tag-button">Hobbies</button>
-      <button data-button="politica" class="tag-button">Política</button>  
+      <button data-button="politica" class="tag-button politica">Política</button>  
     </nav>
 
   </header>
@@ -65,20 +69,26 @@ export default () => {
     <div id="fade" class="none"></div>
 
     <div id="modal-delete" class="none">
-      <span class="close-modal">X</span>
       <span>Tem certeza que deseja deletar?</span>
-      <button class="btn-delete">Deletar</button>
+      <div class="delete-modal-btns">
+        <button class="btn-delete">Deletar</button>
+        <button class="close-modal">Cancelar</button>
+      </div>
     </div>
 
   </main>
           
   <footer class="feed-footer">
-    <img class="homepage-icon" src="img/icons/home-icon.svg" alt="homepage icon">
+    <button id="feed-homepage-btn">
+      <img class="homepage-icon" src="img/icons/home-icon.svg" alt="homepage icon">
+    </button>
   </footer>
   `;
 
   feedContainer.innerHTML = template;
 
+  const homepageBtn = feedContainer.querySelector('#feed-homepage-btn');
+  const rebuBtn = feedContainer.querySelector('#rebu-logo-btn');
   const postForm = feedContainer.querySelector('#create-post-form');
   const textPost = feedContainer.querySelector('#text-post');
   const logoutBtn = feedContainer.querySelector('#logout-btn');
@@ -87,6 +97,12 @@ export default () => {
   const confirmDeletePost = feedContainer.querySelector('.btn-delete');
   const selectTags = feedContainer.querySelector('#select-tags');
   const menuBtns = Array.from(feedContainer.querySelectorAll('.tag-button'));
+
+  [homepageBtn, rebuBtn].forEach((btn) => {
+    btn.addEventListener('click', () => {
+      window.location.reload();
+    });
+  });
 
   function toggle(id) {
     modal.classList.toggle('none');
@@ -132,10 +148,6 @@ export default () => {
     const editBtn = Array.from(feedContainer.querySelectorAll('.edit-post-btn'));
     const trashcanBtn = Array.from(feedContainer.querySelectorAll('.delete-post-btn'));
     const likeBtns = Array.from(feedContainer.querySelectorAll('.like-btn-post'));
-
-    // searchBar.addEventListener('keyup', (e) => {
-    //   postArr = postArr.filter((post) => post.text.includes(e.target.value));
-    // });
 
     menuBtns.forEach((btn) => {
       btn.addEventListener('click', () => {

@@ -55,7 +55,7 @@ Para atender à segunda história, criamos uma página de redefinição de senha
 Conforme a demanda desta história, trabalhamos na implementação das funcionalidades de criar, editar, deletar e curtir posts.
 
 ### HISTÓRIA 4: 
-Incluímos a possibilidade de a usuária pesquisar por posts através de uma search bar, além de categorizar as próprias postagens conforme determinados interesses, e de filtrar as postagens exibidas no feed conforme os dados interesses. 
+Incluímos filtragem e categorização de posts, possibilitando que a usuária categorize suas próprias postagens conforme determinados interesses, além de conseguir filtrar postagens exibidas no feed conforme os dados interesses. 
 
 * **Critérios de aceitação:** tudo o que deve acontecer para satisfazer as
   necessidades do usuário.

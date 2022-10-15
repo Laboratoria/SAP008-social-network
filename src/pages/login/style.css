@@ -184,7 +184,7 @@ body {
         border-radius: 10px;
         gap: 2rem;
         background: #FFFFFFB5;
-        padding: 2rem 0 1rem 0;
+        padding: 2rem 0;
         flex-wrap: nowrap;
         box-shadow: 2px 3px 3px rgba(94, 94, 94, 0.329);
     }
@@ -200,6 +200,7 @@ body {
     }
 
     .password-reset-login {
+        margin-top: 0;
         font-size: 0.8rem;
     }
 
@@ -220,6 +221,7 @@ body {
     .btn-login {
         background-color:#7B2292;
         color: #FFFFFF;
+        margin: 0;
     }
     
 }

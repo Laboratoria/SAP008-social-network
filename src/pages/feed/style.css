@@ -15,6 +15,11 @@
     margin: 0 1rem;
 }
 
+#rebu-logo-btn, #feed-homepage-btn {
+    background: transparent;
+    border: none;
+}
+
 .rebu-logo-feed {
     width: 5rem;
     height: 3rem;
@@ -33,7 +38,6 @@
 .tag-filter::-webkit-scrollbar { 
     display: none;
 }
-
 
 .tag-button {
     border: none;
@@ -210,7 +214,6 @@
     pointer-events: all;
 }
 
-
 #fade {
     position: fixed;
     top: 0;
@@ -230,8 +233,29 @@
     z-index: 10;
     width: 30rem;
     max-width: 80%;
-    padding: 1.2rem;
+    padding: 1.3rem 0.5rem;
     border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.delete-modal-btns {
+    display: flex;
+    gap: 4.3rem;
+}
+
+.btn-delete, .close-modal {
+    background: #b1b1b1;
+    color: white;
+    border: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+}
+
+.close-modal {
+    background-color: #7B2292;
 }
 
 #modal-delete.none, #fade.none{
@@ -309,5 +333,123 @@
         height: 2.3rem;
         padding: 0.3rem;
     }
+}
 
+@media (min-width: 1024px) {
+
+    .header-images {
+        padding: 1.3rem;
+    }
+
+    .logout-icon {
+        width: 3.9rem;
+        height: 3.7rem;
+        align-self: center;
+    }
+
+    .rebu-logo-feed {
+        width: 12rem;
+        align-self: center;
+    }
+
+    .tag-filter {
+        justify-content: center;
+        overflow-x: hidden;
+        gap: 0rem;
+        padding: 0.8rem;
+    }
+
+    .tag-button {
+        text-transform: uppercase;
+        border-right: solid 2.5px #d0c7d2;
+        padding: 0.4rem 3rem;
+        background: linear-gradient(to right, #c171d460, rgb(255, 255, 255));
+        background-repeat: no-repeat;
+        background-size: 0 100%;
+        transition: background-size 1s 0s;
+    }
+
+    .tag-button:hover {
+        background-size: 100% 100%;
+        border-right: transparent;
+    }
+
+    .politica {
+        border-right: transparent;
+    }
+
+    .create-post-box-buttons {
+        height: 6.5vh;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    #publish-btn,
+    #select-tags {
+        width: 12.5vw;
+        height: 5vh;
+        cursor: pointer;
+    }
+
+    #publish-btn:hover, .btn-delete:hover, .close-modal:hover {
+        background-color: black;
+        transition: 2s;
+    }
+
+    .post-textarea,
+    .post {
+        width: 50vw;
+        height: 18vh;
+        margin-bottom: -0.3rem;
+    }
+    
+    .post-textarea::placeholder {
+        font-size: 1.3rem;
+        color: #8f8e8e;
+        padding-left: 1rem;
+    }
+
+    .header-post, .footer-post {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .user-name-post, .date-post {
+        color: #8f8e8e;
+    }
+
+    .post {
+        height: 40vh;
+        margin-bottom: 0.2vh;
+        border-bottom: solid 5px rgb(205, 205, 205);
+    }
+
+    .text-post {
+        min-height: 18vh;
+        width: 47.8vw;
+        padding: 1rem 0 1rem 2rem;
+    }
+
+    .like-container {
+        gap: 1rem;
+    }
+
+    .like-post-icon, .edit-post-icon, .delete-post-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .all-likes-post {
+        font-size: 1.65rem;
+        margin-top: -0.12rem;
+    }
+
+    #modal-delete {
+        padding: 1.3rem 0;
+        gap: 4.5rem;
+        width: 20rem;
+    }
+
+    .feed-footer {
+        display: none;
+    }
 }

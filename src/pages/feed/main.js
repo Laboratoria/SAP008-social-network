@@ -217,7 +217,8 @@ export default () => {
     });
   };
 
-  postForm.addEventListener('submit', () => {
+  postForm.addEventListener('submit', (e) => {
+    e.preventDefault();
     if (textPost.value === '') {
       nullPostMessage.classList.remove('hide');
     } else {

@@ -1,16 +1,23 @@
 export default () => {
   const sectionPassword = document.createElement('section');
   const content = `
-    <section class='boxModel'>
-      <form>
-        <h2 class="titleSenha">Vamos recuperar sua senha!</h2>
+    <section class='containerPassword'>
+      <form class="boxModelPass">
         <p>
-          <input class="recuperarSenha" type="text" id="username" placeholder="E-mail"  value="">
-          <div class="">  Ops, confira seus dados! </div>
+          <img class='logoPass' src="/src/img/logoTranp.png" alt='Logo Wanderlust'>
+        </p>
+        <p class="titleSenha">
+          <h3 class="titleSenha">Vamos recuperar sua senha!</h3>
         </p>
         <p>
-          <input class="ResetPassword" type="button" value="Continuar">
-          <a href="index.html" class="btnBack">voltar</a>
+          <input class="inputEmail" type="text" id="username" placeholder="E-mail" value="">
+          <div class="textError">  Ops, confira seus dados! </div>
+        </p>
+        <p>
+          <input class="ResetPassword" type="button" value="Enviar email">
+        </p>
+        <p class="btnBack">
+          <a href="index.html" class="link"><img class='logoPass' src="/src/img/setaBack.png" alt='Seta para voltar'></a>
         </p>
       </form>
     </section>`;

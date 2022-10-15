@@ -1,7 +1,8 @@
+
 import { app } from './configuration.js';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup,
-  GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword, signOut, updateProfile
+  GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword, signOut, updateProfile, getDocs
 } from './firebase.js';
 
 
@@ -72,3 +73,16 @@ export function logoutUser() { // função logout
   }).catch((error) => error);
 };
 
+export const getPosts = async () => {
+
+  try {
+    const querySnapshot = await getDocs(collection(dataBase, 'Posts'));
+    const allPosts = [];
+    querySnapshot.forEach((Posts) => {
+      allPosts.push({ ...Posts.data(), id: Posts.id });
+    });
+    return allPosts;
+  }catch (error) {
+    return error;
+  }
+}

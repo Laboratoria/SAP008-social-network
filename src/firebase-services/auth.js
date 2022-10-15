@@ -38,9 +38,20 @@ import { auth, app } from '../firebase-services/firebase-config.js';
     // ...
     return user;
   })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+  .catch((e) => {
+    switch (e.code) {
+      case 'auth/user-not-found':
+        alert('Usuário não encontrado! Por favor, verifique seus dados.');
+        break;
+      case 'auth/wrong-password':
+        alert('Senha incorreta! Por favor, verifique seus dados.');
+        break;
+      case 'auth/invalid-email':
+        alert('E-mail inválido! Por favor, verifique seus dados.');
+        break;
+      case 'auth/user-disabled':
+        alert('Usuário desativado! Por favor, reative sua conta.')
+    }
   });
   }
   

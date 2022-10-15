@@ -1,4 +1,4 @@
-import { createPost, getPost} from './../../lib/firestore.js';
+import { createPost, getPost, editPost} from './../../lib/firestore.js';
 import { logout } from '../../lib/auth.js';
 
 export default () => {
@@ -35,7 +35,11 @@ export default () => {
     const postTemplate = arrayPost.map((post) => `
       <div class="post">
         <p class="postTxt name" id="user-name">${post.name}</p>
-        <p class="postTxt" id="text-post">${post.texto}</p>        
+        <textarea disabled class="postTxt" id="textPost" data-post="${post.id}">${post.texto}</textarea>     
+        <button data-confirm-edit="${post.id}" class="save-btn hide" >Salvar</button>     
+        
+        <button id="btnEdit" type="button">Editar</button>
+        
       </div>
 
     `).join('');
@@ -47,6 +51,11 @@ export default () => {
   const txtInputPost = container.querySelector('#post');
   const btnLogout = container.querySelector('#btnLogout');  
   const formFeed = container.querySelector('#formFeed');
+  const editBtn = Array.from(container.querySelectorAll('#btnEdit'));
+  
+
+  // const textPost = container.querySelector('#textPost');
+  // const postId = container.querySelector('#postID');
   
   btnPublish.addEventListener("click", (e) => {
     e.preventDefault();
@@ -55,6 +64,32 @@ export default () => {
     showPost();
     formFeed.reset();
   });
+
+  editBtn.addEventListener('click', alert('editar'));
+      // const postToBeEdited = e.currentTarget.dataset.idPostEdit;
+      // const postTxtarea = container.querySelector(`[data-post="${postToBeEdited}"]`);
+      // const saveBtn = container.querySelector(`[data-confirm-edit="${postToBeEdited}"]`);
+
+      // postTxtarea.removeAttribute('disabled');
+      // saveBtn.classList.remove('hide');
+
+      // saveBtn.addEventListener('click', async() => {
+      //   await editPost(postToBeEdited, postTxtarea.value);
+      //   postTxtarea.setAttribute('disabled', '');
+      //   saveBtn.classList.add('hide');
+      //   showPost();
+      // });
+
+    
+
+
+  // btnEdit.addEventListener("click", alert("ta funcionando!"));
+    
+    //e.preventDefault();
+    // const txtValue = textPost.value;
+    // const idValue = postId.value;
+    // editPost();
+    
 
   btnLogout.addEventListener("click", () => {
     logout();

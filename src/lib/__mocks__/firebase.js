@@ -21,3 +21,4 @@ export const addDoc = jest.fn();
 export const updateDoc = jest.fn();
 export const getDoc = jest.fn();
 export const getDocs = jest.fn();
+export const signOut = jest.fn();

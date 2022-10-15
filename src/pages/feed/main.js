@@ -38,11 +38,9 @@ export default () => {
         
   <main class="main-container">
     
+    <p class="null-post-message hide">Digite algo para publicar</p>
+
     <section id="create-post">
-    
-      <div id="user-profile-picture-div">
-        <img src="" alt="" class="" class="user-profile-picture-post">
-      </div>
       
       <form id="create-post-form">
         <textarea class="post-textarea" placeholder="Escreva algo..." name="" id="text-post" cols="30" rows="10" style="resize:none" maxlength="200"></textarea>
@@ -97,6 +95,7 @@ export default () => {
   const confirmDeletePost = feedContainer.querySelector('.btn-delete');
   const selectTags = feedContainer.querySelector('#select-tags');
   const menuBtns = Array.from(feedContainer.querySelectorAll('.tag-button'));
+  const nullPostMessage = feedContainer.querySelector('.null-post-message');
 
   [homepageBtn, rebuBtn].forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -214,11 +213,16 @@ export default () => {
   };
 
   postForm.addEventListener('submit', () => {
-    createPost(textPost.value, selectTags.value)
-      .then(() => {
-        postForm.reset();
-        printPosts('allposts');
-      });
+    if (textPost.value === '') {
+      nullPostMessage.classList.remove('hide');
+    } else {
+      createPost(textPost.value, selectTags.value)
+        .then(() => {
+          nullPostMessage.classList.add('hide');
+          postForm.reset();
+          printPosts('allposts');
+        });
+    }
   });
 
   logoutBtn.addEventListener('click', () => {

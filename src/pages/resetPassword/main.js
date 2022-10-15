@@ -6,7 +6,7 @@ export default () => {
   const resetContainer = document.createElement('div');
   const template = `
           <header class="header-reset display-flex">
-              <a href="#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.png" alt="back arrow"></a>
+              <a href="#homepage" class="return-btn" id="return-btn"><img class="return-btn" src="img/returnBtn.svg" alt="back arrow"></a>
               <h1><img class="img-logo-login" src="img/Rebu.svg" alt="Rebu Logo"></h1>
           </header>
           <div class="gif-side-desktop" id="desktop-page">

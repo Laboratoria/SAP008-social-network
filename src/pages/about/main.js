@@ -2,7 +2,7 @@ export default () => {
   const aboutContainer = document.createElement('div');
   const template = `
     <header id="about-header">
-      <a href="/#homepage" class="return-btn"><img class="return-btn return-btn-tablet-mobile" src="img/returnBtn.svg" alt="back arrow"></a>
+      <a href="#homepage" class="return-btn"><img class="return-btn return-btn-tablet-mobile" src="img/returnBtn.svg" alt="back arrow"></a>
     </header>
     <main id="about-page">
       <article id="about-text">

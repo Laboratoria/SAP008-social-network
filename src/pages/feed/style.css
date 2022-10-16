@@ -124,7 +124,7 @@
 .post {
     background-color: #FFFFFF;
     width: 75vw;
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem 0.6rem 0.2rem 0.6rem;
     margin-bottom: 2rem;
 }
 
@@ -164,13 +164,18 @@
 }
 
 .like-post-icon, .edit-post-icon, .delete-post-icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+}
+
+.all-likes-post {
+    margin-top: -0.08rem;
 }
 
 .footer-post {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .date-post {
@@ -180,7 +185,7 @@
 
 .like-container {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.7rem;
 }
 
 .confirm-edit-btn {
@@ -190,6 +195,17 @@
     font-size: 0.8rem;
     padding: 0.3rem;
     margin-bottom: 0.5rem;
+}
+
+.date-like-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-edit-div {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.25rem 0;
 }
 
 .feed-footer {
@@ -396,15 +412,14 @@
         cursor: pointer;
     }
 
-    #publish-btn:hover, .btn-delete:hover, .close-modal:hover {
+    #publish-btn:hover, .btn-delete:hover, .close-modal:hover, .confirm-edit-btn:hover {
         background-color: black;
         transition: 2s;
     }
 
     .post-textarea,
     .post {
-        width: 50vw;
-        height: 18vh;
+        width: 70vw;
         margin-bottom: -0.3rem;
     }
     
@@ -414,7 +429,7 @@
         padding-left: 1rem;
     }
 
-    .header-post, .footer-post {
+    .header-post, .footer-post, .text-post {
         padding: 0.5rem 0.8rem;
     }
 
@@ -423,15 +438,13 @@
     }
 
     .post {
-        height: 40vh;
-        margin-bottom: 0.2vh;
-        border-bottom: solid 5px rgb(205, 205, 205);
+        min-height: 40vh;
+        margin-bottom: 4vh;
     }
 
     .text-post {
-        min-height: 18vh;
-        width: 47.8vw;
-        padding: 1rem 0 1rem 2rem;
+        min-height: 15vh;
+        width: 68.5vw;
     }
 
     .like-container {
@@ -454,7 +467,37 @@
         width: 20rem;
     }
 
+    .confirm-edit-btn {
+        padding: 0.1rem 1rem;
+        font-size: 1.5rem;
+    }
+
     .feed-footer {
         display: none;
     }
+}
+
+@media (min-width: 1800px) {
+
+    #publish-btn, #select-tags, .text-post {
+        font-size: 1.6rem;
+    }
+
+    .post {
+        height: 32vh;
+    }
+
+    .date-post {
+        font-size: 1.3rem;
+    }
+
+    .footer-post {
+        margin-top: -2rem;
+    }
+
+    .confirm-edit-btn {
+        padding: 0.3rem 1.5rem;
+    }
+
+
 }

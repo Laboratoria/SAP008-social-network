@@ -6,8 +6,8 @@ import {
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  getAuth, updateProfile, getFirestore, deleteDoc, doc, addDoc, updateDoc,
-  getDoc,
+  getAuth, updateProfile, deleteDoc, doc, addDoc, updateDoc,
+  getDoc, getDocs, signOut,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -62,20 +62,22 @@ describe('registerWithEmailAndPassword', () => {
 
 describe('deletePost', () => {
   it('a função deve deletar post de id abcdefghi', async () => {
+    const mockRef = {};
     const mockPostCollection = {
       posts: {
         postId: 'abcdefghi',
       },
     };
-    const mockDb = getFirestore.mockReturnValueOnce(mockPostCollection);
 
-    const mockDocRef = doc(mockDb, 'posts', mockPostCollection.posts.postId);
-    deleteDoc.mockResolvedValueOnce(mockDocRef);
+    doc.mockReturnValueOnce(mockRef);
+    deleteDoc.mockResolvedValueOnce(mockRef);
 
     await deletePost(mockPostCollection.posts.postId);
 
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'post', mockPostCollection.posts.postId);
     expect(deleteDoc).toHaveBeenCalledTimes(1);
-    expect(deleteDoc).toHaveBeenCalledWith(mockDb.posts);
+    expect(deleteDoc).toHaveBeenCalledWith(mockRef);
   });
 });
 

@@ -45,7 +45,7 @@ export default () => {
   const sendBtn = resetContainer.querySelector('#btn-reset-page');
   const resetMessage = resetContainer.querySelector('.reset-message');
 
-  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+  returnBtn.addEventListener('click', () => window.history.back());
 
   sendBtn.addEventListener('click', (e) => {
     e.preventDefault();

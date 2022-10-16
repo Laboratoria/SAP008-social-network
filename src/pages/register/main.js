@@ -68,7 +68,7 @@ export default () => {
   const firebaseWarningMessages = registerContainer.querySelector('#firebase-warning-messages');
   const returnBtn = registerContainer.querySelector('#return-btn');
 
-  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+  returnBtn.addEventListener('click', () => window.history.back());
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();

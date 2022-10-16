@@ -58,7 +58,7 @@ export default () => {
   const firebaseWarningMessages = loginContainer.querySelector('#firebase-warning-messages');
   const returnBtn = loginContainer.querySelector('#return-btn');
 
-  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
+  returnBtn.addEventListener('click', () => window.history.back());
 
   btnLogin.addEventListener('click', () => {
     const formValidation = validateLoginForm(email.value, password.value);

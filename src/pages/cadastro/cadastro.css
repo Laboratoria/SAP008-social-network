@@ -9,7 +9,7 @@ body{
 }
 
 header{
-    padding: 6rem;
+    padding: 1rem;
     background-color: #00A57A;
     position: relative;
     width: 100%;
@@ -24,63 +24,103 @@ h1{
     font-size: 3rem;
     color:#ffffff;
     position: relative;
-    top: 5rem;
-    right: 3.5rem;
+    top: 1rem;
+    right: -1.5rem;
 }
 .formCadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    padding: 2rem;
+    /* padding: 2rem; */
     
 }
 #registrationFirstNameAndLastName{
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 20rem;
-    height: 3rem;
+    height: 1rem;
     background-color: #e9e9e9;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
 }
 #registrationUsername{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     width: 20rem;
-    height: 3rem;
+    height: 1rem;
     background-color: #e9e9e9;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
 }
 #emailRegistration{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     width: 20rem;
-    height: 3rem;
+    height: 1rem;
     background-color: #e9e9e9;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
 }
 #registrationPassword{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
+    width: 20rem;
+    height: 1rem;
+    background-color: #e9e9e9;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
+}
+#passwordConfirmation{
+    /* margin-top: 2rem; */
+    width: 20rem;
+    height: 1rem;
+    background-color: #e9e9e9;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
+}
+#createAnAccount{
     width: 20rem;
     height: 3rem;
-    background-color: #e9e9e9;
-}
-#PasswordConfirmation{
-    margin-top: 2rem;
-    width: 20rem;
-    height: 3rem;
-    background-color: #e9e9e9;
-}
-#submitCadastro{
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    background-color: #e9e9e9;
+    /* margin-top: 50px; */
+    background-color: #00A57A;
+   
    
 }
 #iamRegistration{
-    margin: 2rem;
+    /* margin: 2rem; */
     width: 20rem;
-    height: 3rem;
+    height: 1rem;
     background-color: #e9e9e9;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00A57A;
 }
 ::placeholder{
-    font-size: 1.0rem;
+    font-size: -1rem;
 }
 #registrationBox{
     width: 2rem;
@@ -100,7 +140,7 @@ button{
     border-radius: 20px;
     
 }
-input{
+/* input{
 
     justify-content: center;
     align-items: center;
@@ -109,7 +149,7 @@ input{
     border-right: none;
     border-bottom-color: #00A57A;
  
-}
+} */
 .logo{
     display: flex;
     align-items: center;
@@ -121,8 +161,8 @@ input{
 }
 .icone{
     position: relative;
-    top: 2rem;
-    right: 3.5rem;
+    top: 1rem;
+    right: -1.5rem;
     
 }
 .registrationIcon{
@@ -139,15 +179,15 @@ input{
     border: 3px solid #DB5A5A;
 }
 
- /* .formCadastro.error i.img-error {
+.error i.img-error {
     visibility: visible;
 }
 
-.formCadastro.success i.img-success {
+.success i.img-success {
     visibility: visible;
 }
 
-.formCadastro.error small{
+.error small{
     color: #DB5A5A;
     visibility: visible;
 } 
@@ -164,4 +204,4 @@ input{
     margin-top: 5px;
     font-size: 14px;
 
-} */
+}

@@ -86,5 +86,6 @@ export default () => {
     loginWithGoogle()
       .catch((error) => error);
   });
+
   return loginContainer;
 };

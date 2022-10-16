@@ -26,7 +26,7 @@ export default () => {
   const returnBtnDesktop = aboutContainer.querySelector('.return-button-desktop');
 
   [returnBtn, returnBtnDesktop].forEach((btn) => {
-    btn.addEventListener('click', () => window.location.replace('#homepage'));
+    btn.addEventListener('click', () => window.history.back());
   });
 
   return aboutContainer;

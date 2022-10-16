@@ -1,3 +1,5 @@
+import { userLogin, loginGoogle } from '../../lib/index.js';
+
 export default () => {
   const container = document.createElement('div');
 
@@ -27,6 +29,25 @@ export default () => {
   
   `;
   container.innerHTML = telaLogin;
+
+  const logar = container.querySelector('#btnLogar');
+  logar.addEventListener('click', () => {
+    const inputEmail = container.querySelector('#email').value;
+    const inputPassword = container.querySelector('#password').value;
+
+    userLogin(inputEmail, inputPassword)
+      .then(() => {
+        alert('você está logado');
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
+  });
+  const btnGoogle = container.querySelector('#logarGoogle');
+  btnGoogle.addEventListener('click', () => {
+    loginGoogle();
+  });
 
   return container;
 };

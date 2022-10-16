@@ -1,4 +1,4 @@
-import { newUser} from '../../lib/auth.js';
+import { newUser } from '../../lib/auth.js';
 export default () => {
     const container = document.createElement('div');
     const template =
@@ -44,66 +44,34 @@ export default () => {
     const pMsgPswd = container.querySelector('#msg-error-pswd');
     const pMsgPswdOk = container.querySelector('#msg-error-pswd-ok');
 
-
-
-    // create dspara mesmo com e-mail inválido. #home aparece mesmo sem autenticar
-    formRegister.addEventListener('submit', async (e) => {
+    formRegister.addEventListener('submit', (e) => {
         e.preventDefault()
 
         if (signInPassword.value !== signInConfPassword.value) {
             return pMsgPswdOk.innerHTML = 'As senhas devem ser iguais'
 
-        } 
+        }
         if (signInName.value === "" || signInEmail.value === "" || signInPassword.value === "" || signInConfPassword.value === '' || checkBox.checked === false) {
             return alert('Todos os campos devem ser preenchidos')
         }
-        return await newUser(signInEmail.value, signInPassword.value, signInName.value).then(() => {
-            
-            // create(signInName.value, signInEmail.value, signInPassword.value)
-            window.location.hash = '#home';
-        })
+        return newUser(signInEmail.value, signInPassword.value, signInName.value)
+            .then(() => {
+                window.location.hash = '#home';
+            })
             .catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
                 if (errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
                     pMsgEmail.innerHTML = 'E-mail já cadastrado'
-                    return
                 }
                 if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
                     pMsgEmail.innerHTML = 'Endereço de e-mail inválido'
-                    return
                 }
                 if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
                     pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos'
-                    return
                 }
             });
     })
 
     return container;
 }
-
-
-// newUser(signInEmail.value, signInPassword.value).then((create(signInName.value, signInEmail.value, signInPassword.value)) => {
-//     
-// })
-// .catch((error) => {
-//     const errorMessage = error.message;
-//         console.log(errorMessage)
-//         if (errorMessage === '') {
-//             return pMsgEmail.innerHTML = 'E-mail já cadastrado'
-//         } 
-//         if (errorMessage === 'FirebaseError: Firebase: Error (auth/invalid-email).') {
-//             return pMsgEmail.innerHTML = 'Endereço de e-mail inválido'
-//         }
-//         if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
-//             return pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos'
-//         }
-//     });
-//     create(signInName, signInEmail.value, signInPassword.value)
-
-
-
-
-
-

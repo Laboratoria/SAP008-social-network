@@ -29,7 +29,6 @@ body {
 hr {
   margin: auto 0 auto 0;
   width: 12vh;
-
 }
 
 form {
@@ -69,7 +68,6 @@ form {
   color: #ffffff;
   padding: 10% 50%;
   border: none; 
-
 }
 
 #ok-login-btn {
@@ -133,12 +131,6 @@ input {
   border: none;
 }
 
-footer {
-  bottom: 0;
-  position: fixed;
-}
-
-
 .icons-container {
   display: flex;
   justify-content: space-around;
@@ -189,7 +181,7 @@ footer {
   border: #ffffff;
   width: 50px;
   height: 50px;
- 
+  
 }
 
 .name-letter {
@@ -197,8 +189,6 @@ footer {
   font-size: 35px;
   text-align: center;
 }
-  
-  
 
 #grade {
   font-size: 22px;
@@ -259,3 +249,60 @@ footer {
 #text{
   flex-direction: column;
 }
+
+footer {
+  bottom: 0;
+  position: fixed;
+}
+
+/*new_post.js atribuição de nota*/
+.ul-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.evaluation-container {
+  display: flex;
+} 
+
+.rate-this {
+  transform: rotate(-90deg);
+  margin: 0 10px 0 10px;
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.rate-type {
+  margin: 0 0 0 10px;
+}
+
+.circle-icon {
+  list-style-type: none;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  font-size: 15px;
+}
+
+.circle-icon::before {
+  content: "\2688";
+}
+
+.circle-icon.active ~ .circle-icon::before {
+  content: "\2686";
+}
+
+.rate:hover .circle-icon::before {
+  content: "\2688";
+}
+
+.circle-icon:hover ~ .circle-icon::before {
+  content: "\2686";
+}
+

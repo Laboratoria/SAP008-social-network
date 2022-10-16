@@ -45,7 +45,7 @@ export const googleAccess = async () => { // função acessar com google
 export const create = async (nomeRest, endRest, critica) => { // função criar novo dado (posts)
 
   try {
-    const docRef = await addDoc(collection(dataBase, 'Posts' ), {
+    const docRef = await addDoc(collection(dataBase, 'Posts'), {
       name: auth.currentUser.displayName,
       author: auth.currentUser.uid,
       nomeRest,
@@ -64,7 +64,7 @@ export function loginUser(email, password) { // função login
     .then((userCredential) => {
       const user = userCredential.user;
       return user;
-    });
+    }).catch((error) => error);;
 };
 
 export function logoutUser() { // função logout
@@ -74,7 +74,6 @@ export function logoutUser() { // função logout
 };
 
 export const getPosts = async () => {
-
   try {
     const querySnapshot = await getDocs(collection(dataBase, 'Posts'));
     const allPosts = [];
@@ -82,7 +81,8 @@ export const getPosts = async () => {
       allPosts.push({ ...Posts.data(), id: Posts.id });
     });
     return allPosts;
-  }catch (error) {
+
+  } catch (error) {
     return error;
   }
 }

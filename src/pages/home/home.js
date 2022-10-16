@@ -7,13 +7,13 @@ export default () => {
   const template =
     `<section>
     <nav id="mobile-top-icons" class="icons-container">
-      <img id="menu-icon" class="icons-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/0442f1be51cd71480d7dcb6acbaf76779ee5450e/external/svg_icons_social_network/menu-icon.svg"/>
-      <img id="home-icon" class="icons-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/0442f1be51cd71480d7dcb6acbaf76779ee5450e/external/svg_icons_social_network/home-icon.svg"/>
-      <img id="heart-icon" class="icons-size" src="https://raw.githubusercontent.com/nunesisabela/SAP008-social-network/0442f1be51cd71480d7dcb6acbaf76779ee5450e/external/svg_icons_social_network/heart-icon.svg"/>
+      <img id="menu-icon" class="icons-size" src="./external/svg/menu-icon.svg"/>
+      <img id="home-icon" class="icons-size" src="./external/svg/home-icon.svg"/>
+      <img id="heart-icon" class="icons-size" src="./external/svg/heart-icon.svg"/>
     </nav>
     <hr class="colorful-line"/>
     <div>
-      <p id="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial!</p>
+      <p id="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial.</p>
     </div>
     <hr class="colorful-line"/>
     <section class="post-container"></section>  
@@ -38,7 +38,7 @@ export default () => {
     const postsTemplate = all.map((Posts) =>
       `<div class="posts">
         <div id="text">
-          <p>@${Posts.name}</p>
+          <p>@ ${Posts.name}</p>
           <p id="local" class="edit-local establishment" contenteditable="false">${Posts.nomeRest}</p>
           <p id="adress" class="edit-adress" contenteditable="false">${Posts.endRest}</p>
           <p id="review" class="edit-review" contenteditable="false">${Posts.critica}</p>
@@ -48,7 +48,7 @@ export default () => {
         <button id="ok">OK</button>
     
         <div id="modal-delete" class="hide">
-          <p>Tem certeza que quer excluir este post?</p>
+          <p>Tem certeza que deseja excluir este post?</p>
           <button id="yes-delete">Sim</button>
           <button id="no-close">Não</button>
         </div>

@@ -1,5 +1,4 @@
 import { loginUser } from "../../lib/auth.js";
-// export const msgError = container.querySelector('#msg-error');
 
 export default () => {
     const container = document.createElement('div');
@@ -36,9 +35,9 @@ export default () => {
     const loginBtn = container.querySelector('#ok-login-btn');
     const pMsg = container.querySelector('#msg-error');
     
-    loginBtn.addEventListener('click', (e) => {
+    loginBtn.addEventListener('click', async (e) => {
         e.preventDefault();
-        loginUser(logInEmail.value, logInPassword.value)
+        await loginUser(logInEmail.value, logInPassword.value)
           .then((user) => {
             localStorage.setItem('userEmail', user.email);
             localStorage.setItem('userId', user.uid);

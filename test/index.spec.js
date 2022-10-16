@@ -1,7 +1,7 @@
 /* eslint-disable object-shorthand */
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, like,
+  deletePost, createPost, updatePost, postById, like, getAllPosts, logoff,
 } from '../src/lib/index.js';
 
 import {
@@ -189,5 +189,25 @@ describe('like', () => {
     expect(updateDoc).toHaveBeenCalledWith(undefined, {
       like: [],
     });
+  });
+});
+
+describe('getAllPosts', () => {
+  it('a função deve pegar todos os posts', async () => {
+    const post = {};
+
+    getDocs.mockResolvedValueOnce(post);
+
+    await getAllPosts();
+
+    expect(getDocs).toHaveBeenCalledTimes(1);
+    expect(getDocs).toHaveBeenCalledWith(undefined);
+  });
+});
+
+describe('logoff', () => {
+  it('a função deve deslogar o usuário', async () => {
+    logoff();
+    expect(signOut).toHaveBeenCalledTimes(1);
   });
 });

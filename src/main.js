@@ -1,12 +1,26 @@
-// Este es el punto de entrada de tu aplicacion
+import cadastro from './pages/cadastro/cadastro.js';
 
-import { myFunction } from './lib/index.js';
 import login from './pages/login/login.js';
-
-myFunction();
 
 const main = document.querySelector('#root');
 
+const verify = () => {
+  main.innerHTML = '';
+  switch (window.location.hash) {
+    case '':
+      main.appendChild(login());
+      break;
+    case '#register':
+      main.appendChild(cadastro());
+      break;
+    default:
+      main.appendChild(login());
+  }
+};
+
+window.addEventListener('hashchange', verify);
+
 window.addEventListener('load', () => {
-  main.appendChild(login());
+  // main.appendChild(login());
+  verify();
 });

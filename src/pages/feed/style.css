@@ -411,6 +411,11 @@
         height: 5vh;
         cursor: pointer;
     }
+    
+    .confirm-edit-btn {
+        padding: 0.1rem 1rem;
+        font-size: 1.5rem;
+    }
 
     #publish-btn:hover, .btn-delete:hover, .close-modal:hover, .confirm-edit-btn:hover {
         background-color: black;
@@ -465,11 +470,6 @@
         padding: 1.3rem 0;
         gap: 4.5rem;
         width: 20rem;
-    }
-
-    .confirm-edit-btn {
-        padding: 0.1rem 1rem;
-        font-size: 1.5rem;
     }
 
     .feed-footer {

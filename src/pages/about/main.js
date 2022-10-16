@@ -23,10 +23,11 @@ export default () => {
   aboutContainer.innerHTML = template;
 
   const returnBtn = aboutContainer.querySelector('.return-btn');
-  returnBtn.addEventListener('click', () => window.location.replace('#homepage'));
-
   const returnBtnDesktop = aboutContainer.querySelector('.return-button-desktop');
-  returnBtnDesktop.addEventListener('click', () => window.location.replace('#homepage'));
+
+  [returnBtn, returnBtnDesktop].forEach((btn) => {
+    btn.addEventListener('click', () => window.location.replace('#homepage'));
+  });
 
   return aboutContainer;
 };

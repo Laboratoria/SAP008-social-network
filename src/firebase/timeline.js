@@ -31,6 +31,6 @@ export const newPost = async (messageContent, user) => {
 };
 export const readAllPosts = async () => {
     const querySnapshot = await getDocs(collection(firestore, 'posts'));
-}
-debugger;
+};
+
 

@@ -3,12 +3,23 @@
  */
 import { newUser, loginGoogle } from '../../src/firebase/auth.js';
 import signup from '../../src/pages/signup/signup.js';
+import { redirect } from '../../src/routes.js';
 
 jest.mock('../../src/firebase/exports.js');
 jest.mock('../../src/firebase/auth.js');
+jest.mock('../../src/routes.js');
+
+afterEach(() => {
+  redirect.mockClear();
+
+  //jest.clearAllMocks();
+});
+
+
+
+const esperaTodasAsPromises = () => new Promise(process.nextTick);
 
 describe('signup', () => {
-  const container = signup();
   it('should be a function', () => {
     expect(typeof signup).toBe('function');
   });
@@ -20,19 +31,25 @@ describe('signup', () => {
     expect(typeof result.innerHTML).toBe('string');
   });
 
-  it('test submit input', () => {
+  it('test submit input', async () => {
+    const container = signup();
     const form = container.querySelector('.form-signup');
     const event = new Event('submit');
     form.dispatchEvent(event);
+    await esperaTodasAsPromises();
     expect(newUser).toHaveBeenCalledTimes(1);
-    expect(window.location.hash).toBe('#login');
+    expect(redirect).toHaveBeenCalledWith('#login');
+    expect(redirect).toHaveBeenCalledTimes(1);
   });
 
-  it('test click input', () => {
+  it('test click input', async () => {
+    const container = signup();
     const btnGoogle = container.querySelector('.btn-google-signup');
     const event = new Event('click');
     btnGoogle.dispatchEvent(event);
+    await esperaTodasAsPromises();
     expect(loginGoogle).toHaveBeenCalledTimes(1);
-    expect(window.location.hash).toBe('#login');
+    expect(redirect).toHaveBeenCalledWith('#login');
+    expect(redirect).toHaveBeenCalledTimes(1);
   });
 });

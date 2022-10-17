@@ -1,5 +1,6 @@
 import { loginGoogle, newUser } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
+import { redirect } from '../../routes.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -43,7 +44,7 @@ export default () => {
     e.preventDefault();
     newUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        window.location.hash = '#login';
+        redirect('#login');
       })
       .catch((error) => {
         errorMessage.innerHTML = getErrorMessage(error);
@@ -52,7 +53,7 @@ export default () => {
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
     await loginGoogle();
-    window.location.hash = '#login';
+    redirect('#login');
   });
 
   return container;

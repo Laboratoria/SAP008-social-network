@@ -4,7 +4,7 @@ import { redirect } from '../redirect.js';
 export default () => {
   const container = document.createElement('div');
   const template = `  
-    <section id="register"> 
+    <section id= 'register'> 
 
       <div class="image"> 
         <img class="background-register" src="./images/pexels-zachary-debottis-2067677.jpg" alt="logo do título"/>

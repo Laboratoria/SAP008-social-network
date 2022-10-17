@@ -18,7 +18,6 @@ body, html {
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
     align-items: flex-start;
     background-image: url('../images/image_back_login.jpg'); 
 }
@@ -31,25 +30,14 @@ body, html {
     margin-top: 20%;
 }
 
-.container-logo { 
-    display: flex;
-    justify-content: center;
-}
-
 #logo-login{
     width: 70%;
 }
 
-.container-subtitle {
-    display: flex;
-    justify-content: center
-}
-
 #sub-title{
     color: #081E26;
-    font-size: 1.0em; 
+    font-size: 0.4em; 
     align-items: flex-start;
-    text-align: center;
     /*font-family: "Carrois Gothic SC";*/
 }
 
@@ -172,59 +160,30 @@ footer {
     padding: 10px 10px;     
 }
 
-@media screen and (min-width: 1024px) { 
+@media screen and (min-width: 768px){
 
-    .wrapper-login {
-        padding: 0 40px 0;
-        position: absolute;
+    .wrapper-login {  
+        position: absolute;       
         top: 50%;
         left: 50%;
-        height: 80%;
-        width: 60%;
+        height: 90vh;
+        width: 70vw;
         border-radius: 20px;
-        overflow: hidden;
-        background-color: #69636357;
         transform: translate(-50%, -50%);
         transition: width .3s, heigth .3s;
         transition-timing-function: ease;
-    }   
-
-    .container-login{
-        padding: 10px;
-        width: 30%;
-        height: 70%;
-        border-radius: 20px;  
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;  
-        text-align: center;  
-        background: rgb(255, 255, 255, 0.2);  
+        background-image: url('../images/image_back_login.jpg');
+        background-repeat: no-repeat;
+        background-size: 50% 100%;
     }
-
-    .background-login {     
-        width: 30%;
-        height: 70%;
-        float: left;     
-        border-radius: 0 20px 20px 0;
-    }  
 
     #logo-login{
-        width: 100%;
+        width: 30%;
     }
-
-}
-
-/*@media screen and (min-width: 992px){
     
-    .background-register{
-        background-color: #FFFFFF;
-        float: right;
-        width: 35vw;
-        height: 100vh;
+    .container-form-login {
+        height:60%;
+        width: 60%;
+        margin-top: 15px;
     }
-
-    .container-register{
-        float: left;
-        width: 30vw;
-    }
-}*/
+}

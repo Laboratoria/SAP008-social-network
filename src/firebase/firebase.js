@@ -50,9 +50,9 @@ export const signOut = () => {
   auth.signOut();
 };
 
-export const createPost = async (artist, location, date, text) => {
+export const createPost = async (artist, location, date, text) => { //eslint-disable-line
   try {
-    const docRef = await addDoc(collection(db, 'posts'), {
+    return await addDoc(collection(db, 'posts'), {
       name: auth.currentUser.displayName,
       author: auth.currentUser.uid,
       artist,
@@ -61,8 +61,6 @@ export const createPost = async (artist, location, date, text) => {
       text,
       likes: 0,
     });
-
-    console.log('Document written with ID: ', docRef.id);
   } catch (e) {
     console.error('Error adding document: ', e);
   }

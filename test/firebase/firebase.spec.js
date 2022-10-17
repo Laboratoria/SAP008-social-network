@@ -70,7 +70,7 @@ describe('createPost', () => {
     const date = '30-08-2022';
     const text = 'SHOW';
 
-    createPost(artist, location, date, text);
-    await expect(addDoc).tohaveBeenCalled();
+    await createPost(artist, location, date, text);
+    expect(addDoc).toHaveBeenCalled();
   });
 });

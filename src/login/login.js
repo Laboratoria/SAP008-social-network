@@ -4,21 +4,22 @@ import { redirect } from '../redirect.js';
 export default () => {
   const container = document.createElement('div');
   container.classList.add('wrapper-login');
-  const template = `       
+  const template = `
+  <section class = login>     
         <div class ='container-login'>
             <div class='container-logo'>
-                <img src='./images/logo_02_blue_081E26.png' id='logo-login'alt='logo do título'>
+                <img src='./images/logo_02_blue_081E26.png' id='logo-login' alt='logo do título'>
             </div>
             <div class='container-subtitle'
                 <h1 id="sub-title">MOMENTOS MUSICAIS INESQUECÍVEIS</h1>
             </div>
-           
             <form class='container-form-login'> 
+            
                 <div class='container-email-password>            
                     <input class='box-email' id='email-user' type='email' placeholder='Digite seu e-mail'/>
-                     <span class='material-icons' id='icon-mail'>mail_outline</span>                         
+                        <span class='material-icons' id='icon-mail'>mail_outline</span>                         
                     <input class='box-password' id='password-user' type='password' placeholder='Digite sua senha'/>
-                     <span class='material-icons' id='icon-password'>lock_outline</span>
+                        <span class='material-icons' id='icon-password'>lock_outline</span>
                     <button class='btn-enter' type='submit' id='btn-submit'>Entrar</button>
                     <button class='new-password' type='button'>Esqueci a senha<a href='#password' id='btn-password'></button>  
                 </ div> 

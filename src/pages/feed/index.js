@@ -50,17 +50,14 @@ export default () => {
         const postToBeEdited = e.currentTarget.dataset.idPostEdit;
         const txtPost = container.querySelector(`[data-post="${postToBeEdited}"]`);
         const dataSave = container.querySelector(`[data-save="${postToBeEdited}"]`);
-        const btnSave = container.querySelector('.btn-save');
         
-        console.log(txtPost.value);
-
         txtPost.removeAttribute('disabled');
-        btnSave.classList.remove('hide');
+        dataSave.classList.remove('hide');
 
         dataSave.addEventListener("click", async () => {
           await upDatePost(postToBeEdited, txtPost.value);
           txtPost.setAttribute('disabled', '');
-          btnSave.classList.add('hide');
+          dataSave.classList.add('hide');
         });
       });
     });

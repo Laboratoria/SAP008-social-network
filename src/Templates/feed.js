@@ -1,7 +1,7 @@
-export default () =>{
-    const container = document.createElement("div");
+export default () => {
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
         <header>
             <ul>
                 <li>
@@ -15,8 +15,7 @@ export default () =>{
                 </li>
             </ul>
         </header>
-            `
-    container.innerHTML = template; 
-    return container;
-}
-
+            `;
+  container.innerHTML = template;
+  return container;
+};

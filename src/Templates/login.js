@@ -1,7 +1,7 @@
 export default () => {
-    const container = document.createElement("div");
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
       <section class="content">
          <form class="form">
 
@@ -38,8 +38,7 @@ export default () => {
 
          </form>
       </section>
-   `
-    container.innerHTML = template;
-    return container;
-
-}
+   `;
+  container.innerHTML = template;
+  return container;
+};

@@ -46,6 +46,10 @@
     border-radius: 6px;
     margin: 2%;
 }
+.msgErro{
+    color: red;
+    margin: 5px;
+}
 .esqueciSenhaCadastre{
     color: black;
     text-decoration: none;

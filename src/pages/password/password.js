@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { resetPassword } from '../../lib/auth.js';
 
 export default () => {
@@ -13,7 +14,6 @@ export default () => {
         </p>
         <p>
           <input class="inputEmail" type="text" id="userEmail" placeholder="E-mail" value="">
-          <div class="textError">  Ops, confira seus dados! </div>
         </p>
         <p>
           <input id="btn-reset" class="ResetPassword" type="button" value="Enviar email">
@@ -34,7 +34,7 @@ export default () => {
       })
       .cath((error) => {
         console.error(error);
-      })
+      });
   });
   return sectionPassword;
 };

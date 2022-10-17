@@ -1,13 +1,14 @@
-// import '../css/feed.css';
+import { userLogOut } from '../firebase-services/auth.js';
+
 export const feedFunction = () => {
-  const containerFeed = document.createElement('section');
+  const containerFeed = document.createElement("section");
 
   const templateFeed = `
   <section class='feed-page'>
-  <div class='form-feed'>
-    <div class="img-user"></div>
-    <div class='inputs-feed'>
-    <input class='question-feed ipt-general' type='text' placeholder='Qual trecho você gostaria de compartilhar hoje?' />
+    <div class='form-feed'>
+      <div class="img-user"></div>
+      <div class='inputs-feed'>
+      <input class='question-feed ipt-general' type='text' placeholder='Qual trecho você gostaria de compartilhar hoje?' />
     <div class='inputs-source'>
       <input type='text' class='author input-space ipt-general' placeholder='Autora' />
       <input type='text' class='book input-space ipt-general' placeholder='Livro'/>
@@ -20,17 +21,20 @@ export const feedFunction = () => {
     </button>
     </div>
   <section class='posts-feed'>
+   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  `
+  `;
 
   containerFeed.innerHTML = templateFeed;
+
+  const btnLogOut = containerFeed.querySelector('.button-logout');
+  btnLogOut.addEventListener('click', () => {
+    userLogOut().then(() => {
+      console.log('Oi, nenem')
+      window.location.hash = '#home';
+    })
+    
+  });
+
   return containerFeed;
-}
+};

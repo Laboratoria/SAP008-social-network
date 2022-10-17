@@ -1,5 +1,6 @@
 export {
   getAuth,
+  signOut,
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,

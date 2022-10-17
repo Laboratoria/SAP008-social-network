@@ -17,11 +17,11 @@ export const signUpFunction = () => {
           <img src='img\\logo.png' class='img-logo' alt='Logo Booknotes'>
         </picture>
         <p class='name-input'>Nome</p>
-        <input type='text' class='input-signup' id='nameUser'> 
+        <input type='text' class='input-signup' id='nameUser' placeholder="Nome"> 
         <p class='name-input'>E-mail</p>
-        <input type='email' name=email class='input-signup' id='emailUser'>
+        <input type='email' name=email class='input-signup' id='emailUser' placeholder="E-mail">
         <p class='name-input'>Senha</p>
-        <input type='password' name=password class='input-signup' id='passUser' maxlength='20'>
+        <input type='password' name=password class='input-signup' id='passUser' maxlength='20' placeholder="Senha">
         <button type='submit' class='button-signup' id='buttonSignUp'>Cadastrar e entrar!</button>
         <button type='submit' class='button-back-home' id='backAtHome'>Voltar</button>
       </div>
@@ -36,8 +36,9 @@ export const signUpFunction = () => {
     const nameRegst = containerSignUp.querySelector('#nameUser').value;
     const emailRegst = containerSignUp.querySelector('#emailUser').value;
     const passUser = containerSignUp.querySelector('#passUser').value;
-    createNewUser(nameRegst, emailRegst, passUser);
-    window.location.hash = '#feed';
+    createNewUser(nameRegst, emailRegst, passUser).then((result) => {
+      if (result) window.location.hash = '#feed';
+    });
   });
 
   const btnBackHome = containerSignUp.querySelector('#backAtHome');

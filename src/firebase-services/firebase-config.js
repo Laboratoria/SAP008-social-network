@@ -1,6 +1,7 @@
 import { initializeApp } from "./exports.js";
 import {
   getAuth,
+  signOut,
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,

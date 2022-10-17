@@ -10,6 +10,9 @@ const pageChanges = () => {
       case '':
       body.appendChild(homeFunction());
     break;
+      case '#home':
+      body.appendChild(homeFunction());
+    break;
       case '#signup':
       body.appendChild(signUpFunction());
     break;
@@ -20,21 +23,10 @@ const pageChanges = () => {
 };
 const init = () => {
   window.addEventListener('hashchange', () => {
-    console.log(window.location.hash)
     pageChanges()
   })};
 
   window.addEventListener('load', () => {
     init();
     pageChanges()
-
-    
-    const buttonSignUp = document.querySelector('#buttonSignUp');
-    buttonSignUp.addEventListener('click', () => {
-      window.location.hash = '#signup';
-    });
-    const buttonLogin = document.querySelector('#buttonLogin');
-    buttonLogin.addEventListener('click', () => {
-      window.location.hash = '#feed';
-    });
   });

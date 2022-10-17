@@ -49,7 +49,7 @@ export default () => {
     event.preventDefault();
     loginUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        window.location.hash = '';
+        window.location.hash = '#timeline';
       })
       .catch((error) => {
         errorMessage.innerHTML = getErrorMessage(error);
@@ -65,7 +65,7 @@ export default () => {
     e.preventDefault();
     loginGoogle()
       .then(() => {
-        window.location.hash = '';
+        window.location.hash = '#timeline';
       })
       .catch((error) => error);
   });

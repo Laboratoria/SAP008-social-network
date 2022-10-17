@@ -44,7 +44,7 @@ export default () => {
     e.preventDefault();
     newUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        redirect('#login');
+        redirect('#timeline');
       })
       .catch((error) => {
         errorMessage.innerHTML = getErrorMessage(error);
@@ -53,8 +53,7 @@ export default () => {
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
     await loginGoogle();
-    redirect('#login');
+    redirect('#timeline');
   });
-
   return container;
 };

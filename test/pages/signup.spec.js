@@ -15,9 +15,7 @@ afterEach(() => {
   //jest.clearAllMocks();
 });
 
-
-
-const esperaTodasAsPromises = () => new Promise(process.nextTick);
+const awaitInAllPromisses = () => new Promise(process.nextTick);
 
 describe('signup', () => {
   it('should be a function', () => {
@@ -36,7 +34,7 @@ describe('signup', () => {
     const form = container.querySelector('.form-signup');
     const event = new Event('submit');
     form.dispatchEvent(event);
-    await esperaTodasAsPromises();
+    await awaitInAllPromisses();
     expect(newUser).toHaveBeenCalledTimes(1);
     expect(redirect).toHaveBeenCalledWith('#login');
     expect(redirect).toHaveBeenCalledTimes(1);
@@ -47,7 +45,7 @@ describe('signup', () => {
     const btnGoogle = container.querySelector('.btn-google-signup');
     const event = new Event('click');
     btnGoogle.dispatchEvent(event);
-    await esperaTodasAsPromises();
+    await awaitInAllPromisses();
     expect(loginGoogle).toHaveBeenCalledTimes(1);
     expect(redirect).toHaveBeenCalledWith('#login');
     expect(redirect).toHaveBeenCalledTimes(1);

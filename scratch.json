@@ -1,0 +1,17 @@
+{
+    "image": "url da foto",
+    "answers": [
+        {
+            "message": "eu sou a mensagem do post",
+            "user": "user id",
+            "likes": 3,
+            "publishDate": "00/00/0000 00:00:00:00",
+            "editDate": "00/00/0000 00:00:00:00"
+        }
+    ],
+    "message": "eu sou a mensagem do post",
+    "user": "user id",
+    "likes": 3,
+    "publishDate": "00/00/0000 00:00:00:00",
+    "editDate": "00/00/0000 00:00:00:00"
+}

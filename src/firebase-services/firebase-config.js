@@ -1,4 +1,4 @@
-import { initializeApp } from "./exports.js";
+import { initializeApp } from './exports.js';
 import {
   getAuth,
   signOut,
@@ -7,7 +7,9 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
-} from "./exports.js";
+} from './exports.js';
+import { getFirestore } from './exports.js';
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,3 +26,6 @@ export const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
+
+// Initialize Cloud Firestore and get a reference to the service
+export const db = getFirestore(app);

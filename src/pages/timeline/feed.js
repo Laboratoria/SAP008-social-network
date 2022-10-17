@@ -1,4 +1,5 @@
 import { logout } from '../../firebase/auth.js';
+import { redirect } from '../../routes.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -25,10 +26,9 @@ export default () => {
 
   const btnLogout = container.querySelector('#logout-btn');
 
-  btnLogout.addEventListener('click', (e) => {
-    e.preventDefault();
-    logout();
-    window.location.hash = '#login';
+  btnLogout.addEventListener('click', async () => {
+    await logout();
+    redirect('#login');
   });
 
   return container;

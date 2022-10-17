@@ -36,7 +36,7 @@ describe('signup', () => {
     form.dispatchEvent(event);
     await awaitInAllPromisses();
     expect(newUser).toHaveBeenCalledTimes(1);
-    expect(redirect).toHaveBeenCalledWith('#login');
+    expect(redirect).toHaveBeenCalledWith('#timeline');
     expect(redirect).toHaveBeenCalledTimes(1);
   });
 
@@ -47,7 +47,7 @@ describe('signup', () => {
     btnGoogle.dispatchEvent(event);
     await awaitInAllPromisses();
     expect(loginGoogle).toHaveBeenCalledTimes(1);
-    expect(redirect).toHaveBeenCalledWith('#login');
+    expect(redirect).toHaveBeenCalledWith('#timeline');
     expect(redirect).toHaveBeenCalledTimes(1);
   });
 });

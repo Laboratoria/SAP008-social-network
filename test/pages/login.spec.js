@@ -32,7 +32,7 @@ describe('login', () => {
     const event = new Event('click');
     button.dispatchEvent(event);
     expect(loginGoogle).toHaveBeenCalledTimes(1);
-    expect(window.location.hash).toBe('');
+    expect(window.location.hash).toBe('#timeline');
   });
 
   it('test change of routes', () => {

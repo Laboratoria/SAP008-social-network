@@ -2,7 +2,7 @@ import login from './pages/login/login.js';
 
 import signup from './pages/signup/signup.js';
 
-import timeline from './pages/timeline/timeline.js';
+import timeline from './pages/timeline/feed.js';
 
 export const redirect = (route) => {
   window.location.hash = route;

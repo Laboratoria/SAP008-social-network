@@ -44,8 +44,6 @@ export default () => {
     logout();
     window.location.hash = '#login';
   });
-
   
-
   return container;
 };

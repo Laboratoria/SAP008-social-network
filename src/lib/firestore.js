@@ -1,19 +1,17 @@
 import { app } from './firebase.js';
-import { getFirestore, collection, addDoc, getDocs, getAuth } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc } from './export.js'
 
 const db = getFirestore(app);
 
-const createPost = async (texto) => {
+const createPost = async (textPost) => {
     const auth = getAuth(app);
     try {
         const docRef = await addDoc(collection(db, 'post'), {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
-            text: texto,
+            texto: textPost,
         });
-        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-        console.error("Error adding document: ", e);
     }
 };
 
@@ -24,34 +22,21 @@ const getPost = async () => {
         querySnapshot.forEach((post) => {
             postArray.push({ ...post.data(), id: post.id });
         });
-        return postArray;
+       return postArray;
     } catch (error) {
         return error;
     }
 }
 
-// try {
-//     const docRef = await addDoc(collection(db, "users"), {
-//         first: "Alan",
-//         middle: "Mathison",
-//         last: "Turing",
-//         born: 1912
-//     });
+const upDatePost = async (author, textPost) => {
+    const newPost = doc(db, "post", author);
 
-//     console.log("Document written with ID: ", docRef.id);
-// } catch (e) {
-//     console.error("Error adding document: ", e);
-// }
+    console.log(newPost);
+    await updateDoc(newPost, {
+        texto: textPost,
+        
+    });
 
+}
 
-
-// Allow read/write access on all documents to any user signed in to the application
-// service cloud.firestore {
-//     match /databases/{database}/documents {
-//      match /{document=**} {
-//         allow read, write: if request.auth != null;
-//       }
-//     }
-//   }
-
-export { createPost, getPost};
+export { createPost, getPost, upDatePost };

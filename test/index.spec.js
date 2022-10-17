@@ -1,6 +1,6 @@
-import { signInGoogle, createAccount, loginEmailPassword} from '../src/lib/auth.js';
+import { signInGoogle, createAccount, loginEmailPassword } from '../src/lib/auth.js';
 import { createPost } from '../src/lib/firestore.js';
-import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, addDoc, getAuth, updateProfile} from '../src/lib/export.js';
+import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, addDoc, getAuth, updateProfile } from '../src/lib/export.js';
 
 
 jest.mock('../src/lib/export.js');
@@ -30,11 +30,11 @@ describe('createAccount', () => {
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(mockGetAuth, email, password);
     expect(updateProfile).toHaveBeenCalledTimes(1);
-    expect(updateProfile).toHaveBeenCalledWith(mockGetAuth.currentUser,{
+    expect(updateProfile).toHaveBeenCalledWith(mockGetAuth.currentUser, {
       displayName: name,
     });
     expect(updateProfile).toHaveBeenCalledTimes(1);
-    expect(updateProfile).toHaveBeenCalledWith(mockGetAuth.currentUser,{
+    expect(updateProfile).toHaveBeenCalledWith(mockGetAuth.currentUser, {
       displayName: name,
     });
   });
@@ -55,22 +55,22 @@ describe('createPost', () => {
   it('deve criar um post', async () => {
     const mockGetAuth = {
       currentUser: {
-      displayName: 'nome',
-      uid: '123',
+        displayName: 'nome',
+        uid: '123',
       }
     };
-    
+
     getAuth.mockReturnValueOnce(mockGetAuth);
     addDoc.mockResolvedValue();
 
-    const postText = 'texto do meu post'
-    await createPost(postText);
-   
+    const texto = 'texto do meu post'
+    await createPost(texto);
+
     expect(addDoc).toHaveBeenCalledTimes(1);
     expect(addDoc).toHaveBeenCalledWith(undefined, {
       name: mockGetAuth.currentUser.displayName,
       author: mockGetAuth.currentUser.uid,
-      text: postText
+      texto,
     });
   })
 });

@@ -1,8 +1,15 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+import { createUser, loginEmailPassword } from '../src/lib/index.js';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '../src/lib/export.js';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+jest.mock('../src/lib/export.js')
+
+describe('loginEmailPassword', () => {
+  it('deve logar um usuario utiulizando email e senha', () => {
+    signInWithEmailAndPassword.mockResolvedValue({
+      user: {},
+      senha: {},
+    });
+    loginEmailPassword('joao@gmail.com', '123456');
+    expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });

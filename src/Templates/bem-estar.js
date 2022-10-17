@@ -1,5 +1,5 @@
-export default () =>{
-    const container = document.createElement("div");
+export default () => {
+  const container = document.createElement("div");
 
     const template = `
     <h1>BEM ESTAR</h1>

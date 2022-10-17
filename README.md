@@ -96,7 +96,7 @@ Pensamos nos protótipos com base nas histórias de usuário...
 
 ## 5. Estrutura e funcionalidades da SPA
 
-A aplicação foi desenvolvida como uma Single Page Application (SPA), utilizando routing em hashtags. Sendo assim, foi dividida nas seções:
+A aplicação foi desenvolvida como uma Single Page Application (SPA), utilizando routing. Sendo assim, foi dividida nas seções:
 
 ***#Homepage*** - PÁGINA INICIAL:
 É a página principal do site, através da qual as usuárias iniciam navegação, podendo ser direcionadas a outras seções da aplicação (as páginas de about, login e cadastro).
@@ -108,10 +108,10 @@ Página que contextualiza a rede social, explicando sua definição e proposta.
 Nossas usuárias podem se cadastrar e entrar utilizando o método de login do Google, ou utilizando e-mail e senha. As usuárias recebem mensagens de apoio para realizar a etapa de registro e login, com validação de form.
 
 ***#reset-password*** - REDEFINIÇÃO DE SENHA:
-Página para as usuárias recuperarem acesso a suas contas caso esqueçam a senha - após preencher o form sinalizando o e-mail cadastrado, elas recebem um e-mail com link para redefinir a senha. 
+Página para as usuárias recuperarem acesso a suas contas caso esqueçam a senha - após preenchimento do form sinalizando o e-mail cadastrado, elas recebem um e-mail com link para redefinir a senha. 
 
 ***#feed*** - FEED:
-Página na qual nossas usuárias poderão publicar posts, categorizar seus posts para serem exibidos conforme a categoria selecionada, editar e deletar os próprios posts, além de dar like em e pesquisar por posts de outras usuárias, e exibir apenas posts que correspondam a determinada categoria, através de um sistema de filtros. 
+Página na qual nossas usuárias poderão publicar posts, categorizar seus posts para serem exibidos conforme a categoria selecionada, editar e deletar os próprios posts, além de dar like em posts de outras usuárias, e exibir apenas posts que correspondam a determinada categoria, através de um sistema de filtros. 
 
 ## 6. Testes unitários e Testes assíncronos
 

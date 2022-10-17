@@ -25,7 +25,7 @@ export default () => {
             <label>Senha</label>
             <input type="password"  id="passwordRegister" placeholder="********">
 
-            <button id="CadastarsRegister">Cadastre-se</button>  
+            <button id="CadastrarRegister">Cadastre-se</button>  
         </form>
      
     </section>

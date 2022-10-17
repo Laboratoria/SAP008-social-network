@@ -1,5 +1,5 @@
-import { signInGoogle, createAccount, loginEmailPassword } from '../src/lib/auth.js';
-import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '../src/lib/export.js';
+import { signInGoogle, createAccount, loginEmailPassword, logout } from '../src/lib/auth.js';
+import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '../src/lib/export.js';
 
 jest.mock('../src/lib/export.js');
 
@@ -29,5 +29,15 @@ describe('loginEmailPassword', () => {
     });
     loginEmailPassword('bella@gmail.com', '12345678');
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('logout', () => {
+  it('deve deslogar o usuario', () => {
+    signOut.mockResolvedValue({
+      user:{},
+    });
+    logout()
+    expect(signOut).toHaveBeenCalledTimes(1);
   });
 });

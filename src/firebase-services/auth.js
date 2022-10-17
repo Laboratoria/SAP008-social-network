@@ -1,33 +1,28 @@
-import { getAuth, signInWithPopup,
+import { getAuth, signOut, signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  GoogleAuthProvider, } from './exports.js';
+  GoogleAuthProvider,
+   } from './exports.js';
 import { auth, app } from '../firebase-services/firebase-config.js';
- 
+
+  onAuthStateChanged(auth, (user) => {
+    console.log(user);
+    if (user)
+      window.location.hash = '#feed';
+  }) 
+
   export const  initWithGoogle = () => {
    const provider = new GoogleAuthProvider();
    return signInWithPopup(auth, provider)
   }; 
 
+  export function userLogOut() {
+    return signOut(auth);
+  }
+
   export function createNewUser(name, email, password) {
     return createUserWithEmailAndPassword(auth, email, password)
-    // .then((userCredential) => {
-    //   // Signed in
-    //   const user = userCredential.user;
-    //   // ...
-    //   return user;
-    // })
-    // .then(() => {
-    //   updateProfile(auth.currentUser, {
-    //     displayName: name,
-    //   });
-    // })
-    // .catch((error) => {
-    //   const errorCode = error.code;
-    //   const errorMessage = error.message;
-    
-    // })
   };
   
   export function loginEmailPassword(email , password) {
@@ -35,23 +30,13 @@ import { auth, app } from '../firebase-services/firebase-config.js';
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
-    // ...
-    return user;
+    console.log(user);
+    return true;
+    
+  }).catch(e => {
+    return false;
   })
-  .catch((e) => {
-    switch (e.code) {
-      case 'auth/user-not-found':
-        alert('Usuário não encontrado! Por favor, verifique seus dados.');
-        break;
-      case 'auth/wrong-password':
-        alert('Senha incorreta! Por favor, verifique seus dados.');
-        break;
-      case 'auth/invalid-email':
-        alert('E-mail inválido! Por favor, verifique seus dados.');
-        break;
-      case 'auth/user-disabled':
-        alert('Usuário desativado! Por favor, reative sua conta.')
-    }
-  });
-  }
+
+  
+  };
   

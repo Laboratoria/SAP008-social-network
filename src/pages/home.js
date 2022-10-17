@@ -31,8 +31,9 @@ export const homeFunction = () => {
   container.innerHTML = templateLogin;
   const btnGoogle = container.querySelector('#buttonGoogle');
   btnGoogle.addEventListener('click', () => {
-    initWithGoogle();
-    window.location.hash = '#feed';
+    initWithGoogle().then(() => {
+      window.location.hash = '#feed';
+    })
   });
   
   const btnLogin = container.querySelector('#buttonLogin')
@@ -40,9 +41,17 @@ export const homeFunction = () => {
   btnLogin.addEventListener('click', () => {
     const inputLoginEmail = container.querySelector('#loginEmail').value;
     const inputLoginPassword = container.querySelector('#loginPassword').value;
-    loginEmailPassword(inputLoginEmail,inputLoginPassword);
-    window.location.hash = '#feed';
+      loginEmailPassword(inputLoginEmail, inputLoginPassword).then((result) => {
+        if (result) window.location.hash = '#feed';
+      });
+      
   })
+
+  const buttonSignUp = container.querySelector('#buttonSignUp');
+    buttonSignUp.addEventListener('click', () => {
+      window.location.hash = '#signup';
+    });
+
   return container;
 };
 

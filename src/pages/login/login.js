@@ -1,6 +1,6 @@
 import { loginUser, loginGoogle } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { newPost } from '../../firebase/timeline.js';
+import { redirect } from '../../routes.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -49,7 +49,7 @@ export default () => {
     event.preventDefault();
     loginUser(inputEmail.value, inputPassword.value)
       .then(() => {
-        window.location.hash = '#timeline';
+        redirect('#timeline');
       })
       .catch((error) => {
         errorMessage.innerHTML = getErrorMessage(error);
@@ -58,14 +58,14 @@ export default () => {
 
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.hash = '#signup';
+    redirect('#signup');
   });
 
   buttonGoogle.addEventListener('click', (e) => {
     e.preventDefault();
     loginGoogle()
       .then(() => {
-        window.location.hash = '#timeline';
+        redirect('#timeline');
       })
       .catch((error) => error);
   });

@@ -1,6 +1,5 @@
-export default () =>{
-    const container = document.createElement("div");
-
+export default () => {
+    const container = document.createElement('div');
     const template = `
     <header>
         <ul class="nav">
@@ -26,7 +25,6 @@ export default () =>{
         </div>
     </main>
             `
-    container.innerHTML = template; 
+    container.innerHTML = template;
     return container;
 }
-

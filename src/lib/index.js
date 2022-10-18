@@ -1,5 +1,5 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./exports.js";
-import app from "./config-firebase.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './exports.js';
+import app from './config-firebase.js'
 
 export function createUser(email, senha){
     const auth= getAuth(app)
@@ -8,5 +8,4 @@ export function createUser(email, senha){
 
 export function loginEmailPassword(email, password) {
     const auth= getAuth(app)
-    return signInWithEmailAndPassword(auth, email, password)
-}
+    return signInWithEmailAndPassword(auth, email, password);

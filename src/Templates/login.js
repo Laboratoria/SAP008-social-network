@@ -1,9 +1,9 @@
 import { loginEmailPassword } from "../lib/index.js";
 
 export default () => {
-    const container = document.createElement("div");
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
       <section class="content">
          <form class="form">
 
@@ -40,9 +40,8 @@ export default () => {
 
          </form>
       </section>
-   `
-    container.innerHTML = template;
-    
+   `;
+   container.innerHTML = template;
 
 
    const login = container.querySelector("#botaoEntrar")
@@ -63,6 +62,5 @@ export default () => {
       })
    }) 
    return container;
- }
-
+};
 

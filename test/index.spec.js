@@ -1,15 +1,14 @@
-import { createUser, loginEmailPassword } from '../src/lib/index.js';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '../src/lib/export.js';
+import { createUser } from '../src/lib/index.js';
+import { createUserWithEmailAndPassword } from '../src/lib/exports.js';
 
-jest.mock('../src/lib/export.js')
+jest.mock('../src/lib/exports.js');
 
-describe('loginEmailPassword', () => {
-  it('deve logar um usuario utiulizando email e senha', () => {
-    signInWithEmailAndPassword.mockResolvedValue({
+describe('createUser', () => {
+  it('testando cadastro com email e senha', () => {
+    createUserWithEmailAndPassword.mockResovedValue({
       user: {},
-      senha: {},
     });
-    loginEmailPassword('joao@gmail.com', '123456');
-    expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+    createUser('teste@gmail.com', '12345678');
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });

@@ -5,6 +5,7 @@ export default () => {
 
   const template = `
       <section class="content">
+         <p id="msgErro"></p>
          <form class="form">
 
          <div class="form-cx">
@@ -46,18 +47,17 @@ export default () => {
   const login = container.querySelector('#botaoEntrar');
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
+  const msgErro = container.querySelector('#msgErro')
 
   login.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(email.value);
-    console.log(password.value);
 
     loginEmailPassword(email.value, password.value)
       .then(() => {
         window.location.hash = '#feed';
       })
       .catch((error) => {
-        console.log(error);
+        msgErro.innerHTML = "usário ou senha incorretos";
       });
   });
   return container;

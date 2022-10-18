@@ -3,23 +3,21 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '../s
 
 jest.mock('../src/lib/exports.js');
 
+const email = 'joao@gmail.com';
+const senha = '12345678';
+
 describe('createUser', () => {
-  it('deve criar um usuário com email, senha e nome', () => {
-    createUserWithEmailAndPassword.mockResolvedValue({
-      user: {},
-    });
-    createUser('joao@gmail.com', '12345678');
+  it('deve criar um usuário com email, senha', () => {
+    createUser(email, senha);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, email, senha);
   });
 });
 
 describe('loginEmailPassword', () => {
-  it('deve logar um usuario utiulizando email e senha', () => {
-    signInWithEmailAndPassword.mockResolvedValue({
-      user: {},
-      senha: {},
-    });
-    loginEmailPassword('joao@gmail.com', '12345678');
+  it('deve logar um usuario utilizando email e senha', () => {
+    loginEmailPassword(email, senha);
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+    expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, email, senha);
   });
 });

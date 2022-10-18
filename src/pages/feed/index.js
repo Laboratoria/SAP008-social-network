@@ -94,8 +94,7 @@ export default () => {
         btnDelete.classList.add('hide');
         confirmationOptions.classList.remove('hide');           
 
-        btnConfirmDelete.addEventListener('click', async(e) => {    
-          e.preventDefault();      
+        btnConfirmDelete.addEventListener('click', async() => {               
           await deletePost(postToBeDeleted);
           window.location.reload();  
         });

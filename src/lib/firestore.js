@@ -40,9 +40,9 @@ const upDatePost = async (author, textPost) => {
 
 const deletePost = async (author) => {
     try {
-        const docRef = doc(db, 'post', author);
-        await deleteDoc(docRef);
-        return docRef.id;
+        const postToBeDeleted = doc(db, 'post', author);
+        await deleteDoc(postToBeDeleted);
+        return postToBeDeleted.id;
     } catch (error) {
         return error;
     }

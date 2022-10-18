@@ -1,17 +1,11 @@
 import {
-    getAuth, // autenticação
-    createUserWithEmailAndPassword, // criar usuário
-    // signInWithEmailAndPassword, // fazer login
-    // signOut, // sair da conta
-    // GoogleAuthProvider, // entrar com o Google
-    // signInWithPopup,
+  getAuth, // autenticação
+  createUserWithEmailAndPassword, // criar usuário
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-// import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
-import { app } from '../firebase.js';
+import { app } from './config.js';
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
-export const createUser = (email, password) => {
-    console.log(email);
-    return createUserWithEmailAndPassword(auth, email, password);
-};
+// eslint-disable-next-line max-len
+export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);

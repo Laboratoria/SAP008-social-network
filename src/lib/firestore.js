@@ -1,23 +1,21 @@
 import { app } from './firebase.js';
-import { auth } from './auth.js';
-import { getFirestore, collection, addDoc, getDocs } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc } from './export.js'
 
 const db = getFirestore(app);
 
-const createPost = async (texto) => {
+const createPost = async (textPost) => {
+    const auth = getAuth(app);
     try {
-        const docRef = await addDoc(collection(db, "post"), {
+        const docRef = await addDoc(collection(db, 'post'), {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
-            texto,
+            texto: textPost,
         });
-        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-        console.error("Error adding document: ", e);
     }
 };
 
-const printPost = async () => {
+const getPost = async () => {
     try {
         const querySnapshot = await getDocs(collection(db, "post"));
         const postArray = [];
@@ -28,30 +26,25 @@ const printPost = async () => {
     } catch (error) {
         return error;
     }
-}
+};
 
-// try {
-//     const docRef = await addDoc(collection(db, "users"), {
-//         first: "Alan",
-//         middle: "Mathison",
-//         last: "Turing",
-//         born: 1912
-//     });
+const upDatePost = async (author, textPost) => {
+    const newPost = doc(db, 'post', author);
 
-//     console.log("Document written with ID: ", docRef.id);
-// } catch (e) {
-//     console.error("Error adding document: ", e);
-// }
+    await updateDoc(newPost, {
+        texto: textPost,
 
+    });
+};
 
+const deletePost = async (author) => {
+    try {
+        const docRef = doc(db, 'post', author);
+        await deleteDoc(docRef);
+        return docRef.id;
+    } catch (error) {
+        return error;
+    }
+};
 
-// Allow read/write access on all documents to any user signed in to the application
-// service cloud.firestore {
-//     match /databases/{database}/documents {
-//      match /{document=**} {
-//         allow read, write: if request.auth != null;
-//       }
-//     }
-//   }
-
-export { createPost, printPost };
+export { createPost, getPost, upDatePost, deletePost };

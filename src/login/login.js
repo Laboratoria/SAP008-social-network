@@ -53,8 +53,8 @@ export default () => {
 
   container.querySelector('#btn-submit').addEventListener('click', (e) => {
     e.preventDefault();
-    const email = document.querySelector('#e-mail').value;
-    const password = document.querySelector('#senha').value;
+    const email = container.querySelector('#email-user').value;
+    const password = container.querySelector('#password-user').value;
     userLogin(email, password)
       .then(() => {
         redirect('#timeline');

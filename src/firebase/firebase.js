@@ -12,6 +12,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  doc,
+  updateDoc,
 } from './export.js';
 
 import firebaseConfig from './firebase-config.js';
@@ -87,4 +89,15 @@ export const getAllPosts = async () => {
   } catch (error) {
     return error;
   }
+};
+
+export const editPost = async (author, artist, location, date, text) => {
+  const post = doc(db, 'posts', author);
+
+  await updateDoc(post, {
+    artist,
+    location,
+    date,
+    text,
+  });
 };

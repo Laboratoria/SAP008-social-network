@@ -1,5 +1,5 @@
 import {
-  signOut, getAllPosts, createPost,
+  signOut, getAllPosts,
 } from '../firebase/firebase.js';
 import { redirect } from '../redirect.js';
 
@@ -38,17 +38,24 @@ export default () => {
     const groupArr = await getAllPosts();
     const postsTemplate = groupArr.map((post) => `
             <div class="post">
-                <p id="user-name">${post.name}</p>
-                <p id="artist-name">${post.artist}</p>
-                <p id="show-location">${post.location}</p>
-                <p id="show-date">${post.date}</p>
-                <p id="text-post">${post.text}</p>
+                <section class="box-post-timeline">
+                  <p id="user-name">${post.name}</p>
+                  <p id="artist-name">${post.artist}</p>
+                  <p id="show-location">${post.location}</p>
+                  <p id="show-date">${post.date}</p>
+                  <p id="text-post">${post.text}</p>
+                  <div class="btns-post-container">
+                    <button class="btn-edit"id="btn-edit"type="button">Editar</button>
+                    <button class="btn-edit-save" id="btn-edit-save" type="button">Salvar</button>  
+                    <button class="btn-delete" id="btn-delete" type="button">Excluir</button>
+                  </div>   
+                </section>
             </div>
         `).join('');
     container.querySelector('#show-timeline').innerHTML += postsTemplate;
   };
 
-  showPosts(createPost);
+  showPosts();
 
   menu.addEventListener('click', () => {
     const items = container.querySelectorAll('.navbar-item');
@@ -63,6 +70,18 @@ export default () => {
     signOut();
     redirect('');
   });
+
+  // eslint-disable-next-line no-alert
+  alert(document.querySelector('#btn-edit'));
+  // container.querySelector('#btn-edit').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   container.querySelector('#artist').setAttribute('contenteditable', 'true');
+  // const artistEdit = container.querySelector('#artist').value;
+  // const locationEdit = container.querySelector('#location').value;
+  // const dateEdit = container.querySelector('#date').value;
+  // const textEdit = container.querySelector('#text-post').value;
+  // editPost(artistEdit, locationEdit, dateEdit, textEdit);
+  // });
 
   return container;
 };

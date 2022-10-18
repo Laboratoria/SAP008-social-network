@@ -6,7 +6,7 @@ export default () => {
     <section class='containerPassword'>
       <form class="boxModelPass">
         <p>
-          <img class='logoPass' src="/src/img/logoTranp.png" alt='Logo Wanderlust'>
+          <img class='logoPass' src="/logoTranp.png" alt='Logo Wanderlust'>
         </p>
         <p class="titleSenha">
           <h3 class="titleSenha">Vamos recuperar sua senha!</h3>
@@ -19,7 +19,7 @@ export default () => {
           <input id="btn-reset" class="ResetPassword" type="button" value="Enviar email">
         </p>
         <p class="btnBack">
-          <a href="index.html" class="link"><img class='logoPass' src="/src/img/setaBack.png" alt='Seta para voltar'></a>
+          <a href="index.html" class="link"><img class='logoPass' src="/setaBack.png" alt='Seta para voltar'></a>
         </p>
       </form>
     </section>`;

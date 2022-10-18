@@ -20,8 +20,8 @@ export default () => {
   <input class='infos' id='email' type='email' placeholder='Email'>
   <input class='infos' id='password' type='password' placeholder='Senha'>
   <p class='forgot'>Esqueci minha senha</p>
-  <a class='btnLogin' href='login'>Login</a>
-  <a class='btnGoogle' href='login'>Entrar com o google</a>
+  <a id='btnLogin' href='login'>Login</a>
+  <a id='btnGoogle' href='login'>Entrar com o google</a>
   <p class='create'>Não possui conta? <a id='register-mobile' href='register'>Cadastre-se</a></p>
   </div>
   </div>
@@ -44,7 +44,7 @@ export default () => {
         alert(errorMessage);
       });
   });
-  const btnGoogle = container.querySelector('#logarGoogle');
+  const btnGoogle = container.querySelector('#btnGoogle');
   btnGoogle.addEventListener('click', () => {
     loginGoogle();
   });

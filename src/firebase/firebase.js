@@ -50,20 +50,16 @@ export const signOut = () => {
   auth.signOut();
 };
 
-export const createPost = async (artist, location, date, text) => { //eslint-disable-line
-  try {
-    return await addDoc(collection(db, 'posts'), {
-      name: auth.currentUser.displayName,
-      author: auth.currentUser.uid,
-      artist,
-      location,
-      date,
-      text,
-      likes: 0,
-    });
-  } catch (e) {
-    console.error('Error adding document: ', e);
-  }
+export const createPost = (artist, location, date, text) => { //eslint-disable-line
+  return addDoc(collection(db, 'posts'), {
+    name: auth.currentUser.displayName,
+    author: auth.currentUser.uid,
+    artist,
+    location,
+    date,
+    text,
+    likes: 0,
+  });
 };
 
 /* const user = auth.currentUser;

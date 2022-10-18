@@ -71,6 +71,6 @@ describe('createPost', () => {
     const text = 'SHOW';
 
     await createPost(artist, location, date, text);
-    expect(addDoc).toHaveBeenCalled();
+    expect(addDoc).toHaveBeenCalledTimes(1);
   });
 });

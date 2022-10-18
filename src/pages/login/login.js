@@ -53,21 +53,24 @@ export default () => {
 `;
   container.innerHTML = telaLogin;
 
-  const btnLogin = container.querySelector('#btnLogin');
+  const btnLogin = container.querySelector('#submit-login');
   btnLogin.addEventListener('click', () => {
     const inputEmail = container.querySelector('#email').value;
     const inputPassword = container.querySelector('#password').value;
 
     userLogin(inputEmail, inputPassword)
       .then(() => {
-        alert('você está logado');
+        // const user = userCredential.user;
+
+        console.log('você está logado');
       })
       .catch((error) => {
         const errorMessage = error.message;
-        alert(errorMessage);
+        // const errorCode = error.code;
+        console.log(errorMessage);
       });
   });
-  const btnGoogle = container.querySelector('#btnGoogle');
+  const btnGoogle = container.querySelector('#submit-google');
   btnGoogle.addEventListener('click', () => {
     loginGoogle();
   });

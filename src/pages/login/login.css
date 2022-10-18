@@ -8,13 +8,11 @@ html, body {
 
 /* Ocultando a lateral azul do desktop */
 
-.logo-desktop h1 {
-    display: none;
-}
 .signup {
     display: none;
 }
-#cegonha-azul {
+
+.logo-desktop {
     display: none;
 }
 
@@ -80,7 +78,7 @@ html, body {
 
 .forgot p {
     color: #00A57A;
-    /* text-align: right; */
+    text-align: right;
 } 
 
 .btn {
@@ -167,18 +165,20 @@ html, body {
         width: 60%;
     }
     
-    #cegonha-azul {
-        width: 50px;
-        height: 50px;
+    .logo-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
     }
-    
-
+    #cegonha-azul {
+        width: 19rem;
+    }
     .logo-desktop h1 {
         color: #00A57A;
         font-size: 3rem;
-        text-align: center;
-        
     }
+    
     .form {
         display: grid;
     }
@@ -187,12 +187,12 @@ html, body {
         width: 36rem;
         height: 6rem;
         margin-bottom: 32px;
-
     }
 
     .forgot {
         font-size: large;
     }
+    .buttons
 
     .btnLogin, .btnGoogle {
         width: 36rem;

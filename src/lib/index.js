@@ -1,8 +1,6 @@
 import {
   getAuth,
-  // createUserWithEmailAndPassword, // criar usuário
   signInWithEmailAndPassword,
-  // signOut, // sair da conta
   GoogleAuthProvider,
   signInWithPopup,
   // eslint-disable-next-line import/no-unresolved

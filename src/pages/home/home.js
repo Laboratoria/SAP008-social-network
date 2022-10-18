@@ -2,18 +2,22 @@
 /* eslint-disable no-alert */
 import { redirectFeed } from '../../lib/redirect.js';
 import { logInUser, signInWithGoogle } from '../../lib/auth.js';
+import { errorFire } from '../../lib/errorFirebase.js';
 
 function createTemplate() {
   return `
   <div class='container' id='template-form'>
     <div class='boxModelForm'>
       <form class='form' id='form'>
-        <img class='logo' src="img/logoTranp.png" alt='Logo Wanderlust'>
+        <img class='logo' src='/src/img/logoTranp.png' alt='Logo Wanderlust'>
         <p class='register'>
           <input id='email-login' class='emailSenha' name='email-login' required='required' type='text' placeholder='Digite seu email'/>
         </p>
         <p class='register'>
           <input id='senha-login' class='emailSenha' name='senha-login' required='required' type='password' placeholder='Digite sua senha'/>
+        </p>
+        <p>
+          <div id='erro-Firebase' class='msgErro'></div>
         </p>
         <p class='register'>
           <a href='#recuperarsenha' class='esqueciSenhaCadastre'>Esqueci minha senha!</a>
@@ -29,7 +33,7 @@ function createTemplate() {
         <div class='textEntrarGlg'>Entre também com:</div>
       </p>
       <p class='form'>
-        <a class='loginGoogle' id='btn-google'><img src="img/logoGoogle.jpg" alt='Logo Google'></a>
+        <a class='loginGoogle' id='btn-google'><img src='/src/img/logoGoogle.jpg' alt='Logo Google'></a>
       </p>
       <p class='form'>
         <a href='#sobre' class='sobrepage'>Sobre</a>
@@ -46,6 +50,7 @@ export default () => {
   const inputEmail = container.querySelector('#email-login');
   const inputSenha = container.querySelector('#senha-login');
   const btnlogin = container.querySelector('#btn-Login-User');
+  const msgFire = container.querySelector('#erro-Firebase');
 
   btnlogin.addEventListener('click', (e) => {
     e.preventDefault();
@@ -54,9 +59,11 @@ export default () => {
         redirectFeed();
       })
       .catch((error) => {
-        alert('Algo deu errado', error);
+        const errorCode = errorFire(error.code);
+        msgFire.innerHTML = errorCode;
       });
   });
+
   btnGoogle.addEventListener('click', () => {
     signInWithGoogle()
       .then(() => {

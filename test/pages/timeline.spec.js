@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { logout } from '../../src/firebase/auth.js';
-import timeline from '../../src/pages/timeline/feed.js';
+import timeline from '../../src/pages/timeline/timeline';
 import { redirect } from '../../src/routes.js';
 
 jest.mock('../../src/firebase/exports.js');

@@ -1,10 +1,10 @@
-import { getAuth, signOut, signInWithPopup,
+import { signOut, signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
    } from './exports.js';
-import { auth, app } from '../firebase-services/firebase-config.js';
+import { auth } from '../firebase-services/firebase-config.js';
 
   onAuthStateChanged(auth, (user) => {
     console.log(user);

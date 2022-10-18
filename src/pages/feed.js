@@ -1,4 +1,5 @@
 import { userLogOut } from '../firebase-services/auth.js';
+import { teste } from '../firebase-services/firestore.js';
 
 export const feedFunction = () => {
   const containerFeed = document.createElement("section");
@@ -36,5 +37,13 @@ export const feedFunction = () => {
     
   });
 
+  const btnPublish = containerFeed.querySelector('.button-publish');
+  btnPublish.addEventListener('click', () => {
+    teste()
+
+  });
+
   return containerFeed;
 };
+
+

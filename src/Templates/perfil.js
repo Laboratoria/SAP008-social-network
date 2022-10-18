@@ -1,9 +1,9 @@
-export default () =>{
-    const container = document.createElement("div");
+export default () => {
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
     <h1>PERFIL</h1>
-    `
-    container.innerHTML = template; 
-    return container;
-}
+    `;
+  container.innerHTML = template;
+  return container;
+};

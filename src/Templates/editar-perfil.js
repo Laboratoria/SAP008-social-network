@@ -1,7 +1,7 @@
-export default () =>{
-    const container = document.createElement("div");
+/* export default () => {
+  const container = document.createElement('div');
 
-    const template = `
-    
-    `
-}
+  const template = `
+    <h1>Editar perfil</h1>
+    `;
+}; */

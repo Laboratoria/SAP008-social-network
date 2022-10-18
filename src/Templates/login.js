@@ -1,10 +1,11 @@
-import { loginEmailPassword } from "../lib/index.js";
+import { loginEmailPassword } from '../lib/index.js';
 
 export default () => {
-    const container = document.createElement("div");
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
       <section class="content">
+         <p id="msgErro"></p>
          <form class="form">
 
          <div class="form-cx">
@@ -40,29 +41,24 @@ export default () => {
 
          </form>
       </section>
-   `
-    container.innerHTML = template;
-    
+   `;
+  container.innerHTML = template;
 
+  const login = container.querySelector('#botaoEntrar');
+  const email = container.querySelector('#email');
+  const password = container.querySelector('#password');
+  const msgErro = container.querySelector('#msgErro')
 
-   const login = container.querySelector("#botaoEntrar")
-   const email = container.querySelector("#email")
-   const password = container.querySelector("#password")
+  login.addEventListener('click', (e) => {
+    e.preventDefault();
 
-   login.addEventListener("click", (e)=>{
-      e.preventDefault();
-      console.log(email.value)
-      console.log(password.value)
-
-      loginEmailPassword(email.value, password.value)
-      .then(()=>{
-         window.location.hash = "#feed";
+    loginEmailPassword(email.value, password.value)
+      .then(() => {
+        window.location.hash = '#feed';
       })
-      .catch((error)=>{
-         console.log(error)
-      })
-   }) 
-   return container;
- }
-
-
+      .catch((error) => {
+        msgErro.innerHTML = "usário ou senha incorretos";
+      });
+  });
+  return container;
+};

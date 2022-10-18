@@ -1,5 +1,6 @@
 // // aqui exportaras las funciones que necesites
 
+// eslint-disable-next-line import/no-unresolved
 import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 import { app } from '../firebase.js';

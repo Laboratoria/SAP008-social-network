@@ -27,9 +27,9 @@ const init = () => {
     case '#termsOfUse':
       main.appendChild(terms());
       break;
-      case '#logout':
-        main.appendChild(feed());
-        break;
+    case '#logout':
+      main.appendChild(feed());
+      break;
     default:
       main.appendChild(feed());
   }

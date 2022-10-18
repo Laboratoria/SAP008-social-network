@@ -2,18 +2,18 @@ export default () => {
   const containerTermsOfUse = document.createElement('div');
 
   const terms = `
-    <div class="body-terms">
-      <h1 class="title-terms">TERMOS DE USO</h1><p></p><br>
+    <div class='body-terms'>
+      <h1 class='title-terms'>TERMOS DE USO</h1><p></p><br>
       <p></p><br>
 
-      <div class="main-terms">
+      <div class='main-terms'>
         <b>1. ACEITAR OS TERMOS</b><br>
 
         No momento do cadastro, os USUÁRIOS poderão utilizar todos os serviços disponibilizados na PLATAFORMA, declarando terem lido, compreendido e aceitado todos os dispositivos contidos neste Termos de Uso.<p></p><br>
 
         <b>2. É EXPRESSAMENTE PROIBÍDO AO USUÁRIO</b><br>
 
-        2.1. Divulgar conteúdos encontrados nesta rede social sem autorização de quem o escreveu/publicou. <br>
+        2.1. Divulgar conteúdos encontrados nesta rede social sem autorização de quem o escreveu/publicou; <br>
 
         2.2. O nome que o USUÁRIO e o PROFISSIONAL utilizarem na PLATAFORMA não poderá guardar semelhança com o nome BABYSTEPS que insinue ou sugira que os posts/comentários/serviços sejam feitos pela BABYSTEPS; <br>
 
@@ -41,7 +41,7 @@ export default () => {
 
         4.3. O PROFISSIONAL deverá fornecer em seu perfil o NÚMERO DE REGISTRO e informações que comprovem sua identidade, sua habilitação técnica/profissional, bem como informações essenciais ao cadastro.<p></p><br>
       </div>
-      <div class="footer-terms">
+      <div class='footer-terms'>
         <p>BabySteps, 2022 © Marjorye Kichize, Nathalia Rigo e Thamires Santos.</p>
       </div>
     </div>

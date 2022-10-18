@@ -1,5 +1,5 @@
 export default () => {
-  const containerFeed = document.createElement("div");
+  const containerFeed = document.createElement('div');
 
   const feed = `
     <div>

@@ -2,11 +2,11 @@ export default () => {
   const containerGuidelines = document.createElement('div');
 
   const guidelines = `
-    <div class="body-guidelines">
-      <h1 class="title-guidelines">DIRETRIZES PARA O USO DA BABYSTEPS</h1><p></p><br>
+    <div class='body-guidelines'>
+      <h1 class='title-guidelines'>DIRETRIZES PARA O USO DA BABYSTEPS</h1><p></p><br>
       <p></p><br>
 
-      <div class="main-guidelines">     
+      <div class='main-guidelines'>     
         Criamos este guia com as diretrizes da BabySteps para sempre nos lembrarmos que estamos aqui unidos com o intuito de contribuir com informações que ajudem, apoiem e acolham.<br>
         E foi com o objetivo de manter nossas relações saudáveis e alinhadas a esse propósito que criamos nosso top 7 pontos de atenção e cuidados:<p></p><br>
 
@@ -24,7 +24,7 @@ export default () => {
 
         7) Aproveite! Essa rede social foi construída com o propósito de tornar a mapaternidade mais leve e menos solitária, então quanto mais trocas e interações, mais atingiremos nosso objetivo! :) <p></p><br>
       </div>
-      <div class="footer-guidelines">
+      <div class='footer-guidelines'>
       <p>BabySteps, 2022 © Marjorye Kichize, Nathalia Rigo e Thamires Santos.</p>
     </div>
     </div>

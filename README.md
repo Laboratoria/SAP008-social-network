@@ -18,7 +18,7 @@
 
 Social Network foi o terceiro projeto desenvolvido durante o bootcamp da turma SAP008 da Laboratória, no qual tivemos como principal objetivo a criação de uma rede social, devendo ser uma Single Page Application, através da qual fosse possível que os usuários se cadastrassem; fizessem  login; publicassem, editassem, deletassem e dessem likes em posts. 
 
-O projeto foi desenvolvido em trio, por Clarissa, Fabiany e Joyce, dentro de x sprints. E as principais ferramentas utilizadas durante o processo foram: Notion, para o planning das sprints; Figma, para o processo de prototipação de alta fidelidade; Metroretro para as sessões de retrospectiva das sprints; Miro, para a escrita das histórias de usuários; Canva, para elementos de identidade visual (logo e mosaico de vídeos). 
+O projeto foi desenvolvido em trio, por Clarissa, Fabiany e Joyce, dentro de 6 sprints. E as principais ferramentas utilizadas durante o processo foram: Notion, para o planning das sprints; Figma, para o processo de prototipação de alta fidelidade; Metroretro para as sessões de retrospectiva das sprints; Miro, para a escrita das histórias de usuários; Canva, para elementos de identidade visual (logo e mosaico de vídeos). 
 
 Além disso, utilizamos o conjunto de serviços de hospedagem Firebase. Para manipularmos a parte de backend da aplicação, utilizamos os serviços Firebase Authentication - para fazer o processo de autenticação de usuários, e o Cloud Firestore - para a criação e manutenção do nosso banco de dados. 
 

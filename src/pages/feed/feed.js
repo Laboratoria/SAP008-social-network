@@ -1,37 +1,58 @@
-import { creatPost, getPost } from '../../lib/firestore.js';
+import { createPost, current, getAllPosts } from '../../lib/firestore.js';
 
-export default () => {
-  const containerFeed = document.createElement('div');
-  const template = `
-    <main class="container-feed">
-      <figure class="logo-tittle">
-        <img id="one-logo-coração" src="./imagens/image-2.png">
-        <p class="tittle-logotype">INspire</p>
-      </figure>
+export default function Feed() {
+  const feed = document.createElement('div');
+  feed.innerHTML = `  
+  <div class="main-div">
+  <nav class="top-nav">
+  <picture>
+      <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
+  </picture>
+  </nav>
+        <section id="post" class="post">
+        <div class="post-box">
+          <textarea class="post-textarea" id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
+          <button type="submit" id="post-btn" class="post-btn">Publicar</button>
+        </div>
+      </section>
 
-      <form>
-        <input class ='campo-escrever' type = 'textarea'/>
-        <button class = 'btn-publicar' type = 'button'>Publicar</button>
-      </form>
-  
-    </main>
+      <section class="post-feed">
+        <ul id="box-post"></ul>
+      </section>
+    `;
 
+  const postBtn = feed.querySelector('#post-btn');
+  const modalPost = feed.querySelector('#post');
+  const postFeed = feed.querySelector('#post-textarea');
+  const postList = feed.querySelector('#box-post');
+  const user = current().uid;
 
+  //O operador ternário ( ? ) funciona assim ...você tem uma condição que deve ser validada como verdadeira ou falsa. Se a condição for verdadeira o operador retorna uma expressão e se for falsa retorna outra expressão.
 
+  getAllPosts()
+    .then((posts) => {
+      const postCreated = posts.map((post) => {
+        const iteration = post.user === user ? `  
+        <div class="delete-btn">
+          <p class="delete-post"></p>
+        </div> ` : '';
+        return `
+        <li class="allposts" data-id="${post.id}">
+          <div class="identification"> 
+            <p class="username"><b>${post.displayName}</b></p>
+            <p class="data-post"> Postado em ${post.data} às ${post.hour}H </p>
+            <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
+          </div>
+        </li>`;
+      }).join('');
+      postList.innerHTML = postCreated;
+    });
 
-     
-  
-  `;
-  containerFeed.innerHTML = template;
-
-  const text = containerFeed.querySelector('.campo-escrever');
-  const btnPublicar = containerFeed.querySelector('.btn-publicar');
-
-  btnPublicar.addEventListener('click', (e) => {
+  postBtn.addEventListener('click', (e) => {
+    modalPost.style.display = 'none';
     e.preventDefault();
-    const textPublish = text.value;
-    creatPost(textPublish);
-    getPost();
+    createPost(postFeed.value)
+      .then(() => window.location.reload());
   });
-  return containerFeed;
-};
+  return feed;
+}

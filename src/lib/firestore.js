@@ -1,35 +1,43 @@
-import { app } from './config.js';
+//import { app } from './config.js';
+
 import {
-  getFirestore,
-  collection,
   addDoc,
-  getAuth,
+  collection,
   getDocs,
+  query,
+  orderBy,
 } from './export.js';
+import { auth, db } from './config.js';
 
-const db = getFirestore(app);
-const auth = getAuth(app);
+export const current = () => auth.currentUser;
 
-export const creatPost = (textPost) => {
-  addDoc(collection(db, 'posts'), {
-    textPost,
-    userId: auth.currentUser.uid,
-    userName: auth.currentUser.displayName,
-  })
-    .then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
-    })
-    .catch((e) => {
-      console.error('Error adding document: ', e);
-    });
-};
+export const createPost = (postText) => addDoc(collection(db, 'post'), {
+  photo: current().photoURL,
+  displayName: current().displayName,
+  email: current().email,
+  data: new Date().toLocaleDateString('pt-BR'),
+  hour: new Date().toLocaleTimeString(),
+  post: postText,
+  user: current().uid,
+});
 
-export const getPost = async () => {
-  const querySnapshot = await getDocs(collection(db, 'posts'));
-  const posts = [];
-  console.log(posts);
-  querySnapshot.forEach((doc) => {
-    posts.push({ ...doc.data(), id: doc.id });
+export async function getAllPosts() {
+  const collPost = query(
+    collection(db, 'post'),
+    orderBy('data', 'desc'),
+    orderBy('hour', 'desc'),
+  );
+  const postSnapshot = await getDocs(collPost);
+  const listPost = postSnapshot.docs.map((docColl) => {
+    const id = docColl.id;
+    const data = docColl.data();
+    const post = {
+      id,
+      ...data,
+    };
+    return post;
   });
-  return posts;
-};
+  return listPost;
+}
+
+//updateDoc serve para atualizar alguns campos de um documento sem substituir o documento inteiro, use o método update():= É possível configurar um campo no documento como um carimbo de data/hora do servidor que detecta quando o servidor recebe a atualização.

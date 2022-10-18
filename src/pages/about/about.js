@@ -3,7 +3,7 @@ export default () => {
   const contentAbout = `
     <div>
       <header>
-        <img src="img/logo.png" class="logoAbout" alt="Logo Wanderlust">
+        <img src="/src/img/logo.png" class="logoAbout" alt="Logo Wanderlust">
         <a href="index.html" class="btnBack">voltar</a>
       </header>
       <main>

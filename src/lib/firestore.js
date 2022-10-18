@@ -1,5 +1,5 @@
 import { app } from './firebase.js';
-import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc } from './export.js'
 
 const db = getFirestore(app);
 
@@ -22,21 +22,29 @@ const getPost = async () => {
         querySnapshot.forEach((post) => {
             postArray.push({ ...post.data(), id: post.id });
         });
-       return postArray;
+        return postArray;
     } catch (error) {
         return error;
     }
-}
+};
 
 const upDatePost = async (author, textPost) => {
-    const newPost = doc(db, "post", author);
+    const newPost = doc(db, 'post', author);
 
-    console.log(newPost);
     await updateDoc(newPost, {
         texto: textPost,
-        
+
     });
+};
 
-}
+const deletePost = async (author) => {
+    try {
+        const docRef = doc(db, 'post', author);
+        await deleteDoc(docRef);
+        return docRef.id;
+    } catch (error) {
+        return error;
+    }
+};
 
-export { createPost, getPost, upDatePost };
+export { createPost, getPost, upDatePost, deletePost };

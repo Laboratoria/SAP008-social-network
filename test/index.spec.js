@@ -2,7 +2,6 @@ import { signInGoogle, createAccount, loginEmailPassword } from '../src/lib/auth
 import { createPost } from '../src/lib/firestore.js';
 import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, addDoc, getAuth, updateProfile } from '../src/lib/export.js';
 
-
 jest.mock('../src/lib/export.js');
 
 describe('signInGoogle', () => {
@@ -73,4 +72,14 @@ describe('createPost', () => {
       texto,
     });
   })
+
+describe('logout', () => {
+  it('deve deslogar o usuario', () => {
+    signOut.mockResolvedValue({
+      user:{},
+    });
+    logout()
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+
 });

@@ -5,10 +5,10 @@ export default function Login() {
   login.classList.add('login-main');
   login.innerHTML = `   
       <main class="main">
-      <div class="logotype">
+      
           <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
         <p class="tittle-logotype">INspire</p>
-        </div>
+        
               
         <form class="login-form">
           <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
@@ -39,7 +39,8 @@ export default function Login() {
   signInButton.addEventListener('click', (e) => {
     e.preventDefault();
     signIn(email.value, password.value)
-      .then(() => {
+      .then((result) => {
+        console.log(result);
         window.location.hash = ('#feed');
       })
       .catch(() => {

@@ -9,21 +9,18 @@
 
 /* estilização do botão voltar */
 .btn-back {
-  margin-left: 4%;
   font-size: 20px;
   color: white;
   background-color: transparent;
   border: transparent;
   align-self: flex-start;
 
-
 }
 
 /* logo de coração com lampada e nome inspire */
 .logo-tittle {
-  margin-top: 0;
-  margin-bottom: 3%;
-
+  align-items: center;
+  justify-items: center;
 }
 
 /* estilização dos campos do nome, email e senha os campos de imput*/

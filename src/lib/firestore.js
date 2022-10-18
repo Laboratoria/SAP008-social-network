@@ -1,7 +1,6 @@
 //import { app } from './config.js';
 
 import {
-  getFirestore,
   addDoc,
   collection,
   getDocs,
@@ -40,6 +39,5 @@ export async function getAllPosts() {
   });
   return listPost;
 }
-
 
 //updateDoc serve para atualizar alguns campos de um documento sem substituir o documento inteiro, use o método update():= É possível configurar um campo no documento como um carimbo de data/hora do servidor que detecta quando o servidor recebe a atualização.

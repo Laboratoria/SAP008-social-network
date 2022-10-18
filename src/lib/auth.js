@@ -16,9 +16,13 @@ export const register = (
   password,
   profileName,
 ) => createUserWithEmailAndPassword(auth, email, password)
-  .then(() => updateProfile(auth.currentUser, {
-    displayName: profileName,
-  }));
+  .then((userCredencial) => {
+    const user = userCredencial.user;
+    console.log(user);
+    updateProfile(auth.currentUser, {
+      displayName: profileName,
+    });
+  });
 
 export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
 

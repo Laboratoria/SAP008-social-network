@@ -1,11 +1,12 @@
-import { loginEmailPassword } from "../lib/index.js";
+import { loginEmailPassword } from '../lib/index.js';
 
 export default () => {
-    const container = document.createElement("div");
+  const container = document.createElement('div');
 
-    const template = `
+  const template = `
       <section class="content">
-
+         <p id="msgErro"></p>
+         <form class="form">
          <div class="logoCookieLogin">
          <img src="img/logoCookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
          <h2 class="frase-login">COOKIE</h2>
@@ -45,27 +46,24 @@ export default () => {
 
          </div>
       </section>
-   `
-    container.innerHTML = template;
-    
-   const login = container.querySelector("#botaoEntrar")
-   const email = container.querySelector("#email")
-   const password = container.querySelector("#password")
+   `;
+  container.innerHTML = template;
 
-   login.addEventListener("click", (e)=>{
-      e.preventDefault();
-      console.log(email.value)
-      console.log(password.value)
+  const login = container.querySelector('#botaoEntrar');
+  const email = container.querySelector('#email');
+  const password = container.querySelector('#password');
+  const msgErro = container.querySelector('#msgErro');
 
-      loginEmailPassword(email.value, password.value)
-      .then(()=>{
-         window.location.hash = "#feed";
+  login.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    loginEmailPassword(email.value, password.value)
+      .then(() => {
+        window.location.hash = '#feed';
       })
-      .catch((error)=>{
-         console.log(error)
-      })
-   }) 
-   return container;
- }
-
-
+      .catch(() => {
+        msgErro.innerHTML = 'usário ou senha incorretos';
+      });
+  });
+  return container;
+};

@@ -5,8 +5,10 @@ export default function Login() {
   login.classList.add('login-main');
   login.innerHTML = `   
       <main class="main">
-        <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
+      
+          <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
         <p class="tittle-logotype">INspire</p>
+        
               
         <form class="login-form">
           <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
@@ -34,18 +36,15 @@ export default function Login() {
   const password = login.querySelector('.password');
   const googleBtn = login.querySelector('#google-button');
 
-
-  signInButton.addEventListener("click", function (e) {
-    e.preventDefault(); 
+  signInButton.addEventListener('click', (e) => {
+    e.preventDefault();
     signIn(email.value, password.value)
-    .then(function () {
-      window.location.hash = ("#feed")
-    })
-    .catch(function (error) {
-      console.error(error.code)
-      alert('falhou')
-
-    });
+      .then((result) => {
+        console.log(result);
+        window.location.hash = ('#feed');
+      })
+      .catch(() => {
+      });
   });
 
   googleBtn.addEventListener('click', (e) => {

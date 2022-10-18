@@ -1,9 +1,11 @@
-export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
+export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js'; // eslint-disable-line
+
 export {
   getFirestore,
-  doc,
-  setDoc,
-} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+  collection,
+  addDoc,
+  getDocs,
+} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';// eslint-disable-line
 
 export {
   getAuth,
@@ -12,4 +14,4 @@ export {
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
-} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js'; // eslint-disable-line

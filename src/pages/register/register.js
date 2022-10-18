@@ -37,18 +37,18 @@ export default () => {
     e.preventDefault();
     register(email.value, password.value, nameProfile.value)
       .then(() => {
-        alert('Bem vindo(a) ' + nameProfile.value + '!');
+        alert(`Bem vindo(a) ${nameProfile.value}!`);
         window.location.hash = '#feed';
       })
       .catch((error) => {
         const errorCode = error.code;
         if (errorCode === 'auth/email-already-in-use') {
-          containerRegistration.innerHTML = ('E-mail já cadastrado. Faça seu login');
+          alert('E-mail já cadastrado. Faça seu login');
           window.location.hash = '#login';
         } else if (errorCode === 'auth/invalid-email') {
-          alert('e-mail inválido. Ex: suzana@provedor.com')
+          alert('e-mail inválido. Ex: suzana@provedor.com');
         } else {
-          alert('Algo deu errado. Por favor, tente novamente.')
+          alert('Algo deu errado. Por favor, tente novamente.');
         }
       });
   });

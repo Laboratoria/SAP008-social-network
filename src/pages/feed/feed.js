@@ -1,4 +1,4 @@
-import { creatPost } from '../../lib/auth.js';
+import { creatPost, getPost } from '../../lib/firestore.js';
 
 export default () => {
   const containerFeed = document.createElement('div');
@@ -29,8 +29,9 @@ export default () => {
 
   btnPublicar.addEventListener('click', (e) => {
     e.preventDefault();
-    creatPost()
-
+    const textPublish = text.value;
+    creatPost(textPublish);
+    getPost();
   });
   return containerFeed;
 };

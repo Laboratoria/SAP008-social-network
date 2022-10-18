@@ -52,20 +52,8 @@ export default () => {
   const btnlogin = container.querySelector('#btn-Login-User');
   const msgFire = container.querySelector('#erro-Firebase');
 
-  function validateLoginInUser(email, password) {
-    if (email === '') {
-      return 'Preencha com seu e-mail!';
-    }
-    if (password === '') {
-      return 'Preencha com sua senha!';
-    }
-    return 'Preencha o campo de e-mail e senha!';
-  }
-
   btnlogin.addEventListener('click', (e) => {
     e.preventDefault();
-    validateLoginInUser(inputEmail, inputSenha);
-    if (validateLoginInUser === '');
     logInUser(inputEmail.value, inputSenha.value)
       .then(() => {
         redirectFeed();

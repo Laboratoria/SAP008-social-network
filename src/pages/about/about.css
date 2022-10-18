@@ -1,0 +1,247 @@
+@media only screen and (max-width: 430px) and (min-width: 257px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .logoWand{
+        position: absolute;
+        width: 110px;
+        height: 94px;
+        left: 136px;
+        top: 33px;
+    }
+    .butnBack{
+        position: absolute;
+        width: 0px;
+        height: 62px;
+        left: 322px;
+        top: 137px;
+    }
+    .texto1{
+        position: absolute;
+        width: 166px;
+        height: 205px;
+        left: 24px;
+        top: 160px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #000000;
+    }
+    .foto1{
+        position: absolute;
+        width: 170px;
+        height: 134px;
+        left: 195px;
+        top: 203px;
+    }
+    .foto2{
+        position: absolute;
+        width: 337px;
+        height: 129px;
+        left: 28px;
+        top: 339px;
+    }
+    .texto2{
+        position: absolute;
+        width: 135px;
+        height: 115px;
+        left: 220px;
+        top: 480px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #000000;
+    }
+    .foto3{
+        position: absolute;
+        width: 186px;
+        height: 156px;
+        left: 13px;
+        top: 465px;
+    }
+    .texto3{
+        position: absolute;
+        width: 154px;
+        height: 148px;
+        left: 23px;
+        top: 743px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #000000;
+    }
+    .foto4{
+        position: absolute;
+        width: 187px;
+        height: 113px;
+        left: 57px;
+        top: 621px;  
+    }
+    .foto5{
+        position: absolute;
+        width: 184px;
+        height: 120px;
+        left: 177px;
+        top: 733px;
+    }
+    .logoLab{
+        position: absolute;
+        width: 133px;
+        height: 46px;
+        left: 117px;
+        top: 894px;  
+    }
+    .footer{
+        position: absolute;
+        width: 428px;
+        height: 9px;
+        left: -36px;
+        top: 891px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+        color: #000000;
+    }
+}
+
+@media only screen and (max-width: 2000px) and (min-width: 431px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .logoWand{
+        position: absolute;
+        width: 208px;
+        height: 187px;
+        left: 723px;
+        top: 18px;
+        box-shadow: inset 0px 0px 21px rgb(0 0 0 / 25%);
+        border-radius: 17px;
+    }
+    .butnBack{
+        position: absolute;
+        width: 95px;
+        height: 39px;
+        left: 1204px;
+        top: 179px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        color: #0C0303;
+    }
+    .texto1{
+        position: absolute;
+        width: 451px;
+        height: 686px;
+        left: 246px;
+        top: 314px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 50px;
+        text-align: center;
+        color: #000000;
+    }
+    .foto1{
+        position: absolute;
+        width: 544px;
+        height: 448px;
+        left: 740px;
+        top: 327px;
+    }
+    .foto2{
+        position: absolute;
+        width: 849px;
+        height: 319px;
+        left: 435px;
+        top: 705px;
+    }
+    .texto2{
+        position: absolute;
+        width: 563px;
+        height: 415px;
+        left: 773px;
+        top: 1148px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 58px;
+        text-align: center;
+        color: #000000;
+    }
+    .foto3{
+        position: absolute;
+        width: 506px;
+        height: 320px;
+        left: 216px;
+        top: 1023px;
+    }
+    .texto3{
+        position: absolute;
+        width: 530px;
+        height: 148px;
+        left: 269px;
+        top: 1764px;
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 62px;
+        text-align: center;
+        color: #000000;
+    }
+    .foto4{
+        position: absolute;
+        width: 548px;
+        height: 342px;
+        left: 280px;
+        top: 1343px;
+    }
+    .foto5{
+        position: absolute;
+        width: 603px;
+        height: 376px;
+        left: 793px;
+        top: 1685px;
+    }
+    .logoLab{
+        position: absolute;
+        width: 197px;
+        height: 65px;
+        left: 729px;
+        top: 2217px;
+    }
+    .footer{
+        position: absolute;
+        width: 932px;
+        height: 24px;
+        left: 339px;
+        top: 2193px;
+        
+        font-family: 'Junge';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        
+        color: #000000;
+    }   
+}

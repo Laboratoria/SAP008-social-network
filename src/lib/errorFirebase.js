@@ -1,7 +1,7 @@
 function errorFire(error) {
   switch (error) {
     case 'auth/invalid-email':
-      return 'E-mail inválido!';
+      return 'Preencha o campo de e-mail e senha!';
     case 'auth/user-not-found':
       return 'Este e-mail não está cadastrado!';
     case 'auth/email-already-exists':

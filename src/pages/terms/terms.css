@@ -1,0 +1,36 @@
+.body-terms {
+  margin: 0rem 1.5rem 0rem 1.5rem;
+
+  background-color: #ffff;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.title-terms {
+  font-size: 1.2rem;
+}
+
+.main-terms {
+  text-align: justify;
+  line-height: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.footer-terms {
+  font-weight: bold;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  text-align: justify;
+
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .body-terms {
+    margin: 4rem;
+
+    background-color: #ffff;
+    padding: 3rem;
+    border-radius: 0.5rem;
+  }
+}

@@ -1,19 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./pages/cadastro/cadastro.css" />
-  <title>Babysteps</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+  <link rel="stylesheet" href='./pages/cadastro/cadastro.css'>
+  
+
+  <link rel='stylesheet' href='style.css'>
+  <link rel='stylesheet' href='./pages/feed/feed.css'>
+  <link rel='stylesheet' href='./pages/publish/publish.css'>
+  <link rel='stylesheet' href='./pages/guidelines/guidelines.css'>
+  <link rel='stylesheet' href='./pages/terms/terms.css'>
+
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap' rel='stylesheet'>
+
+  <title>BabySteps</title>
 </head>
 
 <body>
-  <main id="root"></main>
-  <script type="module" src="./main.js"></script>
+  <header>
+    <nav class='header-menu-logo'>
+      <div id='menu' >
+        <ion-icon class='menu-icon' name='menu-outline'></ion-icon>
+      </div>
+      <div id='bodyMenu' class='desk-all'>
+        <ul>
+          <li>
+            <a class='side-icon-list' href='#guidelines'>
+              <span class='side-internal-icon'><ion-icon name='people-outline'></ion-icon></span>
+              <span class='side-internal-list'>Diretrizes</span>
+            </a>
+          </li>
+          <li>
+            <a class='side-icon-list' href='#termsOfUse'>
+              <span class='side-internal-icon'><ion-icon name='checkbox-outline'></ion-icon></span>
+              <span class='side-internal-list'>Termos de uso</span>
+            </a>
+          </li>
+          <li>
+            <a class='side-icon-list' href='#logout'>
+              <span class='side-internal-icon'><ion-icon name='log-out-outline'></ion-icon></span>
+              <span class='side-internal-list'>Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <img class='green-logo' src='img/logo_teste.png'>
+  </header>
 
+  <main id='root'>
+  </main>
 
+  <footer class='desk-all'>
+    <nav class='footer-nav'>
+      <ul>
+        <li>
+          <a href='#feed'>
+            <span class='footer-icon'><ion-icon name='home-outline'></ion-icon></span>
+            <span class='footer-list'>Início</span>
+          </a>
+        </li>
+        <li>
+          <a href='#publish'>
+            <span class='footer-icon'><ion-icon name='add-circle-outline'></ion-icon></span>
+            <span class='footer-list'>Publicar</span>
+          </a>
+        </li>
+        <li>
+          <a href='#profile'>
+            <span class='footer-icon'><ion-icon name='person-outline'></ion-icon></span>
+            <span class='footer-list'>Perfil</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script type='module' src='main.js'></script>
+  <script type='module' src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'> </script>
+  <script nomodule src='https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js'> </script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 import { app } from './firebase.js';
+import { auth } from './auth.js';
 import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc } from './export.js'
 
 const db = getFirestore(app);
@@ -22,6 +23,7 @@ const getPost = async () => {
         querySnapshot.forEach((post) => {
             postArray.push({ ...post.data(), id: post.id });
         });
+        console.log(postArray);
         return postArray;
     } catch (error) {
         return error;

@@ -29,7 +29,7 @@ export default () => {
     `;
 
   container.innerHTML = template;
-
+  
   const showPost = async () => {
     const arrayPost = await getPost();
     const postTemplate = arrayPost.map((post) => `

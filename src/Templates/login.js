@@ -8,7 +8,7 @@ export default () => {
          <p id="msgErro"></p>
          <form class="form">
          <div class="logoCookieLogin">
-         <img src="img/logoCookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
+         <img src="img/cookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
          <h2 class="frase-login">COOKIE</h2>
          </div>
 

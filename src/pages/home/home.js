@@ -67,12 +67,9 @@ export default () => {
     validateLoginInUser(inputEmail, inputSenha);
     if (validateLoginInUser === '');
     logInUser(inputEmail.value, inputSenha.value)
-      .then(() => {
-        redirectFeed();
-      })
+      .then(redirectFeed)
       .catch((error) => {
-        const errorCode = errorFire(error.code);
-        msgFire.innerHTML = errorCode;
+        msgFire.innerHTML = errorFire(error.code);
       });
   });
 

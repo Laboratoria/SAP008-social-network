@@ -55,12 +55,9 @@ export default () => {
   btnlogin.addEventListener('click', (e) => {
     e.preventDefault();
     logInUser(inputEmail.value, inputSenha.value)
-      .then(() => {
-        redirectFeed();
-      })
+      .then(redirectFeed)
       .catch((error) => {
-        const errorCode = errorFire(error.code);
-        msgFire.innerHTML = errorCode;
+        msgFire.innerHTML = errorFire(error.code);
       });
   });
 

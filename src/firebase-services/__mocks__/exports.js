@@ -1,3 +1,4 @@
+import { db } from "../firebase-config";
 
   export const initializeApp = jest.fn();
   export const getAuth = jest.fn();

@@ -115,6 +115,13 @@ Página na qual nossas usuárias poderão publicar posts, categorizar seus posts
 
 ## 6. Testes unitários e Testes assíncronos
 
+Os testes desse projeto foram desenvolvidos pra verificar a quantidade de chamada das funções do firebase e com quais parâmetros essas funções são chamadas.
+
+Rebu foi nossa primeira experiência com mock de função. Usamos o framework Jest.
+
+ ![Testes](./src/img/Print_testes.png)
+
+
 ## 7. Ferramentas e Tech Skills
 
 - Figma;

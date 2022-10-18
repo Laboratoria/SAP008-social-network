@@ -133,6 +133,13 @@ html {
     text-align: initial;
 }
 
+.confimation-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;    
+}
+
 .nav-footer {
     background-color: var(--roxo);
     width: 100%;

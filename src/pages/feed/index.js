@@ -60,14 +60,21 @@ export default () => {
         const postToBeEdited = e.currentTarget.dataset.idPostEdit;
         const txtPost = container.querySelector(`[data-post="${postToBeEdited}"]`);
         const dataSave = container.querySelector(`[data-save="${postToBeEdited}"]`);
+        const btnEdit = container.querySelector(`[data-id-post-edit="${postToBeEdited}"]`);
+        const btnDelete = container.querySelector(`[data-id-post-delete="${postToBeEdited}"]`);
 
         txtPost.removeAttribute('disabled');
         dataSave.classList.remove('hide');
+        btnEdit.classList.add('hide');
+        btnDelete.classList.add('hide');
 
         dataSave.addEventListener("click", async () => {
           await upDatePost(postToBeEdited, txtPost.value);
           txtPost.setAttribute('disabled', '');
           dataSave.classList.add('hide');
+          btnEdit.classList.remove('hide');
+          btnDelete.classList.remove('hide');
+
         });
       });
     });    
@@ -78,10 +85,12 @@ export default () => {
         const btnDelete = container.querySelector(`[data-id-post-delete="${postToBeDeleted}"]`);
         const confirmationOptions = container.querySelector(`[data-confirmation-options="${postToBeDeleted}"]`);
         const btnConfirmDelete = container.querySelector(`[data-confirmation-delete="${postToBeDeleted}"]`);
-        const btnDeclineDelete = container.querySelector(`[data-decline-delete="${postToBeDeleted}"]`);        
+        const btnDeclineDelete = container.querySelector(`[data-decline-delete="${postToBeDeleted}"]`);  
+        const btnEdit = container.querySelector(`[data-id-post-edit="${postToBeDeleted}"]`);      
 
+        btnEdit.classList.add('hide');
         btnDelete.classList.add('hide');
-        confirmationOptions.classList.remove('hide');    
+        confirmationOptions.classList.remove('hide');           
 
         btnConfirmDelete.addEventListener('click', async(e) => {    
           e.preventDefault();      
@@ -92,6 +101,7 @@ export default () => {
         btnDeclineDelete.addEventListener('click', () => {
           confirmationOptions.classList.add('hide');  
           btnDelete.classList.remove('hide');
+          btnEdit.classList.remove('hide');
         })
 
       });    

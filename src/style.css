@@ -131,18 +131,23 @@ input {
   border: none;
 }
 
+.icons-current-user {
+  display: none;
+}
+
 .icons-container {
-  display: flex;
   justify-content: space-around;
   width: 376px;
   height: 78px;
 }
 
 .icons-size {
-  width: 40px;
-  height: 70px; 
-  filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
-  cursor: pointer;
+    width: 40px;
+    height: 70px;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-right: 10%;
+    filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
 }
 
 .colorful-line {
@@ -206,12 +211,12 @@ input {
   width: 19px;
   height: 17px;
   filter: invert(99%) sepia(5%) saturate(19%) hue-rotate(215deg) brightness(105%) contrast(100%);
-  display: flex;
   margin-bottom: 8px;
   cursor: pointer;
 }
 
 #cancel{
+  display: none;
   background-color: #ffffff;
   color: #ab6930;
   border: none;
@@ -219,6 +224,7 @@ input {
 }
 
 #ok {
+  display: none;
   background-color: #ab6930;
   color: #ffffff;
   border: none;

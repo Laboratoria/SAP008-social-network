@@ -12,11 +12,11 @@ export default () => {
             <form class="form-register">
                 <input type="text" id="name" name="name" class="form-input" placeholder="Digite seu nome"><br>
                 <input type="text" id="email" name="email" class="form-input" placeholder="E-mail"><br>
-                <p id="msg-error-email"></p>
+                <p class="error-msg" id="msg-error-email"></p>
                 <input type="password" id="password" name="password" class="form-input" placeholder="Senha"><br>
-                <p id="msg-error-pswd"></p>
+                <p class="error-msg" id="msg-error-pswd"></p>
                 <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirme sua senha"><br>
-                <p id="msg-error-pswd-ok"></p>
+                <p class="error-msg" id="msg-error-pswd-ok"></p>
                 <button id="ok-form-btn">OK</button>
             </form>
 

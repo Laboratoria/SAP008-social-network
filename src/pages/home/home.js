@@ -59,8 +59,8 @@ export default () => {
             <p id="grade">4.7</p>
             <div class="icons-post">
               <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
-              <img id="pencil-icon" class="icons-post-size" src="./external/svg/pencil-icon.svg"/>
-              <img id="trash-icon" class="icons-post-size" src="./external/svg/trash-icon.svg"/>
+              <img id="pencil-icon" class="icons-post-size icons-current-user" src="./external/svg/pencil-icon.svg"/>
+              <img id="trash-icon" class="icons-post-size icons-current-user" src="./external/svg/trash-icon.svg"/>
             </div>
           </div>
         </aside>
@@ -72,28 +72,32 @@ export default () => {
       const local = container.querySelector('.edit-local');
       const adress = container.querySelector('.edit-adress');
       const review = container.querySelector('.edit-review');
+      const showIcon = container.querySelector('.icons-current-user');
       const modalDelete = container.querySelector('#modal-delete');
       const warnDelete = container.querySelector('#trash-icon');
       const closeModalDelete = container.querySelector('#no-close');
       const cancel = container.querySelector('#cancel');
       const ok = container.querySelector('#ok');
 
-      cancel.hidden = true;
-      ok.hidden = true;
-
       function show(elemento) {
         elemento.focus();
       }
 
+      cancel.hidden = true;
+      ok.hidden = true;
+
       editPost.addEventListener('click', () => {
-        cancel.hidden = false;
-        ok.hidden = false;
-        review.contentEditable = true;
-        show(review);
-        local.contentEditable = true;
-        show(local);
-        adress.contentEditable = true;
-        show(adress);
+        if (auth.currentUser === auth.currentUser.uid) { // assistir atributo data
+          review.contentEditable = true;
+          show(review);
+          local.contentEditable = true;
+          show(local);
+          adress.contentEditable = true;
+          show(adress);
+          showIcon.style.display = 'flex';
+          cancel.hidden = false;
+          ok.hidden = false;
+        }
       });
 
       cancel.addEventListener('click', () => {

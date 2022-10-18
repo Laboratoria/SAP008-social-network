@@ -10,9 +10,9 @@ import {
 
 export const auth = getAuth(app);
 export const dataBase = getFirestore(app);
+export const userAuth = auth.currentUser;
+// export const uid = userAuth.uid;
 const provider = new GoogleAuthProvider(app);
-const userAuth = auth.currentUser;
-// const uid = userAuth.uid;
 
 export const newUser = async (email, password, name) => { // função criar usuário
   try {

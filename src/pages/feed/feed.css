@@ -141,8 +141,7 @@ html {
     margin: 2% auto;
 }
 
-.btn-post {
-    border: solid 2px var(--roxo);
+.btn-post {    
     border-radius: 15px;
     width: 25%;
     padding: 2px;    

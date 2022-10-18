@@ -1,5 +1,7 @@
-// Este es el punto de entrada de tu aplicacion
+import cadastro from './pages/cadastro/cadastro.js';
 
-import { myFunction } from './lib/index.js';
+const main = document.querySelector('#root');
 
-myFunction();
+window.addEventListener('load', () => {
+  main.appendChild(cadastro());
+});

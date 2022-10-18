@@ -133,6 +133,32 @@ html {
     text-align: initial;
 }
 
+.btns-post-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 2% auto;
+}
+
+.btn-post {
+    border: solid 2px var(--roxo);
+    border-radius: 15px;
+    width: 25%;
+    padding: 2px;    
+    color: var(--branco);
+    background-color: var(--lilas);
+    text-transform: uppercase;
+    box-shadow: 0px 0px 20px var(--roxo);
+}
+
+.btn-post:hover {
+    background-color: var(--roxo);
+    box-shadow: 0px 0px 20px var(--roxo);  
+    color: var(--branco);
+    cursor: pointer;
+}
+
 .confimation-delete {
     display: flex;
     justify-content: center;

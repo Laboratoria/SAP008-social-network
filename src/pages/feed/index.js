@@ -37,15 +37,17 @@ export default () => {
         <p class="postTxt name" id="user-name">${post.name}</p>
         
         <textarea class="postTxt" data-post="${post.id}" id="text-post" disabled>${post.texto}</textarea>
-        
-        <button class="btn edit" data-id-post-edit="${post.id}" id="btnEdit" type="button">Editar</button>
-        <button class="btn save hide" data-save="${post.id}"id="btnSave" type="button">Salvar</button>  
-        <button data-id-post-delete="${post.id}" class="btn delete" id="btnDelete">Excluir</button> 
+
+        <div class="btns-post-container">
+          <button class="btn-post edit" data-id-post-edit="${post.id}" id="btnEdit" type="button">Editar</button>
+          <button class="btn-post save hide" data-save="${post.id}"id="btnSave" type="button">Salvar</button>  
+          <button data-id-post-delete="${post.id}" class="btn-post delete" id="btnDelete">Excluir</button>
+        </div>            
 
         <div data-confirmation-options="${post.id}" class="confimation-delete hide">
           <p>Você deseja excluir essa publicação permanentemente?</p>
-          <button class="btn" id="btnConfirmDelete" data-confirmation-delete="${post.id}" type="button">Sim</button>
-          <button class="btn" data-decline-delete="${post.id}" type="button">Não</button>
+          <button class="btn-post" id="btnConfirmDelete" data-confirmation-delete="${post.id}" type="button">Sim</button>
+          <button class="btn-post" data-decline-delete="${post.id}" type="button">Não</button>
         </div>
       </div>
 

@@ -1,6 +1,5 @@
-// Este es el punto de entrada de tu aplicacion
+import cadastro from './pages/cadastro/cadastro.js';
 
-import { openMenu, closeMenu } from './lib/index.js';
 import feed from './pages/feed/feed.js';
 import publish from './pages/publish/publish.js';
 import guidelines from './pages/guidelines/guidelines.js';
@@ -49,8 +48,8 @@ menu.addEventListener('click', () => {
   const contentMenu = document.querySelector('#bodyMenu');
 
   if (contentMenu.style.display === 'block') {
-    closeMenu(contentMenu);
+    contentMenu.style.display = 'none';
   } else {
-    openMenu(contentMenu);
+    contentMenu.style.display = 'block';
   }
 });

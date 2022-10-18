@@ -1,4 +1,4 @@
-import { publishPost } from '../../lib/index.js';
+import { publishPost } from '../../firebase/auth.js';
 
 export default () => {
   const containerPost = document.createElement('div');

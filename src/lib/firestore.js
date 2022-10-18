@@ -1,5 +1,4 @@
 import { app } from './firebase.js';
-import { auth } from './auth.js';
 import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc } from './export.js'
 
 const db = getFirestore(app);

@@ -1,5 +1,5 @@
 import { signInGoogle, createAccount, loginEmailPassword } from '../src/lib/auth.js';
-import { getDocs } from '../src/lib/export.js';
+import {getDocs} from '../src/lib/export.js';
 import { createPost, getPost } from '../src/lib/firestore.js';
 import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, addDoc, getAuth, updateProfile } from '../src/lib/export.js';
 
@@ -57,7 +57,7 @@ describe('getPost', () => {
       author: {},
       id: {},
       name: {},
-      texto: {}
+      texto: {} 
     }]);
     getPost('x4H2994HPjV9zm6cp7am58XTjci2', '0pRNd4MNFXm3QAI2TYeL', 'Tamyres melo', 'Parabéns, meninas. Achei incrível!');
     expect(getDocs).toHaveBeenCalledTimes(1);
@@ -91,7 +91,7 @@ describe('createPost', () => {
 describe('logout', () => {
   it('deve deslogar o usuario', () => {
     signOut.mockResolvedValue({
-      user: {},
+      user:{},
     });
     logout()
     expect(signOut).toHaveBeenCalledTimes(1);

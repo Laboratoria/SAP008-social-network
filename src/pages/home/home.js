@@ -1,42 +1,39 @@
-
-import { logoutUser, auth, getPosts } from "../../lib/auth.js";
+/* eslint-disable no-unused-expressions */
+import { logoutUser, auth, getPosts } from '../../lib/auth.js';
 
 export default () => {
-  //fazer if usuario não estiver logado "currentUser" redirecionar tela login
+  // fazer if usuario não estiver logado "currentUser" redirecionar tela login
   const container = document.createElement('div');
-  const template =
-    `<section>
-    <nav id="mobile-top-icons" class="icons-container">
-      <img id="menu-icon" class="icons-size" src="./external/svg/menu-icon.svg"/>
-      <img id="home-icon" class="icons-size" src="./external/svg/home-icon.svg"/>
-      <img id="heart-icon" class="icons-size" src="./external/svg/heart-icon.svg"/>
-    </nav>
-    <hr class="colorful-line"/>
-    <div>
-      <p id="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial.</p>
-    </div>
-    <hr class="colorful-line"/>
-    <section class="post-container"></section>  
-    <hr class="colorful-line"/>
-    <nav id="mobile-footer-icons" class="icons-container">
-      <img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/>
-      <img id="plate-icon" class="icons-size" src="./external/svg/heart-icon.svg"/>
-      <img id="up-icon" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
-    </nav>
-    <button id="logout">Sair</button>
+  const template = `<section>
+      <nav id="mobile-top-icons" class="icons-container">
+        <img id="menu-icon" class="icons-size" src="./external/svg/menu-icon.svg"/>
+        <img id="home-icon" class="icons-size" src="./external/svg/home-icon.svg"/>
+        <img id="logout-icon" class="icons-size" src="./external/svg/log-out-icon.svg"/>
+      </nav>
+      <hr class="colorful-line"/>
+      <div>
+        <p id="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial.</p>
+      </div>
+      <hr class="colorful-line"/>
+      <section class="post-container"></section>  
+      <hr class="colorful-line"/>
+      <nav id="mobile-footer-icons" class="icons-container">
+        <img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/>
+        <img id="plate-icon" class="icons-size" src="./external/svg/heart-icon.svg"/>
+        <img id="up-icon" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
+      </nav>
     </section>`;
-    
-    container.innerHTML = template;
-    
-    const firstLetter = (element) => {
-      const getFirst = element[0]
-      return getFirst
-    }
+
+  container.innerHTML = template;
+
+  const firstLetter = (element) => {
+    const getFirst = element[0];
+    return getFirst;
+  };
 
   const printPosts = async () => {
     const all = await getPosts();
-    const postsTemplate = all.map((Posts) =>
-      `<div class="posts">
+    const postsTemplate = all.map((Posts) => `<div class="posts">
         <div id="text">
           <p>@ ${Posts.name}</p>
           <p id="local" class="edit-local establishment" contenteditable="false">${Posts.nomeRest}</p>
@@ -65,19 +62,18 @@ export default () => {
           </div>
         </aside>
       </div>
-      <hr class="colorful-line"/>`
-    ).join('');
+      <hr class="colorful-line"/>`).join('');
     container.querySelector('.post-container').innerHTML += postsTemplate;
 
-    const editPost = container.querySelector("#pencil-icon");
-    const local = container.querySelector(".edit-local");
-    const adress = container.querySelector(".edit-adress");
-    const review = container.querySelector(".edit-review");
+    const editPost = container.querySelector('#pencil-icon');
+    const local = container.querySelector('.edit-local');
+    const adress = container.querySelector('.edit-adress');
+    const review = container.querySelector('.edit-review');
     const modalDelete = container.querySelector('#modal-delete');
     const warnDelete = container.querySelector('#trash-icon');
     const closeModalDelete = container.querySelector('#no-close');
-    const cancel = container.querySelector("#cancel");
-    const ok = container.querySelector("#ok");
+    const cancel = container.querySelector('#cancel');
+    const ok = container.querySelector('#ok');
 
     cancel.hidden = true;
     ok.hidden = true;
@@ -86,17 +82,16 @@ export default () => {
       elemento.focus();
     }
 
-
     editPost.addEventListener('click', () => {
       cancel.hidden = false;
       ok.hidden = false;
       review.contentEditable = true;
-      show(review)
+      show(review);
       local.contentEditable = true;
-      show(local)
+      show(local);
       adress.contentEditable = true;
-      show(adress)
-    })
+      show(adress);
+    });
 
     cancel.addEventListener('click', () => {
       cancel.hidden = true;
@@ -104,59 +99,34 @@ export default () => {
       review.contentEditable = false;
       local.contentEditable = false;
       adress.contentEditable = false;
-    })
+    });
 
     warnDelete.addEventListener('click', () => {
-      modalDelete.classList.toggle('hide')
-    })
+      modalDelete.classList.toggle('hide');
+    });
 
     closeModalDelete.addEventListener('click', () => {
-      modalDelete.classList.toggle('hide')
-    })
+      modalDelete.classList.toggle('hide');
+    });
   };
 
-  printPosts()
+  printPosts();
 
-  const logout = container.querySelector('#logout');
-  const toTheTop = container.querySelector("#up-icon");
+  const logout = container.querySelector('#logout-icon');
+  const toTheTop = container.querySelector('#up-icon');
   const newPost = container.querySelector('#plus-icon');
 
-  logout.addEventListener('click', (e) => {
-    e.preventDefault;
+  logout.addEventListener('click', () => {
     logoutUser();
   });
 
-  toTheTop.addEventListener("click", () => {
+  toTheTop.addEventListener('click', () => {
     window.scrollTo(0, 0);
   });
 
   newPost.addEventListener('click', () => {
     window.location.hash = '#new_post';
-  })
+  });
 
   return container;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};

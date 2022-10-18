@@ -154,7 +154,7 @@ input {
   width: 376px;
   height: 470px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   overflow: scroll;
 }
 

@@ -4,6 +4,7 @@ export const feedFunction = () => {
   const containerFeed = document.createElement("section");
 
   const templateFeed = `
+  
   <section class='feed-page'>
     <div class='form-feed'>
       <div class="img-user"></div>
@@ -21,7 +22,6 @@ export const feedFunction = () => {
     </button>
     </div>
   <section class='posts-feed'>
-   
   
   `;
 

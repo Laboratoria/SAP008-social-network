@@ -4,6 +4,7 @@ export default () => {
   const container = document.createElement('div');
 
   const template = `
+
       <header class="navRegister">
         <div class='divBtnReturn'>
           <img src="return.png" alt="voltar" id="voltarRegister">
@@ -34,12 +35,12 @@ export default () => {
             <input type="password"  id="passwordRegister" placeholder="********"  class="btnRegister">
           </div>
             <button id="cadastrarRegister">Cadastre-se</button>  
+
         </form>
         </main>
         `;
   container.innerHTML = template;
   const form = container.querySelector('.formRegister');
-  const date = container.querySelector('#dateRegister');
   const email = container.querySelector('#usernameRegister');
   const senha = container.querySelector('#passwordRegister');
 
@@ -47,7 +48,6 @@ export default () => {
     e.preventDefault();
     console.log('submter o form');
     console.log(email.value);
-    console.log(date.value);
     console.log(senha.value);
     createUser(email.value, senha.value)
       .then((user) => {

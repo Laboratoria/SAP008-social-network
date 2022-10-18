@@ -7,7 +7,13 @@ export default () => {
       <section class="content">
          <p id="msgErro"></p>
          <form class="form">
+         <div class="logoCookieLogin">
+         <img src="img/logoCookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
+         <h2 class="frase-login">COOKIE</h2>
+         </div>
 
+         <div class="form-login">
+         
          <div class="form-cx">
             <label for="email">Email</label><br>
             <input type="text" id="email" autocomplete="off" placeholder="cookie@cookie.com.br">
@@ -28,7 +34,6 @@ export default () => {
             <div class="linha" ></div>
          </div>
          
-
          <div class="form-google">
             <a href="#" class="google" >
             <i class="fa-brands fa-google-plus-g"></i>Entrar com o Google
@@ -39,7 +44,7 @@ export default () => {
             Não tem uma conta? <a href="#register" class="cadastrar-se">Cadastre-se</a>
          </div>
 
-         </form>
+         </div>
       </section>
    `;
   container.innerHTML = template;
@@ -47,7 +52,7 @@ export default () => {
   const login = container.querySelector('#botaoEntrar');
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
-  const msgErro = container.querySelector('#msgErro')
+  const msgErro = container.querySelector('#msgErro');
 
   login.addEventListener('click', (e) => {
     e.preventDefault();
@@ -56,8 +61,8 @@ export default () => {
       .then(() => {
         window.location.hash = '#feed';
       })
-      .catch((error) => {
-        msgErro.innerHTML = "usário ou senha incorretos";
+      .catch(() => {
+        msgErro.innerHTML = 'usário ou senha incorretos';
       });
   });
   return container;

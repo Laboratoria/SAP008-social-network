@@ -5,7 +5,6 @@ export function createUser(email, senha) {
   const auth = getAuth(app);
   return createUserWithEmailAndPassword(auth, email, senha);
 }
-
 export function loginEmailPassword(email, password) {
   const auth = getAuth(app);
   return signInWithEmailAndPassword(auth, email, password);

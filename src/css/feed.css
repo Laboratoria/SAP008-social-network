@@ -102,7 +102,7 @@
   font-style: italic;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1023px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   
 #root{
   background-image: none;
@@ -140,10 +140,10 @@
   .inputs-feed {
     margin-top: 10rem;
     background-color: #EDE2E2;
-    width: 12rem;
+    width: 14rem;
     height: 7rem;
     margin-top: 0.5rem;
-    margin-left: 7rem;
+    margin-left: 3rem;
     border-radius: 1.5rem;
   }
   
@@ -182,3 +182,10 @@
     background:transparent;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  #root{
+    background-image: none;
+    }
+  }

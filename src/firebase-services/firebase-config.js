@@ -1,15 +1,8 @@
 import { initializeApp } from './exports.js';
 import {
   getAuth,
-  signOut,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  GoogleAuthProvider,
+  getFirestore
 } from './exports.js';
-import { getFirestore } from './exports.js';
-
 
 // Your web app's Firebase configuration
 const firebaseConfig = {

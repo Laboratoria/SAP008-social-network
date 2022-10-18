@@ -135,5 +135,3 @@ Rebu foi nossa primeira experiência com mock de função. Usamos o framework Je
 - Responsividade;
 - Jest;
 - Firebase.
-
-## 8. Considerações finais

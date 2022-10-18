@@ -7,13 +7,13 @@ export default () => {
 
       <header class="navRegister">
         <div class='divBtnReturn'>
-          <img src="return.png" alt="voltar" id="voltarRegister">
+          <img src="img/return.png" alt="voltar" id="voltarRegister">
         </div>
         <div>
           <h1 class='tituloRegister'>Bem vinda!</h1>
         </div>
         <div>
-          <img src="cookie.png" alt="logo-cookie" id="cookieRegister">
+          <img src="img/cookie.png" alt="logo-cookie" id="cookieRegister">
         </div>
       </header>
       <main class="register">

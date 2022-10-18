@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#allReady {
+  background: #00a57a;
+  font-family: 'gothic-a1', sans-serif;
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-loading {
+  color: #ffff;
+  font-size: 3rem;
+}
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading {
+  border: 6px solid #fff;
+  border-top-color: #00a57a;
+  height: 50px;
+  width: 50px;
+  animation: load 1s infinite linear;
+  border-radius: 50%;
+}

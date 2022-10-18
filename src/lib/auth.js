@@ -5,19 +5,19 @@ import { app } from './configuration.js';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup,
   GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword,
-  signOut, updateProfile, getDocs, onAuthStateChanged
+  signOut, updateProfile, getDocs,
 } from './firebase.js';
 
 export const auth = getAuth(app);
 export const dataBase = getFirestore(app);
 const provider = new GoogleAuthProvider(app);
-// const user = auth.currentUser;
-// const uid = user.uid;
+const userAuth = auth.currentUser;
+// const uid = userAuth.uid;
 
 export const newUser = async (email, password, name) => { // função criar usuário
   try {
     await createUserWithEmailAndPassword(auth, email, password);
-    await updateProfile(auth.currentUser, {
+    await updateProfile(userAuth, {
       displayName: name,
     });
   } catch (error) {
@@ -33,11 +33,6 @@ export const googleAccess = async () => { // função acessar com google
     const user = result.user;
     console.log(token, user);
   }).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const email = error.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log(errorCode, errorMessage, email, credential);
     throw error;
   });
 };
@@ -45,8 +40,8 @@ export const googleAccess = async () => { // função acessar com google
 export const create = async (nomeRest, endRest, critica) => { // função criar novo dado (posts)
   try {
     const docRef = await addDoc(collection(dataBase, 'Posts'), {
-      name: auth.currentUser.displayName,
-      author: auth.currentUser.uid,
+      name: userAuth.displayName,
+      author: userAuth.uid,
       nomeRest,
       endRest,
       critica,

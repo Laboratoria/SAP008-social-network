@@ -1,8 +1,12 @@
-import { googleAccess } from '../../lib/auth.js';
+import { googleAccess, auth } from '../../lib/auth.js';
 
+// eslint-disable-next-line consistent-return
 export default () => {
-  const container = document.createElement('div');
-  const template = `<section class="container">
+  if (auth.currentUser === true) {
+    window.location.hash = '#home';
+  } else {
+    const container = document.createElement('div');
+    const template = `<section class="container">
         <div class="frame">
           <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
     
@@ -19,15 +23,16 @@ export default () => {
         </div>
         <div class="logo"></div>
     </section>`;
-  container.innerHTML = template;
+    container.innerHTML = template;
 
-  const googleBtn = container.querySelector('#google-login');
+    const googleBtn = container.querySelector('#google-login');
 
-  googleBtn.addEventListener('click', () => {
-    googleAccess().then(() => {
-      window.location.hash = '#home';
+    googleBtn.addEventListener('click', () => {
+      googleAccess().then(() => {
+        window.location.hash = '#home';
+      });
     });
-  });
 
-  return container;
+    return container;
+  }
 };

@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-expressions */
 import { logoutUser, auth, getPosts } from '../../lib/auth.js';
 
+// eslint-disable-next-line consistent-return
 export default () => {
-  // fazer if usuario não estiver logado "currentUser" redirecionar tela login
-  const container = document.createElement('div');
-  const template = `<section>
+  if (auth.currentUser === null) {
+    window.location.hash = '#entrar';
+  } else {
+    const container = document.createElement('div');
+    const template = `<section>
       <nav id="mobile-top-icons" class="icons-container">
         <img id="menu-icon" class="icons-size" src="./external/svg/menu-icon.svg"/>
         <img id="home-icon" class="icons-size" src="./external/svg/home-icon.svg"/>
@@ -24,16 +27,16 @@ export default () => {
       </nav>
     </section>`;
 
-  container.innerHTML = template;
+    container.innerHTML = template;
 
-  const firstLetter = (element) => {
-    const getFirst = element[0];
-    return getFirst;
-  };
+    const firstLetter = (element) => {
+      const getFirst = element[0];
+      return getFirst;
+    };
 
-  const printPosts = async () => {
-    const all = await getPosts();
-    const postsTemplate = all.map((Posts) => `<div class="posts">
+    const printPosts = async () => {
+      const all = await getPosts();
+      const postsTemplate = all.map((Posts) => `<div class="posts">
         <div id="text">
           <p>@ ${Posts.name}</p>
           <p id="local" class="edit-local establishment" contenteditable="false">${Posts.nomeRest}</p>
@@ -63,70 +66,71 @@ export default () => {
         </aside>
       </div>
       <hr class="colorful-line"/>`).join('');
-    container.querySelector('.post-container').innerHTML += postsTemplate;
+      container.querySelector('.post-container').innerHTML += postsTemplate;
 
-    const editPost = container.querySelector('#pencil-icon');
-    const local = container.querySelector('.edit-local');
-    const adress = container.querySelector('.edit-adress');
-    const review = container.querySelector('.edit-review');
-    const modalDelete = container.querySelector('#modal-delete');
-    const warnDelete = container.querySelector('#trash-icon');
-    const closeModalDelete = container.querySelector('#no-close');
-    const cancel = container.querySelector('#cancel');
-    const ok = container.querySelector('#ok');
+      const editPost = container.querySelector('#pencil-icon');
+      const local = container.querySelector('.edit-local');
+      const adress = container.querySelector('.edit-adress');
+      const review = container.querySelector('.edit-review');
+      const modalDelete = container.querySelector('#modal-delete');
+      const warnDelete = container.querySelector('#trash-icon');
+      const closeModalDelete = container.querySelector('#no-close');
+      const cancel = container.querySelector('#cancel');
+      const ok = container.querySelector('#ok');
 
-    cancel.hidden = true;
-    ok.hidden = true;
-
-    function show(elemento) {
-      elemento.focus();
-    }
-
-    editPost.addEventListener('click', () => {
-      cancel.hidden = false;
-      ok.hidden = false;
-      review.contentEditable = true;
-      show(review);
-      local.contentEditable = true;
-      show(local);
-      adress.contentEditable = true;
-      show(adress);
-    });
-
-    cancel.addEventListener('click', () => {
       cancel.hidden = true;
       ok.hidden = true;
-      review.contentEditable = false;
-      local.contentEditable = false;
-      adress.contentEditable = false;
+
+      function show(elemento) {
+        elemento.focus();
+      }
+
+      editPost.addEventListener('click', () => {
+        cancel.hidden = false;
+        ok.hidden = false;
+        review.contentEditable = true;
+        show(review);
+        local.contentEditable = true;
+        show(local);
+        adress.contentEditable = true;
+        show(adress);
+      });
+
+      cancel.addEventListener('click', () => {
+        cancel.hidden = true;
+        ok.hidden = true;
+        review.contentEditable = false;
+        local.contentEditable = false;
+        adress.contentEditable = false;
+      });
+
+      warnDelete.addEventListener('click', () => {
+        modalDelete.classList.toggle('hide');
+      });
+
+      closeModalDelete.addEventListener('click', () => {
+        modalDelete.classList.toggle('hide');
+      });
+    };
+
+    printPosts();
+
+    const logout = container.querySelector('#logout-icon');
+    const toTheTop = container.querySelector('#up-icon');
+    const newPost = container.querySelector('#plus-icon');
+
+    logout.addEventListener('click', () => {
+      logoutUser();
     });
 
-    warnDelete.addEventListener('click', () => {
-      modalDelete.classList.toggle('hide');
+    toTheTop.addEventListener('click', () => {
+      window.scrollTo(0, 0);
     });
 
-    closeModalDelete.addEventListener('click', () => {
-      modalDelete.classList.toggle('hide');
+    newPost.addEventListener('click', () => {
+      window.location.hash = '#new_post';
     });
-  };
 
-  printPosts();
-
-  const logout = container.querySelector('#logout-icon');
-  const toTheTop = container.querySelector('#up-icon');
-  const newPost = container.querySelector('#plus-icon');
-
-  logout.addEventListener('click', () => {
-    logoutUser();
-  });
-
-  toTheTop.addEventListener('click', () => {
-    window.scrollTo(0, 0);
-  });
-
-  newPost.addEventListener('click', () => {
-    window.location.hash = '#new_post';
-  });
-
-  return container;
+    return container;
+  }
 };

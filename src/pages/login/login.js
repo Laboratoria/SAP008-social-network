@@ -1,9 +1,13 @@
 /* eslint-disable no-return-assign */
-import { loginUser, googleAccess } from '../../lib/auth.js';
+import { loginUser, googleAccess, auth } from '../../lib/auth.js';
 
+// eslint-disable-next-line consistent-return
 export default () => {
-  const container = document.createElement('div');
-  const template = `<section class="container">
+  if (auth.currentUser === true) {
+    window.location.hash = '#home';
+  } else {
+    const container = document.createElement('div');
+    const template = `<section class="container">
       <div class="frame">
         <h1 class="titles">Entrar no<br>BatePrato</h1>
   
@@ -27,47 +31,48 @@ export default () => {
       <div class="logo"></div>
     </section>`;
 
-  container.innerHTML = template;
+    container.innerHTML = template;
 
-  const googleBtn = container.querySelector('#google-login');
-  const logInEmail = container.querySelector('#email');
-  const logInPassword = container.querySelector('#password');
-  const loginBtn = container.querySelector('#ok-login-btn');
-  const pMsg = container.querySelector('#msg-error');
+    const googleBtn = container.querySelector('#google-login');
+    const logInEmail = container.querySelector('#email');
+    const logInPassword = container.querySelector('#password');
+    const loginBtn = container.querySelector('#ok-login-btn');
+    const pMsg = container.querySelector('#msg-error');
 
-  googleBtn.addEventListener('click', () => {
-    googleAccess().then(() => {
-      window.location.hash = '#home';
+    googleBtn.addEventListener('click', () => {
+      googleAccess().then(() => {
+        window.location.hash = '#home';
+      });
     });
-  });
 
-  loginBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    if (logInEmail !== '' || logInPassword !== '') {
-      await loginUser(logInEmail.value, logInPassword.value)
-        .then((user) => {
-          localStorage.setItem('userEmail', user.email);
-          localStorage.setItem('userId', user.uid);
-          window.location.hash = '#home';
-        })
-        // eslint-disable-next-line consistent-return
-        .catch((error) => {
-          const errorMessage = error.message;
-          if (logInEmail.value === '' || logInPassword.value === '') {
-            return pMsg.innerHTML = 'Todos os campos devem ser preenchidos';
-          }
-          if (errorMessage === 'Firebase: Error (auth/user-not-found).') {
-            return pMsg.innerHTML = 'Usuário não cadastrado';
-          }
-          if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
-            return pMsg.innerHTML = 'E-mail inválido';
-          }
-          if (errorMessage === 'Firebase: Error (auth/wrong-password).') {
-            return pMsg.innerHTML = 'Senha inválida';
-          }
-        });
-    }
-  });
+    loginBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (logInEmail !== '' || logInPassword !== '') {
+        await loginUser(logInEmail.value, logInPassword.value)
+          .then((user) => {
+            localStorage.setItem('userEmail', user.email);
+            localStorage.setItem('userId', user.uid);
+            window.location.hash = '#home';
+          })
+          // eslint-disable-next-line consistent-return
+          .catch((error) => {
+            const errorMessage = error.message;
+            if (logInEmail.value === '' || logInPassword.value === '') {
+              return pMsg.innerHTML = 'Todos os campos devem ser preenchidos';
+            }
+            if (errorMessage === 'Firebase: Error (auth/user-not-found).') {
+              return pMsg.innerHTML = 'Usuário não cadastrado';
+            }
+            if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
+              return pMsg.innerHTML = 'E-mail inválido';
+            }
+            if (errorMessage === 'Firebase: Error (auth/wrong-password).') {
+              return pMsg.innerHTML = 'Senha inválida';
+            }
+          });
+      }
+    });
 
-  return container;
+    return container;
+  }
 };

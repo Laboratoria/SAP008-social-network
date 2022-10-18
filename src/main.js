@@ -3,7 +3,6 @@ import login from './pages/login/login.js';
 import register from './pages/register/register.js';
 import feed from './pages/feed/feed.js';
 
-
 const root = document.querySelector('.root');
 
 const init = () => {
@@ -18,7 +17,7 @@ const init = () => {
         root.appendChild(register());
         break;
 
-      case'#feed':
+      case '#feed':
         root.appendChild(feed());
         break;
       default:
@@ -27,7 +26,7 @@ const init = () => {
   });
 };
 
-window.addEventListener ('load', () => {
-  root.appendChild (login());
+window.addEventListener('load', () => {
+  root.appendChild(login());
   init();
 });

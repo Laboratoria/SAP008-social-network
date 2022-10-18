@@ -1,34 +1,58 @@
-export default () => {
-  const containerRegistration = document.createElement('div');
-  const template = `
-  <div class="container-registration">
-    <div class="btnback">
-      <button type="button" id="btn-back" onclick="window.location.href='/#login'">
-        Voltar
-      </button>
-        <img id="one-logo" src="./imagens/image-2.png">
-        <p>atualizado a main</p>
-  
-   </div>
-  
-  `;
-  containerRegistration.innerHTML = template;
+import { createPost, current, getAllPosts } from '../../lib/firestore.js';
 
-  return containerRegistration;
+export default function Feed() {
+  const feed = document.createElement('div');
+  feed.innerHTML = `  
+  <div class="main-div">
+  <nav class="top-nav">
+  <picture>
+      <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
+  </picture>
+  </nav>
+        <section id="post" class="post">
+        <div class="post-box">
+          <textarea class="post-textarea" id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
+          <button type="submit" id="post-btn" class="post-btn">Publicar</button>
+        </div>
+      </section>
 
-  const containerForgotPassword = document.createElement('div');
-  const template = `
-    <main class="container-registration">
-      <button type="button" class="btn-back">&#11013 voltar</button>
+      <section class="post-feed">
+        <ul id="box-post"></ul>
+      </section>
+    `;
 
-      <figure class="logo-tittle">
-        <img id="one-logo-coração" src="./imagens/image-2.png">
-        <p class="tittle-logotype">INspire</p>
-      </figure>
+  const postBtn = feed.querySelector('#post-btn');
+  const modalPost = feed.querySelector('#post');
+  const postFeed = feed.querySelector('#post-textarea');
+  const postList = feed.querySelector('#box-post');
+  const user = current().uid;
 
-     
-  
-  `;
-  containerForgotPassword.innerHTML = template;
-  return containerForgotPassword;
-};
+  //O operador ternário ( ? ) funciona assim ...você tem uma condição que deve ser validada como verdadeira ou falsa. Se a condição for verdadeira o operador retorna uma expressão e se for falsa retorna outra expressão.
+
+  getAllPosts()
+    .then((posts) => {
+      const postCreated = posts.map((post) => {
+        const iteration = post.user === user ? `  
+        <div class="delete-btn">
+          <p class="delete-post"></p>
+        </div> ` : '';
+        return `
+        <li class="allposts" data-id="${post.id}">
+          <div class="identification"> 
+            <p class="username"><b>${post.displayName}</b></p>
+            <p class="data-post"> Postado em ${post.data} às ${post.hour}H </p>
+            <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
+          </div>
+        </li>`;
+      }).join('');
+      postList.innerHTML = postCreated;
+    });
+
+  postBtn.addEventListener('click', (e) => {
+    modalPost.style.display = 'none';
+    e.preventDefault();
+    createPost(postFeed.value)
+      .then(() => window.location.reload());
+  });
+  return feed;
+}

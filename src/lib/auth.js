@@ -1,11 +1,8 @@
-// aqui exportaras las funciones que necesites//
-
 import { app } from './config.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,

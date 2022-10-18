@@ -36,6 +36,7 @@
     "node": ">=16.x"
   },
   "dependencies": {
-    "firebase": "^9.10.0"
+    "firebase": "^9.10.0",
+    "npm": "^8.19.2"
   }
 }

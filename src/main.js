@@ -1,5 +1,5 @@
 import cadastro from './pages/cadastro/cadastro.js';
-
+import login from './pages/login/login.js';
 import feed from './pages/feed/feed.js';
 import publish from './pages/publish/publish.js';
 import guidelines from './pages/guidelines/guidelines.js';
@@ -11,6 +11,12 @@ const init = () => {
   main.innerHTML = '';
 
   switch (window.location.hash) {
+    case '':
+      main.appendChild(login());
+      break;
+    case '#register':
+      main.appendChild(cadastro());
+      break;
     case '#feed':
       main.appendChild(feed());
       break;

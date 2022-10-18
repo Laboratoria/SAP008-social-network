@@ -1,6 +1,6 @@
 export default () => {
-    const container = document.createElement('div');
-    const template = `
+  const container = document.createElement('div');
+  const template = `
     <header>
         <ul class="nav">
             <li class="btn-nav">
@@ -24,7 +24,7 @@ export default () => {
             </form>
         </div>
     </main>
-            `
-    container.innerHTML = template;
-    return container;
-}
+            `;
+  container.innerHTML = template;
+  return container;
+};

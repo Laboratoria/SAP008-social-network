@@ -1,4 +1,4 @@
-import { loginEmailPassword } from "../lib/index.js";
+import { loginEmailPassword } from '../lib/index.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -41,26 +41,24 @@ export default () => {
          </form>
       </section>
    `;
-   container.innerHTML = template;
+  container.innerHTML = template;
 
+  const login = container.querySelector('#botaoEntrar');
+  const email = container.querySelector('#email');
+  const password = container.querySelector('#password');
 
-   const login = container.querySelector("#botaoEntrar")
-   const email = container.querySelector("#email")
-   const password = container.querySelector("#password")
+  login.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(email.value);
+    console.log(password.value);
 
-   login.addEventListener("click", (e)=>{
-      e.preventDefault();
-      console.log(email.value)
-      console.log(password.value)
-
-      loginEmailPassword(email.value, password.value)
-      .then(()=>{
-         window.location.hash = "#feed";
+    loginEmailPassword(email.value, password.value)
+      .then(() => {
+        window.location.hash = '#feed';
       })
-      .catch((error)=>{
-         console.log(error)
-      })
-   }) 
-   return container;
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+  return container;
 };
-

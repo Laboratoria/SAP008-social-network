@@ -1,27 +1,44 @@
-.content{
+*{
     padding: 0;
-    margin: 0;  
+    margin: 0; 
 }
 .content{    
     width: 100%;
     height: 100vh;
     background: #EDDED7;
     display:flex;
-    justify-content: center;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.logoCookieLogin{
+    width: 80%;
+    height: 3rem ;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 1rem;
     align-items: center;
 }
-.form{
-    background-color: white;
+.cookie-login{
+    width: 6rem;
+    height: 6rem;
+}
+.frase-login{
+    font-size: 3rem;
+}
+.form-login{
+    background-color: rgb(255, 255, 255);
     border-radius: 0.8rem;
-    width: 70%;
-    height: 20rem;
+    width: 90%;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 .form-cx{
-    width: 60%;
+    width: 70%;
 }
 .form-cx input{
     width: 100%;
@@ -31,7 +48,7 @@
     font-size: 0.6rem;
 }
 .form-botaoentrar{
-    width: 30%;
+    width: 40%;
 }
 .form-botaoentrar input{
     border-radius: 10px;

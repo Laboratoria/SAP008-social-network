@@ -1,5 +1,146 @@
-
-
+.form-register {
+    font-family: 'Arimo';
+    background: #EDDED7;
+    margin: 0 auto;
+    width: 60%;
     
+}
+h1 {
+    position: relative;
+    width: 240.52px;
+    height: 85.21px;
+    left: 72px;
+    top: 61px;
 
+    font-family: 'Arimo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.cookie {
+    position: absolute;
+    width: 67.33px;
+    height: 68px;
+    left: 328px;
+    top: 52px;
+}
+
+.form {
+    box-sizing: border-box;
+
+    position: relative;
+    width: 361px;
+    height: 615px;
+    left: 34px;
+    top: 200px;
+
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 2px 9px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+#name {
+    box-sizing: border-box;
+
+    position: relative;
+    width: 277.25px;
+    height: 47.14px;
+    left: 82.13px;
+    top: 243.85px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+#date {
+    box-sizing: border-box;
+
+    position: relative;
+    width: 277.25px;
+    height: 47.14px;
+    left: 82.13px;
+    top: 317.3px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+#username {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 277.25px;
+    height: 47.14px;
+    left: 82.13px;
+    top: 390.75px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+#termos {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 14.44px;
+    height: 15.35px;
+    left: 112.94px;
+    top: 681.26px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+#termosUso {
+    position: absolute;
+    width: 200px;
+    height: 24.16px;
+    left: 127.38px;
+    top: 676.87px;
+
+    font-family: 'Arimo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+button {
+    position: absolute;
+    width: 283.99px;
+    height: 57.01px;
+    left: 71.54px;
+    top: 738.26px;
+
+    /* Cor do botao */
+    background: #3F5494;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+#voltar {
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    left: 20px;
+    top: 16px;
+
+    background: url(return.png);
+}
 

@@ -1,20 +1,18 @@
 import { app } from './firebase.js';
 import { auth } from './auth.js';
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc } from './export.js'
 
 const db = getFirestore(app);
 
-const createPost = async (texto) => {
+const createPost = async (textPost) => {
+    const auth = getAuth(app);
     try {
-        const docRef = await addDoc(collection(db, "post"), {
+        const docRef = await addDoc(collection(db, 'post'), {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
-            texto,
-            //date: Date.now(),
-        });        
-        console.log("Document written with ID: ", docRef.id);
+            texto: textPost,
+        });
     } catch (e) {
-        console.error("Error adding document: ", e);
     }
 };
 
@@ -30,14 +28,25 @@ const getPost = async () => {
     } catch (error) {
         return error;
     }
-}
+};
 
-const editPost = async (idPost, textValue) => {
-    const updatePost = doc(db, "texto", idPost);
+const upDatePost = async (author, textPost) => {
+    const newPost = doc(db, 'post', author);
 
-    await updateDoc(updatePost, {
-        text: textValue,
+    await updateDoc(newPost, {
+        texto: textPost,
+
     });
-}
+};
 
-export { createPost, getPost, editPost };
+const deletePost = async (author) => {
+    try {
+        const docRef = doc(db, 'post', author);
+        await deleteDoc(docRef);
+        return docRef.id;
+    } catch (error) {
+        return error;
+    }
+};
+
+export { createPost, getPost, upDatePost, deletePost };

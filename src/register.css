@@ -1,26 +1,19 @@
-.tituloRegister{
-    position: absolute;
-    width: 345px;
-    height: 79px;
-    left: 160px;
-    top: 59px;
-    font-family: Arial, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 74px;
+.navRegister{
     display: flex;
-    align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    background: #EDDED7;
+}
+.tituloRegister{
+    font-weight: 40;
+    font-size: 1.8rem;
     color: #000000;
+    width: 100%;
 }
 .register{    
-    width: 100%;
-    height: 100vh;
     background: #EDDED7;
     display:flex;
     justify-content: center;
-    align-items: center;
+
 }
 .formRegister{
     background-color: white;
@@ -29,8 +22,8 @@
     height: 20rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
+    box-shadow: #777777 5px 5px;
 }
 #formRegister{
     width: 60%;
@@ -42,45 +35,46 @@
     border: 1px solid black;
     font-size: 0.6rem;
 }
-#form-cadastrarRegister{
-    width: 30%;
-}
-#form-cadastrarRegister input{
+#cadastrarRegister{
     border-radius: 10px;
-    width: 100%;  
-    height: 1.2rem;
+    width: 70%;
+    height: 1.8rem;
     background: #3F5494;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
+    margin: 0px 35px;
 }
-.linha-ou{
+#cadastrarRegister:hover{
+    background: #2c407c;
+    transition: 0.2s;
+}
+.btnRegister{
+    border-radius: 5px;
+    height: 1.5rem;
     width: 90%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
 }
-.linha{
-    width: 4rem;
-    height: 1%;
-    background-color: black;
+.btnRegister:hover{
+    background-color: #e4e4e4;
+    transition: 0.2s;
 }
-
 #voltarRegister{
-    position: absolute;
-    width: 28px;
-    height: 20px;
-    left: 19px;
-    top: 11px;
-    background: url(return.png);
+    width: 30%;
+    margin: 5px;
 }
 
 #cookieRegister{
-    position: absolute;
-    width: 100px;
-    height: 101px;
-    left: 1147px;
-    top: 35px;
+    width: 50px;
+    padding: 20px;
+}
+.divBtnReturn{
+    width: 25%;
+}
+.legendaRegister{
+    font-size: 0.9rem;
+    color: #777777;
+}
+.boxLegendaInput{
+    margin: 5px
 }

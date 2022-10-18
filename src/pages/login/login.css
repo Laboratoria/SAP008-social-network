@@ -118,6 +118,11 @@ html, body {
     .logo-mobile {
         display: none;
     }
+    #create {
+        display: none;
+    }
+
+
 
     #everything {
         display: flex;
@@ -158,6 +163,7 @@ html, body {
         color: white;
         font-size: 2rem;
         margin-top: 5rem;
+        cursor: pointer;
     }
 
     .login {
@@ -192,7 +198,6 @@ html, body {
     .forgot {
         font-size: large;
     }
-    .buttons
 
     .btnLogin, .btnGoogle {
         width: 36rem;
@@ -209,9 +214,6 @@ html, body {
     .btnGoogle {
         margin-top: 2rem;
         font-size: 2rem;
-    }
-    .create {
-        display: none;
     }
 
     ::placeholder {

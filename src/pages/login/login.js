@@ -40,12 +40,12 @@ export default () => {
       <span class='forgot'><p>Esqueci minha senha</p></span>
 
       <section class='buttons'>
-        <a class='btn' id='submit-login' href='login'>Login</a>
-        <a class='btn' id='submit-google' href='login'>Entrar com o google</a>
+        <a class='btn' id='submit-login' href='#login'>Login</a>
+        <a class='btn' id='submit-google' href='#login'>Entrar com o google</a>
         <img src='../icones/icone-google.png' alt="">
       </section>
 
-      <span class='create'><p>Não possui conta? <a id='register-mobile' href='register'>Cadastre-se</p></a></span>
+      <span id='create'><p>Não possui conta? <a id='register-mobile' href='#register'>Cadastre-se</p></a></span>
     </form>
   </section>
 </section>

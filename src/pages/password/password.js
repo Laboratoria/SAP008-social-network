@@ -25,8 +25,8 @@ export default () => {
         <p>
           <input id="btn-reset" class="ResetPassword" type="button" value="Enviar email">
         </p>
-        <p class="btnBack">
-          <a href="index.html" class="link"><img class='logoPass' src="/src/img/setaBack.png" alt='Seta para voltar'></a>
+        <p class="sectionBackBtn">
+          <a href="index.html"><img class='btnBackPass' src="/src/img/setaBack.png" alt='Seta para voltar'></a>
         </p>
       </form>
     </section>`;

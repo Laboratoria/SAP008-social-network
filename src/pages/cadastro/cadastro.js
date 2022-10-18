@@ -75,7 +75,7 @@ export default () => {
     const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
     const iamRegistrationValue = iamRegistration;
     containerRegistration.querySelector('#saida').innerHTML = iamRegistrationValue;
-    const confirmationBox = containerRegistration.querySelector('confirmationBox');
+    const confirmationBox = containerRegistration.querySelector('#confirmationBox');
     if (
       registrationFirstNameAndLastNamevalue === '' || registrationUsernameValue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistration === '') {
       alert('preencha esse campo');
@@ -83,25 +83,26 @@ export default () => {
     if (passwordConfirmationValue !== registrationPasswordValue) {
       alert('as senhas nao sao iguais');
     }
-    if (confirmationBox !== confirmationBox.checked) {
+    if (!confirmationBox.checked) {
       alert('Você não concorda com os termos');
-    } else if (
+    }
+    if (
       registrationFirstNameAndLastNamevalue !== '' && registrationUsernameValue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistration !== '' && confirmationBox.checked) {
       alert('formulario validado');
-    }
-    createUser(emailRegistration, registrationPassword)
-      .then(() => {
+      createUser(emailRegistration, registrationPassword)
+        .then(() => {
         // Signed in
         // const user = userCredential.user;
         // ...
-        alert('conta criada');
-      })
-      .catch((error) => {
+          alert('conta criada');
+        })
+        .catch((error) => {
         // const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-        alert(errorMessage);
-      });
+          const errorMessage = error.message;
+          // ..
+          alert(errorMessage);
+        });
+    }
   });
   return containerRegistration;
 };

@@ -43,9 +43,8 @@ export default function Login() {
         window.location.hash = ('#feed');
       })
       .catch(() => {
-        
       });
-  };
+  });
 
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();

@@ -1,62 +1,63 @@
-
-
 /* estilização da página principal do container */
-.container-registration{
-  display:inline-flex;
+.container-registration {
+  display: inline-flex;
   align-items: center;
-  flex-direction: column;  
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
 /* estilização do botão voltar */
-.btn-back{
+.btn-back {
   margin-left: 4%;
   font-size: 20px;
   color: white;
   background-color: transparent;
   border: transparent;
   align-self: flex-start;
-  
+
 
 }
 
 /* logo de coração com lampada e nome inspire */
-.logo-tittle{
+.logo-tittle {
   margin-top: 0;
   margin-bottom: 3%;
-  
+
 }
 
 /* estilização dos campos do nome, email e senha os campos de imput*/
-.registration-input{
+.registration-input {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 50%;
-  
+
 }
 
 /* inputs de email, nome e senha */
 
-.input{
+.input {
+  width: 250px;
+  height: 40px;
+  border: none;
+  font-size: 14px;
   padding: 2%;
   border-radius: 10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: white;
   margin: 2% 0;
 }
 
-.button{
+.button {
   background-color: #49AAD7;
   color: aliceblue;
   width: 200px;
   height: 40px;
   font-size: 14px;
-  /*margin-top: 5%;*/
-  font-weight:600;
-  border:none;
+  font-weight: 600;
+  border: none;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
-  margin: 2% 0;
-  
-}
+  margin: 3% 0;
 
+}

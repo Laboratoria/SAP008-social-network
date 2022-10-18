@@ -10,11 +10,13 @@ const init = () => {
     root.innerHTML = '';
     switch (window.location.hash) {
       case '#login':
+
         root.appendChild(login());
         break;
       case '#register':
         root.appendChild(register());
         break;
+
       case '#feed':
         root.appendChild(feed());
         break;
@@ -23,6 +25,7 @@ const init = () => {
     }
   });
 };
+
 window.addEventListener('load', () => {
   root.appendChild(login());
   init();

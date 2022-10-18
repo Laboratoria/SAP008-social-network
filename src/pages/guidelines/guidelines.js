@@ -25,8 +25,8 @@ export default () => {
         7) Aproveite! Essa rede social foi construída com o propósito de tornar a mapaternidade mais leve e menos solitária, então quanto mais trocas e interações, mais atingiremos nosso objetivo! :) <p></p><br>
       </div>
       <div class='footer-guidelines'>
-      <p>BabySteps, 2022 © Marjorye Kichize, Nathalia Rigo e Thamires Santos.</p>
-    </div>
+        <p>BabySteps, 2022 © Marjorye Kichize, Nathalia Rigo e Thamires Santos.</p>
+      </div>
     </div>
   `;
 

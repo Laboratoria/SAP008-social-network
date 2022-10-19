@@ -1,4 +1,4 @@
-import { userLogin, loginGoogle } from '../../lib/index.js';
+import { userLogin, loginGoogle } from '../../firebase/auth.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -60,6 +60,7 @@ export default () => {
 
     userLogin(inputEmail, inputPassword)
       .then(() => {
+        window.location.hash = '#feed';
         // const user = userCredential.user;
 
         console.log('você está logado');

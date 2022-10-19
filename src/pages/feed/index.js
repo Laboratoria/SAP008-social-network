@@ -1,4 +1,4 @@
-import { createPost, getPost, upDatePost, deletePost } from './../../lib/firestore.js';
+import { createPost, getPost, upDatePost, deletePost, likePost, unlikePost } from './../../lib/firestore.js';
 import { logout } from '../../lib/auth.js';
 
 export default () => {
@@ -31,7 +31,7 @@ export default () => {
   container.innerHTML = template;
   
   const showPost = async () => {
-    const arrayPost = await getPost();
+    const arrayPost = await getPost();    
     const postTemplate = arrayPost.map((post) => `
       <div class="post">
         <p class="postTxt name" id="user-name">${post.name}</p>
@@ -49,6 +49,8 @@ export default () => {
           <button class="btn-post" id="btnConfirmDelete" data-confirmation-delete="${post.id}" type="button">Sim</button>
           <button class="btn-post" data-decline-delete="${post.id}" type="button">Não</button>
         </div>
+
+        <button id="btnLike" class="btn-post" data-count-likes="${post.like.length}" data-like-author="${post.author}" data-like-btn="${post.id}" type="button">Curtir ${post.like.length}</button> 
       </div>
 
     `).join('');
@@ -56,6 +58,7 @@ export default () => {
 
     const btnsEdit = Array.from(container.querySelectorAll('#btnEdit'));
     const btnsDelete = Array.from(container.querySelectorAll('#btnDelete'));
+    const btnsLike = Array.from(container.querySelectorAll('#btnLike'));    
     
     btnsEdit.forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -107,6 +110,26 @@ export default () => {
 
       });    
     });
+
+    btnsLike.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const postLikedId = e.currentTarget.dataset.likeBtn;
+        const userId = e.currentTarget.dataset.likeAuthor;
+        const countLikes = e.currentTarget.dataset.countLikes;
+
+
+        if(countLikes === 0) {
+          likePost(postLikedId, userId);     
+                      
+        } else {
+          unlikePost(postLikedId, userId);          
+        }
+
+        alert('clicou');
+                   
+      })
+    });
+
   }
   showPost();
 

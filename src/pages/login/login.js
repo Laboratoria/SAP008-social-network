@@ -1,6 +1,6 @@
 import { loginUser, loginGoogle } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { newPost } from '../../firebase/timeline.js';
+import { loginValidation } from '../../validations.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -18,12 +18,12 @@ export default () => {
             <h1 class='title-login'>Acesse a sua conta</h1>
             <section class='inputs'>
             <label for='email' class='label'>Digite seu e-mail</label>
-            <input type='email' placeholder='seuemail@gmail.com' id='email' class='input-email' />
+            <input type='email' placeholder='seuemail@gmail.com' id='email' class='input-email'/>
             </section>
 
             <section class='inputs'>
             <label for='password' class='label'>Digite sua senha</label>
-            <input type='password' placeholder='******' id='password' class='input-password' />
+            <input type='password' placeholder='******' id='password' class='input-password'/>
             </section>
             <p id='error-code'></p>
             <section class='buttons'>
@@ -47,13 +47,21 @@ export default () => {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    loginUser(inputEmail.value, inputPassword.value)
-      .then(() => {
-        window.location.hash = '#timeline';
-      })
-      .catch((error) => {
-        errorMessage.innerHTML = getErrorMessage(error);
-      });
+    const validation = loginValidation(
+      inputEmail.value,
+      inputPassword.value,
+    );
+    if (validation === '') {
+      loginUser(inputEmail.value, inputPassword.value)
+        .then(() => {
+          window.location.hash = '#timeline';
+        })
+        .catch((error) => {
+          errorMessage.innerHTML = getErrorMessage(error);
+        });
+    } else {
+      errorMessage.innerHTML = validation;
+    }
   });
 
   buttonRegister.addEventListener('click', (e) => {

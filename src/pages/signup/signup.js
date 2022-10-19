@@ -1,6 +1,8 @@
-import { loginGoogle, newUser } from '../../firebase/auth.js';
+import { auth, loginGoogle, newUser } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
+import { updateProfile } from '../../firebase/exports.js';
 import { redirect } from '../../routes.js';
+import { registerValidation } from '../../validations.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -39,16 +41,29 @@ export default () => {
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
   const errorMessage = container.querySelector('#error-code');
+  const inputName = container.querySelector('#name-signup');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    newUser(inputEmail.value, inputPassword.value)
-      .then(() => {
-        redirect('#timeline');
-      })
-      .catch((error) => {
-        errorMessage.innerHTML = getErrorMessage(error);
-      });
+    const validation = registerValidation(
+      inputName.value,
+      inputEmail.value,
+      inputPassword.value,
+    );
+    if (validation === '') {
+      newUser(inputEmail.value, inputPassword.value, inputName.value)
+        .then(() => updateProfile(auth.currentUser, {
+          displayName: inputName.value,
+        }))
+        .then(() => {
+          redirect('#timeline');
+        })
+        .catch((error) => {
+          errorMessage.innerHTML = getErrorMessage(error);
+        });
+    } else {
+      errorMessage.innerHTML = validation;
+    }
   });
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();

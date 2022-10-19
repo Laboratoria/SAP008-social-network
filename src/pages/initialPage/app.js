@@ -1,6 +1,7 @@
 import {
   getDisplayName, getUserUid, createCollection, signOut,
 } from '../../lib/authentication.js';
+import { getPostTemplate } from './postTemplate.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -38,11 +39,13 @@ export default () => {
     </div>
   </div>
   
+ 
   <div class="posts">
     </div>
   </div>
   
   <div class="wrapper"> </div>
+  <a href="#addPost"> <button class="floatButton">+</button></a>
   
   <div class="containerPosts">
   <div class="text_share">
@@ -51,6 +54,7 @@ export default () => {
   </div>
   
   <h2 id="fill-form"> Preencha o formulário abaixo! Estamos ansiosos pela sua opinião. 🤩</h2>
+  <section id="addPost">
   <form action="" id="myForm">
       <div id="postx">
           <input type="text" class="formInput" id="name" name="name" placeholder="Digite seu nome" />
@@ -63,7 +67,8 @@ export default () => {
           <span class="picture-image"></span>
           </label>
       </div>
-      <button class="buttons "type="submit" id="buttonSend"> Enviar</button>
+      <button  class="buttons "type="submit" id="buttonSend"> Enviar</button>
+      </section>
   </form>
   </div>
   <footer>
@@ -94,52 +99,12 @@ export default () => {
     });
   });
 
-  function dateConvert() {
-    const date = new Date().toLocaleString();
-    return date;
-  }
-
   function postTemplate() {
     firebase.firestore().collection('posts').get()
       .then((snapshot) => {
         const postContainer = snapshot.docs.reduce((acc, doc) => {
-          const {
-            name, text, movie, createdAt, like, deslike,
-          } = doc.data();
           // eslint-disable-next-line no-param-reassign
-          acc += ` <div id="poster-${doc.id}" class="posts">
-                 <div class="img-movie">
-                 <img id="testImg" src="./img/loadingimg.png" alt="logo Laboratória">
-                 </div>
-         
-                 <div class="info-movies">
-                     <div class="name-movies">
-                     <textarea id="name-${doc.id}" style="resize:none" disabled>${movie}</textarea>
-                     </div>
-                     <div class="about-movies">
-                     <textarea id="about-${doc.id}"  style="resize:none" disabled>${text}</textarea>
-                     </div>
-                    
-                     <div class="stars">
-                     <span id="heart" data-liked=${doc.id} data-user=${doc.data().user_id}>❤️</span>
-                     <span class="getLike">${like}</span>
-
-                     <span id="breakHeart" data-desliked=${doc.id} data-user=${doc.data().user_id}>💔</span>
-                     <span class="getDeslike">${deslike}</span>
-
-                         <p class="username">Enviado por: ${name}</p> <p class="username"> Data de Criação: ${dateConvert(createdAt)}</p>
-                     <div class="buttons-posts" id="editButton-${doc.id}"> 
-                         <button data-remove=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-delete"> Apagar</button>
-                         <button data-edit=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-edit"> Editar</button>
-                     </div>
-                     <div class="buttons-posts" id="updateButton-${doc.id}" style="display:none"> 
-                         <button data-update=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-edit">Salvar</button>
-                     </div>
-                     </div>
-                 </div>
-               
-             </div>
-             `;
+          acc += getPostTemplate(doc);
           return acc;
         }, '');
 
@@ -269,7 +234,7 @@ export default () => {
     }
   });
 
-  boxPost.addEventListener('click', (e) => {
+  boxPost.addEventListener('click touchstart', (e) => {
     const buttonLike = e.target.dataset.liked;
     const increment = firebase.firestore.FieldValue.increment(1);
 
@@ -283,7 +248,7 @@ export default () => {
       });
   });
 
-  boxPost.addEventListener('click', (e) => {
+  boxPost.addEventListener('click touchstart', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
 

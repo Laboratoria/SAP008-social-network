@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.floatButton{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 25px;
+    z-index: 999;
+    bottom: 28rem;
+    cursor: pointer;
+    background-color: rgb(144, 5, 5);
+    border: 1px solid rgb(193, 186, 186);
+    transition-duration: 0.4s;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+.floatButton:hover{
+    transition-duration: 0.5s;
+    background-color: #dd6a0b;
+    transform: scale(0.9) rotate(10deg) 
+    
+}
+.floatButton:after {
+    border-radius: 4em;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px rgb(139, 139, 139);
+  }
+
+
+  @media only screen and (max-width: 400px) and (min-width: 400px) {
+    .floatButton{
+        right: 25px;
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 538px) and (min-width: 390px) {
+    .floatButton{
+        right: 25px;
+        margin-bottom: 10rem;
+        font-size: 2rem;
+    }
+
+  }
+
+
+ @media only screen and (max-width: 700px) and (min-width: 410px) {
+    .floatButton{
+        right: 0px;
+        margin-bottom: 12.8rem;
+        font-size: 2rem;
+        position: absolute;
+    }
+  }
+
+  @media only screen and (max-width: 365px) and (min-width: 360px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        margin-bottom: 5rem;
+        font-size: 2rem;
+    }
+  }
+
+
+  @media only screen and (max-width: 541px) and (min-width: 539px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 320px) and (min-width: 279px) {
+    .floatButton{
+        width: 35px;
+        height: 35px;
+        right: 3px;
+        font-size: 5px;
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+  }
+  @media only screen and (max-width: 1000px) and (min-width: 819px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        margin-bottom: 25rem;
+        font-size: 2rem;
+    }
+  } 
+  
+  @media only screen and (max-width: 900px) and (min-width: 768px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        margin-bottom: 25rem;
+        font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 916px) and (min-width: 910px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        margin-bottom: 35rem;
+        font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 1040px) and (min-width: 1021px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        top: 10rem;
+        font-size: 2rem;
+    }
+  }

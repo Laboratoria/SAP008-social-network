@@ -158,6 +158,10 @@ html {
     cursor: pointer;
 }
 
+.like::after {
+    content:attr(data-count-likes);
+}
+
 .confimation-delete {
     display: flex;
     justify-content: center;
@@ -172,7 +176,7 @@ html {
     margin: 0 0 -3% 0;
 }
 
-.hide{
+.hide {
     display:none;
 }
 

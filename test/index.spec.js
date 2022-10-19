@@ -1,8 +1,7 @@
-// // importamos la funcion que vamos a testear
-// import { myFunction } from '../src/lib/index';
+import { exports } from '../src/firebase/__mocks__/exports.js';
 
-// describe('myFunction', () => {
-//   it('debería ser una función', () => {
-//     expect(typeof myFunction).toBe('function');
-//   });
-// });
+describe('myFunction', () => {
+  it('debería ser una función', () => {
+    expect(typeof exports).toBe('function');
+  });
+});

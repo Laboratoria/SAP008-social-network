@@ -1,14 +1,14 @@
 import {
-  getAuth, // autenticação
-  createUserWithEmailAndPassword, // criar usuário
+  getFirestore,
+  addDoc,
+  collection,
+  getAuth,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-// eslint-disable-next-line import/no-unresolved
-} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-
-// eslint-disable-next-line import/no-unresolved
-import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+  updateProfile,
+} from './exports.js';
 
 import { app } from './config.js';
 
@@ -18,7 +18,10 @@ export const userLogin = (email, password) => signInWithEmailAndPassword(auth, e
 export const loginGoogle = () => signInWithPopup(auth, provider);
 
 // eslint-disable-next-line max-len
-export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+export const createUser = (name, email, password) => createUserWithEmailAndPassword(auth, email, password)
+  .then(() => updateProfile(auth.currentUser, {
+    displayName: name,
+  }));
 
 // nat
 const db = getFirestore(app);

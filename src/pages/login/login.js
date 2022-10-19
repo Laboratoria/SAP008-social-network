@@ -1,4 +1,4 @@
-import { userLogin, loginGoogle } from '../../lib/index.js';
+import { userLogin, loginGoogle } from '../../firebase/auth.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -10,7 +10,7 @@ export default () => {
     <h1>Rede de apoio</h1>
     <hr>
     <p>Para mamães e papais<br> em fase de crescimento!</p>
-    <button class='register-desktop'>CADASTRE-SE</button>
+    <a class='register-desktop' href='#register'>CADASTRE-SE</a>
   </section>
 
   <section class='login'>

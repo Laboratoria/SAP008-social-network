@@ -33,7 +33,7 @@ const init = () => {
       main.appendChild(terms());
       break;
     case '#logout':
-      main.appendChild(feed());
+      main.appendChild(login());
       break;
     default:
       main.appendChild(feed());

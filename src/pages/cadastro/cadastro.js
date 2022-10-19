@@ -47,7 +47,7 @@ export default () => {
       </div>
       <div class="formCadastro">
          <div class="submitCadastro">
-         <button type="click" id="createAnAccount">Criar conta</button>
+         <button id="createAnAccount" href="#feed">Criar conta</button>
          </div>
          <span id="saida"></span>
       </div>
@@ -56,6 +56,7 @@ export default () => {
   containerRegistration.innerHTML = registration;
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
+    console.log(createAnAccount);
     e.preventDefault();
     const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
@@ -76,6 +77,7 @@ export default () => {
     const iamRegistrationValue = iamRegistration;
     containerRegistration.querySelector('#saida').innerHTML = iamRegistrationValue;
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+    const username = containerRegistration.querySelector('#registrationUsername').value;
     if (
       registrationFirstNameAndLastNamevalue === '' || registrationUsernameValue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistration === '') {
       alert('preencha esse campo');
@@ -88,13 +90,10 @@ export default () => {
     }
     if (
       registrationFirstNameAndLastNamevalue !== '' && registrationUsernameValue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistration !== '' && confirmationBox.checked) {
-      alert('formulario validado');
-      createUser(emailRegistration, registrationPassword)
+      // alert('formulario validado');
+      createUser(username, emailRegistration, registrationPassword)
         .then(() => {
-        // Signed in
-        // const user = userCredential.user;
-        // ...
-          alert('conta criada');
+          window.location.hash = '#feed';
         })
         .catch((error) => {
         // const errorCode = error.code;

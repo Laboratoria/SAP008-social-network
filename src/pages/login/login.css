@@ -7,6 +7,13 @@ html, body {
 }
 
 /* Ocultando a lateral azul do desktop */
+.all {
+    display: none;
+} 
+.login {
+    display: block;
+    background: #00A57A;
+}
 
 .signup {
     display: none;
@@ -38,9 +45,9 @@ html, body {
     margin-top: -23px;
 }
 
-.login {
+/* .login {
     background: #00A57A;
-}
+} */
 
 .form {
     background: #e9e9e9;
@@ -164,6 +171,7 @@ html, body {
         font-size: 2rem;
         margin-top: 5rem;
         cursor: pointer;
+        text-decoration: none;
     }
 
     .login {

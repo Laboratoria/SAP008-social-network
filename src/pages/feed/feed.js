@@ -27,6 +27,11 @@ export default function Feed() {
   const postList = feed.querySelector('#box-post');
   const user = current().uid;
 
+  // O operador ternário ( ? ) funciona assim ...você tem uma condição
+  // que deve ser validada como verdadeira ou falsa. Se a condição for
+  // verdadeira o operador retorna uma expressão e se for falsa retorna
+  // outra expressão.
+
   getAllPosts()
     .then((posts) => {
       const postCreated = posts.map((post) => {

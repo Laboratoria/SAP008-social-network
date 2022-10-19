@@ -8,7 +8,13 @@ export default () => {
          <p id="msgErro"></p>
 
          <form class="form">
+         <div class="logoCookieLogin">
+         <img src="img/cookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
+         <h2 class="frase-login">COOKIE</h2>
+         </div>
 
+         <div class="form-login">
+         
          <div class="form-cx">
             <label for="email">Email</label><br>
             <input type="text" id="email" autocomplete="off" placeholder="cookie@cookie.com.br">
@@ -39,7 +45,7 @@ export default () => {
             Não tem uma conta? <a href="#register" class="cadastrar-se">Cadastre-se</a>
          </div>
 
-         </form>
+         </div>
       </section>
    `;
   container.innerHTML = template;

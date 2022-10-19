@@ -8,7 +8,6 @@ const auth = getAuth(app);
 export function createUser(email, senha) {
   return createUserWithEmailAndPassword(auth, email, senha);
 }
-
 export function loginEmailPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }

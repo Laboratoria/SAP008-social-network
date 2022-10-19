@@ -4,15 +4,16 @@ export default () => {
   const container = document.createElement('div');
 
   const template = `
+
       <header class="navRegister">
         <div class='divBtnReturn'>
-          <img src="return.png" alt="voltar" id="voltarRegister">
+          <img src="img/return.png" alt="voltar" id="voltarRegister">
         </div>
         <div>
           <h1 class='tituloRegister'>Bem vinda!</h1>
         </div>
         <div>
-          <img src="cookie.png" alt="logo-cookie" id="cookieRegister">
+          <img src="img/cookie.png" alt="logo-cookie" id="cookieRegister">
         </div>
       </header>
       <main class="register">
@@ -34,12 +35,12 @@ export default () => {
             <input type="password"  id="passwordRegister" placeholder="********"  class="btnRegister">
           </div>
             <button id="cadastrarRegister">Cadastre-se</button>  
+
         </form>
         </main>
         `;
   container.innerHTML = template;
   const form = container.querySelector('.formRegister');
-  const date = container.querySelector('#dateRegister');
   const email = container.querySelector('#usernameRegister');
   const senha = container.querySelector('#passwordRegister');
 
@@ -47,7 +48,6 @@ export default () => {
     e.preventDefault();
     console.log('submter o form');
     console.log(email.value);
-    console.log(date.value);
     console.log(senha.value);
     createUser(email.value, senha.value)
       .then((user) => {

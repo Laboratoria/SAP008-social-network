@@ -163,17 +163,8 @@ export default () => {
   // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const removeButtonId = e.target.dataset.remove;
-    const userCurrent = e.target.dataset.user;
 
     if (removeButtonId) {
-      if (userId !== userCurrent) {
-        const modalContentElement = document.getElementById('modal_content');
-        const modalElement = document.getElementById('modal');
-        modalElement.classList.add('show-modal');
-        modalContentElement.innerHTML = 'Não é possível deletar post de outros usuários';
-        return false;
-      }
-      // eslint-disable-next-line no-alert
       const result = window.confirm('Você deseja apagar essa postagem?');
       if (result === true) {
         firebase.firestore().collection('posts').doc(removeButtonId).delete()
@@ -188,16 +179,8 @@ export default () => {
   // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const editButton = e.target.dataset.edit;
-    const userCurrent = e.target.dataset.user;
 
     if (editButton) {
-      if (userId !== userCurrent) {
-        const modalElement = document.getElementById('modal');
-        modalElement.classList.add('show-modal');
-        const modalContentElement = document.getElementById('modal_content');
-        modalContentElement.innerHTML = 'Não é possível editar post de outros usuários';
-        return false;
-      }
       boxPost.querySelector(`#updateButton-${editButton}`).removeAttribute('style');
       boxPost.querySelector(`#editButton-${editButton}`).style.display = 'none';
       boxPost.querySelector(`#name-${editButton}`).removeAttribute('disabled');
@@ -208,13 +191,8 @@ export default () => {
   // eslint-disable-next-line consistent-return
   boxPost.addEventListener('click', (e) => {
     const updateButton = e.target.dataset.update;
-    const userCurrent = e.target.dataset.user;
 
     if (updateButton) {
-      if (userId !== userCurrent) {
-        return false;
-      }
-
       const updateMovie = boxPost.querySelector(`#name-${updateButton}`).value;
       const updateText = boxPost.querySelector(`#about-${updateButton}`).value;
 

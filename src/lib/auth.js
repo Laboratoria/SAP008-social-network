@@ -69,7 +69,7 @@ export function logoutUser() { // função logout
   }).catch((error) => error);
 }
 
-export const getPosts = async () => { // função enviar posts firestore
+export const getPosts = async () => { // função printar posts na tela
   try {
     const querySnapshot = await getDocs(collection(dataBase, 'Posts'));
     const allPosts = [];

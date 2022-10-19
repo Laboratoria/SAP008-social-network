@@ -5,4 +5,6 @@ export {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';

@@ -25,6 +25,11 @@ const db = getFirestore(app);
 
 export const getUserName = () => auth.currentUser.displayName;
 
+/* function criada para recolher o id do usuário logado,
+com a intenção de validar se o usuário é o dono de um
+post na timeline */
+export const getUserId = () => auth.currentUser.uid;
+
 // eslint-disable-next-line max-len
 export const registerUser = (name, email, password) => createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -91,8 +96,11 @@ export const getAllPosts = async () => {
   }
 };
 
-export const editPost = async (author, artist, location, date, text) => {
-  const post = doc(db, 'posts', author);
+/* alterado o parametro da editPost, agora ele recebe o id do post,
+e nao do autor, isso foi necessário pois a function doc() precisa
+do id de referencia do post */
+export const editPost = async (postId, artist, location, date, text) => {
+  const post = doc(db, 'posts', postId);
 
   await updateDoc(post, {
     artist,

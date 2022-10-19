@@ -23,7 +23,7 @@ describe('userLOgin', () => {
   });
 });
 
-describe('', () => {
+describe('createUser', () => {
   it('função deve ser chamada uma vez', () => {
     const email = 'angelinajolie@hotmail.com';
     const password = '12345';

@@ -11,7 +11,7 @@ export function createUser(email, senha) {
 export function loginEmailPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
-
+//funçao para chamar as funções do firebase, função do login com o google
 export function signInGoogle() {
   return signInWithPopup(auth, provider);
 }

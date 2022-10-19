@@ -212,33 +212,35 @@ export default () => {
     }
   });
 
-  boxPost.addEventListener('click touchstart', (e) => {
+  boxPost.addEventListener('click', (e) => {
     const buttonLike = e.target.dataset.liked;
     const increment = firebase.firestore.FieldValue.increment(1);
-
-    boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
-    firebase.firestore().collection('posts').doc(buttonLike).update({ like: increment })
-      .catch(() => {
-        const modalContentElement = document.getElementById('modal_content');
-        const modalElement = document.getElementById('modal');
-        modalElement.classList.add('show-modal');
-        modalContentElement.innerHTML = 'Ops! Algo deu errado. Tente novamente!';
-      });
+    if (buttonLike) {
+      boxPost.querySelector(`#poster-${buttonLike}`).getElementsByClassName('getLike')[0].innerHTML = 'Curtiu!';
+      firebase.firestore().collection('posts').doc(buttonLike).update({ like: increment })
+        .catch(() => {
+          const modalContentElement = document.getElementById('modal_content');
+          const modalElement = document.getElementById('modal');
+          modalElement.classList.add('show-modal');
+          modalContentElement.innerHTML = 'Ops! Algo deu errado. Tente novamente!';
+        });
+    }
   });
 
-  boxPost.addEventListener('click touchstart', (e) => {
+  boxPost.addEventListener('click', (e) => {
     const buttonDeslike = e.target.dataset.desliked;
     const increment = firebase.firestore.FieldValue.increment(1);
-
-    boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
-    firebase.firestore().collection('posts').doc(buttonDeslike)
-      .update({ deslike: increment })
-      .catch(() => {
-        const modalContentElement = document.getElementById('modal_content');
-        const modalElement = document.getElementById('modal');
-        modalElement.classList.add('show-modal');
-        modalContentElement.innerHTML = 'Ops! Algo deu errado. Tente novamente!';
-      });
+    if (buttonDeslike) {
+      boxPost.querySelector(`#poster-${buttonDeslike}`).getElementsByClassName('getDeslike')[0].innerHTML = 'Não curtiu! 🙁 ';
+      firebase.firestore().collection('posts').doc(buttonDeslike)
+        .update({ deslike: increment })
+        .catch(() => {
+          const modalContentElement = document.getElementById('modal_content');
+          const modalElement = document.getElementById('modal');
+          modalElement.classList.add('show-modal');
+          modalContentElement.innerHTML = 'Ops! Algo deu errado. Tente novamente!';
+        });
+    }
   });
 
   return container;

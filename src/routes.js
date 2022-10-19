@@ -63,6 +63,15 @@ const init = () => {
         }
       });
       break;
+    case '#addPost':
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          main.appendChild(initialPage());
+        } else {
+          window.location.hash = '#login';
+        }
+      });
+      break;
 
     default: main.appendChild(login());
   }

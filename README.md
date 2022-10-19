@@ -21,7 +21,7 @@ invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não consegu
 viver sem elas.
 
 Há redes sociais de todo tipo para todos os tipos de interesse, e neste projeto realizamos a construção de uma rede social através da manipulação do banco de dados do firebase.
-A estratégia para o desenvolvimento foi code review, divisão de tarefas no notion e retro.
+A estratégia para o desenvolvimento foi code review e divisão de tarefas no notion e o tempo para elaboração foi de 06 sprints.
 
 Ao decorrer dos tópicos você obterá mais informações sobre o projeto.
 
@@ -97,13 +97,15 @@ Para sair da aplicação o usuário pode clicar no botão"xxx" e será redirecio
 - Incluimos no menu um botão "Home", antes ficava um ícone de "+" e os usuários disseram não ser intuitivo.
 - Colocamos na caixa de envio de texto um placeholder indicando as informações que devem ser preenchidas, os usuários alegaram que sentiram falta desta informação.
 - Incluimos na página de registro um botão para voltar na página anterior, os usuários disseram que era mais funcional do que retornar a página direto pelo navegador.
+- Incluimos um botão âncora onde leva o user ao formulário de postagem, desta forma, evitando que o mesmo tenha que rolar a página até o final sempre que for postar algo novo.
+- Atualização da página HOME para esconder os botões das postagens, fazendo que aparece a opção de: "deletar e editar" apenas para os autores das postagens.
 
 ## 7. Ferramenta utilizadas
 
 - `JavaScript`
 - `HTML5`
 - `CSS3`
-- `Firebase Hosting`
+- `Firebase App`
 - `Firebase Firestore`
 - `Firebase Auth`
 - `EsLint`

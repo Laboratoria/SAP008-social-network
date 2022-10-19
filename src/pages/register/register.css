@@ -1,0 +1,62 @@
+@media only screen and (max-width: 1500px) and (min-width: 257px){
+*{
+        margin: 0;
+        padding: 0;
+    }
+    .container-register{
+        display: flex;
+        margin: 0% 0% 0% 15%;
+        padding: 1% 0% 1% 0%;
+        width: 70%;
+        border-radius: 10%;
+        background-image: url(../../img/back.jpg);
+        background-repeat: no-repeat;
+        justify-content: center;
+    }
+    .boxModelFormRegistro{
+        display: flex;
+        text-align: center;
+        height: 40rem;
+        align-content: center;
+        flex-direction: column;
+        color: black;
+        background-color: rgba(255, 255 , 255, 0.87) ;
+        width: 70%;
+        border-radius: 40px;
+  
+    }
+    .logoRegistro{
+        width: 100%;
+    }
+    .inputCadastro{
+        width: 60%;
+        height: 4vh;
+        text-align: center;
+        border-color: black;
+        border-radius: 1vh;
+        margin: 2%;
+    }
+    .btn-cadastre{
+        border-radius: 4vh;
+        border: 0.3vh solid #1FA48C;
+        font-size: 100%;
+        font-weight: bold;
+        padding: 2% 3%;
+        background: linear-gradient(to right, #91ebd9, #5dd6c0, #28c4a7);
+        cursor: pointer;
+        margin: 2%;
+    }
+
+    .btnBack {
+        border-radius: 4vh;
+        border: 0.3vh solid #1FA48C;
+        font-size: 130%;
+        font-weight: bold;
+        padding: 1% 4%;
+        background: linear-gradient(to right, #91ebd9, #5dd6c0, #28c4a7);
+        cursor: pointer;
+        text-decoration: none;
+        color: black; 
+        margin: auto;
+    }
+}

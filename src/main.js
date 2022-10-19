@@ -1,5 +1,37 @@
-// Este es el punto de entrada de tu aplicacion
+import home from './pages/home/home.js';
+import register from './pages/register/register.js';
+import password from './pages/password/password.js';
+import about from './pages/about/about.js';
+import feed from './pages/feed/feed.js';
 
-import { myFunction } from './lib/index.js';
+const main = document.querySelector('#root');
 
-myFunction();
+const inicio = () => {
+  window.addEventListener('hashchange', () => {
+    main.innerHTML = '';
+    switch (window.location.hash) {
+      case '':
+        main.appendChild(home());
+        break;
+      case '#recuperarsenha':
+        main.appendChild(password());
+        break;
+      case '#paracadastro':
+        main.appendChild(register());
+        break;
+      case '#sobre':
+        main.appendChild(about());
+        break;
+      case '#feed':
+        main.appendChild(feed());
+        break;
+      default:
+        main.appendChild(home());
+    }
+  });
+};
+window.addEventListener('load', () => {
+  window.location.hash = '';
+  main.appendChild(home());
+  inicio();
+});

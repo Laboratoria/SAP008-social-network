@@ -50,7 +50,7 @@ export default () => {
           <button class="btn-post" data-decline-delete="${post.id}" type="button">Não</button>
         </div>
 
-        <button id="btnLike" class="btn-post" data-count-likes="${post.like.length}" data-like-author="${post.author}" data-like-btn="${post.id}" type="button">Curtir ${post.like.length}</button> 
+        <button id="btnLike" class="btn-post like" data-count-likes="${post.like.length}" data-like-author="${post.author}" data-like-btn="${post.id}" type="button">Curtir </button> 
       </div>
 
     `).join('');
@@ -112,20 +112,24 @@ export default () => {
     });
 
     btnsLike.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const postLikedId = e.currentTarget.dataset.likeBtn;
-        const userId = e.currentTarget.dataset.likeAuthor;
-        const countLikes = e.currentTarget.dataset.countLikes;
-
-
-        if(countLikes === 0) {
-          likePost(postLikedId, userId);     
-                      
+      btn.addEventListener('click', (e) => {        
+        const elemento = e.currentTarget;
+        const postLikedId = elemento.dataset.likeBtn;
+        const userId = elemento.dataset.likeAuthor;
+        const countLikes = elemento.dataset.countLikes;
+        
+        if(countLikes == 0) {
+          likePost(postLikedId, userId)
+          .then(()=> {
+            elemento.dataset.countLikes = countLikes + 1;
+          })
+                              
         } else {
-          unlikePost(postLikedId, userId);          
-        }
-
-        alert('clicou');
+          unlikePost(postLikedId, userId)
+          .then(()=> {
+            elemento.dataset.countLikes = countLikes - 1;
+          })
+        }       
                    
       })
     });

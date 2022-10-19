@@ -14,6 +14,8 @@ function errorFire(error) {
       return 'O hash da senha precisa ser um buffer de byte válido.';
     case 'auth/invalid-password-salt':
       return 'O "salt" da senha precisa ser um buffer de byte válido';
+    case 'auth/popup-closed-by-user':
+      return 'Usuário não completou o login!';
     default:
       return '';
   }

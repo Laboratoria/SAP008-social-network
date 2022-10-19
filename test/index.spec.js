@@ -1,7 +1,23 @@
-import { exports } from '../src/firebase/__mocks__/exports.js';
+import { loginGoogle, userLogin } from '../src/firebase/auth.js';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof exports).toBe('function');
+import {
+  signInWithPopup,
+  signInWithEmailAndPassword,
+} from '../src/firebase/exports.js';
+
+jest.mock('../src/firebase/exports.js');
+
+describe('loginGoogle', () => {
+  it('a função deve ser chamada uma vez', () => {
+    loginGoogle();
+    expect(signInWithPopup).toHaveBeenCalledTimes(1);
+  });
+});
+describe('userLOgin', () => {
+  it('função deve ser chamada uma vez', () => {
+    const email = 'angelinajolie@hotmail.com';
+    const password = '12345';
+    userLogin(email, password);
+    expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });

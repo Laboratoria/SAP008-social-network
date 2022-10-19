@@ -3,55 +3,57 @@ import { createUser } from '../../firebase/auth.js';
 export default () => {
   const containerRegistration = document.createElement('div');
   const registration = `
-    <header>
-      <picture>
-        <img src="pages/cadastro/icone.png" alt="icone" class="icone">
-        <img src="pages/cadastro/logo.png" alt="logo" class="logo">
-      </picture>
-      <h1>Cadastre-se</h1>
-    </header>
-    <form class="form" id="form">
-      <div class="formCadastro ">
-        <input type="text" name="registrationFirstNameAndLastName" id="registrationFirstNameAndLastName" 
-          placeholder="Nome e Sobrenome">
-      </div>
-      <div class="formCadastro ">
-         <input type="text" name="registrationUsername" id="registrationUsername" placeholder="Nome de usuário">
-      </div>
-      <div class="formCadastro">
-         <input type="email" name="emailRegistration" id="emailRegistration" placeholder="E-mail">
-      </div>
-      <div class="formCadastro">
-         <input type="password" name="registrationPassword" id="registrationPassword" placeholder="Senha">
-         </div>
-      <div class="formCadastro">
-         <input type="password" name="passwordConfirmation" id="passwordConfirmation"
-         placeholder="Confirmação de senha">
-      </div>
-      <div class="formCadastro">
-         <input type="text" name="euSou" list="responsible" id="iamRegistration" placeholder="Eu Sou">
-         <datalist id="responsible">
-         <option value="Mãe"></option>
-         <option value="Pai"></option>
-         <option value="Profissional"></option>
-         <option value="RedeDeApoio"></option>
-         <option value="Tentante"></option>
-         <option value="Aprendiz"></option>
-         </datalist>
-      </div>
-      <div class="formCadastro">
-         <div class="checkBoxRegistration">
-          <input type="checkbox" name="checkBoxRegistration" id="confirmationBox">
-          <label for="checkBoxRegistration">Concordo com os <a href="#">termos de uso</a></label>
-         </div>
-      </div>
-      <div class="formCadastro">
-         <div class="submitCadastro">
-         <button type="click" id="createAnAccount">Criar conta</button>
-         </div>
-         <span id="saida"></span>
-      </div>
-    </form>
+    <div class='body-cadastro'>
+      <header class='header-cadastro'>
+        <picture>
+          <img src='pages/cadastro/icone.png' alt='icone' class='icone'>
+          <img src='pages/cadastro/logo.png' alt='logo' class='logo'>
+        </picture>
+        <h1>Cadastre-se</h1>
+      </header>
+    
+      <form class='form-cadastro' id='form-cadastro'>
+        <div class='cadastro-inteiro'>
+          <div class='formCadastroInput'>
+            <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' 
+            placeholder='Nome e Sobrenome'>
+          </div>
+          <div class='formCadastroInput'>
+            <input type='email' name='emailRegistration' id='emailRegistration' placeholder='E-mail'>
+          </div>
+          <div class='formCadastroInput'>
+            <input type='password' name='registrationPassword' id='registrationPassword' placeholder='Senha'>
+          </div>
+          <div class='formCadastroInput'>
+            <input type='password' name='passwordConfirmation' id='passwordConfirmation'
+            placeholder='Confirmação de senha'>
+          </div>
+          <div class='formCadastroInput'>
+            <input type='text' name='euSou' list='responsible' id='iamRegistration' placeholder='Eu Sou'>
+            <datalist id='responsible'>
+            <option value='Mãe'></option>
+            <option value='Pai'></option>
+            <option value='Profissional'></option>
+            <option value='RedeDeApoio'></option>
+            <option value='Tentante'></option>
+            <option value='Aprendiz'></option>
+            </datalist>
+          </div>
+          <div class='formCadastroInput'>
+           <div class='checkBoxRegistration'>
+              <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
+              <label for='checkBoxRegistration'>Concordo com os <a href='#'>termos de uso</a></label>
+           </div>
+          </div>
+          <div class='formCadastroInput'>
+            <div class='submitCadastro'>
+              <button type='click' id='createAnAccount'>Criar Conta</button>
+            </div>
+            <span id='saida'></span>
+          </div>
+        </div>
+      </form>
+    </div>
     `;
   containerRegistration.innerHTML = registration;
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
@@ -59,25 +61,17 @@ export default () => {
     e.preventDefault();
     const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
-    containerRegistration.querySelector('#saida').innerHTML = registrationFirstNameAndLastNamevalue;
-    const registrationUsername = containerRegistration.querySelector('#registrationUsername').value;
-    const registrationUsernameValue = registrationUsername;
-    containerRegistration.querySelector('#saida').innerHTML = registrationUsernameValue;
     const emailRegistration = containerRegistration.querySelector('#emailRegistration').value;
     const emailRegistrationValue = emailRegistration;
-    containerRegistration.querySelector('#saida').innerHTML = emailRegistrationValue;
     const registrationPassword = containerRegistration.querySelector('#registrationPassword').value;
     const registrationPasswordValue = registrationPassword;
-    containerRegistration.querySelector('#saida').innerHTML = registrationPasswordValue;
     const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation').value;
     const passwordConfirmationValue = passwordConfirmation;
-    containerRegistration.querySelector('#saida').innerHTML = passwordConfirmationValue;
     const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
     const iamRegistrationValue = iamRegistration;
-    containerRegistration.querySelector('#saida').innerHTML = iamRegistrationValue;
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');
     if (
-      registrationFirstNameAndLastNamevalue === '' || registrationUsernameValue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistration === '') {
+      registrationFirstNameAndLastNamevalue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistrationValue === '') {
       alert('preencha esse campo');
     }
     if (passwordConfirmationValue !== registrationPasswordValue) {
@@ -87,7 +81,7 @@ export default () => {
       alert('Você não concorda com os termos');
     }
     if (
-      registrationFirstNameAndLastNamevalue !== '' && registrationUsernameValue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistration !== '' && confirmationBox.checked) {
+      registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
       alert('formulario validado');
       createUser(emailRegistration, registrationPassword)
         .then(() => {

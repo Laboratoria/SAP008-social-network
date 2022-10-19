@@ -5,7 +5,7 @@ export default () => {
 
   const formPost = `
     <div class='body-post'>
-      <form class='main-post'>
+      <form class='main-form-post'>
         <textarea id='textAreaPost' name='textarea' placeholder='O que deseja compartilhar?'></textarea>
           <select>
             <option value='typeTitle' disabled selected style='display: none'>Selecionar assunto</option>

@@ -1,17 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    width: 100%;
-}
-
 /* mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .logo-timeline {
         display: none;
     }
@@ -93,5 +81,15 @@ body {
         height: 1px;
         background-color: #ACDCEE;
         margin-top: 4rem;
+    }
+} 
+
+@media screen and (min-width: 769px) {    
+    .container-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 }

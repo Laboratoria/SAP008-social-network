@@ -6,7 +6,7 @@ export default function Feed() {
   <div class="main-div">
   <nav class="top-nav">
   <picture>
-      <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
+      <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
   </picture>
   </nav>
         <section id="post" class="post">

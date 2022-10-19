@@ -6,7 +6,7 @@ export default function Login() {
   login.classList.add('login-main');
   login.innerHTML = `   
       <main class="main">
-      
+                  
           <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
         
               
@@ -28,7 +28,8 @@ export default function Login() {
         <div>
           <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
           <a href="/#register">Cadastre-se</a>
-        </div> 
+        </div>
+        <footer> Andressa Oliveira & Juliene Araújo
       </main>
       `;
 

@@ -1,7 +1,7 @@
 import {
   registerWithEmailAndPassword,
   loginWithGoogle,
-} from '../../lib/index.js';
+} from '../../lib/firebase.js';
 
 import {
   handleFirebaseErrors,

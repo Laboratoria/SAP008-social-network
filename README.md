@@ -119,7 +119,7 @@ Os testes desse projeto foram desenvolvidos pra verificar a quantidade de chamad
 
 Rebu foi nossa primeira experiência com mock de função. Usamos o framework Jest.
 
- ![Testes](./src/img/Print_testes.png)
+ ![Testes](./src/img/print_testes.png)
 
 
 ## 7. Ferramentas e Tech Skills

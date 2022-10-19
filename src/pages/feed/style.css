@@ -18,6 +18,7 @@
 #rebu-logo-btn, #feed-homepage-btn {
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .rebu-logo-feed {
@@ -161,6 +162,7 @@
 .edit-post-btn, .delete-post-btn, .like-btn-post {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .like-post-icon, .edit-post-icon, .delete-post-icon {

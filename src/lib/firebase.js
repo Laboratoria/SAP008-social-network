@@ -1,4 +1,4 @@
-export {
+import {
   getAuth,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
@@ -7,20 +7,125 @@ export {
   GoogleAuthProvider,
   sendPasswordResetEmail,
   updateProfile,
-  signOut,
-  } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'; //eslint-disable-line
-
-export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';//eslint-disable-line
-
-export {
   getFirestore,
-  collection,
   addDoc,
+  collection,
   getDoc,
   doc,
+  deleteDoc,
   updateDoc,
   getDocs,
-  deleteDoc,
-} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';//eslint-disable-line
+  signOut,
+} from './exports.js';
 
-// getDocs from firebase-firestore.js
+import { app } from './configuration.js';
+
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider(app);
+
+export function userStateChanged(callback) {
+  const auth = getAuth(app);
+  onAuthStateChanged(auth, callback);
+}
+
+export function registerWithEmailAndPassword(name, email, password) {
+  const auth = getAuth(app);
+  return createUserWithEmailAndPassword(auth, email, password)
+    .then(() => updateProfile(auth.currentUser, {
+      displayName: name,
+    }));
+}
+
+export function loginWithEmailAndPassword(email, password) {
+  const auth = getAuth(app);
+  return signInWithEmailAndPassword(auth, email, password);
+}
+
+export function loginWithGoogle() {
+  const auth = getAuth(app);
+  return signInWithPopup(auth, provider);
+}
+
+export function resetPassword(email) {
+  const auth = getAuth(app);
+  return sendPasswordResetEmail(auth, email);
+}
+
+export const createPost = async (textPost, category) => {
+  const auth = getAuth(app);
+  try {
+    const docRef = await addDoc(collection(db, 'post'), {
+      name: auth.currentUser.displayName,
+      author: auth.currentUser.uid,
+      data: new Date().toLocaleDateString('pt-BR'),
+      tag: category,
+      text: textPost,
+      like: [],
+    });
+    return docRef.id;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const postById = async (idPost) => {
+  const docRef = doc(db, 'post', idPost);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+};
+
+export const like = async (idPost, idUser) => {
+  const likePost = await postById(idPost);
+  const likes = likePost.like;
+  const userLiked = likes.indexOf(idUser);
+  if (userLiked !== -1) {
+    likes.splice(userLiked, 1);
+  } else {
+    likes.push(idUser);
+  }
+  await updateDoc(doc(db, 'post', idPost), {
+    like: likes,
+  });
+  return likes;
+};
+
+export const updatePost = async (idPost, textValue) => {
+  const newAttPost = doc(db, 'post', idPost);
+  await updateDoc(newAttPost, {
+    text: textValue,
+  });
+};
+
+export const deletePost = async (postId) => {
+  try {
+    const docRef = doc(db, 'post', postId);
+    await deleteDoc(docRef);
+    return docRef.id;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getAllPosts = async () => {
+  try {
+    const posts = await getDocs(collection(db, 'post'));
+    const arrPosts = [];
+    posts.forEach((post) => {
+      arrPosts.push({ ...post.data(), id: post.id });
+    });
+    arrPosts.sort((a, b) => {
+      if (a.data < b.data) {
+        return 1;
+      }
+      return -1;
+    });
+    return arrPosts;
+  } catch (error) {
+    return error;
+  }
+};
+
+export function logoff() {
+  const auth = getAuth(app);
+  return signOut(auth);
+}

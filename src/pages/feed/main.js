@@ -1,4 +1,4 @@
-import { getAuth } from '../../lib/firebase.js';
+import { getAuth } from '../../lib/exports.js';
 import {
   createPost,
   deletePost,
@@ -6,7 +6,7 @@ import {
   logoff,
   updatePost,
   like,
-} from '../../lib/index.js';
+} from '../../lib/firebase.js';
 
 import { app } from '../../lib/configuration.js';
 

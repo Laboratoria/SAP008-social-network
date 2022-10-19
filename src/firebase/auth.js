@@ -7,7 +7,6 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  updateProfile,
 } from './exports.js';
 
 import { app } from './config.js';
@@ -18,10 +17,7 @@ export const userLogin = (email, password) => signInWithEmailAndPassword(auth, e
 export const loginGoogle = () => signInWithPopup(auth, provider);
 
 // eslint-disable-next-line max-len
-export const createUser = (name, email, password) => createUserWithEmailAndPassword(auth, email, password)
-  .then(() => updateProfile(auth.currentUser, {
-    displayName: name,
-  }));
+export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
 // nat
 const db = getFirestore(app);

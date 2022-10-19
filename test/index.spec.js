@@ -1,8 +1,9 @@
-import { loginGoogle, userLogin } from '../src/firebase/auth.js';
+import { loginGoogle, userLogin, createUser } from '../src/firebase/auth.js';
 
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from '../src/firebase/exports.js';
 
 jest.mock('../src/firebase/exports.js');
@@ -19,5 +20,15 @@ describe('userLOgin', () => {
     const password = '12345';
     userLogin(email, password);
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('', () => {
+  it('função deve ser chamada uma vez', () => {
+    const email = 'angelinajolie@hotmail.com';
+    const password = '12345';
+    const username = 'angel';
+    createUser(email, password, username);
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });

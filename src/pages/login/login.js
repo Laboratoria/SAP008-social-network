@@ -7,8 +7,7 @@ export default function Login() {
   login.innerHTML = `   
       <main class="main">
       
-          <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
-        <p class="tittle-logotype">INspire</p>
+          <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
         
               
         <form class="login-form">

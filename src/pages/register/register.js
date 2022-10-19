@@ -13,7 +13,7 @@ export default () => {
       </figure>
 
       <forms class="registration-input">
-        <p id= 'message-welcome' class = 'walcome-message' role='dialog'> </p>
+        <p id= 'message-welcome' class = 'welcome-message' role='dialog'> </p>
         <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
         <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
         <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>

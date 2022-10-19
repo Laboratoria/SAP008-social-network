@@ -133,9 +133,7 @@ export default () => {
         Eh passado para o editPost() os valores innerText, pois é assim
         que se acessa o conteúdo de texto dentro de uma tag <p> */
         const btnSave = container.querySelector(`[data-save="${postId}"]`);
-        btnSave.addEventListener('click', (e2) => {
-          e2.preventDefault();
-
+        btnSave.addEventListener('click', () => {
           artist.removeAttribute('contenteditable');
           showLocation.removeAttribute('contenteditable');
           showDate.removeAttribute('contenteditable');

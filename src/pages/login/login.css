@@ -24,20 +24,12 @@ telas grandes: acima de 1200 */
 
   .logo{
     margin-top: 2%;
-    width: 15%;
+    width: 35%;
     align-items: center;
     justify-items: center;
   }
 
-  .tittle-logotype {
-    margin-top: 5%;
-    align-items: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(255, 243, 243);
-  }
-  
-  .login-input {
+   .login-input {
     width: 250px;
     height: 40px;
     border: none;
@@ -106,8 +98,32 @@ telas grandes: acima de 1200 */
 /*tablet
   @media screen and (min-width: 768px) and (max-width: 992px) {
    
-  }
-  
-  /*desktop
-  @media screen and (min-width: 1200) {
   }*/
+  
+  desktop
+  @media screen and (min-width: 1200) {
+    .main{
+      width: 280px;
+      border-radius: 15px; 
+      position: absolute;
+      left: 60%;
+      padding: 5%;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: :right;
+      margin-top: 5%;
+    }
+
+    .logo{
+
+      width: 90%;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+    .google-button {
+      width: 90%;
+  }
+
+    }
+  

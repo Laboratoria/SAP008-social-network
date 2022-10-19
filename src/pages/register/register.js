@@ -4,12 +4,9 @@ export default () => {
   const containerRegistration = document.createElement('div');
   const template = `
     <main class="container-registration">
-      <button type="button" class="btn-back">&#11013 voltar</button>
+      <button type="button" class="btn-back">&#11013 </button>
 
-      <figure class="logo-tittle">
-        <img id="one-logo-coração" src="./imagens/image-2.png">
-        <p class="tittle-logotype">INspire</p>
-      </figure>
+      <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
 
       <forms class="registration-input">
         <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>

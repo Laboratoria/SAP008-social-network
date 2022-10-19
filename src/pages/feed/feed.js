@@ -6,7 +6,7 @@ export default function Feed() {
   <div class="main-div">
   <nav class="top-nav">
   <picture>
-      <img class="logo" src="imagens/logoprovisorio.png" alt="Logo" />
+      <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
   </picture>
   </nav>
         <section id="post" class="post">
@@ -26,8 +26,6 @@ export default function Feed() {
   const postFeed = feed.querySelector('#post-textarea');
   const postList = feed.querySelector('#box-post');
   const user = current().uid;
-
-  //O operador ternário ( ? ) funciona assim ...você tem uma condição que deve ser validada como verdadeira ou falsa. Se a condição for verdadeira o operador retorna uma expressão e se for falsa retorna outra expressão.
 
   getAllPosts()
     .then((posts) => {

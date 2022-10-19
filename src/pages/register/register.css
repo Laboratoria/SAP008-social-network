@@ -17,8 +17,10 @@
 
 }
 
-/* logo de coração com lampada e nome inspire */
-.logo-tittle {
+/* logo inspire */
+.logo{
+  margin-top: 2%;
+  width: 35%;
   align-items: center;
   justify-items: center;
 }

@@ -165,7 +165,14 @@ body {
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
+
   #error-code {
+    color: red;
+    font-size: 10px;
+    bottom: 2rem;
+  }
+
+  #error-message {
     color: red;
     font-size: 10px;
     bottom: 2rem;
@@ -327,4 +334,13 @@ body {
   .btn-register:focus {
     outline: none;
   }
+
+  #error-message {
+    color: red;
+    font-size: 10px;
+  }
+}
+
+.input-error {
+  border: 1px solid red;
 }

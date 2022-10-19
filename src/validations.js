@@ -3,29 +3,44 @@ export function registerValidation(inputName, inputEmail, inputPassword) {
   const validateEmail = emailRegex.test(inputEmail);
 
   if (inputName === '') {
-    return 'Você precisa preencher o campo de nome!';
+    return {
+      msg: 'Você precisa preencher o campo de nome!',
+      src: 'name',
+    }
   }
   if (inputEmail === '') {
-    return 'Você precisa preencher o campo de e-mail!';
+    return {
+      msg: 'Você precisa preencher o campo de e-mail!',
+      src: 'email',
+    }
   }
   if (inputPassword === '') {
-    return 'Você precisa criar uma senha!';
+    return {
+      msg: 'Você precisa criar uma senha!',
+      src: 'password',
+    }
   }
   if (validateEmail === false) {
-    return 'Insira um e-mail válido (ex: seunome@email.com)';
+    return {
+      msg: 'Insira um e-mail válido (ex: seunome@email.com)',
+      src: 'email',
+    }   
   }
-  if (!inputName && !inputEmail && !inputPassword) {
-    return 'Por favor, preencha todos os campos!';
-  }
-  return '';
+
+  return null;
 }
 
 export function loginValidation(inputEmail, inputPassword) {
-  if (inputEmail === '') {
-    return 'Você precisa preencher o campo de e-mail!';
-  }
-  if (inputPassword === '') {
-    return 'Você precisa preencher o campo de senha!';
-  }
-  return '';
+  return registerValidation('gabriela', inputEmail, inputPassword);
+}
+
+export function clearErrors() {
+  document.querySelectorAll('.error-email, .error-password')
+    .forEach( p => {
+      p.innerHTML = '';
+    });
+  document.querySelectorAll('.input-email, .input-password')
+    .forEach( p => {
+      p.classList.remove('input-error');
+    });
 }

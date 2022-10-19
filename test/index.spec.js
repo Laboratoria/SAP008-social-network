@@ -2,29 +2,29 @@
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
   deletePost, createPost, updatePost, postById, like, getAllPosts, logoff,
-} from '../src/lib/index.js';
+} from '../src/lib/firebase.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, deleteDoc, doc, addDoc, updateDoc,
   getDoc, getDocs, signOut,
-} from '../src/lib/firebase.js';
+} from '../src/lib/exports.js';
 
-jest.mock('../src/lib/firebase.js');
+jest.mock('../src/lib/exports.js');
 
 beforeEach(() => {
   jest.clearAllMocks();
 });
 
 describe('loginWithGooglen', () => {
-  it('a função deve ser chamada uma vez', () => {
+  it('a função deve permitir que o usuário faça login usando uma conta google', () => {
     loginWithGoogle();
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
   });
 });
 
 describe('loginWithEmailAndPassword', () => {
-  it('a função deve ser chamada uma vez', () => {
+  it('a função deve permitir que o usuário faça login usando email e senha já cadastrados', () => {
     const email = 'peba@demais.com';
     const password = 'pebademais';
     loginWithEmailAndPassword(email, password);
@@ -39,7 +39,7 @@ describe('loginWithEmailAndPassword', () => {
 });
 
 describe('registerWithEmailAndPassword', () => {
-  it('a função deve ser chamada uma vez', async () => {
+  it('a função deve registrar o usuário por email e senha e atribuir um nome pra esse usuário', async () => {
     const mockGetAuth = {
       currentUser: {},
     };

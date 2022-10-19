@@ -117,17 +117,18 @@ export default () => {
         const postLikedId = elemento.dataset.likeBtn;
         const userId = elemento.dataset.likeAuthor;
         const countLikes = elemento.dataset.countLikes;
+        const transformCountLikesInNumber = Number(countLikes);
         
         if(countLikes == 0) {
           likePost(postLikedId, userId)
           .then(()=> {
-            elemento.dataset.countLikes = countLikes + 1;
+            elemento.dataset.countLikes = transformCountLikesInNumber + 1;
           })
                               
         } else {
           unlikePost(postLikedId, userId)
           .then(()=> {
-            elemento.dataset.countLikes = countLikes - 1;
+            elemento.dataset.countLikes = transformCountLikesInNumber - 1;
           })
         }       
                    

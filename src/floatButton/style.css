@@ -33,28 +33,20 @@
   }
 
 
-  @media only screen and (max-width: 400px) and (min-width: 400px) {
-    .floatButton{
-        right: 25px;
-        margin-bottom: 0;
-        font-size: 2rem;
-    }
-  }
-
   @media only screen and (max-width: 538px) and (min-width: 390px) {
     .floatButton{
         right: 25px;
-        margin-bottom: 10rem;
+        margin-bottom: 10.5rem;
         font-size: 2rem;
     }
 
   }
 
 
- @media only screen and (max-width: 700px) and (min-width: 410px) {
+ @media only screen and (max-width: 500px) and (min-width: 400px) {
     .floatButton{
-        right: 0px;
-        margin-bottom: 12.8rem;
+        right: 6px;
+        margin-bottom: 13rem;
         font-size: 2rem;
         position: absolute;
     }
@@ -76,7 +68,7 @@
         width: 40px;
         height: 40px;
         right: 20px;
-        margin-bottom: 0;
+        top: 15.5rem;
         font-size: 2rem;
     }
   }
@@ -87,7 +79,7 @@
         height: 35px;
         right: 3px;
         font-size: 5px;
-        margin-bottom: 0;
+        margin-bottom: 1rem;
         font-size: 2rem;
     }
   }
@@ -96,7 +88,7 @@
         width: 40px;
         height: 40px;
         right: 20px;
-        margin-bottom: 25rem;
+        bottom: 37rem;
         font-size: 2rem;
     }
   } 
@@ -106,7 +98,7 @@
         width: 40px;
         height: 40px;
         right: 20px;
-        margin-bottom: 25rem;
+        margin-bottom: 16rem;
         font-size: 2rem;
     }
   }
@@ -116,7 +108,7 @@
         width: 40px;
         height: 40px;
         right: 20px;
-        margin-bottom: 35rem;
+        margin-bottom: 25rem;
         font-size: 2rem;
     }
   }
@@ -126,6 +118,15 @@
         width: 40px;
         height: 40px;
         top: 10rem;
+        font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 1300px) and (min-width: 1279px) {
+    .floatButton{
+        width: 40px;
+        height: 40px;
+        top: 12rem;
         font-size: 2rem;
     }
   }

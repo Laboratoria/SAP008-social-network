@@ -32,7 +32,6 @@ export function getPostTemplate(doc) {
           <button data-edit=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-edit"> Editar</button>
       ` : ''}
       </div>
-      
       <div class="buttons-posts" id="updateButton-${doc.id}" style="display:none"> 
           <button data-update=${doc.id} data-user=${doc.data().user_id} class="buttons" id="btn-edit">Salvar</button>
       </div>

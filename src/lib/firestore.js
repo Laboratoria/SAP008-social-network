@@ -5,6 +5,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  getAuth,
 } from './firebase.js';
 
 const auth = getAuth(app);
@@ -12,16 +13,14 @@ const auth = getAuth(app);
 export const nameUser = () => auth.currentUser.displayName;
 
 export const createPost = async (textPost) => {
-  try {
-    const docRef = await addDoc(collection(db, 'posts'), {
-      name: auth.currentUser.displayName,
-      author: auth.currentUser.uid,
-      texto: textPost,
-      like: [],
-    });
-  } catch (e) {
-    console.error('Error adding document: ', e);
-  }
+  addDoc(collection(db, 'posts'), {
+    name: auth.currentUser.displayName,
+    author: auth.currentUser.uid,
+    texto: textPost,
+    like: [],
+  })
+    .then(() => true)
+    .catch((e) => { throw e; });
 };
 
 export const postScreen = async () => {

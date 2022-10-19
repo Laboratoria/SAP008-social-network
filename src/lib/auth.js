@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-console */
-import { app } from './configuration.js';
+import { app, db } from './configuration.js';
 
 import {
   getAuth,
@@ -12,6 +12,9 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   sendPasswordResetEmail,
+  collection,
+  getDocs,
+  addDoc,
 } from './firebase.js';
 
 const auth = getAuth(app);
@@ -36,6 +39,18 @@ const createRegister = (email, password) => createUserWithEmailAndPassword(auth,
 const updateDisplayName = (user, displayName) => updateProfile(user, { displayName });
 
 const resetPassword = (email) => sendPasswordResetEmail(auth, email);
+
+export const criarPost = (artist, location, date, text) => { //eslint-disable-line
+  return addDoc(collection(db, 'posts'), {
+    name: auth.currentUser.displayName,
+    author: auth.currentUser.uid,
+    artist,
+    location,
+    date,
+    text,
+    likes: 0,
+  });
+};
 
 export {
   logInUser,

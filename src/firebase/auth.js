@@ -27,3 +27,7 @@ export function loginGoogle() {
 export async function logout() {
   return signOut(auth);
 }
+export function getUser(){
+  return {uid: '1234', 'displayName': 'gabriella'}
+  //return auth.currentUser
+}

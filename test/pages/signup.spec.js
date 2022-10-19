@@ -11,8 +11,6 @@ jest.mock('../../src/routes.js');
 
 afterEach(() => {
   redirect.mockClear();
-
-  //jest.clearAllMocks();
 });
 
 const awaitInAllPromisses = () => new Promise(process.nextTick);

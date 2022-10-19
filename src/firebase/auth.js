@@ -1,14 +1,13 @@
 import {
-  getAuth, // autenticação
-  createUserWithEmailAndPassword, // criar usuário
+  getFirestore,
+  addDoc,
+  collection,
+  getAuth,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-// eslint-disable-next-line import/no-unresolved
-} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-
-// eslint-disable-next-line import/no-unresolved
-import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+} from './exports.js';
 
 import { app } from './config.js';
 

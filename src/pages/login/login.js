@@ -1,4 +1,5 @@
 import { signIn, signInGoogle } from '../../lib/auth.js';
+import { errorsFirebase, validateFormlogin } from '../../lib/error.js';
 
 export default function Login() {
   const login = document.createElement('div');
@@ -11,6 +12,7 @@ export default function Login() {
         
               
         <form class="login-form">
+          <p id= 'error-message' class = 'error-message'> </p>
           <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
           <input class="login-input password" type="password" placeholder="Senha" required>
         </form>
@@ -35,16 +37,24 @@ export default function Login() {
   const email = login.querySelector('.email');
   const password = login.querySelector('.password');
   const googleBtn = login.querySelector('#google-button');
+  const messageError = login.querySelector('#error-message');
 
   signInButton.addEventListener('click', (e) => {
     e.preventDefault();
-    signIn(email.value, password.value)
-      .then((result) => {
-        console.log(result);
-        window.location.hash = ('#feed');
-      })
-      .catch(() => {
-      });
+    const validate = validateFormlogin(email.value, password.value);
+    if (validate) {
+      messageError.innerHTML = validate;
+    } else {
+      signIn(email.value, password.value)
+        .then((result) => {
+          console.log(result);
+          window.location.hash = '#feed';
+        })
+        .catch((error) => {
+          const errorCode = errorsFirebase(error.code);
+          messageError.innerHTML = errorCode;
+        });
+    }
   });
 
   googleBtn.addEventListener('click', (e) => {
@@ -52,6 +62,10 @@ export default function Login() {
     signInGoogle()
       .then(() => {
         window.location.hash = 'feed';
+      })
+      .catch((error) => {
+        const errorCode = errorsFirebase(error.code);
+        messageError.innerHTML = errorCode;
       });
   });
 

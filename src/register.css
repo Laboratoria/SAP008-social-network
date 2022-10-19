@@ -1,8 +1,9 @@
 .navRegister{
-    display: flex;
+    padding: 0 auto;
     justify-content: space-between;
     background: #EDDED7;
 }
+
 .tituloRegister{
     font-weight: 40;
     font-size: 1.8rem;
@@ -26,7 +27,8 @@
     box-shadow: #777777 5px 5px;
 }
 #formRegister{
-    width: 60%;
+    max-width: 1120px 800px;
+    left: 160px;
 }
 #formRegister input{
     width: 100%;
@@ -68,7 +70,8 @@
     width: 50px;
     padding: 20px;
 }
-.divBtnReturn{
+.retorno-titulo-logo{
+    display: block;
     width: 25%;
 }
 .legendaRegister{
@@ -77,4 +80,14 @@
 }
 .boxLegendaInput{
     margin: 5px
+}
+
+.caixaRegister{
+    width: 277.25px;
+    height: 47.14px;
+    left: 81.13px;
+    top: 397.3px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
 }

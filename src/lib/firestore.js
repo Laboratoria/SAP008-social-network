@@ -1,5 +1,5 @@
 import { app } from './firebase.js';
-import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc, arrayRemove, arrayUnion, } from './export.js'
 
 const db = getFirestore(app);
 
@@ -10,6 +10,7 @@ const createPost = async (textPost) => {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
             texto: textPost,
+            like: [],
         });
     } catch (e) {
     }
@@ -40,12 +41,26 @@ const upDatePost = async (author, textPost) => {
 
 const deletePost = async (author) => {
     try {
-        const docRef = doc(db, 'post', author);
-        await deleteDoc(docRef);
-        return docRef.id;
+        const postToBeDeleted = doc(db, 'post', author);
+        await deleteDoc(postToBeDeleted);
+        return postToBeDeleted.id;
     } catch (error) {
         return error;
     }
 };
 
-export { createPost, getPost, upDatePost, deletePost };
+const likePost = async (postId, author) => {
+    const postToBeLiked = doc(db, 'post', postId);
+    return updateDoc(postToBeLiked, {
+        like: arrayUnion(author)
+    });
+};
+
+const unlikePost = async (postId, author) => {
+    const postToBeLiked = doc(db, 'post', postId);
+    return updateDoc(postToBeLiked, {
+        like: arrayRemove(author)
+    });
+};
+
+export { createPost, getPost, upDatePost, deletePost, likePost, unlikePost };

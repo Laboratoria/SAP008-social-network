@@ -8,7 +8,7 @@ import {
   newUser, googleAccess, create, loginUser, logoutUser, getPosts,
 } from '../../src/lib/auth.js';
 
-jest.mock('../../src/lib/__mocks__/exports.js');
+jest.mock('../../src/lib/firebase.js');
 
 describe('newUser', () => {
   it('should be a function', () => {

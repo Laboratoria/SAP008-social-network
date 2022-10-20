@@ -1,12 +1,12 @@
 import { getAuth } from '../../lib/exports.js';
+import { logoff } from '../../lib/firebase-auth.js';
 import {
   createPost,
   deletePost,
   getAllPosts,
-  logoff,
   updatePost,
   like,
-} from '../../lib/firebase.js';
+} from '../../lib/firebase-firestore.js';
 
 import { app } from '../../lib/configuration.js';
 

@@ -1,8 +1,11 @@
-/* eslint-disable object-shorthand */
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, like, getAllPosts, logoff,
-} from '../src/lib/firebase.js';
+  logoff,
+} from '../src/lib/firebase-auth.js';
+
+import {
+  deletePost, createPost, updatePost, postById, like, getAllPosts,
+} from '../src/lib/firebase-firestore.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
@@ -16,7 +19,7 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-describe('loginWithGooglen', () => {
+describe('loginWithGoogle', () => {
   it('a função deve permitir que o usuário faça login usando uma conta google', () => {
     loginWithGoogle();
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
@@ -147,7 +150,7 @@ describe('postById', () => {
 describe('like', () => {
   it('a função deve adicionar like no post', async () => {
     const post = {
-    // eslint-disable-next-line func-names
+      // eslint-disable-next-line object-shorthand, func-names
       data: function () {
         const likeArr = {
           like: [],
@@ -170,7 +173,7 @@ describe('like', () => {
 
   it('a função deve remover like no post', async () => {
     const post = {
-      // eslint-disable-next-line func-names
+      // eslint-disable-next-line func-names, object-shorthand
       data: function () {
         const likeArr = {
           like: ['id'],

@@ -1,3 +1,4 @@
+import { errorsFirebase } from '../../lib/error.js';
 import {
   createPost,
   current,
@@ -11,7 +12,7 @@ export default function Feed() {
   <div class="main-div">
   <nav class="top-nav">
   <picture>
-      <img class="logo" src="imagens/logoINspirefeed.png" alt="Logo" />
+      <img class="logo-feed" src="imagens/logoINspirefeed.png" alt="Logo" />
   </picture>
     <a href="#login" id="logout">
        <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
@@ -36,6 +37,7 @@ export default function Feed() {
   const postFeed = feed.querySelector('#post-textarea');
   const postList = feed.querySelector('#box-post');
   const buttonLogout = feed.querySelector('.button-logout');
+  const messageError = feed.querySelector('#error-message');
   const user = current().uid;
 
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
@@ -43,14 +45,19 @@ export default function Feed() {
   // verdadeira o operador retorna uma expressão e se for falsa retorna
   // outra expressão.
 
-  const semReload = () => {
     getAllPosts()
-      .then((posts) => {
-        const postCreated = posts.map((post) => `
+    .then((posts) => {
+      console.log(posts);
+      const postCreated = posts.map((post) => {
+        const iteration = post.user === user ? `  
+        <div class="delete-btn">
+          <p class="delete-post"></p>
+        </div> ` : '';
+        return `
         <li class="allposts" data-id="${post.id}">
           <div class="identification"> 
             <p class="username"><b>${post.displayName}</b></p>
-            <p class="data-post"> Postado em ${post.data} às ${post.hour}H </p>
+            <p class="data-post"> Postado em ${post.data} ${post.hour} </p>
             <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
           </div>
         </li>`).join('');
@@ -64,12 +71,28 @@ export default function Feed() {
     e.preventDefault();
     createPost(postFeed.value)
       .then(() => semReload());
+
+      .then(() => window.location.reload())
+      .catch((error) => {
+        const errorCode = errorsFirebase(error.code);
+        messageError.innerHTML = errorCode;
+        setTimeout(() => {
+          messageError.innerHTML = '';
+        }, 2000);
+      });
   });
 
   buttonLogout.addEventListener('click', (e) => {
     e.preventDefault();
     logout()
-      .then(() => { window.location.hash = 'login'; });
+      .then(() => { window.location.hash = 'login'; })
+      .catch((error) => {
+        const errorCode = errorsFirebase(error.code);
+        messageError.innerHTML = errorCode;
+        setTimeout(() => {
+          messageError.innerHTML = '';
+        }, 2000);
+      });
   });
 
   return feed;

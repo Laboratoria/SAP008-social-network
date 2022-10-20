@@ -5,24 +5,28 @@ import { validateFormRegister } from '../../lib/authenticate.js';
 export default () => {
   const containerRegistration = document.createElement('div');
   const template = `
-    <main class="container-registration">
+  <main class="main">
+      <div class =logo-e-form-register>
+        <div class = 'field-logo-register'>
+          <img class='logo-page-register' src="imagens/logoINspire.png" alt="Logo" />
+        </div>
 
-      <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
+        <div class='register'>
+          <form class = 'form-register'>
+            <p id= 'error-message' class = 'error-message'> </p>
+            <p id= 'message-welcome' class = 'walcome-message'> </p>
+            <input class='input' type='text' name='profile-name' id='input-profile-name'  placeholder='Nome do perfil ' required>
+            <input class='input' type='email' name='email' id='input-email-registration' placeholder='Digite seu email' required>
+            <input class='input' type='password' id='password' placeholder="Senha de 6 dígitos" required>
+          </form>
 
-      <forms class="registration-input">
-        <p id= 'error-message' class = 'error-message'> </p>
-        <p id= 'message-welcome' class = 'walcome-message'> </p>
-        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
-        <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
-        <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>
-      </forms>
-      <button type="button" id="button-registration" class="button">Finalizar cadastro</button>
-      <p class="text">Já possui cadastro?<br><a href="#login" class= "link">Faça seu login</a></p>
-
-
-      <p id= 'error-message' class = 'error-message'> </p>
-  
-    </main>
+          <div class='field-button'>
+            <button type='button' id='button-registration' class='button-register' >Finalizar cadastro</button>
+          </div>
+          <p class="text">Já possui cadastro?<br><a href="#login" class= "link">Faça seu login</a></p>
+        </div>
+      </div>
+  </main>
   
   `;
   containerRegistration.innerHTML = template;
@@ -39,9 +43,6 @@ export default () => {
     const validate = validateFormRegister(nameProfile.value, email.value, password.value);
     if (validate) {
       messageError.innerHTML = validate;
-      setTimeout(() => {
-        messageError.innerHTML = '';
-      }, 2000);
     } else {
       register(email.value, password.value, nameProfile.value)
         .then(() => {
@@ -53,9 +54,6 @@ export default () => {
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
-          setTimeout(() => {
-            messageError.innerHTML = '';
-          }, 2000);
         });
     }
   });

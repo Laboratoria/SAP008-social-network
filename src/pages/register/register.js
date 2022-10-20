@@ -10,7 +10,7 @@ export default () => {
 
       <forms class="registration-input">
         <p id= 'message-welcome' class = 'welcome-message' role='dialog'> </p>
-        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome perfil" required>
+        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Como deseja ser chamado?" required>
         <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
         <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>
       </forms>

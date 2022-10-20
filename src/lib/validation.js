@@ -26,7 +26,9 @@ export function handleFirebaseErrors(errorCode) {
       errorMessage = 'Senha incorreta.';
       return errorMessage;
     default:
-      return '';
+      errorMessage = 'Entre em contato com a assistência e informe o erro ';
+      errorMessage += `${errorCode}`;
+      return errorMessage;
   }
 }
 

@@ -1,4 +1,4 @@
-import { loginEmailPassword, signInGoogle} from '../lib/index.js';
+import { loginEmailPassword, signInGoogle } from '../lib/index.js';
 
 export default () => {
   const container = document.createElement('div');

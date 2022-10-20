@@ -1,32 +1,48 @@
+.contenderRegister {
+    margin: 0;
+    padding: 0;
+    background: #fbfbfb;
+}
+@media (max-wigth: 739px) {
+    
+}
 .navRegister{
-    display: flex;
-    justify-content: space-between;
-    background: #EDDED7;
-}
-.tituloRegister{
-    font-weight: 40;
-    font-size: 1.8rem;
-    color: #000000;
     width: 100%;
+    display: flex;
+    flex-direction:column;
 }
-.register{    
-    background: #EDDED7;
-    display:flex;
-    justify-content: center;
+.btnRegister{
+    width: 2%;
+    height: 47.14px;
+    left: 81.13px;
+    top: 293.85px;
+}
 
+.tituloRegister {
+    height: 60%;
+    font-size: 200%;
+    margin: 0 0 0 20%;
+}
+#voltarRegister{
+    width: 3%;
+    height: 6%;
+    margin:2% 0 0 2%;
 }
 .formRegister{
     background-color: white;
     border-radius: 0.8rem;
     width: 70%;
-    height: 20rem;
+    height: 32rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin: 5% auto;
+    gap:2rem;
     box-shadow: #777777 5px 5px;
 }
 #formRegister{
-    width: 60%;
+    max-width: 800px 740px;
+    left: 160px;
 }
 #formRegister input{
     width: 100%;
@@ -39,7 +55,7 @@
     border-radius: 10px;
     width: 70%;
     height: 1.8rem;
-    background: #3F5494;
+    background: #F4B324;
     color: white;
     border: none;
     cursor: pointer;
@@ -59,22 +75,18 @@
     background-color: #e4e4e4;
     transition: 0.2s;
 }
-#voltarRegister{
-    width: 30%;
-    margin: 5px;
-}
-
 #cookieRegister{
-    width: 50px;
-    padding: 20px;
+    height: 20%;
 }
-.divBtnReturn{
+.retorno-titulo-logo{
     width: 25%;
 }
 .legendaRegister{
+    display: block;
     font-size: 0.9rem;
     color: #777777;
 }
 .boxLegendaInput{
-    margin: 5px
+    margin: 5px;
 }
+

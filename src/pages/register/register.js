@@ -1,5 +1,6 @@
 import { register } from '../../lib/auth.js';
-import { errorsFirebase, validateFormRegister } from '../../lib/error.js';
+import { errorsFirebase } from '../../lib/error.js';
+import { validateFormRegister } from '../../lib/authenticate.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
@@ -9,8 +10,9 @@ export default () => {
       <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
 
       <forms class="registration-input">
-        <p id= 'message-welcome' class = 'welcome-message' role='dialog'> </p>
-        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Como deseja ser chamado?" required>
+        <p id= 'error-message' class = 'error-message'> </p>
+        <p id= 'message-welcome' class = 'walcome-message'> </p>
+        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
         <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
         <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>
       </forms>
@@ -29,16 +31,17 @@ export default () => {
   const email = containerRegistration.querySelector('#input-email-registration');
   const password = containerRegistration.querySelector('#password');
   const btnRegistration = containerRegistration.querySelector('#button-registration');
-  const btnBack = containerRegistration.querySelector('.btn-back');
   const messageError = containerRegistration.querySelector('#error-message');
   const messageWelcome = containerRegistration.querySelector('#message-welcome');
 
   btnRegistration.addEventListener('click', (e) => {
     e.preventDefault();
-    messageError.innerHTML = '';
     const validate = validateFormRegister(nameProfile.value, email.value, password.value);
     if (validate) {
       messageError.innerHTML = validate;
+      setTimeout(() => {
+        messageError.innerHTML = '';
+      }, 2000);
     } else {
       register(email.value, password.value, nameProfile.value)
         .then(() => {
@@ -50,6 +53,9 @@ export default () => {
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
+          setTimeout(() => {
+            messageError.innerHTML = '';
+          }, 2000);
         });
     }
   });

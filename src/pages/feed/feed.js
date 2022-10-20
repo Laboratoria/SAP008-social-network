@@ -28,6 +28,7 @@ export default function Feed() {
       <section class="post-feed">
         <ul id="box-post"></ul>
       </section>
+      <p id= 'error-message' class = 'error-message'> </p>
     `;
 
   const postBtn = feed.querySelector('#post-btn');

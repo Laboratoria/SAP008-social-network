@@ -85,7 +85,6 @@ export default () => {
   function getMovies(url) {
     fetch(url).then((res) => res.json()).then((data) => {
       showMovies(data.results);
-      console.log(data);
     });
   }
   getMovies(API_URL);

@@ -58,21 +58,16 @@ export function resetPassword(email) {
   return sendPasswordResetEmail(auth, email);
 }
 
-export const createPost = async (textPost, category) => {
+export const createPost = (textPost, category) => {
   const auth = getAuth(app);
-  try {
-    const docRef = await addDoc(collection(db, 'post'), {
-      name: auth.currentUser.displayName,
-      author: auth.currentUser.uid,
-      data: new Date().toLocaleDateString(),
-      tag: category,
-      text: textPost,
-      like: [],
-    });
-    return docRef.id;
-  } catch (error) {
-    return error;
-  }
+  return addDoc(collection(db, 'post'), {
+    name: auth.currentUser.displayName,
+    author: auth.currentUser.uid,
+    data: new Date().toLocaleDateString(),
+    tag: category,
+    text: textPost,
+    like: [],
+  });
 };
 
 export const postById = async (idPost) => {

@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.floatButton{
+.floatButton {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -18,85 +18,85 @@
     font-size: 2rem;
 }
 
-.floatButton:hover{
+.floatButton:hover {
     transition-duration: 0.5s;
     background-color: #dd6a0b;
-    transform: scale(0.9) rotate(10deg) 
-    
+    transform: scale(0.9) rotate(10deg)
 }
+
 .floatButton:after {
     border-radius: 4em;
     transition: all 0.5s;
     box-shadow: 0 0 10px 40px rgb(139, 139, 139);
-  }
+}
 
-  @media only screen and (max-width: 538px) and (min-width: 390px) {
-    .floatButton{
+@media only screen and (max-width: 538px) and (min-width: 390px) {
+    .floatButton {
         right: 25px;
         margin-bottom: 18%;
     }
-  }
+}
 
- @media only screen and (max-width: 500px) and (min-width: 400px) {
-    .floatButton{
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .floatButton {
         right: 6px;
         margin-bottom: 19%;
         position: absolute;
     }
-  }
+}
 
-  @media only screen and (max-width: 376px) and (min-width: 360px) {
-    .floatButton{
+@media only screen and (max-width: 376px) and (min-width: 360px) {
+    .floatButton {
         right: 20px;
         margin-bottom: 16%;
     }
-  }
+}
 
-
-  @media only screen and (max-width: 541px) and (min-width: 539px) {
-    .floatButton{
+@media only screen and (max-width: 541px) and (min-width: 539px) {
+    .floatButton {
         right: 20px;
         top: 15.5rem;
     }
-  }
+}
 
-  @media only screen and (max-width: 320px) and (min-width: 279px) {
-    .floatButton{
+@media only screen and (max-width: 320px) and (min-width: 279px) {
+    .floatButton {
         width: 30px;
         height: 30px;
         right: 3px;
         font-size: 1rem;
         bottom: 72%;
     }
-  }
-  @media only screen and (max-width: 1000px) and (min-width: 819px) {
-    .floatButton{
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 819px) {
+    .floatButton {
         right: 20px;
     }
-  } 
-  
-  @media only screen and (max-width: 900px) and (min-width: 768px) {
-    .floatButton{
+}
+
+@media only screen and (max-width: 900px) and (min-width: 768px) {
+    .floatButton {
         right: 20px;
         margin-bottom: 7%;
     }
-  }
+}
 
-  @media only screen and (max-width: 916px) and (min-width: 910px) {
-    .floatButton{
+@media only screen and (max-width: 916px) and (min-width: 910px) {
+    .floatButton {
         right: 20px;
         margin-bottom: 45%;
     }
-  }
+}
 
-  @media only screen and (max-width: 1040px) and (min-width: 1021px) {
-    .floatButton{
+@media only screen and (max-width: 1040px) and (min-width: 1021px) {
+    .floatButton {
         top: 25%;
     }
-  }
+}
 
-  @media only screen and (max-width: 1300px) and (min-width: 1279px) {
-    .floatButton{
+@media only screen and (max-width: 1300px) and (min-width: 1279px) {
+    .floatButton {
         top: 21.5%;
     }
-  }
+}

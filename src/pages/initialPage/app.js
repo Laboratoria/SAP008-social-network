@@ -29,7 +29,6 @@ export default () => {
   </div>
   <div class="divFloatButton"><a href="#addPost"> <button class="floatButton">+</button></a> </div>
     <div class="content">
-     
 
         <p> <a href="#movies"> <span
             style="color:rgb(254, 123, 18 ); font-size:1.5rem; font-weight: bold;">#</span>
@@ -38,12 +37,9 @@ export default () => {
         <p> <a id="text" href="#series"> <span
         style="color:rgb(254, 123, 18); font-size:1.5rem; font-weight: bold;">#</span>
     Melhores séries Vanellen</a></p>
-    
-  
    
     </div>
   </div>
-  
  
   <div class="posts">
     </div>

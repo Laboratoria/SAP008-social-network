@@ -39,9 +39,9 @@ export default () => {
       const postsTemplate = all.map((Posts) => `<div class="posts">
         <div id="text">
           <p>@ ${Posts.name}</p>
-          <p id="local" class="edit-local establishment" contenteditable="false">${Posts.nomeRest}</p>
-          <p id="adress" class="edit-adress" contenteditable="false">${Posts.endRest}</p>
-          <p id="review" class="edit-review" contenteditable="false">${Posts.critica}</p>
+          <p id="local" class="edit-local establishment" contenteditable="false">${Posts.restaurant}</p>
+          <p id="adress" class="edit-adress" contenteditable="false">${Posts.adress}</p>
+          <p id="review" class="edit-review" contenteditable="false">${Posts.review}</p>
         </div>
 
         <button id="cancel">Cancelar</button>

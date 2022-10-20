@@ -36,31 +36,32 @@ export default () => {
     const pMsgPswd = container.querySelector('#msg-error-pswd');
     const pMsgPswdOk = container.querySelector('#msg-error-pswd-ok');
 
+    // eslint-disable-next-line consistent-return
     formRegister.addEventListener('submit', (e) => {
       e.preventDefault();
 
       if (signInPassword.value !== signInConfPassword.value) {
         pMsgPswdOk.innerHTML = 'As senhas devem ser iguais';
-      }
-      if (signInName.value === '' || signInEmail.value === '' || signInPassword.value === '' || signInConfPassword.value === '') {
+      } else if (signInName.value === '' || signInEmail.value === '' || signInPassword.value === '' || signInConfPassword.value === '') {
         pMsgEmail.innerHTML = 'Todos os campos devem ser preenchidos';
+      } else {
+        return newUser(signInEmail.value, signInPassword.value, signInName.value)
+          .then(() => {
+            window.location.hash = '#home';
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+            if (errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
+              pMsgEmail.innerHTML = 'E-mail já cadastrado';
+            }
+            if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
+              pMsgEmail.innerHTML = 'Endereço de e-mail inválido';
+            }
+            if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
+              pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos';
+            }
+          });
       }
-      return newUser(signInEmail.value, signInPassword.value, signInName.value)
-        .then(() => {
-          window.location.hash = '#home';
-        })
-        .catch((error) => {
-          const errorMessage = error.message;
-          if (errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
-            pMsgEmail.innerHTML = 'E-mail já cadastrado';
-          }
-          if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
-            pMsgEmail.innerHTML = 'Endereço de e-mail inválido';
-          }
-          if (errorMessage === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
-            pMsgPswd.innerHTML = 'Sua senha deve ter ao menos 6 dígitos';
-          }
-        });
     });
 
     return container;

@@ -5,7 +5,12 @@ export default () => {
     <div class='body-post-feed'>
       <div class='main-post-feed'>
         <div class='photo-name-post-feed'>
-          <div>foto pessoa</div>
+        
+        <label class="picture" for="picture__input" tabIndex="0">
+         <span class="picture__image"></span>
+        </label>
+          <input type='file' name='picture_input' id='picture_input'>
+
           <div class='name-post-feed'>Nome Sobrenome</div>
         </div> 
         <div class='content-post-feed'>

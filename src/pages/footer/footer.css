@@ -20,23 +20,35 @@
   .footer-nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 5rem;
+    justify-content: space-around;
+    width: 100vw;
+    height: 68px;
   
     /* margin-top: 40vh; */
   }
   
   .footer-icon {
     display: block;
-    width: -3rem;
-    height: -3rem;
     position: relative;
     text-align: center;
+    width: 2rem;
+    height: 2rem;
+  }
+  .footer-icon ion-icon {
+    width: 40px;
+    height: 40px;
   }
   
   .footer-list {
     font-weight: bold;
   }
+  .desk-all {
+  background: #e9e9e9;
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+}
   
   @media screen and (min-width: 1024px) {
     .menu-icon {

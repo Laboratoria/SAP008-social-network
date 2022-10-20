@@ -187,5 +187,11 @@
     position: relative;
     top: -2rem;
     right: 1.5rem;
+    cursor: pointer;
 
+}
+
+#erro {
+    color: red;
+    margin-top: 1rem;
 }

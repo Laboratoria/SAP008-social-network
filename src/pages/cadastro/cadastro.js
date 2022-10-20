@@ -1,4 +1,5 @@
 import { createUser } from '../../firebase/auth.js';
+import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
@@ -6,7 +7,7 @@ export default () => {
     <div class='body-cadastro'>
       <header class='header-cadastro'>
         <picture>
-          <img src='pages/cadastro/icone.png' alt='icone' class='icone'>
+          <img src='pages/cadastro/icone.png' alt='icone' class='icone' id='icone'>
           <img src='pages/cadastro/logo.png' alt='logo' class='logo'>
         </picture>
         <h1>Cadastre-se</h1>
@@ -42,8 +43,9 @@ export default () => {
           <div class='formCadastroInput'>
            <div class='checkBoxRegistration'>
               <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
-              <label for='checkBoxRegistration'>Concordo com os <a href='#'>termos de uso</a></label>
+              <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse' id='terms'>termos de uso</a></label>
            </div>
+           <p id='erro'></p>
           </div>
           <div class='formCadastroInput'>
             <div class='submitCadastro'>
@@ -59,6 +61,8 @@ export default () => {
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();
+    const errorMessage = containerRegistration.querySelector('#erro');
+    const completeName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
     const emailRegistration = containerRegistration.querySelector('#emailRegistration').value;
@@ -83,20 +87,20 @@ export default () => {
     if (
       registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
       alert('formulario validado');
-      createUser(emailRegistration, registrationPassword)
+      createUser(completeName, emailRegistration, registrationPassword)
         .then(() => {
-        // Signed in
-        // const user = userCredential.user;
-        // ...
-          alert('conta criada');
+          console.log('conta criada');
         })
         .catch((error) => {
-        // const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          alert(errorMessage);
+          errorMessage.innerHTML = errorMessages(error);
         });
     }
   });
+
+  const icone = containerRegistration.querySelector('#icone');
+  icone.addEventListener('click', () => {
+    window.location.hash = '#login';
+  });
+
   return containerRegistration;
 };

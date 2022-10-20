@@ -9,7 +9,6 @@ export default () => {
 
          <form class="form">
             <div class="logoCookieLogin">
-            <img src="img/cookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
             <h2 class="frase-login">COOKIE</h2>
             </div>
 

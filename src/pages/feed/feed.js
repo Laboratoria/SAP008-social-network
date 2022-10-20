@@ -21,7 +21,7 @@ export default function Feed() {
         <section id="post" class="post">
         <div class="post-box">
           <textarea class="post-textarea" id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
-          <button type="submit" id="post-btn" class="post-btn">Publicar</button>
+          <button id="post-btn" class="post-btn">Publicar</button>
         </div>
       </section>
 
@@ -43,30 +43,27 @@ export default function Feed() {
   // verdadeira o operador retorna uma expressão e se for falsa retorna
   // outra expressão.
 
-  getAllPosts()
-    .then((posts) => {
-      const postCreated = posts.map((post) => {
-        const iteration = post.user === user ? `  
-        <div class="delete-btn">
-          <p class="delete-post"></p>
-        </div> ` : '';
-        return `
+  const semReload = () => {
+    getAllPosts()
+      .then((posts) => {
+        const postCreated = posts.map((post) => `
         <li class="allposts" data-id="${post.id}">
           <div class="identification"> 
             <p class="username"><b>${post.displayName}</b></p>
             <p class="data-post"> Postado em ${post.data} às ${post.hour}H </p>
             <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
           </div>
-        </li>`;
-      }).join('');
-      postList.innerHTML = postCreated;
-    });
+        </li>`).join('');
+        postList.innerHTML = postCreated;
+      });
+  };
+
+  semReload();
 
   postBtn.addEventListener('click', (e) => {
-    modalPost.style.display = 'none';
     e.preventDefault();
     createPost(postFeed.value)
-      .then(() => window.location.reload());
+      .then(() => semReload());
   });
 
   buttonLogout.addEventListener('click', (e) => {

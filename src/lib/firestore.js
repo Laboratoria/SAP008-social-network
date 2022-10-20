@@ -11,7 +11,6 @@ import { auth, db } from './config.js';
 export const current = () => auth.currentUser;
 
 export const createPost = (postText) => addDoc(collection(db, 'post'), {
-  photo: current().photoURL,
   displayName: current().displayName,
   email: current().email,
   data: new Date().toLocaleDateString('pt-BR'),

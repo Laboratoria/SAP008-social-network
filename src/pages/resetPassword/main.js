@@ -1,6 +1,6 @@
 import {
   resetPassword,
-} from '../../lib/index.js';
+} from '../../lib/firebase-auth.js';
 
 import {
   handleFirebaseErrors,

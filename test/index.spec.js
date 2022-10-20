@@ -1,30 +1,33 @@
-/* eslint-disable object-shorthand */
 import {
   loginWithGoogle, loginWithEmailAndPassword, registerWithEmailAndPassword,
-  deletePost, createPost, updatePost, postById, like, getAllPosts, logoff,
-} from '../src/lib/index.js';
+  logoff,
+} from '../src/lib/firebase-auth.js';
+
+import {
+  deletePost, createPost, updatePost, postById, like, getAllPosts,
+} from '../src/lib/firebase-firestore.js';
 
 import {
   signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   getAuth, updateProfile, deleteDoc, doc, addDoc, updateDoc,
   getDoc, getDocs, signOut,
-} from '../src/lib/firebase.js';
+} from '../src/lib/exports.js';
 
-jest.mock('../src/lib/firebase.js');
+jest.mock('../src/lib/exports.js');
 
 beforeEach(() => {
   jest.clearAllMocks();
 });
 
-describe('loginWithGooglen', () => {
-  it('a função deve ser chamada uma vez', () => {
+describe('loginWithGoogle', () => {
+  it('a função deve permitir que o usuário faça login usando uma conta google', () => {
     loginWithGoogle();
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
   });
 });
 
 describe('loginWithEmailAndPassword', () => {
-  it('a função deve ser chamada uma vez', () => {
+  it('a função deve permitir que o usuário faça login usando email e senha já cadastrados', () => {
     const email = 'peba@demais.com';
     const password = 'pebademais';
     loginWithEmailAndPassword(email, password);
@@ -39,7 +42,7 @@ describe('loginWithEmailAndPassword', () => {
 });
 
 describe('registerWithEmailAndPassword', () => {
-  it('a função deve ser chamada uma vez', async () => {
+  it('a função deve registrar o usuário por email e senha e atribuir um nome pra esse usuário', async () => {
     const mockGetAuth = {
       currentUser: {},
     };
@@ -147,7 +150,7 @@ describe('postById', () => {
 describe('like', () => {
   it('a função deve adicionar like no post', async () => {
     const post = {
-    // eslint-disable-next-line func-names
+      // eslint-disable-next-line object-shorthand, func-names
       data: function () {
         const likeArr = {
           like: [],
@@ -170,7 +173,7 @@ describe('like', () => {
 
   it('a função deve remover like no post', async () => {
     const post = {
-      // eslint-disable-next-line func-names
+      // eslint-disable-next-line func-names, object-shorthand
       data: function () {
         const likeArr = {
           like: ['id'],

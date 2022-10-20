@@ -18,7 +18,7 @@
 
 Social Network foi o terceiro projeto desenvolvido durante o bootcamp da turma SAP008 da Laboratória, no qual tivemos como principal objetivo a criação de uma rede social, devendo ser uma Single Page Application, através da qual fosse possível que os usuários se cadastrassem; fizessem  login; publicassem, editassem, deletassem e dessem likes em posts. 
 
-O projeto foi desenvolvido em trio, por Clarissa, Fabiany e Joyce, dentro de x sprints. E as principais ferramentas utilizadas durante o processo foram: Notion, para o planning das sprints; Figma, para o processo de prototipação de alta fidelidade; Metroretro para as sessões de retrospectiva das sprints; Miro, para a escrita das histórias de usuários; Canva, para elementos de identidade visual (logo e mosaico de vídeos). 
+O projeto foi desenvolvido em trio, por Clarissa, Fabiany e Joyce, dentro de 6 sprints. E as principais ferramentas utilizadas durante o processo foram: Notion, para o planning das sprints; Figma, para o processo de prototipação de alta fidelidade; Metroretro para as sessões de retrospectiva das sprints; Miro, para a escrita das histórias de usuários; Canva, para elementos de identidade visual (logo e mosaico de vídeos). 
 
 Além disso, utilizamos o conjunto de serviços de hospedagem Firebase. Para manipularmos a parte de backend da aplicação, utilizamos os serviços Firebase Authentication - para fazer o processo de autenticação de usuários, e o Cloud Firestore - para a criação e manutenção do nosso banco de dados. 
 
@@ -96,7 +96,7 @@ Pensamos nos protótipos com base nas histórias de usuário...
 
 ## 5. Estrutura e funcionalidades da SPA
 
-A aplicação foi desenvolvida como uma Single Page Application (SPA), utilizando routing em hashtags. Sendo assim, foi dividida nas seções:
+A aplicação foi desenvolvida como uma Single Page Application (SPA), utilizando routing. Sendo assim, foi dividida nas seções:
 
 ***#Homepage*** - PÁGINA INICIAL:
 É a página principal do site, através da qual as usuárias iniciam navegação, podendo ser direcionadas a outras seções da aplicação (as páginas de about, login e cadastro).
@@ -108,12 +108,19 @@ Página que contextualiza a rede social, explicando sua definição e proposta.
 Nossas usuárias podem se cadastrar e entrar utilizando o método de login do Google, ou utilizando e-mail e senha. As usuárias recebem mensagens de apoio para realizar a etapa de registro e login, com validação de form.
 
 ***#reset-password*** - REDEFINIÇÃO DE SENHA:
-Página para as usuárias recuperarem acesso a suas contas caso esqueçam a senha - após preencher o form sinalizando o e-mail cadastrado, elas recebem um e-mail com link para redefinir a senha. 
+Página para as usuárias recuperarem acesso a suas contas caso esqueçam a senha - após preenchimento do form sinalizando o e-mail cadastrado, elas recebem um e-mail com link para redefinir a senha. 
 
 ***#feed*** - FEED:
-Página na qual nossas usuárias poderão publicar posts, categorizar seus posts para serem exibidos conforme a categoria selecionada, editar e deletar os próprios posts, além de dar like em e pesquisar por posts de outras usuárias, e exibir apenas posts que correspondam a determinada categoria, através de um sistema de filtros. 
+Página na qual nossas usuárias poderão publicar posts, categorizar seus posts para serem exibidos conforme a categoria selecionada, editar e deletar os próprios posts, além de dar like em posts de outras usuárias, e exibir apenas posts que correspondam a determinada categoria, através de um sistema de filtros. 
 
 ## 6. Testes unitários e Testes assíncronos
+
+Os testes desse projeto foram desenvolvidos pra verificar a quantidade de chamada das funções do firebase e com quais parâmetros essas funções são chamadas.
+
+Rebu foi nossa primeira experiência com mock de função. Usamos o framework Jest.
+
+ ![Testes](./src/img/print_testes.png)
+
 
 ## 7. Ferramentas e Tech Skills
 
@@ -128,5 +135,3 @@ Página na qual nossas usuárias poderão publicar posts, categorizar seus posts
 - Responsividade;
 - Jest;
 - Firebase.
-
-## 8. Considerações finais

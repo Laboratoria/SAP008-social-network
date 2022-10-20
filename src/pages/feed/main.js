@@ -234,8 +234,7 @@ export default () => {
       nullPostMessage.classList.remove('hide');
     } else {
       createPost(textPost.value, selectTags.value)
-        .then((abc) => {
-          console.log(abc);
+        .then(() => {
           nullPostMessage.classList.add('hide');
           postForm.reset();
           printPosts('allposts');

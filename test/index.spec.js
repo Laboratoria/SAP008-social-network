@@ -63,6 +63,13 @@ describe('registerWithEmailAndPassword', () => {
   });
 });
 
+describe('logoff', () => {
+  it('a função deve deslogar o usuário', async () => {
+    logoff();
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});
+
 describe('deletePost', () => {
   it('a função deve deletar post de id abcdefghi', async () => {
     const mockRef = {};
@@ -205,12 +212,5 @@ describe('getAllPosts', () => {
 
     expect(getDocs).toHaveBeenCalledTimes(1);
     expect(getDocs).toHaveBeenCalledWith(undefined);
-  });
-});
-
-describe('logoff', () => {
-  it('a função deve deslogar o usuário', async () => {
-    logoff();
-    expect(signOut).toHaveBeenCalledTimes(1);
   });
 });

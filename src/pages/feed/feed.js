@@ -1,5 +1,10 @@
-// import { errorsFirebaseFirestore } from '../../lib/error.js';
-import { createPost, current, getAllPosts } from '../../lib/firestore.js';
+import { errorsFirebase } from '../../lib/error.js';
+import {
+  createPost,
+  current,
+  getAllPosts,
+  logout,
+} from '../../lib/firestore.js';
 
 export default function Feed() {
   const feed = document.createElement('div');
@@ -7,7 +12,11 @@ export default function Feed() {
   <div class="main-div">
   <nav class="top-nav">
   <picture>
-      <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
+      <img class="logo-feed" src="imagens/logoINspirefeed.png" alt="Logo" />
+  </picture>
+    <a href="#login" id="logout">
+       <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
+    </a> 
   </picture>
   </nav>
         <section id="post" class="post">
@@ -27,7 +36,8 @@ export default function Feed() {
   const modalPost = feed.querySelector('#post');
   const postFeed = feed.querySelector('#post-textarea');
   const postList = feed.querySelector('#box-post');
-  // const messageError = feed.querySelector('#error-message');
+  const buttonLogout = feed.querySelector('.button-logout');
+  const messageError = feed.querySelector('#error-message');
   const user = current().uid;
 
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
@@ -37,6 +47,7 @@ export default function Feed() {
 
   getAllPosts()
     .then((posts) => {
+      console.log(posts);
       const postCreated = posts.map((post) => {
         const iteration = post.user === user ? `  
         <div class="delete-btn">
@@ -46,7 +57,7 @@ export default function Feed() {
         <li class="allposts" data-id="${post.id}">
           <div class="identification"> 
             <p class="username"><b>${post.displayName}</b></p>
-            <p class="data-post"> Postado em ${post.data} às ${post.hour}H </p>
+            <p class="data-post"> Postado em ${post.data} ${post.hour} </p>
             <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
           </div>
         </li>`;
@@ -58,12 +69,28 @@ export default function Feed() {
     modalPost.style.display = 'none';
     e.preventDefault();
     createPost(postFeed.value)
-      .then(() => window.location.reload());
+      .then(() => window.location.reload())
+      .catch((error) => {
+        const errorCode = errorsFirebase(error.code);
+        messageError.innerHTML = errorCode;
+        setTimeout(() => {
+          messageError.innerHTML = '';
+        }, 2000);
+      });
   });
-  // .catch((error) => {
-  //   const errorCode = errorsFirebaseFirestore(error.code);
-  //   messageError.innerHTML = errorCode;
-  // });
+
+  buttonLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout()
+      .then(() => { window.location.hash = 'login'; })
+      .catch((error) => {
+        const errorCode = errorsFirebase(error.code);
+        messageError.innerHTML = errorCode;
+        setTimeout(() => {
+          messageError.innerHTML = '';
+        }, 2000);
+      });
+  });
 
   return feed;
 }

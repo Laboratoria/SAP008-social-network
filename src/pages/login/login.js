@@ -9,29 +9,25 @@ export default function Login() {
       <main class="main">
         <div class =logo-e-form>
           <div class = 'field-logo'>
-          <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
+            <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
           </div>
     
           <form class="login-form">
-          <p id= 'error-message' class = 'error-message'></p>
-          <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
-          <input class="login-input password" type="password" placeholder="Senha" required>
+            <p id= 'error-message' class = 'error-message'></p>
+            <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
+            <input class="login-input password" type="password" placeholder="Senha" required>
           
-          <div class="signin">
-          <button id="signin-button" class="signin-button btn">ENTRAR</button>
-          <button id="google-button" class="google-button btn">
-          <img class="google-icon-btn" src="imagens/btngoogle.png" alt="Logo do Google"/>LOGAR COM O GOOGLE</button>        
-          </div>  
-          
-          <div>
-          <button id="forgot-password" class="signup-button btn"> Esqueceu sua senha?</button>
-          
-          <div>
-          <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
-          <a href="/#register">Cadastre-se</a>
+            <div class="signin">
+              <button id="signin-button" class="signin-button btn">ENTRAR</button>
+              <button id="google-button" class="google-button btn">
+              <img class="google-icon-btn" src="imagens/btngoogle.png" alt="Logo do Google"/>LOGAR COM O GOOGLE</button>        
+            </div>  
+            <div>
+              <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
+              <a href="/#register">Cadastre-se</a>
+            </button>
           </div>
           </form>
-          <footer class ='footer'> Andressa Oliveira & Juliene Araújo
         </div>
       </main>
       `;
@@ -47,21 +43,14 @@ export default function Login() {
     const validate = validateFormlogin(email.value, password.value);
     if (validate) {
       messageError.innerHTML = validate;
-      setTimeout(() => {
-        messageError.innerHTML = '';
-      }, 2000);
     } else {
       signIn(email.value, password.value)
-        .then((result) => {
-          console.log(result);
+        .then(() => {
           window.location.hash = '#feed';
         })
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
-          setTimeout(() => {
-            messageError.innerHTML = '';
-          }, 2000);
         });
     }
   });

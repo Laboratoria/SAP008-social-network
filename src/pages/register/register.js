@@ -23,7 +23,7 @@ export default () => {
           <div class='field-button'>
             <button type='button' id='button-registration' class='button-register' >Finalizar cadastro</button>
           </div>
-          
+          <p class="text">Já possui cadastro?<br><a href="#login" class= "link">Faça seu login</a></p>
         </div>
       </div>
   </main>
@@ -38,15 +38,11 @@ export default () => {
   const messageError = containerRegistration.querySelector('#error-message');
   const messageWelcome = containerRegistration.querySelector('#message-welcome');
 
-
   btnRegistration.addEventListener('click', (e) => {
     e.preventDefault();
     const validate = validateFormRegister(nameProfile.value, email.value, password.value);
     if (validate) {
       messageError.innerHTML = validate;
-      setTimeout(() => {
-        messageError.innerHTML = '';
-      }, 2000);
     } else {
       register(email.value, password.value, nameProfile.value)
         .then(() => {
@@ -58,9 +54,6 @@ export default () => {
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
-          setTimeout(() => {
-            messageError.innerHTML = '';
-          }, 2000);
         });
     }
   });

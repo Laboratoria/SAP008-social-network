@@ -6,6 +6,7 @@ import {
   orderBy,
   doc,
   deleteDoc,
+  onAuthStateChanged,
 } from './export.js';
 import { auth, db } from './config.js';
 
@@ -36,10 +37,21 @@ export async function getAllPosts() {
     const post = {
       id,
       ...data,
-    }
+    };
     return post;
   });
   return listPost;
+}
+
+export const logout = () => {
+  const logoutUser = auth.signOut();
+  return logoutUser;
+};
+
+export function stayLoggedIn(callback) {
+  return onAuthStateChanged(auth, (user) => {
+    callback(user !== null);
+  });
 }
 
 export const postDelete = async (postId) => {

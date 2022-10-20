@@ -119,6 +119,7 @@ body {
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;
     margin-left: 1%;
+    margin-top: 1%;
 }
 
 .picture-image {
@@ -140,7 +141,7 @@ body {
     height: 3.2vh;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
-    margin-left: 1%;
+    margin-left: 1.5%;
     font-weight: 600;
     color: rgb(23, 21, 21);
     background-color: #F8F8F8;
@@ -150,7 +151,7 @@ body {
 .about-movies textarea {
     width: 16vw;
     min-height: 5.8rem;
-    margin-left: 1%;
+    margin-left: 1.5%;
     font-family: 'Ubuntu', sans-serif;
     color: rgb(23, 21, 21);
     font-weight: 400;

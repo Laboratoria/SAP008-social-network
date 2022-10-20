@@ -70,6 +70,13 @@ export default () => {
 
   returnBtn.addEventListener('click', () => window.history.back());
 
+  function handleErrors(error) {
+    const userFriendlyMessage = handleFirebaseErrors(error.code);
+    firebaseWarningMessages.classList.remove('hide');
+    formValidationMessages.classList.add('hide');
+    firebaseWarningMessages.innerHTML = userFriendlyMessage;
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const formValidation = validateRegisterForm(
@@ -87,10 +94,7 @@ export default () => {
           window.location.hash = '#feed';
         })
         .catch((error) => {
-          const userFriendlyMessage = handleFirebaseErrors(error.code);
-          firebaseWarningMessages.classList.remove('hide');
-          formValidationMessages.classList.add('hide');
-          firebaseWarningMessages.innerHTML = userFriendlyMessage;
+          handleErrors(error);
         });
     }
   });
@@ -100,7 +104,9 @@ export default () => {
       .then(() => {
         window.location.hash = '#feed';
       })
-      .catch((error) => error);
+      .catch((error) => {
+        handleErrors(error);
+      });
   });
   return registerContainer;
 };

@@ -7,15 +7,13 @@
     width: 50px;
     height: 50px;
     position: absolute;
-    right: 25px;
-    z-index: 999;
-    bottom: 28rem;
+    right: 10%;
+    margin-top: 1.5%;
     cursor: pointer;
     background-color: rgb(144, 5, 5);
     border: 1px solid rgb(193, 186, 186);
     transition-duration: 0.4s;
     border-radius: 50%;
-    font-size: 0.8rem;
     color: aliceblue;
     font-size: 2rem;
 }
@@ -32,101 +30,74 @@
     box-shadow: 0 0 10px 40px rgb(139, 139, 139);
   }
 
-
   @media only screen and (max-width: 538px) and (min-width: 390px) {
     .floatButton{
         right: 25px;
-        margin-bottom: 10.5rem;
+        margin-bottom: 18%;
         font-size: 2rem;
     }
-
   }
-
 
  @media only screen and (max-width: 500px) and (min-width: 400px) {
     .floatButton{
         right: 6px;
-        margin-bottom: 13rem;
-        font-size: 2rem;
+        margin-bottom: 19%;
         position: absolute;
     }
   }
 
-  @media only screen and (max-width: 365px) and (min-width: 360px) {
+  @media only screen and (max-width: 376px) and (min-width: 360px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
         right: 20px;
-        margin-bottom: 5rem;
-        font-size: 2rem;
+        margin-bottom: 16%;
     }
   }
 
 
   @media only screen and (max-width: 541px) and (min-width: 539px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
         right: 20px;
         top: 15.5rem;
-        font-size: 2rem;
     }
   }
 
   @media only screen and (max-width: 320px) and (min-width: 279px) {
     .floatButton{
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         right: 3px;
-        font-size: 5px;
-        margin-bottom: 1rem;
-        font-size: 2rem;
+        font-size: 1rem;
+        bottom: 72%;
     }
   }
   @media only screen and (max-width: 1000px) and (min-width: 819px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
         right: 20px;
-        bottom: 37rem;
-        font-size: 2rem;
     }
   } 
   
   @media only screen and (max-width: 900px) and (min-width: 768px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
         right: 20px;
-        margin-bottom: 16rem;
-        font-size: 2rem;
+        margin-bottom: 7%;
     }
   }
 
   @media only screen and (max-width: 916px) and (min-width: 910px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
         right: 20px;
-        margin-bottom: 25rem;
-        font-size: 2rem;
+        margin-bottom: 45%;
     }
   }
 
   @media only screen and (max-width: 1040px) and (min-width: 1021px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
-        top: 10rem;
-        font-size: 2rem;
+        top: 25%;
     }
   }
 
   @media only screen and (max-width: 1300px) and (min-width: 1279px) {
     .floatButton{
-        width: 40px;
-        height: 40px;
-        top: 12rem;
-        font-size: 2rem;
+        top: 21.5%;
     }
   }

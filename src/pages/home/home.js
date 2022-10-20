@@ -70,7 +70,8 @@ export default () => {
         redirectFeed();
       })
       .catch((error) => {
-        alert('Algo deu errado', error);
+        const errorCode = errorFire(error.code);
+        msgFire.innerHTML = errorCode;
       });
   });
   return container;

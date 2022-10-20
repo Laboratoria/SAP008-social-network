@@ -7,30 +7,32 @@ export default function Login() {
   login.classList.add('login-main');
   login.innerHTML = `   
       <main class="main">
-                  
+        <div class =logo-e-form>
+          <div class = 'field-logo'>
           <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
-        
-              
-        <form class="login-form">
+          </div>
+    
+          <form class="login-form">
           <p id= 'error-message' class = 'error-message'> </p>
           <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
           <input class="login-input password" type="password" placeholder="Senha" required>
-        </form>
-  
-        <div class="signin">
+          
+          <div class="signin">
           <button id="signin-button" class="signin-button btn">ENTRAR</button>
           <button id="google-button" class="google-button btn">
           <img class="google-icon-btn" src="imagens/btngoogle.png" alt="Logo do Google"/>LOGAR COM O GOOGLE</button>        
-        </div>  
-
-      <div>
-        <button id="forgot-password" class="signup-button btn"> Esqueceu sua senha?</button>
-
-        <div>
+          </div>  
+          
+          <div>
+          <button id="forgot-password" class="signup-button btn"> Esqueceu sua senha?</button>
+          
+          <div>
           <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
           <a href="/#register">Cadastre-se</a>
+          </div>
+          </form>
+          <footer class ='footer'> Andressa Oliveira & Juliene Araújo
         </div>
-        <footer> Andressa Oliveira & Juliene Araújo
       </main>
       `;
 

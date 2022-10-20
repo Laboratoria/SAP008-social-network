@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0; 
+}
+.content{        
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.logoCookieLogin{
+    width: 100%;
+    display:flex;
+    justify-content:space-evenly;
+    margin: 5%;
+    margin-left: 15%;
+}
+.frase-login{
+    font-size: 3rem;
+    font-family: IM FELL English SC;
+}
+.form-login{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.8rem;
+    width: 120%;
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:2rem;
+    box-shadow: #afafaf 3px 3px;
+
+}
+.form-cx{
+    width: 80%;
+}
+.form-cx input{
+    width: 100%;
+    height: 1.6rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 0.rem;
+}
+.form-botaoentrar{
+    width: 40%;
+}
+.form-botaoentrar input{
+    border-radius: 15px;
+    width: 105%;  
+    height: 1.6rem;
+    background: #f4b324;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;  
+}
+.form-botaoentrar :hover {
+    background: #3F5494;
+    transition: 0.1s;
+}
+.linha-ou{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+}
+.linha{
+    width: 5rem;
+    height: 1%;
+    background-color: black;
+}
+.form-google{
+    background-color: #C71610;
+    border-radius: 2rem;
+    padding: 0.3rem;
+}
+.google{
+    color: white;
+    text-decoration: none;
+    margin: 0 0.7rem;
+}
+.google i{
+    margin-right: 1rem;
+}
+
+    
+

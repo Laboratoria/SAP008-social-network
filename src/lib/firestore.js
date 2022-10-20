@@ -4,6 +4,7 @@ import {
   getDocs,
   query,
   orderBy,
+  onAuthStateChanged,
 } from './export.js';
 import { auth, db } from './config.js';
 
@@ -36,4 +37,15 @@ export async function getAllPosts() {
     return post;
   });
   return listPost;
+}
+
+export const logout = () => {
+  const logoutUser = auth.signOut();
+  return logoutUser;
+};
+
+export function stayLoggedIn(callback) {
+  return onAuthStateChanged(auth, (user) => {
+    callback(user !== null);
+  });
 }

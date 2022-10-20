@@ -1,7 +1,7 @@
 import {
   loginWithEmailAndPassword,
   loginWithGoogle,
-} from '../../lib/firebase.js';
+} from '../../lib/firebase-auth.js';
 
 import {
   handleFirebaseErrors,
@@ -38,7 +38,7 @@ export default () => {
         <p id="firebase-warning-messages" class="form-warning-messages hide"></p>
 
         <a href="#resetPassword" class="password-reset-login">ESQUECEU SUA SENHA? CLIQUE AQUI</a>
-  
+
         <button id="btn-login-page" class="btn-login">ENTRAR</button>
   
         <a href="#register" class="link-text-login">NÃO POSSUI UMA CONTA? CADASTRE-SE!</a>

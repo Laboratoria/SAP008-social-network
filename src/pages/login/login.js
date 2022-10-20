@@ -1,5 +1,6 @@
 import { signIn, signInGoogle } from '../../lib/auth.js';
-import { errorsFirebase, validateFormlogin } from '../../lib/error.js';
+import { errorsFirebase } from '../../lib/error.js';
+import { validateFormlogin } from '../../lib/authenticate.js';
 
 export default function Login() {
   const login = document.createElement('div');
@@ -44,6 +45,9 @@ export default function Login() {
     const validate = validateFormlogin(email.value, password.value);
     if (validate) {
       messageError.innerHTML = validate;
+      setTimeout(() => {
+        messageError.innerHTML = '';
+      }, 2000);
     } else {
       signIn(email.value, password.value)
         .then((result) => {
@@ -53,6 +57,9 @@ export default function Login() {
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
+          setTimeout(() => {
+            messageError.innerHTML = '';
+          }, 2000);
         });
     }
   });

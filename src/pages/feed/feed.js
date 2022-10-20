@@ -1,3 +1,4 @@
+// import { errorsFirebaseFirestore } from '../../lib/error.js';
 import { createPost, current, getAllPosts } from '../../lib/firestore.js';
 
 export default function Feed() {
@@ -19,12 +20,14 @@ export default function Feed() {
       <section class="post-feed">
         <ul id="box-post"></ul>
       </section>
+      <p id= 'error-message' class = 'error-message'> </p>
     `;
 
   const postBtn = feed.querySelector('#post-btn');
   const modalPost = feed.querySelector('#post');
   const postFeed = feed.querySelector('#post-textarea');
   const postList = feed.querySelector('#box-post');
+  // const messageError = feed.querySelector('#error-message');
   const user = current().uid;
 
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
@@ -57,5 +60,10 @@ export default function Feed() {
     createPost(postFeed.value)
       .then(() => window.location.reload());
   });
+  // .catch((error) => {
+  //   const errorCode = errorsFirebaseFirestore(error.code);
+  //   messageError.innerHTML = errorCode;
+  // });
+
   return feed;
 }

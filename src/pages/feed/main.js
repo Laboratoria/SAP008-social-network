@@ -10,6 +10,8 @@ import {
 
 import { app } from '../../lib/configuration.js';
 
+import { handleFirebaseErrors } from '../../lib/validation.js';
+
 const auth = getAuth(app);
 
 export default () => {
@@ -169,10 +171,15 @@ export default () => {
         confirmEditBtn.classList.remove('hide');
 
         confirmEditBtn.addEventListener('click', async () => {
-          await updatePost(postToBeEdited, postTxtarea.value);
-          postTxtarea.setAttribute('disabled', '');
-          confirmEditBtn.classList.add('hide');
-          printPosts('allposts');
+          try {
+            await updatePost(postToBeEdited, postTxtarea.value);
+            postTxtarea.setAttribute('disabled', '');
+            confirmEditBtn.classList.add('hide');
+            printPosts('allposts');
+          } catch (error) {
+            nullPostMessage.classList.remove('hide');
+            nullPostMessage.textContent = handleFirebaseErrors(error);
+          }
         });
       });
     });
@@ -195,6 +202,10 @@ export default () => {
         .then(() => {
           toggle();
           window.location.reload();
+        })
+        .catch((error) => {
+          nullPostMessage.classList.remove('hide');
+          nullPostMessage.textContent = handleFirebaseErrors(error);
         });
     });
 
@@ -223,10 +234,15 @@ export default () => {
       nullPostMessage.classList.remove('hide');
     } else {
       createPost(textPost.value, selectTags.value)
-        .then(() => {
+        .then((abc) => {
+          console.log(abc);
           nullPostMessage.classList.add('hide');
           postForm.reset();
           printPosts('allposts');
+        })
+        .catch((error) => {
+          nullPostMessage.classList.remove('hide');
+          nullPostMessage.textContent = handleFirebaseErrors(error);
         });
     }
   });

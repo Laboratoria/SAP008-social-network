@@ -1,5 +1,6 @@
 /* estilização da página principal do container */
-.container-registration {
+
+.main{
   display: inline-flex;
   align-items: center;
   flex-direction: column;
@@ -7,53 +8,85 @@
   height: 100%;
 }
 
-/* logo inspire */
-.logo{
+.field-logo-register{
+  text-align: center;
+} 
+
+.logo {
   margin-top: 2%;
   width: 35%;
-  align-items: center;
-  justify-items: center;
 }
 
-/* estilização dos campos do nome, email e senha os campos de imput*/
-.registration-input {
+.form-register{
   display: flex;
-  align-items: center;
   flex-direction: column;
-  width: 250%;
-  margin:10px;
+  margin-top: 3%;
+  
+}
+.register{
+  text-align: center;
+  margin-top: 3%;
+  display: block;
 
 }
-
-/* inputs de email, nome e senha */
 
 .input {
-  width: 250px;
-  height: 30px;
+  width: 240px;
+  height: 40px;
   border: none;
   font-size: 14px;
-  padding: 2%;
+  padding: 3%;
   border-radius: 10px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: white;
-  margin: 1% 0;
-}
-
-.button {
-  background-color: #49AAD7;
-  color: aliceblue;
-  width: 200px;
-  height: 40px;
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
   margin: 3% 0;
-
 }
 
-.text {
+.field-button{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.button-register{
+  background: #49AAD7;
+  color: aliceblue;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+  font-size: 15px;
+  font-weight: 60px;
+  width: 60%;
+  height: 40px;
+  margin-top: 4%;
+  border: none;
+  cursor: pointer;
+  
+}
+
+ @media screen and (min-width: 1024px) {
+
+  .register{
+    margin-bottom: 10%; 
+    display: block;
+    
+  }
+  .field-logo-register{
+    margin-right: 20%;
+  } 
+  
+
+  .logo-e-form-register{
+    display: inline-flex;
+  } 
+
+  .logo-page-register {
+    margin-top: 25%;
+    margin-right: 9vw;
+    width: 120%;
+    
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+};

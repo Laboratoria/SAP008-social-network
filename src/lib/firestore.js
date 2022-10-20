@@ -4,6 +4,8 @@ import {
   getDocs,
   query,
   orderBy,
+  doc,
+  deleteDoc,
 } from './export.js';
 import { auth, db } from './config.js';
 
@@ -28,12 +30,25 @@ export async function getAllPosts() {
   const postSnapshot = await getDocs(collPost);
   const listPost = postSnapshot.docs.map((docColl) => {
     const id = docColl.id;
+    console.log(id);
     const data = docColl.data();
+    console.log(data);
     const post = {
       id,
       ...data,
-    };
+    }
     return post;
   });
   return listPost;
 }
+
+export const postDelete = async (postId) => {
+  try {
+    const docRef = doc(db, 'post', postId);
+    console.log(docRef);
+    await deleteDoc(docRef);
+    return docRef.id;
+  } catch (error) {
+    return error;
+  }
+};

@@ -13,7 +13,7 @@ export default function Login() {
           </div>
     
           <form class="login-form">
-          <p id= 'error-message' class = 'error-message'> </p>
+          <p id= 'error-message' class = 'error-message'></p>
           <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
           <input class="login-input password" type="password" placeholder="Senha" required>
           

@@ -82,9 +82,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1px);
-    gap: 16rem;
+    gap: 5rem;
     margin: auto;
     margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 .content a {
@@ -118,7 +119,6 @@ body {
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;
     margin-left: 1%;
-    margin-top: 4%;
 }
 
 .picture-image {
@@ -933,6 +933,7 @@ footer {
     .content {
         display: block;
         margin: auto;
+        margin-bottom: 5%;
     }
 
     .content a {

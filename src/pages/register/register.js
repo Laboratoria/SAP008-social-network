@@ -5,17 +5,18 @@ export default () => {
   const containerRegistration = document.createElement('div');
   const template = `
     <main class="container-registration">
-      <button type="button" class="btn-back">&#11013 </button>
 
       <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
 
       <forms class="registration-input">
         <p id= 'message-welcome' class = 'welcome-message' role='dialog'> </p>
-        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome do perfil " required>
+        <input type="text" name="profile-name" id="input-profile-name" class="input" placeholder="Nome perfil" required>
         <input type="email" name="email" id="input-email-registration" class="input" placeholder="Digite seu email". required>
         <input type="password" id="password" class="input" placeholder="Senha de 6 dígitos" required>
       </forms>
       <button type="button" id="button-registration" class="button">Finalizar cadastro</button>
+      <p class="text">Já possui cadastro?<br><a href="#login" class= "link">Faça seu login</a></p>
+
 
       <p id= 'error-message' class = 'error-message'> </p>
   
@@ -31,10 +32,6 @@ export default () => {
   const btnBack = containerRegistration.querySelector('.btn-back');
   const messageError = containerRegistration.querySelector('#error-message');
   const messageWelcome = containerRegistration.querySelector('#message-welcome');
-
-  btnBack.addEventListener('click', () => {
-    window.location.hash = '#login';
-  });
 
   btnRegistration.addEventListener('click', (e) => {
     e.preventDefault();

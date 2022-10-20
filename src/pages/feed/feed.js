@@ -1,4 +1,9 @@
-import { createPost, current, getAllPosts } from '../../lib/firestore.js';
+import {
+  createPost,
+  current,
+  getAllPosts,
+  logout,
+} from '../../lib/firestore.js';
 
 export default function Feed() {
   const feed = document.createElement('div');
@@ -6,7 +11,11 @@ export default function Feed() {
   <div class="main-div">
   <nav class="top-nav">
   <picture>
-      <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
+      <img class="logo" src="imagens/logoINspirefeed.png" alt="Logo" />
+  </picture>
+    <a href="#login" id="logout">
+       <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
+    </a> 
   </picture>
   </nav>
         <section id="post" class="post">
@@ -25,6 +34,7 @@ export default function Feed() {
   const modalPost = feed.querySelector('#post');
   const postFeed = feed.querySelector('#post-textarea');
   const postList = feed.querySelector('#box-post');
+  const buttonLogout = feed.querySelector('.button-logout');
   const user = current().uid;
 
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
@@ -57,5 +67,12 @@ export default function Feed() {
     createPost(postFeed.value)
       .then(() => window.location.reload());
   });
+
+  buttonLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout()
+      .then(() => { window.location.hash = 'login'; });
+  });
+
   return feed;
 }

@@ -7,16 +7,6 @@
   height: 100%;
 }
 
-/* estilização do botão voltar */
-.btn-back {
-  font-size: 20px;
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  align-self: flex-start;
-
-}
-
 /* logo inspire */
 .logo{
   margin-top: 2%;
@@ -30,7 +20,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 250%;
+  margin:10px;
 
 }
 
@@ -38,14 +29,14 @@
 
 .input {
   width: 250px;
-  height: 40px;
+  height: 30px;
   border: none;
   font-size: 14px;
   padding: 2%;
   border-radius: 10px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: white;
-  margin: 2% 0;
+  margin: 1% 0;
 }
 
 .button {
@@ -59,4 +50,10 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
   margin: 3% 0;
 
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

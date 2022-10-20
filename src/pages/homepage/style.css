@@ -13,7 +13,6 @@ html, body {
 }
 
 .logo-initial-page {
-    /* font-family: 'Blanka', sans-serif; */
     margin: 0; 
     height: 85%; 
     width: 100%; 
@@ -95,26 +94,9 @@ footer a {
     position: absolute;
     width: 100vw;
     height: 85vh;
-    object-fit: fill;
+    object-fit: cover;
     opacity: 82%;
-    /* position: fixed;
-    top: 0;
-    left: 0; */
 }
-/* 
-@media (min-aspect-ratio: 16/9) {
-    .background-video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-aspect-ratio: 16/9) {
-    .background-video {
-        width: auto;
-        height: 100%;
-    }
-} */
 
 .video-aside, .vertical-line-text-box {
     display: none;
@@ -244,11 +226,3 @@ footer a {
         color: #5F5656;
     }
 }
-
-
-/* @media (min-aspect-ratio: 16/9) {
-    .background-video-desktop {
-        width: 60%;
-        height: auto;
-    }
-} */

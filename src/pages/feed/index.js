@@ -1,4 +1,4 @@
-import { createPost, getPost, upDatePost, deletePost, likePost, unlikePost } from './../../lib/firestore.js';
+import { createPost, getPost, upDatePost, deletePost, likePost } from './../../lib/firestore.js';
 import { logout } from '../../lib/auth.js';
 
 export default () => {
@@ -58,7 +58,9 @@ export default () => {
 
     const btnsEdit = Array.from(container.querySelectorAll('#btnEdit'));
     const btnsDelete = Array.from(container.querySelectorAll('#btnDelete'));
-    const btnsLike = Array.from(container.querySelectorAll('#btnLike'));    
+    const btnsLike = Array.from(container.querySelectorAll('#btnLike'));
+    // let likeForUser = post.like.filter((usuario) => usuario.author);
+    
     
     btnsEdit.forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -117,20 +119,12 @@ export default () => {
         const postLikedId = elemento.dataset.likeBtn;
         const userId = elemento.dataset.likeAuthor;
         const countLikes = elemento.dataset.countLikes;
-        const transformCountLikesInNumber = Number(countLikes);
+        const transformCountLikesInNumber = Number(countLikes);        
         
-        if(countLikes == 0) {
           likePost(postLikedId, userId)
           .then(()=> {
             elemento.dataset.countLikes = transformCountLikesInNumber + 1;
-          })
-                              
-        } else {
-          unlikePost(postLikedId, userId)
-          .then(()=> {
-            elemento.dataset.countLikes = transformCountLikesInNumber - 1;
-          })
-        }       
+          })            
                    
       })
     });

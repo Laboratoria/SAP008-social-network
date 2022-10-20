@@ -82,6 +82,7 @@
     width: 25%;
 }
 .legendaRegister{
+    display: block;
     font-size: 0.9rem;
     color: #777777;
 }

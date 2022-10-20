@@ -9,9 +9,8 @@ export default () => {
 	      <img class='logo-timeline' src='./imagens/logo-mobile.png' alt='logo'>
 	    </figure>
 	    <button id='logout-btn' class='logout-btn'><img class='logout-icon' src='./imagens/logout.svg' alt='signout-icon'></button>
-      
-	 </header>
-
+	 </header
+   
     <main id='create-post' class='container-main'> 
       <section class='container-post'>
         <figure>

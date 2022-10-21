@@ -18,10 +18,3 @@ export const errorsFirebase = (errorCode) => {
       return `Algo inexperado aconteceu. Por favor entre em contato com o suporte e informe o código ${errorCode}`;
   }
 };
-
-export const errorsFirebaseFirestore = (errorCode) => {
-  switch (errorCode) {
-    default:
-      return `Algo inexperado aconteceu. Por favor entre em contato com o suporte e informe o código ${errorCode}`;
-  }
-};

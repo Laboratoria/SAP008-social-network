@@ -13,21 +13,24 @@ telas grandes: acima de 1200 */
   height: 100%;
 } */
 
-
 .main {
   display: inline-flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
-}
 
+}
+/* div que envolve o logo*/
+.field-logo{
+  text-align: center;
+} 
+/*logo Inspire*/
 .logo {
   margin-top: 2%;
   width: 35%;
-  align-items: center;
-  justify-items: center;
 }
+
 
 .login-input {
   width: 250px;
@@ -67,7 +70,7 @@ telas grandes: acima de 1200 */
   color: aliceblue;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
   font-size: 14px;
-  margin-top: 5%;
+  margin-top: 4%;
   font-weight: 600;
 }
 
@@ -88,38 +91,40 @@ telas grandes: acima de 1200 */
 }
 
 .signup-button {
-  margin-top: 15%;
+  margin-top: 8%;
   background-color: transparent;
   color: #070707;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
-/*tablet
-  @media screen and (min-width: 768px) and (max-width: 992px) {
-   
-  }*/
+@media screen and (min-width: 1024px) and (max-width: 1700px) {
+  body{
+    justify-content:space-around;
 
-/*desktop*/ 
-@media screen and (min-width: 1200px) {
-
-  .main {
-    width: 280px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    margin-top: 5%;
+  }
+  .login-form{
+    margin-top: 15%;
+    display: block;
   }
 
+  .logo-e-form{
+  margin-right: 15%;
+  display: inline-flex;
+  
+  } 
   .logo {
-    width: 70%;
-    align-items: center;
-    margin-bottom: 2px;
+    margin-top: 20%;
+    width: 90%;
   }
 
   .google-button {
-    width: 80%;
+    width: 100%;
+  }
+
+  .field-logo{
+    margin: 5%;
+    width: 100%;
   }
 }

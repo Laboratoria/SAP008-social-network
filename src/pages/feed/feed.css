@@ -2,9 +2,6 @@
     font-family: 'Roboto', sans-serif;
   }
   
-  body {
-    margin: 6px;
-  }
 
   .top-nav {
     display: flex;
@@ -15,7 +12,7 @@
     padding: 1em;
   }
 
-  .logo {
+  .logo-feed {
     width: 80px;
     margin-top: 20px;
     padding: 5px
@@ -86,11 +83,10 @@
   }
   
   /* TELAS GRANDES */
-    @media screen and (min-width: 768px) {
-      
+  @media screen and (min-width: 1024px) and (max-width: 1700px) {      
       
       .post-textarea {
-        width: 50%;
+        width: 250%;
         height: 70%;
       }
   
@@ -99,8 +95,8 @@
       }
   
       .allposts {
-        width: 400px;
-        height: 50%;
+        width: 250%;
+        height: 70%;
       }
   
     }

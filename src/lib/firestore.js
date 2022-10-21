@@ -4,6 +4,8 @@ import {
   getDocs,
   query,
   orderBy,
+  doc,
+  deleteDoc,
   onAuthStateChanged,
 } from './export.js';
 import { auth, db } from './config.js';
@@ -14,7 +16,7 @@ export const createPost = (postText) => addDoc(collection(db, 'post'), {
   displayName: current().displayName,
   email: current().email,
   data: new Date().toLocaleDateString('pt-BR'),
-  hour: new Date().toLocaleTimeString(),
+  hour: new Date().toLocaleTimeString([], { timeStyle: 'short' }),
   post: postText,
   user: current().uid,
 });
@@ -48,3 +50,13 @@ export function stayLoggedIn(callback) {
     callback(user !== null);
   });
 }
+
+export const postDelete = async (postId) => {
+  try {
+    const docRef = doc(db, 'post', postId);
+    await deleteDoc(docRef);
+    return docRef.id;
+  } catch (error) {
+    return error;
+  }
+};

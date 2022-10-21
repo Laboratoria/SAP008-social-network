@@ -4,17 +4,18 @@ import { validateFormRegister } from '../../lib/authenticate.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
+  containerRegistration.classList.add('container-register');
   const template = `
   <main class="main">
-      <div class =logo-e-form-register>
-        <div class = 'field-logo-register'>
-          <img class='logo-page-register' src="imagens/logoINspire.png" alt="Logo" />
+      <div class =logo-e-form>
+        <div class = 'field-logo'>
+          <img class='logo' src="imagens/logoINspire.png" alt="Logo" />
         </div>
 
         <div class='register'>
           <form class = 'form-register'>
             <p id= 'error-message' class = 'error-message'> </p>
-            <p id= 'message-welcome' class = 'walcome-message'> </p>
+            <p id= 'message-welcome' class = 'welcome-message'> </p>
             <input class='input' type='text' name='profile-name' id='input-profile-name'  placeholder='Nome do perfil ' required>
             <input class='input' type='email' name='email' id='input-email-registration' placeholder='Digite seu email' required>
             <input class='input' type='password' id='password' placeholder="Senha de 6 dígitos" required>
@@ -42,11 +43,13 @@ export default () => {
     e.preventDefault();
     const validate = validateFormRegister(nameProfile.value, email.value, password.value);
     if (validate) {
+      messageError.classList.add('show');
       messageError.innerHTML = validate;
     } else {
       register(email.value, password.value, nameProfile.value)
         .then(() => {
           messageWelcome.innerHTML = `'Bem vindo(a) ${nameProfile.value}!'`;
+          messageWelcome.classList.add('show');
           setTimeout(() => {
             window.location.hash = '#feed';
           }, 2000);
@@ -54,6 +57,7 @@ export default () => {
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
+          messageError.classList.add('show');
         });
     }
   });

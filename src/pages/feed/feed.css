@@ -83,4 +83,26 @@
         font-weight: bold;
         margin: 2% 5% 2% 35%;
     }
+    .postTimeline{
+        display: flex;
+        flex-direction: column;
+        background-color: #EEEEEE;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 10px;
+        width: 80%;
+        height: 30%;
+        padding: 2%;
+        font-size: 13px;
+        margin: 0% 5% 3% 5%;  
+    }
+    #userName{
+        margin: 3%;
+        font-size: 120%;
+    }
+    #textPost {
+        font-size: 90%;
+        margin: 3%;
+    }
 }

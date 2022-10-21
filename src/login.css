@@ -5,24 +5,17 @@
 .content{        
     width: 100%;
     height: 100vh;
-    background: #EDDED7;
+    background: #ffffff;
     display:flex;
-    justify-content:space-evenly;
+    justify-content:center;
     align-items: center;
-    flex-direction: column;
 }
 .logoCookieLogin{
     width: 100%;
-    height: 10rem ;
-    display: flex;
-    flex-direction:row;
-    justify-content:space-between;
-    gap: 3rem;
-    align-items: center;
-}
-.cookie-login{
-    width: 5rem;
-    height: 5rem;
+    display:flex;
+    justify-content:space-evenly;
+    margin: 5%;
+    margin-left: 15%;
 }
 .frase-login{
     font-size: 3rem;
@@ -31,13 +24,15 @@
 .form-login{
     background-color: rgb(255, 255, 255);
     border-radius: 0.8rem;
-    width: 100%;
-    height: 25rem;
+    width: 120%;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: 0.5rem;
+    gap: 2rem;
+    box-shadow: #afafaf 3px 3px;
+
 }
 .form-cx{
     width: 80%;
@@ -56,10 +51,14 @@
     border-radius: 15px;
     width: 105%;  
     height: 1.6rem;
-    background: #3F5494;
-    color: white;
+    background: #f4b324;
+    color: #ffffff;
     border: none;
-    cursor: pointer;
+    cursor: pointer;  
+}
+.form-botaoentrar :hover {
+    background: #3F5494;
+    transition: 0.1s;
 }
 .linha-ou{
     width: 90%;
@@ -87,5 +86,6 @@
 .google i{
     margin-right: 1rem;
 }
+
     
 

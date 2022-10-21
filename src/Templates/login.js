@@ -1,4 +1,4 @@
-import { loginEmailPassword, signInGoogle} from '../lib/index.js';
+import { loginEmailPassword, signInGoogle } from '../lib/index.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -8,10 +8,9 @@ export default () => {
          <p id="msgErro"></p>
 
          <form class="form">
-         <div class="logoCookieLogin">
-         <img src="img/cookie.png" alt="logo-cookie" class="cookie-login" id="cookieLogo">
-         <h2 class="frase-login">COOKIE</h2>
-         </div>
+            <div class="logoCookieLogin">
+            <h2 class="frase-login">COOKIE</h2>
+            </div>
 
          <div class="form-login">
          
@@ -75,7 +74,6 @@ export default () => {
        window.location.hash = '#feed';
      })
      .catch((error) => {
-      console.log('erro ao entrar')
       msgErro.innerHTML = 'erro ao entrar com Google';  
      })
  });

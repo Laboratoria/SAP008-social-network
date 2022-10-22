@@ -2,7 +2,7 @@ import { googleAccess, auth } from '../../lib/auth.js';
 
 // eslint-disable-next-line consistent-return
 export default () => {
-  if (auth.currentUser === true) {
+  if (auth.currentUser !== null) {
     window.location.hash = '#home';
   } else {
     const container = document.createElement('div');

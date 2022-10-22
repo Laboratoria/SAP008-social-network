@@ -132,7 +132,7 @@ export default () => {
     });
 
     newPost.addEventListener('click', () => {
-      window.location.hash = '#new_post';
+      window.location.hash = '#novo_post';
     });
 
     return container;

@@ -100,7 +100,7 @@ describe('updatePost', () => {
     expect(updateDoc).toHaveBeenCalledTimes(1);
     expect(updateDoc).toHaveBeenCalledWith(undefined, {
       message: 'testmessageContent',
-      editDate: date.toJSON()
+      editDate: date.toJSON(),
     });
   });
 });

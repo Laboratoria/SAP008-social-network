@@ -1,5 +1,5 @@
 import { firestore } from './config.js'
-import { collection, addDoc, getDocs } from './exports.js'
+import { collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc } from './exports.js'
 
 export const createDataPost = (messageContent, user) => {
   const date = new Date();
@@ -29,25 +29,23 @@ export const newPost = async (messageContent, user) => {
   return docRef;
 };
 
-export const readAllPosts = async () => {
-  const querySnapshot = await getDocs(collection(firestore, 'posts'));
+
+export const readAllPosts = () => {
+  return getDocs(collection(firestore, 'posts'));
 };
 
-export const readOnePost = async (idPost) => {
-  const post = await getDoc(doc(firestore, 'posts', idPost));
-  return { ...post.data(), id: post.id };
-}
+export const readOnePost = (idPost) => {
+  return getDoc(doc(firestore, 'posts', idPost));
+};
 
-export const updatePost = async (idPost, messageContent) => {
+export const updatePost = (idPost, messageContent) => {
   const date = new Date();
-  const post = await doc(firestore, 'posts', idPost);
-  await updateDoc(post, {
+  const post = doc(firestore, 'posts', idPost);
+  return updateDoc(post, {
     message: messageContent,
     editDate: date.toJSON()
   });
-}
-
-  export const deletePost = async (idPost) => {
-    await deleteDoc(doc(firestore, 'posts', idPost));
 };
-debugger;
+export const deletePost = (idPost) => {
+  deleteDoc(doc(firestore, 'posts', idPost));
+};

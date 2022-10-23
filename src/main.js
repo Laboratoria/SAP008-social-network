@@ -22,7 +22,7 @@ const init = () => {
     case '#home':
       main.appendChild(home());
       break;
-    case '#new_post':
+    case '#novo_post':
       main.appendChild(new_post());
       break;
     default:

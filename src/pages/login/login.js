@@ -3,7 +3,7 @@ import { loginUser, googleAccess, auth } from '../../lib/auth.js';
 
 // eslint-disable-next-line consistent-return
 export default () => {
-  if (auth.currentUser === true) {
+  if (auth.currentUser !== null) {
     window.location.hash = '#home';
   } else {
     const container = document.createElement('div');
@@ -19,13 +19,15 @@ export default () => {
           <hr style="margin-left: 5%">
         </div>
         <form class="form-login">
-          <input type="text" id="email" class="email-login" placeholder="E-mail"><br>
-          <p id="msg-error"></p>
+          <input type="text" id="email" class="email-login" placeholder="E-mail">
           <div>
             <input type="password" id="password" class="pswd-login" placeholder="Senha">
-            <button id="ok-login-btn">OK</button><br>
+            <button id="ok-login-btn">OK</button>
           </div>
-        </form>
+          <div class="error-container">
+            <p class="error-msg" id="error-msg"></p>
+          </div>
+            </form>
         <p class="instructions">Não tem uma conta?<a id="first-page" class="cta"href="/#cadastre-se"> Cadastre-se</a></p>
       </div>
       <div class="logo"></div>
@@ -37,7 +39,7 @@ export default () => {
     const logInEmail = container.querySelector('#email');
     const logInPassword = container.querySelector('#password');
     const loginBtn = container.querySelector('#ok-login-btn');
-    const pMsg = container.querySelector('#msg-error');
+    const pErrorMsg = container.querySelector('#error-msg');
 
     googleBtn.addEventListener('click', () => {
       googleAccess().then(() => {
@@ -58,16 +60,16 @@ export default () => {
           .catch((error) => {
             const errorMessage = error.message;
             if (logInEmail.value === '' || logInPassword.value === '') {
-              return pMsg.innerHTML = 'Todos os campos devem ser preenchidos';
+              return pErrorMsg.innerHTML = 'Todos os campos devem ser preenchidos';
             }
             if (errorMessage === 'Firebase: Error (auth/user-not-found).') {
-              return pMsg.innerHTML = 'Usuário não cadastrado';
+              return pErrorMsg.innerHTML = 'Usuário não cadastrado';
             }
             if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
-              return pMsg.innerHTML = 'E-mail inválido';
+              return pErrorMsg.innerHTML = 'E-mail inválido';
             }
             if (errorMessage === 'Firebase: Error (auth/wrong-password).') {
-              return pMsg.innerHTML = 'Senha inválida';
+              return pErrorMsg.innerHTML = 'Senha inválida';
             }
           });
       }

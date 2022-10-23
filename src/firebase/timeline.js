@@ -1,51 +1,36 @@
-import { firestore } from './config.js';
+import { firestore } from './config.js'
+import { collection, addDoc, getDocs } from './exports.js'
 
-import { collection, addDoc, doc, getDoc, getDocs, updateDoc, deleteDoc  } from './exports.js';
-
-import { getUser } from './auth.js';
-
-const createDataPost = (messageContent) => {
+export const createDataPost = (messageContent, user) => {
   const date = new Date();
   return {
-    message: messageContent,
-    user: getUser().uid,
-    image: '',
-    answers: [],
-    likes: 0,
-    publishDate: date.toJSON(),
-    editDate: date.toJSON(),
+    "message": messageContent,
+    "user": user,
+    "image": "",
+    "answers": [],
+    "likes": 0,
+    "publishDate": date.toJSON(),
+    "editDate": date.toJSON()
   };
 };
-
-const createDataAnswer = (messageContent) => {
+export const createDataAnswer = (messageContent, user) => {
   const date = new Date();
   return {
-    message: messageContent,
-    user: getUser().uid,
-    likes: 0,
-    publishDate: date.toJSON(),
-    editDate: date.toJSON(),
+    "message": messageContent,
+    "user": user,
+    "likes": 0,
+    "publishDate": date.toJSON(),
+    "editDate": date.toJSON()
   };
 };
-
-export const newPost = async (messageContent) => {
-  const dataPost = createDataPost(messageContent);
+export const newPost = async (messageContent, user) => {
+  const dataPost = createDataPost(messageContent, user);
   const docRef = addDoc(collection(firestore, 'posts'), dataPost);
-  console.log('Document written with ID: ', docRef.id);
   return docRef;
 };
 
 export const readAllPosts = async () => {
-  try {
-    const allPosts = await getDocs(collection(firestore, 'posts'));
-    const arrPosts = [];
-    allPosts.forEach((post) => {
-      arrPosts.push({ ...post.data(), id: post.id });
-    });
-    return arrPosts;
-  } catch (error) {
-    return error;
-  };
+  const querySnapshot = await getDocs(collection(firestore, 'posts'));
 };
 
 export const readOnePost = async (idPost) => {

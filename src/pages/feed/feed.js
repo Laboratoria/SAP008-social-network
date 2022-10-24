@@ -1,8 +1,15 @@
+/* eslint-disable no-alert */
 /* eslint-disable spaced-comment */
 /* eslint-disable no-console */
 
 import { logOutUser } from '../../lib/auth.js';
-import { createPost, postScreen, auth } from '../../lib/firestore.js';
+import {
+  createPost,
+  postScreen,
+  auth,
+  removePost,
+} from '../../lib/firestore.js';
+import { errorFire } from '../../lib/errorFirebase.js';
 
 export default () => {
   const sectionFeed = document.createElement('div');
@@ -48,6 +55,14 @@ export default () => {
       <section class="postTimeline">
         <p id="userName">${posts.name}</p>
         <p id="textPost">${posts.text}</p>
+        <p class=""sectionBtn">
+          <a class='btnDelete' id='btn-delete'><img src='/src/img/delete.png' alt='Deletar'></a>
+          <a class='btnEditar' id='btn-editar'><img src='/src/img/editar.png' alt='Editar'></a>
+        </p>
+      </section>
+      <section class="sectionBtnLikeDeslike">
+        <a class='btnLike' id='btn-like'><img src='/src/img/like.png' alt='Like'></a>
+        <a class='btnDeslike' id='btn-deslike'><img src='/src/img/deslike.png' alt='Deslike'></a>
       </section>
     `;
       return postTemplate;
@@ -56,8 +71,9 @@ export default () => {
 
     const createform = sectionFeed.querySelector('#create-Post');
     const textAreaPost = sectionFeed.querySelector('#text-publish');
-    /*const btnPublish = sectionFeed.querySelector('#publish-btn');*/
     const btnLogOut = sectionFeed.querySelector('#logOut');
+    const deletePost = sectionFeed.querySelector('#btn-delete');
+
     btnLogOut.addEventListener('click', () => {
       logOutUser()
         .then(() => {
@@ -69,8 +85,19 @@ export default () => {
       e.preventDefault();
       const postText = textAreaPost.value;
       createPost(postText)
-        .then(() => {
-          document.getElementById('feedPost').innerHTML = printPost();
+        .then(async () => {
+          await printPost();
+        })
+        .catch((error) => {
+          const errorCode = errorFire(error.code);
+          console.log(errorCode);
+        });
+    });
+
+    deletePost.addEventListener('click', () => {
+      removePost()
+        .then(async () => {
+          await alert('Começando');
         })
         .catch((error) => {
           console.log(error);

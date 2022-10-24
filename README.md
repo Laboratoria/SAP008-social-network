@@ -84,7 +84,27 @@ A definição de pronto foi estabelecida pensando no recursos essenciais para re
 
 *Critérios de aceitação:* Ao cadastrar/logar na rede social, o usuário terá acesso à página principal no modelo "feed" ao qual o possibilitará de criar publicações, ler relatos de outros usuários, curtir postagens e comentar postagens. Além disso, o usuário deve ter a possbilidade de editar e deletar as suas próprias postagens. Deve também ter a opção de incluir uma foto de perfil para seu usuário e conseguir deslogar da página a qualquer momento desejado.
 
-## 4. Web Aplicação
+## 4. Protótipo de Alta Fidelidade, UX e UI
+Após teste de usabilidade, implementamos algumas alterações finais no protótipo de alta fidelidade, os feedbacks recebidos foram os seguintes: 
+
+- Tornar o botão de login com Google mais intuitivo;
+- Incluir um segundo campo de input para confirmar senha; 
+- Padronizar títulos de algumas páginas que estavam diferentes; 
+- Inverter as cores (azul e verde) dos botões de cadastro e login;
+- Incluir o texto "Ainda não tem conta?" interativo para cadastrar;
+
+Após refinamento do prótotipo de acordo com os feedbacks recebidos, alcançamos o seguinte resultado:
+
+<img src="./src/imagens/estilos.jpg" alt="paleta-de-cores" width="200">
+![foto-do-mobile-login](./src/imagens/mobile_login.png)
+![foto-do-mobile-cadastro](./src/imagens/mobile_cadastro.png)
+![foto-do-mobile-cadastro](./src/imagens/mobile_homepage.png)
+![foto-do-desktop-login](./src/imagens/desktop_login.png)
+![foto-do-desktop-cadastro](./src/imagens/desktop_cadastro.png)
+![foto-do-desktop-homepage](./src/imagens/desktop_homepage.png)
+
+
+
 
 
 ## 5. Repositório

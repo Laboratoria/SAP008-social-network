@@ -1,9 +1,6 @@
-import { auth, loginGoogle, newUser } from '../../firebase/auth.js';
+import { loginGoogle, newUser } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { updateProfile } from '../../firebase/exports.js';
 import { redirect } from '../../routes.js';
-import { registerValidation } from '../../validations.js';
-import { clearErrors } from '../../validations.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -21,20 +18,13 @@ export default () => {
             <h1 class='title-signup'>Cadastre-se</h1>
             <section class='inputs-signup'>
             <label for='name-signup' class='label'>Nome completo</label>
-            <input type='name-signup' placeholder='Nome e sobrenome' id='name-signup' class='input-signup-name'/>
-            </section>
-            <p id='error-code' class='error-name'></p>
-            <section class='inputs-signup'>
+            <input type='name-signup' placeholder='Nome e sobrenome' id='name-signup' class='input-name-signup' />
             <label for='email-signup' class='label'>E-mail</label>
-            <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-signup-email'/>
-            </section>
-            <p id='error-code' class='error-email'></p>
-            <section class='inputs-signup'>
+            <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-email-signup' />
             <label for='passwordsignup'class='label'>Digite sua senha</label>
-            <input type='password-signup' placeholder='****' id='signup-password' class='input-signup-password' />
+            <input type='password-signup' placeholder='****' id='signup-password' class='input-password-signup' />
             </section>
-            <p id='error-code' class='error-password'></p>
-            <p id='error-message'></p>  
+            <p id='error-code'></p>
             <section class='buttons-signup'>
             <button type='submit' class='btn-signup'>Cadastrar</button>
             <button type='submit' class='btn-google-signup'><img src='./imagens/google.svg'/>Cadastro com Google</button>
@@ -44,36 +34,21 @@ export default () => {
 
   container.innerHTML = template;
 
-  const inputEmail = container.querySelector('.input-signup-email');
-  const inputPassword = container.querySelector('.input-signup-password');
+  const inputEmail = container.querySelector('#signup-email');
+  const inputPassword = container.querySelector('#signup-password');
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
-  const inputName = container.querySelector('.input-signup-name');
-  const errorMessage = container.querySelector('#error-message');
+  const errorMessage = container.querySelector('#error-code');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const validation = registerValidation(
-      inputName.value,
-      inputEmail.value,
-      inputPassword.value,
-    );
-    if (validation === null) {
-      newUser(inputEmail.value, inputPassword.value, inputName.value)
-        .then(() => updateProfile(auth.currentUser, {
-          displayName: inputName.value,
-        }))
-        .then(() => {
-          redirect('#timeline');
-        })
-        .catch((error) => {
-          errorMessage.innerHTML = getErrorMessage(error);
-        });
-    } else {
-      clearErrors();
-      document.querySelector(`.error-${validation.src}`).innerHTML = validation.msg;
-      document.querySelector(`.input-signup-${validation.src}`).classList.add('input-error');
-    }
+    newUser(inputEmail.value, inputPassword.value)
+      .then(() => {
+        redirect('#timeline');
+      })
+      .catch((error) => {
+        errorMessage.innerHTML = getErrorMessage(error);
+      });
   });
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -82,5 +57,3 @@ export default () => {
   });
   return container;
 };
-
-

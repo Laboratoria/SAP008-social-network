@@ -1,7 +1,6 @@
 import { loginUser, loginGoogle } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { loginValidation } from '../../validations.js';
-import { clearErrors } from '../../validations.js';
+import { newPost } from '../../firebase/timeline.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -19,16 +18,14 @@ export default () => {
             <h1 class='title-login'>Acesse a sua conta</h1>
             <section class='inputs'>
             <label for='email' class='label'>Digite seu e-mail</label>
-            <input type='email' placeholder='seuemail@gmail.com' class='input-email'/>
+            <input type='email' placeholder='seuemail@gmail.com' id='email' class='input-email' />
             </section>
-            <p id='error-code' class='error-email'></p>
 
             <section class='inputs'>
             <label for='password' class='label'>Digite sua senha</label>
-            <input type='password' placeholder='******' class='input-password'/>
+            <input type='password' placeholder='******' id='password' class='input-password' />
             </section>
-            <p id='error-code' class='error-password'></p>
-            <p id='error-message'></p>
+            <p id='error-code'></p>
             <section class='buttons'>
             <button type='submit' class='btn-login'>Iniciar Sessão</button>
             <button type='submit' class='btn-google'><img class='img-google' src='./imagens/google.svg'/> Entrar com Google</button>
@@ -43,30 +40,20 @@ export default () => {
 
   const form = container.querySelector('#form');
   const buttonRegister = container.querySelector('.btn-register');
-  const inputEmail = container.querySelector('.input-email');
-  const inputPassword = container.querySelector('.input-password');
+  const inputEmail = container.querySelector('#email');
+  const inputPassword = container.querySelector('#password');
   const buttonGoogle = container.querySelector('.btn-google');
-  const errorMessage = container.querySelector('#error-message');
+  const errorMessage = container.querySelector('#error-code');
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const validation = loginValidation(
-      inputEmail.value,
-      inputPassword.value,
-    );
-    if (validation === null) {
-      loginUser(inputEmail.value, inputPassword.value)
-        .then(() => {
-          redirect('#timeline');
-        })
-        .catch((error) => {
-          errorMessage.innerHTML = getErrorMessage(error);
-        });
-    } else {
-      clearErrors();
-      document.querySelector(`.error-${validation.src}`).innerHTML = validation.msg;
-      document.querySelector(`.input-${validation.src}`).classList.add('input-error');
-    } 
+    loginUser(inputEmail.value, inputPassword.value)
+      .then(() => {
+        window.location.hash = '#timeline';
+      })
+      .catch((error) => {
+        errorMessage.innerHTML = getErrorMessage(error);
+      });
   });
 
   buttonRegister.addEventListener('click', (e) => {
@@ -78,7 +65,7 @@ export default () => {
     e.preventDefault();
     loginGoogle()
       .then(() => {
-        redirect('#timeline');
+        window.location.hash = '#timeline';
       })
       .catch((error) => error);
   });

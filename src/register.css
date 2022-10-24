@@ -24,32 +24,20 @@
     margin: 0 0 0 20%;
 }
 #voltarRegister{
-    width: 3%;
-    height: 6%;
-    margin:2% 0 0 2%;
+    width: 25px;
+    margin: 2% 0 0 2%;
 }
 .formRegister{
     background-color: white;
     border-radius: 0.8rem;
     width: 70%;
-    height: 32rem;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 5% auto;
     gap:2rem;
     box-shadow: #777777 5px 5px;
-}
-#formRegister{
-    max-width: 800px 740px;
-    left: 160px;
-}
-#formRegister input{
-    width: 100%;
-    height: 1rem;
-    border-radius: 5px;
-    border: 1px solid black;
-    font-size: 0.6rem;
 }
 #cadastrarRegister{
     border-radius: 10px;

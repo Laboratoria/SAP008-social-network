@@ -30,7 +30,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap:2rem;
+    gap: 2rem;
     box-shadow: #afafaf 3px 3px;
 
 }
@@ -43,6 +43,9 @@
     border-radius: 5px;
     border: 1px solid black;
     font-size: 0.rem;
+}
+.form-cx input:hover{
+    background: #afafaf;
 }
 .form-botaoentrar{
     width: 40%;
@@ -66,10 +69,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 0.9rem;
+    gap: 0.5rem;
 }
 .linha{
-    width: 5rem;
+    width: 2rem;
     height: 1%;
     background-color: black;
 }
@@ -77,6 +80,10 @@
     background-color: #C71610;
     border-radius: 2rem;
     padding: 0.3rem;
+}
+.form-google:hover{
+    background: #3F5494;
+    transition: 0.1s;
 }
 .google{
     color: white;
@@ -86,6 +93,10 @@
 .google i{
     margin-right: 1rem;
 }
-
+.form-login-all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
     
 

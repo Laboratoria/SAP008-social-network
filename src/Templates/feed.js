@@ -15,13 +15,13 @@ export default () => {
         </ul>
     </header>
     <main>
-        <div class="posts">
-        </div>
         <div class="criar-posts">
             <form>
                 <input type="text" placeholder="Digite" class="caixa-de-texto">
-                <button type="submit" class="submit">></button>
+                <button type="submit" id="submit-post">></button>
             </form>
+        </div>
+        <div class="posts">
         </div>
     </main>
             `;

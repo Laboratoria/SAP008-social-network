@@ -7,7 +7,7 @@ export default () => {
     <section class='contenderRegister'section>
       <div class="navRegister">
   
-          <img src="img/return.png" alt="voltar" id="voltarRegister">
+          <a href="/#login" ><img src="img/return.png" alt="voltar" id="voltarRegister"></a>
         
           <h1 class='tituloRegister'>Bem vinda!</h1>
         
@@ -28,12 +28,12 @@ export default () => {
 
           <div class="boxLegendaInput">
             <label class="legendaRegister">Email</label>
-            <input type="email"  id="caixaRegister" placeholder="example@gmail.com"  class="btnRegister">
+            <input type="email"  id="usernameRegister" placeholder="example@gmail.com"  class="btnRegister">
           </div>
 
           <div class="boxLegendaInput">
             <label class="legendaRegister">Senha</label>
-            <input type="password"  id="caixaRegister" placeholder="********"  class="btnRegister">
+            <input type="password"  id="passwordRegister" placeholder="********"  class="btnRegister">
           </div>
           <button id="cadastrarRegister">Cadastre-se</button>  
 
@@ -42,19 +42,22 @@ export default () => {
     </section>
         `;
   container.innerHTML = template;
-  const form = container.querySelector('.formRegister');
+  const form = container.querySelector('#cadastrarRegister');
   const email = container.querySelector('#usernameRegister');
   const senha = container.querySelector('#passwordRegister');
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('submter o form');
     console.log(email.value);
     console.log(senha.value);
     createUser(email.value, senha.value)
-      .then((user) => {
-        console.log(user);
-      });
-  });
+    .then(() => {
+      window.location.hash = '#feed';
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
   return container;
 };

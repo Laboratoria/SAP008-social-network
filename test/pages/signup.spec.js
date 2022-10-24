@@ -24,10 +24,10 @@ describe('signup', () => {
   });
 
   it('should return a div with a valid innerHTML', () => {
-    const result = signup();
-    expect(result).toHaveProperty('innerHTML');
-    expect(result.innerHTML.length).toBeGreaterThan(0);
-    expect(typeof result.innerHTML).toBe('string');
+    const container = signup();
+    expect(container).toHaveProperty('innerHTML');
+    expect(container.innerHTML.length).toBeGreaterThan(0);
+    expect(typeof container.innerHTML).toBe('string');
   });
 
   it('test submit input', async () => {

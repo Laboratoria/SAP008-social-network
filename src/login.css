@@ -44,6 +44,9 @@
     border: 1px solid black;
     font-size: 0.rem;
 }
+.form-cx input:hover{
+    background: #afafaf;
+}
 .form-botaoentrar{
     width: 40%;
 }
@@ -78,6 +81,10 @@
     border-radius: 2rem;
     padding: 0.3rem;
 }
+.form-google:hover{
+    background: #3F5494;
+    transition: 0.1s;
+}
 .google{
     color: white;
     text-decoration: none;
@@ -86,6 +93,10 @@
 .google i{
     margin-right: 1rem;
 }
-
+.form-login-all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
     
 

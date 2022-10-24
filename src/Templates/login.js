@@ -7,7 +7,7 @@ export default () => {
       <section class="content">
          <p id="msgErro"></p>
 
-         <form class="form">
+         <form class="form-login-all">
             <div class="logoCookieLogin">
             <h2 class="frase-login">COOKIE</h2>
             </div>

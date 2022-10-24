@@ -172,7 +172,7 @@ body {
     bottom: 2rem;
   }
 
-  #error-message {
+  .error-message {
     color: red;
     font-size: 10px;
     bottom: 2rem;
@@ -335,7 +335,7 @@ body {
     outline: none;
   }
 
-  #error-message {
+  .error-message {
     color: red;
     font-size: 10px;
   }

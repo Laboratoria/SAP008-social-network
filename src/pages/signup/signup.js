@@ -2,19 +2,18 @@ import { auth, loginGoogle, newUser } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
 import { updateProfile } from '../../firebase/exports.js';
 import { redirect } from '../../routes.js';
-import { registerValidation } from '../../validations.js';
-import { clearErrors } from '../../validations.js';
+import { validationRegister, clearErrors } from '../../validations.js';
 
 export default () => {
   const container = document.createElement('div');
 
   const template = `
       <figure class='img-logo-mobile imgFlip'>
-          <img src='./imagens/logo-mobile.png' alt='logo'>
+          <img src='./imagens/espectro-mobile.svg' alt='logo'>
       </figure>
 
         <figure class='img-logo-desktop'>
-          <img src='./imagens/logo-desktop.svg' alt='logo'>
+          <img src='./imagens/espectro-desktop.svg' alt='logo'>
         </figure>
 
         <form class='form-signup bounce'>
@@ -31,10 +30,10 @@ export default () => {
             <p id='error-code' class='error-email'></p>
             <section class='inputs-signup'>
             <label for='passwordsignup'class='label'>Digite sua senha</label>
-            <input type='password-signup' placeholder='****' id='signup-password' class='input-signup-password' />
+            <input type='password' placeholder='******' id='signup-password' class='input-signup-password' />
             </section>
             <p id='error-code' class='error-password'></p>
-            <p id='error-message'></p>  
+            <p class='error-message'></p>  
             <section class='buttons-signup'>
             <button type='submit' class='btn-signup'>Cadastrar</button>
             <button type='submit' class='btn-google-signup'><img src='./imagens/google.svg'/>Cadastro com Google</button>
@@ -49,11 +48,11 @@ export default () => {
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
   const inputName = container.querySelector('.input-signup-name');
-  const errorMessage = container.querySelector('#error-message');
+  const errorMessage = container.querySelector('.error-message');
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const validation = registerValidation(
+    const validation = validationRegister(
       inputName.value,
       inputEmail.value,
       inputPassword.value,
@@ -75,9 +74,8 @@ export default () => {
       document.querySelector(`.input-signup-${validation.src}`).classList.add('input-error');
     }
   });
-  btnGoogle.addEventListener('click', async (e) => {
-    e.preventDefault();
-    await loginGoogle();
+  btnGoogle.addEventListener('click', () => {
+    loginGoogle();
     redirect('#timeline');
   });
   return container;

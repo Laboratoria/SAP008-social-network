@@ -1,4 +1,6 @@
+import { async } from 'regenerator-runtime';
 import { logout } from '../../firebase/auth.js';
+import { redirect } from '../../routes.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -37,11 +39,9 @@ export default () => {
   container.innerHTML = template;
 
   const btnLogout = container.querySelector('#logout-btn');
-  const displayName = container.querySelector('.display-name');
 
-  btnLogout.addEventListener('click', (e) => {
-    e.preventDefault();
-    logout();
+  btnLogout.addEventListener('click', async () => {
+    await logout();
     redirect('#login');
   });
   

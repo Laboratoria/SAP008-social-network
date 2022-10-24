@@ -1,18 +1,18 @@
 import { loginUser, loginGoogle } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { loginValidation } from '../../validations.js';
-import { clearErrors } from '../../validations.js';
+import { validationLogin, clearErrors } from '../../validations.js';
+import { redirect } from '../../routes.js';
 
 export default () => {
   const container = document.createElement('div');
 
   const template = `
         <figure class='img-logo-mobile imgFlip'>
-            <img src='./imagens/logo-mobile.png' alt='logo'>
+            <img src='./imagens/espectro-mobile.svg' alt='logo'>
         </figure>
 
         <figure class='img-logo-desktop'>
-            <img src='./imagens/logo-desktop.svg' alt='logo'>
+            <img src='./imagens/espectro-desktop.svg' alt='logo'>
         </figure>
 
         <form id='form' class='form-login bounce'>
@@ -28,7 +28,7 @@ export default () => {
             <input type='password' placeholder='******' class='input-password'/>
             </section>
             <p id='error-code' class='error-password'></p>
-            <p id='error-message'></p>
+            <p class='error-message'></p>
             <section class='buttons'>
             <button type='submit' class='btn-login'>Iniciar Sessão</button>
             <button type='submit' class='btn-google'><img class='img-google' src='./imagens/google.svg'/> Entrar com Google</button>
@@ -46,11 +46,11 @@ export default () => {
   const inputEmail = container.querySelector('.input-email');
   const inputPassword = container.querySelector('.input-password');
   const buttonGoogle = container.querySelector('.btn-google');
-  const errorMessage = container.querySelector('#error-message');
+  const errorMessage = container.querySelector('.error-message');
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const validation = loginValidation(
+    const validation = validationLogin(
       inputEmail.value,
       inputPassword.value,
     );
@@ -64,23 +64,20 @@ export default () => {
         });
     } else {
       clearErrors();
-      document.querySelector(`.error-${validation.src}`).innerHTML = validation.msg;
-      document.querySelector(`.input-${validation.src}`).classList.add('input-error');
+      container.querySelector(`.error-${validation.src}`).innerHTML = validation.msg;
+      container.querySelector(`.input-${validation.src}`).classList.add('input-error');
     } 
   });
 
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.hash = '#signup';
+    redirect('#signup');
   });
 
-  buttonGoogle.addEventListener('click', (e) => {
+  buttonGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
-    loginGoogle()
-      .then(() => {
-        redirect('#timeline');
-      })
-      .catch((error) => error);
+    await loginGoogle();
+    redirect('#timeline');
   });
 
   return container;

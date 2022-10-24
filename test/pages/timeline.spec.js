@@ -1,11 +1,16 @@
 /**
  * @jest-environment jsdom
  */
+import { async } from 'regenerator-runtime';
 import { logout } from '../../src/firebase/auth.js';
 import timeline from '../../src/pages/timeline/timeline.js';
+import { redirect } from '../../src/routes.js';
 
 jest.mock('../../src/firebase/exports.js');
 jest.mock('../../src/firebase/auth.js');
+jest.mock('../../src/routes.js');
+
+const awaitInAllPromisses = () => new Promise(process.nextTick);
 
 describe('timeline', () => {
   const container = timeline();
@@ -20,11 +25,11 @@ describe('timeline', () => {
     expect(typeof result.innerHTML).toBe('string');
   });
 
-  it('test click input', () => {
+  it('test change of routes', async () => {
     const button = container.querySelector('#logout-btn');
     const event = new Event('click');
     button.dispatchEvent(event);
-    expect(logout).toHaveBeenCalledTimes(1);
-    expect(window.location.hash).toBe('#login');
+    await awaitInAllPromisses();
+    expect(redirect).toHaveBeenCalledWith('#login');
   });
 });

@@ -16,19 +16,19 @@ export function postFunction() {
           <h3 class="name-user-log">${
             postData.displayName
           }</h3>
-          <time class="date-hour">${new Date().toLocaleString("pt-br")}</time>
+          <time class="date-hour">${postData.date}</time>
         </div>
         <div class="post-infos">
           <p class="quote-posted">${postData.post}</p>
-          <p class="author-name-log">${postData.author}, ${postData.book}</p>      
+          <p class="author-name-log">${postData.author}, ${postData.book}</p>    
         </div>
-        <div class="line">
-        </div>
-        <div class="user-reactions">
-        <img clas="liked" src="${postData.likes}">
-        <img class="read" src="${postData.read}">
-        <img class="want-read" src="${postData.toRead}">
-        </div>
+      <div class="user-reactions">
+        <img clas="liked" src=${postData.likes}>
+        <img class="read" src=${postData.read}>
+        <img class="want-read" src=${postData.toRead}>
+      </div>
+      </div>
+      
 
     `;
       posts.innerHTML = templatePosts;

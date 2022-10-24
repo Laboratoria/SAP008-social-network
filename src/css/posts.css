@@ -3,9 +3,9 @@
 
 .eachPost{
   display: flex;
+  margin-left: 1.1rem;
   margin-top: 2rem;
-  margin-left: 3rem;
-  width: 47rem;
+  width: 50rem;
   height: 20rem;
   align-items: center;
   background-color: #D7ECEB;
@@ -14,7 +14,7 @@
 
 .infos-user {
   margin-left: 1rem;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .img-user-log {
@@ -38,10 +38,17 @@
 .author-name-log {
   font-weight: bold;
   font-size: 13px;
+  padding-top: 1rem;
   margin-left: 22rem;
+  border-bottom: 2px solid #F2AE2D;
 }
 
 .date-hour {
   font-family: "Poppins", sans-serif;
   font-size: 10px;
 }
+
+ .user-reactions {
+  display: block;
+
+ }

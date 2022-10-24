@@ -108,8 +108,7 @@ body{
 }
 
 .container-post {
-  width: 52rem;
-  height: 60rem;
+  width: 52.5rem;
   margin-top: 2rem;
   margin: auto;
   background-color: #8ed1d0;
@@ -188,7 +187,8 @@ body{
   }
 
   .ipt-general::-webkit-input-placeholder {
-    padding-left: 0.2rem;
+    padding-left: 0.5rem;
+    margin-top: 4rem;
     font-size: 0.5rem;
   } 
   

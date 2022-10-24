@@ -36,3 +36,5 @@ export const postScreen = async () => {
     console.log(e);
   }
 };
+
+export const removePost = async () => {};

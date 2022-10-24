@@ -1,4 +1,4 @@
-function errorFire(error) {
+export function errorFire(error) {
   switch (error) {
     case 'auth/invalid-email':
       return 'Preencha o campo de e-mail e senha!';
@@ -16,9 +16,19 @@ function errorFire(error) {
       return 'O "salt" da senha precisa ser um buffer de byte válido';
     case 'auth/popup-closed-by-user':
       return 'Usuário não completou o login!';
+    case 'storage/unknown':
+      return 'Ocorreu um erro desconhecido.';
+    case 'storage/bucket-not-found':
+      return 'Nenhum bucket configurado para o Cloud Storage.';
+    case 'storage/unauthenticated':
+      return 'O usuário não está autenticado. Faça a autenticação e tente novamente.';
+    case 'storage/canceled':
+      return 'O usuário cancelou a operação.';
+    case 'storage/unauthorized':
+      return 'O usuário não está autorizado a executar a ação desejada. Verifique suas regras de segurança para garantir que estejam corretas.';
+    case 'storage/server-file-wrong-size':
+      return 'O arquivo no cliente não corresponde ao tamanho do arquivo recebido pelo servidor. Envie novamente.';
     default:
       return '';
   }
 }
-
-export { errorFire };

@@ -105,4 +105,20 @@
         font-size: 90%;
         margin: 3%;
     }
+    .sectionBtn{
+        display: flex;
+        justify-content: center;
+    }
+    .btnDelete:hover{
+        transform: scale(0.9);
+    }
+    .btnEditar:hover{
+        transform:scale(1.9);
+    }
+    .sectionBtnLikeDeslike img{
+        margin: 1% 0% 2% 8%;
+        height: 25px;
+        width: 35px;
+        padding: 0;
+    }
 }

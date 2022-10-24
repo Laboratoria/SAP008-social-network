@@ -18,12 +18,12 @@ export default () => {
 
           <div class="boxLegendaInput">
             <label class="legendaRegister">Nome completo</label>
-            <input type="text" id="caixaRegister" placeholder="digite seu nome" class="btnRegister" >
+            <input type="text" id="nameRegister" placeholder="digite seu nome" class="btnRegister" >
           </div>
 
           <div class="boxLegendaInput">
             <label class="legendaRegister">Data de nascimento</label>
-            <input type="date" id="caixaRegister" class="btnRegister">
+            <input type="date" id="dataRegister" class="btnRegister">
           </div>
 
           <div class="boxLegendaInput">
@@ -45,13 +45,14 @@ export default () => {
   const form = container.querySelector('#cadastrarRegister');
   const email = container.querySelector('#usernameRegister');
   const senha = container.querySelector('#passwordRegister');
-
+  const name = container.querySelector('#nameRegister');
   form.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('submter o form');
     console.log(email.value);
     console.log(senha.value);
-    createUser(email.value, senha.value)
+    console.log(name.value);
+    createUser(name.value, email.value, senha.value)
     .then(() => {
       window.location.hash = '#feed';
     })

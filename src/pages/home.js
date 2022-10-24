@@ -16,8 +16,8 @@ export const homeFunction = () => {
       <div class='form'>
         <picture><img src='img\\logo.png' class='img-logo' alt='Logo Booknotes'></picture>
         <p class='text-login text-one'>Faça seu login!</p>
-        <input class='input-login' id='loginEmail' type='email' placeholder='leitora@email.com' />
-        <input class='input-login' id='loginPassword' type='password' placeholder='***********' maxlength='20'/>
+        <input class='input-login' id='loginEmail' type='email' placeholder='leitora@email.com' required/>
+        <input class='input-login' id='loginPassword' type='password' required placeholder='***********' maxlength='20'/>
         <button class='button-sign-in button-login' id='buttonLogin' type='submit'>Entrar</button>
         <p class='text-login text-two'>───── Ou entrar com ─────</p>
         <button class='button-img'>

@@ -17,11 +17,11 @@ export const signUpFunction = () => {
           <img src='img\\logo.png' class='img-logo' alt='Logo Booknotes'>
         </picture>
         <p class='name-input'>Nome</p>
-        <input type='text' class='input-signup' id='nameUser' placeholder="Nome"> 
+        <input type='text' class='input-signup' id='nameUser' required placeholder="Nome"> 
         <p class='name-input'>E-mail</p>
-        <input type='email' name=email class='input-signup' id='emailUser' placeholder="E-mail">
+        <input type='email' name=email class='input-signup' id='emailUser' required placeholder="E-mail">
         <p class='name-input'>Senha</p>
-        <input type='password' name=password class='input-signup' id='passUser' maxlength='20' placeholder="Senha">
+        <input type='password' name=password class='input-signup' required id='passUser' maxlength='20' placeholder="Senha">
         <button type='submit' class='button-signup' id='buttonSignUp'>Cadastrar e entrar!</button>
         <button type='submit' class='button-back-home' id='backAtHome'>Voltar</button>
       </div>

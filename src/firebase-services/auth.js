@@ -12,6 +12,10 @@ import { auth } from '../firebase-services/firebase-config.js';
       window.location.hash = '#feed';
   }) 
 
+  export function current() {
+    return auth.currentUser;
+  }
+
   export const  initWithGoogle = () => {
    const provider = new GoogleAuthProvider();
    return signInWithPopup(auth, provider)

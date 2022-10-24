@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Questrial&family=Roboto&display=swap");
+
+
+.eachPost{
+  display: flex;
+  margin-left: 1.1rem;
+  margin-top: 2rem;
+  width: 50rem;
+  height: 20rem;
+  align-items: center;
+  background-color: #D7ECEB;
+  border-radius: 2rem;
+}
+
+.infos-user {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.img-user-log {
+  border-radius: 3rem;
+}
+.name-user-log, .quote-posted, .author-name-log {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.name-user-log {
+  font-weight: bolder;
+}
+
+.quote-posted {
+  font-size: 14px;
+  margin-left: 2rem;
+}
+
+
+.author-name-log {
+  font-weight: bold;
+  font-size: 13px;
+  padding-top: 1rem;
+  margin-left: 22rem;
+  border-bottom: 2px solid #F2AE2D;
+}
+
+.date-hour {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+ .user-reactions {
+  display: block;
+
+ }

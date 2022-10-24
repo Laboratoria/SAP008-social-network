@@ -7,7 +7,11 @@ export default () => {
 
   const template = `
       <figure class='img-logo-mobile imgFlip'>
-          <img src='./imagens/logo-mobile.png' alt='logo'>
+        <img src='./imagens/logo-mobile.png' alt='logo'>
+      </figure>
+
+      <figure class='icon-voltar'>
+      <img class='botao-voltar' src='./imagens/voltar-desktop.png' alt='voltar'>
       </figure>
 
       <main class='container-main-signup'>
@@ -41,6 +45,7 @@ export default () => {
   const form = container.querySelector('.form-signup');
   const btnGoogle = container.querySelector('.btn-google-signup');
   const errorMessage = container.querySelector('#error-code');
+  const btnVoltar = container.querySelector('.botao-voltar');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -52,10 +57,17 @@ export default () => {
         errorMessage.innerHTML = getErrorMessage(error);
       });
   });
+
   btnGoogle.addEventListener('click', async (e) => {
     e.preventDefault();
     await loginGoogle();
     redirect('#timeline');
   });
+
+  btnVoltar.addEventListener('click', (e) => {
+    e.preventDefault();
+    redirect('#login');
+  });
+  
   return container;
 };

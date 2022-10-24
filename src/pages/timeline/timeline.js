@@ -11,7 +11,7 @@ export default () => {
 	    <button id='logout-btn' class='logout-btn'><img class='logout-icon' src='./imagens/logout.svg' alt='signout-icon'></button>
 	 </header
    
-    <main id='create-post' class='container-main'> 
+    <section id='create-post' class='container-main-timeline'> 
       <section class='container-post'>
         <figure>
           <img class='img-profile' id='img-profile' />
@@ -29,7 +29,7 @@ export default () => {
       <div class='linha-dois'></div>
 
     	<section id='post-timeline'></section>
-	</main>
+	  </section>
   `;
 
   container.innerHTML = template;

@@ -171,6 +171,21 @@ body {
     align-items: center;
   }
 
+  .botao-voltar {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .botao-voltar:hover {
+    transform: scale(1.1);
+    
+  }
+
   .container-main-signup {
     display: flex;
   }
@@ -229,10 +244,7 @@ body {
 
   .img-logo-desktop {
     display: flex;
-    width: 37.5rem;
-    height: 21.5rem;
     padding-right: 8rem;
-    margin-top: 3rem;
   }
 
   .form-signup {
@@ -242,7 +254,7 @@ body {
     align-items: center;
     width: 25rem;
     height: 30rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
     border-radius: 0.5rem;
     background-color: #fff;
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);

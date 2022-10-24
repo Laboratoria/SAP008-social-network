@@ -32,7 +32,7 @@ export const createDataAnswer = (messageContent, user) => {
     editDate: date.toJSON(),
   };
 };
-export const newPost = async (messageContent, user) => {
+export const newPost = (messageContent, user) => {
   const dataPost = createDataPost(messageContent, user);
   const docRef = addDoc(collection(firestore, 'posts'), dataPost);
   return docRef;
@@ -51,7 +51,7 @@ export const updatePost = (idPost, messageContent) => {
   const post = doc(firestore, 'posts', idPost);
   return updateDoc(post, {
     message: messageContent,
-    editDate: date.toJSON()
+    editDate: date.toJSON(),
   });
 };
 export const deletePost = (idPost) => {

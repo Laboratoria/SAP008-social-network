@@ -11,7 +11,7 @@ const main = document.querySelector('#root');
 
 const redirectLogUser = (user) => {
   if (user) {
-    alert(user.email);
+    console.log(user.email);
     redirect('#timeline');
   } else {
     redirect('');
@@ -20,36 +20,36 @@ const redirectLogUser = (user) => {
 
 window.addEventListener('load', () => {
   checkLoggedUser(redirectLogUser);
-  main.appendChild(login());
+  main.appendChild(timeline());
 });
 
 window.addEventListener('hashchange', () => {
   switch (window.location.hash) {
-    case ' ':
+    case '':
       main.appendChild(login());
       break;
     case '#password':
-      main.innerHTML = ' ';
+      main.innerHTML = '';
       main.appendChild(password());
       break;
     case '#register':
-      main.innerHTML = ' ';
+      main.innerHTML = '';
       main.appendChild(register());
       break;
     case '#timeline':
-      main.innerHTML = ' ';
+      main.innerHTML = '';
       main.appendChild(timeline());
       break;
     case '#post':
-      main.innerHTML = ' ';
+      main.innerHTML = '';
       main.appendChild(post());
       break;
     case '#aboutus':
-      main.innerHTML = ' ';
+      main.innerHTML = '';
       main.appendChild(aboutus());
       break;
     default:
-      main.innerHTML = ' ';
+      main.innerHTML = '';
       main.appendChild(login());
   }
 });

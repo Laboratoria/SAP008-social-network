@@ -14,6 +14,7 @@ import {
   getDocs,
   doc,
   updateDoc,
+  deleteDoc,
 } from './export.js';
 
 import firebaseConfig from './firebase-config.js';
@@ -108,4 +109,8 @@ export const editPost = async (postId, artist, location, date, text) => {
     date,
     text,
   });
+};
+
+export const deletePost = async (postId) => {
+  await deleteDoc(doc(db, 'posts', postId));
 };

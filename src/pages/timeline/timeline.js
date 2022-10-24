@@ -9,8 +9,9 @@ export default () => {
 	      <img class='logo-timeline' src='./imagens/logo-mobile.png' alt='logo'>
 	    </figure>
 	    <button id='logout-btn' class='logout-btn'><img class='logout-icon' src='./imagens/logout.svg' alt='signout-icon'></button>
-	 </header
-   
+	 </header>
+
+   <main class='container-main'>   
     <section id='create-post' class='container-main-timeline'> 
       <section class='container-post'>
         <figure>
@@ -30,6 +31,7 @@ export default () => {
 
     	<section id='post-timeline'></section>
 	  </section>
+  </main>
   `;
 
   container.innerHTML = template;

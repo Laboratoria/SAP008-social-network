@@ -162,7 +162,7 @@ html {
     background-color: var(--lilas);
     color: var(--branco);    
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -176,6 +176,10 @@ html {
 
 .like::after {
     content:attr(data-count-likes);
+}
+
+.heart-icon {
+    width: 60%;
 }
 
 .confimation-delete {

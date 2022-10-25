@@ -1,4 +1,8 @@
-import { loginGoogle, userLogin, createUser } from '../../src/firebase/auth.js';
+import {
+  loginGoogle,
+  userLogin,
+  createUser,
+} from '../../src/firebase/auth.js';
 
 import {
   signInWithPopup,

@@ -4,39 +4,52 @@ import feed from './pages/feed/feed.js';
 import publish from './pages/publish/publish.js';
 import guidelines from './pages/guidelines/guidelines.js';
 import terms from './pages/terms/terms.js';
+import header from './pages/header/header.js';
+import footer from './pages/footer/footer.js';
 
 const main = document.querySelector('#root');
 
 const init = () => {
-  main.innerHTML = '';
-
   switch (window.location.hash) {
     case '':
+      main.appendChild(login());
+      break;
+    case '#login':
       main.appendChild(login());
       break;
     case '#register':
       main.appendChild(cadastro());
       break;
     case '#feed':
+      main.appendChild(header());
       main.appendChild(feed());
+      main.appendChild(footer());
       break;
     case '#publish':
+      main.appendChild(header());
       main.appendChild(publish());
+      main.appendChild(footer());
       break;
     case '#profile':
+      main.appendChild(header());
       main.appendChild(feed());
+      main.appendChild(footer());
       break;
     case '#guidelines':
+      main.appendChild(header());
       main.appendChild(guidelines());
+      main.appendChild(footer());
       break;
     case '#termsOfUse':
+      main.appendChild(header());
       main.appendChild(terms());
+      main.appendChild(footer());
       break;
     case '#logout':
       main.appendChild(login());
       break;
     default:
-      main.appendChild(feed());
+      main.appendChild(login());
   }
 };
 
@@ -45,17 +58,6 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', () => {
+  main.innerHTML = '';
   init();
-});
-
-const menu = document.querySelector('#menu');
-
-menu.addEventListener('click', () => {
-  const contentMenu = document.querySelector('#bodyMenu');
-
-  if (contentMenu.style.display === 'block') {
-    contentMenu.style.display = 'none';
-  } else {
-    contentMenu.style.display = 'block';
-  }
 });

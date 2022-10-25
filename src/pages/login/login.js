@@ -1,4 +1,5 @@
 import { userLogin, loginGoogle } from '../../firebase/auth.js';
+import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -31,21 +32,21 @@ export default () => {
     <form class='form' id='form-login'>
       <section class='input'>
         <input class='infos' id='email' type='email' placeholder='Email'>
-        <img src='../icones/icone-email.png' id='icon-email' alt="">
+        <p id='error'></p>
         <input class='infos' id='password' type='password' placeholder='Senha'>
-        <img src='../icones/icone-cadeado.png' alt=''>
-        <img src='../icones/icone-email.png' alt=''>
       </section>
 
       <span class='forgot'><p>Esqueci minha senha</p></span>
-
+      
       <section class='buttons'>
         <a class='btn' id='submit-login' href='#login'>Login</a>
         <a class='btn' id='submit-google' href='#login'>Entrar com o google</a>
         <img src='../icones/icone-google.png' alt="">
       </section>
 
-      <span id='create'><p>Não possui conta? <a id='register-mobile' href='#register'>Cadastre-se</p></a></span>
+      <span id='create'>
+      <p>Não possui conta? <a id='register-mobile' href='#register'>Cadastre-se</p></a>
+      </span>
     </form>
   </section>
 </section>
@@ -57,17 +58,14 @@ export default () => {
   btnLogin.addEventListener('click', () => {
     const inputEmail = container.querySelector('#email').value;
     const inputPassword = container.querySelector('#password').value;
+    const errorMessage = container.querySelector('#error');
 
     userLogin(inputEmail, inputPassword)
       .then(() => {
-        // const user = userCredential.user;
-
-        console.log('você está logado');
+        window.location.hash = '#feed';
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        // const errorCode = error.code;
-        console.log(errorMessage);
+        errorMessage.innerHTML = errorMessages(error);
       });
   });
   const btnGoogle = container.querySelector('#submit-google');

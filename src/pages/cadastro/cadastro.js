@@ -1,4 +1,5 @@
 import { createUser } from '../../firebase/auth.js';
+import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
@@ -60,27 +61,19 @@ export default () => {
     e.preventDefault();
     const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
-    containerRegistration.querySelector('#saida').innerHTML = registrationFirstNameAndLastNamevalue;
-    const registrationUsername = containerRegistration.querySelector('#registrationUsername').value;
-    const registrationUsernameValue = registrationUsername;
-    containerRegistration.querySelector('#saida').innerHTML = registrationUsernameValue;
     const emailRegistration = containerRegistration.querySelector('#emailRegistration').value;
     const emailRegistrationValue = emailRegistration;
-    containerRegistration.querySelector('#saida').innerHTML = emailRegistrationValue;
     const registrationPassword = containerRegistration.querySelector('#registrationPassword').value;
     const registrationPasswordValue = registrationPassword;
-    containerRegistration.querySelector('#saida').innerHTML = registrationPasswordValue;
     const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation').value;
     const passwordConfirmationValue = passwordConfirmation;
-    containerRegistration.querySelector('#saida').innerHTML = passwordConfirmationValue;
     const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
     const iamRegistrationValue = iamRegistration;
-    containerRegistration.querySelector('#saida').innerHTML = iamRegistrationValue;
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');
     const username = containerRegistration.querySelector('#registrationUsername').value;
     if (
-      registrationFirstNameAndLastNamevalue === '' || registrationUsernameValue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistration === '') {
-      alert('preencha esse campo');
+      registrationFirstNameAndLastNamevalue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistrationValue === '') {
+      alert('Preencha este campo');
     }
     if (passwordConfirmationValue !== registrationPasswordValue) {
       alert('as senhas nao sao iguais');
@@ -89,17 +82,14 @@ export default () => {
       alert('Você não concorda com os termos');
     }
     if (
-      registrationFirstNameAndLastNamevalue !== '' && registrationUsernameValue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistration !== '' && confirmationBox.checked) {
+      registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistration !== '' && confirmationBox.checked) {
       // alert('formulario validado');
       createUser(username, emailRegistration, registrationPassword)
         .then(() => {
           window.location.hash = '#feed';
         })
         .catch((error) => {
-        // const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          alert(errorMessage);
+          errorMessages.innerHTML = errorMessages(error);
         });
     }
   });

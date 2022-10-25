@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import {
-// eslint-disable-next-line max-len
+  // eslint-disable-next-line max-len
   getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword, signOut, updateProfile, getDocs,
 } from '../../src/lib/firebase.js';
 import {
@@ -11,14 +11,25 @@ import {
 jest.mock('../../src/lib/firebase.js');
 
 describe('newUser', () => {
-  it('should be a function', () => {
-    expect(typeof newUser).toBe('function');
-  });
-  it('should call another function one time', () => {
+  it('should creat a new account', () => {
+    createUserWithEmailAndPassword.mockResolvedValue({
+      user: {},
+    });
     newUser('email', 'password', 'name');
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
-    expect(updateProfile).toHaveBeenCalledTimes(1);
-    expect(updateProfile).toHaveBeenCalledWith(undefined, {});
   });
 });
+
+describe('loginUser', () => {
+  it('should provide access', () => {
+    signInWithEmailAndPassword.mockResolvedValue({
+      user: {},
+      password: {},
+    });
+    loginUser('email', 'password');
+    expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+
+

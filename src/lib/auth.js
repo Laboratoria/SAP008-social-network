@@ -13,17 +13,14 @@ export const dataBase = getFirestore(app);
 
 const provider = new GoogleAuthProvider(app);
 
-export const newUser = async (email, password, name) => { // função criar usuário
-  try {
-    await createUserWithEmailAndPassword(auth, email, password);
-    await updateProfile(auth.currentUser, {
+export const newUser = (email, password, name) => { // função criar usuário
+  return createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+    updateProfile(auth.currentUser, {
       displayName: name,
     });
-    // console.log(auth.currentUser);
-  } catch (error) {
-    throw error;
+  });
   }
-};
 
 export function loginUser(email, password) { // função login
   return signInWithEmailAndPassword(auth, email, password)
@@ -36,7 +33,7 @@ export function loginUser(email, password) { // função login
 }
 
 export function logoutUser() { // função logout
-  signOut(auth).then(() => {
+  return signOut(auth).then(() => {
     window.location.hash = '#entrar';
   }).catch((error) => error);
 }

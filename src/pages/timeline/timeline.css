@@ -1,5 +1,5 @@
 /* mobile */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .logo-timeline {
     display: none;
   }
@@ -85,6 +85,8 @@
   }
 }
 
+/* desktop */
+
 @media screen and (min-width: 769px) {
   body {
     background-color: #f0fbff;
@@ -114,19 +116,27 @@
     margin-top: 1rem;
     margin-bottom: 2rem;
     background: transparent;
+    cursor: pointer;
+  }
+
+  .logout-icon {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .logout-icon:hover {
+    transform: scale(1.1);
   }
 
   .container-main {
-    width: 50%;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
   }
 
   .container-post {
-    width: 100%;
     display: flex;
     margin-top: -5rem;
     margin-left: 6rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .img-profile {
@@ -135,20 +145,26 @@
     width: 3rem;
     height: 3rem;
     margin-left: -4rem;
+    position: absolute;
+    margin-top: -6rem;
   }
 
   .post-publish {
     display: flex;
-    /* border: none; */
-    width: 100%;
+    border: none;
+    width: 50%;
+    margin-bottom: 1rem;
     background-color: unset;
     margin-top: 1rem;
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
+    transition: all 0.4s ease-in-out;
   }
 
   .post-publish:focus {
     outline: none;
+    box-shadow: 0 0 10px #acdcee70;
+
   }
 
   .post-publish::placeholder {
@@ -156,14 +172,25 @@
     font-family: "Roboto", sans-serif;
   }
 
-  .container-btn {
-    float: right;
+  .container-btn {  
+    display: flex;
+    margin-left: 15rem;
+    padding-top: -3rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .publish-btn,
   .btn-add-img {
     border: none;
     background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .publish-btn:hover,
+  .btn-add-img:hover {
+    transform: scale(1.1);
   }
 
   .publish-btn {
@@ -171,21 +198,19 @@
     margin-left: 1rem;
   }
 
-  .btn-add-img-icon {
-    padding-top: 1rem;
-  }
+  .container-post-timeline {
+    display: block;
+    margin-top: 2rem;
+    margin-left: 23rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #16394670;
+    width: 38rem;
+    height: 13rem;
+    border-radius: 1rem;
+    background-color: #f0fbff;
+    transition: all 0.4s ease-in-out;
 
-  .linha-um {
-    width: 100%;
-    height: 1px;
-    background-color: #acdcee;
-    margin-top: 0.5rem;
-  }
-
-  .linha-dois {
-    width: 100%;
-    height: 1px;
-    background-color: #acdcee;
-    margin-top: 4rem;
   }
 }

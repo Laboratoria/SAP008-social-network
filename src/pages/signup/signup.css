@@ -54,6 +54,15 @@ body {
     -webkit-animation: bounce 1.5s alternate-reverse;
   }
 
+  .botao-voltar {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    margin-top: -10rem;
+    margin-bottom: 8rem;
+    margin-left: 1rem;
+  }
+
   .form-signup {
     display: flex;
     flex-direction: column;
@@ -183,7 +192,6 @@ body {
 
   .botao-voltar:hover {
     transform: scale(1.1);
-    
   }
 
   .container-main-signup {

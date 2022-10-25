@@ -1,7 +1,7 @@
-import { logout } from '../../firebase/auth.js';
+import { logout } from "../../firebase/auth.js";
 
 export default () => {
-  const container = document.createElement('div');
+  const container = document.createElement("div");
 
   const template = `
 	 <header class='container-header'>
@@ -11,8 +11,7 @@ export default () => {
 	    <button id='logout-btn' class='logout-btn'><img class='logout-icon' src='./imagens/logout.svg' alt='signout-icon'></button>
 	 </header>
 
-   <main class='container-main'>   
-    <section id='create-post' class='container-main-timeline'> 
+   <main class='container-main'>
       <section class='container-post'>
         <figure>
           <img class='img-profile' id='img-profile' />
@@ -28,22 +27,29 @@ export default () => {
         <button class='publish-btn' id='publish-btn'><img class='publish-post-icon' src='./imagens/btn-post.svg' alt='add-image'></button>
       </section>
       <div class='linha-dois'></div>
-
-    	<section id='post-timeline'></section>
-	  </section>
   </main>
+
+  <section id='post-timeline' class='container-post-timeline'>
+    <div class='profile-img'></div>
+    <div class-'post-display-name'></div>
+    <div class='post-text'></div>
+    <div class='post-comments'></div>
+    <div class='post-likes'></div>
+    <div class='post-edit'></div>
+    <div class='post-delete'></div>
+  </section>
   `;
 
   container.innerHTML = template;
 
-  const btnLogout = container.querySelector('#logout-btn');
-  const displayName = container.querySelector('.display-name');
+  const btnLogout = container.querySelector("#logout-btn");
+  const displayName = container.querySelector(".display-name");
 
-  btnLogout.addEventListener('click', (e) => {
+  btnLogout.addEventListener("click", (e) => {
     e.preventDefault();
     logout();
-    window.location.hash = '#login';
+    window.location.hash = "#login";
   });
-  
+
   return container;
 };

@@ -1,9 +1,10 @@
-import { loginEmailPassword, signInGoogle } from '../lib/index.js';
+import { createUser, loginEmailPassword, signInGoogle } from '../lib/index.js';
 
 export default () => {
   const container = document.createElement('div');
 
   const template = `
+
       <section class="content">
          <p id="msgErro"></p>
 
@@ -52,15 +53,18 @@ export default () => {
   const login = container.querySelector('#botaoEntrar');
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
-  const btnGmail = container.querySelector('#btnGmail')
-  const msgErro = container.querySelector('#msgErro')
+  const btnGmail = container.querySelector('#btnGmail');
+  const msgErro = container.querySelector('#msgErro');
 
   login.addEventListener('click', (e) => {
     e.preventDefault();
 
     loginEmailPassword(email.value, password.value)
-      .then(() => {
+      .then((userCredential) => {
+         const user = userCredential.user
+         console.log(user)
         window.location.hash = '#feed';
+        
       })
       .catch((error) => {
         msgErro.innerHTML = 'usário ou senha incorretos';

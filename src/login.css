@@ -6,10 +6,13 @@
     width: 100%;
     height: 100vh;
     background: #ffffff;
+    background-image: url(./img/mulheres.png);
+    background-size: 100%;
     display:flex;
     justify-content:center;
     align-items: center;
 }
+
 .logoCookieLogin{
     width: 100%;
     display:flex;
@@ -54,7 +57,7 @@
     border-radius: 15px;
     width: 105%;  
     height: 1.6rem;
-    background: #f4b324;
+    background: #48a3a7;
     color: #ffffff;
     border: none;
     cursor: pointer;  
@@ -72,7 +75,7 @@
     gap: 0.5rem;
 }
 .linha{
-    width: 2rem;
+    width: 4rem;
     height: 1%;
     background-color: black;
 }

@@ -8,7 +8,7 @@ export default () => {
     <section class='containerPassword'>
       <form class="boxModelPass">
         <p>
-          <img class='logoPass' src="/src/img/logoTranp.png" alt='Logo Wanderlust'>
+          <img class='logoPass' src="img/logoTranp.png" alt='Logo Wanderlust'>
         </p>
         <p class="titleSenha">
           <h3 class="titleSenha">Vamos recuperar sua senha!</h3>

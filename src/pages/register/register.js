@@ -7,7 +7,7 @@ function templateScreen() {
   <div class='container-register'>
   <div class='boxModelFormRegistro'>
   <form class='form'>
-  <img class='logoRegistro' src='/src/img/logoTranp.png' alt='Logo Wanderlust'>
+  <img class='logoRegistro' src='../../img/logoTranp.png' alt='Logo Wanderlust'>
     <p class='name'>
       <label for='name-cadastro'>Nome:</label>
       <input class='inputCadastro' id='name-cadastro' name='name-cadastro' required='required' type='text' placeholder='Nome' />

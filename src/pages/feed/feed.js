@@ -16,11 +16,11 @@ export default () => {
   const contentFeed = `
     <div>
       <header class='headerFeed'>
-          <img src='/src/img/logo.png' class='loginhoFeed' alt='Logo Peq Wanderlust'>
+          <img src='../../img/logo.png' class='loginhoFeed' alt='Logo Peq Wanderlust'>
       </header>
       <nav class='navBar'>
         <ul>
-          <li><a class='btnSIgnInOut' id='logOut'><img src='/src/img/btnSair.png' alt='seta para sair'</a></li>
+          <li><a class='btnSIgnInOut' id='logOut'><img src='../../img/btnSair.png' alt='seta para sair'</a></li>
         </ul>
       </nav>
       <section class='msgBoasvindas'>
@@ -52,13 +52,13 @@ export default () => {
         </div>
         <p id='textPost'>${posts.text}</p>
         <p class='sectionBtn'>
-          <a class='btnDelete' id='btn-delete'><img src='/src/img/delete.png' alt='Deletar'></a>
-          <a class='btnEditar' id='btn-editar'><img src='/src/img/editar.png' alt='Editar'></a>
+          <a class='btnDelete' id='btn-delete'><img src='../../img/delete.png' alt='Deletar'></a>
+          <a class='btnEditar' id='btn-editar'><img src='../../img/editar.png' alt='Editar'></a>
         </p>
       </section>
       <section class='sectionBtnLikeDeslike'>
-        <a class='btnLike' id='btn-like'><img src='/src/img/like.png' alt='Like'></a>
-        <a class='btnDeslike' id='btn-deslike'><img src='/src/img/deslike.png' alt='Deslike'></a>
+        <a class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></a>
+        <a class='btnDeslike' id='btn-deslike'><img src='../../img/deslike.png' alt='Deslike'></a>
       </section>
     `;
         return postTemplate;

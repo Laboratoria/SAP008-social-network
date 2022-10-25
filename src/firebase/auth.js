@@ -11,9 +11,14 @@ import {
 
 import { app } from './config.js';
 
-export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
+const auth = getAuth(app);
+
+export const getUserName = () => auth.currentUser.displayName;
+export const getId = () => auth.currentUser.uid;
+
 export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
+
 export const loginGoogle = () => signInWithPopup(auth, provider);
 
 // eslint-disable-next-line max-len

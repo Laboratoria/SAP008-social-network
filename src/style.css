@@ -53,6 +53,11 @@ li {
   display: none;
 }
 
+.footer-nav a {
+  color: #00a57a;
+  text-decoration: none;
+}
+
 #bodyMenu ul li a {
   color: #535050;
   text-decoration: none;
@@ -74,11 +79,6 @@ li {
   margin: 5rem;
 
   margin-top: 40vh;
-}
-
-.footer-nav a {
-  color: #00a57a;
-  text-decoration: none;
 }
 
 .footer-icon {

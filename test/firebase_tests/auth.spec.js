@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import {
   // eslint-disable-next-line max-len
-  getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword, signOut, updateProfile, getDocs,
+  createUserWithEmailAndPassword, signInWithPopup, addDoc, signInWithEmailAndPassword, signOut, getDocs,
 } from '../../src/lib/firebase.js';
 import {
   // eslint-disable-next-line no-unused-vars
@@ -31,5 +31,39 @@ describe('loginUser', () => {
   });
 });
 
+describe('logoutUser', () => {
+  it('should end the access session and log out', () => {
+    signOut.mockResolvedValue({
+      user: {},
+    });
+    logoutUser();
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});
 
+describe('create', () => {
+  it('should creat a new post', () => {
+    addDoc.mockResolvedValue();
+    const restaurant = 'Café da Vila';
+    const adress = 'R. Dr Arthur Martins, 243';
+    const review = 'Atendimento nota 10!';
+    create(restaurant, adress, review);
+    expect(addDoc).toHaveBeenCalledTimes(1);
+  });
+});
 
+describe('googleAccess', () => {
+  it('should provide access with google', () => {
+    signInWithPopup.mockResolvedValue();
+    googleAccess();
+    expect(signInWithPopup).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('getPosts', () => {
+  it('should get posts from dataBase', () => {
+    getDocs.mockResolvedValue();
+    getPosts();
+    expect(getDocs).toHaveBeenCalledTimes(1);
+  });
+});

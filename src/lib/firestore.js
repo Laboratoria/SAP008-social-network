@@ -16,17 +16,6 @@ const createPost = async (textPost) => {
     }
 };
 
-const getPostById = async (postId) => {
-    const docRef = doc(db, "post", postId);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data();
-};
-
-// export const getCurrentUser = () => {
-//     const auth = getAuth(app);
-//     return auth.currentUser;    
-// }
-
 const getPost = async () => {
     try {
         const querySnapshot = await getDocs(collection(db, "post"));
@@ -60,6 +49,12 @@ const deletePost = async (userId) => {
     }
 };
 
+const getPostById = async (postId) => {
+    const docRef = doc(db, "post", postId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
+};
+
 const likePost = async (postId, userId) => {
     const post = await getPostById(postId);
     let likes = post.like;
@@ -75,16 +70,7 @@ const likePost = async (postId, userId) => {
         like: likes,
     });
       
-    return { liked: liking, count: likes.length };    
+    return { liked: liking, count: likes.length };
 };
-
-// X - recebe o id do post e o id do usuario
-// X- consulta o post no firebase (getDoc ou algo assim) usando esse id do post
-// X - pega os likes desse mesmo post
-// X - verifica se os likes incluem o id do usuario e:
-// X -se nao incluir, adiciona
-// X - se incluir, remove (com .filter de array, por exemplo)
-// X - atualiza o post com a lista nova de likes : usa o updateDoc
-// retorna se adicionou ou removeu o post (true/false) e a contagem (.length) dos likes no final: retorna um objeto com o array de likes
 
 export { createPost, getPost, upDatePost, deletePost, likePost };

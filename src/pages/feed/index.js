@@ -5,8 +5,7 @@ import { app } from '../../lib/firebase.js';
 
 const auth = getAuth(app);
 
-export default () => {
-  // const currentUser = getCurrentUser();
+export default () => {  
   const container = document.createElement('div');
   container.classList.add('wrapper-feed');
   const template = `      
@@ -55,7 +54,9 @@ export default () => {
           <button class="btn-post" data-decline-delete="${post.id}" type="button">Não</button>
         </div>
 
-        <button id="btnLike" class="btn-post like" data-count-likes="${post.like.length}" data-like-btn="${post.id}" data-liked="${post.like.includes(auth.currentUser.uid)}" type="button">Curtir </button> 
+        <button id="btnLike" class="btn-like like " data-count-likes="${post.like.length}" data-like-btn="${post.id}" type="button">
+        <img ${post.like.includes(auth.currentUser.uid) ? 'src="../../img/full-heart.png"' : 'src="../../img/empty-heart.png"'} alt="purple-heart"> 
+        </button> 
       </div>
 
     `).join('');
@@ -120,7 +121,7 @@ export default () => {
       btn.addEventListener('click', (e) => {        
         const elemento = e.currentTarget;
         const postLikedId = elemento.dataset.likeBtn;
-        const user = auth.currentUser.uid;          
+        const user = auth.currentUser.uid;
 
           likePost(postLikedId, user)
           .then(resultado => {

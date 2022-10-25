@@ -51,15 +51,16 @@ export default function Feed() {
       const postCreated = posts.map((post) => {
         const iteration = post.user === user ? `  
         <div class="delete-btn">
-          <p class="delete-post"></p>
+          <img class="delete-post" src="./imagens/btndelete.png" alt="Botão de deletar">
         </div> ` : '';
         return `
         <li class="allposts" data-id="${post.id}">
           <div class="identification"> 
             <p class="username"><b>${post.displayName}</b></p>
-            <p class="data-post"> Postado em ${post.data} ${post.hour} </p>
+            <p class="data-post"> Postado em ${post.data} às ${post.hour} </p>
             <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
           </div>
+          ${iteration}
         </li>`;
       }).join('');
       postList.innerHTML = postCreated;

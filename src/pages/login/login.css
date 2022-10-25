@@ -75,7 +75,7 @@ telas grandes: acima de 1200 */
 }
 
 .google-button {
-  width: 66%;
+  width: 50%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -116,15 +116,15 @@ telas grandes: acima de 1200 */
   } 
   .logo {
     margin-top: 20%;
-    width: 90%;
+    width: 20%;
   }
 
   .google-button {
-    width: 100%;
+    width: 75%;
   }
 
   .field-logo{
     margin: 5%;
-    width: 100%;
+    width: 75%;
   }
 }

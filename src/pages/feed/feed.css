@@ -86,7 +86,7 @@
   @media screen and (min-width: 1024px) and (max-width: 1700px) {      
       
       .post-textarea {
-        width: 250%;
+        width: 100%;
         height: 70%;
       }
   
@@ -95,7 +95,7 @@
       }
   
       .allposts {
-        width: 250%;
+        width: 100%;
         height: 70%;
       }
   

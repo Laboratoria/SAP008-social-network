@@ -68,7 +68,9 @@ select {
 
   .body-post {
     width: 70vw;
-    margin: 5rem 0rem 0rem 5rem;
+    margin-top: 5rem;
+
+    margin-left: 17rem;
 
     padding: 0rem;
   }

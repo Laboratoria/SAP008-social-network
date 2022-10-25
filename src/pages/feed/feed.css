@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;500;700&display=swap");
+
+.body-post-feed {
+  margin-top: 2rem;
+}
 
 .main-post-feed {
   background-color: white;
   width: 90vw;
-  height: auto;  
+  height: auto;
   border-radius: 10px;
   padding: 1rem;
 
@@ -12,18 +16,22 @@
   margin-bottom: 2rem;
 }
 
+.btn-delete {
+  float: right;
+}
+
 .photo-name-post-feed {
   display: flex;
 }
 
 .name-post-feed {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .content-post-feed {
   width: auto;
   height: auto;
-  
+
   text-align: justify;
   font-weight: bold;
   margin-top: 1rem;
@@ -94,8 +102,14 @@ picture:hover {
 }
 
 @media screen and (min-width: 1024px) {
-    .main-post-feed {
+  .body-post-feed {
+    margin-left: 12rem;
+    
+    width: 85vw;
+  }
+
+  .main-post-feed {
     margin: 2rem 4rem 2rem 4rem;
     width: auto;
-  }  
+  }
 }

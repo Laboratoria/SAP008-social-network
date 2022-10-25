@@ -1,5 +1,7 @@
 import {
   getFirestore,
+  getDocs,
+  query,
   addDoc,
   collection,
   getAuth,
@@ -16,9 +18,7 @@ export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider(app);
 export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
 export const loginGoogle = () => signInWithPopup(auth, provider);
-// eslint-disable-next-line max-len
-export const getUserName = () => auth.currentUser.displayName;
-export const getUserId = () => auth.currentUser.uid;
+export const nameUser = () => auth.currentUser.displayName;
 
 // eslint-disable-next-line max-len
 export const createUser = (name, email, password) => createUserWithEmailAndPassword(auth, email, password)
@@ -33,10 +33,27 @@ export const createUser = (name, email, password) => createUserWithEmailAndPassw
 // nat
 const db = getFirestore(app);
 
-async function publishPost(post) {
+export const createPost = async (post) => {
   await addDoc(collection(db, 'posts'), {
-    post,
-  });
-}
+    name: auth.currentUser.displayName,
+    text: post,
+    like: [],
+  })
+    .then(() => true)
+    .catch((e) => { throw e; });
+};
 
-export { publishPost };
+export const q = query(collection(db, 'posts'));
+
+export const publishPost = async () => {
+  try {
+    const arrayPost = [];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((posts) => {
+      arrayPost.push({ ...posts.data(), id: posts.id });
+    });
+    return arrayPost;
+  } catch (error) {
+    return error;
+  }
+};

@@ -23,16 +23,12 @@
     justify-content: space-around;
     width: 100vw;
     height: 68px;
-  
-    /* margin-top: 40vh; */
   }
   
   .footer-icon {
     display: block;
     position: relative;
     text-align: center;
-    width: 2rem;
-    height: 2rem;
   }
   .footer-icon ion-icon {
     width: 40px;
@@ -105,13 +101,11 @@
       position: absolute;
       margin-top: 7rem;
     }
-  
     .footer-nav ul {
       display: flex;
       flex-direction: column;
       margin: 0;
       margin-left: 3rem;
-      margin-top: 10rem;
     }
   
     .footer-nav li a {
@@ -119,8 +113,8 @@
     }
   
     .footer-icon ion-icon {
-      height: 1.5rem;
-      width: 1.5rem;
+      /* height: 1.5rem;
+      width: 1.5rem; */
       color: #00a57a;
       margin-right: 0.5rem;
     }

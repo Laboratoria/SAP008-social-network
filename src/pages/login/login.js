@@ -11,7 +11,7 @@ export default () => {
     <h1>Rede de apoio</h1>
     <hr>
     <p>Para mamães e papais<br> em fase de crescimento!</p>
-    <button class='register-desktop'>CADASTRE-SE</button>
+    <a href='#register' class='register-desktop'>CADASTRE-SE</a>
   </section>
 
   <section class='login'>
@@ -37,9 +37,7 @@ export default () => {
       </section>
 
       <span class='forgot'><p>Esqueci minha senha</p></span>
-
-      <p id='error'></p>
-
+      
       <section class='buttons'>
         <a class='btn' id='submit-login' href='#login'>Login</a>
         <a class='btn' id='submit-google' href='#login'>Entrar com o google</a>
@@ -65,7 +63,6 @@ export default () => {
     userLogin(inputEmail, inputPassword)
       .then(() => {
         window.location.hash = '#feed';
-        console.log('você está logado');
       })
       .catch((error) => {
         errorMessage.innerHTML = errorMessages(error);

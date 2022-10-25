@@ -13,6 +13,6 @@ export function errorMessages(error) {
     case 'auth/wrong-password':
       return 'Senha incorreta!';
     default:
-      return `Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: ${error.code}`;
+      return `Aconteceu um erro não identificado, entre em contato com as desenvolvedoras e informe o erro a seguir: ${error.code}`;
   }
 }

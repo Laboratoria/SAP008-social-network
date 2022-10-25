@@ -38,17 +38,17 @@ export default () => {
 
   containerHeader.innerHTML = header;
 
-  const menu = containerHeader.querySelector('#menu');
+  // const menu = containerHeader.querySelector('#menu');
 
-  menu.addEventListener('click', () => {
-    const contentMenu = containerHeader.querySelector('#bodyMenu');
+  // menu.addEventListener('click', () => {
+  //   const contentMenu = containerHeader.querySelector('#bodyMenu');
 
-    if (contentMenu.style.display === 'block') {
-      contentMenu.style.display = 'none';
-    } else {
-      contentMenu.style.display = 'block';
-    }
-  });
+  //   if (contentMenu.style.display === 'block') {
+  //     contentMenu.style.display = 'none';
+  //   } else {
+  //     contentMenu.style.display = 'block';
+  //   }
+  // });
 
   return containerHeader;
 };

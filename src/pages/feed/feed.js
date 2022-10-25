@@ -1,62 +1,28 @@
 export default () => {
+  // const name = nameUser();
   const containerFeed = document.createElement('div');
 
-  const feed = `
-    <div class='body-post-feed'>
-      <div class='main-post-feed'>
-        <div class='photo-name-post-feed'>
-        
-        <label class="picture" for="picture__input" tabIndex="0">
-         <span class="picture__image"></span>
-        </label>
-          <input type='file' name='picture_input' id='picture_input'>
+  const templateFeed = `
+  <div class='body-post-feed'>
+  <div class='main-post-feed'>
+    <div class='photo-name-post-feed'>
+    <label class="picture" for="picture__input" tabIndex="0">
+    <span class="picture__image"></span>
+    </label>
+      <input type='file' name='picture_input' id='picture_input'>
 
-          <div class='name-post-feed'>Nome Sobrenome</div>
-        </div> 
-        <div class='content-post-feed'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </div>
-        <div class='select-data-post-feed'>
-          <div class='select-post-feed'>#assunto</div>
-          <div class='data-post-feed'>data</div>
-        </div>
-        <div class='icone-like-post-feed'>icone like</div>
-      </div>
-
-      <div class='main-post-feed'>
-        <div class='photo-name-post-feed'>
-          <div>foto pessoa</div>
-          <div class='name-post-feed'>Nome Sobrenome</div>
-        </div> 
-        <div class='content-post-feed'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </div>
-        <div class='select-data-post-feed'>
-          <div class='select-post-feed'>#assunto</div>
-          <div class='data-post-feed'>data</div>
-        </div>
-        <div class='icone-like-post-feed'>icone like</div>
-      </div>
-      
-      <div class='main-post-feed'>
-        <div class='photo-name-post-feed'>
-          <div>foto pessoa</div>
-          <div class='name-post-feed'>Nome Sobrenome</div>
-        </div> 
-        <div class='content-post-feed'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </div>
-        <div class='select-data-post-feed'>
-          <div class='select-post-feed'>#assunto</div>
-          <div class='data-post-feed'>data</div>
-        </div>
-        <div class='icone-like-post-feed'>icone like</div>
-      </div>
-
+      <div class='name-post-feed'></div>
+    </div> 
+    <div class='content-post-feed'></div>
+    <div class='select-data-post-feed'>
+      <div class='select-post-feed'>#assunto</div>
+      <div class='data-post-feed'>data</div>
     </div>
+    <div class='icone-like-post-feed'></div>
+  </div>
+
+</div>
   `;
-
-  containerFeed.innerHTML = feed;
-
+  containerFeed.innerHTML = templateFeed;
   return containerFeed;
 };

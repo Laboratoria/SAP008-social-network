@@ -124,7 +124,7 @@
 
 /*       DESKTOP     */
 
-@media screen and (min-device-width: 1200px){
+@media screen and (min-device-width: 1024px){
 
     .logo-mobile {
         display: none;

@@ -7,7 +7,7 @@ export default () => {
     <div class='body-cadastro'>
       <header class='header-cadastro'>
         <picture>
-          <img src='pages/cadastro/icone.png' alt='icone' class='icone' id='icone'>
+          <img src='pages/cadastro/icone.png' alt='icone' class='icone'>
           <img src='pages/cadastro/logo.png' alt='logo' class='logo'>
         </picture>
         <h1>Cadastre-se</h1>
@@ -43,13 +43,13 @@ export default () => {
           <div class='formCadastroInput'>
            <div class='checkBoxRegistration'>
               <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
-              <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse' id='terms'>termos de uso</a></label>
+              <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse'>termos de uso</a></label>
            </div>
-           <p id='erro'></p>
           </div>
           <div class='formCadastroInput'>
             <div class='submitCadastro'>
-              <button type='click' id='createAnAccount'>Criar Conta</button>
+            <p id='error'></p>
+              <button id='createAnAccount'>Criar Conta</button>
             </div>
             <span id='saida'></span>
           </div>
@@ -61,8 +61,6 @@ export default () => {
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();
-    const errorMessage = containerRegistration.querySelector('#erro');
-    const completeName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value;
     const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
     const emailRegistration = containerRegistration.querySelector('#emailRegistration').value;
@@ -74,9 +72,10 @@ export default () => {
     const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
     const iamRegistrationValue = iamRegistration;
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+    const errorMessage = containerRegistration.querySelector('#error');
     if (
       registrationFirstNameAndLastNamevalue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistrationValue === '') {
-      alert('preencha esse campo');
+      alert('Preencha este campo');
     }
     if (passwordConfirmationValue !== registrationPasswordValue) {
       alert('as senhas nao sao iguais');
@@ -86,21 +85,14 @@ export default () => {
     }
     if (
       registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
-      alert('formulario validado');
-      createUser(completeName, emailRegistration, registrationPassword)
+      createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
         .then(() => {
-          console.log('conta criada');
+          window.location.hash = '#feed';
         })
         .catch((error) => {
           errorMessage.innerHTML = errorMessages(error);
         });
     }
   });
-
-  const icone = containerRegistration.querySelector('#icone');
-  icone.addEventListener('click', () => {
-    window.location.hash = '#login';
-  });
-
   return containerRegistration;
 };

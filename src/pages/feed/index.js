@@ -1,7 +1,12 @@
 import { createPost, getPost, upDatePost, deletePost, likePost } from './../../lib/firestore.js';
 import { logout } from '../../lib/auth.js';
+import { getAuth } from '../../lib/export.js';
+import { app } from '../../lib/firebase.js';
+
+const auth = getAuth(app);
 
 export default () => {
+  // const currentUser = getCurrentUser();
   const container = document.createElement('div');
   container.classList.add('wrapper-feed');
   const template = `      
@@ -50,7 +55,7 @@ export default () => {
           <button class="btn-post" data-decline-delete="${post.id}" type="button">Não</button>
         </div>
 
-        <button id="btnLike" class="btn-post like" data-count-likes="${post.like.length}" data-like-author="${post.author}" data-like-btn="${post.id}" type="button">Curtir </button> 
+        <button id="btnLike" class="btn-post like" data-count-likes="${post.like.length}" data-like-btn="${post.id}" data-liked="${post.like.includes(auth.currentUser.uid)}" type="button">Curtir </button> 
       </div>
 
     `).join('');
@@ -58,9 +63,7 @@ export default () => {
 
     const btnsEdit = Array.from(container.querySelectorAll('#btnEdit'));
     const btnsDelete = Array.from(container.querySelectorAll('#btnDelete'));
-    const btnsLike = Array.from(container.querySelectorAll('#btnLike'));
-    // let likeForUser = post.like.filter((usuario) => usuario.author);
-    
+    const btnsLike = Array.from(container.querySelectorAll('#btnLike'));    
     
     btnsEdit.forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -117,14 +120,14 @@ export default () => {
       btn.addEventListener('click', (e) => {        
         const elemento = e.currentTarget;
         const postLikedId = elemento.dataset.likeBtn;
-        const userId = elemento.dataset.likeAuthor;
-        const countLikes = elemento.dataset.countLikes;
-        const transformCountLikesInNumber = Number(countLikes);        
-        
-          likePost(postLikedId, userId)
-          .then(()=> {
-            elemento.dataset.countLikes = transformCountLikesInNumber + 1;
-          })            
+        const user = auth.currentUser.uid;          
+
+          likePost(postLikedId, user)
+          .then(resultado => {
+            resultado.liked;
+            
+            elemento.dataset.countLikes = resultado.count;
+          });
                    
       })
     });

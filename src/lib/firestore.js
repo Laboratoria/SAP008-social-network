@@ -1,5 +1,5 @@
 import { app } from './firebase.js';
-import { getFirestore, collection, addDoc, getDocs, getDoc, getAuth, doc, updateDoc, deleteDoc, arrayRemove, arrayUnion, } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getDoc, getAuth, doc, updateDoc, deleteDoc} from './export.js'
 
 const db = getFirestore(app);
 
@@ -20,8 +20,12 @@ const getPostById = async (postId) => {
     const docRef = doc(db, "post", postId);
     const docSnap = await getDoc(docRef);
     return docSnap.data();
+};
 
-}
+// export const getCurrentUser = () => {
+//     const auth = getAuth(app);
+//     return auth.currentUser;    
+// }
 
 const getPost = async () => {
     try {
@@ -36,8 +40,6 @@ const getPost = async () => {
         return error;
     }
 };
-
-
 
 const upDatePost = async (userId, textPost) => {
     const newPost = doc(db, 'post', userId);
@@ -61,20 +63,19 @@ const deletePost = async (userId) => {
 const likePost = async (postId, userId) => {
     const post = await getPostById(postId);
     let likes = post.like;
-    const userAlreadyLiked = likes.includes(userId);
+    const liking = !likes.includes(userId);     
 
-    if(userAlreadyLiked) {
-        likes = likes.filter((id) => id != userId);
-    } else {
+    if(liking) {
         likes.push(userId);
+    } else {        
+        likes = likes.filter((id) => id != userId);
     }
 
     await updateDoc(doc(db, 'post', postId), {
         like: likes,
     });
-
-    return likes.length;
-    
+      
+    return { liked: liking, count: likes.length };    
 };
 
 // X - recebe o id do post e o id do usuario
@@ -85,12 +86,5 @@ const likePost = async (postId, userId) => {
 // X - se incluir, remove (com .filter de array, por exemplo)
 // X - atualiza o post com a lista nova de likes : usa o updateDoc
 // retorna se adicionou ou removeu o post (true/false) e a contagem (.length) dos likes no final: retorna um objeto com o array de likes
-
-/*const unlikePost = async (postId, author) => {
-    const postToBeLiked = doc(db, 'post', postId);
-    return updateDoc(postToBeLiked, {
-        like: arrayRemove(author)
-    });
-};*/
 
 export { createPost, getPost, upDatePost, deletePost, likePost };

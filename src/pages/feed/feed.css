@@ -158,6 +158,22 @@ html {
     cursor: pointer;
 }
 
+.btn-like {
+    background-color: var(--lilas);
+    color: var(--branco);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 90% 0 0;
+}
+
+.btn-like:hover {
+    cursor: pointer;
+}
+
 .like::after {
     content:attr(data-count-likes);
 }

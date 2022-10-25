@@ -1,5 +1,5 @@
 import { app } from './firebase.js';
-import { getFirestore, collection, addDoc, getDocs, getAuth, doc, updateDoc, deleteDoc, arrayRemove, arrayUnion, } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getDoc, getAuth, doc, updateDoc, deleteDoc} from './export.js'
 
 const db = getFirestore(app);
 
@@ -30,8 +30,8 @@ const getPost = async () => {
     }
 };
 
-const upDatePost = async (author, textPost) => {
-    const newPost = doc(db, 'post', author);
+const upDatePost = async (userId, textPost) => {
+    const newPost = doc(db, 'post', userId);
 
     await updateDoc(newPost, {
         texto: textPost,
@@ -39,9 +39,9 @@ const upDatePost = async (author, textPost) => {
     });
 };
 
-const deletePost = async (author) => {
+const deletePost = async (userId) => {
     try {
-        const postToBeDeleted = doc(db, 'post', author);
+        const postToBeDeleted = doc(db, 'post', userId);
         await deleteDoc(postToBeDeleted);
         return postToBeDeleted.id;
     } catch (error) {
@@ -49,18 +49,28 @@ const deletePost = async (author) => {
     }
 };
 
-const likePost = async (postId, author) => {
-    const postToBeLiked = doc(db, 'post', postId);
-    return updateDoc(postToBeLiked, {
-        like: arrayUnion(author)
-    });
+const getPostById = async (postId) => {
+    const docRef = doc(db, "post", postId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
 };
 
-const unlikePost = async (postId, author) => {
-    const postToBeLiked = doc(db, 'post', postId);
-    return updateDoc(postToBeLiked, {
-        like: arrayRemove(author)
+const likePost = async (postId, userId) => {
+    const post = await getPostById(postId);
+    let likes = post.like;
+    const liking = !likes.includes(userId);     
+
+    if(liking) {
+        likes.push(userId);
+    } else {        
+        likes = likes.filter((id) => id != userId);
+    }
+
+    await updateDoc(doc(db, 'post', postId), {
+        like: likes,
     });
+      
+    return { liked: liking, count: likes.length };
 };
 
-export { createPost, getPost, upDatePost, deletePost, likePost, unlikePost };
+export { createPost, getPost, upDatePost, deletePost, likePost };

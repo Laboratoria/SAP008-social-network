@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container-register {
+    display: flex;
+    width: 100%;
+    font-size: 0;
+    padding: 2%;
+    background-color: #151414;
+}
+
+.box-center {
+    width: 30%;
+    margin: auto;
+    background-color: #ffffff;
+    font-size: 1rem;
+    border-radius: 2%;
+    margin-bottom: 5%;
+    padding: 10px;
+}
+
+.logo-register {
+    max-height: auto;
+}
+
+.box-center .logo-register {
+    text-align: center;
+}
+
+#logo-register {
+    width: 9vw;
+}
+
+.box-center .buttons-register {
+    width: 80%;
+    height: 7vh;
+    background-color: #850a0a;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 1.4rem;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#button-back {
+    background-color: #544f4f;
+}
+
+.register-error {
+    text-align: center;
+    color: #d30a0a;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+.buttons:hover {
+    background-color: #C30707;
+}
+
+.form {
+    display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.form-register input {
+    width: 98%;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.wrapper-register {
+    padding-bottom: 10%;
+    background-color: #151414;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.foot p {
+    justify-content: space-between;
+    color: #272525;
+    padding: .2%;
+    text-align: end;
+    margin-right: 18%;
+    font-size: 1rem;
+}
+
+.foot img {
+    margin-top: .5%;
+    position: absolute;
+    margin-left: 18%;
+}
+
+
+@media only screen and (max-width: 395px) and (min-width: 200px) {
+    .container-register {
+        height: 52rem;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 45vw;
+    }
+
+    .box-center {
+        width: 80vw;
+        height: 79vh;
+        font-size: 1rem;
+        margin-top: 10%;
+        background: transparent;
+    }
+
+    .box-center .buttons {
+        font-size: 0.8rem;
+    }
+
+    .box-center .logo-register {
+        text-align: center;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
+    }
+}
+
+
+@media only screen and (max-width: 389px) {
+    .container-register {
+        height: 52rem;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 45vw;
+    }
+
+    .box-center {
+        width: 80vw;
+        height: 90vh;
+        font-size: 1rem;
+        margin-top: 10%;
+        background: transparent;
+    }
+
+    .box-center .buttons {
+        font-size: 0.8rem;
+    }
+
+    .box-center .logo-register {
+        text-align: center;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    .container-register {
+        height: 120vh;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 30vw;
+    }
+
+    .box-center {
+        background: transparent;
+        width: 80vw;
+        font-size: 1rem;
+        margin-top: 10%;
+        height: 80vh;
+    }
+
+    .box-center .buttons {
+        font-size: 0.8rem;
+    }
+
+    .box-center .logo-register {
+        text-align: center;
+    }
+
+    .wrapper-register {
+        padding-bottom: 0;
+    }
+
+    .foot {
+        padding: 2%;
+    }
+
+    .foot p {
+        font-size: 0.6rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 1%;
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 912px) and (min-width: 767px) {
+
+    .container-register {
+        height: 90vh;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 20vw;
+        margin-bottom: 3%;
+    }
+
+    .form-register input {
+        width: 100%;
+        height: 7vh;
+        font-size: 1rem;
+    }
+
+
+    .box-center {
+        width: 60%;
+        height: 80vh;
+        font-size: 1.2rem;
+        background-color: transparent;
+    }
+
+    .box-center .button {
+        font-size: 1.2rem;
+    }
+
+    .box-center .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    .wrapper-register {
+        padding-bottom: 0;
+    }
+
+    .foot {
+        padding: 4%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-left: 50%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}
+
+@media only screen and (max-width: 1285px) and (min-width: 1024px) {
+
+    .container-register {
+        height: 100%;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+    }
+
+    #logo-register {
+        width: 17vw;
+        margin-bottom: 3%;
+    }
+
+    .box-center {
+        font-size: 1.2rem;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        background-color: transparent;
+    }
+
+    .box-center .button {
+        font-size: 1.2rem;
+    }
+
+    .box-center .register {
+        width: 78%;
+        font-size: 1.3rem;
+        margin-left: 11%;
+    }
+
+    .foot {
+        padding: 1%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-right: 5%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+    .wrapper-register {
+        margin-bottom: 0;
+        height: 0;
+        padding-bottom: 5%;
+    }
+
+}
+
+@media only screen and (max-width: 950px) and (min-width:820px) {
+
+    .container-register {
+        font-size: 0;
+        height: 85rem;
+        padding: 2%;
+        background: linear-gradient(to right, #070707 0%, #740303 90%);
+
+    }
+
+    .box-center {
+        width: 62%;
+        height: 75vh;
+        font-size: 1.2rem;
+        margin-top: 2%;
+        background-color: transparent;
+    }
+
+    .form-register input {
+        height: 80px;
+        font-size: 1rem;
+    }
+
+    .box-center .button {
+        font-size: 1.2rem;
+    }
+
+    .foot {
+        padding: 1%;
+    }
+
+    .foot p {
+        font-size: 1.3rem;
+        margin-right: 6%;
+    }
+
+    .foot img {
+        margin-left: 5%;
+        width: 270px;
+    }
+
+}

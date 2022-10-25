@@ -41,6 +41,7 @@ export default () => {
 
   btnRegistration.addEventListener('click', (e) => {
     e.preventDefault();
+    messageError.innerHTML = '';
     const validate = validateFormRegister(nameProfile.value, email.value, password.value);
     if (validate) {
       messageError.classList.add('show');

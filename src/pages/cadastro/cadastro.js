@@ -1,4 +1,5 @@
 import { createUser } from '../../firebase/auth.js';
+import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
@@ -42,12 +43,13 @@ export default () => {
           <div class='formCadastroInput'>
            <div class='checkBoxRegistration'>
               <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
-              <label for='checkBoxRegistration'>Concordo com os <a href='#'>termos de uso</a></label>
+              <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse'>termos de uso</a></label>
            </div>
           </div>
           <div class='formCadastroInput'>
             <div class='submitCadastro'>
-              <button type='click' id='createAnAccount'>Criar Conta</button>
+            <p id='error'></p>
+              <button id='createAnAccount'>Criar Conta</button>
             </div>
             <span id='saida'></span>
           </div>
@@ -70,9 +72,10 @@ export default () => {
     const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
     const iamRegistrationValue = iamRegistration;
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+    const errorMessage = containerRegistration.querySelector('#error');
     if (
       registrationFirstNameAndLastNamevalue === '' || emailRegistrationValue === '' || registrationPasswordValue === '' || passwordConfirmationValue === '' || iamRegistrationValue === '') {
-      alert('preencha esse campo');
+      alert('Preencha este campo');
     }
     if (passwordConfirmationValue !== registrationPasswordValue) {
       alert('as senhas nao sao iguais');
@@ -82,19 +85,12 @@ export default () => {
     }
     if (
       registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
-      alert('formulario validado');
-      createUser(emailRegistration, registrationPassword)
+      createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
         .then(() => {
-        // Signed in
-        // const user = userCredential.user;
-        // ...
-          alert('conta criada');
+          window.location.hash = '#feed';
         })
         .catch((error) => {
-        // const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          alert(errorMessage);
+          errorMessage.innerHTML = errorMessages(error);
         });
     }
   });

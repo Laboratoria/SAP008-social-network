@@ -121,6 +121,7 @@
     background-color: #00A57A;
     color: white;
     font-size: 25px;
+    cursor: pointer;
 }
 
 #iamRegistration {
@@ -163,16 +164,6 @@
 
 }
 
-/* input{
-
-    justify-content: center;
-    align-items: center;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-color: #00A57A;
- 
-} */
 .logo {
     display: flex;
     /* align-items: center;
@@ -187,5 +178,18 @@
     position: relative;
     top: -2rem;
     right: 1.5rem;
+    cursor: pointer;
 
+}
+#error {
+    color: red;
+    text-align: center;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .header-cadastro {
+        width: 100%;
+    }
 }

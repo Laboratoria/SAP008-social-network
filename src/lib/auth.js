@@ -51,13 +51,17 @@ export const create = (restaurant, adress, review) => { // função criar novo d
   });
 };
 
-export const getPosts = () => { // função printar posts na tela
-  const querySnapshot = getDocs(collection(dataBase, 'Posts'));
-  const allPosts = [];
-  querySnapshot.forEach((Posts) => {
-    allPosts.push({ ...Posts.data(), id: Posts.id });
-  });
-  return allPosts;
+export const getPosts = async () => { // função printar posts na tela
+  try {
+    const querySnapshot = await getDocs(collection(dataBase, 'Posts'));
+    const allPosts = [];
+    querySnapshot.forEach((Posts) => {
+      allPosts.push({ ...Posts.data(), id: Posts.id });
+    });
+    return allPosts;
+  } catch (error) {
+    throw error;
+  }
 };
 
 // export const checkedUser = (check) => {

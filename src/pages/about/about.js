@@ -4,7 +4,7 @@ export default () => {
     <div>
       <header class="headerBack">
         <img src="/src/img/logo.png" class="logoWand" alt="Logo Wanderlust">
-        <a href="index.html" class="butnBack">voltar</a>
+        <a id="btn-home" class="butnBack">Voltar</a>
       </header>
       <main>
         <p class="texto1">
@@ -29,5 +29,9 @@ export default () => {
       </footer>
     </div>`;
   sectionAbout.innerHTML = contentAbout;
+  const btnGoOut = sectionAbout.querySelector('#btn-home');
+  btnGoOut.addEventListener('click', () => {
+    window.location.hash = '#home';
+  });
   return sectionAbout;
 };

@@ -26,7 +26,7 @@ export default () => {
           <input id="btn-reset" class="ResetPassword" type="button" value="Enviar email">
         </p>
         <p class="sectionBackBtn">
-          <a href="index.html"><img class='btnBackPass' src="/src/img/setaBack.png" alt='Seta para voltar'></a>
+          <input id="btn-home" class="btnBackPass" type="button" value="voltar">
         </p>
       </form>
     </section>`;
@@ -35,6 +35,7 @@ export default () => {
   const btnResetPassword = sectionPassword.querySelector('#btn-reset');
   const msgSucsses = sectionPassword.querySelector('#msgSucesso');
   const msgFirePassword = sectionPassword.querySelector('#erro-Firebase');
+  const btnGoOut = sectionPassword.querySelector('#btn-home');
   btnResetPassword.addEventListener('click', (e) => {
     e.preventDefault();
     resetPassword(inputEmail.value)
@@ -45,6 +46,9 @@ export default () => {
         const errorCode = errorFire(error.code);
         msgFirePassword.innerHTML = errorCode;
       });
+  });
+  btnGoOut.addEventListener('click', () => {
+    window.location.hash = '#home';
   });
   return sectionPassword;
 };

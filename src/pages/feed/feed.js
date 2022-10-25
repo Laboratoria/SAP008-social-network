@@ -34,40 +34,37 @@ export default () => {
               <button type='submit' id='publish-btn' class='publicBtn'>Publicar</button>
             </form>
           </section>
-          <section id='post-feed'></section>
+          <section class='timeline-post' id='post-feed'></section>
         </form> 
       </div>  
     </div>`;
   sectionFeed.innerHTML = contentFeed;
 
-  const templatePost = `
-    <div>
-      <p id="feedPost"></p>
-    </div>
-  `;
-
-  sectionFeed.querySelector('#post-feed').innerHTML = templatePost;
-
   const printPost = async () => {
     const printArray = await postScreen();
-    const postsTemplate = printArray.map((posts) => {
-      const postTemplate = `
-      <section class="postTimeline">
-        <p id="userName">${posts.name}</p>
-        <p id="textPost">${posts.text}</p>
-        <p class=""sectionBtn">
+    const postsTemplate = printArray
+      .map((posts) => {
+        const postTemplate = `
+      <section class='postTimeline'>
+        <div class="headerPost">
+          <p id='userName'>${posts.name}</p>
+          <p id='textPost'>${posts.date}</p>
+        </div>
+        <p id='textPost'>${posts.text}</p>
+        <p class='sectionBtn'>
           <a class='btnDelete' id='btn-delete'><img src='/src/img/delete.png' alt='Deletar'></a>
           <a class='btnEditar' id='btn-editar'><img src='/src/img/editar.png' alt='Editar'></a>
         </p>
       </section>
-      <section class="sectionBtnLikeDeslike">
+      <section class='sectionBtnLikeDeslike'>
         <a class='btnLike' id='btn-like'><img src='/src/img/like.png' alt='Like'></a>
         <a class='btnDeslike' id='btn-deslike'><img src='/src/img/deslike.png' alt='Deslike'></a>
       </section>
     `;
-      return postTemplate;
-    }).join('');
-    sectionFeed.querySelector('#feedPost').innerHTML = postsTemplate;
+        return postTemplate;
+      })
+      .join('');
+    sectionFeed.querySelector('#post-feed').innerHTML = postsTemplate;
 
     const createform = sectionFeed.querySelector('#create-Post');
     const textAreaPost = sectionFeed.querySelector('#text-publish');
@@ -75,10 +72,9 @@ export default () => {
     const deletePost = sectionFeed.querySelector('#btn-delete');
 
     btnLogOut.addEventListener('click', () => {
-      logOutUser()
-        .then(() => {
-          window.location.hash = '#home';
-        });
+      logOutUser().then(() => {
+        window.location.hash = '#home';
+      });
     });
 
     createform.addEventListener('submit', (e) => {
@@ -94,14 +90,19 @@ export default () => {
         });
     });
 
-    deletePost.addEventListener('click', () => {
-      removePost()
-        .then(async () => {
-          await alert('Começando');
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    deletePost.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.confirm('Deseja mesmo excluir este post?')) {
+        removePost()
+          .then(() => {
+            window.location.reload();
+            console.log('cheguei aqui');
+          })
+          .catch((error) => {
+            const errorCode = errorFire(error.code);
+            console.log(errorCode);
+          });
+      }
     });
   };
   printPost();

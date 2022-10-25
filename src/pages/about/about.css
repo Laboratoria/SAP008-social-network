@@ -12,10 +12,12 @@
     }
     .butnBack{
         position: absolute;
-        width: 0px;
-        height: 62px;
+        width: 40px;
+        height: 25px;
         left: 322px;
         top: 137px;
+        color: black;
+        font-weight: bold;
     }
     .texto1{
         position: absolute;

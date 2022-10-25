@@ -27,7 +27,7 @@ function templateScreen() {
       <input class='btn-cadastre' type='submit' id='btn-cadastro' value='cadastre-se'>
     </p>
     <p class='voltar'>
-      <a href="index.html" class="btnBack">voltar</a>
+      <input id="btn-home" class="btnBack" type="button" value="voltar">
     </p>
     </div>
     </div>
@@ -57,7 +57,12 @@ export default () => {
   const inputEmail = containing.querySelector('#email-cadastro');
   const inputSenha = containing.querySelector('#senha-cadastro');
   const inputCadastro = containing.querySelector('.form');
+  const btnGoOut = containing.querySelector('#btn-home');
   configuraSubmitDoFormRegistrar(inputCadastro, inputName, inputEmail, inputSenha);
+
+  btnGoOut.addEventListener('click', () => {
+    window.location.hash = '#home';
+  });
 
   return containing;
 };

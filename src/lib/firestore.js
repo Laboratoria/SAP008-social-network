@@ -3,6 +3,8 @@
 import { app, db } from './configuration.js';
 
 import {
+  deleteDoc,
+  doc,
   collection,
   addDoc,
   getDocs,
@@ -16,6 +18,7 @@ export const nameUser = () => auth.currentUser.displayName;
 export const createPost = async (textPost) => {
   addDoc(collection(db, 'posts'), {
     name: auth.currentUser.displayName,
+    date: new Date().toLocaleDateString('pt-BR'),
     author: auth.currentUser.uid,
     text: textPost,
     like: [],
@@ -37,4 +40,11 @@ export const postScreen = async () => {
   }
 };
 
-export const removePost = async () => {};
+export const removePost = async (uid) => {
+  try {
+    const userId = doc(db, 'posts deletados', uid);
+    await deleteDoc(userId);
+  } catch (error) {
+    console.log(error);
+  }
+};

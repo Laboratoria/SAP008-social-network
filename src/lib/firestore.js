@@ -5,35 +5,35 @@ import {
   query,
   orderBy,
   doc,
-  deleteDoc,
   onAuthStateChanged,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
 } from './export.js';
 import { auth, db } from './config.js';
 
 export const current = () => auth.currentUser;
 
-export const createPost = (postText) => addDoc(collection(db, 'post'), {
-  photo: current().photoURL,
+export const createPost = (postText) => addDoc(collection(db, 'posts'), {
   displayName: current().displayName,
   email: current().email,
   data: new Date().toLocaleDateString('pt-BR'),
-  hour: new Date().toLocaleTimeString(),
+  hour: new Date().toLocaleTimeString([], { timeStyle: 'short' }),
   post: postText,
   user: current().uid,
+  like: [],
 });
 
 export async function getAllPosts() {
   const collPost = query(
-    collection(db, 'post'),
+    collection(db, 'posts'),
     orderBy('data', 'desc'),
     orderBy('hour', 'desc'),
   );
   const postSnapshot = await getDocs(collPost);
   const listPost = postSnapshot.docs.map((docColl) => {
     const id = docColl.id;
-    console.log(id);
     const data = docColl.data();
-    console.log(data);
     const post = {
       id,
       ...data,
@@ -54,13 +54,17 @@ export function stayLoggedIn(callback) {
   });
 }
 
-export const postDelete = async (postId) => {
-  try {
-    const docRef = doc(db, 'post', postId);
-    console.log(docRef);
-    await deleteDoc(docRef);
-    return docRef.id;
-  } catch (error) {
-    return error;
-  }
+// função de like//
+export const postLike = async (idPost, idUser) => {
+  const postRef = doc(db, 'posts', idPost);
+  await updateDoc(postRef, {
+    like: arrayUnion(idUser),
+  });
+};
+
+export const postDislike = async (idPost, idUser) => {
+  const postRef = doc(db, 'posts', idPost);
+  await updateDoc(postRef, {
+    like: arrayRemove(idUser),
+  });
 };

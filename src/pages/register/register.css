@@ -16,11 +16,27 @@
   width: 35%;
 }
 
+.logo-e-form{
+  width:100%;
+}
+
+.root{
+  width:100%;
+}
+
+.error-message, .welcome-message{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
 .form-register{
   display: flex;
   flex-direction: column;
   margin-top: 3%;
-  
+  align-items: center;
 }
 .register{
   text-align: center;
@@ -29,8 +45,12 @@
 
 }
 
+.container-register{
+  width:100%;
+}
+
 .input {
-  width: 240px;
+  width: 250px;
   height: 40px;
   border: none;
   font-size: 14px;

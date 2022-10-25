@@ -2,7 +2,7 @@ import {
     validationRegister,
     validationLogin,
     clearErrors,
-  } from '../src/validations';
+  } from '../src/validations.js';
 
   describe('should be a function', () => {
     it('Validate is a function', () => {

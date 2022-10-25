@@ -1,4 +1,3 @@
-import { async } from 'regenerator-runtime';
 import { logout } from '../../firebase/auth.js';
 import { redirect } from '../../routes.js';
 

@@ -59,9 +59,9 @@ export default () => {
     );
     if (validation === null) {
       newUser(inputEmail.value, inputPassword.value, inputName.value)
-        .then(() => updateProfile(auth.currentUser, {
-          displayName: inputName.value,
-        }))
+        // .then(() => updateProfile(auth.currentUser, {
+        //   displayName: inputName.value,
+        // }))
         .then(() => {
           redirect('#timeline');
         })
@@ -70,8 +70,8 @@ export default () => {
         });
     } else {
       clearErrors();
-      document.querySelector(`.error-${validation.src}`).innerHTML = validation.msg;
-      document.querySelector(`.input-signup-${validation.src}`).classList.add('input-error');
+      container.querySelector(`.error-${validation.src}`).innerHTML = validation.msg;
+      container.querySelector(`.input-signup-${validation.src}`).classList.add('input-error');
     }
   });
   btnGoogle.addEventListener('click', () => {

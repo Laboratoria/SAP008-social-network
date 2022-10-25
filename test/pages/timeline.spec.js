@@ -1,7 +1,6 @@
 /**
  * @jest-environment jsdom
  */
-import { async } from 'regenerator-runtime';
 import { logout } from '../../src/firebase/auth.js';
 import timeline from '../../src/pages/timeline/timeline.js';
 import { redirect } from '../../src/routes.js';

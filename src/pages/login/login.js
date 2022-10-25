@@ -7,11 +7,11 @@ export default () => {
     window.location.hash = '#home';
   } else {
     const container = document.createElement('div');
-    const template = `<section class="container">
+    const template = `<section class="container initial-page">
       <div class="frame">
         <h1 class="titles">Entrar no<br>BatePrato</h1>
   
-        <button id="google-login" class="signin-btn">Entrar com Google <img  class="google-icon" src="./external/svg/google-icon.svg"/></button>
+        <button id="google-login" class="solid-border-btn">Entrar com Google <img  class="google-icon" src="./external/svg/google-icon.svg"/></button>
   
         <div class="lines">
           <hr style="margin-right: 5%">
@@ -30,7 +30,9 @@ export default () => {
             </form>
         <p class="instructions">Não tem uma conta?<a id="first-page" class="cta"href="/#cadastre-se"> Cadastre-se</a></p>
       </div>
-      <div class="logo"></div>
+      <div class="logo">
+        <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.png"/>
+      </div>
     </section>`;
 
     container.innerHTML = template;

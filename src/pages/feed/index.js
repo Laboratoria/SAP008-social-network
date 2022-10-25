@@ -55,7 +55,7 @@ export default () => {
         </div>
 
         <button id="btnLike" class="btn-like like " data-count-likes="${post.like.length}" data-like-btn="${post.id}" type="button">
-        <img ${post.like.includes(auth.currentUser.uid) ? 'src="../../img/full-heart.png"' : 'src="../../img/empty-heart.png"'} alt="purple-heart"> 
+        <img class="heart-icon" ${post.like.includes(auth.currentUser.uid) ? 'src="../../img/full-heart.png"' : 'src="../../img/empty-heart.png"'} alt="purple-heart"> 
         </button> 
       </div>
 
@@ -122,10 +122,16 @@ export default () => {
         const elemento = e.currentTarget;
         const postLikedId = elemento.dataset.likeBtn;
         const user = auth.currentUser.uid;
+        const img = e.target;
 
           likePost(postLikedId, user)
           .then(resultado => {
-            resultado.liked;
+            
+            if(resultado.liked === true) {
+              img.setAttribute('src', '../../img/full-heart.png');
+            } else {
+              img.setAttribute('src', '../../img/empty-heart.png');
+            }
             
             elemento.dataset.countLikes = resultado.count;
           });

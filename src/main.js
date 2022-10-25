@@ -18,38 +18,34 @@ const redirectLogUser = (user) => {
   }
 };
 
-window.addEventListener('load', () => {
-  checkLoggedUser(redirectLogUser);
-  main.appendChild(timeline());
-});
-
-window.addEventListener('hashchange', () => {
+const renderPage = () => {
+  main.innerHTML = '';
   switch (window.location.hash) {
     case '':
       main.appendChild(login());
       break;
     case '#password':
-      main.innerHTML = '';
       main.appendChild(password());
       break;
     case '#register':
-      main.innerHTML = '';
       main.appendChild(register());
       break;
     case '#timeline':
-      main.innerHTML = '';
       main.appendChild(timeline());
       break;
     case '#post':
-      main.innerHTML = '';
       main.appendChild(post());
       break;
     case '#aboutus':
-      main.innerHTML = '';
       main.appendChild(aboutus());
       break;
     default:
-      main.innerHTML = '';
       main.appendChild(login());
   }
+}
+
+window.addEventListener('load', () => {
+  checkLoggedUser(redirectLogUser);
 });
+
+window.addEventListener('hashchange', renderPage);

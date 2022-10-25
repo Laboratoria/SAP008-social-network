@@ -189,3 +189,21 @@
     right: 1.5rem;
 
 }
+#saidaRegistrationFirstNameAndLastName{
+    color: red;
+}
+#saidaEmailRegistration{
+    color: red;
+}
+#saidaRegistrationPassword{
+    color: red;
+}
+#saidaPasswordConfirmation{
+    color: red;
+}
+#saidaIamRegistration{
+    color: red;
+}
+#saidaConfirmationBox{
+    color: red;
+}

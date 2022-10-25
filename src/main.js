@@ -10,9 +10,10 @@ import footer from './pages/footer/footer.js';
 const main = document.querySelector('#root');
 
 const init = () => {
-  main.innerHTML = '';
-
   switch (window.location.hash) {
+    case '':
+      main.appendChild(login());
+      break;
     case '#login':
       main.appendChild(login());
       break;
@@ -57,5 +58,6 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', () => {
+  main.innerHTML = '';
   init();
 });

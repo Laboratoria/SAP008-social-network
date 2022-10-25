@@ -6,7 +6,7 @@ export default () => {
     window.location.hash = '#home';
   } else {
     const container = document.createElement('div');
-    const template = `<section class="container">
+    const template = `<section class="container initial-page">
         <div class="frame">
             <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
             <div class="form">
@@ -23,7 +23,9 @@ export default () => {
               <a href="/#" class="instructions cta">Cancelar</a>
             </div>
         </div>
-        <div class="logo"></div>
+        <div class="logo">
+          <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.png"/>
+        </div>
     </section>`;
 
     container.innerHTML = template;

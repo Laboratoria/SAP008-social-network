@@ -22,7 +22,7 @@ export default () => {
       <hr class="colorful-line"/>
       <nav id="mobile-footer-icons" class="icons-container">
         <img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/>
-        <img id="plate-icon" class="icons-size" src="./external/svg/heart-icon.svg"/>
+        <img id="plate-icon" class="icons-size" src="./external/svg/logo.png"/>
         <img id="up-icon" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
       </nav>
     </section>`;

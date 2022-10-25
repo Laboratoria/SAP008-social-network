@@ -1,5 +1,3 @@
-import { createPost } from '../../firebase/auth.js';
-
 export default () => {
   const containerPost = document.createElement('div');
 
@@ -29,16 +27,16 @@ export default () => {
     window.location.hash = '#feed';
   });
 
-  const submitPublish = containerPost.querySelector('#submitPublish');
-  submitPublish.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const post = containerPost.querySelector('#textAreaPost').value;
-    const postValue = post;
-    const saida = containerPost.querySelector('#saida');
-    saida.innerHTML = postValue;
+  // const submitPublish = containerPost.querySelector('#submitPublish');
+  // submitPublish.addEventListener('click', async (e) => {
+  //   e.preventDefault();
+  //   const post = containerPost.querySelector('#textAreaPost').value;
+  //   const postValue = post;
+  //   const saida = containerPost.querySelector('#saida');
+  //   saida.innerHTML = postValue;
 
-    await createPost(post);
-  });
+  //   await createPost(post);
+  // });
 
   return containerPost;
 };

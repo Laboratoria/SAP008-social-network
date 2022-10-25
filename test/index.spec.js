@@ -41,7 +41,8 @@ describe('createUser', () => {
   it('should call another function one time', () => {
     const email = 'angelinajolie@hotmail.com';
     const password = '12345678';
-    createUser(email, password);
+    const name = 'Angelina JOlie';
+    createUser(name, email, password);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
   });
 });

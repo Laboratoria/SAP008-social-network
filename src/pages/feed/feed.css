@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;500;700&display=swap');
+
+.main-post-feed {
+  background-color: white;
+  width: 90vw;
+  height: auto;  
+  border-radius: 10px;
+  padding: 1rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.photo-name-post-feed {
+  display: flex;
+}
+
+.name-post-feed {
+  margin-left: 1rem;
+}
+
+.content-post-feed {
+  width: auto;
+  height: auto;
+  
+  text-align: justify;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.select-data-post-feed {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-post-feed {
+  color: #00a57a;
+}
+
+.data-post-feed {
+  color: #535050;
+}
+
+.icone-like-post-feed {
+  color: #00a57a;
+
+  margin-top: 1rem;
+}
+
+/* thamires  */
+#picture__input {
+  display: none;
+}
+
+.picture {
+  width: 100px;
+  aspect-ratio: 16/9;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed currentcolor;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  outline: none;
+  overflow: hidden;
+  border-radius: 50px;
+  padding: 50px;
+}
+
+picture:hover {
+  color: #777;
+  background: #ccc;
+}
+
+.picture:active {
+  border-color: turquoise;
+  color: turquoise;
+  background: #eee;
+}
+
+.picture:focus {
+  color: #777;
+  background: #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture__img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .main-post-feed {
+    margin: 2rem 4rem 2rem 4rem;
+    width: auto;
+  }  
+}

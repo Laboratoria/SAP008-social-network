@@ -56,6 +56,10 @@
         font-size: 13px;
         margin: 0% 5% 3% 5%;
     }
+    .headerPost{
+        display: flex;
+        flex-direction: row;
+    }
     .textTitle{
         font-weight: bold;
         border-color: black;
@@ -99,15 +103,11 @@
     }
     #userName{
         margin: 3%;
-        font-size: 120%;
+        font-size: 100%;
     }
     #textPost {
         font-size: 90%;
         margin: 3%;
-    }
-    .sectionBtn{
-        display: flex;
-        justify-content: center;
     }
     .btnDelete:hover{
         transform: scale(0.9);

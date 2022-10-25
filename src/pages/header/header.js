@@ -3,12 +3,12 @@ export default () => {
 
   const header = `
     <div class='header-body'>
-      <div class='header-header'>
-        <nav class='header-menu-logo'>
-          <div id='menu'>
-            <ion-icon class='menu-icon' name='menu-outline'></ion-icon>
+      <div class='header-main'>
+        <nav class='header-menu-and-logo'>
+          <div id='headerMenu'>
+            <img class='header-menu' src='img/header_menu.png'>
           </div>
-          <div id='bodyMenu' class='desk-all'>
+          <div id='bodyMenu' class='header-desk-all' class='desk-header-footer'>
             <ul>
               <li>
                 <a class='side-icon-list' href='#guidelines'>
@@ -31,24 +31,24 @@ export default () => {
             </ul>
           </div>
         </nav>
-        <img class='green-logo' src='img/logo_teste.png'>
+        <img class='header-logo' src='img/logo_green.png'>
       </div>
     </div>
-    `;
+  `;
 
   containerHeader.innerHTML = header;
 
-  // const menu = containerHeader.querySelector('#menu');
+  const menu = containerHeader.querySelector('#headerMenu');
 
-  // menu.addEventListener('click', () => {
-  //   const contentMenu = containerHeader.querySelector('#bodyMenu');
+  menu.addEventListener('click', () => {
+    const contentMenu = containerHeader.querySelector('#bodyMenu');
 
-  //   if (contentMenu.style.display === 'block') {
-  //     contentMenu.style.display = 'none';
-  //   } else {
-  //     contentMenu.style.display = 'block';
-  //   }
-  // });
+    if (contentMenu.style.display === 'block') {
+      contentMenu.style.display = 'none';
+    } else {
+      contentMenu.style.display = 'block';
+    }
+  });
 
   return containerHeader;
 };

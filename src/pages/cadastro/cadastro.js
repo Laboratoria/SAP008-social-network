@@ -3,6 +3,7 @@ import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
+
   const registration = `
     <div class='body-cadastro'>
       <header class='header-cadastro'>
@@ -56,8 +57,10 @@ export default () => {
         </div>
       </form>
     </div>
-    `;
+  `;
+
   containerRegistration.innerHTML = registration;
+
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();

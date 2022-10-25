@@ -23,7 +23,7 @@ const changeHash = () => {
   }
 };
 
-const init = () => {
+const executeHashChange = () => {
   window.addEventListener('hashchange', () => {
     main.innerHTML = '';
     changeHash();
@@ -32,5 +32,5 @@ const init = () => {
 
 window.addEventListener('load', () => {
   changeHash();
-  init();
+  executeHashChange();
 });

@@ -1,10 +1,12 @@
-.contenderRegister {
+*{
     margin: 0;
     padding: 0;
-    background: #fbfbfb;
 }
-@media (max-wigth: 739px) {
-    
+.contenderRegister { 
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/mulheres.png);
+    background-size: 100%;
 }
 .navRegister{
     width: 100%;
@@ -19,9 +21,9 @@
 }
 
 .tituloRegister {
-    height: 60%;
+    height: 100%;
     font-size: 200%;
-    margin: 0 0 0 20%;
+    margin: 15% 0 0 35%;
 }
 #voltarRegister{
     width: 25px;
@@ -34,16 +36,16 @@
     height: 28rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 5% auto;
     gap:2rem;
-    box-shadow: #777777 5px 5px;
+    box-shadow: #afafaf 3px 3px;
 }
 #cadastrarRegister{
     border-radius: 10px;
     width: 70%;
     height: 1.8rem;
-    background: #F4B324;
+    background: #20a2b8;
     color: white;
     border: none;
     cursor: pointer;
@@ -51,7 +53,7 @@
     margin: 0px 35px;
 }
 #cadastrarRegister:hover{
-    background: #2c407c;
+    background: #3F5494;
     transition: 0.2s;
 }
 .btnRegister{
@@ -70,11 +72,12 @@
     width: 25%;
 }
 .legendaRegister{
-    display: block;
     font-size: 0.9rem;
-    color: #777777;
+    color: #060606;
 }
 .boxLegendaInput{
     margin: 5px;
 }
-
+@media (max-wigth: 739px) {
+    
+}

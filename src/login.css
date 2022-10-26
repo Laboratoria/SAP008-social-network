@@ -12,14 +12,6 @@
     justify-content:center;
     align-items: center;
 }
-
-.logoCookieLogin{
-    width: 100%;
-    display:flex;
-    justify-content:space-evenly;
-    margin: 5%;
-    margin-left: 15%;
-}
 .frase-login{
     font-size: 3rem;
     font-family: IM FELL English SC;
@@ -57,7 +49,7 @@
     border-radius: 15px;
     width: 105%;  
     height: 1.6rem;
-    background: #48a3a7;
+    background: #20a2b8;
     color: #ffffff;
     border: none;
     cursor: pointer;  
@@ -101,5 +93,36 @@
     flex-direction: column;
     align-items: center;
 }
+@media (max-wigth: 500px) {
+    .content{        
+        width: 100%;
+        height: 100vh;
+        background: #ffffff;
+        display:flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .frase-login{
+        font-size: 10rem;
+        font-family: IM FELL English SC;
+    }
+    .form-login{
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.8rem;
+        width: 120%;
+        height: 28rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 2rem;
+        box-shadow: #afafaf 3px 3px;
+    
+    }
+}
+  
+
+
     
 

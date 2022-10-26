@@ -1,4 +1,4 @@
-import { getAllPosts, deletePost } from '../../firebase/firestore.js';
+import { getAllPosts } from '../../firebase/firestore.js';
 
 export default () => {
   const containerFeed = document.createElement('div');

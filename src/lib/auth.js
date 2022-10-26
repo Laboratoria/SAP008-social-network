@@ -22,13 +22,7 @@ export const newUser = (email, password, name) => { // função criar usuário
 };
 
 export function loginUser(email, password) { // função login
-  return signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      return user;
-    }).catch((error) => {
-      throw error;
-    });
+  return signInWithEmailAndPassword(auth, email, password);
 }
 
 export function logoutUser() { // função logout
@@ -51,8 +45,8 @@ export const create = (restaurant, adress, review) => { // função criar novo d
   });
 };
 
-export const getPosts = () => { // função printar posts na tela
-  const querySnapshot = getDocs(collection(dataBase, 'Posts'));
+export const getPosts = async () => { // função printar posts na tela
+  const querySnapshot = await getDocs(collection(dataBase, 'Posts'));
   const allPosts = [];
   querySnapshot.forEach((Posts) => {
     allPosts.push({ ...Posts.data(), id: Posts.id });

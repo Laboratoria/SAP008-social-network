@@ -45,7 +45,6 @@ export default function Feed() {
   const user = current().uid;
   // const btnLike = Array.from(feed.querySelector('#btn-like'));
   // const btnLike = feed.querySelector('#post-like');
-  
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
   // que deve ser validada como verdadeira ou falsa. Se a condição for
   // verdadeira o operador retorna uma expressão e se for falsa retorna

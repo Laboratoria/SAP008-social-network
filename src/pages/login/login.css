@@ -171,6 +171,12 @@ body {
     bottom: 2rem;
   }
 
+  .error-message {
+    color: red;
+    font-size: 10px;
+    bottom: 2rem;
+  }
+
   .text {
     font-weight: normal;
   }
@@ -327,4 +333,13 @@ body {
   .btn-register:focus {
     outline: none;
   }
+
+  .error-message {
+    color: red;
+    font-size: 10px;
+  }
+}
+
+.input-error {
+  border: 1px solid red;
 }

@@ -2,22 +2,17 @@
  * @jest-environment jsdom
  */
 import { logout } from '../../src/firebase/auth.js';
-import timeline from '../../src/pages/timeline/timeline';
+import timeline from '../../src/pages/timeline/timeline.js';
 import { redirect } from '../../src/routes.js';
 
 jest.mock('../../src/firebase/exports.js');
 jest.mock('../../src/firebase/auth.js');
 jest.mock('../../src/routes.js');
 
-afterEach(() => {
-  redirect.mockClear();
-
-  //jest.clearAllMocks();
-});
-
 const awaitInAllPromisses = () => new Promise(process.nextTick);
 
 describe('timeline', () => {
+  const container = timeline();
   it('should be a function', () => {
     expect(typeof timeline).toBe('function');
   });
@@ -29,14 +24,11 @@ describe('timeline', () => {
     expect(typeof container.innerHTML).toBe('string');
   });
 
-  it('test click input', async () => {
-    const container = timeline();
-    const btnLogout = container.querySelector('#logout-btn');
-    btnLogout.click();
-    
+  it('test change of routes', async () => {
+    const button = container.querySelector('#logout-btn');
+    const event = new Event('click');
+    button.dispatchEvent(event);
     await awaitInAllPromisses();
-    expect(logout).toHaveBeenCalledTimes(1);
     expect(redirect).toHaveBeenCalledWith('#login');
-    expect(redirect).toHaveBeenCalledTimes(1);
   });
 });

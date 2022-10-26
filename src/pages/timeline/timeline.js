@@ -38,7 +38,6 @@ export default () => {
   container.innerHTML = template;
 
   const btnLogout = container.querySelector('#logout-btn');
-  const displayName = container.querySelector('.display-name');
 
   btnLogout.addEventListener('click', async () => {
     await logout();

@@ -71,6 +71,7 @@ const likePost = async (postId, userId) => {
     });
       
     return { liked: liking, count: likes.length };
+    
 };
 
 export { createPost, getPost, upDatePost, deletePost, likePost };

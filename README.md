@@ -60,7 +60,16 @@ b)Colocamos o botão de voltar no formulário de criar conta, pois o usuário re
 ![3altafidelidade](3-altafidelidade.png)
 ![4altafidelidade](4-altafidelidade.png)
 
-## 6. Sobre as Desenvolvedoras
+## 6. Desenhos da Interface de Usuário
+
+Um dos objetivos de aprendizagem do projeto era realizar entrevistas com os possíveis usuários. Para isso utilizamos um form do google docs como ferramenta, e neste criamos um formulário para compreender o perfil dos nossos possíveis usuários e analisar suas necessidades.
+A priori, precisávamos conhecer o nosso público. Logo, iniciamos o questionário com perguntas como: nome, idade e como o usuário se identifica como pessoa. Dessa forma, foi identificado que nosso público seria majoritariamente feminino e em idades diversas.
+![1pesquisa](1-pesquisa.png)
+Após a primeira identificação de nosso usuário, buscamos entender o seu perfil em relação ao propósito do site e a sua configuração pessoal, já que a aplicação web construída é voltada para o público amante de fotografia. Portanto, analisou-se as características vigentes e os possíveis interesses em utilizar o produto. Além disso, coletou-se: temas de interesse, relatos visando uma melhor usabilidade do produto e sugestões de possíveis implementações futuras. 
+![2pesquisa](2-pesquisa.PNG)
+Ao final da pesquisa, ficamos felizes com o resultado obtido, o qual foi muito importante para o direcionamento do desenvolvimento do projeto, além de nos dar visão para implementações futuras, mediante possíveis investimentos.
+
+## 7. Sobre as Desenvolvedoras
 Projeto desenvolvido por Amanda Holanda [Linkedin](https://www.linkedin.com/in/amandaholanda/) | [GitHub](https://github.com/amanda-holanda), Isabella Lima [Linkedin]() | [GitHub]() & Gleyciane Macena [Linkedin]() | [GitHub]().
 
 

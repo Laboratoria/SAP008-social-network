@@ -31,20 +31,13 @@ html {
     flex-wrap: wrap;    
 }
 
-.header-feed {
-    width: 100%;    
-    height: 10%;    
-    margin: -3% 0 0 0;
-    display: flex;
-    justify-content: space-between;
-}
-
 .logo-feed {
     width: 45vw;
     object-fit: scale-down;
+    margin-left: 0;
 }
 
-.form-feed {    
+.form-feed { 
     height: 20%;
     width: 90%;
     display: flex;

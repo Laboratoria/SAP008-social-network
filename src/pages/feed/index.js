@@ -5,26 +5,23 @@ export default () => {
   const container = document.createElement('div');
   container.classList.add('wrapper-feed');
   const template = `      
-    <header class="header-feed">
-      <img src="./img/picsfem.png" class="logo-feed">
-      <a href="#login"><button id="btnLogout" type="button">Logout</button></a>
-    </header>
-
-    <form class="form-feed">
-      <label class="label-input-publish" for="text">
-        <input id="post" class="input-publish" name="text" type="text">
-      </label>
-      <div class="btns-container">
-        <button class="btn-publish" type="button">Imagem</button> 
-        <button class="btn-publish" type="button">Tema</button>    
-        <button class="btn-publish" id="btnPublish" type="button">Publicar</button>
-      </div>      
-    </form>
-
-    <section id="postContainer" class="post-container">
-    </section>
-    
-    <nav class="nav-footer"></nav>
+  <header class="header-feed">
+  <img src="./img/picsfem.png" class="logo-feed">
+  <a href="#login"><button id="btnLogout" class="btn-logout" type="button">Logout</button></a>
+</header>
+<form id="formFeed" class="form-feed">
+  <label class="label-input-publish" for="text">
+    <input id="post" class="input-publish" name="text" type="text">
+  </label>
+  <div class="btns-container">
+    <button class="btn " type="button">Imagem</button>
+    <button class="btn" type="button">Tema</button>
+    <button class="btn" id="btnPublish" type="button">Publicar</button>
+  </div>
+</form>
+<section id="postContainer" class="post-container">
+</section>
+<nav class="nav-footer"></nav>
 
     `;
 

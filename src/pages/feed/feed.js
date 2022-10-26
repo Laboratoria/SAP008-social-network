@@ -68,7 +68,7 @@ export default function Feed() {
           </div>
           <div class = 'field-btn-like'>
             ${iteration}
-            <button class ='btn-like ${liked ? 'liked' : ''}' data-liked='${liked}' id =${post.id}>&#10084;</button>
+            <button class ='btn-like ${liked ? 'liked' : ''}' data-liked='${liked}' id =${post.id}>&#10084; ${post.like.length}</button>
           </div>
         </li>
         `;

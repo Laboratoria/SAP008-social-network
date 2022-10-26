@@ -2,7 +2,7 @@ export default () => {
   const container = document.createElement('div')
   const template = `
      <div class="box">    
-      <h2>login</h2>
+      <h2>cadastro</h2>
       <form>
         <div class="inputBox">
           <input type= "text" name="name">

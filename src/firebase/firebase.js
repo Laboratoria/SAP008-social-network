@@ -15,6 +15,7 @@ import {
   doc,
   updateDoc,
   deleteDoc,
+  getDoc
 } from './export.js';
 
 import firebaseConfig from './firebase-config.js';
@@ -66,7 +67,7 @@ export const createPost = (artist, location, date, text) => { //eslint-disable-l
     location,
     date,
     text,
-    likes: 0,
+    likes: [],
   });
 };
 
@@ -114,3 +115,35 @@ export const editPost = async (postId, artist, location, date, text) => {
 export const deletePost = async (postId) => {
   await deleteDoc(doc(db, 'posts', postId));
 };
+
+const getPostById = async (postId) => { //analisar o uso dessa consta/getDoc
+  const docRef = doc(db, 'posts', postId);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+};
+
+export function likePost(posts, postId) {
+  if (!posts.likes.includes(postId)) {
+    posts.likes.push(postId);
+    updateDoc(doc(db, 'posts', postId), {
+      likes: posts.likes,
+    });
+    return { liked: posts.likes, count: posts.likes.length };
+  }
+  const postIndex = posts.likes.indexOf(postId);
+  posts.likes.splice(postIndex, 1);
+  updateDoc(doc(db, 'posts', postId), {
+    likes: posts.likes,
+  });
+  return { liked: posts.likes, count: posts.likes.length };
+}
+
+// export const dislikePost(post, userId) {
+
+//   if(post.likes.includes(userId)) {
+//       const postIndex = post.likes.indexOf(userId);
+//       post.likes.splice(postIndex, 1);
+//   }
+//   // chama updateDoc do firestore com o campo de likes atualizado
+//   // firestore.setDoc(post)
+// }

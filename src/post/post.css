@@ -112,6 +112,7 @@
         background-color: #bfb3b3;
         text-align: center;
         overflow: hidden;
+        border-radius: 20px;
     }
 
     .container-main {
@@ -134,7 +135,7 @@
         justify-content: center;
         text-align: center;
         width: 100%;
-        
+
     }
 
     .btn-post { 

@@ -1,5 +1,5 @@
 import {
-  signOut, getAllPosts, getUserId, editPost, deletePost,
+  signOut, getAllPosts, getUserId, editPost, deletePost, likePost
 } from '../firebase/firebase.js';
 import { redirect } from '../redirect.js';
 
@@ -45,7 +45,10 @@ export default () => {
           <button class="btn-edit" id="btn-edit" data-author-id=${post.author} data-post-id=${post.id}>Editar</button>
           <button class="btn-edit" id="btn-save" data-save=${post.id}>Salvar</button>
           <button class="btn-edit" id="btn-delete" data-author-id=${post.author} data-delete=${post.id}>Excluir</button>
+          <button id="btn-like" data-author-like=${post.author} data-like${post.id}>like</button>
         </div>`;
+      } else {
+        editBtnTemplate = `<button id="btn-like" data-author-like=${post.author} data-like=${post.id}>like</button>`;
       }
 
       const postTemplate = `
@@ -107,9 +110,17 @@ export default () => {
         if (confirm('Tem certeza que deseja deletar este post?')) {
           const postId = e.currentTarget.dataset.delete;
           deletePost(postId);
-          const section = container.querySelector(`section[data-section-post-id="${postId}"]`);
+          const section = container.querySelector(`[data-section-post-id="${postId}"]`);
           section.style.display = 'none';
         }
+      });
+    });
+
+    container.querySelectorAll('#btn-like').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        const postId = e.currentTarget.dataset.like;
+        likePost(postId);
+        const section = container.querySelector(`[data-section-post-id="${postId}"]`);
       });
     });
   };

@@ -13,11 +13,11 @@
 
 ## 1. Resumo do projeto
 
-PicsFem é uma rede social desenvolvida para mulheres amantes de fotografia. O seu objetivo principal é construir uma comunidade segura para que mulheres que amam fotografia possam compartilhar conhecimentos e dicas sobre o tema, se apoiar, e, também, aprender e aperfeiçoar técnicas. Além disso, essa rede social funciona para debater e sanar dúvidas técnicas e não técnicas sobre fotografia.
+PicsFem é uma rede social desenvolvida para mulheres amantes de fotografia. O seu objetivo principal é construir uma comunidade segura para que mulheres que amam fotografia possam: compartilhar conhecimentos e dicas; se apoiar; aperfeiçoar técnicas; além de debater e sanar dúvidas técnicas e não técnicas sobre o tema.
 
 Nome das usuárias: PicFemers(?).
 
-De acordo com nossas pesquisas, mulheres fotógrafas relataram o desafio que elas possuem para adentrar no mercado de fotografia, que ainda é marjoritariamente masculino. Uma das futuras funcionalidades criadas seria a possibilidade de clientes poderem contratar mulheres fotógrafas para trabalhos freelancers através da PicsFem.
+De acordo com pesquisas realizadas durante o desenvolvimento do projeto, relatou-se que mulheres fotógrafas possuem um grande desafio para adentrar no mercado de fotografia, pois este ainda é marjoritariamente masculino. Uma das futuras funcionalidades criadas seria a possibilidade de clientes poderem contratar mulheres fotógrafas para trabalhos freelancers através da PicsFem.
 
 - Um desafio relatado por fotógradas mulheres: o mercado ainda é muito masculino
 - Quem são os principais usuários do produto: mulheres amantes de fotografia.
@@ -29,7 +29,7 @@ De acordo com nossas pesquisas, mulheres fotógrafas relataram o desafio que ela
 
 ## 3. Definição de produto
 
-PicsFem é uma rede social desenvolvida para mulheres amantes de fotografia. O seu objetivo principal é construir uma comunidade segura para que mulheres que amam fotografia possam compartilhar conhecimentos e dicas sobre o tema, se apoiar, e, também, aprender e aperfeiçoar técnicas. Além disso, essa rede social funciona para debater e sanar dúvidas técnicas e não técnicas sobre fotografia.
+PicsFem é uma rede social desenvolvida para mulheres amantes de fotografia. O seu objetivo principal é construir uma comunidade segura para que mulheres que amam fotografia possam: compartilhar conhecimentos e dicas; se apoiar; aperfeiçoar técnicas; além de debater e sanar dúvidas técnicas e não técnicas sobre o tema.
 
 ## 4. Histórias de usuário
 

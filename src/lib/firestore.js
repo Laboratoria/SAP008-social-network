@@ -1,57 +1,77 @@
 import { app } from './firebase.js';
-import { auth } from './auth.js';
-import { getFirestore, collection, addDoc, getDocs } from './export.js'
+import { getFirestore, collection, addDoc, getDocs, getDoc, getAuth, doc, updateDoc, deleteDoc} from './export.js'
 
 const db = getFirestore(app);
 
-const createPost = async (texto) => {
+const createPost = async (textPost) => {
+    const auth = getAuth(app);
     try {
-        const docRef = await addDoc(collection(db, "post"), {
+        const docRef = await addDoc(collection(db, 'post'), {
             name: auth.currentUser.displayName,
             author: auth.currentUser.uid,
-            texto,
+            texto: textPost,
+            like: [],
         });
-        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-        console.error("Error adding document: ", e);
     }
 };
 
-const printPost = async () => {
+const getPost = async () => {
     try {
         const querySnapshot = await getDocs(collection(db, "post"));
         const postArray = [];
         querySnapshot.forEach((post) => {
             postArray.push({ ...post.data(), id: post.id });
         });
+        console.log(postArray);
         return postArray;
     } catch (error) {
         return error;
     }
-}
+};
 
-// try {
-//     const docRef = await addDoc(collection(db, "users"), {
-//         first: "Alan",
-//         middle: "Mathison",
-//         last: "Turing",
-//         born: 1912
-//     });
+const upDatePost = async (userId, textPost) => {
+    const newPost = doc(db, 'post', userId);
 
-//     console.log("Document written with ID: ", docRef.id);
-// } catch (e) {
-//     console.error("Error adding document: ", e);
-// }
+    await updateDoc(newPost, {
+        texto: textPost,
 
+    });
+};
 
+const deletePost = async (userId) => {
+    try {
+        const postToBeDeleted = doc(db, 'post', userId);
+        await deleteDoc(postToBeDeleted);
+        return postToBeDeleted.id;
+    } catch (error) {
+        return error;
+    }
+};
 
-// Allow read/write access on all documents to any user signed in to the application
-// service cloud.firestore {
-//     match /databases/{database}/documents {
-//      match /{document=**} {
-//         allow read, write: if request.auth != null;
-//       }
-//     }
-//   }
+const getPostById = async (postId) => {
+    const docRef = doc(db, "post", postId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
+};
 
-export { createPost, printPost };
+const likePost = async (postId, userId) => {
+    const post = await getPostById(postId);
+    let likes = post.like;
+    const liking = !likes.includes(userId);     
+
+    if(liking) {
+        likes.push(userId);
+    } else {        
+        likes = likes.filter((id) => id != userId);
+    }
+
+    await updateDoc(doc(db, 'post', postId), {
+        like: likes,
+    });
+      
+    return { liked: liking, count: likes.length };
+    
+};
+
+export { createPost, getPost, upDatePost, deletePost, likePost };

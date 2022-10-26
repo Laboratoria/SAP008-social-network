@@ -31,15 +31,12 @@ const loginEmailPassword = async (email, password) => {
 };
 
 const createAccount = async (name, email, password) => {
+  const auth = getAuth(app);
   return await createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-      updateProfile(auth.currentUser, {
+    .then(() => updateProfile(auth.currentUser, {
         displayName: name, 
-    })
-  })
-};
+    }));
+  };
 
 const signInGoogle = async () => {
   return await signInWithPopup(auth, provider);    

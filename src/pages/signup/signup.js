@@ -23,12 +23,12 @@ export default () => {
             </section>
             <p id='error-code' class='error-name'></p>
             <section class='inputs-signup'>
-            <label for='email-signup' class='label'>E-mail</label>
+            <label for='signup-email' class='label'>E-mail</label>
             <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-signup-email'/>
             </section>
             <p id='error-code' class='error-email'></p>
             <section class='inputs-signup'>
-            <label for='passwordsignup'class='label'>Digite sua senha</label>
+            <label for='signup-password'class='label'>Digite sua senha</label>
             <input type='password' placeholder='******' id='signup-password' class='input-signup-password' />
             </section>
             <p id='error-code' class='error-password'></p>

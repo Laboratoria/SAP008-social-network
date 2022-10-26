@@ -8,7 +8,7 @@ export default () => {
     <div class='body-cadastro'>
       <header class='header-cadastro'>
         <picture>
-          <img src='pages/cadastro/icone.png' alt='icone' class='icone'>
+          <img src='pages/cadastro/icone.png' alt='icone' class='icone' id='icone'>
           <img src='pages/cadastro/logo.png' alt='logo' class='logo'>
         </picture>
         <h1>Cadastre-se</h1>
@@ -60,6 +60,11 @@ export default () => {
   `;
 
   containerRegistration.innerHTML = registration;
+
+  const icone = containerRegistration.querySelector('#icone');
+  icone.addEventListener('click', () => {
+    window.history.back();
+  });
 
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {

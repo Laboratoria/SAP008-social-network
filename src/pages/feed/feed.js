@@ -1,4 +1,4 @@
-import { getAllPosts, deletePost } from '../../firebase/firestore.js';
+import { getAllPosts } from '../../firebase/firestore.js';
 
 export default () => {
   const containerFeed = document.createElement('div');
@@ -14,7 +14,7 @@ export default () => {
     const posts = await getAllPosts();
     const postTemplate = posts.map((post) => `
       <div class='main-post-feed'>
-        <div id='delete' class='btn-delete'><img class='img-delete' src=img/delete.png></div>
+        <div id='delete' class='btn-delete'><img class='img-delete' src='img/delete.png'></div>
         <div class='photo-name-post-feed'>
           <div>${post.userPhoto}</div>
           <div class='name-post-feed'>${post.userName}</div>

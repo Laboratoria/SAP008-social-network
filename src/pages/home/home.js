@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-expressions */
+
 import { logoutUser, auth, getPosts } from '../../lib/auth.js';
 
 // eslint-disable-next-line consistent-return

@@ -1,36 +1,59 @@
-import { firestore } from './config.js'
-import { collection, addDoc, getDocs, orderBy } from './exports.js'
+import { firestore } from './config.js';
 
-const createDataPost = (messageContent, user) => {
-    const date = new Date();
-    return {
-        "message": messageContent,
-        "user": user,
-        "image": "",
-        "answers": [],
-        "likes": 0,
-        "publishDate": date.toJSON(),
-        "editDate": date.toJSON()
-    };
+import {
+  collection,
+  addDoc,
+  getDocs,
+  getDoc,
+  doc,
+  updateDoc,
+  deleteDoc,
+} from './exports.js';
+
+export const createDataPost = (messageContent, user) => {
+  const date = new Date();
+  return {
+    message: messageContent,
+    user: user,
+    image: '',
+    answers: [],
+    likes: 0,
+    publishDate: date.toJSON(),
+    editDate: date.toJSON(),
+  };
 };
-const createDataAnswer = (messageContent, user) => {
-    const date = new Date();
-    return {
-        "message": messageContent,
-        "user": user,
-        "likes": 0,
-        "publishDate": date.toJSON(),
-        "editDate": date.toJSON()
-    };
+export const createDataAnswer = (messageContent, user) => {
+  const date = new Date();
+  return {
+    message: messageContent,
+    user: user,
+    likes: 0,
+    publishDate: date.toJSON(),
+    editDate: date.toJSON(),
+  };
 };
-export const newPost = async (messageContent, user) => {
-    const dataPost = createDataPost(messageContent, user);
-    const docRef = addDoc(collection(firestore, 'posts'), dataPost);
-    console.log("Document written with ID: ", docRef.id);
-    return docRef;
-};
-export const readAllPosts = async () => {
-    const querySnapshot = await getDocs(collection(firestore, 'posts'));
+export const newPost = (messageContent, user) => {
+  const dataPost = createDataPost(messageContent, user);
+  const docRef = addDoc(collection(firestore, 'posts'), dataPost);
+  return docRef;
 };
 
+export const readAllPosts = () => {
+  return getDocs(collection(firestore, 'posts'));
+};
 
+export const readOnePost = (idPost) => {
+  return getDoc(doc(firestore, 'posts', idPost));
+};
+
+export const updatePost = (idPost, messageContent) => {
+  const date = new Date();
+  const post = doc(firestore, 'posts', idPost);
+  return updateDoc(post, {
+    message: messageContent,
+    editDate: date.toJSON(),
+  });
+};
+export const deletePost = (idPost) => {
+  deleteDoc(doc(firestore, 'posts', idPost));
+};

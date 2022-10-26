@@ -1,6 +1,5 @@
-import { auth, loginGoogle, newUser } from '../../firebase/auth.js';
+import { loginGoogle, newUser } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { updateProfile } from '../../firebase/exports.js';
 import { redirect } from '../../routes.js';
 import { validationRegister, clearErrors } from '../../validations.js';
 
@@ -80,5 +79,3 @@ export default () => {
   });
   return container;
 };
-
-

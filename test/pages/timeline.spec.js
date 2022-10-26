@@ -18,10 +18,10 @@ describe('timeline', () => {
   });
 
   it('should return a div with a valid innerHTML', () => {
-    const result = timeline();
-    expect(result).toHaveProperty('innerHTML');
-    expect(result.innerHTML.length).toBeGreaterThan(0);
-    expect(typeof result.innerHTML).toBe('string');
+    const container = timeline();
+    expect(container).toHaveProperty('innerHTML');
+    expect(container.innerHTML.length).toBeGreaterThan(0);
+    expect(typeof container.innerHTML).toBe('string');
   });
 
   it('test change of routes', async () => {

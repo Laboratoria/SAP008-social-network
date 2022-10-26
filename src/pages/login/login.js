@@ -16,27 +16,25 @@ export default () => {
         </figure>
 
         <form id='form' class='form-login bounce'>
-            <h1 class='title-login'>Acesse a sua conta</h1>
-            <section class='inputs'>
-            <label for='email' class='label'>Digite seu e-mail</label>
-            <input type='email' placeholder='seuemail@gmail.com' class='input-email'/>
-            </section>
-            <p id='error-code' class='error-email'></p>
-
-            <section class='inputs'>
-            <label for='password' class='label'>Digite sua senha</label>
-            <input type='password' placeholder='******' class='input-password'/>
-            </section>
-            <p id='error-code' class='error-password'></p>
-            <p class='error-message'></p>
-            <section class='buttons'>
-            <button type='submit' class='btn-login'>Iniciar Sessão</button>
-            <button type='submit' class='btn-google'><img class='img-google' src='./imagens/google.svg'/> Entrar com Google</button>
-            </section>
-
-            <h6 class='text'> Não possui conta?</h6>
-            <button type='submit' class='btn-register'>Criar nova conta</button>
-            </form>    
+        <h1 class='title-login'>Acesse a sua conta</h1>
+        <section class='inputs'>
+        <label for='email' class='label'>Digite seu e-mail</label>
+        <input type='email' placeholder='seuemail@gmail.com' class='input-email'/>
+        </section>
+        <p id='error-code' class='error-email'></p>
+        <section class='inputs'>
+        <label for='password' class='label'>Digite sua senha</label>
+        <input type='password' placeholder='******' class='input-password'/>
+        </section>
+        <p id='error-code' class='error-password'></p>
+        <p class='error-message'></p>
+        <section class='buttons'>
+        <button type='submit' class='btn-login'>Iniciar Sessão</button>
+        <button type='submit' class='btn-google'><img class='img-google' src='./imagens/google.svg'/> Entrar com Google</button>
+        </section>
+        <h6 class='text'> Não possui conta?</h6>
+        <button type='submit' class='btn-register'>Criar nova conta</button>
+        </form>    
     `;
 
   container.innerHTML = template;

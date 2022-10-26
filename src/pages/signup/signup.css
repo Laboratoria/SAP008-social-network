@@ -86,9 +86,9 @@ body {
     margin: 0 2rem 0.5rem -2rem;
   }
 
-  .input-signup-email,
-  .input-signup-password,
-  .input-signup-name {
+  .input-email-signup,
+  .input-password-signup,
+  .input-name-signup {
     width: 12.5rem;
     height: 2rem;
     margin-bottom: 1.2rem;
@@ -260,9 +260,9 @@ body {
     margin: 0 7rem 0.5rem -2rem;
   }
 
-  .input-signup-email,
-  .input-signup-password,
-  .input-signup-name {
+  .input-email-signup,
+  .input-password-signup,
+  .input-name-signup {
     width: 16rem;
     height: 2.8rem;
     border-radius: 0.2rem;
@@ -272,15 +272,15 @@ body {
     box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.1);
   }
 
-  .input-signup-email:hover,
-  .input-signup-password:hover,
-  .input-signup-name:hover {
+  .input-email-signup:hover,
+  .input-password-signup:hover,
+  .input-name-signup:hover {
     background-color: #f0fbff;
   }
 
-  .input-signup-email:focus,
-  .input-signup-password:focus,
-  .input-signup-name:focus {
+  .input-email-signup:focus,
+  .input-password-signup:focus,
+  .input-name-signup:focus {
     outline: none;
   }
 
@@ -315,8 +315,3 @@ body {
   }
   
 }
-
-.input-error {
-  border: 1px solid red;
-}
-

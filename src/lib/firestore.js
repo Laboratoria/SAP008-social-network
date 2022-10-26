@@ -9,6 +9,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
+  deleteDoc,
 } from './export.js';
 import { auth, db } from './config.js';
 
@@ -67,4 +68,9 @@ export const postDislike = async (idPost, idUser) => {
   await updateDoc(postRef, {
     like: arrayRemove(idUser),
   });
+};
+
+export const deletePost = async (idPost) => {
+  const del = await deleteDoc(doc(db, 'post', idPost));
+  return del;
 };

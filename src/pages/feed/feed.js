@@ -7,6 +7,7 @@ import {
   logout,
   postLike,
   postDislike,
+  deletePost,
 } from '../../lib/firestore.js';
 
 export default function Feed() {
@@ -57,7 +58,7 @@ export default function Feed() {
         const liked = post.like ? post.like.includes(user) : false;
         const iteration = post.user === user ? `  
         <div class="delete-btn">
-          <img class="delete-post" src="./imagens/btndelete.png" alt="Botão de deletar">
+          <img class="delete-post" data-delete="true" src="./imagens/btndelete.png" alt="Botão de deletar">
         </div> ` : '';
         return `
         <li class="allposts" data-id="${post.id}">
@@ -70,10 +71,38 @@ export default function Feed() {
             ${iteration}
             <button class ='btn-like ${liked ? 'liked' : ''}' data-liked='${liked}' id =${post.id}>&#10084;</button>
           </div>
+          <div class="modal">
+            <div class="internal-modal">
+               <p> DESEJA EXCLUIR SEU POST? </p>
+               <button class="btn-del" data-sim="true"> SIM </button>
+               <button class="btn-del" data-nao="true"> NÃO </button>
+            </div>
         </li>
         `;
       }).join('');
       postList.innerHTML = postsCreated;
+
+      const postsElements = feed.querySelectorAll('.allposts');
+      postsElements.forEach((post) => {
+        post.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+
+          if (e.target.dataset.delete) {
+            const modal = e.currentTarget.querySelector('.modal');
+            modal.style.display = 'flex';
+          } else if (e.target.dataset.sim) {
+            const modal = e.currentTarget.querySelector('.modal');
+            modal.style.display = 'none';
+            deletePost(id)
+              .then(() => {
+                post.remove();
+              });
+          } else if (e.target.dataset.nao) {
+            const modal = e.currentTarget.querySelector('.modal');
+            modal.style.display = 'none';
+          }
+        });
+      });
 
       const btnsLike = postList.querySelectorAll('.btn-like');
 

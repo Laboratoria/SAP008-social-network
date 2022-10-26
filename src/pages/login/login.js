@@ -1,6 +1,6 @@
 import { loginUser, loginGoogle } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
-import { validationLogin, clearErrors } from '../../validations.js';
+import { validationLogin } from '../../validations.js';
 import { redirect } from '../../routes.js';
 
 export default () => {
@@ -77,6 +77,17 @@ export default () => {
     await loginGoogle();
     redirect('#timeline');
   });
+
+  function clearErrors() {
+    container.querySelectorAll('.error-email, .error-password, .error-name')
+      .forEach( p => {
+        p.innerHTML = '';
+      });
+    container.querySelectorAll('.input-email, .input-password')
+      .forEach( p => {
+        p.classList.remove('input-error');
+      });
+  }
 
   return container;
 };

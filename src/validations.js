@@ -33,14 +33,3 @@ export function validationRegister(inputName, inputEmail, inputPassword) {
 export function validationLogin(inputEmail, inputPassword) {
   return validationRegister('gabriela', inputEmail, inputPassword);
 }
-
-export function clearErrors() {
-  document.querySelectorAll('.error-email, .error-password, .error-name')
-    .forEach( p => {
-      p.innerHTML = '';
-    });
-  document.querySelectorAll('.input-email, .input-password, .input-signup-password, .input-signup-name, .input-signup-email')
-    .forEach( p => {
-      p.classList.remove('input-error');
-    });
-}

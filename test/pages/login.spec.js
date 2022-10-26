@@ -40,7 +40,7 @@ describe('login', () => {
 
   it('test submit failure loginUser', async () => {
     loginUser.mockRejectedValue({
-      code: 'auth/user-not-found',  
+      code: 'auth/user-not-found',
     })
     const container = login();
     const form = container.querySelector('#form');

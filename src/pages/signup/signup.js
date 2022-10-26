@@ -1,7 +1,7 @@
 import { loginGoogle, newUser } from '../../firebase/auth.js';
 import { getErrorMessage } from '../../firebase/errors.js';
 import { redirect } from '../../routes.js';
-import { validationRegister, clearErrors } from '../../validations.js';
+import { validationRegister } from '../../validations.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -77,5 +77,16 @@ export default () => {
     loginGoogle();
     redirect('#timeline');
   });
+
+  function clearErrors() {
+    container.querySelectorAll('.error-email, .error-password, .error-name')
+      .forEach( p => {
+        p.innerHTML = '';
+      });
+    container.querySelectorAll('.input-signup-password, .input-signup-name, .input-signup-email')
+      .forEach( p => {
+        p.classList.remove('input-error');
+      });
+  }
   return container;
 };

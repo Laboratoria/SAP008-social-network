@@ -60,10 +60,10 @@ describe('googleAccess', () => {
   });
 });
 
-describe('getPosts', () => {
-  it('should get posts from dataBase', () => {
-    getDocs.mockResolvedValue();
-    getPosts();
-    expect(getDocs).toHaveBeenCalledTimes(1);
-  });
-});
+// describe('getPosts', () => {
+//   it('should get posts from dataBase', () => {
+//     getDocs.mockResolvedValue();
+//     getPosts();
+//     expect(getDocs).toHaveBeenCalledTimes(1);
+//   });
+// });

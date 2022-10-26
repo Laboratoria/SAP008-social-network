@@ -55,7 +55,7 @@ export default () => {
         </div>
 
         <button id="btnLike" class="btn-like like " data-count-likes="${post.like.length}" data-like-btn="${post.id}" type="button">
-        <img class="heart-icon" ${post.like.includes(auth.currentUser.uid) ? 'src="../../img/full-heart.png"' : 'src="../../img/empty-heart.png"'} alt="purple-heart"> 
+        <img class="heart-icon" ${post.like.includes(auth.currentUser.uid) ? 'src="img/full-heart.png"' : 'src="img/empty-heart.png"'} alt="purple-heart"> 
         </button> 
       </div>
 
@@ -128,18 +128,18 @@ export default () => {
           .then(resultado => {
             
             if(resultado.liked === true) {
-              img.setAttribute('src', '../../img/full-heart.png');
+              img.setAttribute('src', 'img/full-heart.png');
             } else {
-              img.setAttribute('src', '../../img/empty-heart.png');
+              img.setAttribute('src', 'img/empty-heart.png');
             }
             
             elemento.dataset.countLikes = resultado.count;
           });
                    
-      })
+      });
     });
 
-  }
+  };
   showPost();
 
   const btnPublish = container.querySelector("#btnPublish");

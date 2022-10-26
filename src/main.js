@@ -49,7 +49,7 @@ const init = () => {
       main.appendChild(login());
       break;
     default:
-      main.appendChild(feed());
+      main.appendChild(login());
   }
 };
 

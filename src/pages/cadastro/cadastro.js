@@ -1,7 +1,9 @@
 import { createUser } from '../../firebase/auth.js';
+import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
+
   const registration = `
     <div class='body-cadastro'>
       <header class='header-cadastro'>
@@ -47,20 +49,23 @@ export default () => {
           <div class='formCadastroInput'>
            <div class='checkBoxRegistration'>
               <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
-              <label for='checkBoxRegistration'>Concordo com os <a href='#'>termos de uso</a></label>
+              <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse'>termos de uso</a></label>
            </div>
            <span id='saidaConfirmationBox'></span>
           </div>
           <div class='formCadastroInput'>
             <div class='submitCadastro'>
-              <button type='click' id='createAnAccount'>Criar Conta</button>
+            <p id='error'></p>
+              <button id='createAnAccount'>Criar Conta</button>
             </div>
           </div>
         </div>
       </form>
     </div>
-    `;
+  `;
+
   containerRegistration.innerHTML = registration;
+
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();
@@ -81,6 +86,8 @@ export default () => {
     const saidaIamRegistration = containerRegistration.querySelector('#saidaIamRegistration');
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');
     const saidaConfirmationBox = containerRegistration.querySelector('#saidaConfirmationBox');
+    const errorMessage = containerRegistration.querySelector('#error');
+
     if (registrationFirstNameAndLastNamevalue === '') {
       saidaRegistrationFirstNameAndLastName.innerHTML = 'Preencha esse campo';
     }
@@ -123,17 +130,14 @@ export default () => {
     if (confirmationBox.checked) {
       saidaConfirmationBox.innerHTML = '';
     }
-    if (registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && registrationPasswordValue === passwordConfirmationValue && iamRegistrationValue !== '' && confirmationBox.checked) {
-      // alert('formulario validado');
-      createUser(emailRegistration, registrationPassword)
+    if (
+      registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
+      createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
         .then(() => {
           window.location.hash = '#feed';
         })
         .catch((error) => {
-        // const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          alert(errorMessage);
+          errorMessage.innerHTML = errorMessages(error);
         });
     }
   });

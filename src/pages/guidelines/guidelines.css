@@ -27,7 +27,9 @@
 
 @media screen and (min-width: 1024px) {
   .body-guidelines {
-    margin: 5rem;
+    margin-top: 4rem;
+    
+    margin-left: 17rem;
 
     background-color: #ffff;
     padding: 3rem;

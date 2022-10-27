@@ -5,5 +5,5 @@ export {
   getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, signOut, updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 export {
-  collection, addDoc, getFirestore, getDocs, doc, deleteDoc,
+  collection, addDoc, getFirestore, getDocs, doc, deleteDoc, updateDoc
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';

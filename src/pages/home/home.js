@@ -1,5 +1,5 @@
 import {
-  logoutUser, auth, getPosts, deletePost,
+  logoutUser, auth, getPosts, deletePost, forEditPost
 } from '../../lib/auth.js';
 
 // eslint-disable-next-line consistent-return
@@ -38,13 +38,13 @@ export default () => {
       const postsTemplate = all.map((posts) => `<div data-id="${posts.id}" class="posts">
         <div id="text">
           <p>@ ${posts.name}</p>
-          <p id="local" class="edit-local establishment" contenteditable="false">${posts.restaurant}</p>
-          <p id="adress" class="edit-adress" contenteditable="false">${posts.adress}</p>
-          <p id="review" class="edit-review" contenteditable="false">${posts.review}</p>
+          <p id="local" data-editlocal="${posts.id}" class="edit-local establishment" contenteditable="false">${posts.restaurant}</p>
+          <p id="adress" data-editadress="${posts.id}" class="edit-adress" contenteditable="false">${posts.adress}</p>
+          <p id="review" data-editreview="${posts.id}" class="edit-review" contenteditable="false">${posts.review}</p>
         </div>
 
         <button id="cancel">Cancelar</button>
-        <button id="ok">OK</button>
+        <button id="ok" data-edit="${posts.id}">OK</button>
     
         <div id="modal-delete" class="hide">
           <p>Tem certeza que deseja excluir este post?</p>
@@ -68,9 +68,9 @@ export default () => {
       container.querySelector('.post-container').innerHTML += postsTemplate;
 
       const editPost = container.querySelector('#pencil-icon');
-      const local = container.querySelector('.edit-local');
-      const adress = container.querySelector('.edit-adress');
-      const review = container.querySelector('.edit-review');
+      const local = container.querySelector('#local');
+      const adress = container.querySelector('#adress');
+      const review = container.querySelector('#review');
       // const showIcon = container.querySelector('.icons-current-user');
       const modalDelete = container.querySelector('#modal-delete');
       const warnDelete = container.querySelector('#trash-icon');
@@ -78,6 +78,8 @@ export default () => {
       const yesModalDelete = container.querySelector('#yes-delete');
       const cancelEdit = container.querySelector('#cancel');
       const okEdit = container.querySelector('#ok');
+
+
 
       function show(elemento) {
         elemento.focus();
@@ -90,6 +92,9 @@ export default () => {
       //   showIcon.style.display = 'flex';
       // }
 
+      cancelEdit.hidden = true;
+      okEdit.hidden = true;
+
       editPost.addEventListener('click', () => {
         cancelEdit.hidden = false;
         okEdit.hidden = false;
@@ -100,7 +105,15 @@ export default () => {
         adress.contentEditable = true;
         show(adress);
       });
-
+        
+      okEdit.addEventListener('click', (e) => {
+        const dataEditAtributte = e.target.dataset.edit;
+        forEditPost(dataEditAtributte);
+        console.log(dataEditAtributte);
+        cancelEdit.hidden = true;
+        okEdit.hidden = true;
+      });
+      
       cancelEdit.addEventListener('click', () => {
         cancelEdit.hidden = true;
         okEdit.hidden = true;

@@ -17,30 +17,30 @@ export default () => {
       <form class='form-cadastro' id='form-cadastro'>
         <div class='cadastro-inteiro'>
           <div class='formCadastroInput'>
-            <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' 
+            <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' class='inputs-cadastro'
             placeholder='Nome e Sobrenome'>
             <span id='saidaRegistrationFirstNameAndLastName'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='email' name='emailRegistration' id='emailRegistration' placeholder='E-mail'>
+            <input type='email' name='emailRegistration' id='emailRegistration' class='inputs-cadastro' placeholder='E-mail'>
             <span id='saidaEmailRegistration'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='password' name='registrationPassword' id='registrationPassword' placeholder='Senha'>
+            <input type='password' name='registrationPassword' id='registrationPassword' class='inputs-cadastro' placeholder='Senha'>
             <span id='saidaRegistrationPassword'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='password' name='passwordConfirmation' id='passwordConfirmation'
+            <input type='password' name='passwordConfirmation' id='passwordConfirmation' class='inputs-cadastro'
             placeholder='Confirmação de senha'>
             <span id='saidaPasswordConfirmation'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='text' name='euSou' list='responsible' id='iamRegistration' placeholder='Eu Sou'>
+            <input type='text' name='euSou' list='responsible' id='iamRegistration' class='inputs-cadastro' placeholder='Eu Sou'>
             <datalist id='responsible'>
             <option value='Mãe'></option>
             <option value='Pai'></option>
             <option value='Profissional'></option>
-            <option value='RedeDeApoio'></option>
+            <option value='Rede de Apoio'></option>
             <option value='Tentante'></option>
             <option value='Aprendiz'></option>
             </datalist>
@@ -100,33 +100,33 @@ export default () => {
       saidaRegistrationFirstNameAndLastName.innerHTML = '';
     }
     if (emailRegistrationValue === '') {
-      saidaEmailRegistration.innerHTML = 'Peencha esse campo';
+      saidaEmailRegistration.innerHTML = 'Preencha esse campo';
     }
     if (emailRegistrationValue !== '') {
       saidaEmailRegistration.innerHTML = '';
     }
     if (registrationPasswordValue === '') {
-      saidaRegistrationPassword.innerHTML = 'Peencha esse campo';
+      saidaRegistrationPassword.innerHTML = 'Preencha esse campo';
     }
     if (registrationPasswordValue !== '') {
       saidaRegistrationPassword.innerHTML = '';
     }
     if (passwordConfirmationValue === '') {
-      saidaPasswordConfirmation.innerHTML = 'Peencha esse campo';
+      saidaPasswordConfirmation.innerHTML = 'Preencha esse campo';
     }
     if (passwordConfirmationValue !== '') {
       saidaPasswordConfirmation.innerHTML = '';
     }
     if (iamRegistrationValue === '') {
-      saidaIamRegistration.innerHTML = 'Peencha esse campo';
+      saidaIamRegistration.innerHTML = 'Preencha esse campo';
     }
     if (iamRegistrationValue !== '') {
       saidaIamRegistration.innerHTML = '';
     }
     // alert('preencha esse campo');
     if (passwordConfirmationValue !== registrationPasswordValue) {
-      saidaPasswordConfirmation.innerHTML = 'As senhas nao sao iguais';
-      // alert('as senhas nao sao iguais');
+      saidaPasswordConfirmation.innerHTML = 'As senhas não são iguais';
+      // alert('as senhas não são iguais');
     }
     if (!confirmationBox.checked) {
       saidaConfirmationBox.innerHTML = 'Você não concorda com os termos';

@@ -45,23 +45,27 @@ export default () => {
           <button class="btn-edit" id="btn-edit" data-author-id=${post.author} data-post-id=${post.id}>Editar</button>
           <button class="btn-edit" id="btn-save" data-save=${post.id}>Salvar</button>
           <button class="btn-edit" id="btn-delete" data-author-id=${post.author} data-delete=${post.id}>Excluir</button>
-          <button id="btn-like" data-author-like=${post.author} data-like=${post.id}>like</button>
+          <button id="btn-like" data-author-like=${post.author} data-like=${post.id}>
+            <img class='heart-like' ${post.id} ? src='./images/heart_Empty.png' : src='./images/heart.png' alt='like-heart'> 
+          </button>
         </div>`;
       } else {
-        editBtnTemplate = `<button id="btn-like" data-author-like=${post.author} data-like=${post.id}>like</button>`;
+        editBtnTemplate = `<button id='btn-like' data-author-like=${post.author} data-like=${post.id}>
+          <img class='heart-like' ${post.id} ? src='./images/heart_empty.png' : src='./images/heart.png' alt='like-heart'>
+        </button>`;
       }
 
       const postTemplate = `
-            <div class="post">
-            <section class="box-post-timeline" data-section-post-id=${post.id}>
-              <p id="user-name">${post.name}</p>
-              <p id="artist-name">${post.artist}</p>
-              <p id="show-location">${post.location}</p>
-              <p id="show-date">${post.date}</p>
-              <p id="text-post">${post.text}</p>
-              <p id="text-post">Likes: ${post.likes.length}</p>
-              ${editBtnTemplate} 
-            </section>
+        <div class="post">
+          <section class="box-post-timeline" data-section-post-id=${post.id}>
+            <p id="user-name">${post.name}</p>
+            <p id="artist-name">${post.artist}</p>
+            <p id="show-location">${post.location}</p>
+            <p id="show-date">${post.date}</p>
+            <p id="text-post">${post.text}</p>
+            <p id="text-post">${post.likes.length}</p>
+            ${editBtnTemplate} 
+          </section>
         </div>
         </br>
       `;
@@ -124,6 +128,16 @@ export default () => {
         console.log(post);
         const informationsLike = likePost(post, userId, postId);
         const section = container.querySelector(`[data-section-post-id="${postId}"]`);
+        const img = e.target;
+
+        likePost(postId, userId)
+          .then((resultado) => {
+            if (resultado.liked === true) {
+              img.setAttribute('src', 'images/heart_empty.png');
+            } else {
+              img.setAttribute('src', 'images/heart.png');
+            }
+          });
       });
     });
   };

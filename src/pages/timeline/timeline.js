@@ -1,4 +1,5 @@
-import { logout } from "../../firebase/auth.js";
+import { logout } from '../../firebase/auth.js';
+import { redirect } from '../../routes.js';
 
 export default () => {
   const container = document.createElement("div");
@@ -28,27 +29,16 @@ export default () => {
       </section>
       <div class='linha-dois'></div>
   </main>
-
-  <section id='post-timeline' class='container-post-timeline'>
-    <div class='profile-img'></div>
-    <div class-'post-display-name'></div>
-    <div class='post-text'></div>
-    <div class='post-comments'></div>
-    <div class='post-likes'></div>
-    <div class='post-edit'></div>
-    <div class='post-delete'></div>
   </section>
   `;
 
   container.innerHTML = template;
 
-  const btnLogout = container.querySelector("#logout-btn");
-  const displayName = container.querySelector(".display-name");
+  const btnLogout = container.querySelector('#logout-btn');
 
-  btnLogout.addEventListener("click", (e) => {
-    e.preventDefault();
-    logout();
-    window.location.hash = "#login";
+  btnLogout.addEventListener('click', async () => {
+    await logout();
+    redirect('#login');
   });
 
   return container;

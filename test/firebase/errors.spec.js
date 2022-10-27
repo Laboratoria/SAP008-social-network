@@ -7,7 +7,7 @@ const inputs = [
   ['auth/wrong-password', 'Ops! Senha incorreta!'],
   ['auth/invalid-display-name', 'Ops! O nome do usuário é inválido.'],
   ['auth/weak-password', 'Ops! A senha deve ter 6 ou mais caracteres!'],
-  ['deu merda', 'Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: deu merda'],
+  ['Error-not-found!', 'Aconteceu um erro não identificado, por favor entre em contato com as desenvolvedoras e indique o código que aparecerá a seguir: Error-not-found!'],
 ];
 
 describe('getErrorMessage', () => {

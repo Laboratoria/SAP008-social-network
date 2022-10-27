@@ -48,6 +48,6 @@ describe('logout', () => {
   it('should call another function one time', () => {
     logout();
     expect(signOut).toHaveBeenCalledTimes(1);
-    expect(signOut).toHaveBeenCalledWith(undefined, {});
+    expect(signOut).toHaveBeenCalledWith(undefined);
   });
 });

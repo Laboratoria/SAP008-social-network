@@ -3,7 +3,11 @@ import {
   collection,
   getDocs,
   doc,
+  query,
   deleteDoc,
+  updateDoc,
+  getDoc,
+  orderBy,
 } from './exports.js';
 
 import { db } from './auth.js';
@@ -20,10 +24,10 @@ async function publishPost(postText, postSubject) {
   });
 }
 
-// mostrar post no feed
+// buscar todos os posts
 async function getAllPosts() {
   try {
-    const querySnapshot = await getDocs(collection(db, 'posts'));
+    const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('publishDate', 'desc')));
     const postsFeed = [];
     querySnapshot.forEach((post) => {
       postsFeed.push({ ...post.data(), id: post.id });
@@ -34,9 +38,23 @@ async function getAllPosts() {
   }
 }
 
-// delete post
+// buscar um post especifico
+async function getPost(postId) {
+  const querySnapshot = await getDoc(doc(db, 'posts', postId));
+  return { ...querySnapshot.data(), id: querySnapshot.id };
+}
+
+// deletar post
 async function deletePost(postId) {
   await deleteDoc(doc(db, 'posts', postId));
 }
 
-export { publishPost, getAllPosts, deletePost };
+// editar post
+async function editPost(postId, postText, postSubject) {
+  await updateDoc(doc(db, 'posts', postId), {
+    text: postText,
+    subject: postSubject,
+  });
+}
+
+export { publishPost, getAllPosts, deletePost, editPost, getPost };

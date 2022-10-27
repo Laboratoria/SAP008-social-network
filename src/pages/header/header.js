@@ -8,7 +8,7 @@ export default () => {
           <div id='headerMenu'>
             <img class='header-menu' src='img/header_menu.png'>
           </div>
-          <div id='bodyMenu' class='header-desk-all' class='desk-header-footer'>
+          <div id='bodyMenu' class='header-body-menu'>
             <ul>
               <li>
                 <a class='side-icon-list' href='#guidelines'>

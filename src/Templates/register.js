@@ -35,7 +35,13 @@ export default () => {
             <label class="legendaRegister">Senha</label>
             <input type="password"  id="passwordRegister" placeholder="********"  class="btnRegister">
           </div>
+
+          <div class="boxLegendaInput">
+          </div>
+
+          <div  class="botaoRegister">
           <button id="cadastrarRegister">Cadastre-se</button>  
+          </div>
 
         </form>
         </main>

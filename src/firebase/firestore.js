@@ -39,15 +39,6 @@ async function getAllPosts() {
     return error;
   }
 }
-
-// editar post
-// async function updatePost() {
-//   const editPost = doc(db, 'posts');
-//   await updateDoc(editPost, {
-//     text: true,
-//   });
-// }
-
 // delete post
 async function deletePost(postId) {
   await deleteDoc(doc(db, 'posts', postId));

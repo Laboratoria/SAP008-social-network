@@ -1,6 +1,5 @@
 import {
   getAllPosts,
-  // updatePost
 } from '../../firebase/firestore.js';
 
 export default () => {
@@ -34,12 +33,6 @@ export default () => {
   };
 
   showPosts();
-
-  // const edit = containerFeed.querySelector('#edit');
-  // edit.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   updatePost();
-  // });
 
   return containerFeed;
 };

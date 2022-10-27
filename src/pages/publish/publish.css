@@ -6,6 +6,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 25px;
+
+  margin-top: -1.3rem;
 }
 
 .main-form-post {

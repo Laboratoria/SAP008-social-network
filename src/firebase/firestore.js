@@ -8,15 +8,19 @@ import {
   updateDoc,
   getDoc,
   orderBy,
+  getFirestore,
 } from './exports.js';
 
-import { db } from './auth.js';
+import { auth } from './auth.js';
+import { app } from './config.js';
+
+export const db = getFirestore(app);
 
 // criar post na coleção
 async function publishPost(postText, postSubject) {
   await addDoc(collection(db, 'posts'), {
     userPhoto: 'img',
-    userName: 'ciclano',
+    userName: auth.currentUser.displayName,
     text: postText,
     subject: postSubject,
     publishDate: new Date().toLocaleDateString('pt-BR'),

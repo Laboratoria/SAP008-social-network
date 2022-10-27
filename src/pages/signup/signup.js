@@ -23,18 +23,18 @@ export default () => {
         <form class='form-signup bounce'>
             <h1 class='title-signup'>Cadastre-se</h1>
             <section class='inputs-signup'>
-            <label for='name-signup' class='label'>Nome completo</label>
-            <input type='name-signup' placeholder='Nome e sobrenome' id='name-signup' class='input-signup-name'/>
+              <label for='name-signup' class='label'>Nome completo</label>
+              <input type='name-signup' placeholder='Nome e sobrenome' id='name-signup' class='input-signup-name'/>
             </section>
             <p id='error-code' class='error-name'></p>
             <section class='inputs-signup'>
-            <label for='signup-email' class='label'>E-mail</label>
-            <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-signup-email'/>
+              <label for='signup-email' class='label'>E-mail</label>
+              <input type='email-signup' placeholder='E-mail' id='signup-email' class='input-signup-email'/>
             </section>
             <p id='error-code' class='error-email'></p>
             <section class='inputs-signup'>
-            <label for='signup-password'class='label'>Digite sua senha</label>
-            <input type='password' placeholder='******' id='signup-password' class='input-signup-password' />
+              <label for='signup-password'class='label'>Digite sua senha</label>
+              <input type='password' placeholder='******' id='signup-password' class='input-signup-password' />
             </section>
             <p id='error-code' class='error-password'></p>
             <p class='error-message'></p>  

@@ -28,8 +28,7 @@ export default () => {
         <button class='publish-btn' id='publish-btn'><img class='publish-post-icon' src='./imagens/btn-post.svg' alt='add-image'></button>
       </section>
       <div class='linha-dois'></div>
-  </main>
-  </section>
+    </main>
   `;
 
   container.innerHTML = template;

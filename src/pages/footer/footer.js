@@ -2,7 +2,7 @@ export default () => {
   const containerFooter = document.createElement('div');
 
   const footer = `
-    <footer class='footer-desk-all' class='desk-header-footer'>
+    <footer class='footer-desk-all'>
       <nav class='footer-nav'>
         <ul>
           <li>

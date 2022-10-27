@@ -19,7 +19,7 @@ export const db = getFirestore(app);
 // criar post na coleção
 async function publishPost(postText, postSubject) {
   await addDoc(collection(db, 'posts'), {
-    userPhoto: 'img',
+    userId: auth.currentUser.uid,
     userName: auth.currentUser.displayName,
     text: postText,
     subject: postSubject,

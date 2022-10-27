@@ -63,7 +63,7 @@ export default () => {
 
   const cancelPublish = containerPost.querySelector('#btnCancel');
 
-  cancelPublish.addEventListener('click', async (e) => {
+  cancelPublish.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#feed';
   });

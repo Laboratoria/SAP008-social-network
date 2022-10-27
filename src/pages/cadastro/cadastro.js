@@ -123,20 +123,16 @@ export default () => {
     if (iamRegistrationValue !== '') {
       saidaIamRegistration.innerHTML = '';
     }
-    // alert('preencha esse campo');
     if (passwordConfirmationValue !== registrationPasswordValue) {
-      saidaPasswordConfirmation.innerHTML = 'As senhas não são iguais';
-      // alert('as senhas não são iguais');
+      saidaPasswordConfirmation.innerHTML = 'As senhas nao sao iguais';
     }
     if (!confirmationBox.checked) {
       saidaConfirmationBox.innerHTML = 'Você não concorda com os termos';
-      // alert('Você não concorda com os termos');
     }
     if (confirmationBox.checked) {
       saidaConfirmationBox.innerHTML = '';
     }
-    if (
-      registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
+    if (registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && registrationPasswordValue === passwordConfirmationValue && iamRegistrationValue !== '' && confirmationBox.checked) {
       createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
         .then(() => {
           window.location.hash = '#feed';

@@ -77,7 +77,7 @@ export default () => {
         window.location.hash = '#feed';
       })
       .catch((error) => {
-        msgErro.innerHTML = 'erro ao entrar com Google';
+        msgErro.innerHTML= 'erro ao entrar com Google';
       });
   });
 

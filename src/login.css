@@ -52,7 +52,7 @@
 .form-botaoentrar input {
     border-radius: 15px;
     width: 105%;
-    height: 1.6rem;
+    height: 1.8rem;
     background: #20a2b8;
     color: #ffffff;
     border: none;
@@ -99,21 +99,22 @@
 }
 @media only screen and (min-width: 600px) {
     .content {
-        width: 100%;
+        width: 50%;
         height: 100vh;
         display: flex;
         flex-direction:row;
+        background-size: 100%;
     }
     .frase-login{
         width: 100%;
         height: 50vh;
         font-size: 4.5rem;
-        margin: 85% 0% -400% -100%;
+        margin: 85% 0% -400% -5%;
     }
     .form-login {
         width: 170%;
         height: 32rem;
-        margin: 15% 0 0 270%;
+        margin: 15% 0 0 510%;
     }
     .linha {
         width: 8rem;

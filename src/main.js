@@ -42,7 +42,7 @@ const renderPage = () => {
     default:
       main.appendChild(login());
   }
-}
+};
 
 window.addEventListener('load', () => {
   checkLoggedUser(redirectLogUser);

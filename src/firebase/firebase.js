@@ -15,6 +15,7 @@ import {
   doc,
   updateDoc,
   deleteDoc,
+  getDoc,
 } from './export.js';
 
 import firebaseConfig from './firebase-config.js';
@@ -66,7 +67,7 @@ export const createPost = (artist, location, date, text) => { //eslint-disable-l
     location,
     date,
     text,
-    likes: 0,
+    likes: [],
   });
 };
 
@@ -114,3 +115,27 @@ export const editPost = async (postId, artist, location, date, text) => {
 export const deletePost = async (postId) => {
   await deleteDoc(doc(db, 'posts', postId));
 };
+
+export const getPostById = async (postId) => { // analisar o uso dessa consta/getDoc
+  const docRef = doc(db, 'posts', postId);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+};
+
+export function likePost(post, userId, postId) {
+  if (!post.likes.includes(userId)) {
+    post.likes.push(userId);
+    updateDoc(doc(db, 'posts', postId), {
+      likes: post.likes,
+    });
+    alert('Voce deu like no post!');
+    return { liked: post.likes, count: post.likes.length };
+  }
+  const postIndex = post.likes.indexOf(userId);
+  post.likes.splice(postIndex, 1);
+  updateDoc(doc(db, 'posts', postId), {
+    likes: post.likes,
+  });
+  alert('Voce descurtiu o post!');
+  return { liked: post.likes, count: post.likes.length };
+}

@@ -167,9 +167,9 @@ input {
   margin-top: 10px;
 }
 
-.icons-current-user {
+/* .icons-current-user {
   display: none;
-}
+} */
 
 .icons-container {
   justify-content: space-around;
@@ -199,7 +199,7 @@ input {
   overflow: scroll;
 }
 
-.posts {
+.post {
   width: 287px;
   height: 206px;
   display: flex;
@@ -252,7 +252,7 @@ input {
 }
 
 #cancel {
-  display: none;
+  /* display: none; */
   background-color: #ffffff;
   color: #ab6930;
   border: none;
@@ -260,7 +260,7 @@ input {
 }
 
 #ok {
-  display: none;
+  /* display: none; */
   background-color: #ab6930;
   color: #ffffff;
   border: none;

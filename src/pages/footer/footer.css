@@ -1,20 +1,15 @@
+.footer-nav {
+  background-color: #e9e9e9;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+
+  padding: 0.7rem 0rem 0rem 0rem;
+}
+
 .footer-nav a {
   color: #00a57a;
   text-decoration: none;
-}
-
-#bodyMenu ul li a {
-  color: #535050;
-  text-decoration: none;
-  line-height: 2rem;
-}
-
-.side-internal-icon {
-  font-weight: bold;
-}
-
-.side-internal-list {
-  font-weight: bold;
 }
 
 .footer-nav ul {
@@ -22,7 +17,7 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100vw;
-  height: 68px;
+  height: 4rem; 
 }
 
 .footer-icon {
@@ -30,6 +25,7 @@
   position: relative;
   text-align: center;
 }
+
 .footer-icon ion-icon {
   width: 30px;
   height: 30px;
@@ -39,30 +35,22 @@
   font-weight: bold;
 }
 
-.footer-desk-all {
-  background: #e9e9e9;
-  position: absolute;
-  position: fixed;
-  bottom: 0;
-  margin: 0;
-
-  padding: 0.5rem;
-}
-
 @media screen and (min-width: 1024px) {
-  .header-menu {
-    display: none;
+  .footer-desk-all{
+    box-shadow: 0.1rem 0 0 #d2d0d0;
   }
 
-  .footer-desk-all {
-    background: none;    
-    position: absolute;
+  .footer-nav {
+    background-color: none;
+    padding: 0rem;
   }
-  
+
   .footer-nav ul {
     display: flex;
     flex-direction: column;
     margin-left: 3rem;
+    max-width: 10rem;
+    margin-top: -15rem;
   }
 
   .footer-nav li a {

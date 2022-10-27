@@ -1,4 +1,4 @@
-import { publishPost } from '../../firebase/firestore.js';
+import { publishPost, editPost } from '../../firebase/firestore.js';
 
 export default () => {
   const containerPost = document.createElement('div');
@@ -9,12 +9,24 @@ export default () => {
         <textarea id='textAreaPost' name='textarea' placeholder='O que deseja compartilhar?'></textarea>
           <select id='selectSubjects'>
             <option value='typeTitle' disabled selected style='display: none'>Selecionar assunto</option>
+            <option value='Adoção'>Adoção</option>
+            <option value='Adaptação Escolar'>Adaptação Escolar</option>
+            <option value='Depressão pós-parto'>Depressão pós-parto</option>
+            <option value='Divórcio'>Divórcio</option>
+            <option value='Educação'>Educação</option>
             <option value='Gravidez'>Gravidez</option>
+            <option value='Luto'>Luto</option>
+            <option value='Maternidade solo'>Maternidade solo</option>
+            <option value='Nascimento prematuro'>Nascimento prematuro</option>
+            <option value='Paternidade solo'>Paternidade solo</option>
+            <option value='Pré adolescentes e adolescentes'>Pré adolescentes e adolescentes</option>
+            <option value='Primeira, segunda e terceira infância'>Primeira, segunda e terceira infância</option>
             <option value='Puerpério'>Puerpério</option>
-            <option value='Vínculo Paterno'>Vínculo Paterno</option>
+            <option value='Tentante'>Tentante</option>
+            <option value='Vínculo paterno'>Vínculo paterno</option>
           </select>
           <div class='btns-form'>
-            <button class='btn-form-cancel'>Cancelar</button>
+            <button id='btnCancel' class='btn-form-cancel'>Cancelar</button>
             <button id='submitPublish' class='btn-form-publish'>Publicar</button>
           </div>
       </form>
@@ -23,18 +35,36 @@ export default () => {
 
   containerPost.innerHTML = formPost;
 
+  if (localStorage.getItem('editStatus') === 'true') {
+    containerPost.querySelector('#textAreaPost').value = localStorage.getItem('postText');
+    containerPost.querySelector('#selectSubjects').value = localStorage.getItem('postSubject');
+  }
+
   const submitPublish = containerPost.querySelector('#submitPublish');
 
   submitPublish.addEventListener('click', async (e) => {
     e.preventDefault();
     const postText = containerPost.querySelector('#textAreaPost').value;
-    if (postText === '') {
-      // eslint-disable-next-line no-alert
-      alert('Conteúdo do post vazio, preencha antes de enviar!');
-    }
     const postSubject = containerPost.querySelector('#selectSubjects').value;
 
-    await publishPost(postText, postSubject);
+    if (localStorage.getItem('editStatus') === 'false') {
+      if (postText === '') {
+        // eslint-disable-next-line no-alert
+        alert('Conteúdo do post vazio, preencha antes de enviar!');
+      }
+      await publishPost(postText, postSubject);
+    } else {
+      const postId = localStorage.getItem('postId');
+      await editPost(postId, postText, postSubject);
+    }
+
+    window.location.hash = '#feed';
+  });
+
+  const cancelPublish = containerPost.querySelector('#btnCancel');
+
+  cancelPublish.addEventListener('click', async (e) => {
+    e.preventDefault();
     window.location.hash = '#feed';
   });
 

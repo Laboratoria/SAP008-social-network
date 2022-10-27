@@ -1,9 +1,11 @@
 .body-terms {
-  margin: 0rem 1.5rem 0rem 1.5rem;
+  margin: 1.5rem 1.5rem 0rem 1.5rem;
 
   background-color: #ffff;
   padding: 1rem;
   border-radius: 0.4rem;
+
+  margin-bottom: 5rem;
 }
 
 .title-terms {

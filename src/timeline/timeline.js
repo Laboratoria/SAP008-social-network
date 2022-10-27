@@ -1,5 +1,5 @@
 import {
-  signOut, getAllPosts, getUserId, editPost, deletePost, likePost
+  signOut, getAllPosts, getUserId, editPost, deletePost, getPostById, likePost,
 } from '../firebase/firebase.js';
 import { redirect } from '../redirect.js';
 
@@ -45,7 +45,7 @@ export default () => {
           <button class="btn-edit" id="btn-edit" data-author-id=${post.author} data-post-id=${post.id}>Editar</button>
           <button class="btn-edit" id="btn-save" data-save=${post.id}>Salvar</button>
           <button class="btn-edit" id="btn-delete" data-author-id=${post.author} data-delete=${post.id}>Excluir</button>
-          <button id="btn-like" data-author-like=${post.author} data-like${post.id}>like</button>
+          <button id="btn-like" data-author-like=${post.author} data-like=${post.id}>like</button>
         </div>`;
       } else {
         editBtnTemplate = `<button id="btn-like" data-author-like=${post.author} data-like=${post.id}>like</button>`;
@@ -59,6 +59,7 @@ export default () => {
               <p id="show-location">${post.location}</p>
               <p id="show-date">${post.date}</p>
               <p id="text-post">${post.text}</p>
+              <p id="text-post">Likes: ${post.likes.length}</p>
               ${editBtnTemplate} 
             </section>
         </div>
@@ -117,9 +118,11 @@ export default () => {
     });
 
     container.querySelectorAll('#btn-like').forEach((button) => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', async (e) => {
         const postId = e.currentTarget.dataset.like;
-        likePost(postId);
+        const post = await getPostById(postId);
+        console.log(post);
+        const informationsLike = likePost(post, userId, postId);
         const section = container.querySelector(`[data-section-post-id="${postId}"]`);
       });
     });

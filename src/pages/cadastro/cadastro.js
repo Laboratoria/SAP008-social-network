@@ -35,7 +35,7 @@ export default () => {
             <span id='saidaPasswordConfirmation'></span>
           </div>
           <div class='formCadastroInput' id='selection-input'>
-          <p id='selection'>Selecione:</p>
+          <label>Selecione:</label>
             <select name='list' id='list'>
               <option value='Eu sou' selected disabled>Eu sou</option>
               <option value='Mãe'>Mãe</option>
@@ -88,7 +88,7 @@ export default () => {
     const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation').value;
     const passwordConfirmationValue = passwordConfirmation.trim();
     const saidaPasswordConfirmation = containerRegistration.querySelector('#saidaPasswordConfirmation');
-    const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
+    const iamRegistration = containerRegistration.querySelector('#list').value;
     const iamRegistrationValue = iamRegistration.trim();
     const saidaIamRegistration = containerRegistration.querySelector('#saidaIamRegistration');
     const confirmationBox = containerRegistration.querySelector('#confirmationBox');

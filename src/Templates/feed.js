@@ -48,10 +48,10 @@ export default () => {
 
   botaoPost.addEventListener('click', async (e) => {
     e.preventDefault();
-    await createPost(caixaPost.value)
-    post(caixaPost.value)
+    await createPost(caixaPost.value);
+    post(caixaPost.value);
   });
-  
+
   const menu = container.querySelector('#btn-menu');
 
   menu.addEventListener('click', () => {
@@ -61,4 +61,3 @@ export default () => {
 
   return container;
 };
-

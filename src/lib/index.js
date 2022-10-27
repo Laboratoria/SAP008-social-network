@@ -1,4 +1,8 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, updateProfile} from './exports.js';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,
+  GoogleAuthProvider, updateProfile,
+} from './exports.js';
+
 import app from './config-firebase.js';
 
 const provider = new GoogleAuthProvider();
@@ -6,9 +10,9 @@ const auth = getAuth(app);
 
 export function createUser(name, email, senha) {
   return createUserWithEmailAndPassword(auth, email, senha)
-  .then(() => updateProfile(auth.currentUser, {
-    displayName: name,
-  }));
+    .then(() => updateProfile(auth.currentUser, {
+      displayName: name,
+    }));
 }
 export function loginEmailPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
@@ -16,6 +20,3 @@ export function loginEmailPassword(email, password) {
 export function signInGoogle() {
   return signInWithPopup(auth, provider);
 }
-
-
-

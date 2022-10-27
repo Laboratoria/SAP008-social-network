@@ -1,4 +1,4 @@
-import { createUser, loginEmailPassword, signInGoogle } from '../lib/index.js';
+import { loginEmailPassword, signInGoogle } from '../lib/index.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -61,10 +61,9 @@ export default () => {
 
     loginEmailPassword(email.value, password.value)
       .then((userCredential) => {
-         const user = userCredential.user
-         console.log(user)
+        const user = userCredential.user;
+        console.log(user);
         window.location.hash = '#feed';
-        
       })
       .catch((error) => {
         msgErro.innerHTML = 'usário ou senha incorretos';
@@ -72,15 +71,15 @@ export default () => {
   });
 
   btnGmail.addEventListener('click', (e) => {
-   e.preventDefault();
-   signInGoogle()
-     .then(() => {
-       window.location.hash = '#feed';
-     })
-     .catch((error) => {
-      msgErro.innerHTML = 'erro ao entrar com Google';  
-     })
- });
+    e.preventDefault();
+    signInGoogle()
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => {
+        msgErro.innerHTML = 'erro ao entrar com Google';
+      });
+  });
 
   return container;
 };

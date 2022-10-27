@@ -53,12 +53,12 @@ export default () => {
     console.log(senha.value);
     console.log(name.value);
     createUser(name.value, email.value, senha.value)
-    .then(() => {
-      window.location.hash = '#feed';
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
   return container;
 };

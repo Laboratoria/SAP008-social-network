@@ -5,6 +5,7 @@ import {
   doc,
   deleteDoc,
   getFirestore,
+  // updateDoc,
 } from './exports.js';
 
 import { auth } from './auth.js';
@@ -17,6 +18,7 @@ async function publishPost(postText, postSubject) {
   await addDoc(collection(db, 'posts'), {
     userPhoto: 'img',
     userName: auth.currentUser.displayName,
+    idPost: auth.currentUser.Uid,
     text: postText,
     subject: postSubject,
     publishDate: new Date().toLocaleDateString('pt-BR'),
@@ -38,9 +40,19 @@ async function getAllPosts() {
   }
 }
 
+// editar post
+// async function updatePost() {
+//   const editPost = doc(db, 'posts');
+//   await updateDoc(editPost, {
+//     text: true,
+//   });
+// }
+
 // delete post
 async function deletePost(postId) {
   await deleteDoc(doc(db, 'posts', postId));
 }
 
-export { publishPost, getAllPosts, deletePost };
+export {
+  publishPost, getAllPosts, deletePost,
+};

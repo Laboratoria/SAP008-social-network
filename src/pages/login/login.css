@@ -1,16 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;500;700&display=swap');
 
-/* body {
-    margin: 0;
-    padding: 0;
-    font-family: "dongle", sans-serif;
-} */
-
 /* Ocultando a lateral azul do desktop */
 .signup {
     display: none;
 }
-
 .logo-desktop {
     display: none;
 }
@@ -117,6 +110,7 @@
 #register-mobile {
     color: #00A57A;
 }
+
 #create {
     margin-top: 2rem;
 }
@@ -147,6 +141,7 @@
         align-items: center;
         background: linear-gradient(180deg, rgba(0, 165, 122, 0.46) 0%, rgba(0, 165, 122, 0.64) 17.19%, #00A57A 49.11%, rgba(0, 165, 122, 0.66) 84.4%, rgba(0, 165, 122, 0.47) 100%);
         font-family: 'gothic-a1', sans-serif;
+        height: 100vh;
     }
 
     .signup h1 {
@@ -176,6 +171,7 @@
         font-size: 2rem;
         margin-top: 5rem;
         cursor: pointer;
+        text-decoration: none;
     }
 
     .login {

@@ -1,4 +1,7 @@
-import { getAllPosts } from '../../firebase/firestore.js';
+import {
+  getAllPosts,
+  // updatePost
+} from '../../firebase/firestore.js';
 
 export default () => {
   const containerFeed = document.createElement('div');
@@ -14,7 +17,7 @@ export default () => {
     const posts = await getAllPosts();
     const postTemplate = posts.map((post) => `
       <div class='main-post-feed'>
-        <div id='delete' class='btn-delete'><img class='img-delete' src='img/delete.png'></div>
+        <div class='btn-edit'><img src='img/pencil.png' id='edit'></div>
         <div class='photo-name-post-feed'>
           <div>${post.userPhoto}</div>
           <div class='name-post-feed'>${post.userName}</div>
@@ -31,6 +34,12 @@ export default () => {
   };
 
   showPosts();
+
+  // const edit = containerFeed.querySelector('#edit');
+  // edit.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   updatePost();
+  // });
 
   return containerFeed;
 };

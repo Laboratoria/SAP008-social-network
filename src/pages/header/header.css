@@ -47,13 +47,13 @@ li {
       display: none;
     }
 
-    body {
+    .header-body {
       display: flex;
       justify-content: left;
       font-size: 2rem;
     }
   
-    header {
+    .header-main {
       /* box-shadow: 0.5rem 0 0 #d2d0d0; */
       min-width: 14rem;
       height: 100vh;

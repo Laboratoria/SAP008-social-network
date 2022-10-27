@@ -15,8 +15,10 @@
   margin-right: auto;
   margin-bottom: 2rem;
 }
-
-.btn-delete {
+.img-edit {
+  width: 18px;
+}
+.btn-edit {
   float: right;
 }
 

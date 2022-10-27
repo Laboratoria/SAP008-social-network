@@ -34,16 +34,18 @@ export default () => {
             placeholder='Confirmação de senha'>
             <span id='saidaPasswordConfirmation'></span>
           </div>
-          <div class='formCadastroInput'>
-            <input type='text' name='euSou' list='responsible' id='iamRegistration' placeholder='Eu Sou'>
-            <datalist id='responsible'>
-            <option value='Mãe'></option>
-            <option value='Pai'></option>
-            <option value='Profissional'></option>
-            <option value='RedeDeApoio'></option>
-            <option value='Tentante'></option>
-            <option value='Aprendiz'></option>
-            </datalist>
+          <div class='formCadastroInput' id='selection-input'>
+          <p id='selection'>Selecione:</p>
+            <select name='list' id='list'>
+              <option value='Eu sou' selected disabled>Eu sou</option>
+              <option value='Mãe'>Mãe</option>
+              <option value='Pai'>Pai</option>
+              <option value='Tentante'>Tentante</option>
+              <option value='Grávida'>Grávida</option>
+              <option value='Aprendiz'>Aprendiz</option>
+              <option value='Rede de apoio'>Rede de Apoio</option>
+              <option value='Profissional'>Profissional</option>
+            </select>
             <span id='saidaIamRegistration'></span>
           </div>
           <div class='formCadastroInput'>

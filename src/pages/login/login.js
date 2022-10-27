@@ -67,10 +67,12 @@ export default () => {
       });
   });
   const btnGoogle = container.querySelector('#submit-google');
-  btnGoogle.addEventListener('click', (e) => {
-    e.preventDefault();
-    loginGoogle();
-    window.location.hash = '#feed';
+  btnGoogle.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginGoogle().then(() => {
+      window.location.hash = '#feed';
+    })
+      .catch((error) => error);
   });
 
   return container;

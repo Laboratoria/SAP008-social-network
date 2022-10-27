@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;500;700&display=swap");
 
 .body-post-feed {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
 }
 
 .main-post-feed {
@@ -15,32 +16,33 @@
   margin-right: auto;
   margin-bottom: 2rem;
 }
-.img-edit {
-  width: 18px;
-}
-.btn-edit {
-  float: right;
-}
-
-.photo-name-post-feed {
-  display: flex;
-}
 
 .name-post-feed {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
+  font-weight: bold;
 }
+
+.btn-edit-post-feed {
+  float: right;
+  border: none;
+  background-color: white;
+}
+
+/* .photo-name-post-feed {
+  display: flex;
+} */
 
 .content-post-feed {
   width: auto;
   height: auto;
 
   text-align: justify;
-  font-weight: bold;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
 }
 
-.select-data-post-feed {
+.select-date-post-feed {
   display: flex;
   justify-content: space-between;
 }
@@ -49,18 +51,33 @@
   color: #00a57a;
 }
 
-.data-post-feed {
+.date-post-feed {
   color: #535050;
 }
 
-.icone-like-post-feed {
+.like-delete-post-feed {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-like-post-feed {
   color: #00a57a;
+
+  margin-top: 1rem;
+  border: none;
+  background-color: white;
+}
+
+.btn-delete-post-feed {
+  float: right;
+  border: none;
+  background-color: white;
 
   margin-top: 1rem;
 }
 
 /* thamires  */
-#picture__input {
+/* #picture__input {
   display: none;
 }
 
@@ -101,17 +118,17 @@ picture:hover {
 
 .picture__img {
   max-width: 100%;
-}
+} */
 
 @media screen and (min-width: 1024px) {
   .body-post-feed {
-    margin-left: 12rem;
+    margin-left: 15rem;
     
     width: 85vw;
   }
 
   .main-post-feed {
-    margin: 2rem 4rem 2rem 4rem;
+    margin: 4rem 4rem 2rem 4rem;
     width: auto;
   }
 }

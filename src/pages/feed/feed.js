@@ -1,8 +1,9 @@
-import {
-  getAllPosts,
-} from '../../firebase/firestore.js';
+import { getAllPosts, deletePost, getPost } from '../../firebase/firestore.js';
+import { userUID } from '../../firebase/auth.js';
 
 export default () => {
+  localStorage.setItem('editStatus', false);
+
   const containerFeed = document.createElement('div');
 
   const bodyFeed = `
@@ -16,21 +17,69 @@ export default () => {
     const posts = await getAllPosts();
     const postTemplate = posts.map((post) => `
       <div class='main-post-feed'>
-        <div class='btn-edit'><img src='img/pencil.png' id='edit'></div>
-        <div class='photo-name-post-feed'>
-          <div>${post.userPhoto}</div>
-          <div class='name-post-feed'>${post.userName}</div>
-        </div>
+        <button class='btn-edit-post-feed' data-post-id=${post.id} data-user-id=${post.userId}>✏️</button>
+        <div class='name-post-feed'>${post.userName}</div>
         <div class='content-post-feed'>${post.text}</div>
-        <div class='select-data-post-feed'>
+        <div class='select-date-post-feed'>
           <div class='select-post-feed'>${post.subject}</div>
-          <div class='data-post-feed'>${post.publishDate}</div>
+          <div class='date-post-feed'>${post.publishDate}</div>
         </div>
-        <div class='icone-like-post-feed'>❤️ ${post.like}</div>
+        <div class='like-delete-post-feed'>
+          <button class='btn-like-post-feed' data-user-id=${post.userId}>💚 ${post.like}</button>
+          <button class='btn-delete-post-feed' data-post-id=${post.id} data-user-id=${post.userId}>🗑️</button>
+        </div>
       </div>
+
     `).join('');
+
     containerFeed.querySelector('#bodyPostFeed').innerHTML += postTemplate;
+
+    const btnsDelete = containerFeed.querySelectorAll('.btn-delete-post-feed');
+
+    btnsDelete.forEach((btn) => {
+      if (userUID() === btn.dataset.userId) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+
+      btn.addEventListener('click', async (e) => {
+        // eslint-disable-next-line no-alert, no-restricted-globals
+        if (confirm('Tem certeza que deseja excluir?') === true) {
+          await deletePost(e.target.dataset.postId);
+          // eslint-disable-next-line no-restricted-globals
+          location.reload();
+        }
+      });
+    });
+
+    const btnsEdit = containerFeed.querySelectorAll('.btn-edit-post-feed');
+
+    btnsEdit.forEach((btn) => {
+      if (userUID() === btn.dataset.userId) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+
+      btn.addEventListener('click', async (e) => {
+        const post = await getPost(e.target.dataset.postId);
+        localStorage.setItem('postId', post.id);
+        localStorage.setItem('postText', post.text);
+        localStorage.setItem('postSubject', post.subject);
+        localStorage.setItem('editStatus', true);
+        window.location.hash = '#publish';
+      });
+    });
   };
+
+  // const btnsLike = containerFeed.querySelectorAll('.btn-like-post-feed');
+
+  // btnsLike.forEach((btn) => {
+  //   btn.addEventListener('click', async (e) => {
+  //     await deletePost(e.target.dataset.postId);
+  //   });
+  // });
 
   showPosts();
 

@@ -17,20 +17,20 @@ export default () => {
       <form class='form-cadastro' id='form-cadastro'>
         <div class='cadastro-inteiro'>
           <div class='formCadastroInput'>
-            <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' 
+            <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' class='inputs-cadastro'
             placeholder='Nome e Sobrenome'>
             <span id='saidaRegistrationFirstNameAndLastName'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='email' name='emailRegistration' id='emailRegistration' placeholder='E-mail'>
+            <input type='email' name='emailRegistration' id='emailRegistration' class='inputs-cadastro' placeholder='E-mail'>
             <span id='saidaEmailRegistration'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='password' name='registrationPassword' id='registrationPassword' placeholder='Senha'>
+            <input type='password' name='registrationPassword' id='registrationPassword' class='inputs-cadastro' placeholder='Senha'>
             <span id='saidaRegistrationPassword'></span>
           </div>
           <div class='formCadastroInput'>
-            <input type='password' name='passwordConfirmation' id='passwordConfirmation'
+            <input type='password' name='passwordConfirmation' id='passwordConfirmation' class='inputs-cadastro'
             placeholder='Confirmação de senha'>
             <span id='saidaPasswordConfirmation'></span>
           </div>
@@ -102,43 +102,39 @@ export default () => {
       saidaRegistrationFirstNameAndLastName.innerHTML = '';
     }
     if (emailRegistrationValue === '') {
-      saidaEmailRegistration.innerHTML = 'Peencha esse campo';
+      saidaEmailRegistration.innerHTML = 'Preencha esse campo';
     }
     if (emailRegistrationValue !== '') {
       saidaEmailRegistration.innerHTML = '';
     }
     if (registrationPasswordValue === '') {
-      saidaRegistrationPassword.innerHTML = 'Peencha esse campo';
+      saidaRegistrationPassword.innerHTML = 'Preencha esse campo';
     }
     if (registrationPasswordValue !== '') {
       saidaRegistrationPassword.innerHTML = '';
     }
     if (passwordConfirmationValue === '') {
-      saidaPasswordConfirmation.innerHTML = 'Peencha esse campo';
+      saidaPasswordConfirmation.innerHTML = 'Preencha esse campo';
     }
     if (passwordConfirmationValue !== '') {
       saidaPasswordConfirmation.innerHTML = '';
     }
     if (iamRegistrationValue === '') {
-      saidaIamRegistration.innerHTML = 'Peencha esse campo';
+      saidaIamRegistration.innerHTML = 'Preencha esse campo';
     }
     if (iamRegistrationValue !== '') {
       saidaIamRegistration.innerHTML = '';
     }
-    // alert('preencha esse campo');
     if (passwordConfirmationValue !== registrationPasswordValue) {
       saidaPasswordConfirmation.innerHTML = 'As senhas nao sao iguais';
-      // alert('as senhas nao sao iguais');
     }
     if (!confirmationBox.checked) {
       saidaConfirmationBox.innerHTML = 'Você não concorda com os termos';
-      // alert('Você não concorda com os termos');
     }
     if (confirmationBox.checked) {
       saidaConfirmationBox.innerHTML = '';
     }
-    if (
-      registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && iamRegistrationValue !== '' && confirmationBox.checked) {
+    if (registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && registrationPasswordValue === passwordConfirmationValue && iamRegistrationValue !== '' && confirmationBox.checked) {
       createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
         .then(() => {
           window.location.hash = '#feed';

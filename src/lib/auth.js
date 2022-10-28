@@ -5,7 +5,7 @@ import { app } from './configuration.js';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup,
   GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword,
-  signOut, updateProfile, getDocs, doc, deleteDoc, updateDoc
+  signOut, updateProfile, getDocs, doc, deleteDoc, updateDoc,
 } from './firebase.js';
 
 export const auth = getAuth(app);
@@ -60,12 +60,12 @@ export const deletePost = (postID) => { // função deletar post
 
 export const forEditPost = async (postID) => {
   const docRef = doc(dataBase, 'Posts', postID);
-  return await updateDoc(docRef, {
+  await updateDoc(docRef, {
     restaurant: 'local',
     adress: 'adress',
-    review: 'review'
+    review: 'review',
   });
-}
+};
 
 // por que a variável não funciona (const userAuth = auth.currentUser) se é global?;
 // por que algumas estruturas que possuem async funcionam sem await? (ex function googleAccess);

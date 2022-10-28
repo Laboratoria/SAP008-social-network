@@ -35,9 +35,9 @@ export default () => {
 
     const printPosts = async () => {
       const all = await getPosts();
-      let postsTemplate = '';
       const mapPosts = all.map((posts) => {
-        if (auth.currentUser === posts.author) {
+        let postsTemplate = '';
+        if (auth.currentUser.uid === posts.author) {
           postsTemplate = `<div data-id="${posts.id}" class="posts">
           <div id="text">
             <p>@ ${posts.name}</p>
@@ -66,9 +66,8 @@ export default () => {
               </div>
             </div>
           </aside>
-        </div>
-        <hr class="colorful-line"/>`;
-          container.querySelector('.post-container').innerHTML += postsTemplate;
+          </div>
+          <hr class="colorful-line"/>`;
         } else {
           postsTemplate = `<div data-id="${posts.id}" class="posts">
           <div id="text">
@@ -84,30 +83,30 @@ export default () => {
               <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
             </div>
           </aside>
-        </div>
-        <hr class="colorful-line"/>`;
+          </div>
+          <hr class="colorful-line"/>`;
         }
         return postsTemplate;
       }).join('');
       container.querySelector('.post-container').innerHTML += mapPosts;
 
+      const cancelEdit = container.querySelector('#cancel');
+      const okEdit = container.querySelector('#ok');
       const editPost = container.querySelector('#pencil-icon');
       const local = container.querySelector('#local');
       const adress = container.querySelector('#adress');
       const review = container.querySelector('#review');
-      // const showIcon = container.querySelector('.icons-current-user');
-      const modalDelete = container.querySelector('#modal-delete');
-      const warnDelete = container.querySelector('#trash-icon');
-      const closeModalDelete = container.querySelector('#no-close');
-      const yesModalDelete = container.querySelector('#yes-delete');
-      const cancelEdit = container.querySelector('#cancel');
-      const okEdit = container.querySelector('#ok');
+
+      cancelEdit.hidden = true;
+      okEdit.hidden = true;
 
       function show(elemento) {
         elemento.focus();
       }
 
       editPost.addEventListener('click', () => {
+        cancelEdit.hidden = false;
+        okEdit.hidden = false;
         review.contentEditable = true;
         show(review);
         local.contentEditable = true;
@@ -119,14 +118,23 @@ export default () => {
       okEdit.addEventListener('click', (e) => {
         const dataEditAtributte = e.target.dataset.edit;
         forEditPost(dataEditAtributte);
+        cancelEdit.hidden = true;
+        okEdit.hidden = true;
         // console.log(dataEditAtributte);
       });
 
       cancelEdit.addEventListener('click', () => {
+        cancelEdit.hidden = true;
+        okEdit.hidden = true;
         review.contentEditable = false;
         local.contentEditable = false;
         adress.contentEditable = false;
       });
+
+      const modalDelete = container.querySelector('#modal-delete');
+      const warnDelete = container.querySelector('#trash-icon');
+      const closeModalDelete = container.querySelector('#no-close');
+      const yesModalDelete = container.querySelector('#yes-delete');
 
       warnDelete.addEventListener('click', () => {
         modalDelete.classList.toggle('hide');
@@ -136,34 +144,33 @@ export default () => {
         modalDelete.classList.toggle('hide');
       });
 
-      yesModalDelete.forEach((button) => {
-        button.addEventListener('click', (e) => {
-          const dataDeleteAtributte = e.target.dataset.delete;
-          deletePost(dataDeleteAtributte);
-          modalDelete.classList.toggle('hide');
-          const divToRemove = document.querySelector(`[data-id="${dataDeleteAtributte}]`);
-          divToRemove.style.display = 'none';
-        });
-      });
-
-      const logout = container.querySelector('#logout-icon');
-      const toTheTop = container.querySelector('#up-icon');
-      const newPost = container.querySelector('#plus-icon');
-
-      logout.addEventListener('click', () => {
-        logoutUser();
-      });
-
-      toTheTop.addEventListener('click', () => {
-        window.scrollTo(0, 0);
-      });
-
-      newPost.addEventListener('click', () => {
-        window.location.hash = '#novo_post';
+      yesModalDelete.addEventListener('click', (e) => {
+        const dataDeleteAtributte = e.target.dataset.delete;
+        deletePost(dataDeleteAtributte);
+        modalDelete.classList.toggle('hide');
+        const divToRemove = container.querySelector(`[data-id="${dataDeleteAtributte}]`);
+        divToRemove.style.display = 'none';
       });
     };
     printPosts();
+
+    const logout = container.querySelector('#logout-icon');
+    const toTheTop = container.querySelector('#up-icon');
+    const newPost = container.querySelector('#plus-icon');
+
+    logout.addEventListener('click', () => {
+      logoutUser();
+    });
+
+    toTheTop.addEventListener('click', () => {
+      window.scrollTo(0, 0);
+    });
+
+    newPost.addEventListener('click', () => {
+      window.location.hash = '#novo_post';
+    });
+
     return container;
   }
-  window.location.hash = '#load';
+  window.location.hash = '#login';
 };

@@ -16,8 +16,6 @@ import {
 
 const auth = getAuth(app);
 
-const logInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
-
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
     console.log('Usuário logado,', user);
@@ -25,6 +23,8 @@ onAuthStateChanged(auth, (user) => {
     console.log('Não há usuários logado');
   }
 });
+
+const logInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
 const provider = new GoogleAuthProvider();
 const signInWithGoogle = () => signInWithPopup(auth, provider);

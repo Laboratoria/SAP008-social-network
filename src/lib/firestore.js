@@ -40,11 +40,12 @@ export const postScreen = async () => {
   }
 };
 
-export const removePost = async (uid) => {
+export const removePost = async (idPost) => {
   try {
-    const userId = doc(db, 'posts deletados', uid);
-    await deleteDoc(userId);
-  } catch (error) {
-    console.log(error);
+    const docUser = doc(db, 'posts', idPost);
+    await deleteDoc(docUser);
+    return docUser.id;
+  } catch (e) {
+    console.log(e);
   }
 };

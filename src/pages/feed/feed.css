@@ -1,4 +1,6 @@
-@media only screen and (max-width: 1500px) and (min-width: 257px){
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+@media only screen and (max-width: 700px) and (min-width: 150px){
     *{
         margin: 0;
         padding: 0;
@@ -12,8 +14,8 @@
         padding: 2%;
     }
     .loginhoFeed{
-        width: 28%;
-        height: 30%;
+        width: 20%;
+        height: 20%;
         border-radius: 10%;
     }
     .navBar{
@@ -26,15 +28,23 @@
         border-right: none;
     }
     .btnSIgnInOut img{
-        width: 18%;
-        height: 15%;
+        width: 12%;
+        height: 12%;
     }
     .msgBoasvindas{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         color: black;
         padding: 3%;
         font-weight: bold;
+        height: 100%;
+    }
+    .ftPerfil{
+        width: 15%;
+        border-radius: 50%;
+        background-color: var(--branco);
+        border: 2px solid var(--roxo);
+        object-fit: scale-down;
     }
     .corpotimeline{
         display: flex;
@@ -59,6 +69,7 @@
     .headerPost{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
     .textTitle{
         font-weight: bold;
@@ -70,6 +81,25 @@
         width: 100%;
         border-radius: 5px;
         border-color: black;
+        border-style: solid;
+        padding: 5px 0px 5px 0px;
+        text-align: center;
+        outline: none;
+        border-color: #1FA48C;
+    }
+    .publicBtn{
+        color: black;
+        width: 30%;
+        height: 8%;
+        background-color: #1FA48C;
+        border-radius: 3px;
+        font-weight: bold;
+        margin: 2% 5% 2% 35%;
+        border-color: black;
+        border: 1px solid;
+    }
+    .publicBtn:hover{
+        transform: scale(0.9);
     }
     .createPost{
         width: 100%;
@@ -77,15 +107,6 @@
         border-radius: 5px;
         border-color: black;
         padding: 0;
-    }
-    .publicBtn{
-        color: black;
-        width: 30%;
-        height: 5%;
-        background-color: #1fa48c84;
-        border-radius: 3px;
-        font-weight: bold;
-        margin: 2% 5% 2% 35%;
     }
     .postTimeline{
         display: flex;
@@ -103,22 +124,190 @@
     }
     #userName{
         margin: 3%;
-        font-size: 100%;
+        font-size: 120%;
+        font-weight: bold;
+    }
+    .date{
+       padding: 3% 2% 0% 0%;
     }
     #textPost {
-        font-size: 90%;
+        font-size: 100%;
         margin: 3%;
+        font-family: 'Roboto', sans-serif;
+        background-color: rgba(128, 128, 128, 0.211);
+        border-radius: 5px;
+        padding: 1%;
     }
-    .btnDelete:hover{
-        transform: scale(0.9);
+    .sectionBtn{
+        display: flex;
+        margin: 0% 0% 0% 70%;
+        flex-direction: row;
     }
-    .btnEditar:hover{
-        transform:scale(1.9);
+    .btnDelete img{
+        height: 100%;
+        width: 100%;
+    }
+    .btnEditar img{
+        height: 100%;
+        width: 100%;
     }
     .sectionBtnLikeDeslike img{
-        margin: 1% 0% 2% 8%;
+        margin: 2% 0% 1% 0%;
         height: 25px;
         width: 35px;
         padding: 0;
+        justify-content: flex-end;
+    }
+
+    .btnLike{
+        margin: 0% 0% 0% 5%;
+    }
+}
+
+@media only screen and (max-width: 2500px) and (min-width: 701px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .headerFeed{
+        background-image: url(../../img/back.jpg);
+        display: flex;
+        justify-content: center;
+        width: 98%;
+        padding: 2%;
+    }
+    .loginhoFeed{
+        width: 10%;
+        height: 10%;
+        border-radius: 10%;
+    }
+    .navBar{
+        background-color: #1FA48C;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        border-left: none;
+        border-right: none;
+        height: 3%;
+        padding: 0% 0% 0% 3%;
+    }
+    .btnSIgnInOut img{
+        width: 10%;
+        height: 10%;
+    }
+    .msgBoasvindas{
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        padding: 1% 0% 1% 5%;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .corpotimeline{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .boxModelPost{
+        display: flex;
+        flex-direction: column;
+        background-color: #EEEEEE;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 10px;
+        width: 70%;
+        height: 20%;
+        margin: 1% auto;
+        padding: 15px;
+        font-size: 40px;
+    }
+    .publicBtn{
+        color: black;
+        width: 150px;
+        height: 20%;
+        background-color: #1FA48C;
+        border-radius: 10px;
+        font-weight: bold;
+        margin: 2% auto;
+        border-color: black;
+        border: 1px solid;
+        font-size: 25px;
+    }
+    .headerPost{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0% 0% 2% 0%;
+    }
+    .textTitle{
+        font-weight: bold;
+        border-color: black;
+        border-radius: 5px;
+        padding: 1%;
+        font-size: 20px;
+    }
+    .inputText{
+        width: 100%;
+        border-radius: 5px;
+        border-color: black;
+        border-style: solid;
+        padding: 10px 0px 5px 0px;
+        text-align: center;
+        outline: none;
+        border-color: #1FA48C;
+        font-size: 18px;
+    }
+    .postTimeline{
+        display: flex;
+        flex-direction: column;
+        background-color: #EEEEEE;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 10px;
+        width: 50%;
+        height: 30%;
+        padding: 1%;
+        font-size: 15px;
+        margin: auto; 
+    } 
+
+    #userName{
+        margin: 3%;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    #textPost {
+        font-size: 15px;
+        padding: 1% 0% 1% 3%;
+        margin: 3%;
+        font-family: 'Roboto', sans-serif;
+        margin: 3%;
+        background-color: rgba(128, 128, 128, 0.211);
+        border-radius: 5px;
+        padding: 1%;
+    }
+    .sectionBtn{
+        display: flex;
+        margin: 0% 0% 0% 70%;
+        flex-direction: row;
+    }
+    .btnDelete img{
+        height: 100%;
+        width: 100%;
+    }
+    .btnEditar img{
+        height: 80%;
+        width: 80%;
+    }
+    .sectionBtnLikeDeslike img{
+        height: 5%;
+        width: 5%;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    .btnLike{
+        margin: 0% 0% 0% 5%;
     }
 }

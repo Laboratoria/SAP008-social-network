@@ -20,17 +20,17 @@ export default () => {
       </header>
       <nav class='navBar'>
         <ul>
-          <li><a class='btnSIgnInOut' id='logOut'><img src='../../img/btnSair.png' alt='seta para sair'</a></li>
+          <a class='btnSIgnInOut' id='logOut'><img src='../../img/btnSair.png' alt='seta para sair'</a>
         </ul>
       </nav>
       <section class='msgBoasvindas'>
-        <p> Olá, ${auth.currentUser.displayName}!</p>
+        <p>  Olá, ${auth.currentUser.displayName}!</p>
       </section>
       <div clas='corpotimeline'>
         <form id='create-Post'>
           <section class='boxModelPost'>
             <form>
-              <textarea id='text-publish' class='inputText' rows='5' cols='40' placeholder='Escreva detalhes sobre a estadia em sua residência...'></textarea>
+              <textarea id='text-publish' style='resize: none' class='inputText' rows='3' cols='40' placeholder='Escreva detalhes sobre a estadia em sua residência...'></textarea>
               <button type='submit' id='publish-btn' class='publicBtn'>Publicar</button>
             </form>
           </section>
@@ -48,7 +48,7 @@ export default () => {
       <section class='postTimeline'>
         <div class="headerPost">
           <p id='userName'>${posts.name}</p>
-          <p id='textPost'>${posts.date}</p>
+          <p id='date'>${posts.date}</p>
         </div>
         <p id='textPost'>${posts.text}</p>
         <p class='sectionBtn'>
@@ -58,7 +58,6 @@ export default () => {
       </section>
       <section class='sectionBtnLikeDeslike'>
         <a class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></a>
-        <a class='btnDeslike' id='btn-deslike'><img src='../../img/deslike.png' alt='Deslike'></a>
       </section>
     `;
         return postTemplate;
@@ -93,14 +92,13 @@ export default () => {
     deletePost.addEventListener('click', (e) => {
       e.preventDefault();
       if (window.confirm('Deseja mesmo excluir este post?')) {
-        removePost()
+        const deletePostUser = auth.currentUser.uid;
+        removePost(deletePostUser)
           .then(() => {
-            window.location.reload();
-            console.log('cheguei aqui');
+            printPost();
           })
           .catch((error) => {
-            const errorCode = errorFire(error.code);
-            console.log(errorCode);
+            console.log(error);
           });
       }
     });

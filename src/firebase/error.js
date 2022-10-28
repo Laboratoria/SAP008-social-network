@@ -16,3 +16,13 @@ export function errorMessages(error) {
       return `Aconteceu um erro não identificado, entre em contato com as desenvolvedoras e informe o erro a seguir: ${error.code}`;
   }
 }
+
+export function validation(email, password) {
+  if (email === '') {
+    return 'Preencha o campo de e-mail!';
+  }
+  if (password === '') {
+    return 'Preencha o campo de senha!';
+  }
+  return '';
+}

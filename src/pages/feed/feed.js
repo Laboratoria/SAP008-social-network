@@ -73,14 +73,6 @@ export default () => {
     });
   };
 
-  // const btnsLike = containerFeed.querySelectorAll('.btn-like-post-feed');
-
-  // btnsLike.forEach((btn) => {
-  //   btn.addEventListener('click', async (e) => {
-  //     await deletePost(e.target.dataset.postId);
-  //   });
-  // });
-
   showPosts();
 
   return containerFeed;

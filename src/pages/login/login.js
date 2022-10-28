@@ -1,5 +1,5 @@
 import { userLogin, loginGoogle } from '../../firebase/auth.js';
-import { errorMessages } from '../../firebase/error.js';
+import { errorMessages, validation } from '../../firebase/error.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -51,21 +51,27 @@ export default () => {
 `;
 
   container.innerHTML = telaLogin;
-
+  const inputEmail = container.querySelector('#email');
+  const inputPassword = container.querySelector('#password');
+  const errorMessage = container.querySelector('#error');
   const btnLogin = container.querySelector('#submit-login');
-  btnLogin.addEventListener('click', () => {
-    const inputEmail = container.querySelector('#email').value;
-    const inputPassword = container.querySelector('#password').value;
-    const errorMessage = container.querySelector('#error');
 
-    userLogin(inputEmail, inputPassword)
-      .then(() => {
-        window.location.hash = '#feed';
-      })
-      .catch((error) => {
-        errorMessage.innerHTML = errorMessages(error);
-      });
+  btnLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    const validateLogin = validation(inputEmail.value, inputPassword.value);
+    if (validateLogin === '') {
+      userLogin(inputEmail.value, inputPassword.value)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
+        .catch((error) => {
+          errorMessage.innerHTML = errorMessages(error);
+        });
+    } else {
+      errorMessage.innerHTML = validateLogin;
+    }
   });
+
   const btnGoogle = container.querySelector('#submit-google');
   btnGoogle.addEventListener('click', (event) => {
     event.preventDefault();

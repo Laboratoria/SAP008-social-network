@@ -47,18 +47,19 @@ export default () => {
     const postText = containerPost.querySelector('#textAreaPost').value;
     const postSubject = containerPost.querySelector('#selectSubjects').value;
 
-    if (localStorage.getItem('editStatus') === 'false') {
-      if (postText === '') {
-        // eslint-disable-next-line no-alert
-        alert('Conteúdo do post vazio, preencha antes de enviar!');
-      }
-      await publishPost(postText, postSubject);
+    if (postText === '' || postSubject === 'typeTitle') {
+      // eslint-disable-next-line no-alert
+      alert('Preencha todos os campos!');
     } else {
-      const postId = localStorage.getItem('postId');
-      await editPost(postId, postText, postSubject);
-    }
+      if (localStorage.getItem('editStatus') === 'false') {
+        await publishPost(postText, postSubject);
+      } else {
+        const postId = localStorage.getItem('postId');
+        await editPost(postId, postText, postSubject);
+      }
 
-    window.location.hash = '#feed';
+      window.location.hash = '#feed';
+    }
   });
 
   const cancelPublish = containerPost.querySelector('#btnCancel');

@@ -9,7 +9,8 @@ import {
   getDoc,
   orderBy,
   getFirestore,
-  // updateDoc,
+  // arrayUnion,
+  // arrayRemove,
 } from './exports.js';
 
 import { auth } from './auth.js';
@@ -22,7 +23,6 @@ async function publishPost(postText, postSubject) {
   await addDoc(collection(db, 'posts'), {
     userId: auth.currentUser.uid,
     userName: auth.currentUser.displayName,
-    idPost: auth.currentUser.Uid,
     text: postText,
     subject: postSubject,
     publishDate: new Date().toLocaleDateString('pt-BR'),
@@ -63,10 +63,27 @@ async function editPost(postId, postText, postSubject) {
   });
 }
 
+// like
+// async function likes(postId, userUID) {
+//   const docRef = doc(db, 'posts', postId);
+//   await updateDoc(docRef, {
+//     likes: arrayUnion(userUID),
+//   });
+// }
+// dislike
+// async function dislike(postId, userUID) {
+//   const docRef = doc(db, 'posts', postId);
+//   await updateDoc(docRef, {
+//     likes: arrayRemove(userUID),
+//   });
+// }
+
 export {
   publishPost,
   deletePost,
   editPost,
   getPost,
   getAllPosts,
+//  likes,
+//  dislike,
 };

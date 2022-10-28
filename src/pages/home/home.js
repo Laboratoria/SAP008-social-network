@@ -28,66 +28,9 @@ export default () => {
 
     container.innerHTML = template;
 
-    const firstLetter = (element) => {
-      const getFirst = element[0];
-      return getFirst;
-    };
-
     const printPosts = async () => {
       const all = await getPosts();
-      const mapPosts = all.map((posts) => {
-        let postsTemplate = '';
-        if (auth.currentUser.uid === posts.author) {
-          postsTemplate = `<div data-id="${posts.id}" class="posts">
-          <div id="text">
-            <p>@ ${posts.name}</p>
-            <p id="local" data-editlocal="${posts.id}" class="edit-local establishment" contenteditable="false">${posts.restaurant}</p>
-            <p id="adress" data-editadress="${posts.id}" class="edit-adress" contenteditable="false">${posts.adress}</p>
-            <p id="review" data-editreview="${posts.id}" class="edit-review" contenteditable="false">${posts.review}</p>
-          </div>
-  
-          <button id="cancel">Cancelar</button>
-          <button id="ok" data-edit="${posts.id}">OK</button>
-      
-          <div id="modal-delete" class="hide">
-            <p>Tem certeza que deseja excluir este post?</p>
-            <button data-delete="${posts.id}" id="yes-delete">Sim</button>
-            <button id="no-close">Não</button>
-          </div>
-      
-          <aside class="infos-container">
-            <div>
-              <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
-              <p id="grade">4.7</p>
-              <div class="icons-post">
-                <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
-                <img id="pencil-icon" class="icons-post-size icons-current-user" src="./external/svg/pencil-icon.svg"/>
-                <img id="trash-icon" class="icons-post-size icons-current-user" src="./external/svg/trash-icon.svg"/>
-              </div>
-            </div>
-          </aside>
-          </div>
-          <hr class="colorful-line"/>`;
-        } else {
-          postsTemplate = `<div data-id="${posts.id}" class="posts">
-          <div id="text">
-            <p>@ ${posts.name}</p>
-            <p id="local" data-editlocal="${posts.id}">${posts.restaurant}</p>
-            <p id="adress" data-editadress="${posts.id}">${posts.adress}</p>
-            <p id="review" data-editreview="${posts.id}">${posts.review}</p>
-          </div>
-          <aside class="infos-container">
-            <div>
-              <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
-              <p id="grade">4.7</p>
-              <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
-            </div>
-          </aside>
-          </div>
-          <hr class="colorful-line"/>`;
-        }
-        return postsTemplate;
-      }).join('');
+      const mapPosts = generatePostsTemplate(all);//eslint-disable-line
       container.querySelector('.post-container').innerHTML += mapPosts;
 
       const cancelEdit = container.querySelector('#cancel');
@@ -97,30 +40,19 @@ export default () => {
       const adress = container.querySelector('#adress');
       const review = container.querySelector('#review');
 
-      cancelEdit.hidden = true;
-      okEdit.hidden = true;
-
-      function show(elemento) {
-        elemento.focus();
-      }
-
       editPost.addEventListener('click', () => {
         cancelEdit.hidden = false;
         okEdit.hidden = false;
         review.contentEditable = true;
-        show(review);
         local.contentEditable = true;
-        show(local);
         adress.contentEditable = true;
-        show(adress);
       });
 
       okEdit.addEventListener('click', (e) => {
         const dataEditAtributte = e.target.dataset.edit;
-        forEditPost(dataEditAtributte);
+        forEditPost(dataEditAtributte, local.textContent, adress.textContent, review.textContent);
         cancelEdit.hidden = true;
         okEdit.hidden = true;
-        // console.log(dataEditAtributte);
       });
 
       cancelEdit.addEventListener('click', () => {
@@ -148,8 +80,8 @@ export default () => {
         const dataDeleteAtributte = e.target.dataset.delete;
         deletePost(dataDeleteAtributte);
         modalDelete.classList.toggle('hide');
-        const divToRemove = container.querySelector(`[data-id="${dataDeleteAtributte}]`);
-        divToRemove.style.display = 'none';
+        const divToRemove = container.querySelector(`[data-id="${dataDeleteAtributte}"]`);
+        divToRemove.remove();
       });
     };
     printPosts();
@@ -174,3 +106,50 @@ export default () => {
   }
   window.location.hash = '#login';
 };
+
+function generatePostsTemplate(allPosts) {
+  const firstLetter = (element) => {
+    const getFirst = element[0];
+    return getFirst;
+  };
+
+  return allPosts.map((posts) => {
+    let editButtons = '';
+    if (auth.currentUser.uid === posts.author) {
+      editButtons = `
+        <img id="pencil-icon" class="icons-post-size icons-current-user" src="./external/svg/pencil-icon.svg"/>
+        <img id="trash-icon" class="icons-post-size icons-current-user" src="./external/svg/trash-icon.svg"/>
+      `;
+    }
+    const postsTemplate = `<div data-id="${posts.id}" class="posts">
+      <div id="text">
+        <p>@ ${posts.name}</p>
+        <p id="local" data-editlocal="${posts.id}" class="edit-local establishment" contenteditable="false">${posts.restaurant}</p>
+        <p id="adress" data-editadress="${posts.id}" class="edit-adress" contenteditable="false">${posts.adress}</p>
+        <p id="review" data-editreview="${posts.id}" class="edit-review" contenteditable="false">${posts.review}</p>
+      </div>
+
+      <button id="cancel">Cancelar</button>
+      <button id="ok" data-edit="${posts.id}">OK</button>
+  
+      <div id="modal-delete" class="hide">
+        <p>Tem certeza que deseja excluir este post?</p>
+        <button data-delete="${posts.id}" id="yes-delete">Sim</button>
+        <button id="no-close">Não</button>
+      </div>
+  
+      <aside class="infos-container">
+        <div>
+          <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
+          <p id="grade">4.7</p>
+          <div class="icons-post">
+            <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
+            ${editButtons}
+          </div>
+        </div>
+      </aside>
+      </div>
+      <hr class="colorful-line"/>`;
+    return postsTemplate;
+  }).join('');
+}

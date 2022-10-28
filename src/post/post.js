@@ -9,10 +9,12 @@ export default () => {
       <div class="container-logo-post">
           <img class="logo-img" src="./images/logo_02_blue_081E26.png" alt="logo do título">
       </div>
-        <nav class="navbar">
-                <ul class="navbar-list"> 
-                    <li class="navbar-item-button">
-                        <button type="button" id="navbar-button">BOTÃO</button>
+      <nav class='menu-hamburguer'>
+      <ul class='navbar-list'>
+          <li class='navbar-item-button'>
+              <button type='button' id='navbar-button'><span class="material-symbols-outlined">
+              menu
+              </span></button>
                     </li>
                     <li class="navbar-item hide">
                         <a href='#aboutus'>Sobre Nós</a>

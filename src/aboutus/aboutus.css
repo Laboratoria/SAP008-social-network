@@ -1,12 +1,16 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap'); */
 
-header{
-    display: flex;
-}
+*{                 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+} 
+
 
 a{
     text-decoration: none;
-    color:#FFFFFF;
+    color:#8C4A5C;
 }
 
 .container-aboutus{
@@ -15,7 +19,7 @@ a{
 
 /*MENU HAMBURGUER*/
 
-.navbar{
+.menu-hamburguer{
     background-color:#8C4A5C;
     color:#FFFFFF;
 }

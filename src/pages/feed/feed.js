@@ -1,3 +1,4 @@
+
 import { errorsFirebase } from '../../lib/error.js';
 
 import {
@@ -29,7 +30,6 @@ export default function Feed() {
             <button type="submit" id="post-btn" class="post-btn">Publicar</button>
           </div>
         </section>
-
       <section class="post-feed">
         <ul id="box-post"></ul>
       </section>
@@ -45,7 +45,6 @@ export default function Feed() {
   const user = current().uid;
   // const btnLike = Array.from(feed.querySelector('#btn-like'));
   // const btnLike = feed.querySelector('#post-like');
-  
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
   // que deve ser validada como verdadeira ou falsa. Se a condição for
   // verdadeira o operador retorna uma expressão e se for falsa retorna
@@ -68,36 +67,51 @@ export default function Feed() {
           </div>
           <div class = 'field-btn-like'>
             ${iteration}
-            <button class ='btn-like ${liked ? 'liked' : ''}' data-liked='${liked}' id =${post.id}>&#10084; ${post.like.length}</button>
-          </div>
-        </li>
-        `;
+            <button 
+              class='btn-like' 
+              data-liked='${liked}' 
+              data-likecount= ${post.like.length} 
+              id =${post.id}>
+              <span class='like-icon ${liked ? 'liked' : ''}'>&#10084;</span>
+              <span class='like-count'>${post.like.length}</span>
+            </button>
+            </div>
+            </li>
+            `;
       }).join('');
       postList.innerHTML = postsCreated;
 
       const btnsLike = postList.querySelectorAll('.btn-like');
 
       btnsLike.forEach((btnLike) => {
-        btnLike.addEventListener('click', async () => {
+        btnLike.addEventListener('click', async (e) => {
           const userId = user;
           const idPost = btnLike.id;
+          let likesCount = parseInt(e.target.dataset.likecount, 10);
+          console.log(likesCount);
           if (btnLike.dataset.liked === 'true') {
             console.log('postdislike');
             await postDislike(idPost, userId);
-            btnLike.classList.remove('liked');
+            btnLike.querySelector('.like-icon').classList.remove('liked');
             btnLike.dataset.liked = 'false';//eslint-disable-line
+            likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
+            e.target.dataset.likecount = likesCount;
+            btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
           } else {
             await postLike(idPost, userId);
             console.log('postlike');
-            btnLike.classList.add('liked');
+            btnLike.querySelector('.like-icon').classList.add('liked');
             btnLike.dataset.liked = 'true';//eslint-disable-line
+            likesCount += 1;
+            e.target.dataset.likecount = likesCount;
+            btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
           }
         });
       });
     });
 
   postBtn.addEventListener('click', (e) => {
-    modalPost.style.display = 'none'; //porque esse modal deve estar none?//
+    modalPost.style.display = 'none';
     e.preventDefault();
     createPost(postFeed.value)
       .then(() => window.location.reload())

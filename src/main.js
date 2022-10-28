@@ -2,6 +2,7 @@ import './lib/config.js';
 import login from './pages/login/login.js';
 import register from './pages/register/register.js';
 import feed from './pages/feed/feed.js';
+import welcome from './pages/welcome/welcome.js';
 import { stayLoggedIn } from './lib/firestore.js';
 
 const container = document.querySelector('.root');
@@ -25,6 +26,15 @@ const redirect = () => {
       stayLoggedIn((loggedIn) => {
         if (loggedIn) {
           container.appendChild(feed());
+        } else {
+          container.appendChild(login());
+        }
+      });
+      break;
+    case '#welcome':
+      stayLoggedIn((loggedIn) => {
+        if (loggedIn) {
+          container.appendChild(welcome());
         } else {
           container.appendChild(login());
         }

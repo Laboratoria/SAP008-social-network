@@ -46,12 +46,12 @@ export default () => {
           <button class="btn-edit" id="btn-save" data-save=${post.id}>Salvar</button>
           <button class="btn-edit" id="btn-delete" data-author-id=${post.author} data-delete=${post.id}>Excluir</button>
           <button id="btn-like" data-author-like=${post.author} data-like=${post.id}>
-            <img class='heart-like' ${post.id} ? src='./images/heart_Empty.png' : src='./images/heart.png' alt='like-heart'> 
+            <img class='heart-like' src=${post.likes.includes(userId) ? './images/heart.png' : './images/heart_empty.png'} alt='like-heart'> 
           </button>
         </div>`;
       } else {
         editBtnTemplate = `<button id='btn-like' data-author-like=${post.author} data-like=${post.id}>
-          <img class='heart-like' ${post.id} ? src='./images/heart_empty.png' : src='./images/heart.png' alt='like-heart'>
+          <img class='heart-like' src=${post.likes.includes(userId) ? './images/heart.png' : './images/heart_empty.png'} alt='like-heart'>
         </button>`;
       }
 
@@ -125,14 +125,13 @@ export default () => {
       button.addEventListener('click', async (e) => {
         const postId = e.currentTarget.dataset.like;
         const post = await getPostById(postId);
-        console.log(post);
-        const informationsLike = likePost(post, userId, postId);
         const section = container.querySelector(`[data-section-post-id="${postId}"]`);
         const img = e.target;
 
-        likePost(postId, userId)
+        likePost(post, postId, userId)
+        // estava faltando o post de parametro, pq essa função tem 3 parametros.
           .then((resultado) => {
-            if (resultado.liked === true) {
+            if (!resultado.liked.includes(userId)) {
               img.setAttribute('src', 'images/heart_empty.png');
             } else {
               img.setAttribute('src', 'images/heart.png');

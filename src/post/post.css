@@ -26,8 +26,6 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    /*font-family: "Carrois Gothic SC";*/
-    /*border: rgb(0, 89, 255) 4px solid;*/
     font-size: 0.45rem;
     padding: 15px;
 }

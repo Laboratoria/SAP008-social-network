@@ -252,6 +252,7 @@ input {
   color: #ab6930;
   border: none;
   height: 20px;
+  display: none;
 }
 
 #ok {
@@ -259,6 +260,7 @@ input {
   color: #ffffff;
   border: none;
   height: 20px;
+  display: none;
 }
 
 #modal-delete {

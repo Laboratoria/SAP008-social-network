@@ -35,12 +35,12 @@ export const googleAccess = () => { // função acessar com google
   return signInWithPopup(auth, provider);
 };
 
-export const create = (restaurant, adress, review) => { // função criar novo dado (posts)
+export const create = (restaurant, address, review) => { // função criar novo dado (posts)
   return addDoc(collection(dataBase, 'Posts'), {
     name: auth.currentUser.displayName,
     author: auth.currentUser.uid,
     restaurant,
-    adress,
+    address,
     review,
   });
 };
@@ -58,11 +58,11 @@ export const deletePost = (postID) => { // função deletar post
   return deleteDoc(doc(dataBase, 'Posts', postID));
 };
 
-export const forEditPost = async (postID, restaurant, adress, review) => {
+export const forEditPost = async (postID, restaurant, address, review) => {
   const docRef = doc(dataBase, 'Posts', postID);
   await updateDoc(docRef, {
     restaurant,
-    adress,
+    address,
     review,
   });
 };

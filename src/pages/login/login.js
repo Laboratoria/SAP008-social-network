@@ -21,7 +21,10 @@ export default function Login() {
               <button id="signin-button" class="signin-button btn">ENTRAR</button>
               <button id="google-button" class="google-button btn">
               <img class="google-icon-btn" src="imagens/btngoogle.png" alt="Logo do Google"/>LOGAR COM O GOOGLE</button>        
-            </div>  
+            </div>  <br><br>
+            <div>
+              <a href="/#password">Esqueceu sua senha? Cique aqui.</a>
+            </div>
             <div>
               <button id="signup-button" class="signup-button btn"> Não tem uma conta? 
               <a href="/#register">Cadastre-se</a>

@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   signInWithPopup,
+  sendPasswordResetEmail,
 } from './export.js';
 
 import { auth, provider } from './config.js';
@@ -23,3 +24,5 @@ export const register = (
 export const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
 export const signInGoogle = () => signInWithPopup(auth, provider);
+
+export const resetPassword = (email) => sendPasswordResetEmail(auth, email);

@@ -58,9 +58,9 @@ export const deletePost = (postID) => { // função deletar post
   return deleteDoc(doc(dataBase, 'Posts', postID));
 };
 
-export const forEditPost = async (postID, restaurant, address, review) => {
+export const forEditPost = (postID, restaurant, address, review) => {
   const docRef = doc(dataBase, 'Posts', postID);
-  await updateDoc(docRef, {
+  return updateDoc(docRef, {
     restaurant,
     address,
     review,

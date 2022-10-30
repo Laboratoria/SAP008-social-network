@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import {
   // eslint-disable-next-line max-len
-  createUserWithEmailAndPassword, signInWithPopup, addDoc, signInWithEmailAndPassword, signOut, getDocs, collection, updateProfile,
+  createUserWithEmailAndPassword, signInWithPopup, addDoc, signInWithEmailAndPassword, signOut, getDocs, collection, updateProfile, deleteDoc, updateDoc, doc,
 } from '../../src/lib/firebase.js';
 import {
   // eslint-disable-next-line no-unused-vars
-  newUser, googleAccess, create, loginUser, logoutUser, getPosts,
+  newUser, googleAccess, create, loginUser, logoutUser, getPosts, deletePost, forEditPost,
 } from '../../src/lib/auth.js';
 
 jest.mock('../../src/lib/firebase.js');
@@ -58,6 +58,24 @@ describe('googleAccess', () => {
     signInWithPopup.mockResolvedValue();
     googleAccess();
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('deletePost', () => {
+  it('should delete posts from dataBase', () => {
+    deleteDoc.mockResolvedValue();
+    deletePost();
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(deleteDoc).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('forEditPost', () => {
+  it('should edit posts from dataBase', () => {
+    updateProfile.mockResolvedValue();
+    forEditPost();
+    expect(doc).toHaveBeenCalledTimes(2);
+    expect(updateProfile).toHaveBeenCalledTimes(1);
   });
 });
 

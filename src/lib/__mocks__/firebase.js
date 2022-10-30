@@ -12,3 +12,6 @@ export const signInWithEmailAndPassword = jest.fn(() => Promise.resolve({}));
 export const signOut = jest.fn();
 export const updateProfile = jest.fn();
 export const getDocs = jest.fn();
+export const updateDoc = jest.fn();
+export const deleteDoc = jest.fn();
+export const doc = jest.fn();

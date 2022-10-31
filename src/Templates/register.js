@@ -48,22 +48,19 @@ export default () => {
     </section>
         `;
   container.innerHTML = template;
+
   const form = container.querySelector('#cadastrarRegister');
   const email = container.querySelector('#usernameRegister');
   const senha = container.querySelector('#passwordRegister');
   const name = container.querySelector('#nameRegister');
+  
   form.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('submter o form');
-    console.log(email.value);
-    console.log(senha.value);
-    console.log(name.value);
     createUser(name.value, email.value, senha.value)
       .then(() => {
         window.location.hash = '#feed';
       })
       .catch((error) => {
-        console.log(error);
       });
   });
   return container;

@@ -28,6 +28,22 @@ export default () => {
 
     container.innerHTML = template;
 
+    const logout = container.querySelector('#logout-icon');
+    const toTheTop = container.querySelector('#up-icon');
+    const newPost = container.querySelector('#plus-icon');
+
+    logout.addEventListener('click', () => {
+      logoutUser();
+    });
+
+    toTheTop.addEventListener('click', () => {
+      window.scrollTo(0, 0);
+    });
+
+    newPost.addEventListener('click', () => {
+      window.location.hash = '#novo_post';
+    });
+
     const printPosts = async () => {
       const all = await getPosts();
       const mapPosts = generatePostsTemplate(all);//eslint-disable-line
@@ -37,36 +53,35 @@ export default () => {
       const okEdit = container.querySelector('#ok');
       const editPost = container.querySelector('#pencil-icon');
       const local = container.querySelector('#local');
-      const adress = container.querySelector('#adress');
+      const address = container.querySelector('#address');
       const review = container.querySelector('#review');
-
-      editPost.addEventListener('click', () => {
-        cancelEdit.hidden = false;
-        okEdit.hidden = false;
-        review.contentEditable = true;
-        local.contentEditable = true;
-        adress.contentEditable = true;
-      });
-
-      okEdit.addEventListener('click', (e) => {
-        const dataEditAtributte = e.target.dataset.edit;
-        forEditPost(dataEditAtributte, local.textContent, adress.textContent, review.textContent);
-        cancelEdit.hidden = true;
-        okEdit.hidden = true;
-      });
-
-      cancelEdit.addEventListener('click', () => {
-        cancelEdit.hidden = true;
-        okEdit.hidden = true;
-        review.contentEditable = false;
-        local.contentEditable = false;
-        adress.contentEditable = false;
-      });
-
       const modalDelete = container.querySelector('#modal-delete');
       const warnDelete = container.querySelector('#trash-icon');
       const closeModalDelete = container.querySelector('#no-close');
       const yesModalDelete = container.querySelector('#yes-delete');
+
+      editPost.addEventListener('click', () => {
+        cancelEdit.style.display = 'flex';
+        okEdit.style.display = 'flex';
+        review.contentEditable = true;
+        local.contentEditable = true;
+        address.contentEditable = true;
+      });
+
+      okEdit.addEventListener('click', (e) => {
+        cancelEdit.style.display = 'none';
+        okEdit.style.display = 'none';
+        const dataEditAtributte = e.target.dataset.edit;
+        forEditPost(dataEditAtributte, local.textContent, address.textContent, review.textContent);
+      });
+
+      cancelEdit.addEventListener('click', () => {
+        cancelEdit.style.display = 'none';
+        okEdit.style.display = 'none';
+        review.contentEditable = false;
+        local.contentEditable = false;
+        address.contentEditable = false;
+      });
 
       warnDelete.addEventListener('click', () => {
         modalDelete.classList.toggle('hide');
@@ -84,27 +99,12 @@ export default () => {
         divToRemove.remove();
       });
     };
+
     printPosts();
-
-    const logout = container.querySelector('#logout-icon');
-    const toTheTop = container.querySelector('#up-icon');
-    const newPost = container.querySelector('#plus-icon');
-
-    logout.addEventListener('click', () => {
-      logoutUser();
-    });
-
-    toTheTop.addEventListener('click', () => {
-      window.scrollTo(0, 0);
-    });
-
-    newPost.addEventListener('click', () => {
-      window.location.hash = '#novo_post';
-    });
 
     return container;
   }
-  window.location.hash = '#login';
+  window.location.hash = '#load';
 };
 
 function generatePostsTemplate(allPosts) {
@@ -125,7 +125,7 @@ function generatePostsTemplate(allPosts) {
       <div id="text">
         <p>@ ${posts.name}</p>
         <p id="local" data-editlocal="${posts.id}" class="edit-local establishment" contenteditable="false">${posts.restaurant}</p>
-        <p id="adress" data-editadress="${posts.id}" class="edit-adress" contenteditable="false">${posts.adress}</p>
+        <p id="address" data-editaddress="${posts.id}" class="edit-address" contenteditable="false">${posts.address}</p>
         <p id="review" data-editreview="${posts.id}" class="edit-review" contenteditable="false">${posts.review}</p>
       </div>
 

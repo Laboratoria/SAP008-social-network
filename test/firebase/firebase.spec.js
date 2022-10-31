@@ -5,6 +5,9 @@ import {
   onAuthStateChanged,
   sendPasswordResetEmail,
   addDoc,
+  updateDoc,
+  doc,
+  deleteDoc,
 } from '../../src/firebase/export.js';
 
 import {
@@ -14,9 +17,15 @@ import {
   checkLoggedUser,
   resetPassword,
   createPost,
+  editPost,
+  deletePost,
 } from '../../src/firebase/firebase.js';
 
 jest.mock('../../src/firebase/export.js');
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('registerUser', () => {
   it('deve criar um usuário', () => {
@@ -72,5 +81,48 @@ describe('createPost', () => {
 
     await createPost(artist, location, date, text);
     expect(addDoc).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('editPost', () => {
+  it('a função deve editar um post', async () => {
+    const postId = 'abc123';
+    const artistToBeEdited = 'artista a ser editada';
+    const locationToBeEdited = 'local a ser editado';
+    const dateToBeEdited = 'data a ser editada';
+    const textTobeEdited = 'texto a ser editado';
+
+    updateDoc.mockResolvedValue();
+
+    await editPost(postId, artistToBeEdited, locationToBeEdited, dateToBeEdited, textTobeEdited);
+
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      artist: artistToBeEdited,
+      location: locationToBeEdited,
+      date: dateToBeEdited,
+      text: textTobeEdited,
+    });
+  });
+});
+
+describe('deletePost', () => {
+  it('a função deve deletar um post a partir do id do usuário', async () => {
+    const mockRefPost = {};
+    const mockCollection = {
+      posts: {
+        postId: '1234',
+      },
+    };
+
+    doc.mockReturnValueOnce(mockRefPost);
+    deleteDoc.mockResolvedValueOnce(mockRefPost);
+
+    await deletePost(mockCollection.posts.postId);
+
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', mockCollection.posts.postId);
+    expect(deleteDoc).toHaveBeenCalledTimes(1);
+    expect(deleteDoc).toHaveBeenCalledWith(mockRefPost);
   });
 });

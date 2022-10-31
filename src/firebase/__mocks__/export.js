@@ -18,3 +18,6 @@ export const addDoc = jest.fn(() => new Promise((resolve) => {
 }));
 export const collection = jest.fn();
 export const sendPasswordResetEmail = jest.fn();
+export const updateDoc = jest.fn();
+export const doc = jest.fn();
+export const deleteDoc = jest.fn();

@@ -3,8 +3,9 @@ import { redirect } from '../redirect.js';
 
 export default () => {
   const container = document.createElement('div');
+  // container.classList.add('wrapper-password'); tentativa de tirar espaço branco no mobile
   const template = `  
-    <div class='container-main-password'>
+      <div class='container-main-password'> 
       <div class='box-password'>
       <div class='container-logo-password'>
       <img class='logo-img-password' src='./images/logo_02_blue_081E26.png'alt='logo do título'>

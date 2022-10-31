@@ -18,13 +18,13 @@ export default () => {
         <section  id="section-pages">
             <ul>
                 <li class="btn-pages">
-                    <a href="/#Perfil" class="link">Perfil</a>
+                    <a href="/#perfil" class="link">Perfil</a>
                 </li>
                 <li class="btn-pages">
-                    <a href="/#Momento Cookie" class="link">Momento Cookie</a>
+                    <a href="/#momento Cookie" class="link">Momento Cookie</a>
                 </li>
                 <li class="btn-pages">
-                    <a href="/#Bem Estar" class="link">Bem Estar</a>
+                    <a href="/#bem Estar" class="link">Bem Estar</a>
                 </li>
             </ul>
         </section>
@@ -45,11 +45,12 @@ export default () => {
 
   const caixaPost = container.querySelector('#caixa-de-post');
   const botaoPost = container.querySelector('#submit-post');
-
+  
   botaoPost.addEventListener('click', async (e) => {
     e.preventDefault();
-    await createPost(caixaPost.value);
-    post(caixaPost.value);
+    const objeto = await createPost(caixaPost.value);
+    post(objeto);
+    console.log(objeto)
   });
 
   const menu = container.querySelector('#btn-menu');

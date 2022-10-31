@@ -12,7 +12,7 @@ export function createUser(name, email, senha) {
   return createUserWithEmailAndPassword(auth, email, senha)
     .then(() => updateProfile(auth.currentUser, {
       displayName: name,
-    }));
+    }));   
 }
 export function loginEmailPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);

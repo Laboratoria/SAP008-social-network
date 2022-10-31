@@ -17,7 +17,7 @@ export function errorMessages(error) {
   }
 }
 
-export function validation(email, password) {
+export function validationLogin(email, password) {
   if (email === '') {
     return 'Preencha o campo de e-mail!';
   }
@@ -26,3 +26,28 @@ export function validation(email, password) {
   }
   return '';
 }
+
+// export function validateRegister(name, email, password, confirmPassword, iAm, confirmBox) {
+//   if (name === '') {
+//     return 'Preencha seu nome!';
+//   }
+//   if (email === '') {
+//     return 'Preencha o campo de email!';
+//   }
+//   if (password === '') {
+//     return 'Escolha uma senha';
+//   }
+//   if (confirmPassword === '') {
+//     return 'COnfirme sua senha';
+//   }
+//   if (password !== confirmPassword) {
+//     return 'As senhas não são compatíveis';
+//   }
+//   if (iAm === '') {
+//     return 'Escolha uma categoria';
+//   }
+//   if (!confirmBox.checked) {
+//     return 'Você não concorda com os termos';
+//   }
+//   return '';
+// }

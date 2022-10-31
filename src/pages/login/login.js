@@ -1,5 +1,5 @@
 import { userLogin, loginGoogle } from '../../firebase/auth.js';
-import { errorMessages, validation } from '../../firebase/error.js';
+import { errorMessages, validationLogin } from '../../firebase/error.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -8,9 +8,9 @@ export default () => {
   <section id='everything'>
 
     <section class='signup'>
-      <h1>Rede de apoio</h1>
+      <h1>Bem vindo(a)</h1>
       <hr>
-      <p>Para mamães e papais<br> em fase de crescimento!</p>
+      <p>Troque experiências, receba dicas e compartilhe informações!</p>
       <a href='#register' class='register-desktop'>CADASTRE-SE</a>
     </section>
 
@@ -58,7 +58,7 @@ export default () => {
 
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    const validateLogin = validation(inputEmail.value, inputPassword.value);
+    const validateLogin = validationLogin(inputEmail.value, inputPassword.value);
     if (validateLogin === '') {
       userLogin(inputEmail.value, inputPassword.value)
         .then(() => {

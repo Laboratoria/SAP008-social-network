@@ -63,6 +63,7 @@
 #password {
     margin-top: 17px;
 }
+
 #error {
     color: red;
     margin-top: 1rem;
@@ -145,33 +146,36 @@
     }
 
     .signup h1 {
-        font-size: 30px;
+        font-size: 27px;
         text-align: center;
         color: white;
     }
 
     .signup p {
-        font-size: xxx-large;
+        font-size: 24px;
         color: white;
         text-align: center;
+        margin-top: 44px;
     }
 
     hr {
         width: 60%;
         color: white;
+        margin-top: 1rem;
     }
 
     .register-desktop {
-        width: 21rem;
-        padding: 3rem;
+        width: 17rem;
+        padding: 1rem;
         background: transparent;
         border: #e9e9e9 solid;
-        border-radius: 2rem;
+        border-radius: 20px;
         color: white;
-        font-size: 2rem;
+        font-size: 21px;
         margin-top: 5rem;
         cursor: pointer;
         text-decoration: none;
+        text-align: center;
     }
 
     .login {
@@ -186,11 +190,11 @@
         margin: 0;
     }
     #cegonha-azul {
-        width: 19rem;
+        width: 14rem;
     }
     .logo-desktop h1 {
         color: #00A57A;
-        font-size: 3rem;
+        font-size: 2rem;
     }
     
     .form {
@@ -198,34 +202,27 @@
     }
 
     .infos {
-        width: 36rem;
-        height: 6rem;
+        width: 28rem;
+        height: 4.5rem;
         margin-bottom: 32px;
+    }
+
+    #password {
+        margin-top: 10px;
+    }
+    .buttons {
+        margin-top: 0;
     }
 
     .forgot {
         font-size: large;
+        margin-top: -3rem;
     }
-
-    .btnLogin, .btnGoogle {
-        width: 36rem;
-        height: 6rem;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+    input::placeholder {
+        font-size: 17px;
     }
-    .btnLogin {
-        font-size: 2rem;
-    }
-    .btnGoogle {
-        margin-top: 2rem;
-        font-size: 2rem;
-    }
-
-    ::placeholder {
-        font-size: 2em;
+    #error {
+        margin-top: -1rem;
     }
     
 

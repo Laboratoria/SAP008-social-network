@@ -122,20 +122,19 @@ export const getPostById = async (postId) => { // analisar o uso dessa consta/ge
   return docSnap.data();
 };
 
-export function likePost(post, userId, postId) {
-  if (!post.likes.includes(userId)) {
-    post.likes.push(userId);
-    updateDoc(doc(db, 'posts', postId), {
-      likes: post.likes,
-    });
+export async function likePost(post, postId, userId) {
+  let likes = post.likes;
+  const liking = !post.likes.includes(userId);
+  if (liking) {
+    likes.push(userId);
     alert('Voce deu like no post!');
-    return { liked: post.likes, count: post.likes.length };
+  } else {
+    likes = likes.filter((id) => id !== userId);
+    alert('Voce descurtiu o post!');
   }
-  const postIndex = post.likes.indexOf(userId);
-  post.likes.splice(postIndex, 1);
-  updateDoc(doc(db, 'posts', postId), {
-    likes: post.likes,
+  await updateDoc(doc(db, 'posts', postId), {
+    likes,
   });
-  alert('Voce descurtiu o post!');
-  return { liked: post.likes, count: post.likes.length };
+
+  return { liked: liking, count: likes.length };
 }

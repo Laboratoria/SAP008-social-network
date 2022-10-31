@@ -18,14 +18,14 @@ export default () => {
                             menu
                             </span></button>
                         </li>
-                        <li class="navbar-item">
+                        <li class="navbar-item hide">
                             <a href='#post'>Publicar Post</a>
                         </li>
-                        <li class="navbar-item">
+                        <li class="navbar-item hide">
                             <a href='#aboutus'>Sobre Nós</a>
                         </li>
                         
-                        <li class="navbar-item" id="logout">
+                        <li class="navbar-item hide" id="logout">
                             <a>Sair</a>
                         </li>
                     </ul>
@@ -133,10 +133,10 @@ export default () => {
         likePost(post, postId, userId)
         // estava faltando o post de parametro, pq essa função tem 3 parametros.
           .then((resultado) => {
-            if (!resultado.liked.includes(userId)) {
-              img.setAttribute('src', 'images/heart_empty.png');
-            } else {
+            if (resultado.liked) {
               img.setAttribute('src', 'images/heart.png');
+            } else {
+              img.setAttribute('src', 'images/heart_empty.png');
             }
           });
       });

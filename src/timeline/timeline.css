@@ -34,3 +34,8 @@
 .navbar-button{
     cursor:pointer;
 }
+
+.heart-like {
+    width: 2vw;
+    height: 4vh;
+}

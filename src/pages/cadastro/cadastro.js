@@ -1,5 +1,5 @@
 import { createUser } from '../../firebase/auth.js';
-import { errorMessages } from '../../firebase/error.js';
+import { errorMessages, validateRegister } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
@@ -19,43 +19,39 @@ export default () => {
           <div class='formCadastroInput'>
             <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' class='inputs-cadastro'
             placeholder='Nome e Sobrenome'>
-            <span id='saidaRegistrationFirstNameAndLastName'></span>
           </div>
           <div class='formCadastroInput'>
             <input type='email' name='emailRegistration' id='emailRegistration' class='inputs-cadastro' placeholder='E-mail'>
-            <span id='saidaEmailRegistration'></span>
           </div>
           <div class='formCadastroInput'>
             <input type='password' name='registrationPassword' id='registrationPassword' class='inputs-cadastro' placeholder='Senha'>
-            <span id='saidaRegistrationPassword'></span>
           </div>
           <div class='formCadastroInput'>
             <input type='password' name='passwordConfirmation' id='passwordConfirmation' class='inputs-cadastro'
             placeholder='Confirmação de senha'>
-            <span id='saidaPasswordConfirmation'></span>
           </div>
-          <div class='formCadastroInput'>
-            <input type='text' name='euSou' list='responsible' id='iamRegistration' class='inputs-cadastro' placeholder='Eu Sou'>
-            <datalist id='responsible'>
-            <option value='Mãe'></option>
-            <option value='Pai'></option>
-            <option value='Profissional'></option>
-            <option value='Rede de Apoio'></option>
-            <option value='Tentante'></option>
-            <option value='Aprendiz'></option>
-            </datalist>
-            <span id='saidaIamRegistration'></span>
+          <div class='formCadastroInput' id='selection-input'>
+          <label>Selecione:</label>
+            <select name='list' id='list'>
+              <option value='Eu sou' selected disabled>Eu sou</option>
+              <option value='Mãe'>Mãe</option>
+              <option value='Pai'>Pai</option>
+              <option value='Tentante'>Tentante</option>
+              <option value='Grávida'>Grávida</option>
+              <option value='Aprendiz'>Aprendiz</option>
+              <option value='Rede de apoio'>Rede de Apoio</option>
+              <option value='Profissional'>Profissional</option>
+            </select>
           </div>
           <div class='formCadastroInput'>
            <div class='checkBoxRegistration'>
               <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
               <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse'>termos de uso</a></label>
            </div>
-           <span id='saidaConfirmationBox'></span>
           </div>
+          <p class='errors'></p>
           <div class='formCadastroInput'>
             <div class='submitCadastro'>
-            <p id='error'></p>
               <button id='createAnAccount'>Criar Conta</button>
             </div>
           </div>
@@ -70,76 +66,31 @@ export default () => {
   icone.addEventListener('click', () => {
     window.history.back();
   });
+  const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName');
+  const emailRegistration = containerRegistration.querySelector('#emailRegistration');
+  const registrationPassword = containerRegistration.querySelector('#registrationPassword');
+  const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation');
+  const iamRegistration = containerRegistration.querySelector('#list');
+  const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+  const errorRegister = containerRegistration.querySelector('.errors');
 
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();
-    const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value.trim();
-    const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
-    const saidaRegistrationFirstNameAndLastName = containerRegistration.querySelector('#saidaRegistrationFirstNameAndLastName');
-    const emailRegistration = containerRegistration.querySelector('#emailRegistration').value;
-    const emailRegistrationValue = emailRegistration.trim();
-    const saidaEmailRegistration = containerRegistration.querySelector('#saidaEmailRegistration');
-    const registrationPassword = containerRegistration.querySelector('#registrationPassword').value;
-    const registrationPasswordValue = registrationPassword.trim();
-    const saidaRegistrationPassword = containerRegistration.querySelector('#saidaRegistrationPassword');
-    const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation').value;
-    const passwordConfirmationValue = passwordConfirmation.trim();
-    const saidaPasswordConfirmation = containerRegistration.querySelector('#saidaPasswordConfirmation');
-    const iamRegistration = containerRegistration.querySelector('#iamRegistration').value;
-    const iamRegistrationValue = iamRegistration.trim();
-    const saidaIamRegistration = containerRegistration.querySelector('#saidaIamRegistration');
-    const confirmationBox = containerRegistration.querySelector('#confirmationBox');
-    const saidaConfirmationBox = containerRegistration.querySelector('#saidaConfirmationBox');
-    const errorMessage = containerRegistration.querySelector('#error');
-
-    if (registrationFirstNameAndLastNamevalue === '') {
-      saidaRegistrationFirstNameAndLastName.innerHTML = 'Preencha esse campo';
-    }
-    if (registrationFirstNameAndLastNamevalue !== '') {
-      saidaRegistrationFirstNameAndLastName.innerHTML = '';
-    }
-    if (emailRegistrationValue === '') {
-      saidaEmailRegistration.innerHTML = 'Preencha esse campo';
-    }
-    if (emailRegistrationValue !== '') {
-      saidaEmailRegistration.innerHTML = '';
-    }
-    if (registrationPasswordValue === '') {
-      saidaRegistrationPassword.innerHTML = 'Preencha esse campo';
-    }
-    if (registrationPasswordValue !== '') {
-      saidaRegistrationPassword.innerHTML = '';
-    }
-    if (passwordConfirmationValue === '') {
-      saidaPasswordConfirmation.innerHTML = 'Preencha esse campo';
-    }
-    if (passwordConfirmationValue !== '') {
-      saidaPasswordConfirmation.innerHTML = '';
-    }
-    if (iamRegistrationValue === '') {
-      saidaIamRegistration.innerHTML = 'Preencha esse campo';
-    }
-    if (iamRegistrationValue !== '') {
-      saidaIamRegistration.innerHTML = '';
-    }
-    if (passwordConfirmationValue !== registrationPasswordValue) {
-      saidaPasswordConfirmation.innerHTML = 'As senhas nao sao iguais';
-    }
-    if (!confirmationBox.checked) {
-      saidaConfirmationBox.innerHTML = 'Você não concorda com os termos';
-    }
-    if (confirmationBox.checked) {
-      saidaConfirmationBox.innerHTML = '';
-    }
-    if (registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && registrationPasswordValue === passwordConfirmationValue && iamRegistrationValue !== '' && confirmationBox.checked) {
-      createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
+    // eslint-disable-next-line max-len
+    const validationRegister = validateRegister(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value, passwordConfirmation.value, iamRegistration.value, confirmationBox.value);
+    // eslint-disable-next-line max-len
+    if (validationRegister === '') {
+      // eslint-disable-next-line max-len
+      createUser(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value)
         .then(() => {
           window.location.hash = '#feed';
         })
         .catch((error) => {
-          errorMessage.innerHTML = errorMessages(error);
+          errorRegister.innerHTML = errorMessages(error);
         });
+    } else {
+      errorRegister.innerHTML = validationRegister;
     }
   });
   return containerRegistration;

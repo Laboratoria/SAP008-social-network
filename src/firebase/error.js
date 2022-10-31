@@ -16,3 +16,38 @@ export function errorMessages(error) {
       return `Aconteceu um erro não identificado, entre em contato com as desenvolvedoras e informe o erro a seguir: ${error.code}`;
   }
 }
+
+export function validationLogin(email, password) {
+  if (email === '') {
+    return 'Preencha o campo de e-mail!';
+  }
+  if (password === '') {
+    return 'Preencha o campo de senha!';
+  }
+  return '';
+}
+
+// export function validateRegister(name, email, password, confirmPassword, iAm, confirmBox) {
+//   if (name === '') {
+//     return 'Preencha seu nome!';
+//   }
+//   if (email === '') {
+//     return 'Preencha o campo de email!';
+//   }
+//   if (password === '') {
+//     return 'Escolha uma senha';
+//   }
+//   if (confirmPassword === '') {
+//     return 'COnfirme sua senha';
+//   }
+//   if (password !== confirmPassword) {
+//     return 'As senhas não são compatíveis';
+//   }
+//   if (iAm === '') {
+//     return 'Escolha uma categoria';
+//   }
+//   if (!confirmBox.checked) {
+//     return 'Você não concorda com os termos';
+//   }
+//   return '';
+// }

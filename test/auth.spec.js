@@ -2,12 +2,16 @@ import {
   loginGoogle,
   userLogin,
   createUser,
+  // auth,
 } from '../src/firebase/auth.js';
+
+import { publishPost } from '../src/firebase/firestore.js';
 
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  addDoc,
 } from '../src/firebase/exports.js';
 
 jest.mock('../src/firebase/exports.js');
@@ -41,5 +45,16 @@ describe('createUser', () => {
     createUser('email', 'senha');
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
+  });
+});
+
+describe('publishPost', () => {
+  it('should create a post', async () => {
+    const text = 'Olá';
+    const subject = 'Depressão pós-parto';
+    const publishDate = '31-10-2022';
+
+    await publishPost(text, subject, publishDate);
+    expect(addDoc).toHaveBeenCalledTimes(1);
   });
 });

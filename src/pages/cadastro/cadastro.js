@@ -1,5 +1,5 @@
 import { createUser } from '../../firebase/auth.js';
-import { errorMessages, validateRegister } from '../../firebase/error.js';
+import { errorMessages } from '../../firebase/error.js';
 
 export default () => {
   const containerRegistration = document.createElement('div');
@@ -69,29 +69,29 @@ export default () => {
   const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName');
   const emailRegistration = containerRegistration.querySelector('#emailRegistration');
   const registrationPassword = containerRegistration.querySelector('#registrationPassword');
-  const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation');
-  const iamRegistration = containerRegistration.querySelector('#list');
-  const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+  // const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation');
+  // const iamRegistration = containerRegistration.querySelector('#list');
+  // const confirmationBox = containerRegistration.querySelector('#confirmationBox');
   const errorRegister = containerRegistration.querySelector('.errors');
 
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();
     // eslint-disable-next-line max-len
-    const validationRegister = validateRegister(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value, passwordConfirmation.value, iamRegistration.value, confirmationBox.value);
+    // const validationRegister = validateRegister(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value, passwordConfirmation.value, iamRegistration.value, confirmationBox.value);
     // eslint-disable-next-line max-len
-    if (validationRegister === '') {
-      // eslint-disable-next-line max-len
-      createUser(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value)
-        .then(() => {
-          window.location.hash = '#feed';
-        })
-        .catch((error) => {
-          errorRegister.innerHTML = errorMessages(error);
-        });
-    } else {
-      errorRegister.innerHTML = validationRegister;
-    }
+    // if (validationRegister === '') {
+    // eslint-disable-next-line max-len
+    createUser(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value)
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch((error) => {
+        errorRegister.innerHTML = errorMessages(error);
+      });
+    // } else {
+    //   errorRegister.innerHTML = validationRegister;
+    // }
   });
   return containerRegistration;
 };

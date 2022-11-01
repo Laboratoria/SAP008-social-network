@@ -9,6 +9,8 @@ import {
   getDoc,
   orderBy,
   getFirestore,
+  arrayUnion,
+  arrayRemove,
 } from './exports.js';
 
 import { auth } from './auth.js';
@@ -24,7 +26,7 @@ async function publishPost(postText, postSubject) {
     text: postText,
     subject: postSubject,
     publishDate: new Date().toLocaleDateString('pt-BR'),
-    like: 0,
+    like: [],
   });
 }
 
@@ -61,4 +63,25 @@ async function editPost(postId, postText, postSubject) {
   });
 }
 
-export { publishPost, getAllPosts, deletePost, editPost, getPost };
+// likes
+async function likePost(postId) {
+  let post = await getPost(postId);
+
+  if (post.like.indexOf(auth.currentUser.uid) === -1) {
+    await updateDoc(doc(db, 'posts', postId), {
+      like: arrayUnion(auth.currentUser.uid),
+    });
+  } else {
+    await updateDoc(doc(db, 'posts', postId), {
+      like: arrayRemove(auth.currentUser.uid),
+    });
+  }
+
+  post = await getPost(postId);
+
+  return post.like;
+}
+
+export {
+  publishPost, getAllPosts, deletePost, editPost, getPost, likePost,
+};

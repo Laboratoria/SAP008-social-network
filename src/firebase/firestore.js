@@ -9,13 +9,8 @@ import {
   getDoc,
   orderBy,
   getFirestore,
-<<<<<<< HEAD
   arrayUnion,
   arrayRemove,
-=======
-  // arrayUnion,
-  // arrayRemove,
->>>>>>> fe35a83b361dd0587beb53256bc5ddef3202096e
 } from './exports.js';
 
 import { auth } from './auth.js';

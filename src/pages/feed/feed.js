@@ -8,6 +8,7 @@ import {
   postLike,
   postDislike,
   deletePost,
+  //editPost
 } from '../../lib/firestore.js';
 
 export default function Feed() {
@@ -57,8 +58,9 @@ export default function Feed() {
       const postsCreated = posts.map((post) => {
         const liked = post.like ? post.like.includes(user) : false;
         const iteration = post.user === user ? `  
-        <div class="delete-btn">
+        <div class="iteration-btn">
           <img class="delete-post" data-delete="true" src="./imagens/btndelete.png" alt="Botão de deletar">
+          <img class="post-edit" data-edit="true" src="./imagens/btnedit.png" alt="Botão de editar">
         </div> ` : '';
         return `
         <li class="allposts" data-id="${post.id}">
@@ -66,7 +68,7 @@ export default function Feed() {
             <p class="username"><b>${post.displayName}</b></p>
             <p class="data-post"> Postado em ${post.data} às ${post.hour} </p>
             <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
-          </div>
+          </div>         
           <div class = 'field-btn-like'>
             ${iteration}
             <button class ='btn-like ${liked ? 'liked' : ''}' data-liked='${liked}' id =${post.id}>&#10084;</button>
@@ -124,6 +126,26 @@ export default function Feed() {
         });
       });
     });
+
+  /*if (e.target.dataset.edit) {
+    const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
+    const btnsEdit = postEdit.nextElementSibling;
+    postEdit.contentEditable = true;
+    btnsEdit.style.display = 'flex';
+  } else if (e.target.dataset.cancel) {
+    const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
+    const buttonsEdit = postEdit.nextElementSibling;
+    postEdit.contentEditable = false;
+    buttonsEdit.style.display = 'none';
+    postEdit.textContent = postEdit.dataset.text;
+  } else if (e.target.dataset.save) {
+    const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
+    const buttonsEdit = postEdit.nextElementSibling;
+    postEdit.contentEditable = false;
+    buttonsEdit.style.display = 'none';
+    postEdit.dataset.text = postEdit.textContent;
+    editPost(id, postEdit.textContent);
+  }*/
 
   postBtn.addEventListener('click', (e) => {
     modalPost.style.display = 'none'; //porque esse modal deve estar none?//

@@ -8,6 +8,8 @@ import {
   logout,
   postLike,
   postDislike,
+  deletePost,
+  //editPost
 } from '../../lib/firestore.js';
 
 export default function Feed() {
@@ -45,8 +47,7 @@ export default function Feed() {
   const buttonLogout = feed.querySelector('.button-logout');
   const messageError = feed.querySelector('#error-message');
   const user = current().uid;
-  // const btnLike = Array.from(feed.querySelector('#btn-like'));
-  // const btnLike = feed.querySelector('#post-like');
+
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
   // que deve ser validada como verdadeira ou falsa. Se a condição for
   // verdadeira o operador retorna uma expressão e se for falsa retorna
@@ -57,8 +58,9 @@ export default function Feed() {
       const postsCreated = posts.map((post) => {
         const liked = post.like ? post.like.includes(user) : false;
         const iteration = post.user === user ? `  
-        <div class="delete-btn">
-          <img class="delete-post" src="./imagens/btndelete.png" alt="Botão de deletar">
+        <div class="iteration-btn">
+          <img class="delete-post" data-delete="true" src="./imagens/btndelete.png" alt="Botão de deletar">
+          <img class="post-edit" data-edit="true" src="./imagens/btnedit.png" alt="Botão de editar">
         </div> ` : '';
         return `
         <li class="allposts" data-id="${post.id}">
@@ -66,7 +68,7 @@ export default function Feed() {
             <p class="username"><b>${post.displayName}</b></p>
             <p class="data-post"> Postado em ${post.data} às ${post.hour} </p>
             <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
-          </div>
+          </div>         
           <div class = 'field-btn-like'>
             ${iteration}
             <button 
@@ -77,11 +79,40 @@ export default function Feed() {
               <span class='like-icon ${liked ? 'liked-red' : ''}'>&#10084;</span>
               <span class='like-count'>${post.like.length}</span>
             </button>
+          </div>
+          <div class="modal">
+            <div class="internal-modal">
+               <p> DESEJA EXCLUIR SEU POST? </p>
+               <button class="btn-del" data-sim="true"> SIM </button>
+               <button class="btn-del" data-nao="true"> NÃO </button>
             </div>
-            </li>
-            `;
+          </div>
+        </li>
+        `;
       }).join('');
       postList.innerHTML = postsCreated;
+
+      const postsElements = feed.querySelectorAll('.allposts');
+      postsElements.forEach((post) => {
+        post.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+
+          if (e.target.dataset.delete) {
+            const modal = e.currentTarget.querySelector('.modal');
+            modal.style.display = 'flex';
+          } else if (e.target.dataset.sim) {
+            const modal = e.currentTarget.querySelector('.modal');
+            modal.style.display = 'none';
+            deletePost(id)
+              .then(() => {
+                post.remove();
+              });
+          } else if (e.target.dataset.nao) {
+            const modal = e.currentTarget.querySelector('.modal');
+            modal.style.display = 'none';
+          }
+        });
+      });
 
       const btnsLike = postList.querySelectorAll('.btn-like');
 

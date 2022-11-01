@@ -73,35 +73,27 @@ ul {
   margin-bottom: 5%;
 }
 
-.username,
-.data-post {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
 .data-post {
   font-size: 12px;
   color: #ffffff;
 }
 
-.field-btn-like {
-  display: inline-flex;
-
+.field-btn-like{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;  
 }
 
 .btn-like {
   color: white;
   background-color: transparent;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .liked-red {
   color: red;
-}
-
-.like-post{
-  width: 20px;
 }
 
 .modal{
@@ -130,10 +122,18 @@ ul {
   margin-bottom: 3%;
 }
 
-.delete-post{
+.delete-post, .post-edit{
   width: 20px;
   height: 20px;
   cursor: pointer;
+  margin: 4px;
+}
+
+.interation-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: block;
 }
 
   

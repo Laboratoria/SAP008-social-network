@@ -9,8 +9,13 @@ import {
   getDoc,
   orderBy,
   getFirestore,
+<<<<<<< HEAD
+  arrayUnion,
+  arrayRemove,
+=======
   // arrayUnion,
   // arrayRemove,
+>>>>>>> fe35a83b361dd0587beb53256bc5ddef3202096e
 } from './exports.js';
 
 import { auth } from './auth.js';
@@ -26,7 +31,7 @@ async function publishPost(postText, postSubject) {
     text: postText,
     subject: postSubject,
     publishDate: new Date().toLocaleDateString('pt-BR'),
-    like: 0,
+    like: [],
   });
 }
 
@@ -63,27 +68,25 @@ async function editPost(postId, postText, postSubject) {
   });
 }
 
-// like
-// async function likes(postId, userUID) {
-//   const docRef = doc(db, 'posts', postId);
-//   await updateDoc(docRef, {
-//     likes: arrayUnion(userUID),
-//   });
-// }
-// dislike
-// async function dislike(postId, userUID) {
-//   const docRef = doc(db, 'posts', postId);
-//   await updateDoc(docRef, {
-//     likes: arrayRemove(userUID),
-//   });
-// }
+// likes
+async function likePost(postId) {
+  let post = await getPost(postId);
+
+  if (post.like.indexOf(auth.currentUser.uid) === -1) {
+    await updateDoc(doc(db, 'posts', postId), {
+      like: arrayUnion(auth.currentUser.uid),
+    });
+  } else {
+    await updateDoc(doc(db, 'posts', postId), {
+      like: arrayRemove(auth.currentUser.uid),
+    });
+  }
+
+  post = await getPost(postId);
+
+  return post.like;
+}
 
 export {
-  publishPost,
-  deletePost,
-  editPost,
-  getPost,
-  getAllPosts,
-//  likes,
-//  dislike,
+  publishPost, getAllPosts, deletePost, editPost, getPost, likePost,
 };

@@ -1,3 +1,4 @@
+import { validatePublish } from '../../lib/authenticate.js';
 import { errorsFirebase } from '../../lib/error.js';
 
 import {
@@ -25,6 +26,8 @@ export default function Feed() {
   </nav>
         <section id="post" class="post">
           <div class="post-box">
+            <p id= 'error-message' class = 'error-message'> </p>
+            <p id= 'message-welcome' class = 'welcome-message'> </p>
             <textarea class="post-textarea" id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
             <button type="submit" id="post-btn" class="post-btn">Publicar</button>
           </div>
@@ -71,7 +74,7 @@ export default function Feed() {
               data-liked='${liked}' 
               data-likecount= ${post.like.length} 
               id =${post.id}>
-              <span class='like-icon ${liked ? 'liked' : ''}'>&#10084;</span>
+              <span class='like-icon ${liked ? 'liked-red' : ''}'>&#10084;</span>
               <span class='like-count'>${post.like.length}</span>
             </button>
             </div>
@@ -87,19 +90,16 @@ export default function Feed() {
           const userId = user;
           const idPost = btnLike.id;
           let likesCount = parseInt(e.target.dataset.likecount, 10);
-          console.log(likesCount);
           if (btnLike.dataset.liked === 'true') {
-            console.log('postdislike');
             await postDislike(idPost, userId);
-            btnLike.querySelector('.like-icon').classList.remove('liked');
+            btnLike.querySelector('.like-icon').classList.remove('liked-red');
             btnLike.dataset.liked = 'false';//eslint-disable-line
             likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
             e.target.dataset.likecount = likesCount;
             btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
           } else {
             await postLike(idPost, userId);
-            console.log('postlike');
-            btnLike.querySelector('.like-icon').classList.add('liked');
+            btnLike.querySelector('.like-icon').classList.add('liked-red');
             btnLike.dataset.liked = 'true';//eslint-disable-line
             likesCount += 1;
             e.target.dataset.likecount = likesCount;
@@ -110,17 +110,21 @@ export default function Feed() {
     });
 
   postBtn.addEventListener('click', (e) => {
-    modalPost.style.display = 'none';
     e.preventDefault();
-    createPost(postFeed.value)
-      .then(() => window.location.reload())
-      .catch((error) => {
-        const errorCode = errorsFirebase(error.code);
-        messageError.innerHTML = errorCode;
-        setTimeout(() => {
-          messageError.innerHTML = '';
-        }, 2000);
-      });
+    messageError.classList.remove('show');
+    const validate = validatePublish(postFeed.value);
+    if (validate) {
+      messageError.classList.add('show');
+      messageError.innerHTML = validate;
+    } else {
+      createPost(postFeed.value)
+        .then(() => window.location.reload())
+        .catch((error) => {
+          const errorCode = errorsFirebase(error.code);
+          messageError.innerHTML = errorCode;
+          messageError.classList.add('show');
+        });
+    }
   });
 
   buttonLogout.addEventListener('click', (e) => {
@@ -130,9 +134,7 @@ export default function Feed() {
       .catch((error) => {
         const errorCode = errorsFirebase(error.code);
         messageError.innerHTML = errorCode;
-        setTimeout(() => {
-          messageError.innerHTML = '';
-        }, 2000);
+        messageError.classList.add('show');
       });
   });
 

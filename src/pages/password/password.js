@@ -1,5 +1,6 @@
 import { resetPassword } from '../../lib/auth.js';
 import { errorsFirebase } from '../../lib/error.js';
+import { validateEmail } from '../../lib/authenticate.js';
 
 export default () => {
   const containerPassword = document.createElement('div');
@@ -34,16 +35,24 @@ export default () => {
   const messageWelcome = containerPassword.querySelector('#message-welcome');
 
   btnReset.addEventListener('click', () => {
-    resetPassword(email.value)
-      .then(() => {
-        messageWelcome.innerHTML = '\'Enviamos um link para o seu e-mail.\'';
-        messageWelcome.classList.add('show');
-      })
-      .catch((error) => {
-        const errorCode = errorsFirebase(error.code);
-        messageError.innerHTML = errorCode;
-        messageError.classList.add('show');
-      });
+    const validate = validateEmail(email.value);
+    if (validate) {
+      messageError.innerHTML = validate;
+      messageError.classList.add('show');
+    } else {
+      resetPassword(email.value)
+        .then(() => {
+          messageWelcome.innerHTML = '\'Enviamos um link para o seu e-mail.\'';
+          messageError.classList.remove('show');
+          messageWelcome.classList.add('show');
+        })
+        .catch((error) => {
+          const errorCode = errorsFirebase(error.code);
+          messageError.innerHTML = errorCode;
+          messageWelcome.classList.remove('show');
+          messageError.classList.add('show');
+        });
+    }
   });
   return containerPassword;
 };

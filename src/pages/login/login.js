@@ -43,6 +43,7 @@ export default function Login() {
 
   signInButton.addEventListener('click', (e) => {
     e.preventDefault();
+    messageError.classList.remove('show');
     const validate = validateFormlogin(email.value, password.value);
     if (validate) {
       messageError.innerHTML = validate;
@@ -54,19 +55,22 @@ export default function Login() {
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
+          messageError.classList.add('show');
         });
     }
   });
 
   googleBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    messageError.classList.remove('show');
     signInGoogle()
       .then(() => {
-        window.location.hash = 'feed';
+        window.location.hash = '#welcome';
       })
       .catch((error) => {
         const errorCode = errorsFirebase(error.code);
         messageError.innerHTML = errorCode;
+        messageError.classList.add('show');
       });
   });
 

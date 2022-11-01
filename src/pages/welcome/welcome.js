@@ -18,5 +18,11 @@ export default () => {
     
     `;
   containerWelcome.innerHTML = welcome;
+
+  const btnSigninFeed = containerWelcome.querySelector('#signin-button');
+  btnSigninFeed.addEventListener('click', () => {
+    window.location.hash = '#feed';
+  });
+
   return containerWelcome;
 };

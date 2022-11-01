@@ -12,7 +12,7 @@ export default () => {
                 <nav class='menu-hamburguer'>
                     <ul class='navbar-list'>
                         <li class='navbar-item-button'>
-                            <button type='button' id='navbar-button'><span class="material-symbols-outlined">
+                            <button type='button' id='navbar-button'><span class='material-symbols-outlined'>
                             menu
                             </span></button>
                         </li>
@@ -29,24 +29,24 @@ export default () => {
                 </nav>
     <section class='info-aboutus'>
         <h1 class='aboutdevs'>SOBRE AS DESENVOLVEDORAS</h1>
-            <article class='cla'>
+            <article class='clareana'>
                 <img class='img-cla' src='./images/clareana.jpg'>
-                
-                <p><a class='github' href="https://github.com/ClareanaRibeiro"
+                <a class='github' href="https://github.com/ClareanaRibeiro"
                 target="_blank">Clareana Ribeiro
-                    </a></p>
-                <p class='info-cla'>Sua paixão por música vem de berço.
-                A origem do seu nome é o nome de uma música.</p>
+                    </a>
+                <p class='info-cla'>Sua paixão por música vem de berço. A origem do seu nome é o nome de uma música.</p>
             </article>
             <article class='angelica'>
+                <img class='img-angelica' src='./images/angelica.jpg'>
             <a class='github' href="https://github.com/AngelMelo12"
             target="_blank">Angelica Melo</a>
-                <p class='info-angelica'>Breve descrição sobre você relacionado ao tema da rede social.</p>
+                <p class='info-angelica'>Música é minha válvula de escape para todos os momentos.</p>
             </article>
             <article class='andrea'>
+             <img class='img-andrea' src='./images/andrea.jpg'>
             <a class='github' href="https://github.com/Canzua"
             target="_blank">Andrea dos Santos</a>
-                <p class='info-andrea'>Cantora apaixonada pela diversidade da música brasileira e do mundo.</p>
+                <p class='info-andrea'>Cantora brasiliense apaixonada pela diversidade da música brasileira e do mundo.</p>
             </article>
     </section>
         </div>

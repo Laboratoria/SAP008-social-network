@@ -21,10 +21,10 @@ export default () => {
                     <a href="/#perfil" class="link">Perfil</a>
                 </li>
                 <li class="btn-pages">
-                    <a href="/#momento Cookie" class="link">Momento Cookie</a>
+                    <a href="/#momentoCookie" class="link">Momento Cookie</a>
                 </li>
                 <li class="btn-pages">
-                    <a href="/#bem Estar" class="link">Bem Estar</a>
+                    <a href="/#bemEstar" class="link">Bem Estar</a>
                 </li>
             </ul>
         </section>

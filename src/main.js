@@ -1,6 +1,9 @@
 import register from './Templates/register.js';
 import feed from './Templates/feed.js';
 import login from './Templates/login.js';
+import momentoCookie from './Templates/momentoCookie.js';
+import bemEstar from './Templates/bemEstar.js';
+
 
 const main = document.querySelector('#root');
 const init = () => {
@@ -12,9 +15,12 @@ const init = () => {
     case '#feed':
       main.appendChild(feed());
       break;
+    case '#momentoCookie':
+      main.appendChild(momentoCookie());
+      break;
     case '#login':
-        main.appendChild(login());
-        break;
+      main.appendChild(login());
+      break;
     default:
       main.appendChild(login());
   }

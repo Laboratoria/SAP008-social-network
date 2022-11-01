@@ -7,8 +7,59 @@
 
 } 
 
+.container-aboutus{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    background-color: #081E26;
+}
 
-a{
+.logo-brown-about{
+    height: 8vh;
+    width: 25vh;
+}
+
+
+.info-aboutus{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aboutdevs{
+    justify-content: center;
+    align-items: center;
+    color: #A6634B;
+    font-size: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.img-cla{
+    border-radius: 50%;
+    width: 40%;
+    height: 40%;
+
+}
+
+.cla{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.github{
     text-decoration: none;
     color:#8C4A5C;
 }
@@ -24,6 +75,10 @@ a{
     color:#FFFFFF;
 }
 
+a{
+    text-decoration: none;
+    color:white;
+}
 .navbar-list{  
     display: flex;
     flex-direction: column;
@@ -70,108 +125,3 @@ a{
     top: 19px;
 }
 
-h1#aboutdevs{
-    justify-content: center;
-    align-items: center;
-    width: 329px;
-    height: 34px;
-    left: 21px;
-    top: 99px;
-   /* font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 27px;
-    letter-spacing: 0.05em;
-    color: #A6634B;
-}
-
-#h2-cla{
-    position: absolute;
-    width: 208px;
-    height: 21px;
-    left: 98px;
-    top: 174px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#p-cla{
-    position: absolute;
-    width: 229px;
-    height: 52px;
-    left: 98px;
-    top: 207px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#h2-angelica{
-    position: absolute;
-    width: 164px;
-    height: 23px;
-    left: 106px;
-    top: 328px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#p-angelica{
-    position: absolute;
-    width: 224px;
-    height: 44px;
-    left: 105px;
-    top: 361px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#h2-andrea{
-    position: absolute;
-    width: 164px;
-    height: 21px;
-    left: 106px;
-    top: 485px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#p-andrea{
-    position: absolute;
-    width: 229px;
-    height: 52px;
-    left: 106px;
-    top: 518px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}

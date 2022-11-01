@@ -38,7 +38,7 @@
     transition-timing-function: ease;
 }
 .container-register { 
-    display: block;
+    /* display: block; */
     padding: 10px;
 }
 

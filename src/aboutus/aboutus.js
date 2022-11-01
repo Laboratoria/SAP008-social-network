@@ -30,21 +30,21 @@ export default () => {
     <section class='info-aboutus'>
         <h1 class='aboutdevs'>SOBRE AS DESENVOLVEDORAS</h1>
             <article class='cla'>
-                <img class='img-cla'>
+                <img class='img-cla' src='./images/clareana.jpg'>
                 
-                <p><a href="https://github.com/ClareanaRibeiro"
+                <p><a class='github' href="https://github.com/ClareanaRibeiro"
                 target="_blank">Clareana Ribeiro
                     </a></p>
                 <p class='info-cla'>Sua paixão por música vem de berço.
                 A origem do seu nome é o nome de uma música.</p>
             </article>
             <article class='angelica'>
-            <a href="https://github.com/AngelMelo12"
+            <a class='github' href="https://github.com/AngelMelo12"
             target="_blank">Angelica Melo</a>
                 <p class='info-angelica'>Breve descrição sobre você relacionado ao tema da rede social.</p>
             </article>
             <article class='andrea'>
-            <a href="https://github.com/Canzua"
+            <a class='github' href="https://github.com/Canzua"
             target="_blank">Andrea dos Santos</a>
                 <p class='info-andrea'>Cantora apaixonada pela diversidade da música brasileira e do mundo.</p>
             </article>

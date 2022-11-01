@@ -1,7 +1,6 @@
 import {
-  logoutUser, auth, getPosts, deletePost, forEditPost,
+  logoutUser, auth, getPosts, deletePost, forEditPost, getDocsElements,
 } from '../../lib/auth.js';
-
 // eslint-disable-next-line consistent-return
 export default () => {
   if (auth.currentUser !== null) {
@@ -39,7 +38,7 @@ export default () => {
           break;
         default:
           // eslint-disable-next-line no-console
-          console.log('clicou em outra coisa');
+          console.log();
       }
     });
 
@@ -63,7 +62,11 @@ export default () => {
       const address = postElement.querySelector('.edit-address');
       const review = postElement.querySelector('.edit-review');
       const modalDelete = postElement.querySelector('#modal-postElement');
-
+      const localContent = local.textContent;
+      const addressContent = address.textContent;
+      const reviewContent = review.textContent;
+      //  const originalAddress = dataBase.posts.address;
+      // const dbRestaurant = posts.restaurant;
       switch (action) {
         case 'like':
           console.log('like');
@@ -76,6 +79,7 @@ export default () => {
           address.contentEditable = true;
           break;
         case 'cancel-edit':
+          console.log(getDocsElements(posts.restaurant));
           review.contentEditable = false;
           local.contentEditable = false;
           address.contentEditable = false;
@@ -84,7 +88,7 @@ export default () => {
           // voltar ao texto inicial
           break;
         case 'ok-edit':
-          forEditPost(id, local.textContent, address.textContent, review.textContent);
+          forEditPost(id, localContent, addressContent, reviewContent);
           review.contentEditable = false;
           local.contentEditable = false;
           address.contentEditable = false;

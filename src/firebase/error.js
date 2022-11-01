@@ -1,11 +1,11 @@
 export function errorMessages(error) {
   switch (error.code) {
     case 'auth/invalid-email':
-      return 'Endereço de e-mail não é válido!';
+      return 'Esse endereço de e-mail não é válido!';
     case 'auth/user-not-found':
       return 'Usuário não encontrado!';
     case 'auth/email-already-in-use':
-      return 'Este email já está em uso!';
+      return 'Este e-mail já está em uso!';
     case 'auth/weak-password':
       return 'A senha deve ter 6 ou mais caracteres!';
     case 'auth/invalid-display-name':
@@ -27,27 +27,27 @@ export function validationLogin(email, password) {
   return '';
 }
 
-// export function validateRegister(name, email, password, confirmPassword, iAm, confirmBox) {
-//   if (name === '') {
-//     return 'Preencha seu nome!';
-//   }
-//   if (email === '') {
-//     return 'Preencha o campo de email!';
-//   }
-//   if (password === '') {
-//     return 'Escolha uma senha';
-//   }
-//   if (confirmPassword === '') {
-//     return 'COnfirme sua senha';
-//   }
-//   if (password !== confirmPassword) {
-//     return 'As senhas não são compatíveis';
-//   }
-//   if (iAm === '') {
-//     return 'Escolha uma categoria';
-//   }
-//   if (!confirmBox.checked) {
-//     return 'Você não concorda com os termos';
-//   }
-//   return '';
-// }
+export function validateRegister(name, email, password, confirmPassword, iAm, confirmBox) {
+  if (name === '') {
+    return 'Preencha seu nome!';
+  }
+  if (email === '') {
+    return 'Preencha o campo de e-mail!';
+  }
+  if (password === '') {
+    return 'Escolha uma senha';
+  }
+  if (confirmPassword === '') {
+    return 'Confirme sua senha';
+  }
+  if (password !== confirmPassword) {
+    return 'As senhas não são compatíveis';
+  }
+  if (iAm === '') {
+    return 'Escolha uma categoria';
+  }
+  if (!confirmBox.checked) {
+    return 'Você não concorda com os termos';
+  }
+  return '';
+}

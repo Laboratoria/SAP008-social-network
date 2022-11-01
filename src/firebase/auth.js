@@ -18,9 +18,7 @@ export const userUID = () => auth.currentUser.uid;
 
 export function createUser(name, email, password) {
   return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
+    .then(() => {
       updateProfile(auth.currentUser, {
         displayName: name,
       });

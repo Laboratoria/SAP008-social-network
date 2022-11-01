@@ -37,7 +37,6 @@ export default () => {
     containerFeed.querySelector('#bodyPostFeed').innerHTML += postTemplate;
 
     const btnsDelete = containerFeed.querySelectorAll('.btn-delete-post-feed');
-
     btnsDelete.forEach((btn) => {
       if (userUID() === btn.dataset.userId) {
         btn.style.display = 'block';
@@ -46,17 +45,14 @@ export default () => {
       }
 
       btn.addEventListener('click', async (e) => {
-        // eslint-disable-next-line no-alert, no-restricted-globals
         if (confirm('Tem certeza que deseja excluir?') === true) {
           await deletePost(e.target.dataset.postId);
-          // eslint-disable-next-line no-restricted-globals
-          location.reload();
+          window.location.reload();
         }
       });
     });
 
     const btnsEdit = containerFeed.querySelectorAll('.btn-edit-post-feed');
-
     btnsEdit.forEach((btn) => {
       if (userUID() === btn.dataset.userId) {
         btn.style.display = 'block';

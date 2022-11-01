@@ -49,7 +49,7 @@ export default () => {
 
     if (postText === '' || postSubject === 'typeTitle') {
       // eslint-disable-next-line no-alert
-      alert('Conteúdo do post vazio, preencha antes de enviar!');
+      alert('Preencha todos os campos!');
     } else {
       if (localStorage.getItem('editStatus') === 'false') {
         await publishPost(postText, postSubject);

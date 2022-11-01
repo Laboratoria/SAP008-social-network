@@ -69,9 +69,9 @@ export default () => {
   const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName');
   const emailRegistration = containerRegistration.querySelector('#emailRegistration');
   const registrationPassword = containerRegistration.querySelector('#registrationPassword');
-  // const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation');
-  // const iamRegistration = containerRegistration.querySelector('#list');
-  // const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+  const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation');
+  const iamRegistration = containerRegistration.querySelector('#list');
+  const confirmationBox = containerRegistration.querySelector('#confirmationBox');
   const errorRegister = containerRegistration.querySelector('.errors');
 
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');

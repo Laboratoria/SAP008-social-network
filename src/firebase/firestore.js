@@ -33,7 +33,9 @@ async function publishPost(postText, postSubject) {
 // buscar todos os posts
 async function getAllPosts() {
   try {
-    const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('publishDate', 'desc')));
+    const querySnapshot = await getDocs(
+      query(collection(db, 'posts'), orderBy('publishDate', 'desc')),
+    );
     const postsFeed = [];
     querySnapshot.forEach((post) => {
       postsFeed.push({ ...post.data(), id: post.id });

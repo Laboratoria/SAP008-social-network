@@ -114,20 +114,20 @@ body {
   margin: 15%;
 }
 
-#cancel {
-  background-color: #ffffff;
+.edit-button {
   border: none;
-  color: #ab6930;
-  display: none;
   height: 20px;
+  display: none;
 }
 
-#ok {
+.cancel {
+  background-color: #ffffff;
+  color: #ab6930;
+}
+
+.ok {
   background-color: #ab6930;
-  border: none;
   color: #ffffff;
-  display: none;
-  height: 20px;
 }
 
 #modal-delete {

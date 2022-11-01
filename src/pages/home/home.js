@@ -50,37 +50,35 @@ export default () => {
     };
     printPosts();
 
-    const cancelEdit = container.querySelector('#cancel');
-    const okEdit = container.querySelector('#ok');
-    const local = container.querySelectorAll('.edit-local');
-    const address = container.querySelectorAll('.edit-address');
-    const review = container.querySelectorAll('.edit-review');
-    const modalDelete = container.querySelector('#modal-delete');
-    const posts = container.querySelector('#posts');
+    const posts = container.querySelector('.post-container');
+
     posts.addEventListener('click', (event) => {
-      const postElements = event.target;
-      const action = postElements.dataset.action;
-      const id = postElements.dataset.id;
-      const divToRemove = container.querySelector(`[data-id="${id}"]`);
+      const element = event.target;
+      const action = element.dataset.action;
+      const id = element.dataset.id;
+      const postElement = container.querySelector(`[data-id="${id}"]`);
+      // const cancelEdit = postElement.querySelectorAll('[data-action="cancel-edit"]');
+      // const okEdit = postElement.querySelectorAll('[data-action="ok-edit"]');
+      const local = postElement.querySelectorAll('.edit-local');
+      const address = postElement.querySelectorAll('.edit-address');
+      const review = postElement.querySelectorAll('.edit-review');
+      const modalDelete = postElement.querySelectorAll('#modal-postElement');
 
       switch (action) {
         case 'edit':
-          cancelEdit.style.display = 'flex';
-          okEdit.style.display = 'flex';
-          review.contentEditable = true;
-          local.contentEditable = true;
-          address.contentEditable = true;
+          console.log('clicou no lapis');
+          // cancelEdit.style.display = 'flex';
+          // okEdit.style.display = 'flex';
+          // review.contentEditable = true;
+          // local.contentEditable = true;
+          // address.contentEditable = true;
           break;
         case 'cancel-edit':
-          cancelEdit.style.display = 'none';
-          okEdit.style.display = 'none';
           review.contentEditable = false;
           local.contentEditable = false;
           address.contentEditable = false;
           break;
         case 'ok-edit':
-          cancelEdit.style.display = 'none';
-          okEdit.style.display = 'none';
           forEditPost(id, local.textContent, address.textContent, review.textContent);
           break;
         case 'erase':
@@ -92,7 +90,7 @@ export default () => {
         case 'yes-delete':
           deletePost(id);
           modalDelete.classList.toggle('hide');
-          divToRemove.remove();
+          postElement.remove();
           break;
         default:
           // eslint-disable-next-line no-console
@@ -113,20 +111,20 @@ function generatePostsTemplate(allPosts) {
     let editButtons = '';
     if (auth.currentUser.uid === posts.author) {
       editButtons = `
-      <img id="pencil-icon" data-action="edit" data-id=${posts.id}class="icons-post-size icons-current-user" src="./external/svg/pencil-icon.svg"/>
-      <img id="trash-icon" data-action="erase" data-id=${posts.id}tion=class="icons-post-size icons-current-user" src="./external/svg/trash-icon.svg"/>
+      <img data-action="edit" data-id=${posts.id} class="icons-post-size icons-current-user" src="./external/svg/pencil-icon.svg"/>
+      <img data-action="erase" data-id=${posts.id} class="icons-post-size icons-current-user" src="./external/svg/trash-icon.svg"/>
       `;
     }
     const postsTemplate = `<div data-id="${posts.id}" class="posts">
       <div id="text">
         <p>@ ${posts.name}</p>
-        <p data-id="${posts.id}" class="edit-local establishment" contenteditable="false">${posts.restaurant}</p>
-        <p data-id="${posts.id}" class="edit-address" contenteditable="false">${posts.address}</p>
-        <p data-id="${posts.id}" class="edit-review" contenteditable="false">${posts.review}</p>
+        <p data-id="${posts.id}" class="edit-local establishment" contenteditable="">${posts.restaurant}</p>
+        <p data-id="${posts.id}" class="edit-address" contenteditable="">${posts.address}</p>
+        <p data-id="${posts.id}" class="edit-review" contenteditable="">${posts.review}</p>
       </div>
 
-      <button id="cancel" data-action="cancel-edit">Cancelar</button>
-      <button id="ok" data-id="${posts.id}" data-action="ok-edit">OK</button>
+      <button id="cancel" class="edit-button cancel" data-action="cancel-edit">Cancelar</button>
+      <button id="ok" class="edit-button ok" data-id="${posts.id}" data-action="ok-edit">OK</button>
   
       <div id="modal-delete" class="hide">
         <p>Tem certeza que deseja excluir este post?</p>

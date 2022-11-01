@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-<circle style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" cx="16" cy="16" r="12"/>
-<polyline style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" points="10,18.5 16,12.5 22,18.5 "/>
+<svg width="779" height="780" viewBox="0 0 779 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="-10" x2="304.371" y2="-10" transform="matrix(-0.75157 0.659653 -0.355038 -0.934852 387.756 264)" stroke="white" stroke-width="20"/>
+<line y1="-10" x2="304.371" y2="-10" transform="matrix(-0.75157 -0.659653 0.355038 -0.934852 616.5 465)" stroke="white" stroke-width="20"/>
+<path d="M768.5 390C768.5 599.886 598.686 770 389.25 770C179.814 770 9.99976 599.886 9.99976 390C9.99976 180.114 179.814 10 389.25 10C598.686 10 768.5 180.114 768.5 390Z" stroke="white" stroke-width="20"/>
 </svg>

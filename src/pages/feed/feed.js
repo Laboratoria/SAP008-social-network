@@ -45,6 +45,7 @@ export default () => {
       }
 
       btn.addEventListener('click', async (e) => {
+        // eslint-disable-next-line no-restricted-globals, no-alert
         if (confirm('Tem certeza que deseja excluir?') === true) {
           await deletePost(e.target.dataset.postId);
           window.location.reload();

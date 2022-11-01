@@ -7,7 +7,8 @@ export default () => {
     window.location.hash = '#home';
   } else {
     const container = document.createElement('div');
-    const template = `<section class="container initial-page">
+    const template = `<link rel="stylesheet" href="style_load_login_signin.css" />
+    <section class="container initial-page">
       <div class="frame">
         <h1 class="titles">Entrar no<br>BatePrato</h1>
   
@@ -31,7 +32,7 @@ export default () => {
         <p class="instructions">Não tem uma conta?<a id="first-page" class="cta"href="/#cadastre-se"> Cadastre-se</a></p>
       </div>
       <div class="logo">
-        <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.png"/>
+        <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.svg"/>
       </div>
     </section>`;
 

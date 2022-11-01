@@ -12,16 +12,13 @@ export default () => {
         <img id="home-icon" class="icons-size" src="./external/svg/home-icon.svg"/>
         <img id="logout-icon" class="icons-size" src="./external/svg/log-out-icon.svg"/>
       </nav>
-      <hr class="colorful-line"/>
-      <div>
-        <p id="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial.</p>
-      </div>
-      <hr class="colorful-line"/>
-      <section class="post-container"></section> 
-      <hr class="colorful-line"/>
+      <p class="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial.</p>
+
+      <section class="post-container"></section>
+      
       <nav id="mobile-footer-icons" class="icons-container">
         <img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/>
-        <img id="plate-icon" class="icons-size" src="./external/svg/logo.png"/>
+        <img id="plate-icon" class="icons-size" src="./external/svg/logo.svg"/>
         <img id="up-icon" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
       </nav>
     </section>`;
@@ -141,15 +138,13 @@ function generatePostsTemplate(allPosts) {
       <aside class="infos-container">
         <div>
           <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
-          <p id="grade">4.7</p>
           <div class="icons-post">
             <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
             ${editButtons}
           </div>
         </div>
       </aside>
-      </div>
-      <hr class="colorful-line"/>`;
+      </div>`;
     return postsTemplate;
   }).join('');
 }

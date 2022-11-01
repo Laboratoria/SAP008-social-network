@@ -6,7 +6,8 @@ export default () => {
     window.location.hash = '#home';
   } else {
     const container = document.createElement('div');
-    const template = `<section class="container initial-page">
+    const template = `<link rel="stylesheet" href="style_load_login_signin.css" />
+    <section class="container initial-page">
         <div class="frame">
             <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
             <div class="form">
@@ -24,7 +25,7 @@ export default () => {
             </div>
         </div>
         <div class="logo">
-          <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.png"/>
+          <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.svg"/>
         </div>
     </section>`;
 

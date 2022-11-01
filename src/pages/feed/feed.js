@@ -1,4 +1,6 @@
-import { getAllPosts, deletePost, getPost } from '../../firebase/firestore.js';
+import {
+  getAllPosts, deletePost, getPost, likePost,
+} from '../../firebase/firestore.js';
 import { userUID } from '../../firebase/auth.js';
 
 export default () => {
@@ -25,7 +27,7 @@ export default () => {
           <div class='date-post-feed'>${post.publishDate}</div>
         </div>
         <div class='like-delete-post-feed'>
-          <button class='btn-like-post-feed' data-user-id=${post.userId}>💚 ${post.like}</button>
+          <button class='btn-like-post-feed' data-post-id=${post.id}>💚 ${post.like.length}</button>
           <button class='btn-delete-post-feed' data-post-id=${post.id} data-user-id=${post.userId}>🗑️</button>
         </div>
       </div>
@@ -35,7 +37,6 @@ export default () => {
     containerFeed.querySelector('#bodyPostFeed').innerHTML += postTemplate;
 
     const btnsDelete = containerFeed.querySelectorAll('.btn-delete-post-feed');
-
     btnsDelete.forEach((btn) => {
       if (userUID() === btn.dataset.userId) {
         btn.style.display = 'block';
@@ -44,17 +45,15 @@ export default () => {
       }
 
       btn.addEventListener('click', async (e) => {
-        // eslint-disable-next-line no-alert, no-restricted-globals
+        // eslint-disable-next-line no-restricted-globals, no-alert
         if (confirm('Tem certeza que deseja excluir?') === true) {
           await deletePost(e.target.dataset.postId);
-          // eslint-disable-next-line no-restricted-globals
-          location.reload();
+          window.location.reload();
         }
       });
     });
 
     const btnsEdit = containerFeed.querySelectorAll('.btn-edit-post-feed');
-
     btnsEdit.forEach((btn) => {
       if (userUID() === btn.dataset.userId) {
         btn.style.display = 'block';
@@ -71,15 +70,16 @@ export default () => {
         window.location.hash = '#publish';
       });
     });
+
+    const btnsLike = containerFeed.querySelectorAll('.btn-like-post-feed');
+
+    btnsLike.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        const listaDeLike = await likePost(e.target.dataset.postId);
+        e.target.innerHTML = `💚 ${listaDeLike.length}`;
+      });
+    });
   };
-
-  // const btnsLike = containerFeed.querySelectorAll('.btn-like-post-feed');
-
-  // btnsLike.forEach((btn) => {
-  //   btn.addEventListener('click', async (e) => {
-  //     await deletePost(e.target.dataset.postId);
-  //   });
-  // });
 
   showPosts();
 

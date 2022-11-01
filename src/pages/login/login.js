@@ -1,5 +1,5 @@
 import { userLogin, loginGoogle } from '../../firebase/auth.js';
-import { errorMessages } from '../../firebase/error.js';
+import { errorMessages, validationLogin } from '../../firebase/error.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -8,9 +8,9 @@ export default () => {
   <section id='everything'>
 
     <section class='signup'>
-      <h1>Rede de apoio</h1>
+      <h1>Bem vindo(a)</h1>
       <hr>
-      <p>Para mamães e papais<br> em fase de crescimento!</p>
+      <p>Troque experiências, receba dicas e compartilhe informações!</p>
       <a href='#register' class='register-desktop'>CADASTRE-SE</a>
     </section>
 
@@ -39,7 +39,7 @@ export default () => {
         <section class='buttons'>
           <a class='btn' id='submit-login' href='#login'>Login</a>
           <a class='btn' id='submit-google' href='#login'>Entrar com o google</a>
-          <img src='../icones/icone-google.png' alt="">
+          <img src="../../img/icone-google.png" id='icone-google'>
         </section>
 
         <span id='create'>
@@ -51,26 +51,34 @@ export default () => {
 `;
 
   container.innerHTML = telaLogin;
-
+  const inputEmail = container.querySelector('#email');
+  const inputPassword = container.querySelector('#password');
+  const errorMessage = container.querySelector('#error');
   const btnLogin = container.querySelector('#submit-login');
-  btnLogin.addEventListener('click', () => {
-    const inputEmail = container.querySelector('#email').value;
-    const inputPassword = container.querySelector('#password').value;
-    const errorMessage = container.querySelector('#error');
 
-    userLogin(inputEmail, inputPassword)
-      .then(() => {
-        window.location.hash = '#feed';
-      })
-      .catch((error) => {
-        errorMessage.innerHTML = errorMessages(error);
-      });
-  });
-  const btnGoogle = container.querySelector('#submit-google');
-  btnGoogle.addEventListener('click', (e) => {
+  btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    loginGoogle();
-    window.location.hash = '#feed';
+    const validateLogin = validationLogin(inputEmail.value, inputPassword.value);
+    if (validateLogin === '') {
+      userLogin(inputEmail.value, inputPassword.value)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
+        .catch((error) => {
+          errorMessage.innerHTML = errorMessages(error);
+        });
+    } else {
+      errorMessage.innerHTML = validateLogin;
+    }
+  });
+
+  const btnGoogle = container.querySelector('#submit-google');
+  btnGoogle.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginGoogle().then(() => {
+      window.location.hash = '#feed';
+    })
+      .catch((error) => error);
   });
 
   return container;

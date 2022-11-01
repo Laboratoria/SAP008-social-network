@@ -9,6 +9,8 @@ import {
   getDoc,
   orderBy,
   getFirestore,
+  arrayUnion,
+  arrayRemove,
 } from './exports.js';
 
 import { auth } from './auth.js';
@@ -24,14 +26,16 @@ async function publishPost(postText, postSubject) {
     text: postText,
     subject: postSubject,
     publishDate: new Date().toLocaleDateString('pt-BR'),
-    like: 0,
+    like: [],
   });
 }
 
 // buscar todos os posts
 async function getAllPosts() {
   try {
-    const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('publishDate', 'desc')));
+    const querySnapshot = await getDocs(
+      query(collection(db, 'posts'), orderBy('publishDate', 'desc')),
+    );
     const postsFeed = [];
     querySnapshot.forEach((post) => {
       postsFeed.push({ ...post.data(), id: post.id });
@@ -61,6 +65,25 @@ async function editPost(postId, postText, postSubject) {
   });
 }
 
+// likes
+async function likePost(postId) {
+  let post = await getPost(postId);
+
+  if (post.like.indexOf(auth.currentUser.uid) === -1) {
+    await updateDoc(doc(db, 'posts', postId), {
+      like: arrayUnion(auth.currentUser.uid),
+    });
+  } else {
+    await updateDoc(doc(db, 'posts', postId), {
+      like: arrayRemove(auth.currentUser.uid),
+    });
+  }
+
+  post = await getPost(postId);
+
+  return post.like;
+}
+
 export {
-  publishPost, getAllPosts, deletePost, editPost, getPost,
+  publishPost, getAllPosts, deletePost, editPost, getPost, likePost,
 };

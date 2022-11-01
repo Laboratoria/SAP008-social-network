@@ -19,39 +19,31 @@ export default () => {
           <div class='formCadastroInput'>
             <input type='text' name='registrationFirstNameAndLastName' id='registrationFirstNameAndLastName' class='inputs-cadastro'
             placeholder='Nome e Sobrenome'>
+            <span id='saidaRegistrationFirstNameAndLastName'></span>
           </div>
           <div class='formCadastroInput'>
             <input type='email' name='emailRegistration' id='emailRegistration' class='inputs-cadastro' placeholder='E-mail'>
+            <span id='saidaEmailRegistration'></span>
           </div>
           <div class='formCadastroInput'>
             <input type='password' name='registrationPassword' id='registrationPassword' class='inputs-cadastro' placeholder='Senha'>
+            <span id='saidaRegistrationPassword'></span>
           </div>
           <div class='formCadastroInput'>
             <input type='password' name='passwordConfirmation' id='passwordConfirmation' class='inputs-cadastro'
             placeholder='Confirmação de senha'>
-          </div>
-          <div class='formCadastroInput' id='selection-input'>
-          <label>Selecione:</label>
-            <select name='list' id='list'>
-              <option value='Eu sou' selected disabled>Eu sou</option>
-              <option value='Mãe'>Mãe</option>
-              <option value='Pai'>Pai</option>
-              <option value='Tentante'>Tentante</option>
-              <option value='Grávida'>Grávida</option>
-              <option value='Aprendiz'>Aprendiz</option>
-              <option value='Rede de apoio'>Rede de Apoio</option>
-              <option value='Profissional'>Profissional</option>
-            </select>
+            <span id='saidaPasswordConfirmation'></span>
           </div>
           <div class='formCadastroInput'>
            <div class='checkBoxRegistration'>
               <input type='checkbox' checked="checked" name='checkBoxRegistration' id='confirmationBox'>
               <label for='checkBoxRegistration'>Concordo com os <a href='#termsOfUse'>termos de uso</a></label>
            </div>
+           <span id='saidaConfirmationBox'></span>
           </div>
-          <p class='errors'></p>
           <div class='formCadastroInput'>
             <div class='submitCadastro'>
+            <p id='error'></p>
               <button id='createAnAccount'>Criar Conta</button>
             </div>
           </div>
@@ -66,32 +58,68 @@ export default () => {
   icone.addEventListener('click', () => {
     window.history.back();
   });
-  const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName');
-  const emailRegistration = containerRegistration.querySelector('#emailRegistration');
-  const registrationPassword = containerRegistration.querySelector('#registrationPassword');
-  const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation');
-  const iamRegistration = containerRegistration.querySelector('#list');
-  const confirmationBox = containerRegistration.querySelector('#confirmationBox');
-  const errorRegister = containerRegistration.querySelector('.errors');
 
   const createAnAccount = containerRegistration.querySelector('#createAnAccount');
   createAnAccount.addEventListener('click', (e) => {
     e.preventDefault();
-    // eslint-disable-next-line max-len
-    // const validationRegister = validateRegister(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value, passwordConfirmation.value, iamRegistration.value, confirmationBox.value);
-    // eslint-disable-next-line max-len
-    // if (validationRegister === '') {
-    // eslint-disable-next-line max-len
-    createUser(registrationFirstNameAndLastName.value, emailRegistration.value, registrationPassword.value)
-      .then(() => {
-        window.location.hash = '#feed';
-      })
-      .catch((error) => {
-        errorRegister.innerHTML = errorMessages(error);
-      });
-    // } else {
-    //   errorRegister.innerHTML = validationRegister;
-    // }
+    const registrationFirstNameAndLastName = containerRegistration.querySelector('#registrationFirstNameAndLastName').value.trim();
+    const registrationFirstNameAndLastNamevalue = registrationFirstNameAndLastName;
+    const saidaRegistrationFirstNameAndLastName = containerRegistration.querySelector('#saidaRegistrationFirstNameAndLastName');
+    const emailRegistration = containerRegistration.querySelector('#emailRegistration').value;
+    const emailRegistrationValue = emailRegistration.trim();
+    const saidaEmailRegistration = containerRegistration.querySelector('#saidaEmailRegistration');
+    const registrationPassword = containerRegistration.querySelector('#registrationPassword').value;
+    const registrationPasswordValue = registrationPassword.trim();
+    const saidaRegistrationPassword = containerRegistration.querySelector('#saidaRegistrationPassword');
+    const passwordConfirmation = containerRegistration.querySelector('#passwordConfirmation').value;
+    const passwordConfirmationValue = passwordConfirmation.trim();
+    const saidaPasswordConfirmation = containerRegistration.querySelector('#saidaPasswordConfirmation');
+    const confirmationBox = containerRegistration.querySelector('#confirmationBox');
+    const saidaConfirmationBox = containerRegistration.querySelector('#saidaConfirmationBox');
+    const errorMessage = containerRegistration.querySelector('#error');
+    if (registrationFirstNameAndLastNamevalue === '') {
+      saidaRegistrationFirstNameAndLastName.innerHTML = 'Preencha esse campo';
+    }
+    if (registrationFirstNameAndLastNamevalue !== '') {
+      saidaRegistrationFirstNameAndLastName.innerHTML = '';
+    }
+    if (emailRegistrationValue === '') {
+      saidaEmailRegistration.innerHTML = 'Preencha esse campo';
+    }
+    if (emailRegistrationValue !== '') {
+      saidaEmailRegistration.innerHTML = '';
+    }
+    if (registrationPasswordValue === '') {
+      saidaRegistrationPassword.innerHTML = 'Preencha esse campo';
+    }
+    if (registrationPasswordValue !== '') {
+      saidaRegistrationPassword.innerHTML = '';
+    }
+    if (passwordConfirmationValue === '') {
+      saidaPasswordConfirmation.innerHTML = 'Preencha esse campo';
+    }
+    if (passwordConfirmationValue !== '') {
+      saidaPasswordConfirmation.innerHTML = '';
+    }
+    if (passwordConfirmationValue !== registrationPasswordValue) {
+      saidaPasswordConfirmation.innerHTML = 'As senhas não são iguais';
+    }
+    if (!confirmationBox.checked) {
+      saidaConfirmationBox.innerHTML = 'Você não concorda com os termos';
+    }
+    if (confirmationBox.checked) {
+      saidaConfirmationBox.innerHTML = '';
+    }
+    if (
+      registrationFirstNameAndLastNamevalue !== '' && emailRegistrationValue !== '' && registrationPasswordValue !== '' && passwordConfirmationValue !== '' && confirmationBox.checked) {
+      createUser(registrationFirstNameAndLastName, emailRegistration, registrationPassword)
+        .then(() => {
+          window.location.hash = '#feed';
+        })
+        .catch((error) => {
+          errorMessage.innerHTML = errorMessages(error);
+        });
+    }
   });
   return containerRegistration;
 };

@@ -39,7 +39,7 @@ export default () => {
         <section class='buttons'>
           <a class='btn' id='submit-login' href='#login'>Login</a>
           <a class='btn' id='submit-google' href='#login'>Entrar com o google</a>
-          <img src='../icones/icone-google.png' alt="">
+          <img src="../../img/icone-google.png" id='icone-google'>
         </section>
 
         <span id='create'>

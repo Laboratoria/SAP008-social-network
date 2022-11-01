@@ -38,8 +38,8 @@ describe('createUser', () => {
     expect(typeof createUser).toBe('function');
   });
   it('should call another function one time', () => {
-    createUser('email', 'senha');
+    createUser('email', 'password');
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'senha');
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
   });
 });

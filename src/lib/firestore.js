@@ -41,11 +41,6 @@ export const postScreen = async () => {
 };
 
 export const removePost = async (idPost) => {
-  try {
-    const docUser = doc(db, 'posts', idPost);
-    await deleteDoc(docUser);
-    return docUser.id;
-  } catch (e) {
-    console.log(e);
-  }
+  const del = await deleteDoc(doc(db, 'posts', idPost));
+  return del;
 };

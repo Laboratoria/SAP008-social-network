@@ -1,3 +1,4 @@
+import { validatePublish } from '../../lib/authenticate.js';
 import { errorsFirebase } from '../../lib/error.js';
 
 import {
@@ -27,11 +28,12 @@ export default function Feed() {
   </nav>
         <section id="post" class="post">
           <div class="post-box">
+            <p id= 'error-message' class = 'error-message'> </p>
+            <p id= 'message-welcome' class = 'welcome-message'> </p>
             <textarea class="post-textarea" id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
             <button type="submit" id="post-btn" class="post-btn">Publicar</button>
           </div>
         </section>
-
       <section class="post-feed">
         <ul id="box-post"></ul>
       </section>
@@ -45,9 +47,7 @@ export default function Feed() {
   const buttonLogout = feed.querySelector('.button-logout');
   const messageError = feed.querySelector('#error-message');
   const user = current().uid;
-  // const btnLike = Array.from(feed.querySelector('#btn-like'));
-  // const btnLike = feed.querySelector('#post-like');
-  
+
   // O operador ternário ( ? ) funciona assim ...você tem uma condição
   // que deve ser validada como verdadeira ou falsa. Se a condição for
   // verdadeira o operador retorna uma expressão e se for falsa retorna
@@ -71,7 +71,14 @@ export default function Feed() {
           </div>         
           <div class = 'field-btn-like'>
             ${iteration}
-            <button class ='btn-like ${liked ? 'liked' : ''}' data-liked='${liked}' id =${post.id}>&#10084;</button>
+            <button 
+              class='btn-like' 
+              data-liked='${liked}' 
+              data-likecount= ${post.like.length} 
+              id =${post.id}>
+              <span class='like-icon ${liked ? 'liked-red' : ''}'>&#10084;</span>
+              <span class='like-count'>${post.like.length}</span>
+            </button>
           </div>
           <div class="modal">
             <div class="internal-modal">
@@ -79,6 +86,7 @@ export default function Feed() {
                <button class="btn-del" data-sim="true"> SIM </button>
                <button class="btn-del" data-nao="true"> NÃO </button>
             </div>
+          </div>
         </li>
         `;
       }).join('');
@@ -109,56 +117,45 @@ export default function Feed() {
       const btnsLike = postList.querySelectorAll('.btn-like');
 
       btnsLike.forEach((btnLike) => {
-        btnLike.addEventListener('click', async () => {
+        btnLike.addEventListener('click', async (e) => {
           const userId = user;
           const idPost = btnLike.id;
+          let likesCount = parseInt(e.target.dataset.likecount, 10);
           if (btnLike.dataset.liked === 'true') {
-            console.log('postdislike');
             await postDislike(idPost, userId);
-            btnLike.classList.remove('liked');
+            btnLike.querySelector('.like-icon').classList.remove('liked-red');
             btnLike.dataset.liked = 'false';//eslint-disable-line
+            likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
+            e.target.dataset.likecount = likesCount;
+            btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
           } else {
             await postLike(idPost, userId);
-            console.log('postlike');
-            btnLike.classList.add('liked');
+            btnLike.querySelector('.like-icon').classList.add('liked-red');
             btnLike.dataset.liked = 'true';//eslint-disable-line
+            likesCount += 1;
+            e.target.dataset.likecount = likesCount;
+            btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
           }
         });
       });
     });
 
-  /*if (e.target.dataset.edit) {
-    const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
-    const btnsEdit = postEdit.nextElementSibling;
-    postEdit.contentEditable = true;
-    btnsEdit.style.display = 'flex';
-  } else if (e.target.dataset.cancel) {
-    const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
-    const buttonsEdit = postEdit.nextElementSibling;
-    postEdit.contentEditable = false;
-    buttonsEdit.style.display = 'none';
-    postEdit.textContent = postEdit.dataset.text;
-  } else if (e.target.dataset.save) {
-    const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
-    const buttonsEdit = postEdit.nextElementSibling;
-    postEdit.contentEditable = false;
-    buttonsEdit.style.display = 'none';
-    postEdit.dataset.text = postEdit.textContent;
-    editPost(id, postEdit.textContent);
-  }*/
-
   postBtn.addEventListener('click', (e) => {
-    modalPost.style.display = 'none'; //porque esse modal deve estar none?//
     e.preventDefault();
-    createPost(postFeed.value)
-      .then(() => window.location.reload())
-      .catch((error) => {
-        const errorCode = errorsFirebase(error.code);
-        messageError.innerHTML = errorCode;
-        setTimeout(() => {
-          messageError.innerHTML = '';
-        }, 2000);
-      });
+    messageError.classList.remove('show');
+    const validate = validatePublish(postFeed.value);
+    if (validate) {
+      messageError.classList.add('show');
+      messageError.innerHTML = validate;
+    } else {
+      createPost(postFeed.value)
+        .then(() => window.location.reload())
+        .catch((error) => {
+          const errorCode = errorsFirebase(error.code);
+          messageError.innerHTML = errorCode;
+          messageError.classList.add('show');
+        });
+    }
   });
 
   buttonLogout.addEventListener('click', (e) => {
@@ -168,9 +165,7 @@ export default function Feed() {
       .catch((error) => {
         const errorCode = errorsFirebase(error.code);
         messageError.innerHTML = errorCode;
-        setTimeout(() => {
-          messageError.innerHTML = '';
-        }, 2000);
+        messageError.classList.add('show');
       });
   });
 

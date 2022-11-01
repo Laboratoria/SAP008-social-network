@@ -38,7 +38,7 @@ ul {
   padding: 2%;
   border-radius: 5px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
-  cursor:text;
+  cursor: text;
 }
 
 .post-btn {
@@ -51,7 +51,7 @@ ul {
   background: #e335dc;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
   font-size: 14px;
-  font-weight:600;
+  font-weight: 600;
   right: 125px;
   margin-top: 1%;
   margin-bottom: 9%;
@@ -60,7 +60,7 @@ ul {
 
 .allposts {
   border: 2px solid black;
-  width: 80%; 
+  width: 80%;
   height: 70%;
   border: none;
   font-size: 14px;
@@ -68,12 +68,12 @@ ul {
   border-radius: 5px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: rgb(52 52 52 / 27%);
-  cursor:text;
+  cursor: text;
   color: white;
   margin-bottom: 5%;
 }
 
-.data-post{
+.data-post {
   font-size: 12px;
   color: #ffffff;
 }
@@ -85,14 +85,14 @@ ul {
   flex-direction: row-reverse;  
 }
 
-.btn-like{
+.btn-like {
   color: white;
   background-color: transparent;
   border: none;
   font-size: 25px;
 }
 
-.liked{
+.liked-red {
   color: red;
 }
 

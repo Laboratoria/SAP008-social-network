@@ -8,19 +8,23 @@ const validatePassword = (password) => {
   return '';
 };
 
-const validateEmail = (email) => {
+export const validateEmail = (email) => {
   if (email === '') {
     return 'Digite seu e-mail';
   }
-  // if (Regex) {
-  //   return 'função regex';
-  // }
   return '';
 };
 
-const validateName = (nameProfile) => {
-  if (nameProfile === '') {
+const validateName = (publish) => {
+  if (publish === '') {
     return 'Digite seu nome de perfil';
+  }
+  return '';
+};
+
+export const validatePublish = (nameProfile) => {
+  if (nameProfile === '') {
+    return 'Escreva sua publicação.';
   }
   return '';
 };

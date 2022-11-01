@@ -8,6 +8,7 @@ export {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
+  sendPasswordResetEmail,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js'; // eslint-disable-line
 
 export {

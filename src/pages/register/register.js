@@ -9,7 +9,7 @@ export default () => {
   <main class="main">
       <div class =logo-e-form>
         <div class = 'field-logo'>
-          <img class='logo' src="imagens/logoINspire.png" alt="Logo" />
+          <img class='logo' src="imagens/logoINspire.png" alt="Logo palavra Inspire com as letras I e N maiúsculas e o restante minísculas" />
         </div>
 
         <div class='register'>
@@ -52,7 +52,7 @@ export default () => {
           messageWelcome.innerHTML = `'Bem vindo(a) ${nameProfile.value}!'`;
           messageWelcome.classList.add('show');
           setTimeout(() => {
-            window.location.hash = '#feed';
+            window.location.hash = '#welcome';
           }, 2000);
         })
         .catch((error) => {

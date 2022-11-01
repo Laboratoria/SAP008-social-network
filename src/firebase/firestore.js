@@ -61,4 +61,6 @@ async function editPost(postId, postText, postSubject) {
   });
 }
 
-export { publishPost, getAllPosts, deletePost, editPost, getPost };
+export {
+  publishPost, getAllPosts, deletePost, editPost, getPost,
+};

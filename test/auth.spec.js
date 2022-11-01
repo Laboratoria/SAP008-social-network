@@ -41,5 +41,6 @@ describe('createUser', () => {
     createUser('email', 'senha');
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
+
   });
 });

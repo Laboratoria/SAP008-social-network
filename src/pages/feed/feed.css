@@ -62,10 +62,10 @@
 
 .btn-like-post-feed {
   color: #00a57a;
-
   margin-top: 1rem;
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
 .btn-delete-post-feed {

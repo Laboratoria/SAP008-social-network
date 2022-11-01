@@ -29,6 +29,7 @@ li {
   color: #00a57a;
   height: 2.5rem;
   width: 2.5rem;
+  cursor: pointer;
 }
 
 .header-body-menu {

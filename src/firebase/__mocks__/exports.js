@@ -1,5 +1,11 @@
-export const getAuth = jest.fn();
-export const createUserWithEmailAndPassword = jest.fn();
+export const getAuth = jest.fn(() => ({
+  currentUser: {
+    displayName: 'marjorye',
+    Uid: '456',
+  },
+}));
+// eslint-disable-next-line max-len
+export const createUserWithEmailAndPassword = jest.fn().mockImplementation(() => Promise.resolve());
 export const signInWithEmailAndPassword = jest.fn();
 export const signInWithPopup = jest.fn();
 export const GoogleAuthProvider = jest.fn();

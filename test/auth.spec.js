@@ -27,9 +27,12 @@ describe('userLogin', () => {
     expect(typeof userLogin).toBe('function');
   });
   it('should call another function one time', () => {
+    signInWithEmailAndPassword.mockResolvedValue({
+      user: {},
+      senha: {},
+    });
     userLogin('email', 'password');
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
   });
 });
 
@@ -38,8 +41,10 @@ describe('createUser', () => {
     expect(typeof createUser).toBe('function');
   });
   it('should call another function one time', () => {
-    createUser('email', 'password');
+    createUserWithEmailAndPassword.mockResolvedValue({
+      user: {},
+    });
+    createUser('name', 'email', 'password');
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
   });
 });

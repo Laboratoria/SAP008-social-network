@@ -17,7 +17,7 @@ export default () => {
       <section class="post-container"></section>
       
       <nav id="mobile-footer-icons" class="icons-container">
-        <a href="#novo_post" <img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
+        <a href="#novo_post"><img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
         <img id="plate-icon" data-action="plate" class="icons-size" src="./external/svg/logo.png"/>
         <img id="up-icon" data-action="up" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
       </nav>
@@ -57,29 +57,39 @@ export default () => {
       const action = element.dataset.action;
       const id = element.dataset.id;
       const postElement = container.querySelector(`[data-id="${id}"]`);
-      // const cancelEdit = postElement.querySelectorAll('[data-action="cancel-edit"]');
-      // const okEdit = postElement.querySelectorAll('[data-action="ok-edit"]');
-      const local = postElement.querySelectorAll('.edit-local');
-      const address = postElement.querySelectorAll('.edit-address');
-      const review = postElement.querySelectorAll('.edit-review');
-      const modalDelete = postElement.querySelectorAll('#modal-postElement');
+      const cancelEdit = postElement.querySelector('.cancel-edit');
+      const okEdit = postElement.querySelector('.ok-edit');
+      const local = postElement.querySelector('.edit-local');
+      const address = postElement.querySelector('.edit-address');
+      const review = postElement.querySelector('.edit-review');
+      const modalDelete = postElement.querySelector('#modal-postElement');
 
       switch (action) {
+        case 'like':
+          console.log('like');
+          break;
         case 'edit':
-          console.log('clicou no lapis');
-          // cancelEdit.style.display = 'flex';
-          // okEdit.style.display = 'flex';
-          // review.contentEditable = true;
-          // local.contentEditable = true;
-          // address.contentEditable = true;
+          cancelEdit.style.display = 'flex';
+          okEdit.style.display = 'flex';
+          review.contentEditable = true;
+          local.contentEditable = true;
+          address.contentEditable = true;
           break;
         case 'cancel-edit':
           review.contentEditable = false;
           local.contentEditable = false;
           address.contentEditable = false;
+          cancelEdit.style.display = 'none';
+          okEdit.style.display = 'none';
+          // voltar ao texto inicial
           break;
         case 'ok-edit':
           forEditPost(id, local.textContent, address.textContent, review.textContent);
+          review.contentEditable = false;
+          local.contentEditable = false;
+          address.contentEditable = false;
+          cancelEdit.style.display = 'none';
+          okEdit.style.display = 'none';
           break;
         case 'erase':
           modalDelete.classList.toggle('hide');
@@ -94,7 +104,7 @@ export default () => {
           break;
         default:
           // eslint-disable-next-line no-console
-          console.log('clicou em outra coisa');
+          console.log('default');
       }
     });
     return container;
@@ -121,22 +131,21 @@ function generatePostsTemplate(allPosts) {
         <p data-id="${posts.id}" class="edit-local establishment" contenteditable="">${posts.restaurant}</p>
         <p data-id="${posts.id}" class="edit-address" contenteditable="">${posts.address}</p>
         <p data-id="${posts.id}" class="edit-review" contenteditable="">${posts.review}</p>
+        <button class="edit-button cancel-edit" data-id="${posts.id}" data-action="cancel-edit">Cancelar</button>
+        <button class="edit-button ok-edit" data-id="${posts.id}" data-action="ok-edit">OK</button>
       </div>
-
-      <button id="cancel" class="edit-button cancel" data-action="cancel-edit">Cancelar</button>
-      <button id="ok" class="edit-button ok" data-id="${posts.id}" data-action="ok-edit">OK</button>
   
       <div id="modal-delete" class="hide">
         <p>Tem certeza que deseja excluir este post?</p>
-        <button data-id="${posts.id}" data-action="yes-delete" id="yes-delete">Sim</button>
-        <button id="no-close" data-action="no-delete">Não</button>
+        <button data-id="${posts.id}" data-action="yes-delete">Sim</button>
+        <button data-id="${posts.id}" data-action="no-delete">Não</button>
       </div>
   
       <aside class="infos-container">
         <div>
           <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
           <div class="icons-post">
-            <img id="heart-icon" class="icons-post-size" src="./external/svg/heart-icon.svg"/>
+            <img data-id="${posts.id}" class="icons-post-size" data-action="like" src="./external/svg/heart-icon.svg"/>
             ${editButtons}
           </div>
         </div>

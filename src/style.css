@@ -120,12 +120,12 @@ body {
   display: none;
 }
 
-.cancel {
+.cancel-edit {
   background-color: #ffffff;
   color: #ab6930;
 }
 
-.ok {
+.ok-edit {
   background-color: #ab6930;
   color: #ffffff;
 }

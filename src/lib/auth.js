@@ -11,6 +11,7 @@ import {
 export const auth = getAuth(app);
 export const dataBase = getFirestore(app);
 const provider = new GoogleAuthProvider(app);
+// export const user = auth.currentUser;
 
 export const newUser = (email, password, name) => { // função criar usuário
   return createUserWithEmailAndPassword(auth, email, password)

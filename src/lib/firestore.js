@@ -1,6 +1,17 @@
-import { getFirestore, collection, addDoc, getAuth } from './exports.js';
+import { getFirestore, collection, addDoc, getAuth, query, getDocs} from './exports.js';
 import app from './config-firebase.js';
 
+export async function getPosts(){
+  const db = getFirestore(app)
+  const q = query(collection(db, "posts")); // query = pesquisa
+
+  const querySnapshot = await getDocs(q);
+  const posts = []
+  querySnapshot.forEach((doc) => {
+      posts.push({id: doc.id, ...doc.data()});
+  });
+  return posts;
+}
 export async function createPost(text) {
   const db = getFirestore(app);
   const auth = getAuth(app);

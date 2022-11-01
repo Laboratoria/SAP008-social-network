@@ -1,5 +1,5 @@
 import post from '../components/post.js';
-import { createPost } from '../lib/firestore.js';
+import { createPost, getPosts } from '../lib/firestore.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -48,9 +48,10 @@ export default () => {
   
   botaoPost.addEventListener('click', async (e) => {
     e.preventDefault();
-    const objeto = await createPost(caixaPost.value);
-    post(objeto);
-    console.log(objeto)
+    await createPost(caixaPost.value);
+    const posts = await getPosts()
+    post(posts);
+    console.log(posts);
   });
 
   const menu = container.querySelector('#btn-menu');

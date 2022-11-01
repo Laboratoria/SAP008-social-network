@@ -1,3 +1,6 @@
+import post from '../components/post.js';
+import { createPostMc, getPostsMc} from '../lib/firestore.js';
+
 export default () => {
   const container = document.createElement('div');
 
@@ -40,5 +43,25 @@ export default () => {
 </main>
       `;
   container.innerHTML = template;
+
+  const caixaPost = container.querySelector('#caixa-de-post');
+  const botaoPost = container.querySelector('#submit-post');
+  
+  botaoPost.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await createPostMc(caixaPost.value);
+    const posts = await getPostsMc()
+    post(posts);
+    console.log(posts);
+  });
+
+  const menu = container.querySelector('#btn-menu');
+
+  menu.addEventListener('click', () => {
+    const feed = container.querySelector('#feed');
+    feed.classList.toggle('active');
+  });
+
   return container;
 };
+

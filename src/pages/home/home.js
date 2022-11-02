@@ -1,5 +1,5 @@
 import {
-  logoutUser, auth, getPosts, deletePost, forEditPost, getDocsElements,
+  logoutUser, auth, getPosts, deletePost, forEditPost,
 } from '../../lib/auth.js';
 // eslint-disable-next-line consistent-return
 export default () => {
@@ -61,7 +61,7 @@ export default () => {
       const local = postElement.querySelector('.edit-local');
       const address = postElement.querySelector('.edit-address');
       const review = postElement.querySelector('.edit-review');
-      const modalDelete = postElement.querySelector('#modal-postElement');
+      const modalDelete = postElement.querySelector('#modal-delete');
       const localContent = local.textContent;
       const addressContent = address.textContent;
       const reviewContent = review.textContent;
@@ -79,7 +79,6 @@ export default () => {
           address.contentEditable = true;
           break;
         case 'cancel-edit':
-          console.log(getDocsElements(posts.restaurant));
           review.contentEditable = false;
           local.contentEditable = false;
           address.contentEditable = false;

@@ -56,10 +56,10 @@ export const getPosts = async () => { // função printar posts na tela
 };
 
 // eslint-disable-next-line max-len
-export const getDocsElements = async (restaurant) => { // tentativa função buscar restaurant na db
-  const querySnapshot = await getDocs(collection(dataBase, 'Posts', restaurant));
-  return querySnapshot;
-};
+// export const getDocsElements = async (restaurant) => { // tentativa função buscar restaurant na db
+//   const querySnapshot = await getDocs(collection(dataBase, 'Posts', restaurant));
+//   return querySnapshot;
+// };
 
 export const deletePost = (postID) => { // função deletar post
   return deleteDoc(doc(dataBase, 'Posts', postID));

@@ -71,14 +71,14 @@ export const postDislike = async (idPost, idUser) => {
 };
 
 export const deletePost = async (idPost) => {
-  const del = await deleteDoc(doc(db, 'post', idPost));
+  const del = await deleteDoc(doc(db, 'posts', idPost));
   return del;
 };
 
 // função de editar//
 
-// export const editPost = async (idPost, postText) => {
-//   await updateDoc(doc(db, 'post', idPost), {
-//     post: postText,
-//   });
-// };
+export const editPost = async (idPost, postText) => {
+  await updateDoc(doc(db, 'posts', idPost), {
+    post: postText,
+  });
+};

@@ -9,7 +9,7 @@ import {
   postLike,
   postDislike,
   deletePost,
-  //editPost
+  editPost,
 } from '../../lib/firestore.js';
 
 export default function Feed() {
@@ -48,11 +48,7 @@ export default function Feed() {
   const messageError = feed.querySelector('#error-message');
   const user = current().uid;
 
-  // O operador ternário ( ? ) funciona assim ...você tem uma condição
-  // que deve ser validada como verdadeira ou falsa. Se a condição for
-  // verdadeira o operador retorna uma expressão e se for falsa retorna
-  // outra expressão.
-
+  // printar posts //
   getAllPosts()
     .then((posts) => {
       const postsCreated = posts.map((post) => {
@@ -67,7 +63,8 @@ export default function Feed() {
           <div class="identification"> 
             <p class="username"><b>${post.displayName}</b></p>
             <p class="data-post"> Postado em ${post.data} às ${post.hour} </p>
-            <p class="post-print" data-idtext="${post.id}" data-text="${post.post}" contentEditable="false"> ${post.post} </p>
+            <textarea class="post-print" data-idtext="${post.id}" data-text="${post.post}" disabled>${post.post}</textarea>
+            <p class="post-error"></p>
           </div>         
           <div class = 'field-btn-like'>
             ${iteration}
@@ -92,11 +89,31 @@ export default function Feed() {
       }).join('');
       postList.innerHTML = postsCreated;
 
+      const btnsLike = postList.querySelectorAll('.btn-like');
       const postsElements = feed.querySelectorAll('.allposts');
+
+      // editar posts //
       postsElements.forEach((post) => {
         post.addEventListener('click', (e) => {
           const id = e.currentTarget.dataset.id;
+          console.log(id);
+          if (e.target.dataset.edit) {
+            const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
+            const btnSave = feed.querySelector('.post-edit');
+            postEdit.removeAttribute('disabled');
+            btnSave.addEventListener('click', async () => {
+              await editPost(id, postEdit.value);
+              postEdit.setAttribute('disabled', '');
+            });
+          }
+        });
+      });
 
+      // delete //
+      postsElements.forEach((post) => {
+        post.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+          console.log(id);
           if (e.target.dataset.delete) {
             const modal = e.currentTarget.querySelector('.modal');
             modal.style.display = 'flex';
@@ -114,8 +131,7 @@ export default function Feed() {
         });
       });
 
-      const btnsLike = postList.querySelectorAll('.btn-like');
-
+      // like //
       btnsLike.forEach((btnLike) => {
         btnLike.addEventListener('click', async (e) => {
           const userId = user;
@@ -126,7 +142,7 @@ export default function Feed() {
             btnLike.querySelector('.like-icon').classList.remove('liked-red');
             btnLike.dataset.liked = 'false';//eslint-disable-line
             likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
-            e.target.dataset.likecount = likesCount;
+            e.target.dataset.likecount = parseInt(likesCount, 10);
             btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
           } else {
             await postLike(idPost, userId);
@@ -140,6 +156,7 @@ export default function Feed() {
       });
     });
 
+  // criar posts //
   postBtn.addEventListener('click', (e) => {
     e.preventDefault();
     messageError.classList.remove('show');

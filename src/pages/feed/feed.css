@@ -96,7 +96,7 @@ ul {
   color: red;
 }
 
-.modal{
+.modal, .modal-edit{
   top: 0;
   left: 0;
   position: fixed;
@@ -136,6 +136,9 @@ ul {
   display: block;
 }
 
+.post-print{
+  background: transparent;
+}
   
   /* TELAS GRANDES */
   @media screen and (min-width: 1024px) and (max-width: 1700px) {      

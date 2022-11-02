@@ -8,6 +8,8 @@ import {
   updateDoc,
   doc,
   deleteDoc,
+  getDoc,
+  getDocs,
 } from '../../src/firebase/export.js';
 
 import {
@@ -19,6 +21,9 @@ import {
   createPost,
   editPost,
   deletePost,
+  getPostById,
+  likePost,
+  getAllPosts,
 } from '../../src/firebase/firebase.js';
 
 jest.mock('../../src/firebase/export.js');
@@ -26,6 +31,8 @@ jest.mock('../../src/firebase/export.js');
 beforeEach(() => {
   jest.clearAllMocks();
 });
+
+// --- TESTE FUNÇÃO DE CADASTRO
 
 describe('registerUser', () => {
   it('deve criar um usuário', () => {
@@ -37,6 +44,8 @@ describe('registerUser', () => {
   });
 });
 
+// --- TESTE FUNÇÃO DE LOGIN C/ O GOOGLE
+
 describe('loginGoogle', () => {
   it('deve logar usuário com conta google', () => {
     signInWithRedirect.mockResolvedValue();
@@ -44,6 +53,8 @@ describe('loginGoogle', () => {
     expect(signInWithRedirect).toHaveBeenCalledTimes(1);
   });
 });
+
+// --- TESTE FUNÇÃO DE LOGAR USUÁRIO C/ E-MAIL E SENHA
 
 describe('userLogin', () => {
   it('deve logar usuário com email e senha', () => {
@@ -56,12 +67,16 @@ describe('userLogin', () => {
   });
 });
 
+// --- TESTE FUNÇÃO DE CHECAR USUÁRIO LOGADO
+
 describe('checkLoggedUser', () => {
   it('deve verificar se o usuário logado está autenticado', () => {
     checkLoggedUser();
     expect(onAuthStateChanged).toHaveBeenCalledTimes(1);
   });
 });
+
+// --- TESTE FUNÇÃO DE RECADASTRAR SENHA
 
 describe('resetPassword', () => {
   it('deve enviar o email para escolha de nova senha', () => {
@@ -70,6 +85,8 @@ describe('resetPassword', () => {
     expect(sendPasswordResetEmail).toHaveBeenCalledTimes(1);
   });
 });
+
+// --- TESTE FUNÇÃO DE CRIAR POST
 
 describe('createPost', () => {
   it('deve criar um post', async () => {
@@ -83,6 +100,27 @@ describe('createPost', () => {
     expect(addDoc).toHaveBeenCalledTimes(1);
   });
 });
+
+// --- TESTE FUNÇÃO DE PRINTAR TODOS OS POSTS
+
+describe('getAllPosts', () => {
+  it('a função deve retornar um array com o post a ser printado na tela', () => {
+    getDocs.mockResolvedValue([{
+      name: {},
+      author: {},
+      artist: {},
+      location: {},
+      date: {},
+      text: {},
+      like: [],
+
+    }]);
+    getAllPosts('Clareana Ribeiro', '9iZRSCRMaAUSkS2w6uO1uqCrZrH3', 'Lamparina', 'Rio de Janeiro', '24/10/2022', 'Show de bola!', ['9iZRSCRMaAUSkS2w6uO1uqCrZrH3', 'AOtGBFDL1UP7JXPIwmkfHIXyWRz2']);
+    expect(getDocs).toHaveBeenCalledTimes(1);
+  });
+});
+
+// --- TESTE FUNÇÃO DE EDITAR POST
 
 describe('editPost', () => {
   it('a função deve editar um post', async () => {
@@ -106,6 +144,8 @@ describe('editPost', () => {
   });
 });
 
+// --- TESTE FUNÇÃO DE DELETAR POST
+
 describe('deletePost', () => {
   it('a função deve deletar um post a partir do id do usuário', async () => {
     const mockRefPost = {};
@@ -124,5 +164,76 @@ describe('deletePost', () => {
     expect(doc).toHaveBeenCalledWith(undefined, 'posts', mockCollection.posts.postId);
     expect(deleteDoc).toHaveBeenCalledTimes(1);
     expect(deleteDoc).toHaveBeenCalledWith(mockRefPost);
+  });
+});
+
+// --- TESTE FUNÇÃO DE PEGAR O ID DO POST
+
+describe('getPostById', () => {
+  it('a função deve pegar o id de um post', async () => {
+    const id = 'abc123';
+    const ref = {};
+    const post = {
+      data: jest.fn(),
+    };
+
+    doc.mockReturnValueOnce(ref);
+    getDoc.mockResolvedValueOnce(post);
+
+    await getPostById(id);
+
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', id);
+    expect(getDoc).toHaveBeenCalledTimes(1);
+    expect(getDoc).toHaveBeenCalledWith(ref);
+    expect(post.data).toHaveBeenCalledTimes(1);
+  });
+});
+
+// --- TESTE FUNÇÃO DE DAR LIKE NO POST
+
+describe('likePost', () => {
+  it('a função deve adicionar like no post', async () => {
+    const mockPost = {
+      data() {
+        const likeArr = {
+          likes: [],
+        };
+        return likeArr;
+      },
+    };
+
+    const postId = 'id do post';
+    const userId = 'id do usuario';
+
+    getDoc.mockResolvedValue(mockPost);
+
+    await likePost(postId, userId);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      likes: [userId],
+    });
+  });
+
+  it('a função deve remover o like do post', async () => {
+    const postId = 'id do post';
+    const userId = 'id do usuario';
+
+    const mockPost = {
+      data() {
+        const likeArr = {
+          likes: [userId],
+        };
+        return likeArr;
+      },
+    };
+
+    getDoc.mockResolvedValue(mockPost);
+
+    await likePost(postId, userId);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      likes: [],
+    });
   });
 });

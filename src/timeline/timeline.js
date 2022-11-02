@@ -18,16 +18,16 @@ export default () => {
                             menu
                             </span></button>
                         </li>
-                        <li class="navbar-item hide">
-                            <a href='#post'>Publicar Post</a>
-                        </li>
-                        <li class="navbar-item hide">
-                            <a href='#aboutus'>Sobre Nós</a>
-                        </li>
+                        <a href='#post'>
+                          <li class="navbar-item hide">Publicar Post</li>
+                        </a>
+                        <a href='#aboutus'>
+                          <li class="navbar-item hide">Sobre Nós</li>
+                        </a>
+                        <a>
+                          <li class="navbar-item hide" id="logout">Sair</li>
+                        </a>
                         
-                        <li class="navbar-item hide" id="logout">
-                            <a>Sair</a>
-                        </li>
                     </ul>
                 </nav>
                <section id="show-timeline"></section>
@@ -40,6 +40,7 @@ export default () => {
   const showPosts = async () => {
     const groupArr = await getAllPosts();
     const postsTemplate = groupArr.map((post) => {
+      console.log(post);
       let editBtnTemplate = '';
 
       if (userId === post.author) {
@@ -65,7 +66,7 @@ export default () => {
             <p id="show-location">${post.location}</p>
             <p id="show-date">${post.date}</p>
             <p id="text-post">${post.text}</p>
-            <p id="text-post">${post.likes.length}</p>
+            <p id="text-likes">${post.likes.length}</p>
             ${editBtnTemplate} 
           </section>
         </div>
@@ -128,15 +129,18 @@ export default () => {
       button.addEventListener('click', async (e) => {
         const postId = e.currentTarget.dataset.like;
         const post = await getPostById(postId);
-        // const section = container.querySelector(`[data-section-post-id="${postId}"]`);
+        const section = container.querySelector(`[data-section-post-id="${postId}"]`);
+
         const img = e.target;
 
         likePost(post, postId, userId)
         // estava faltando o post de parametro, pq essa função tem 3 parametros.
           .then((resultado) => {
             if (resultado.liked) {
+              section.querySelector('#text-likes').innerText = resultado.count;
               img.setAttribute('src', 'images/heart.png');
             } else {
+              section.querySelector('#text-likes').innerText = resultado.count;
               img.setAttribute('src', 'images/heart_empty.png');
             }
           });

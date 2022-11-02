@@ -1,27 +1,113 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap'); */
 
 *{                 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 } 
 
+body, main {
+    height: 100%; /*adc*/
+    width: 100%; /*adc*/
+}
 
-a{
-    text-decoration: none;
-    color:#8C4A5C;
+html {
+    height: 100%; /*adc*/
+}
+
+.box-aboutus {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto; /*adc p/ não quebrar a page e ficar o espaço em branco, analisar colocar em todas*/
 }
 
 .container-aboutus{
-    display: flex;
+    display: flex; 
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    background-color: #081E26;
+    justify-content: center;
+    align-items: center;
 }
+
+.logo-brown-about{
+    height: 8vh;
+    width: 25vh;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.material-symbols-outlined {
+    color: white;
+    background-color: #081E26;
+}
+
+.info-aboutus{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aboutdevs{
+    justify-content: center;
+    align-items: center;
+    color: #A6634B;
+    font-size: 1rem;
+    font-weight: 450;
+    margin-bottom: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+} 
+
+ .img-angelica, .img-cla, .img-andrea{
+    border-radius: 50%;
+    width: 25%;
+    margin-left: 15px;
+}
+
+
+.clareana, .angelica, .andrea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.info-cla, .info-angelica, .info-andrea {
+    text-decoration: none;
+    text-align: justify;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: white;
+    margin-left: 35px;
+    margin-top: -40px;
+    padding: 0 30px 30px 90px;
+}
+
+.github{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: normal;
+    color: white;
+    margin-left: 20px;
+    margin-top: -40px;
+}
+
 
 /*MENU HAMBURGUER*/
 
 .menu-hamburguer{
-    background-color:#8C4A5C;
+    background-color: #081E26;
     color:#FFFFFF;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    font-size: 0.85rem;
 }
 
 .navbar-list{  
@@ -50,128 +136,23 @@ a{
     list-style: none;
 }
 
-.navbar-button{
+#navbar-button{
     cursor:pointer;
+    background: none; /*adc*/
 }
 
-#container-aboutus{
-    position: relative;
-    width: 360px;
-    height: 800px;
-    background: linear-gradient(0deg, #163440, #163440), #8C4A5C;
-}
 
-#logo-marron-aboutus{
-    flex-direction: column;
-    align-self: flex-start;
-    width: 166px;
-    height: 46px;
-    left: 24px;
-    top: 19px;
-}
+@media screen and (min-width: 768px) {
 
-h1#aboutdevs{
-    justify-content: center;
-    align-items: center;
-    width: 329px;
-    height: 34px;
-    left: 21px;
-    top: 99px;
-   /* font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 27px;
-    letter-spacing: 0.05em;
-    color: #A6634B;
-}
+    .box-aboutus {
+        width: 50%;
+        height: 70%;
+        background-color: #081E26;
+        text-align: center;
+        border-radius: 20px;
+    }
 
-#h2-cla{
-    position: absolute;
-    width: 208px;
-    height: 21px;
-    left: 98px;
-    top: 174px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#p-cla{
-    position: absolute;
-    width: 229px;
-    height: 52px;
-    left: 98px;
-    top: 207px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#h2-angelica{
-    position: absolute;
-    width: 164px;
-    height: 23px;
-    left: 106px;
-    top: 328px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#p-angelica{
-    position: absolute;
-    width: 224px;
-    height: 44px;
-    left: 105px;
-    top: 361px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#h2-andrea{
-    position: absolute;
-    width: 164px;
-    height: 21px;
-    left: 106px;
-    top: 485px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
-}
-
-#p-andrea{
-    position: absolute;
-    width: 229px;
-    height: 52px;
-    left: 106px;
-    top: 518px;
-    /*font-family: 'Carrois Gothic SC';*/
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
+    .container-aboutus {
+        background-color: white;
+    }
 }

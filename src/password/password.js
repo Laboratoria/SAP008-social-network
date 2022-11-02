@@ -3,9 +3,9 @@ import { redirect } from '../redirect.js';
 
 export default () => {
   const container = document.createElement('div');
+  container.classList.add('container-main-password');
   // container.classList.add('wrapper-password'); tentativa de tirar espaço branco no mobile
   const template = `  
-      <div class='container-main-password'> 
       <div class='box-password'>
       <div class='container-logo-password'>
       <img class='logo-img-password' src='./images/logo_02_blue_081E26.png'alt='logo do título'>
@@ -22,8 +22,7 @@ export default () => {
               <button id='btn-enter' class='btn-enter-password' type='button'>Enviar</button>
               <button id='btn-back' class='btn-back-password' type="button">Voltar</button>
           </form>
-      </div>
-    </div>     
+      </div>    
     `;
 
   container.innerHTML = template;

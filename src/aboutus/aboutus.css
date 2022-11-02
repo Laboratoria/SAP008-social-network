@@ -6,12 +6,29 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 } 
 
+body, main {
+    height: 100%; /*adc*/
+    width: 100%; /*adc*/
+}
+
+html {
+    height: 100%; /*adc*/
+}
+
+.box-aboutus {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto; /*adc p/ não quebrar a page e ficar o espaço em branco, analisar colocar em todas*/
+}
+
 .container-aboutus{
-    display:flex;
+    display: flex; 
     width: 100%;
     height: 100%;
     margin-left: auto;
     background-color: #081E26;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-brown-about{
@@ -104,7 +121,6 @@ a{
 .navbar-item{
     padding: 10px 15px;
     list-style: none;
-
 }
 
 .navbar-item.hide{
@@ -122,23 +138,23 @@ a{
     list-style: none;
 }
 
-.navbar-button{
+#navbar-button{
     cursor:pointer;
+    background: none; /*adc*/
 }
 
-#container-aboutus{
-    position: relative;
-    width: 360px;
-    height: 800px;
-    background: linear-gradient(0deg, #163440, #163440), #8C4A5C;
-}
 
-#logo-marron-aboutus{
-    flex-direction: column;
-    align-self: flex-start;
-    width: 166px;
-    height: 46px;
-    left: 24px;
-    top: 19px;
-}
+@media screen and (min-width: 768px) {
 
+    .box-aboutus {
+        width: 50%;
+        height: 70%;
+        background-color: #081E26;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .container-aboutus {
+        background-color: white;
+    }
+}

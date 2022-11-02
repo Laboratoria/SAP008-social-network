@@ -3,9 +3,9 @@ import { redirect } from '../redirect.js';
 
 export default () => {
   const container = document.createElement('div');
+  container.classList.add('container-aboutus'); /* adc - e retirado a div que estava acima da box, fazer assim p/todas as pages */
   const template = `  
-    <div class='container-aboutus'> 
-        <div class='box-aboutus'>
+            <div class='box-aboutus'>
             <div class='container-logo-aboutus'>
                 <img class='logo-brown-about' src='./images/logo_01_brown_A6634B.png' alt='logo do título'>
             </div>
@@ -16,15 +16,16 @@ export default () => {
                             menu
                             </span></button>
                         </li>
-                        <li class='navbar-item hide'>
-                            <a href='#post'>Publicar post</a>
-                        </li>
-                        <li class='navbar-item hide'>
-                            <a href='#timeline'>Timeline</a>
-                        </li>
-                        <li class='navbar-item hide' id='logout'>
-                            <a>Sair</a>
-                            </li>
+                        <a href='#post'>
+                            <li class='navbar-item hide'>Publicar post</li>
+                        </a>
+                        <a href='#timeline'>
+                            <li class='navbar-item hide'>Timeline</li>
+                        </a>
+                        <a>
+                            <li class='navbar-item hide' id='logout'>Sair</li>
+                        </a>
+                        
                     </ul>
                 </nav>
     <section class='info-aboutus'>
@@ -49,8 +50,7 @@ export default () => {
                 <p class='info-andrea'>Cantora brasiliense apaixonada pela diversidade da música brasileira e do mundo.</p>
             </article>
     </section>
-        </div>
-    </div>     
+        </div>    
 `;
 
   container.innerHTML = template;

@@ -7,7 +7,7 @@ export default () => {
   const template = `
       <div class="box">
         <div class="container-logo-post">
-            <img class="logo-img" src="./images/logo_02_blue_081E26.png" alt="logo do título">
+            <img class="logo-img-post" src="./images/logo_02_blue_081E26.png" alt="logo do título">
         </div>
         <nav class='menu-hamburguer'>
         <ul class='navbar-list'>
@@ -32,7 +32,7 @@ export default () => {
               <h1>Conte para nós suas experiências mais marcantes vividas em um show!</h1>
           </div>
           <div class="container-post">
-              <form>
+              <form class='post-infos'>
                   <input class="box-artist" type="text" id="artist" placeholder="Artista">
                   <input class="box-location "type="text" id="location" placeholder="Local"> 
                   <input class="box-date" id="date" type="date">

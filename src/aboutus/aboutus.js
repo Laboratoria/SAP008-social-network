@@ -3,54 +3,54 @@ import { redirect } from '../redirect.js';
 
 export default () => {
   const container = document.createElement('div');
+  container.classList.add('container-aboutus'); /* adc - e retirado a div que estava acima da box, fazer assim p/todas as pages */
   const template = `  
-    <div class='container-aboutus'> 
-        <div class='box-aboutus'>
+            <div class='box-aboutus'>
             <div class='container-logo-aboutus'>
                 <img class='logo-brown-about' src='./images/logo_01_brown_A6634B.png' alt='logo do título'>
             </div>
                 <nav class='menu-hamburguer'>
                     <ul class='navbar-list'>
                         <li class='navbar-item-button'>
-                            <button type='button' id='navbar-button'><span class="material-symbols-outlined">
+                            <button type='button' id='navbar-button'><span class='material-symbols-outlined'>
                             menu
                             </span></button>
                         </li>
-                        <li class='navbar-item hide'>
-                            <a href='#post'>Publicar post</a>
-                        </li>
-                        <li class='navbar-item hide'>
-                            <a href='#timeline'>Timeline</a>
-                        </li>
-                        <li class='navbar-item hide' id='logout'>
-                            <a>Sair</a>
-                            </li>
+                        <a href='#post'>
+                            <li class='navbar-item hide'>Publicar post</li>
+                        </a>
+                        <a href='#timeline'>
+                            <li class='navbar-item hide'>Timeline</li>
+                        </a>
+                        <a>
+                            <li class='navbar-item hide' id='logout'>Sair</li>
+                        </a>
+                        
                     </ul>
                 </nav>
     <section class='info-aboutus'>
         <h1 class='aboutdevs'>SOBRE AS DESENVOLVEDORAS</h1>
-            <article class='cla'>
-                <img class='img-cla'>
-                
-                <p><a href="https://github.com/ClareanaRibeiro"
+            <article class='clareana'>
+                <img class='img-cla' src='./images/clareana.jpg'>
+                <a class='github' href="https://github.com/ClareanaRibeiro"
                 target="_blank">Clareana Ribeiro
-                    </a></p>
-                <p class='info-cla'>Sua paixão por música vem de berço.
-                A origem do seu nome é o nome de uma música.</p>
+                    </a>
+                <p class='info-cla'>Sua paixão por música vem de berço. A origem do seu nome é o nome de uma música.</p>
             </article>
             <article class='angelica'>
-            <a href="https://github.com/AngelMelo12"
+                <img class='img-angelica' src='./images/angelica.jpg'>
+            <a class='github' href="https://github.com/AngelMelo12"
             target="_blank">Angelica Melo</a>
-                <p class='info-angelica'>Breve descrição sobre você relacionado ao tema da rede social.</p>
+                <p class='info-angelica'>Música é minha válvula de escape para todos os momentos.</p>
             </article>
             <article class='andrea'>
-            <a href="https://github.com/Canzua"
+             <img class='img-andrea' src='./images/andrea.jpg'>
+            <a class='github' href="https://github.com/Canzua"
             target="_blank">Andrea dos Santos</a>
-                <p class='info-andrea'>Cantora apaixonada pela diversidade da música brasileira e do mundo.</p>
+                <p class='info-andrea'>Cantora brasiliense apaixonada pela diversidade da música brasileira e do mundo.</p>
             </article>
     </section>
-        </div>
-    </div>     
+        </div>    
 `;
 
   container.innerHTML = template;

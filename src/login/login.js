@@ -3,10 +3,10 @@ import { redirect } from '../redirect.js';
 
 export default () => {
   const container = document.createElement('div');
-  container.classList.add('wrapper-login');
+  container.classList.add('container-login');
   const template = `
   <section class = login>     
-        <div class ='container-login'>
+        <div class ='box-login'>
             <div class='container-logo'>
                 <img src='./images/logo_02_blue_081E26.png' id='logo-login' alt='logo do título'>
             </div>

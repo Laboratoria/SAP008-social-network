@@ -8,13 +8,8 @@
     box-sizing: border-box;
     /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  */     
 }
-
-/* body, html {  
-    height: 100vh;
-    width: 100vw; 
-} */
      
-.wrapper-login {  
+.container-login {  
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -22,7 +17,7 @@
     background-image: url('../images/image_back_login.jpg'); 
 }
   
-.container-login { 
+.box-login { 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;  

@@ -18,16 +18,16 @@ export default () => {
                             menu
                             </span></button>
                         </li>
-                        <li class="navbar-item hide">
-                            <a href='#post'>Publicar Post</a>
-                        </li>
-                        <li class="navbar-item hide">
-                            <a href='#aboutus'>Sobre Nós</a>
-                        </li>
+                        <a href='#post'>
+                          <li class="navbar-item hide">Publicar Post</li>
+                        </a>
+                        <a href='#aboutus'>
+                          <li class="navbar-item hide">Sobre Nós</li>
+                        </a>
+                        <a>
+                          <li class="navbar-item hide" id="logout">Sair</li>
+                        </a>
                         
-                        <li class="navbar-item hide" id="logout">
-                            <a>Sair</a>
-                        </li>
                     </ul>
                 </nav>
                <section id="show-timeline"></section>

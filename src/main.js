@@ -18,6 +18,9 @@ const init = () => {
     case '#momentoCookie':
       main.appendChild(momentoCookie());
       break;
+    case '#bemEstar':
+      main.appendChild(bemEstar());
+      break;
     case '#login':
       main.appendChild(login());
       break;

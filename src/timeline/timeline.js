@@ -65,7 +65,7 @@ export default () => {
             <p id="show-location">${post.location}</p>
             <p id="show-date">${post.date}</p>
             <p id="text-post">${post.text}</p>
-            <p id="text-post">${post.likes.length}</p>
+            <p id="text-likes">${post.likes.length}</p>
             ${editBtnTemplate} 
           </section>
         </div>
@@ -128,14 +128,17 @@ export default () => {
         const postId = e.currentTarget.dataset.like;
         const post = await getPostById(postId);
         const section = container.querySelector(`[data-section-post-id="${postId}"]`);
+
         const img = e.target;
 
         likePost(post, postId, userId)
         // estava faltando o post de parametro, pq essa função tem 3 parametros.
           .then((resultado) => {
             if (resultado.liked) {
+              section.querySelector('#text-likes').innerText = resultado.count;
               img.setAttribute('src', 'images/heart.png');
             } else {
+              section.querySelector('#text-likes').innerText = resultado.count;
               img.setAttribute('src', 'images/heart_empty.png');
             }
           });

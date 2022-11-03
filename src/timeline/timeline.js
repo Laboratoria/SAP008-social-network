@@ -6,32 +6,31 @@ import { redirect } from '../redirect.js';
 export default () => {
   const userId = getUserId();
   const container = document.createElement('div');
-  const template = `  
-        <div class="container-timeline">
-            <div class="container-logo">
-                <img class="logo-img" src="./images/logo_02_blue_081E26.png"alt="logo do título">
-            </div>
-            <nav class='menu-hamburguer'>
-                    <ul class='navbar-list'>
-                        <li class='navbar-item-button'>
-                            <button type='button' id='navbar-button'><span class="material-symbols-outlined">
-                            menu
-                            </span></button>
-                        </li>
-                        <a href='#post'>
-                          <li class="navbar-item hide">Publicar Post</li>
-                        </a>
-                        <a href='#aboutus'>
-                          <li class="navbar-item hide">Sobre Nós</li>
-                        </a>
-                        <a>
-                          <li class="navbar-item hide" id="logout">Sair</li>
-                        </a>
-                        
-                    </ul>
-                </nav>
-               <section id="show-timeline"></section>
-        </div>     
+  container.classList.add('container-timeline');
+  const template = `
+    <div class='box-timeline'>  
+      <div class="container-logo-timeline">
+        <img class="logo-img-timeline" src="./images/logo_02_blue_081E26.png"alt="logo do título">
+      </div>
+        <nav class='menu-hamburguer'>
+          <ul class='navbar-list'>
+            <li class='navbar-item-button'>
+            <button type='button' id='navbar-button'><span class="material-symbols-outlined">
+              menu</span></button>
+            </li>
+              <a href='#post'>
+              <li class="navbar-item hide">Publicar Post</li>
+              </a>
+              <a href='#aboutus'>
+              <li class="navbar-item hide">Sobre Nós</li>
+              </a>
+              <a>
+              <li class="navbar-item hide" id="logout">Sair</li>
+              </a>   
+          </ul>
+        </nav>
+    <section id="show-timeline"></section>
+  </div>     
     `;
 
   container.innerHTML = template;
@@ -60,11 +59,15 @@ export default () => {
       const postTemplate = `
         <div class="post">
           <section class="box-post-timeline" data-section-post-id=${post.id}>
+            <div class="box-info-post>
             <p id="user-name">${post.name}</p>
             <p id="artist-name">${post.artist}</p>
             <p id="show-location">${post.location}</p>
             <p id="show-date">${post.date}</p>
+            </div>
+            <div class="box-text-post">
             <p id="text-post">${post.text}</p>
+            </div>
             <p id="text-likes">${post.likes.length}</p>
             ${editBtnTemplate} 
           </section>

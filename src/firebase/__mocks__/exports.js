@@ -1,6 +1,8 @@
-export const getAuth = jest.fn();
+export const getAuth = jest.fn().mockImplementation();
 export const createUserWithEmailAndPassword = jest.fn();
-export const signInWithEmailAndPassword = jest.fn();
+export const signInWithEmailAndPassword = jest
+    .fn()
+    .mockImplementation(() => Promise.resolve({ data: { teste: 'a' } }));
 export const signInWithPopup = jest.fn();
 export const GoogleAuthProvider = jest.fn();
 export const updateProfile = jest.fn();

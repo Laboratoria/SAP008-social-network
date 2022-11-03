@@ -1,14 +1,9 @@
-import {
-  loginGoogle,
-  userLogin,
-  createUser,
-} from '../src/firebase/auth.js';
-
+import { loginGoogle, userLogin, createUser } from '../src/firebase/auth.js';
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-} from '../src/firebase/exports.js';
+} from '../src/firebase/__mocks__/exports';
 
 jest.mock('../src/firebase/exports.js');
 
@@ -27,9 +22,8 @@ describe('userLogin', () => {
     expect(typeof userLogin).toBe('function');
   });
   it('should call another function one time', () => {
-    userLogin('email', 'password');
-    expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
+    const call = userLogin('email', 'password');
+    expect(call).toHaveBeenCalledTimes(1);
   });
 });
 
@@ -37,9 +31,14 @@ describe('createUser', () => {
   it('should be a function', () => {
     expect(typeof createUser).toBe('function');
   });
-  it('should call another function one time', () => {
-    createUser('email', 'password');
+  it('should call another function one time', async () => {
+    await createUser('marjorye', 'marjorye@gmail.com', '1234');
+
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, 'email', 'password');
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(
+      undefined,
+      'email',
+      'password',
+    );
   });
 });

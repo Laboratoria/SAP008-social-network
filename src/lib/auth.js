@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-useless-catch */
 /* eslint-disable no-console */
@@ -43,6 +44,7 @@ export const create = (restaurant, address, review) => { // função criar novo 
     restaurant,
     address,
     review,
+    like: [],
   });
 };
 
@@ -72,6 +74,24 @@ export const forEditPost = (postID, restaurant, address, review) => {
     address,
     review,
   });
+};
+
+export const likePost = (postID, userID) => {
+  const arrLikes = [];
+  arrLikes.push(userID);
+  updateDoc(doc(dataBase, 'Posts', postID), {
+    like: arrLikes,
+  });
+  return arrLikes.length;
+};
+
+export const deslikePost = (postID, userID) => {
+  const arrLikes = [];
+  arrLikes.slice(userID);
+  updateDoc(doc(dataBase, 'Posts', postID), {
+    like: arrLikes,
+  });
+  return arrLikes.length;
 };
 
 // por que a variável não funciona (const userAuth = auth.currentUser) se é global?;

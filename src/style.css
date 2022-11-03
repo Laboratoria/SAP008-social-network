@@ -166,3 +166,7 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+.filled-heart {
+  display: none;
+}

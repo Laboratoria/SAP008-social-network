@@ -3,3 +3,5 @@
 import { myFunction } from './lib/index.js';
 
 myFunction();
+
+const root = 

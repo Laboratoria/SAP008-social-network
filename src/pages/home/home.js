@@ -1,5 +1,5 @@
 import {
-  logoutUser, auth, getPosts, deletePost, forEditPost, getDocsElements,
+  logoutUser, auth, getPosts, deletePost, forEditPost, likePost, deslikePost,
 } from '../../lib/auth.js';
 // eslint-disable-next-line consistent-return
 export default () => {
@@ -49,9 +49,9 @@ export default () => {
     };
     printPosts();
 
-    const posts = container.querySelector('.post-container');
+    const thePosts = container.querySelector('.post-container');
 
-    posts.addEventListener('click', (event) => {
+    thePosts.addEventListener('click', (event) => {
       const element = event.target;
       const action = element.dataset.action;
       const id = element.dataset.id;
@@ -61,15 +61,25 @@ export default () => {
       const local = postElement.querySelector('.edit-local');
       const address = postElement.querySelector('.edit-address');
       const review = postElement.querySelector('.edit-review');
-      const modalDelete = postElement.querySelector('#modal-postElement');
+      const modalDelete = postElement.querySelector('#modal-delete');
+      const like = postElement.querySelector('.heart');
+      const deslike = postElement.querySelector('.filled-heart');
       const localContent = local.textContent;
       const addressContent = address.textContent;
       const reviewContent = review.textContent;
       //  const originalAddress = dataBase.posts.address;
       // const dbRestaurant = posts.restaurant;
+
       switch (action) {
         case 'like':
-          console.log('like');
+          likePost(id, auth.currentUser.uid);
+          like.style.display = 'none';
+          deslike.style.display = 'flex';
+          break;
+        case 'deslike':
+          deslikePost(id, auth.currentUser.uid);
+          deslike.style.display = 'none';
+          like.style.display = 'flex';
           break;
         case 'edit':
           cancelEdit.style.display = 'flex';
@@ -79,7 +89,6 @@ export default () => {
           address.contentEditable = true;
           break;
         case 'cancel-edit':
-          console.log(getDocsElements(posts.restaurant));
           review.contentEditable = false;
           local.contentEditable = false;
           address.contentEditable = false;
@@ -149,7 +158,8 @@ function generatePostsTemplate(allPosts) {
         <div>
           <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
           <div class="icons-post">
-            <img data-id="${posts.id}" class="icons-post-size" data-action="like" src="./external/svg/heart-icon.svg"/>
+            <img data-id="${posts.id}" class="icons-post-size heart" data-action="like" src="./external/svg/heart-icon.svg"/>
+            <img data-id="${posts.id}" class="icons-post-size filled-heart" data-action="deslike" src="./external/svg/filled-heart-icon.svg"/>
             ${editButtons}
           </div>
         </div>

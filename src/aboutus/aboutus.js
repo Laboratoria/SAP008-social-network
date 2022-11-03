@@ -43,7 +43,7 @@ export default () => {
                 <aside>
                     <a class='github' href="https://github.com/AngelMelo12"
                     target="_blank">Angelica Melo</a>
-                    <p class='info-angelica'>Música é minha válvula de escape para todos os momentos. No vemos em algum festival da vida!</p>
+                    <p class='info-angelica'>Música é minha válvula de escape para todos os momentos. Nos vemos em algum festival da vida!</p>
                 </aside>
             </article>
             <article class='andrea'>

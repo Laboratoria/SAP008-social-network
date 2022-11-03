@@ -131,7 +131,7 @@ a {
 
 .navbar-item:hover {
     cursor:pointer;
-    background-color: white;
+    background-color: #cecaca;
     color: #081E26;
 }
 

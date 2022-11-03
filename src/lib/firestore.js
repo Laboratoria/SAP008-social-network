@@ -15,6 +15,8 @@ export const auth = getAuth(app);
 
 export const nameUser = () => auth.currentUser.displayName;
 
+export const photoUser = () => auth.currentUser.photoURL;
+
 export const createPost = async (textPost) => {
   addDoc(collection(db, 'posts'), {
     name: auth.currentUser.displayName,

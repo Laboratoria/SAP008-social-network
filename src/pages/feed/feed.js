@@ -45,14 +45,12 @@ function getPostsTemplate(posts) {
   return posts.map((post) => {
     const postTemplate = `
       <section>
-
         <section class='postTimeline' id='${posts.id}'>
           <div class='headerPost'>
             <p id='userName'>${post.name}</p>
             <p id='textPost'>${post.date}</p>
           </div>
           <p data-post-id='${posts.id}' id='textPost'>${post.text}</p>
-
           <p class='sectionBtn'>
             <div class='modal'>
               <button class="btnDeleteEdit" id='btn-delete' data-post-id='${posts.id}'><img class='btnDelete' src='../../img/delete.png'></button>
@@ -64,20 +62,16 @@ function getPostsTemplate(posts) {
             <button class='btn-del' data-sim='true'> SIM </button>
             <button class='btn-del' data-nao='true'> NÃO </button>
             </div>
-
             <div class='modal-edit'>
               <p> Confirma edição do post? </p>
               <button class='btn-del' data-salvar='true'> SALVAR </button>
               <button class='btn-del' data-cancelar='true'> CANCELAR </button>
             </div>
           </p>
-
         </section>
-
         <section class='sectionBtnLikeDeslike'>
           <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
         </section>
-
     `; return postTemplate;
   }).join('');
 }

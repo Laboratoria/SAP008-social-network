@@ -36,7 +36,9 @@ function createTemplate() {
         <a class='loginGoogle' id='btn-google'><img src='../../img/logoGoogle.jpg' alt='Logo Google'></a>
       </p>
       <p class='form'>
-        <a href='#sobre' class='sobrepage'>Sobre</a>
+        <div class='sectionSobre'>
+          <a href='#sobre' class='sobrepage'>Sobre</a>
+        </div>
       </p>
     </div> 
   </div> `;

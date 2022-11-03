@@ -17,7 +17,7 @@
         padding: 0;
     }
     .headerFeed{
-        background-image: url(../../img/back.jpg);
+        background-image: url(../../img/backnovo.png);
         display: flex;
         justify-content: center;
         width: 96%;
@@ -98,13 +98,13 @@
         padding: 5px 0px 5px 0px;
         text-align: center;
         outline: none;
-        border-color: #1FA48C;
+        border-color: #E96F2C;
     }
     .publicBtn{
         color: black;
         width: 30%;
         height: 8%;
-        background-color: #1FA48C;
+        background-color: #E96F2C;
         border-radius: 3px;
         font-weight: bold;
         margin: 2% 5% 2% 35%;
@@ -121,7 +121,7 @@
         border-color: black;
         padding: 0;
     }
-    .postTimeline{
+    .allpost{
         display: flex;
         flex-direction: column;
         background-color: #EEEEEE;
@@ -203,7 +203,7 @@
         border-radius: 10%;
     }
     .navBar{
-        background-color: #1FA48C;
+        background-color: #E96F2C;
         border-style: solid;
         border-color: black;
         border-width: 1px;
@@ -247,7 +247,7 @@
         color: black;
         width: 150px;
         height: 20%;
-        background-color: #1FA48C;
+        background-color: #E96F2C;
         border-radius: 10px;
         font-weight: bold;
         margin: 2% auto;

@@ -25,9 +25,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: #081E26 1px solid;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);;
     margin-top: 40px;
     margin-left: 30px;
     margin-right: 30px;
@@ -41,30 +38,80 @@
     margin-top: 20px;
 }
 
-
-.box-info-post{
-  
+.box-complete-post{
+    display:flex;
+    border: #081e26ab 1px solid;
+    box-shadow: 2px 2px 2px rgba(8, 8, 8, 0.5);
+    border-radius: 20px;
+    width: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #081E26;
+    color:white;
 }
 
 .box-text-post{
+    display:flex;
     background-color: #F5F5F5;
-   
+    height: auto;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:10px;
+    border-radius: 10px; 
+    border: #686e706c 1px solid;;
 } 
 
+#user-name{
+font-size: 1.2rem;
+font-weight: 400;
+margin-top: 10px;
+margin-bottom: 10px;
+}
 
+#artist-name, #show-location, #show-date{
+    font-size: 0.95rem;
+}
 
+.box-text-post{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
 
+#text-post{
+    width: 70%;
+    word-wrap: break-word;
+    color:#081E26;
+}
 
-
-
-
-
-
-
-
-
+.btn-options{
+    display:flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+}
 
 .heart-like {
-    width: 2vw;
+    width: 7vw;
     height: 4vh;
+    background:#081E26;
+}
+
+.heart-like-sub{
+    width: 7vw;
+    height: 4vh;
+    background:#081E26;
+    margin-left: 110px;
+}
+
+#text-likes-sub{
+    margin-right: 110px;
+}
+
+#btn-like{
+    background: none;
 }

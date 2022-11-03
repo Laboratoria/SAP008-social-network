@@ -127,10 +127,8 @@ export async function likePost(post, postId, userId) {
   const liking = !post.likes.includes(userId);
   if (liking) {
     likes.push(userId);
-    alert('Voce deu like no post!');
   } else {
     likes = likes.filter((id) => id !== userId);
-    alert('Voce descurtiu o post!');
   }
   await updateDoc(doc(db, 'posts', postId), {
     likes,

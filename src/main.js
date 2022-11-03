@@ -1,7 +1,13 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+// import { myFunction } from './lib/index.js';
 
-myFunction();
+// myFunction();
 
-const root = 
+import { loginElements } from './pages/login/login.js';
+
+const root = document.querySelector('#root');
+
+window.addEventListener('load', () => {
+  root.appendChild(loginElements());
+});

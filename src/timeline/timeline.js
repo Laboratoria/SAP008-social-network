@@ -10,28 +10,28 @@ export default () => {
   const template = `
     <div class='box-timeline'>  
       <div class="container-logo-timeline">
-        <img class="logo-img-timeline" src="./images/logo_02_blue_081E26.png"alt="logo do título">
+        <img class="logo-img-timeline" src="./images/logo_02_blue_081E26.png"alt="logo do título" />
       </div>
-        <nav class='menu-hamburguer'>
-          <ul class='navbar-list'>
-            <li class='navbar-item-button'>
-            <button type='button' id='navbar-button'><span class="material-symbols-outlined">
-              menu</span></button>
-            </li>
-              <a href='#post'>
-              <li class="navbar-item hide">Publicar Post</li>
-              </a>
-              <a href='#aboutus'>
+      <nav class='menu-hamburguer'>
+        <ul class='navbar-list'>
+          <li class='navbar-item-button'>
+            <button type='button' id='navbar-button'>
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </li>
+          <a href='#post'>
+            <li class="navbar-item hide">Publicar Post</li>
+          </a>
+          <a href='#aboutus'>
               <li class="navbar-item hide">Sobre Nós</li>
-              </a>
-              <a>
-              <li class="navbar-item hide" id="logout">Sair</li>
-              </a>   
-          </ul>
-        </nav>
-    <section id="show-timeline"></section>
-  </div>     
-    `;
+          </a>
+          <a>
+            <li class="navbar-item hide" id="logout">Sair</li>
+          </a>   
+        </ul>
+      </nav>
+      <section id="show-timeline"></section>
+    </div>`;
 
   container.innerHTML = template;
   const menu = container.querySelector('#navbar-button');
@@ -47,33 +47,34 @@ export default () => {
           <button class="btn-edit" id="btn-save" data-save=${post.id}>Salvar</button>
           <button class="btn-edit" id="btn-delete" data-author-id=${post.author} data-delete=${post.id}>Excluir</button>
           <button id="btn-like" data-author-like=${post.author} data-like=${post.id}>
-            <img class='heart-like' src=${post.likes.includes(userId) ? './images/heart.png' : './images/heart_empty.png'} alt='like-heart'> 
+            <img class='heart-like' src=${post.likes.includes(userId) ? './images/heart.png' : './images/heart_empty.png'} alt='like-heart' /> 
           </button>
-          <p id="text-likes">${post.likes.length}</p>
+          <p id="text-likes" class="text-likes">${post.likes.length}</p>
         `;
       } else {
-        editBtnTemplate = `<button id='btn-like' data-author-like=${post.author} data-like=${post.id}>
-          <img class='heart-like-sub' src=${post.likes.includes(userId) ? './images/heart.png' : './images/heart_empty.png'} alt='like-heart'>
+        editBtnTemplate = `
+        <button id='btn-like' data-author-like=${post.author} data-like=${post.id}>
+          <img class='heart-like-sub' src=${post.likes.includes(userId) ? './images/heart.png' : './images/heart_empty.png'} alt='like-heart' />
         </button>
-        <p id="text-likes-sub">${post.likes.length}</p>`;
+        <p id="text-likes" class="text-likes-sub">${post.likes.length}</p>`;
       }
 
       const postTemplate = `
         <div class="post">
           <section class="box-post-timeline" data-section-post-id=${post.id}>
             <div class="box-complete-post">
-            <div class="box-info-post">
-            <p id="user-name">${post.name}</p>
-            <p id="artist-name">${post.artist}</p>
-            <p id="show-location">${post.location}</p>
-            <p id="show-date">${post.date}</p>
-            </div>
-            <div class="box-text-post">
-            <p id="text-post">${post.text}</p>
-            </div>
-            <div class="btn-options">
-            ${editBtnTemplate}
-            </div>
+              <div class="box-info-post">
+                <p id="user-name">${post.name}</p>
+                <p id="artist-name">${post.artist}</p>
+                <p id="show-location">${post.location}</p>
+                <p id="show-date">${post.date}</p>
+              </div>
+              <div class="box-text-post">
+                <p id="text-post">${post.text}</p>
+              </div>
+              <div class="btn-options">
+                ${editBtnTemplate}
+              </div>
             </div>
           </section>
         </div>
@@ -140,7 +141,6 @@ export default () => {
         const img = e.target;
 
         likePost(post, postId, userId)
-        // estava faltando o post de parametro, pq essa função tem 3 parametros.
           .then((resultado) => {
             if (resultado.liked) {
               section.querySelector('#text-likes').innerText = resultado.count;
@@ -159,7 +159,6 @@ export default () => {
     items.forEach((item) => {
       item.classList.toggle('hide');
     });
-    console.log(items);
   });
 
   container.querySelector('#logout').addEventListener('click', (e) => {

@@ -62,18 +62,23 @@
     text-align: center;
     margin:10px;
     border-radius: 10px; 
-    border: #686e706c 1px solid;;
+    border: #686e706c 1px solid;
+    margin-bottom: 20px;
 } 
 
 #user-name{
-font-size: 1.2rem;
-font-weight: 400;
-margin-top: 10px;
-margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #artist-name, #show-location, #show-date{
     font-size: 0.95rem;
+}
+
+.editable {
+    border: 1px solid white;
 }
 
 .box-text-post{
@@ -93,22 +98,24 @@ margin-bottom: 10px;
     flex-direction: row;
     width: 80%;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
 .heart-like {
-    width: 7vw;
-    height: 4vh;
+    width: 32px;
+    height: 32px;
     background:#081E26;
+    margin-left: 20px;
 }
 
 .heart-like-sub{
-    width: 7vw;
-    height: 4vh;
+    width: 32px;
+    height: 32px;
     background:#081E26;
     margin-left: 110px;
 }
 
-#text-likes-sub{
+.text-likes-sub{
     margin-right: 110px;
 }
 

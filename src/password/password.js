@@ -5,24 +5,23 @@ export default () => {
   const container = document.createElement('div');
   container.classList.add('container-main-password');
   const template = `  
-      <div class='box-password'>
+    <div class='box-password'>
       <div class='container-logo-password'>
-      <img class='logo-img-password' src='./images/logo_02_blue_081E26.png'alt='logo do título'>
+        <img class='logo-img-password' src='./images/logo_02_blue_081E26.png'alt='logo do título' />
       </div>
-          <section class='container-title-password'>
-            <h1 class='title'>Insira o e-mail que você usa para acessar o aplicativo.</h1>
-          </section>
-          <section class='container-subtitle-password'>
-            <h2 class='subtitle'>Vamos enviar um e-mail para você recuperar a senha da conta.</h2>
-          </section>
-          <form>
-              <p class='text-email-password'>E-mail:</p>
-              <input class='input-email-password' type='email' placeholder='Digite seu e-mail'>
-              <button id='btn-enter' class='btn-enter-password' type='button'>Enviar</button>
-              <button id='btn-back' class='btn-back-password' type="button">Voltar</button>
-          </form>
-      </div>    
-    `;
+      <section class='container-title-password'>
+        <h1 class='title'>Insira o e-mail que você usa para acessar o aplicativo.</h1>
+      </section>
+      <section class='container-subtitle-password'>
+        <h2 class='subtitle'>Vamos enviar um e-mail para você recuperar a senha da conta.</h2>
+      </section>
+      <form>
+          <p class='text-email-password'>E-mail:</p>
+          <input class='input-email-password' type='email' placeholder='Digite seu e-mail'>
+          <button id='btn-enter' class='btn-enter-password' type='button'>Enviar</button>
+          <button id='btn-back' class='btn-back-password' type="button">Voltar</button>
+      </form>
+    </div>`;
 
   container.innerHTML = template;
 

@@ -1,8 +1,8 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');*/
-
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .container-logo {
@@ -10,16 +10,21 @@
     justify-content: center;
 }
 
-.logo-img {
-    width: 28vw;
+.logo-img-post {
+    width: 35vw;
     height: auto;
     display: flex;
     margin-top: 10px;
 }
 
-.content-post {
-    background-color: rgba(140, 128, 128, 0.6);
-    height: 100vh;
+.container-main {
+    display:flex;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    background-color:#fffcfc;
 }
 
 .container-title {
@@ -27,6 +32,7 @@
     text-align: center;
     justify-content: center;
     font-size: 0.45rem;
+    color:#081E26;
     padding: 15px;
 }
 
@@ -37,7 +43,14 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    /*border: yellow 4px solid;*/
+}
+
+.post-infos {
+    margin-left: 10px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .box-artist {
@@ -45,9 +58,8 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     width: 80%;
     height: 4%;
-    /*font-family: "Carrois Gothic SC";*/
     margin-top: 15px;
-    
+    border-radius: 5px;
 }
 
 .box-location {
@@ -55,8 +67,8 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     width: 80%;
     height: 4%;
-   /* font-family: "Carrois Gothic SC";*/
     margin-top: 15px;
+    border-radius: 5px;
 }
 
 .box-date {
@@ -64,39 +76,28 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     width: 80%;
     height: 4%;
-    /*font-family: "Carrois Gothic SC";*/
     margin-top: 15px;
+    border-radius: 5px;
 
 }
 
-.box-post { /*pesquisar como estilizar o placeholder*/
+.box-post {
     background: #D9D9D9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     width: 80%;
     height: 28vh;
-    /*font-family: "Carrois Gothic SC";*/
     margin-top: 30px;
     resize: none;
+    border-radius: 5px;
 }
 
-.btn-upload { /*pesquisar como adicionar icone no botão*/
-    background:#163440;
-    color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    width: 50vw;
-    height: 7vh;
-    /*font-family: "Carrois Gothic SC";*/
-    margin-top: 30px;
-    border-radius: 8px;
-}
 
-.btn-post { /*pesquisar como adicionar icone no botão*/
+.btn-post {
     background: #163440;
     color: rgb(255, 255, 255);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     width: 50vw;
     height: 7vh;
-    /*font-family: "Carrois Gothic SC";*/
     margin-top: 20px;
     margin-bottom: 16px;
     border-radius: 8px;
@@ -107,9 +108,9 @@
     .box {
         width: 50%;
         height: 70%;
-        background-color: #bfb3b3;
+        background-image: url('../images/pexels-erik-mclean-4065806.jpg');
         text-align: center;
-        overflow: hidden;
+        overflow: auto;
         border-radius: 20px;
     }
 
@@ -119,6 +120,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: white;
     }
 
     .navbar-list {
@@ -133,12 +135,21 @@
         justify-content: center;
         text-align: center;
         width: 100%;
+    }
 
+    .logo-img-post {
+        width: 22vw;
+        height: auto;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .box-post {
+        height: 18vh;
     }
 
     .btn-post { 
-        width: 15vw;  
+        width: 10vw;  
+        height: 5vh;
     }
-
-    
 }

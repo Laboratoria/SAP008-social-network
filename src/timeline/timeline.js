@@ -123,6 +123,7 @@ export default () => {
 
     container.querySelectorAll('#btn-delete').forEach((button) => {
       button.addEventListener('click', (e) => {
+        // eslint-disable-next-line no-restricted-globals
         if (confirm('Tem certeza que deseja deletar este post?')) {
           const postId = e.currentTarget.dataset.delete;
           deletePost(postId);

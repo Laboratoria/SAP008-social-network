@@ -33,10 +33,10 @@
     transition: width .3s, heigth .3s;
     transition-timing-function: ease;
 }
-.container-register { 
-    /* display: block; */
+/* .container-register { 
+    /* display: block;
     padding: 10px;
-}
+} */
 
 .logo-brown-register { 
     position:relative;

@@ -38,13 +38,12 @@ export const registerUser = (name, email, password) => createUserWithEmailAndPas
     const user = userCredential.user;
     console.log(user);
     updateProfile(auth.currentUser, {
-      displayName: name, /* photoURL: "https://example.com/jane-q-user/profile.jpg" */
+      displayName: name,
     });
   });
 
 export const loginGoogle = () => {
   signInWithRedirect(auth, provider);
-  // window.location.hash = "#timeline";
 };
 
 export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
@@ -127,10 +126,8 @@ export async function likePost(post, postId, userId) {
   const liking = !post.likes.includes(userId);
   if (liking) {
     likes.push(userId);
-    alert('Voce deu like no post!');
   } else {
     likes = likes.filter((id) => id !== userId);
-    alert('Voce descurtiu o post!');
   }
   await updateDoc(doc(db, 'posts', postId), {
     likes,

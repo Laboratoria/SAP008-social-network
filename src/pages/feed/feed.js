@@ -13,67 +13,83 @@ import { errorFire } from '../../lib/errorFirebase.js';
 //template da tela do feed completo
 function getContentFeedTemplate() {
   return `
-    <div>
     <header class='headerFeed'>
-        <img src='../../img/logo.png' class='loginhoFeed' alt='Logo Peq Wanderlust'>
+        <img src='../../img/logoTranp.png' class='loginhoFeed' alt='Logo Peq Wanderlust'>
     </header>
     <nav class='navBar'>
-      <ul>
+      <ul class='sectionSobreEperfil'>
         <a class='btnSIgnInOut' id='logOut'><img src='../../img/btnSair.png' alt='seta para sair'</a>
+        <a href='#sobre' class='sobrepageFeed'>SOBRE</a>
+        <a href='#perfil' class='perfilFeed'>PERFIL</a>
       </ul>
     </nav>
     <section class='msgBoasvindas'>
       <img src='${auth.currentUser.photoURL}' alt='User' class='fotoUser'>
       <p class='nomeUser'> Olá, ${auth.currentUser.displayName}!</p>
     </section>
-    <div clas='corpotimeline'>
-      <form id='create-Post'>
-        <section class='boxModelPost'>
-          <form>
-            <textarea id='text-publish' style='resize: none' class='inputText' rows='3' cols='40' placeholder='Escreva detalhes sobre a estadia em sua residência...'></textarea>
+    <div class='areaPubli'>
+      <div class='boxModelPost'>
+        <section class='SectionCriarPost'>
+          <p class='sectionTextarea'>
+            <textarea id='text-publish' style='resize: none' class='inputText' rows='3' cols='30' placeholder='Escreva detalhes sobre a estadia em sua residência...'></textarea>
+          </p>
+          <p class='sectionBtnPubli'>
             <button type='submit' id='publish-btn' class='publicBtn'>Publicar</button>
-          </form>
+          </p>
         </section>
-        <section class='timeline-post' id='post-feed'></section>
-      </form> 
-    </div>  
-  </div>`;
+      </div>
+    </div>
+    <form id='create-Post'>
+      <section class='timeline-post' id='post-feed'></section>
+    </form> 
+    <footer class='footer'>
+      <p>&copy; 2022 Criado e Desenvolvido por Aghatha, Andresa e Ariane para o Bootcamp SAP008 Laboratoria</p>
+    </footer>
+  `;
 }
 
 //template do post
 function getPostsTemplate(posts) {
-  return posts.map((post) => {
-    const postTemplate = `
-      <section>
-        <section class='postTimeline' id='${posts.id}'>
+  return posts
+    .map((post) => {
+      const postTemplate = `
+      <section class='principalTimeline'>
+        <section class='boxModelPost' id='${posts.id}'>
           <div class='headerPost'>
-            <p id='userName'>${post.name}</p>
-            <p id='textPost'>${post.date}</p>
+            <p class='userName'>${post.name}</p>
+            <p class='date'>${post.date}</p>
           </div>
-          <p data-post-id='${posts.id}' id='textPost'>${post.text}</p>
+          <p class='textPost' data-post-id='${posts.id}' id='textPost'>${post.text}</p>
+
           <p class='sectionBtn'>
+
             <div class='modal'>
-              <button class="btnDeleteEdit" id='btn-delete' data-post-id='${posts.id}'><img class='btnDelete' src='../../img/delete.png'></button>
-              <button class="btnDeleteEdit" id='btn-editar'data=""><img class='btnEditar' src='../../img/editar.png' alt='Editar'></button>
+              <button class='btnDelete' id='btn-delete' data-post-id='${posts.id}'><img class='imgDelete' src='../../img/delete.png'></button>
             </div>
-            
             <div class='modal-confirm'>
-            <p> Tem certeza que deja excluir este post? </p>
-            <button class='btn-del' data-sim='true'> SIM </button>
-            <button class='btn-del' data-nao='true'> NÃO </button>
+              <p> Tem certeza que deja excluir este post? </p>
+              <button class='btn-del' data-sim='true'> SIM </button>
+              <button class='btn-del' data-nao='true'> NÃO </button>
+            </div>
+
+            <div class='modal'>
+              <button class='btnEditar' id='btn-editar'data='><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
             </div>
             <div class='modal-edit'>
               <p> Confirma edição do post? </p>
               <button class='btn-del' data-salvar='true'> SALVAR </button>
               <button class='btn-del' data-cancelar='true'> CANCELAR </button>
             </div>
-          </p>
+          </div>
+
         </section>
         <section class='sectionBtnLikeDeslike'>
           <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
         </section>
-    `; return postTemplate;
-  }).join('');
+    `;
+      return postTemplate;
+    })
+    .join('');
 }
 
 async function printPost(sectionFeed) {
@@ -89,7 +105,6 @@ async function printPost(sectionFeed) {
   });
 
   //btn editar
-  console.log(editPost);
   editPost.addEventListener('click', (e) => {
     const postId = e.currentTarget.dataset.postId;
     document.querySelector(`#${postId} .modal-edit`).style.display = 'flex';

@@ -5,34 +5,39 @@ import { createRegister, updateDisplayName } from '../../lib/auth.js';
 function templateScreen() {
   return `
   <div class='container-register'>
-  <div class='boxModelFormRegistro'>
-  <form class='form'>
-  <img class='logoRegistro' src='../../img/logoTranp.png' alt='Logo Wanderlust'>
-    <p class='name'>
-      <label for='name-cadastro'>Nome:</label>
-      <input class='inputCadastro' id='name-cadastro' name='name-cadastro' required='required' type='text' placeholder='Nome' />
-    </p>
+    <div class='boxModelFormRegistro'>
+      <form class='form'>
+        <img class='logoRegistro' src='../../img/logoTranp.png' alt='Logo Wanderlust'>
+        <p class='name'>
+          <label for='name-cadastro'>Nome:</label>
+            <input class='inputCadastro' id='name-cadastro' name='name-cadastro' required='required' type='text' placeholder='Nome' />
+        </p>
 
-    <p class='email-cadastro'>
-      <label for='email-cadastro'>Email:</label>
-      <input class='inputCadastro' id='email-cadastro' name='email-cadastro' required='required' type='text' placeholder='Email' />
-    </p>
+        <p class='email-cadastro'>
+          <label for='email-cadastro'>Email:</label>
+          <input class='inputCadastro' id='email-cadastro' name='email-cadastro' required='required' type='text' placeholder='Email' />
+        </p>
 
-    <p class='senha-cadastro'>
-      <label for='senha-cadastro'>Senha:</label>
-      <input class='inputCadastro' id='senha-cadastro' required='required' type='password' placeholder='Senha' />
-    </p>
+        <p class='senha-cadastro'>
+          <label for='senha-cadastro'>Senha:</label>
+          <input class='inputCadastro' id='senha-cadastro' required='required' type='password' placeholder='Senha' />
+        </p>
 
-    <p class='criar-conta'>
-      <input class='btn-cadastre' type='submit' id='btn-cadastro' value='cadastre-se'>
-    </p>
-    <p class='voltar'>
-      <input id="btn-home" class="btnBack" type="button" value="voltar">
-    </p>
+        <p class='criar-conta'>
+          <input class='btn-cadastre' type='submit' id='btn-cadastro' value='Criar Conta'>
+        </p>
+
+        <p class='voltar'>
+          <a class="btnBack" id="btn-home"><img src='../../img/btnSair.png' alt='seta para sair'</a>
+        </p>
+
+        <div class='sectionSobreRegiter'>
+          <a href='#sobre' class='sobrepageRegister'>Sobre</a>
+        </div>
+
+      </form>  
     </div>
-    </div>
-
-</form>`;
+  </div>`;
 }
 
 function configuraSubmitDoFormRegistrar(form, inputName, inputEmail, inputSenha) {

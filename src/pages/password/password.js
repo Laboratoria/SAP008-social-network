@@ -26,8 +26,11 @@ export default () => {
           <input id="btn-reset" class="ResetPassword" type="button" value="Enviar email">
         </p>
         <p class="sectionBackBtn">
-          <input id="btn-home" class="btnBackPass" type="button" value="voltar">
+          <a class="btnBackPass" id="btn-home"><img src='../../img/btnSair.png' alt='seta para sair'</a>
         </p>
+        <div class='sectionSobrePassword'>
+          <a href='#sobre' class='sobrepagePassword'>Sobre</a>
+        </div>
       </form>
     </section>`;
   sectionPassword.innerHTML = content;

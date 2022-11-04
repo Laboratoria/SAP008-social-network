@@ -57,8 +57,7 @@
         margin: 2%;
     }
     .btnEntrar{
-        box-shadow: 0px 1px 8px -1px #E96F2C;
-        border-radius: 18px;
+        border-radius: 13px;
         border: 1px solid #E96F2C;
         color: black;
         font-family:Arial;

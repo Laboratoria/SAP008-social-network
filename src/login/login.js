@@ -5,32 +5,21 @@ export default () => {
   const container = document.createElement('div');
   container.classList.add('container-login');
   const template = `
-  <section class = login>     
-        <div class ='box-login'>
-            <div class='container-logo'>
+        <div class='box-login'>
+            <div class='container-top-logo'>
                 <img src='./images/logo_02_blue_081E26.png' id='logo-login' alt='logo do título'>
             </div>
-            <div class='container-subtitle'
-                <h1 id="sub-title">MOMENTOS MUSICAIS INESQUECÍVEIS</h1>
+            <div class='container-top-subtitle'>
+                <p id="sub-title">MOMENTOS MUSICAIS INESQUECÍVEIS</p>
             </div>
-            <form class='container-form-login'> 
-            
-                <div class='container-email-password>            
-                    <input class='box-email' id='email-user' type='email' placeholder='Digite seu e-mail'/>
-                        <span class='material-icons' id='icon-mail'>mail_outline</span>                         
+            <form class='form-login'>           
+                    <input class='box-email' id='email-user' type='email' placeholder='Digite seu e-mail'/>                      
                     <input class='box-password' id='password-user' type='password' placeholder='Digite sua senha'/>
-                        <span class='material-icons' id='icon-password'>lock_outline</span>
                     <button class='btn-enter' type='submit' id='btn-submit'>Entrar</button>
-                    <button class='new-password' type='button'>Esqueci a senha<a href='#password' id='btn-password'></button>  
-                </ div> 
-                <div class='container-buttons'>
-                    <button class='box-login-google' type='button' id='btn-google'>
-                        <img class='logo-google' src='./images/simbolo-do-google.png'/>
-                        Login com Google</button>
-                    <button class='box-register-login' type='button' id='btn-register'><a href='#register'>Cadastre-se</button> 
-                </div>
+                    <button class='new-password' type='button'><a href='#password' id='btn-password'>Esqueci a senha</button>  
+                    <button class='box-login-google' type='button' id='btn-google'><img class='logo-google' src='./images/simbolo-do-google.png'/>Login com Google</button>
+                    <button class='box-register-login' type='button' id='btn-register'><a href='#register'id='new-user'>Cadastre-se</a></button> 
             </form>
-    
             <footer>
                 <p class='footer-text'>Desenvolvido por
                     <a href='https://github.com/AngelMelo12'>
@@ -44,7 +33,6 @@ export default () => {
                     </a>
                 </p>    
             </footer>
-
         </div> 
    
     `;

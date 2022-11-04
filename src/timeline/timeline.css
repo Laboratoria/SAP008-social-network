@@ -65,6 +65,8 @@
     border-radius: 10px; 
     border: #686e706c 1px solid;
     margin-bottom: 20px;
+    margin-top: 20px;
+
 } 
 
 #user-name {
@@ -81,12 +83,6 @@
 
 .editable {
     border: 1px solid white;
-}
-
-.box-text-post {
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
 }
 
 #text-post {

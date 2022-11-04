@@ -11,12 +11,8 @@
 
 /*@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');*/
 
-body{
-    height: 100vh;
-    width: 100vw; 
-}
     
-.wrapper-register {  
+.container-register {  
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -25,7 +21,7 @@ body{
     background-color: #163440ed;
 }
 
-#register {
+.box-register {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -37,10 +33,11 @@ body{
     transition: width .3s, heigth .3s;
     transition-timing-function: ease;
 }
-.container-register { 
-    display: block;
+
+/* .container-register { 
+    /* display: block; 
     padding: 10px;
-}
+} */
 
 .logo-brown-register { 
     position:relative;

@@ -1,11 +1,23 @@
-// eslint-disable-next-line import/no-unresolved
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, sendPasswordResetEmail, updateProfile} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";//eslint-disable-line
-// eslint-disable-next-line import/no-unresolved
 import {
-  getFirestore, collection, addDoc, getDocs,
-// eslint-disable-next-line import/no-unresolved
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+  initializeApp,
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  updateProfile,
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  updateDoc,
+  deleteDoc,
+  getDoc,
+} from './export.js';
+
 import firebaseConfig from './firebase-config.js';
 
 const app = initializeApp(firebaseConfig);
@@ -15,19 +27,23 @@ const db = getFirestore(app);
 
 export const getUserName = () => auth.currentUser.displayName;
 
+/* function criada para recolher o id do usuário logado,
+com a intenção de validar se o usuário é o dono de um
+post na timeline */
+export const getUserId = () => auth.currentUser.uid;
+
 // eslint-disable-next-line max-len
 export const registerUser = (name, email, password) => createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
     console.log(user);
     updateProfile(auth.currentUser, {
-      displayName: name, /* photoURL: "https://example.com/jane-q-user/profile.jpg" */
+      displayName: name,
     });
   });
 
 export const loginGoogle = () => {
   signInWithRedirect(auth, provider);
-  // window.location.hash = "#timeline";
 };
 
 export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
@@ -42,37 +58,17 @@ export const signOut = () => {
   auth.signOut();
 };
 
-export const createPost = async (artist, location, date, text) => {
-  try {
-    const docRef = await addDoc(collection(db, 'posts'), {
-      name: auth.currentUser.displayName,
-      author: auth.currentUser.uid,
-      artist,
-      location,
-      date,
-      text,
-      likes: 0,
-    });
-
-    console.log('Document written with ID: ', docRef.id);
-  } catch (e) {
-    console.error('Error adding document: ', e);
-  }
+export const createPost = (artist, location, date, text) => { //eslint-disable-line
+  return addDoc(collection(db, 'posts'), {
+    name: auth.currentUser.displayName,
+    author: auth.currentUser.uid,
+    artist,
+    location,
+    date,
+    text,
+    likes: [],
+  });
 };
-
-/* const user = auth.currentUser;
-if (user !== null) {
-  // The user object has basic properties such as display name, email, etc.
-  const displayName = user.displayName;
-  const email = user.email;
-  const photoURL = user.photoURL;
-  const emailVerified = user.emailVerified;
-
-  // The user's ID, unique to the Firebase project. Do NOT use
-  // this value to authenticate with your backend server, if
-  // you have one. Use User.getToken() instead.
-  const uid = user.uid;
-} */
 
 export const getAllPosts = async () => {
   try {
@@ -86,3 +82,39 @@ export const getAllPosts = async () => {
     return error;
   }
 };
+
+export const editPost = async (postId, artist, location, date, text) => {
+  const post = doc(db, 'posts', postId);
+
+  await updateDoc(post, {
+    artist,
+    location,
+    date,
+    text,
+  });
+};
+
+export const deletePost = async (postId) => {
+  await deleteDoc(doc(db, 'posts', postId));
+};
+
+export const getPostById = async (postId) => {
+  const docRef = doc(db, 'posts', postId);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+};
+
+export async function likePost(post, postId, userId) {
+  let likes = post.likes;
+  const liking = !post.likes.includes(userId);
+  if (liking) {
+    likes.push(userId);
+  } else {
+    likes = likes.filter((id) => id !== userId);
+  }
+  await updateDoc(doc(db, 'posts', postId), {
+    likes,
+  });
+
+  return { liked: liking, count: likes.length };
+}

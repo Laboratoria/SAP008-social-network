@@ -5,13 +5,13 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 } 
 
-.box-timeline{
+.box-timeline {
     height: 100%;
     width: 100%;
     overflow-y: auto; 
 }
 
-.container-timeline{
+.container-timeline {
     display: flex; 
     width: 100%;
     height: 100%;
@@ -20,7 +20,7 @@
     flex-direction: column;
 }
 
-.box-post-timeline{
+.box-post-timeline {
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -31,14 +31,14 @@
  }
 
 
-.logo-img-timeline{
+.logo-img-timeline {
     height: 8vh;
     width: 25vh;
     margin-left: 15px;
     margin-top: 20px;
 }
 
-.box-complete-post{
+.box-complete-post {
     display:flex;
     border: #081e26ab 1px solid;
     box-shadow: 2px 2px 2px rgba(8, 8, 8, 0.5);
@@ -50,9 +50,10 @@
     text-align: center;
     background-color: #081E26;
     color:white;
+    margin-bottom: -15px;
 }
 
-.box-text-post{
+.box-text-post {
     display:flex;
     background-color: #F5F5F5;
     height: auto;
@@ -66,14 +67,15 @@
     margin-bottom: 20px;
 } 
 
-#user-name{
+#user-name {
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #A6634B;
 }
 
-#artist-name, #show-location, #show-date{
+#artist-name, #show-location, #show-date {
     font-size: 0.95rem;
 }
 
@@ -81,19 +83,19 @@
     border: 1px solid white;
 }
 
-.box-text-post{
+.box-text-post {
     margin-top: 20px;
     align-items: center;
     justify-content: center;
 }
 
-#text-post{
+#text-post {
     width: 70%;
     word-wrap: break-word;
     color:#081E26;
 }
 
-.btn-options{
+.btn-options {
     display:flex;
     flex-direction: row;
     width: 80%;
@@ -108,17 +110,81 @@
     margin-left: 20px;
 }
 
-.heart-like-sub{
+.heart-like-sub {
     width: 32px;
     height: 32px;
     background:#081E26;
     margin-left: 110px;
 }
 
-.text-likes-sub{
+.text-likes-sub {
     margin-right: 110px;
 }
 
-#btn-like{
+#btn-like {
     background: none;
+}
+
+.btn-edit {
+    border: 5px;
+    background: #A6634B;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .box-timeline {
+        width: 50%;
+        height: 70%;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #cecaca;
+    }
+
+    .container-timeline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .box-text-post {
+        width: 80%;
+        height: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #user-name {
+        font-size: 1.4rem;
+    }
+    
+    #artist-name, #show-location, #show-date{
+        font-size: 1.1rem;
+    }
+
+    .btn-edit {
+        padding: 8px;
+    }
+
+    .heart-like-sub {
+        margin-left: 170px;
+    }
+    
+    .text-likes {
+        margin-top: 8px;
+        margin-left: -10px;
+    }
+    
+    .text-likes-sub {
+        margin-left: -15px;
+    }
+
+    .logo-img-timeline {
+        height: auto;
+        width: 35vh;
+    }
 }

@@ -19,7 +19,7 @@ export default () => {
           <p class='text-email-password'>E-mail:</p>
           <input class='input-email-password' type='email' placeholder='Digite seu e-mail'>
           <button id='btn-enter' class='btn-enter-password' type='button'>Enviar</button>
-          <button id='btn-back' class='btn-back-password' type="button">Voltar</button>
+          <button id='btn-back' class='btn-back-password' type='button'>Voltar</button>
       </form>
     </div>`;
 

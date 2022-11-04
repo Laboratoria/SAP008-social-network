@@ -27,6 +27,11 @@
     background-color:#fffcfc;
 }
 
+.box {
+    height: 100%;
+    background-image: url('../images/pexels-erik-mclean-4065806.jpg');
+}
+
 .container-title {
     display: flex;
     text-align: center;

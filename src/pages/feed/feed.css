@@ -52,13 +52,14 @@
   display: flex;
   justify-content: start;
   color: black;
-  padding: 1% 0% 1% 1%;
+  padding: 1% 0% 3% 1%;
+  margin: 0% 0% 0% 3%;
   font-weight: bold;
   height: 80%;
   align-items: center;
 }
 .fotoUser{
-  width: 2%;
+  width: 4%;
   border-radius: 50%;
   object-fit: scale-down;
 }
@@ -72,7 +73,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  padding: 0% 30% 1% 30%;
+  padding: 0% 30% 1% 20%;
 }
 .boxModelPost{
   display: flex;
@@ -121,12 +122,17 @@
   border: 1px solid;
   padding: 1%;
 }
+.corpoFeed{
+  display: inline-block;
+  align-items: center;
+  margin: 2% 0% 1% 20%;
+  width: 100%;
+  height: 100%;
+}
 .principalTimeline{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
 }
 .boxModelPost{
   display: flex;
@@ -166,33 +172,30 @@
 .sectionBtn {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
 }
 .btnDelete{
-  height: 15%;
   width: 20%;
   padding: 0;
   border: none;
 }
 .imgDelete{
-  width: 10%;
+  width: 15%;
   padding: 0;
   border: none;
 }
 .btnEditar{
-  height: 15%;
   width: 20%;
   padding: 0;
   border: none;
 }
 .imgEditar{
-  width: 10%;
+  width: 15%;
   padding: 0;
   border: none;
 }
 .modal {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .modal-confirm{
   display: none;

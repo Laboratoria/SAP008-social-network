@@ -6,7 +6,7 @@ import {
   createPost,
   postScreen,
   auth,
-  //removePost,
+  removePost,
 } from '../../lib/firestore.js';
 import { errorFire } from '../../lib/errorFirebase.js';
 
@@ -53,43 +53,39 @@ function getPostsTemplate(posts) {
   return posts
     .map((post) => {
       const postTemplate = `
-      <section class='principalTimeline'>
-        <section class='boxModelPost' id='${posts.id}'>
-          <div class='headerPost'>
-            <p class='userName'>${post.name}</p>
-            <p class='date'>${post.date}</p>
-          </div>
-          <p class='textPost' data-post-id='${posts.id}' id='textPost'>${post.text}</p>
-
-          <p class='sectionBtn'>
-
-            <div class='modal'>
-              <button class='btnDelete' id='btn-delete' data-post-id='${posts.id}'><img class='imgDelete' src='../../img/delete.png'></button>
+      <div class='corpoFeed'>
+        <section class='principalTimeline'>
+          <section class='boxModelPost' id='${posts.id}'>
+            <div class='headerPost'>
+              <p class='userName'>${post.name}</p>
+              <p class='date'>${post.date}</p>
             </div>
-            <div class='modal-confirm'>
+            <p class='textPost' data-post-id='${posts.id}' id='textPost'>${post.text}</p>
+
+            <p class='sectionBtn'>
+              <div class='modal'>
+                <button class="btnDelete" id='btn-delete' data-post-id='${posts.id}'><img class='imgDelete' src='../../img/delete.png'></button>
+                <button class="btnEditar" id='btn-editar'data=""><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
+              </div>
+              
+              <div class='modal-confirm'>
               <p> Tem certeza que deja excluir este post? </p>
               <button class='btn-del' data-sim='true'> SIM </button>
               <button class='btn-del' data-nao='true'> NÃO </button>
-            </div>
-
-            <div class='modal'>
-              <button class='btnEditar' id='btn-editar'data='><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
-            </div>
-            <div class='modal-edit'>
-              <p> Confirma edição do post? </p>
-              <button class='btn-del' data-salvar='true'> SALVAR </button>
-              <button class='btn-del' data-cancelar='true'> CANCELAR </button>
-            </div>
-          </div>
-
+              </div>
+              <div class='modal-edit'>
+                <p> Confirma edição do post? </p>
+                <button class='btn-del' data-salvar='true'> SALVAR </button>
+                <button class='btn-del' data-cancelar='true'> CANCELAR </button>
+              </div>
+            </p>
+          </section>
+          <section class='sectionBtnLikeDeslike'>
+            <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
         </section>
-        <section class='sectionBtnLikeDeslike'>
-          <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
-        </section>
-    `;
-      return postTemplate;
-    })
-    .join('');
+      </div>
+    `; return postTemplate;
+    }).join('');
 }
 
 async function printPost(sectionFeed) {
@@ -102,6 +98,20 @@ async function printPost(sectionFeed) {
   deletePost.addEventListener('click', (e) => {
     const postId = e.currentTarget.dataset.postId;
     document.querySelector(`#${postId} .modal-confirm`).style.display = 'flex';
+    if (e.target.dataset.sim) {
+      const modalDelete = e.currentTarget.querySelector('modal-confirm');
+      modalDelete.style.display = 'none';
+      removePost(sectionFeed)
+        .then(() => {
+          window.location.reload();
+        })
+        .catch(() => {
+          console.log('caiu no erro do delete', errorFire());
+        });
+    } else if (e.target.datset.nao) {
+      const modalDelete = e.currentTarget.querySelector('.modal-confirm');
+      modalDelete.style.display = 'none';
+    }
   });
 
   //btn editar

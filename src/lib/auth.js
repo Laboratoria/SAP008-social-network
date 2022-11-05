@@ -6,7 +6,7 @@ import { app } from './configuration.js';
 import {
   getAuth, createUserWithEmailAndPassword, signInWithPopup,
   GoogleAuthProvider, collection, addDoc, getFirestore, signInWithEmailAndPassword,
-  signOut, updateProfile, getDocs, doc, deleteDoc, updateDoc,
+  signOut, updateProfile, getDocs, doc, deleteDoc, updateDoc, getDoc,
 } from './firebase.js';
 
 export const auth = getAuth(app);
@@ -57,7 +57,7 @@ export const getPosts = async () => { // função printar posts na tela
   return allPosts;
 };
 
-// eslint-disable-next-line max-len
+// // eslint-disable-next-line max-len
 // export const getDocsElements = async (restaurant) => { // tentativa função buscar restaurant na db
 //   const querySnapshot = await getDocs(collection(dataBase, 'Posts', restaurant));
 //   return querySnapshot;
@@ -76,22 +76,26 @@ export const forEditPost = (postID, restaurant, address, review) => {
   });
 };
 
-export const likePost = (postID, userID) => {
-  const arrLikes = [];
-  arrLikes.push(userID);
-  updateDoc(doc(dataBase, 'Posts', postID), {
-    like: arrLikes,
-  });
-  return arrLikes.length;
+const getPostById = async (postID) => {
+  const docRef = doc(dataBase, 'Posts', postID);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
 };
 
-export const deslikePost = (postID, userID) => {
-  const arrLikes = [];
-  arrLikes.slice(userID);
-  updateDoc(doc(dataBase, 'Posts', postID), {
+export const likePost = async (postID, userID) => {
+  const post = await getPostById(postID);
+  let arrLikes = post.like;
+  const action = !arrLikes.includes(userID);
+
+  if (action) {
+    arrLikes.push(userID);
+  } else {
+    arrLikes = arrLikes.filter((id) => id !== userID);
+  }
+
+  return updateDoc(doc(dataBase, 'Posts', postID), {
     like: arrLikes,
   });
-  return arrLikes.length;
 };
 
 // por que a variável não funciona (const userAuth = auth.currentUser) se é global?;

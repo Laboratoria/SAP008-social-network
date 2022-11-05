@@ -14,6 +14,8 @@ import {
 
 export const auth = getAuth(app);
 
+export const current = () => auth.currentUser;
+
 export const nameUser = () => auth.currentUser.displayName;
 
 export const photoUser = () => auth.currentUser.photoURL;
@@ -43,8 +45,8 @@ export const postScreen = async () => {
   }
 };
 
-export const removePost = async (idPost) => {
-  const del = await deleteDoc(doc(db, 'posts', idPost));
+export const removePost = async (postId) => {
+  const del = await deleteDoc(doc(db, 'posts', postId));
   return del;
 };
 

@@ -5,18 +5,19 @@ import { logOutUser } from '../../lib/auth.js';
 import {
   createPost,
   postScreen,
-  auth,
   current,
   removePost,
   editPost,
+  photoUser,
+  nameUser,
 } from '../../lib/firestore.js';
 import { errorFire } from '../../lib/errorFirebase.js';
 
 //template do post
 const getPostsTemplate = (posts) => {
   const postTemplate = posts.map((post) => {
-    const user = current().author;
-    const crud = post.user === user ? `
+    const user = current().uid;
+    const crud = post.author === user ? `
     <p class='sectionBtn' id='${posts.id}'>
 
       <div class='modal'>
@@ -35,7 +36,8 @@ const getPostsTemplate = (posts) => {
           <button class='btn-del' data-cancelar='true'>CANCELAR</button>
         </div>
       </section>
-    </p>` : '';
+    </p>
+    ` : '';
     return `
       <section class='sectionPost'>
         <section class='boxModelPost' id='${posts.id}'>
@@ -69,8 +71,8 @@ export default () => {
     </ul>
   </nav>
   <section class='msgBoasvindas'>
-    <img src='../../img/fotoPerfil.png' alt='User' class='fotoUser'>
-    <p class='nomeUser'> Olá, ${auth.currentUser.displayName}!</p>
+    <img src=${photoUser()} alt='User' class='fotoUser'>
+    <p class='nomeUser'> Olá, ${nameUser()}!</p>
   </section>
   <div class='bodyFeed'>
     <div clas='corpotimeline'>
@@ -107,7 +109,7 @@ export default () => {
   const deletePost = (id) => {
     removePost(id)
       .then(() => {
-        id.remove();
+        document.querySelectorAll('.modal-confirm').display = 'none';
       })
       .catch((error) => {
         console.log('caiu no erro do delete', error);

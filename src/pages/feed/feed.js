@@ -7,20 +7,21 @@ import {
   postScreen,
   auth,
   current,
-  //editPost,
   removePost,
+  editPost,
 } from '../../lib/firestore.js';
 import { errorFire } from '../../lib/errorFirebase.js';
 
 //template do post
-function getPostsTemplate(posts) {
+const getPostsTemplate = (posts) => {
   const postTemplate = posts.map((post) => {
     const user = current().author;
     const crud = post.user === user ? `
     <p class='sectionBtn' id='${posts.id}'>
+
       <div class='modal'>
-        <button class='btnDelete' id='btn-delete' data-post-Id='${posts.id}'><img class='imgDelete' src='../../img/delete.png'></button>
-        <button class='btnEditar' id='btn-editar' data-post-Id='${posts.id}'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
+        <button class='btnDelete' id='btn-delete' id='${posts.id}' data-action='delete'><img class='imgDelete' src='../../img/delete.png'></button>
+        <button class='btnEditar' id='btn-editar' id='${posts.id}' data-action='editar'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
       </div>
       <section>
         <div class='modal-confirm'>
@@ -51,7 +52,7 @@ function getPostsTemplate(posts) {
   })
     .join('');
   return postTemplate;
-}
+};
 
 export default () => {
   const sectionFeed = document.createElement('div');
@@ -95,9 +96,6 @@ export default () => {
   const createform = sectionFeed.querySelector('#create-Post');
   const textAreaPost = sectionFeed.querySelector('#text-publish');
   const btnLogOut = sectionFeed.querySelector('#logOut');
-  const deletePost = sectionFeed.querySelector('#btn-delete');
-  //const btnEditPost = sectionFeed.querySelector('#btn-editar');
-  const elementPost = sectionFeed.querySelectorAll('#sectionPost');
 
   //btn deslogar
   btnLogOut.addEventListener('click', () => {
@@ -106,33 +104,43 @@ export default () => {
     });
   });
 
-  elementPost.forEach((post) => {
-    //btn deletar
-    deletePost.addEventListener('click', (e) => {
-      const postId = e.currentTarget.dataset.postId;
-      document.querySelector(`#${postId}`, '.modal-confirm').style.display = 'flex';
-      if (e.target.dataset.sim) {
-        const modalDelete = e.currentTarget.querySelector('.modal-confirm');
-        modalDelete.style.display = 'none';
-        removePost(postId)
-          .then(() => {
-            post.remove();
-          });
-      } else if (e.target.dataset.nao) {
-        const modalDelete = e.currentTarget.querySelector('.modal-confirm');
-        modalDelete.style.display = 'none';
-      }
-    });
-  });
+  const deletePost = (id) => {
+    removePost(id)
+      .then(() => {
+        id.remove();
+      })
+      .catch((error) => {
+        console.log('caiu no erro do delete', error);
+      });
+  };
 
-  //btn editar
-  /*
-  btnEditPost.addEventListener('click', (e) => {
-    const postId = e.currentTarget.dataset.postId;
-    document.querySelector(`#${postId} .modal-edit`).style.display = 'flex';
+  const edit = (id) => {
+    editPost(id)
+      .then(() => {
+        console.log('abriu a textarea para editar', id);
+      })
+      .catch((error) => {
+        console.log('caiu no erro do editar', error);
+      });
+  };
+
+  const elementPost = sectionFeed.querySelector('#post-feed');
+  elementPost.addEventListener('click', (e) => {
+    const element = e.target;
+    const actionElement = element.dataset.action;
+    const id = element.dataset.id;
+    switch (actionElement) {
+      case 'delete':
+        deletePost(id);
+        break;
+      case 'editar':
+        edit(id);
+        break;
+      default:
+        console.log('clicou em qualquer outra coisa');
+        break;
+    }
   });
-  //const postId = e.currentTarget.dataset.postId;
-  */
 
   //printando post na tela
   async function printPost() {

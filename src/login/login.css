@@ -121,8 +121,8 @@ input::placeholder {
 }
 
 .logo-google{
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     margin-right: 20px;
 }
 
@@ -177,6 +177,8 @@ footer {
     }
 
     .box-login {  
+        display: flex;
+        flex-direction: row-reverse;
         width: 50%;
         height: 70%;
         text-align: center;
@@ -187,22 +189,14 @@ footer {
         background-size: 50% 100%;
     }
 
-    #logo-login{
-        width: 55%;
-    }
-
-    .container-top-logo{
-        margin-left: 600px;
-    }
-
-    .container-top-subtitle{
-        margin-left: 600px;
-    }
-
-    .form-login {
+    .box-content {
         display: flex;
-        margin-left: 600px;
-        margin-top: 30px;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    #logo-login{
+        width: 50%;
     }
 
     #email-user{
@@ -222,21 +216,22 @@ footer {
         color: white;
         font-size: 1.5rem;
     }
-    
-    #btn-password{
-        font-size: 1.2rem;
-        padding: 15px;
-        margin: 25px; 
-    }
 
     #btn-google{
-        height: 5vh;
-        width: 10vw;
-        font-size: 1.3rem;
+        padding: 10px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 
     .new-password{
-        margin:15px;
+        width: 70%;
+        padding: 5px;
+        margin: 5%;
+        font-size: 1.1rem;
+    }
+
+    #btn-password {
+        width: 100%;
     }
 
     .box-login-google{
@@ -244,7 +239,9 @@ footer {
         border: none;
         border-radius: 5px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-        margin-top: 20px;
+        margin-top: 15px;
+        height: 10%;
+        width: 50%;
     }
     
     #new-user{
@@ -255,11 +252,9 @@ footer {
     }
 
     #btn-register{
-        height: 5vh;
         width: 40%;
-        display: flex;
-        align-items: center;
-        margin-top: 2px;
+        height: 5vh;
+        margin-top: 20px;
         border-radius: 5px;
         border: none;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
@@ -267,14 +262,8 @@ footer {
 
     .footer-text{
         color: #081E26;
-        font-size: 1.1rem; 
-    }
-
-    footer {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 650px;    
-        margin-top: -70px; 
+        font-size: 1.1rem;
+        margin-top: 0;
     }
 
     .name {

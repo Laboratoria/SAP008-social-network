@@ -13,7 +13,7 @@ export default () => {
                 <input type="text" id="caixa-pesquisar" placeholder="Pesquisar">
                 <button type="submit" id="submit-pesquisar"><img src="/img/pesquisar.png" alt="botão de pesquisa"></button>
             </form>
-            <button type="button" id="logout">sair</button>
+            <button type="button" id="logout" class="botaoLogout">sair</button>
     </header>
     <main class="feed-desktop" id="feed">
         <section  id="section-pages">

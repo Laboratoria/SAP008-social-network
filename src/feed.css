@@ -44,6 +44,24 @@ body {
     transition: 0.2s;
     cursor: pointer;
   }
+  .botaoLogout{
+    cursor: pointer;
+    height: 2rem;
+    width: 8%;
+    border-color:#ffffff;
+    border-radius: 5px;
+    background:linear-gradient(to bottom, #ffffff 5%, #20a2b8  100%);
+    box-shadow:inset 0px 2px 0px 0px #deecde;
+    color:rgb(0, 0, 0);
+  }
+  .botaoLogout:hover {
+    background:linear-gradient(to bottom, #065866 5%, #ffffff 100%);
+    }
+  .botaoLogout:active {
+    position:relative;
+    top:2px;
+  }
+
   .posts{
     width: 100%;
   }

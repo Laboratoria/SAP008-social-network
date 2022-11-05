@@ -9,6 +9,7 @@ import {
   addDoc,
   getDocs,
   getAuth,
+  updateDoc,
 } from './firebase.js';
 
 export const auth = getAuth(app);
@@ -45,4 +46,8 @@ export const postScreen = async () => {
 export const removePost = async (idPost) => {
   const del = await deleteDoc(doc(db, 'posts', idPost));
   return del;
+};
+
+export const editPost = async (postId, newText) => {
+  updateDoc(doc(db, 'posts', postId), { text: newText });
 };

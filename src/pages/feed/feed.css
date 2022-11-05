@@ -151,7 +151,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.userName {
+.userName{
   font-weight: bold;
   border-color: black;
   border-radius: 5px;
@@ -219,8 +219,9 @@
   width: 100%;
   bottom: 0;
   position: fixed;
-  width: 90%;
   text-align: center;
+  font-size: 20px;
+  color: black;
 }
 
 @media only screen and (max-width: 400px) and (min-width: 701px) {

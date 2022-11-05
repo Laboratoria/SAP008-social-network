@@ -61,7 +61,6 @@ body {
     position:relative;
     top:2px;
   }
-
   .posts{
     width: 100%;
   }
@@ -189,4 +188,9 @@ body {
   #feed.active .btn-pages:hover{
     background-color: #76d0d4;
   }
+  .botaoLogout{
+    width: 17%;
+    margin: 15px;
   }
+  }
+

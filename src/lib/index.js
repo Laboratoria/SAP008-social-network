@@ -1,6 +1,6 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,
-  GoogleAuthProvider, updateProfile,
+  GoogleAuthProvider, updateProfile, signOut,
 } from './exports.js';
 
 import app from './config-firebase.js';
@@ -19,4 +19,7 @@ export function loginEmailPassword(email, password) {
 }
 export function signInGoogle() {
   return signInWithPopup(auth, provider);
+}
+export function signOutUser(){
+  return signOut(auth);
 }

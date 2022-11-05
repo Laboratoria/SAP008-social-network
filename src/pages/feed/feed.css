@@ -19,19 +19,23 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  align-items: center;
-  background-color: rgba(128, 128, 128, 0.124);
+  background-color: #e96f2c;
   border-style: solid;
   border-color: black;
   border-width: 1px;
   border-left: none;
   border-right: none;
   width: 100%;
-  padding: 0% 0% 0% 3%;
+  padding: 0% 5% 0% 3%;
+}
+.sectionSobreEperfil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btnSIgnInOut img{
   width: 5%;
-  padding: 0% 70% 0% 0%;
+  padding: 0% 40% 0% 0%;
 }
 .sobrepageFeed{
   color: black;
@@ -45,8 +49,8 @@
   color: black;
   text-decoration: none;
   font-weight: bold;
-  padding: 0% 3% 0% 0%;
-  font-size: 15px;
+  padding: 0% 8% 0% 0%;
+  font-size: 15px
 }
 .msgBoasvindas{
   display: flex;

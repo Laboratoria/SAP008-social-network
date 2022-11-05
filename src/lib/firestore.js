@@ -22,11 +22,13 @@ export const photoUser = () => auth.currentUser.photoURL;
 
 export const createPost = async (textPost) => {
   addDoc(collection(db, 'posts'), {
+    photoURL: auth.currentUser.photoURL,
     name: auth.currentUser.displayName,
     date: new Date().toLocaleDateString('pt-BR'),
     author: auth.currentUser.uid,
     text: textPost,
     like: [],
+    id: auth.currentUser.uid,
   })
     .then(() => true)
     .catch((e) => { throw e; });

@@ -1,0 +1,215 @@
+*{                 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+
+body, main {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.box-aboutus {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto; 
+}
+
+.container-aboutus {
+    display: flex; 
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    background-color: #081E26;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-brown-about {
+    height: 8vh;
+    width: 25vh;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.material-symbols-outlined {
+    color: white;
+    background-color: #081E26;
+}
+
+.info-aboutus {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aboutdevs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #A6634B;
+    font-size: 1rem;
+    font-weight: 450;
+    margin-bottom: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+} 
+
+ .img-angelica, .img-cla, .img-andrea {
+    border-radius: 50%;
+    width: 25%;
+    height: auto;
+    margin-left: 10px;
+}
+
+
+.clareana, .angelica, .andrea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+aside {
+    width: 70%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.info-cla, .info-angelica, .info-andrea {
+    text-decoration: none;
+    text-align: justify;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    font-weight: normal;
+    color: white;
+}
+
+.github {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: normal;
+    color: white;
+}
+
+
+/*MENU HAMBURGUER*/
+
+.menu-hamburguer {
+    background-color: #081E26;
+    color:#FFFFFF;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+    font-size: 0.85rem;
+}
+
+.navbar-list {  
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.navbar-item {
+    padding: 10px 15px;
+    list-style: none;
+}
+
+.navbar-item.hide {
+    display: none;
+}
+
+.navbar-item:hover {
+    cursor:pointer;
+    background-color: #cecaca;
+    color: #081E26;
+}
+
+.navbar-item-button {
+    align-self: flex-end;
+    padding: 10px 15px;
+    list-style: none;
+}
+
+#navbar-button {
+    cursor:pointer;
+    background: none;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .box-aboutus {
+        width: 50%;
+        height: 70%;
+        background-color: #081E26;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .container-aboutus {
+        background-color: white;
+    }
+
+    .logo-brown-about {
+        height: auto;
+        width: 35vh;
+    }
+
+    .info-aboutus {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+
+    .aboutdevs {
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding-top: 2px;
+    } 
+
+    .img-angelica, .img-cla, .img-andrea{
+        width: auto;
+        height: 150px;
+        padding-top: 0;
+    }
+
+    .clareana, .angelica, .andrea {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .info-cla, .info-angelica, .info-andrea {
+        padding: 15px 0 0 0;
+        margin: 0;
+        margin-top: 15px;
+        text-align: center;
+        font-size: 0.90rem;
+        font-weight: 300;
+    }
+
+    .github {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+}
+

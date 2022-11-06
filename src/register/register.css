@@ -56,7 +56,6 @@ input::placeholder {
 }
 
 .box-name-register {
-    color: #ffff;
     height: 100%;
     width: 80%;
     padding: 10px;
@@ -137,7 +136,7 @@ input::placeholder {
     color:#ffff; 
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 960px){
 
     .container-register {
         background-color: white;
@@ -205,6 +204,7 @@ input::placeholder {
         height: 3vh;
         width: 20%;
         font-size: 1.4rem;
+        margin-top: 90px;
     }
 
 }

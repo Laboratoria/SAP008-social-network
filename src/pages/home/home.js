@@ -1,5 +1,6 @@
+/* eslint-disable max-len */
 import {
-  logoutUser, auth, getPosts, deletePost, forEditPost, likePost, deslikePost,
+  logoutUser, auth, getPosts, deletePost, forEditPost, likePost,
 
 } from '../../lib/auth.js';
 // eslint-disable-next-line consistent-return
@@ -48,6 +49,7 @@ export default () => {
       const mapPosts = generatePostsTemplate(all);//eslint-disable-line
       container.querySelector('.post-container').innerHTML += mapPosts;
     };
+
     printPosts();
 
     const thePosts = container.querySelector('.post-container');
@@ -64,7 +66,7 @@ export default () => {
       const review = postElement.querySelector('.edit-review');
       const modalDelete = postElement.querySelector('#modal-delete');
       const like = postElement.querySelector('.heart');
-      const deslike = postElement.querySelector('.filled-heart');
+      const unlike = postElement.querySelector('.filled-heart');
       const localContent = local.textContent;
       const addressContent = address.textContent;
       const reviewContent = review.textContent;
@@ -75,12 +77,7 @@ export default () => {
         case 'like':
           likePost(id, auth.currentUser.uid);
           like.style.display = 'none';
-          deslike.style.display = 'flex';
-          break;
-        case 'deslike':
-          deslikePost(id, auth.currentUser.uid);
-          deslike.style.display = 'none';
-          like.style.display = 'flex';
+          unlike.style.display = 'flex';
           break;
         case 'edit':
           cancelEdit.style.display = 'flex';
@@ -159,9 +156,9 @@ function generatePostsTemplate(allPosts) {
         <div>
           <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
           <div class="icons-post">
-            <img data-id="${posts.id}" class="icons-post-size heart" data-action="like" src="./external/svg/heart-icon.svg"/>
-            <img data-id="${posts.id}" class="icons-post-size filled-heart" data-action="deslike" src="./external/svg/filled-heart-icon.svg"/>
-            ${editButtons}
+          <img data-id="${posts.id}" class="icons-post-size heart" data-action="like" src="./external/svg/heart-icon.svg"/>
+          <img data-id="${posts.id}" class="icons-post-size filled-heart" data-action="like" src="./external/svg/filled-heart-icon.svg"/>
+          ${editButtons}
           </div>
         </div>
       </aside>

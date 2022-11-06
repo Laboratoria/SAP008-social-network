@@ -1,5 +1,6 @@
 import post from '../components/post.js';
 import { createPostMc, getPostsMc} from '../lib/firestore.js';
+import { signOutUser } from '../lib/index.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -13,7 +14,7 @@ export default () => {
           <input type="text" id="caixa-pesquisar" placeholder="Pesquisar">
           <button type="submit" id="submit-pesquisar"><img src="/img/pesquisar.png" alt="botão de pesquisa"></button>
       </form>
-      <p>sair</p>
+      <button type="button" id="logout" class="botaoLogout">sair</button>
 </header>
 <main class="feed-desktop" id="feed">
   <section  id="section-pages">
@@ -61,7 +62,16 @@ export default () => {
     const feed = container.querySelector('#feed');
     feed.classList.toggle('active');
   });
+  const botaoLogout = container.querySelector('#logout');
 
+  botaoLogout.addEventListener('click', async() =>{
+    await signOutUser()
+    .then(() => {
+      window.location.hash = '#login';
+    })
+    .catch((error) => {
+      msgErro.innerHTML= 'erro ao sair';
+    });
+});
   return container;
 };
-

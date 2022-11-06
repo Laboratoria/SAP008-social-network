@@ -3,6 +3,7 @@ import feed from './Templates/feed.js';
 import login from './Templates/login.js';
 import momentoCookie from './Templates/momentoCookie.js';
 import bemEstar from './Templates/bemEstar.js';
+import perfil from './Templates/perfil.js';
 
 
 const main = document.querySelector('#root');
@@ -15,6 +16,9 @@ const init = () => {
     case '#feed':
       main.appendChild(feed());
       break;
+      case '#perfil':
+        main.appendChild(perfil());
+        break;
     case '#momentoCookie':
       main.appendChild(momentoCookie());
       break;

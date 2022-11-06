@@ -1,16 +1,19 @@
-
 export default (post) => {
   console.log(post);
   const container = document.createElement('div');
-  const template = post.map(pt =>{
+  const template = post.map(pt => {
     return `
-    <div class="post">
-        <h4>Enviado por: ${pt.name}</h4>
-        <p>${pt.text}</p><br>
-    </div>
+    <section id="section-postado" class="section-postado">
+      <div class="postado">
+        <form class="form-postado">
+          <h4>Enviado por: ${pt.name}</h4>
+          <p>${pt.text}</p><br>
+          </form>
+      </div>
+     </section>
 `;
- }).join("");
- 
+  }).join("");
+
   container.innerHTML = template;
   const postArea = document.getElementById('posts');
 

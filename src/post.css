@@ -1,0 +1,15 @@
+.section-postado{
+    width: 100%;
+}
+.postado{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    background-color: #eeeeee;
+    align-items:flex-start;
+ }
+.form-postado{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 50%;
+ }

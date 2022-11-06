@@ -1,0 +1,1072 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F8F8F8;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+}
+
+#idUser {
+    margin-top: 3.3%;
+    margin-left: 40%;
+}
+
+.VanellenMore {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: rgb(183, 12, 12);
+    margin-right: 4%;
+    margin-top: 3%;
+}
+
+#logo {
+    width: 6.5vw;
+}
+
+#logoutMobile{
+    display: none;
+}
+
+.navbar {
+    background-color: #262424;
+    margin-top: 8.2%;
+    padding: 1rem;
+    height: 30%;
+    width: 100%;
+    z-index: 0;
+}
+
+
+.navbar li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 3%;
+    z-index: 1;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1px);
+    gap: 5rem;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.content a {
+    text-decoration: none;
+    color: #101010;
+    font-weight: 600;
+}
+
+.content a:hover{
+    text-shadow: rgb(102, 100, 100) 0.1em 0.1em 0.2em;
+}
+
+.navbar a:hover{
+    color: #e88b33;
+}
+.active {
+    color: #e88b33;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.active:hover{
+    color: #fe912a;
+}
+
+#logout {
+    width: 25px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    margin-left: 1%;
+    margin-bottom: 5%;
+}
+
+.picture-image {
+    margin-left: 7%;
+}
+
+#testImg {
+    width: 9vw;
+    border-radius: 10px;
+}
+
+.text_share,
+#fill-form {
+    text-align: center;
+}
+
+.name-movies textarea {
+    width: 18vw;
+    height: 3.2vh;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    margin-left: 1.5%;
+    font-weight: 600;
+    color: rgb(23, 21, 21);
+    background-color: #F8F8F8;
+    border: none;
+}
+
+.about-movies textarea {
+    width: 16vw;
+    min-height: 5.8rem;
+    margin-left: 1.5%;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(23, 21, 21);
+    font-weight: 400;
+    background-color: #F8F8F8;
+    border: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 3px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: rgb(245, 245, 245);
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: rgb(138, 21, 21);
+    border-radius: 10px;
+    border: 1px solid rgb(135, 26, 14);
+}
+
+.stars {
+    display: block;
+    margin-bottom: 3.5%;
+    margin-top: 3.5%;
+}
+
+.getLike,
+.getDeslike {
+    font-size: 0.7rem;
+    color: #ea5404;
+}
+
+#heart,
+#breakHeart {
+    cursor: pointer;
+}
+
+.username {
+    font-size: .5rem;
+}
+
+#btn-delete {
+    width: 5vw;
+}
+
+.picture_input {
+    display: none;
+}
+
+.wrapper {
+    height: 7vh;
+    background-color: #F8F8F8;
+}
+
+.text_share {
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+
+#postx {
+    margin-left: 30%;
+}
+
+.picture {
+    font-size: 1rem;
+    color: #0a3f85;
+    cursor: pointer;
+    margin-bottom: 2%;
+    margin-left: 35px;
+}
+
+.picture:hover {
+    color: #2e00d6;
+}
+
+.formInput {
+    width: 40vw;
+    height: 50px;
+    display: block;
+    margin-top: 1%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 1%;
+}
+
+#buttonSend {
+    width: 30vw;
+    height: 50px;
+    margin-left: 70px;
+}
+
+.buttons-posts {
+    display: grid;
+    grid-template-columns: 6vw 6vw;
+    margin-top: 1%;
+}
+
+#btn-delete,
+#btn-edit {
+    width: 5vw;
+    height: 3vh;
+    font-size: 0.7rem;
+    padding: 5px;
+}
+
+.buttons {
+    background-color: #850a0a;
+    border: none;
+    border-radius: 5px;
+    margin-right: 50%;
+    margin-top: 1%;
+    font-size: 1.1rem;
+    margin-bottom: 10%;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.buttons:hover {
+    background-color: #C30707;
+}
+
+.buttons:active {
+    transform: scale(0.99);
+    box-shadow: 3px 2px 10px 1px rgba(176, 186, 195, 0.368);
+}
+
+#message {
+    height: 200px;
+    margin-bottom: 1%;
+    resize: none;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #E1DFDF;
+}
+
+.foot {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.developers {
+    justify-content: space-between;
+    color: #272525;
+    text-align: end;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.foot img {
+    display: grid;
+}
+
+
+@media only screen and (max-width: 538px) and (min-width: 395px) {
+
+    .VanellenMore {
+        font-size: 1.5rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    #logo {
+        width: 20vw;
+    }
+    
+    .content {
+        margin: auto;
+        display: block;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    .navbar {
+        margin-top: 25%;
+    }
+
+    .navbar a {
+        padding: 0;
+        font-size: 1.2rem;
+    }
+
+    .navbar a:hover {
+        background: rgb(0, 0, .05);
+    }
+
+    #header {
+        height: auto;
+        justify-content: space-between;
+    }
+
+    #menu {
+        margin-left: 2%;
+    }
+
+    #logout {
+        width: 5vw;
+    }
+    
+    .posts {
+        display: block;
+    }
+
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 25vw;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
+    }
+
+    .name-movies textarea {
+        width: 60vw;
+        height: 2rem;
+        margin-left:8rem;
+        font-size: 1.1rem;
+    }
+
+    .about-movies textarea {
+        width: 60vw;
+        margin-left: 8rem;
+        height: auto;
+        font-size: 1rem;
+    }
+
+    .stars {
+        margin-bottom: 2%;
+        margin-left: 28%;
+    }
+
+    #username {
+        font-size: .7rem;
+    }
+
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 1020px) and (min-width: 600px) {
+
+    .VanellenMore {
+        font-size: 2.2rem;
+        margin-right: 40px;
+        margin-top: 7%;
+    }
+
+    #idUser {
+        font-size: 1.4rem;
+        margin-top: 8%;
+        margin-left: 1%;
+    }
+
+    #logo {
+        width: 18vw;
+    }
+
+    #logout{
+        width: 4vw;
+    }
+
+    .navbar {
+        margin-top: 22%;
+    }
+
+    .navbar a {
+        font-size: 24px;
+        padding: 2%;
+    }
+    .active {
+        font-size: 1.6rem;
+    }
+
+    .content {
+        display: block;
+        margin: auto;
+    }
+
+    .content a {
+        font-size: 1.3rem;
+    }
+
+    .posts {
+        display: grid;
+        grid-template-columns: 4fr 4fr;
+        width: auto;
+        margin-left: 1%;
+        margin-top: 4%;
+    }
+
+    #testImg {
+        width: 18vw;
+    }
+
+    .name-movies textarea {
+        font-size: .9rem;
+    }
+
+    .about-movies textarea {
+        width: 30vw;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .text_share {
+        font-size: 1.2rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 1.6rem;
+        margin-bottom: 2%;
+        margin-left: 10%;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        height: 50px;
+        width: 100%;
+        margin: auto;
+        padding: 5px;
+        margin-top: 1%;
+        margin-bottom: 20%;
+        font-size: 2rem;
+    }
+
+    #message {
+        margin-bottom: 1%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 330px) and (min-width: 250px) {
+    .VanellenMore {
+        font-size: 1.5rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    #logo {
+        width: 20vw;
+    }
+    
+    .content {
+        display: block;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+    .navbar{
+        margin-top: 10vh;
+    }
+
+    .navbar a {
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+
+    .active {
+        font-size: .8rem;
+    }
+
+    #logout {
+        width: 16px;
+    }
+
+    .navbar a:hover {
+        background: rgb(0, 0, .05);
+    }
+
+    #header {
+        height: 7vh;
+        justify-content: space-between;
+    }
+
+    .posts {
+        display: block;
+    }
+
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 30%;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
+    }
+
+    .name-movies textarea {
+        width: 60vw;
+        margin-left: 30%;
+        font-size: 1rem;
+    }
+
+    .about-movies textarea {
+        width: 60vw;
+        height: auto;
+        margin-left: 30%;
+        font-size: 0.9rem;
+    }
+
+    .stars {
+        margin-bottom: 2%;
+        margin-left: 30%;
+    }
+
+    #username {
+        font-size: .7rem;
+    }
+
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 537px) and (min-width: 331px) {
+    .VanellenMore {
+        font-size: 1.5rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    #logo {
+        width: 20vw;
+    }
+    
+    .content {
+        display: block;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .navbar a {
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+
+    .active {
+        font-size: .8rem;
+    }
+
+    #logout {
+        width: 16px;
+    }
+
+    .navbar a:hover {
+        background: rgb(0, 0, .05);
+    }
+
+    #header {
+        height: 7vh;
+        justify-content: space-between;
+    }
+
+    .posts {
+        display: block;
+    }
+
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 30%;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
+    }
+
+    .name-movies textarea {
+        width: 60vw;
+        height: 4vh;
+        margin-left: 30%;
+        font-size: 1rem;
+    }
+
+    .about-movies textarea {
+        width: 60vw;
+        height: auto;
+        margin-left: 30%;
+        font-size: 1rem;
+    }
+
+    .stars {
+        margin-bottom: 2%;
+        margin-left: 30%;
+    }
+
+    #username {
+        font-size: .7rem;
+    }
+
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 599px) and (min-width: 539px) {
+
+    .VanellenMore {
+        font-size: 2.2rem;
+        margin-right: 5%;
+        margin-top: 6%;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+    }
+
+    #idUser {
+        font-size: 12px;
+        margin-top: 8%;
+        margin-left: 0;
+    }
+
+    #logo {
+        margin-top: 5px;
+        width: 18.5vw;
+    }
+
+    .content {
+        display: block;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+
+    .content a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+    
+    .navbar {
+        margin-top: 25%;
+    }
+
+    .navbar a {
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .navbar a:hover {
+        background: rgb(0, 0, .05);
+    }
+
+    #header {
+        height: 70px;
+        justify-content: space-between;
+    }
+
+    #menu {
+        display: flex;
+        align-items: center;
+        margin-left: 10%;
+    }
+
+    #logout {
+        width: 25px;
+    }
+
+    .posts {
+        display: block;
+    }
+
+    .img-movie {
+        position: flex;
+        position: absolute;
+    }
+
+    .picture-image {
+        margin-left: 7%;
+    }
+
+    #testImg {
+        width: 25vw;
+    }
+
+    #fill-form {
+        margin-top: 5%;
+        font-size: 1.2rem;
+    }
+
+    .name-movies textarea {
+        width: 60vw;
+        height: 4vh;
+        margin-left: 28%;
+        font-size: 1.3rem;
+    }
+
+    .about-movies textarea {
+        width: 60vw;
+        margin-left: 28%;
+        height: auto;
+        font-size: 1rem;
+    }
+
+    .stars {
+        margin-bottom: 2%;
+        margin-left: 28%;
+    }
+
+    #username {
+        font-size: .7rem;
+    }
+
+    .text_share {
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #postx {
+        margin: auto;
+        padding: 10px;
+    }
+
+    .picture {
+        font-size: 0.8rem;
+        margin-bottom: 2%;
+        margin-left: 0;
+    }
+
+    .formInput {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    #buttonSend {
+        width: 100%;
+        margin: auto;
+        margin-top: 0.5rem;
+        margin-bottom: 20%;
+    }
+
+    .buttons-posts {
+        display: grid;
+        grid-template-columns: 22vw 22vw;
+        margin-top: 1%;
+    }
+
+    #btn-delete,
+    #btn-edit {
+        width: 20vw;
+        height: 3vh;
+
+    }
+
+    #message {
+        margin-bottom: 10%;
+    }
+
+    .developers {
+        font-size: 0.8rem;
+        margin-right: 3%;
+    }
+
+    .foot img {
+        width: 37vw;
+        margin-left: 2%;
+    }
+}

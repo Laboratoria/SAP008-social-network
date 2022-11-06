@@ -1,3 +1,4 @@
+import { logout } from '../../lib/auth.js';
 import { validatePublish } from '../../lib/authenticate.js';
 import { errorsFirebase } from '../../lib/error.js';
 
@@ -5,7 +6,6 @@ import {
   createPost,
   current,
   getAllPosts,
-  logout,
   postLike,
   postDislike,
   deletePost,
@@ -21,9 +21,13 @@ export default function Feed() {
   <picture>
       <img class="logo-feed" src="imagens/logoINspirefeed.png" alt="Logo" />
   </picture>
+  <picture class= 'btns-nav'>
     <a href="#login" id="logout">
-       <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
+      <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
     </a> 
+    <button class='btn-link' id='btn-link'>
+      <img class='btn-link-img' src='./imagens/btn-link.png'>
+    </button>
   </picture>
   </nav>
         <section id="post" class="post">
@@ -41,120 +45,143 @@ export default function Feed() {
     `;
 
   const postBtn = feed.querySelector('#post-btn');
-  const modalPost = feed.querySelector('#post');
   const postFeed = feed.querySelector('#post-textarea');
   const postList = feed.querySelector('#box-post');
   const buttonLogout = feed.querySelector('.button-logout');
   const messageError = feed.querySelector('#error-message');
+  const btnLink = feed.querySelector('#btn-link');
   const user = current().uid;
-
+  // colocar o template dentro de uma função exemplo a função faz mágica e chama a função //
+  // getAllPosts embaixo com um then chamando a função fazMagica por exemplo e faz o cath //
   // printar posts //
-  getAllPosts()
-    .then((posts) => {
-      const postsCreated = posts.map((post) => {
-        const liked = post.like ? post.like.includes(user) : false;
-        const iteration = post.user === user ? `  
-        <div class="iteration-btn">
-          <img class="delete-post" data-delete="true" src="./imagens/btndelete.png" alt="Botão de deletar">
-          <img class="post-edit" data-edit="true" src="./imagens/btnedit.png" alt="Botão de editar">
-        </div> ` : '';
-        return `
-        <li class="allposts" data-id="${post.id}">
-          <div class="identification"> 
-            <p class="username"><b>${post.displayName}</b></p>
-            <p class="data-post"> Postado em ${post.data} às ${post.hour} </p>
-            <textarea class="post-print" data-idtext="${post.id}" data-text="${post.post}" disabled>${post.post}</textarea>
-            <p class="post-error"></p>
-          </div>         
-          <div class = 'field-btn-like'>
-            ${iteration}
-            <button 
-              class='btn-like' 
-              data-liked='${liked}' 
-              data-likecount= ${post.like.length} 
-              id =${post.id}>
-              <span class='like-icon ${liked ? 'liked-red' : ''}'>&#10084;</span>
-              <span class='like-count'>${post.like.length}</span>
-            </button>
-          </div>
-          <div class="modal">
-            <div class="internal-modal">
-               <p> DESEJA EXCLUIR SEU POST? </p>
-               <button class="btn-del" data-sim="true"> SIM </button>
-               <button class="btn-del" data-nao="true"> NÃO </button>
+
+  const templatePosts = (posts) => {
+    const postsCreated = posts.map((post) => {
+      const liked = post.like ? post.like.includes(user) : false;
+      const iteration = post.user === user ? `  
+          <div class="iteration-btn">
+            <img class="delete-post" data-delete="true" src="./imagens/btndelete.png" alt="Botão de deletar">
+            <img class="post-edit" data-edit="true" src="./imagens/btnedit.png" alt="Botão de editar">
+          </div> ` : '';
+      return `
+          <li class="allposts" data-id="${post.id}">
+            <div class="identification"> 
+              <p class="username"><b>${post.displayName}</b></p>
+              <p class="data-post"> Postado em ${post.data} às ${post.hour} </p>
+              <p class="post-print" 
+                data-idtext="${post.id}" 
+                data-text="${post.post}" 
+                >${post.post}
+              </p>
+              <p class="post-error"></p>
+            </div>         
+            <div class = 'field-btn-like'>
+              ${iteration}
+              <button 
+                class='btn-like' 
+                data-liked='${liked}' 
+                data-likecount= ${post.like.length} 
+                id =${post.id}>
+                <span class='like-icon ${liked ? 'liked-red' : ''}'>&#10084;</span>
+                <span class='like-count'>${post.like.length}</span>
+              </button>
             </div>
-          </div>
-        </li>
-        `;
-      }).join('');
-      postList.innerHTML = postsCreated;
+            <div class="modal">
+              <div class="internal-modal">
+                 <p> DESEJA EXCLUIR SEU POST? </p>
+                 <button class="btn-del" data-sim="true"> SIM </button>
+                 <button class="btn-del" data-nao="true"> NÃO </button>
+              </div>
+            </div>
+          </li>
+          `;
+    }).join('');
+    postList.innerHTML = postsCreated;
 
-      const btnsLike = postList.querySelectorAll('.btn-like');
-      const postsElements = feed.querySelectorAll('.allposts');
+    const btnsLike = postList.querySelectorAll('.btn-like');
+    const postsElements = feed.querySelectorAll('.allposts');
 
-      // editar posts //
-      postsElements.forEach((post) => {
-        post.addEventListener('click', (e) => {
-          const id = e.currentTarget.dataset.id;
-          console.log(id);
-          if (e.target.dataset.edit) {
-            const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
-            const btnSave = feed.querySelector('.post-edit');
-            postEdit.removeAttribute('disabled');
-            btnSave.addEventListener('click', async () => {
-              await editPost(id, postEdit.value);
-              postEdit.setAttribute('disabled', '');
-            });
-          }
-        });
-      });
-
-      // delete //
-      postsElements.forEach((post) => {
-        post.addEventListener('click', (e) => {
-          const id = e.currentTarget.dataset.id;
-          console.log(id);
-          if (e.target.dataset.delete) {
-            const modal = e.currentTarget.querySelector('.modal');
-            modal.style.display = 'flex';
-          } else if (e.target.dataset.sim) {
-            const modal = e.currentTarget.querySelector('.modal');
-            modal.style.display = 'none';
-            deletePost(id)
-              .then(() => {
-                post.remove();
-              });
-          } else if (e.target.dataset.nao) {
-            const modal = e.currentTarget.querySelector('.modal');
-            modal.style.display = 'none';
-          }
-        });
-      });
-
-      // like //
-      btnsLike.forEach((btnLike) => {
-        btnLike.addEventListener('click', async (e) => {
-          const userId = user;
-          const idPost = btnLike.id;
-          let likesCount = parseInt(e.target.dataset.likecount, 10);
-          if (btnLike.dataset.liked === 'true') {
-            await postDislike(idPost, userId);
-            btnLike.querySelector('.like-icon').classList.remove('liked-red');
-            btnLike.dataset.liked = 'false';//eslint-disable-line
-            likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
-            e.target.dataset.likecount = parseInt(likesCount, 10);
-            btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
-          } else {
-            await postLike(idPost, userId);
-            btnLike.querySelector('.like-icon').classList.add('liked-red');
-            btnLike.dataset.liked = 'true';//eslint-disable-line
-            likesCount += 1;
-            e.target.dataset.likecount = likesCount;
-            btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
-          }
-        });
+    // editar posts //
+    postsElements.forEach((post) => {
+      const btnEdit = post.querySelector('.post-edit');
+      const id = post.dataset.id;
+      if (!btnEdit) return;
+      btnEdit.addEventListener('click', async () => {
+        const postEdit = feed.querySelector(`[data-idtext="${id}"]`);
+        const isEditing = postEdit.contentEditable === 'true';
+        if (isEditing) {
+          await editPost(id, postEdit.textContent);
+          postEdit.style.background = 'transparent';
+          postEdit.contentEditable = false;
+          btnEdit.setAttribute('src', './imagens/btnedit.png');
+        } else {
+          postEdit.contentEditable = true;
+          postEdit.style.background = 'white';
+          btnEdit.setAttribute('src', './imagens/botao-salvar.png');
+        }
       });
     });
+
+    // delete //
+    postsElements.forEach((post) => {
+      post.addEventListener('click', (e) => {
+        const id = e.currentTarget.dataset.id;
+        if (e.target.dataset.delete) {
+          const modal = e.currentTarget.querySelector('.modal');
+          modal.style.display = 'flex';
+        } else if (e.target.dataset.sim) {
+          const modal = e.currentTarget.querySelector('.modal');
+          modal.style.display = 'none';
+          deletePost(id)
+            .then(() => {
+              post.remove();
+            });
+        } else if (e.target.dataset.nao) {
+          const modal = e.currentTarget.querySelector('.modal');
+          modal.style.display = 'none';
+        }
+      });
+    });
+
+    // like //
+    btnsLike.forEach((btnLike) => {
+      btnLike.addEventListener('click', async (e) => {
+        const userId = user;
+        const idPost = btnLike.id;
+        let likesCount = parseInt(e.target.dataset.likecount, 10);
+        if (btnLike.dataset.liked === 'true') {
+          await postDislike(idPost, userId);
+          btnLike.querySelector('.like-icon').classList.remove('liked-red');
+          btnLike.dataset.liked = 'false';//eslint-disable-line
+          likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
+          e.target.dataset.likecount = parseInt(likesCount, 10);
+          btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
+        } else {
+          await postLike(idPost, userId);
+          btnLike.querySelector('.like-icon').classList.add('liked-red');
+          btnLike.dataset.liked = 'true';//eslint-disable-line
+          likesCount += 1;
+          e.target.dataset.likecount = likesCount;
+          btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
+        }
+      });
+    });
+  };
+
+  // botao navegar para a página de links //
+  btnLink.addEventListener('click', () => {
+    window.location.hash = '#links';
+  });
+
+  // função para printar pos posts na tela //
+  const printPosts = () => {
+    getAllPosts()
+      .then((posts) => {
+        templatePosts(posts);
+      });
+  };
+
+  printPosts();
 
   // criar posts //
   postBtn.addEventListener('click', (e) => {
@@ -166,7 +193,9 @@ export default function Feed() {
       messageError.innerHTML = validate;
     } else {
       createPost(postFeed.value)
-        .then(() => window.location.reload())
+        .then(() => {
+          printPosts();
+        })
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);
           messageError.innerHTML = errorCode;
@@ -175,6 +204,7 @@ export default function Feed() {
     }
   });
 
+  // botão deslogar //
   buttonLogout.addEventListener('click', (e) => {
     e.preventDefault();
     logout()

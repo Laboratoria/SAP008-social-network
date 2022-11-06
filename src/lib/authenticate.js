@@ -9,9 +9,13 @@ const validatePassword = (password) => {
 };
 
 export const validateEmail = (email) => {
+  // const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
   if (email === '') {
     return 'Digite seu e-mail';
   }
+  // if (email === emailRegex) {
+  //   return 'E-mail inválido. .';
+  // }
   return '';
 };
 

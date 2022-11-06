@@ -12,13 +12,26 @@
   padding: 1em;
 }
 
+/* tag picture que envolvi os dois botões, o de logout e o da pagina de links para 
+colocar um abaixo do outro*/
+.btns-nav{
+  display: flex;
+  flex-direction:column;
+  justify-content: end;
+  margin-top: 4%;
+}
+
 .logo-feed {
   width: 80px;
   margin-top: 20px;
   padding: 5px
 }
 
-.button-logout {
+.btn-link{
+  background: transparent;
+  border:none;
+}
+.button-logout, .btn-link-img {
   width: 35px;
   margin-top: 35px;
 }
@@ -96,7 +109,7 @@ ul {
   color: red;
 }
 
-.modal, .modal-edit{
+.modal{
   top: 0;
   left: 0;
   position: fixed;
@@ -123,8 +136,8 @@ ul {
 }
 
 .delete-post, .post-edit{
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
   margin: 4px;
 }
@@ -138,6 +151,11 @@ ul {
 
 .post-print{
   background: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  resize: none;
+  height: 100%;
+  width: 100%;
 }
   
   /* TELAS GRANDES */

@@ -11,7 +11,9 @@ export const mainRegister = () => {
     <label for="text-password-repeat" class="text-password-repeat">Confirme sua senha:</label>
     <input class="input-password-repeat" type="password" id="input-password-repeat"/>
     <a class="btn" id="btn-register" href="login">Cadastrar</a>
+    <a href="#login">
     <button type="button" class="btn" id="btn-back">Voltar</button>
+    </a>
   </form>
   `;
 

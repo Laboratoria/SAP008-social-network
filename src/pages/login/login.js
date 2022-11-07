@@ -1,4 +1,4 @@
-export const loginElements = () => {
+export const mainLogin = () => {
   const printElements = document.createElement('div');
   printElements.innerHTML = `
     <div class="logo">
@@ -11,9 +11,8 @@ export const loginElements = () => {
     <p>Cadastre-se</p>
     </a>
     <a href="#feed">
-    <button class="btn-enter" id="btn-enter">Entrar</button>
+    <button type="button" class="btn-enter" id="btn-enter">Entrar</button>
     </a>
-
     </form>
     `;
   return printElements;

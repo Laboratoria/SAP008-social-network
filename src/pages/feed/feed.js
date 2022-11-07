@@ -1,4 +1,4 @@
-const mainFeed = () => {
+export const mainFeed = () => {
   const sectionFeed = document.createElement('section');
   sectionFeed.innerHTML = `
   <form class="feed">
@@ -8,5 +8,3 @@ const mainFeed = () => {
   `;
   return sectionFeed;
 };
-
-export { mainFeed };

@@ -16,9 +16,9 @@ Acesse o deploy aqui!
 * [8. Objetivos de aprendizagem](#8-objetivos-de-aprendizagem)
 * [9. Boilerplate e Testes Unitários](#9-boilerplate-e-testes-unitários)
 * [10. Firebase e Firestore](#10-firebase-e-firestore)
-* [11. Implementações Futuras](#implementações-futuras)
-* [12. Entrega](#-entrega)
-* [13. Desenvolvedoras](#-desenvolvedoras)
+* [11. Implementações Futuras](11-#implementações-futuras)
+* [12. Entrega](#12-entrega)
+* [13. Desenvolvedoras](#13-desenvolvedoras)
 
 
 # 1. Prefácio
@@ -76,16 +76,16 @@ Historia do usuário 9:
 # 4. Interface do Usuário
 
 Protótipo de baixa fidelidade
-![images](image.png)
+!.[images].(image.png)
 
 Protótipo de alta fidelidade / mobile first
 O protótipo foi desenvolvido no Figma.
-![images](mobilefirst.PNG)
-![images](mobilesecond.PNG)
+!.[images].(mobilefirst.PNG)
+!.[images].(mobilesecond.PNG)
 
 Paleta de cores
 A paleta de cores foi definida utilizando a ferramenta Adobe Color. A foto abaixo foi a escolhida para representar nossa escolha. 
-![images](paletadecores.PNG)
+!.[images].(paletadecores.PNG)
 
 
 # 5. Planejamento
@@ -135,8 +135,8 @@ Construir uma Single-page Application (SPA) responsiva (com mais de uma tela/ p�
 # 9. Boilerplate e Testes Unitários
 
 Este projeto não incluiu um boilerplate, portanto definimos a estrutura de pastas e escrevemos nossos próprios testes unitários (tests).
-![images](boilerplate.PNG)
-![images](testesunitarios.PNG)
+!.[images].(boilerplate.PNG)
+!.[images].(testesunitarios.PNG)
 
 
 # 10. Firebase e Firestore
@@ -188,9 +188,9 @@ interface foi hospedada usando o GitHub pages.
 
 O projeto foi desenvolvido em trio por:
 
-* Andrea dos Santos [GitHub] (https://github.com/Canzua) / [Linkedin] (https://www.linkedin.com/in/andreasiqueiradossantos/)
-* Angelica Melo [GitHub] (https://github.com/AngelMelo12) / [Linkedin] (https://www.linkedin.com/in/angellmelo/)
-* Clareana Ribeiro [GitHub] (https://github.com/ClareanaRibeiro) / [Linkedin] (https://www.linkedin.com/in/clareanaribeiro/)
+* Andrea dos Santos .[GitHub].(https://github.com/Canzua) / .[Linkedin].(https://www.linkedin.com/in/andreasiqueiradossantos/)
+* Angelica Melo .[GitHub].(https://github.com/AngelMelo12) / .[Linkedin].(https://www.linkedin.com/in/angellmelo/)
+* Clareana Ribeiro .[GitHub].(https://github.com/ClareanaRibeiro) / .[Linkedin].(https://www.linkedin.com/in/clareanaribeiro/)
 
 
 

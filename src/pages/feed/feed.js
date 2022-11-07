@@ -3,7 +3,7 @@ const mainFeed = () => {
   sectionFeed.innerHTML = `
   <form class="feed">
     <input class="input-post"></input>
-    <button class="btn-post"></button>
+    <button class="btn-post">Publicar</button>
   </form>
   `;
   return sectionFeed;

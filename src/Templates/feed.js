@@ -1,5 +1,5 @@
 import post from '../components/post.js';
-import { createPost, getPosts } from '../lib/firestore.js';
+import { createPost, getPosts, } from '../lib/firestore.js';
 import { signOutUser } from '../lib/index.js';
 
 export default () => {
@@ -19,13 +19,13 @@ export default () => {
         <section  id="section-pages">
             <ul>
                 <li class="btn-pages">
-                    <a href="/#perfil" class="link">Perfil</a>
+                    <a href="/#feed" class="link">Home</a>
                 </li>
                 <li class="btn-pages">
                     <a href="/#momentoCookie" class="link">Momento Cookie</a>
                 </li>
                 <li class="btn-pages">
-                    <a href="/#bemEstar" class="link">Bem Estar</a>
+                    <a href="/#busqueAjuda" class="link">Busque Ajuda</a>
                 </li>
             </ul>
         </section>

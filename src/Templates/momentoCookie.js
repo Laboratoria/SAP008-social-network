@@ -20,7 +20,7 @@ export default () => {
   <section  id="section-pages">
       <ul>
           <li class="btn-pages">
-              <a href="/#perfil" class="link">Perfil</a>
+            <a href="/#feed" class="link">Home</a>
           </li>
           <li class="btn-pages">
               <a href="/#momentoCookie" class="link">Momento Cookie</a>

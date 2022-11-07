@@ -17,4 +17,6 @@ export {
   addDoc,
   query,
   getDocs,
+  doc,
+  deleteDoc,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';

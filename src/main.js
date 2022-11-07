@@ -2,7 +2,7 @@ import register from './Templates/register.js';
 import feed from './Templates/feed.js';
 import login from './Templates/login.js';
 import momentoCookie from './Templates/momentoCookie.js';
-import bemEstar from './Templates/bemEstar.js';
+import busqueAjuda from './Templates/busqueAjuda.js';
 import perfil from './Templates/perfil.js';
 
 
@@ -16,14 +16,11 @@ const init = () => {
     case '#feed':
       main.appendChild(feed());
       break;
-      case '#perfil':
-        main.appendChild(perfil());
-        break;
     case '#momentoCookie':
       main.appendChild(momentoCookie());
       break;
-    case '#bemEstar':
-      main.appendChild(bemEstar());
+    case '#busqueAjuda':
+      main.appendChild(busqueAjuda());
       break;
     case '#login':
       main.appendChild(login());

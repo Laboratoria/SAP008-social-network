@@ -1,6 +1,6 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,
-  GoogleAuthProvider, updateProfile, signOut,
+  GoogleAuthProvider, updateProfile, signOut, 
 } from './exports.js';
 
 import app from './config-firebase.js';
@@ -23,3 +23,4 @@ export function signInGoogle() {
 export function signOutUser(){
   return signOut(auth);
 }
+

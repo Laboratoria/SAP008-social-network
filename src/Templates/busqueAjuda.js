@@ -18,7 +18,7 @@ export default () => {
   <section  id="section-pages">
       <ul>
           <li class="btn-pages">
-              <a href="/#perfil" class="link">Perfil</a>
+          <a href="/#feed" class="link">Home</a>
           </li>
           <li class="btn-pages">
               <a href="/#momentoCookie" class="link">Momento Cookie</a>
@@ -28,8 +28,8 @@ export default () => {
           </li>
       </ul>
   </section>
-  <section id="section-posts">
-      <div class="criar-posts">
+  <section id="sectionBe" class="sectionBe">
+      <div class="conteudoBe">
         <p><strong>Denunciar e buscar ajuda a vítimas de violência contra mulheres (Ligue 180) || 
         " Central de Atendimento à Mulher – Ligue 180" , " Lei Maria da Penha"</strong></p><br>
 
@@ -226,7 +226,6 @@ export default () => {
 
         Não estimado<br><br>
         fonte: https://www.gov.br/pt-br/servicos/denunciar-e-buscar-ajuda-a-vitimas-de-violencia-contra-mulheres
-
 
       </div>
   </section>

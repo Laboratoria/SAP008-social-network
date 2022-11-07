@@ -50,13 +50,13 @@ body {
     width: 8%;
     border-color:#ffffff;
     border-radius: 5px;
-    background:linear-gradient(to bottom, #ffe6f3 5%, #20a2b8  100%);
+    background:linear-gradient(to bottom, #ffffff 5%, #20a2b8  100%);
     box-shadow:inset 0px 2px 0px 0px #deecde;
     color:rgb(0, 0, 0);
   }
   .botaoLogout:hover {
-    background:linear-gradient(to bottom, #c0f6ff 5%, #ffffff 100%);
-    }
+    background:linear-gradient(to bottom, #ffb8ea 5%, #ffffff 100%);
+  }
   .botaoLogout:active {
     position:relative;
     top:2px;
@@ -129,18 +129,18 @@ body {
   }
   .btn-pages{
     list-style: none;
-    background: #fff;
+    background: #20a2b8;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
     cursor: pointer;
     margin: 85px 0px;
-    background:linear-gradient(to bottom, #ffe6f3 5%, #20a2b8  100%);
-    box-shadow:inset 0px 2px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #20a2b8  100%);
+    box-shadow:inset 0px 2px 0px 0px #deecde;
     color:rgb(0, 0, 0);
   }
   .btn-pages:hover {
-    background:linear-gradient(to bottom, #c0f6ff 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #ffb8ea 5%, #ffffff 100%);
     }
   .btn-pages:active{
     position:relative;

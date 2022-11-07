@@ -1,9 +1,10 @@
+/* eslint-disable consistent-return */
 /* eslint-disable max-len */
 import {
   logoutUser, auth, getPosts, deletePost, forEditPost, likePost,
 
 } from '../../lib/auth.js';
-// eslint-disable-next-line consistent-return
+
 export default () => {
   if (auth.currentUser !== null) {
     const container = document.createElement('div');
@@ -78,17 +79,27 @@ export default () => {
       const localContent = local.textContent;
       const addressContent = address.textContent;
       const reviewContent = review.textContent;
-      //  const originalAddress = dataBase.posts.address;
-      // const dbRestaurant = posts.restaurant;
+
+      const showLike = () => {
+        const count = postElement.querySelector('.like-number').textContent;
+        const sum = Number(count) + 1;
+        postElement.querySelector('.like-number').textContent = sum;
+      };
+
+      const hideLike = () => {
+        const count = postElement.querySelector('.like-number').textContent;
+        const sum = Number(count) - 1;
+        postElement.querySelector('.like-number').textContent = sum;
+      };
 
       switch (action) {
         case 'like':
-          likePost(id, auth.currentUser.uid);
+          likePost(id, auth.currentUser.uid).then(() => showLike());
           like.src = './external/svg/filled-heart-icon.svg';
           like.dataset.action = 'dislike';
           break;
         case 'dislike':
-          likePost(id, auth.currentUser.uid);
+          likePost(id, auth.currentUser.uid).then(() => hideLike());
           like.src = './external/svg/heart-icon.svg';
           like.dataset.action = 'like';
           break;

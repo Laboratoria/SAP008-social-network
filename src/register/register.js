@@ -14,11 +14,11 @@ export default () => {
           <p id='sub-title'>MOMENTOS MUSICAIS INESQUECÍVEIS</p>
         </div>              
         <form class='form-register'>
-          <input class ='box-name-register' type='name' id='name-register' placeholder='Nome Completo'/>
-          <input class ='box-email-register' type='e-mail' id='e-mail-register' placeholder='E-mail'/>
-          <input class ='box-password-register' id='new-password' type='password' placeholder='Digite sua senha'/> 
-          <input class ='box-password-repeat' id='password-repeat' type='password' placeholder='Repetir senha'/> 
-          <button class ='btn-register' type='button' id='btn-register'>Registrar</button>
+          <input class ='placeholder box-name-register' type='name' id='name-register' placeholder='Nome Completo'/>
+          <input class ='placeholder box-email-register' type='e-mail' id='e-mail-register' placeholder='E-mail'/>
+          <input class ='placeholder box-password-register' id='new-password' type='password' placeholder='Digite sua senha'/> 
+          <input class ='placeholder box-password-repeat' id='password-repeat' type='password' placeholder='Repetir senha'/> 
+          <button class = 'btn-register' type='button' id='btn-register'>Registrar</button>
         </form>
         <a href='#login' class='user'>Já possui uma conta? Iniciar sessão</a> 
         <button class ='btn-back' type='button' id='btn-back'>Voltar</button>  

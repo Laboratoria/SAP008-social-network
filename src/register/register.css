@@ -28,8 +28,9 @@
 }
 
 .container-top-subtitle-register{
-    color: #A6634B;
+    color: #a46b56;
     font-size: 1.1rem; 
+    font-weight: 600;
     display: flex;
     justify-content: center; 
     align-items: center;  
@@ -49,10 +50,9 @@
     margin-top: 70px;
 }
 
-input::placeholder {
-    color: #ffff;
-    text-align: center;
-    font-size: 0.9rem;   
+.placeholder::placeholder {
+    color: #ffffffa3;
+    font-size: 1.1rem;   
 }
 
 .box-name-register {
@@ -112,6 +112,7 @@ input::placeholder {
     margin: 50px;
     margin-left:auto;
     margin-right: auto;
+    font-size: 1.1rem;
     border: none;
     background: #69636357;
     color:#ffff;
@@ -122,6 +123,7 @@ input::placeholder {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: 1.1rem;
 }
 
 .btn-back {
@@ -129,10 +131,10 @@ input::placeholder {
     width: 30%;
     top: 30px;
     margin: 50px;
-    padding: 5px;
+    font-size: 1.1rem;
     border: none;
     border-radius: 10px;
-    background: #69636357;
+    background: #afa8a857;
     color:#ffff; 
 }
 
@@ -165,6 +167,11 @@ input::placeholder {
         width: 50%;
     }
 
+    .placeholder::placeholder {
+        color: #081E26;
+        font-size: 1.1rem;   
+    }
+
     .box-name-register {
         height: 5vh;
         width: 70%;
@@ -193,6 +200,7 @@ input::placeholder {
         height: 5vh;
         width: 70%;
         font-size: 1.4rem;
+        color:#081E26
     }
 
     .user {
@@ -201,10 +209,10 @@ input::placeholder {
     }
     
     .btn-back {
-        height: 3vh;
+        height: 5%;
         width: 20%;
         font-size: 1.4rem;
-        margin-top: 90px;
+        color:#081E26
     }
 
 }

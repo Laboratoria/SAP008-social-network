@@ -25,19 +25,6 @@ body {
 }
 
 /* timeline */
-.icons-container {
-  justify-content: space-around;
-  height: 8vw;
-  display: flex;
-}
-
-.icons-size {
-  cursor: pointer;
-  height: 55%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 .welcome-user {
   border: solid 1px #ab6930;
   border-left-width: 0px;
@@ -169,4 +156,49 @@ footer {
 
 .filled-heart {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .web-icons-container {
+    display: none;
+  }
+
+  .icons-container {
+    justify-content: space-around;
+    height: 8vw;
+    display: flex;
+  }
+
+  .icons-size {
+    cursor: pointer;
+    height: 55%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .web-icons-container {
+    justify-content: space-around;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15%;
+  }
+
+  .icons-container {
+    display: none;
+  }
+
+  .icons-size {
+    cursor: pointer;
+    height: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  /* .timeline-content {
+    width: 
+  } */
 }

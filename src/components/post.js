@@ -1,3 +1,5 @@
+import { deletePost } from '../lib/firestore.js';
+
 export default (post) => {
   console.log(post);
   const container = document.createElement('div');
@@ -11,7 +13,7 @@ export default (post) => {
         </form>
           <div>
             <button type="button" id="botaoEditar" class="botaoEditar">Editar</button>
-            <button type="button" id="botaoDeletar" class="botaoDeletar">Deletar</button>
+            <button type="button" data-id="${pt.id}" id="botaoDeletar" class="botaoDeletar">Deletar</button>
           </div>
       </div>
      </section>
@@ -20,8 +22,23 @@ export default (post) => {
 
   container.innerHTML = template;
   const postArea = document.getElementById('posts');
-  const postDelete = container.querySelector('#botaoDeletar');
+  const postDelete = container.querySelectorAll('.botaoDeletar');
   const postEditar = container.querySelector('#botaoEditar');
+
+  postDelete.forEach((e) =>{
+    e.addEventListener('click',(e) =>{
+      const postId = e.target.dataset.id;
+      console.log(postId)
+      deletePost(postId)
+        .then((result) =>{
+          document.location.reload(true)
+        })
+        .catch((error) =>{
+          console.log("deu ruim")
+        }) 
+    })
+  })
+  
 
   postArea.innerHTML = '';
   postArea.appendChild(container);

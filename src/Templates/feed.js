@@ -55,6 +55,11 @@ export default () => {
     post(posts);
     console.log(posts);
   });
+  async function listPosts(){
+    const posts = await getPosts()
+    post(posts);
+  }
+  listPosts();
 
   botaoLogout.addEventListener('click', async() =>{
     await signOutUser()

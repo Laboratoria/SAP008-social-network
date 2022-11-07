@@ -63,6 +63,7 @@ export default () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        console.log(user.name);
         window.location.hash = '#feed';
       })
       .catch((error) => {

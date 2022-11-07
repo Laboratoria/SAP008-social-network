@@ -23,6 +23,7 @@ body {
     border-radius: 10px 0px 0px 10px;
     height: 2rem;
     width: 100%;
+    border: 0 none;
   }
   #caixa-pesquisar::placeholder{
     font-size: 1rem;
@@ -30,9 +31,10 @@ body {
   #caixa-pesquisar:hover{
     background-color: #e1e1e1;
     transition: 0.2s;
+    
   }
   #submit-pesquisar{
-    height: 2.3rem;
+    height: 2.0rem;
     width: 20%;
     border-radius: 0px 10px 10px 0px;
     border: none;
@@ -49,13 +51,13 @@ body {
     height: 2rem;
     width: 8%;
     border-color:#ffffff;
-    border-radius: 5px;
-    background:linear-gradient(to bottom, #ffffff 5%, #20a2b8  100%);
-    box-shadow:inset 0px 2px 0px 0px #deecde;
-    color:rgb(0, 0, 0);
+    border-radius: 3px;
+    background: #20a2b8;
+    box-shadow:inset 0px 1px 0px 0px #deecde;
+    color:rgb(255, 255, 255);
   }
   .botaoLogout:hover {
-    background:linear-gradient(to bottom, #ffb8ea 5%, #ffffff 100%);
+    background: #ffc248;
   }
   .botaoLogout:active {
     position:relative;
@@ -82,6 +84,7 @@ body {
     border-radius: 15px;
     display: block;
     margin: 10px 0px 0px 10px;
+    border: 1px solid #ffc248;
   }
   .caixa-de-texto::placeholder{
     font-size: 1.2rem;
@@ -125,7 +128,7 @@ body {
   .link{
     text-decoration: none;
     font-size: 1rem;
-    color: #000;
+    color: rgb(255, 255, 255);
   }
   .btn-pages{
     list-style: none;
@@ -135,12 +138,11 @@ body {
     text-align: center;
     cursor: pointer;
     margin: 85px 0px;
-    background:linear-gradient(to bottom, #ffffff 5%, #20a2b8  100%);
-    box-shadow:inset 0px 2px 0px 0px #deecde;
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
   }
   .btn-pages:hover {
-    background:linear-gradient(to bottom, #ffb8ea 5%, #ffffff 100%);
+    background: #ffc248;
+    transition: 1s;
     }
   .btn-pages:active{
     position:relative;
@@ -154,8 +156,8 @@ body {
     width: 50%;
   }
   #btn-menu:hover{
-    background-color: #318d92;
-    transition: 0.2s;
+    background-color: #ffc248;
+    transition: 0.1s;
     cursor: pointer;
   }
   .img-menu{
@@ -190,11 +192,70 @@ body {
     color:#eeeeee;
   }
   #feed.active .btn-pages:hover{
-    background-color: #76d0d4;
+    background-color: #ffc248;
   }
   .botaoLogout{
     width: 17%;
     margin: 15px;
   }
+  }
+  @media only screen and (min-width: 600px) {
+    .nav-feed{
+      margin: 0px;
+      padding: 1%;
+      background: #20a2b8;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .conj-pesquisar{
+      width: 45%;
+      height: 2rem;
+      display: flex;
+      flex-direction: row;
+    }
+    #caixa-pesquisar{
+      border-radius: 10px 0px 0px 10px;
+      height: 1.7rem;
+      width: 100%;
+    }
+    #submit-pesquisar{
+      height: 1.7rem;
+      width: 20%;
+      border-radius: 0px 10px 10px 0px;
+      border: none;
+      box-shadow: none;
+      background-color: #fff;
+    }
+    .posts{
+      width: 100%;
+    }
+    .criar-posts{
+      width: 70% ;
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+      background-color: #eeeeee;
+      align-items:center;
+    }
+    .form-post{
+      background-color: #fff;
+      border-radius: 10px;
+      width: 70%;
+
+    }
+    .caixa-de-texto{
+      width: 89%;
+      padding: 20px;
+      border-radius: 15px;
+      display: block;
+      margin: 10px 0px 0px 10px;
+    }
+    .botaoLogout{
+      width: 5%;
+      margin: 7px;
+    }
+   
   }
 

@@ -5,13 +5,31 @@
     display: flex;
     padding: 20px;
     flex-direction: column;
-    background-color: #eeeeee;
-    align-items:flex-start;
+    background-color: #ffffff;
+    align-items:center;
     
  }
 .form-postado{
     background-color: #fff;
     border-radius: 5px;
-    width: 50%;
+    width: 70%;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 2%;
+
+ }
+ @media only screen and (min-width: 600px) {
+    .form-postado{
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        width: 40%;
+     }
+     .postado{
+        width: 68.4%;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        background-color: #ffffff;
+        align-items:center;  
+     }
  }
  

@@ -39,7 +39,7 @@
 .box-register { 
     height: 100%;
     width: 100%;
-    background-image: url('../images/pexels-zachary-debottis-2067677.jpg');
+    background: #081E26;
     background-size: 100% 100%;
 }
 
@@ -152,6 +152,7 @@
         text-align: center;
         overflow: auto;
         border-radius: 20px;
+        background: rgb(237, 235, 235);
         background-image: url('../images/pexels-zachary-debottis-2067677.jpg');
         background-repeat: no-repeat;
         background-size: 50% 100%;

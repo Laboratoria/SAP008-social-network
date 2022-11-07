@@ -9,6 +9,7 @@ const main = document.querySelector('#root');
 
 const init = () => {
   main.innerHTML = '';
+  let homeContainer;
   switch (window.location.hash) {
     case '':
       main.appendChild(load());
@@ -20,7 +21,12 @@ const init = () => {
       main.appendChild(signin());
       break;
     case '#home':
-      main.appendChild(home());
+      homeContainer = home();
+      if (!homeContainer) {
+        window.location.hash = '#entrar';
+        return;
+      }
+      main.appendChild(homeContainer);
       break;
     case '#novo_post':
       main.appendChild(new_post());
@@ -31,7 +37,7 @@ const init = () => {
 };
 
 window.addEventListener('load', () => {
-  window.addEventListener('hashchange', init);
   main.appendChild(load());
+  window.addEventListener('hashchange', init);
   init();
 });

@@ -66,7 +66,6 @@ export default () => {
       const review = postElement.querySelector('.edit-review');
       const modalDelete = postElement.querySelector('#modal-delete');
       const like = postElement.querySelector('.heart');
-      const unlike = postElement.querySelector('.filled-heart');
       const localContent = local.textContent;
       const addressContent = address.textContent;
       const reviewContent = review.textContent;
@@ -76,8 +75,13 @@ export default () => {
       switch (action) {
         case 'like':
           likePost(id, auth.currentUser.uid);
-          like.style.display = 'none';
-          unlike.style.display = 'flex';
+          like.src = './external/svg/filled-heart-icon.svg';
+          like.dataset.action = 'dislike';
+          break;
+        case 'dislike':
+          likePost(id, auth.currentUser.uid);
+          like.src = './external/svg/heart-icon.svg';
+          like.dataset.action = 'like';
           break;
         case 'edit':
           cancelEdit.style.display = 'flex';
@@ -130,10 +134,20 @@ function generatePostsTemplate(allPosts) {
 
   return allPosts.map((posts) => {
     let editButtons = '';
+    let likedIcon = '';
     if (auth.currentUser.uid === posts.author) {
       editButtons = `
       <img data-action="edit" data-id=${posts.id} class="icons-post-size icons-current-user" src="./external/svg/pencil-icon.svg"/>
       <img data-action="erase" data-id=${posts.id} class="icons-post-size icons-current-user" src="./external/svg/trash-icon.svg"/>
+      `;
+    }
+    if (posts.like.includes(auth.currentUser.uid) === true) {
+      likedIcon = `
+      <img data-id="${posts.id}" class="icons-post-size heart" data-action="dislike" src="./external/svg/filled-heart-icon.svg"/>
+      `;
+    } else {
+      likedIcon = `
+      <img data-id="${posts.id}" class="icons-post-size heart" data-action="like" src="./external/svg/heart-icon.svg"/>
       `;
     }
     const postsTemplate = `<div data-id="${posts.id}" class="posts">
@@ -156,8 +170,8 @@ function generatePostsTemplate(allPosts) {
         <div>
           <div id="user-image"><p class="name-letter">${firstLetter(posts.name)}</p></div>
           <div class="icons-post">
-          <img data-id="${posts.id}" class="icons-post-size heart" data-action="like" src="./external/svg/heart-icon.svg"/>
-          <img data-id="${posts.id}" class="icons-post-size filled-heart" data-action="like" src="./external/svg/filled-heart-icon.svg"/>
+          ${likedIcon}
+          <div id="likes"><p class="like-number">${posts.like.length}</p></div>
           ${editButtons}
           </div>
         </div>

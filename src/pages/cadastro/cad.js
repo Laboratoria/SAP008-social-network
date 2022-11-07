@@ -1,4 +1,4 @@
-const mainRegister = () => {
+export const mainRegister = () => {
   const sectionRegister = document.createElement('section');
   sectionRegister.innerHTML = `
   <form class="register">
@@ -17,5 +17,3 @@ const mainRegister = () => {
 
   return sectionRegister;
 };
-
-export { mainRegister };

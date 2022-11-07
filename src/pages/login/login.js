@@ -10,7 +10,7 @@ export const loginElements = () => {
     <a href="#register">
     <p>Cadastre-se</p>
     </a>
-    <a href="#login">
+    <a href="#feed">
     <button class="btn-enter" id="btn-enter">Entrar</button>
     </a>
 

@@ -8,20 +8,29 @@ export default () => {
   if (auth.currentUser !== null) {
     const container = document.createElement('div');
     const template = `<section id="unique">
+    <nav class="web-icons-container">
+      <img id="plate-icon" data-action="plate" class="icons-size" src="./external/svg/logo.svg"/>
+      <img id="home-icon" data-action="home" class="icons-size" src="./external/svg/home-icon.svg"/>
+      <img id="menu-icon" data-action="menu" class="icons-size" src="./external/svg/menu-icon.svg"/>
+      <img id="logout-icon" data-action="logout" class="icons-size" src="./external/svg/log-out-icon.svg"/>
+      <a href="#novo_post"><img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
+      <img id="up-icon" data-action="up" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
+    </nav>
+
     <nav id="mobile-top-icons" class="icons-container">
       <img id="menu-icon" data-action="menu" class="icons-size" src="./external/svg/menu-icon.svg"/>
       <img id="home-icon" data-action="home" class="icons-size" src="./external/svg/home-icon.svg"/>
       <img id="logout-icon" data-action="logout" class="icons-size" src="./external/svg/log-out-icon.svg"/>
     </nav>
+    <div class="timeline-content">
       <p class="welcome-user">Olá, ${auth.currentUser.displayName}! Esta é a Página Inicial.</p>
-
       <section class="post-container"></section>
-      
-      <nav id="mobile-footer-icons" class="icons-container">
-        <a href="#novo_post"><img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
-        <img id="plate-icon" data-action="plate" class="icons-size" src="./external/svg/logo.png"/>
-        <img id="up-icon" data-action="up" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
-      </nav>
+    </div>      
+    <nav id="mobile-footer-icons" class="icons-container">
+      <a href="#novo_post"><img id="plus-icon" class="icons-size" src="./external/svg/plus-icon.svg"/></a>
+      <img id="plate-icon" data-action="plate" class="icons-size" src="./external/svg/logo.svg"/>
+      <img id="up-icon" data-action="up" class="icons-size" src="./external/svg/chevron-up-icon.svg"/>
+    </nav>
     </section>`;
 
     container.innerHTML = template;

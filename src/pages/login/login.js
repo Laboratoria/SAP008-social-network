@@ -6,7 +6,14 @@ export const loginElements = () => {
     </div>
     <form class="input-container"> 
     <input class="input-item" type="text" id="input-email"/>
-    <input class="input-item" type="text" id="input-senha">
+    <input class="input-item" type="text" id="input-password">
+    <a href="#register">
+    <p>Cadastre-se</p>
+    </a>
+    <a href="#login">
+    <button class="btn-enter" id="btn-enter">Entrar</button>
+    </a>
+
     </form>
     `;
   return printElements;

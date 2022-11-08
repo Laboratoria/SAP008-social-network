@@ -4,7 +4,7 @@ import register from './pages/register/register.js';
 import feed from './pages/feed/feed.js';
 import welcome from './pages/welcome/welcome.js';
 import password from './pages/password/password.js';
-import { stayLoggedIn } from './lib/firestore.js';
+import { stayLoggedIn } from './lib/auth.js';
 import links from './pages/links/links.js';
 
 const container = document.querySelector('.root');
@@ -50,7 +50,7 @@ const redirect = () => {
         if (loggedIn) {
           container.appendChild(links());
         } else {
-          container.appendChild(register());
+          container.appendChild(login());
         }
       });
       break;

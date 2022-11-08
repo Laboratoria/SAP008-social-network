@@ -14,6 +14,8 @@ export const errorsFirebase = (errorCode) => {
       return 'Seu link expirou, Faça login novamente.';
     case 'auth/weak-password':
       return ' Senha é fraca, use letras e números.';
+    case 'auth/too-many-requests':
+      return 'Muitas tentativas de login realizadas. faça uma nova senha.';
     default:
       return `Algo inexperado aconteceu. Por favor entre em contato com o suporte e informe o código ${errorCode}`;
   }

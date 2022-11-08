@@ -8,7 +8,8 @@ import {
 export default () => {
   if (auth.currentUser !== null) {
     const container = document.createElement('div');
-    const template = `<section id="unique">
+    const template = `<link rel="stylesheet" href="style.css" />
+    <section id="unique" class="home">
     <nav class="web-icons-container">
       <img id="plate-icon" data-action="plate" class="icons-size" src="./external/svg/logo.svg"/>
       <img id="home-icon" data-action="home" class="icons-size" src="./external/svg/home-icon.svg"/>
@@ -38,6 +39,7 @@ export default () => {
 
     const navsList = container.querySelector('#unique');
     navsList.addEventListener('click', (event) => {
+      event.preventDefault();
       const navElement = event.target;
       const actions = navElement.dataset.action;
 
@@ -170,7 +172,8 @@ function generatePostsTemplate(allPosts) {
       <img data-id="${posts.id}" class="icons-post-size heart" data-action="like" src="./external/svg/heart-icon.svg"/>
       `;
     }
-    const postsTemplate = `<div data-id="${posts.id}" class="posts">
+    const postsTemplate = `<link rel="stylesheet" href="style.css" />
+    <div data-id="${posts.id}" class="posts">
       <div id="text">
         <p>@ ${posts.name}</p>
         <p data-id="${posts.id}" class="edit-local establishment" contenteditable="">${posts.restaurant}</p>

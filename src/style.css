@@ -18,7 +18,6 @@ body {
 }
 
 #root {
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +36,11 @@ body {
   border-color: #ab6930;
   margin: 0;
   width: 100%;
+}
+
+.icons-size {
+  cursor: pointer;
+  height: 2em;
 }
 
 /* postagens */
@@ -80,12 +84,16 @@ body {
   border-radius: 100%;
   height: 50px;
   width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .name-letter {
   color: #ffffff;
   font-size: 35px;
-  margin-top: 0px;
+  margin: 0;
   text-align: center;
 }
 
@@ -173,6 +181,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
   .web-icons-container {
     display: none;
   }
@@ -181,37 +195,35 @@ footer {
     justify-content: space-around;
     height: 8vw;
     display: flex;
+    justify-content: space-around;
+    width: 100%;
   }
-
-  .icons-size {
-    cursor: pointer;
-    height: 55%;
-    margin-left: 10%;
-    margin-right: 10%;
+  
+  .timeline-content {
+    width: 300px;
   }
 }
 
 @media screen and (min-width: 769px) {
+  .home {
+    display: flex;
+    align-items: baseline;
+  }
+
   .web-icons-container {
-    justify-content: space-around;
-    height: 30em;
+    height: 25em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15%;
+    margin-right: 8%;
+    justify-content: space-around;
   }
 
   .icons-container {
     display: none;
   }
-
-  .icons-size {
-    cursor: pointer;
-    height: 2em;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
 }
-  /* .timeline-content {
+
+/* .timeline-content {
     width: 
   } */

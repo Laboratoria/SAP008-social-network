@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Roboto+Slab&display=swap');
+
+html {
+    height: 100%;
+    margin-top: 2em;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    align-items: center;
+    background-color: #131b1f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Condensed', sans-serif;
+    justify-content: center;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.evaluation-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-user {
+    border: solid 1px #ab6930;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+footer {
+    background-color: #131b1f;
+    bottom: 10px;
+    font-size: .8em;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .web-icons-container {
+        display: none;
+    }
+
+    .icons-container {
+        justify-content: space-around;
+        height: 8vw;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .home {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .web-icons-container {
+        height: 25em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 8%;
+        justify-content: space-around;
+    }
+
+    .icons-container {
+        display: none;
+    }
+}

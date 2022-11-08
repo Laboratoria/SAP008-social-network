@@ -1,12 +1,9 @@
-import { googleAccess, auth } from '../../lib/auth.js';
+import { googleAccess } from '../../lib/auth.js';
 
 // eslint-disable-next-line consistent-return
 export default () => {
-  if (auth.currentUser !== null) {
-    window.location.hash = '#home';
-  } else {
-    const container = document.createElement('div');
-    const template = `<link rel="stylesheet" href="style_load_login_signin.css" />
+  const container = document.createElement('div');
+  const template = `<link rel="stylesheet" href="style_load_login_signin.css" />
     <section class="container initial-page">
         <div class="frame">
           <h1 class="titles">Cadastre-se<br>no BatePrato</h1>
@@ -26,16 +23,14 @@ export default () => {
           <img class="logo" alt="logo prato rachado BatePrato" src="./external/svg/logotipo.svg"/>
         </div>
     </section>`;
-    container.innerHTML = template;
+  container.innerHTML = template;
 
-    const googleBtn = container.querySelector('#google-login');
+  const googleBtn = container.querySelector('#google-login');
 
-    googleBtn.addEventListener('click', () => {
-      googleAccess().then(() => {
-        window.location.hash = '#home';
-      });
+  googleBtn.addEventListener('click', () => {
+    googleAccess().then(() => {
+      window.location.hash = '#home';
     });
-
-    return container;
-  }
+  });
+  return container;
 };

@@ -1,10 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import { googleAccess } from '../../src/lib/auth.js';
 import load from '../../src/pages/load/load.js';
 
 jest.mock('../../src/lib/firebase.js');
+jest.mock('../../src/lib/auth.js');
 
 describe('load', () => {
   it('should be a function', () => {
@@ -13,13 +13,14 @@ describe('load', () => {
 
   it('should return a div with a valid innerHTML', () => {
     const container = load();
-    expect(container).toHaveProperty('innerHTML');
     expect(container.innerHTML.length).toBeGreaterThan(0);
     expect(typeof container.innerHTML).toBe('string');
   });
 
-  it('should provide access with google', () => {
-    googleAccess();
-    expect(googleAccess).toHaveBeenCalledTimes(1);
+  it('test click input', () => {
+    const container = load();
+    const googleBtn = container.querySelector('#google-login');
+    const event = new Event('click');
+    googleBtn.dispatchEvent(event);
   });
 });

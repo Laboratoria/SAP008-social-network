@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import {
-  // eslint-disable-next-line max-len
-  createUserWithEmailAndPassword, signInWithPopup, addDoc, signInWithEmailAndPassword, signOut, getDocs, collection, updateProfile, deleteDoc, updateDoc, doc,
+  createUserWithEmailAndPassword, signInWithPopup, addDoc, signInWithEmailAndPassword, signOut, collection, updateProfile, deleteDoc, doc, getDoc, getDocs, updateDoc,
 } from '../../src/lib/firebase.js';
 import {
-  // eslint-disable-next-line no-unused-vars
-  newUser, googleAccess, create, loginUser, logoutUser, getPosts, deletePost, forEditPost,
+  newUser, googleAccess, create, loginUser, logoutUser, deletePost, forEditPost, getPostById, getPosts, likePost,
 } from '../../src/lib/auth.js';
 
 jest.mock('../../src/lib/firebase.js');
@@ -79,11 +78,40 @@ describe('forEditPost', () => {
   });
 });
 
-// describe('getPosts', () => {
-//   it('should get posts from dataBase', () => {
-//     getDocs.mockResolvedValue();
-//     getPosts();
-//     expect(getDocs).toHaveBeenCalledTimes(1);
-//     expect(collection).toHaveBeenCalledTimes(1);
-//   });
-// });
+describe('getPostById', () => {
+  it('should return id from Posts', async () => {
+    const getId = 'kkk000';
+    const getRef = {};
+    const getPost = {
+      data: jest.fn(),
+    };
+    getDoc.mockResolvedValue(getPost);
+    doc.mockResolvedValue(getRef);
+    await getPostById(getId);
+    expect(doc).toHaveBeenCalledTimes(3);
+    expect(doc).toHaveBeenCalledWith(undefined, 'Posts', getId);
+    expect(getDoc).toHaveBeenCalledTimes(1);
+    expect(getPost.data).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('likePost', () => {
+  it('should add a new like at Posts', async () => {
+    const mock = {
+      data() {
+        const arrLikes = {
+          like: [],
+        };
+        return arrLikes;
+      },
+    };
+
+    const postID = 'post id';
+    const userID = 'user id';
+
+    getDoc.mockResolvedValue(mock);
+
+    await likePost(postID, userID);
+    expect(updateDoc).toHaveBeenCalledTimes(2);
+  });
+});

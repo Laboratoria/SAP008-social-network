@@ -5,6 +5,7 @@ import feed from './pages/feed/feed.js';
 import welcome from './pages/welcome/welcome.js';
 import password from './pages/password/password.js';
 import { stayLoggedIn } from './lib/firestore.js';
+import links from './pages/links/links.js';
 
 const container = document.querySelector('.root');
 
@@ -41,6 +42,15 @@ const redirect = () => {
           container.appendChild(feed());
         } else {
           container.appendChild(login());
+        }
+      });
+      break;
+    case '#links':
+      stayLoggedIn((loggedIn) => {
+        if (loggedIn) {
+          container.appendChild(links());
+        } else {
+          container.appendChild(register());
         }
       });
       break;

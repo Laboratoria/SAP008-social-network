@@ -18,8 +18,6 @@ export const current = () => auth.currentUser;
 
 export const nameUser = () => auth.currentUser.displayName;
 
-export const photoUser = () => auth.currentUser.photoURL;
-
 export const createPost = async (textPost) => {
   addDoc(collection(db, 'posts'), {
     photoURL: auth.currentUser.photoURL,
@@ -48,8 +46,8 @@ export const postScreen = async () => {
 };
 
 export const removePost = async (postId) => {
-  const del = await deleteDoc(doc(db, 'posts', postId));
-  return del;
+  const deletePost = await deleteDoc(doc(db, 'posts', postId));
+  return deletePost;
 };
 
 export const editPost = async (postId, newText) => {

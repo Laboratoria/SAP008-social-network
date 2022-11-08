@@ -8,7 +8,6 @@ import {
   current,
   removePost,
   editPost,
-  photoUser,
   nameUser,
 } from '../../lib/firestore.js';
 import { errorFire } from '../../lib/errorFirebase.js';
@@ -18,34 +17,31 @@ const getPostsTemplate = (posts) => {
   const postTemplate = posts.map((post) => {
     const user = current().uid;
     const crud = post.author === user ? `
-    <p class='sectionBtn' id='${posts.id}'>
+    <p class='sectionBtn' id='${post.id}'>
 
       <div class='modal'>
-        <button class='btnDelete' id='btn-delete' id='${posts.id}' data-action='delete'><img class='imgDelete' src='../../img/delete.png'></button>
-        <button class='btnEditar' id='btn-editar' id='${posts.id}' data-action='editar'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
+        <button class='btnDelete' id='${post.id}' data-action='delete-Post'><img class='imgDelete' src='../../img/delete.png' alt='Editar'></button>
+        <button class='btnEditar' id='${post.id}' data-action='editar'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
       </div>
       <section>
         <div class='modal-confirm'>
-          <p> Tem certeza que deja excluir este post? </p>
-          <button class='btn-del' data-sim='true'> SIM </button>
-          <button class='btn-del' data-nao='true'> NÃO </button>
-        </div>
-        <div class='modal-edit'>
-          <p> Confirma edição do post? </p> 
-          <button class='btn-del' data-salvar='true'>SALVAR</button>
-          <button class='btn-del' data-cancelar='true'>CANCELAR</button>
+          <section class='boxModelConfirm'>
+            <p class='textConfirm'> Tem certeza que deseja excluir este post? </p>
+            <button class='btn-del' data-action='yes-Delete'> SIM </button>
+            <button class='btn-del' data-action='no-Delete'> NÃO </button>
+          </section>
         </div>
       </section>
     </p>
     ` : '';
     return `
       <section class='sectionPost'>
-        <section class='boxModelPost' id='${posts.id}'>
+        <section class='boxModelPost' id='${post.id}'>
           <div class='headerPost'>
             <p class='userName'>${post.name}</p>
             <p class='date'>${post.date}</p>
           </div>
-          <textarea id='${posts.id} 'class='textPost' id='textPost' disabled='' style='resize: none' rows='3' cols='40'>${post.text}</textarea>
+          <textarea id='${post.id} 'class='textPost' id='textPost' disabled='' style='resize: none' rows='3' cols='40'>${post.text}</textarea>
           <section>${crud}</section>
         </section>
         <section class='sectionBtnLikeDeslike'>
@@ -71,7 +67,7 @@ export default () => {
     </ul>
   </nav>
   <section class='msgBoasvindas'>
-    <img src=${photoUser()} alt='User' class='fotoUser'>
+    <img src=${current().photoURL} alt='User' class='fotoUser'>
     <p class='nomeUser'> Olá, ${nameUser()}!</p>
   </section>
   <div class='bodyFeed'>
@@ -106,37 +102,42 @@ export default () => {
     });
   });
 
-  const deletePost = (id) => {
-    removePost(id)
-      .then(() => {
-        document.querySelectorAll('.modal-confirm').display = 'none';
-      })
-      .catch((error) => {
-        console.log('caiu no erro do delete', error);
-      });
-  };
-
-  const edit = (id) => {
-    editPost(id)
-      .then(() => {
-        console.log('abriu a textarea para editar', id);
-      })
-      .catch((error) => {
-        console.log('caiu no erro do editar', error);
-      });
-  };
-
   const elementPost = sectionFeed.querySelector('#post-feed');
   elementPost.addEventListener('click', (e) => {
     const element = e.target;
     const actionElement = element.dataset.action;
     const id = element.dataset.id;
+    const modalDelete = elementPost.querySelector('.modal-confirm');
+
+    /*
+    const edit = (id) => {
+      editPost(id)
+        .then(() => {
+          console.log('abriu a textarea para editar', id);
+        })
+        .catch((error) => {
+          console.log('caiu no erro do editar', error);
+        });
+    };
+    */
+
     switch (actionElement) {
-      case 'delete':
-        deletePost(id);
+      case 'delete-Post':
+        modalDelete.style.display = 'flex';
+        console.log('abrir o modal');
+        break;
+      case 'yes-Delete':
+        modalDelete.style.display = 'none';
+        removePost();
+        id.remove();
+        console.log('remover o post');
+        break;
+      case 'no-Delete':
+        modalDelete.style.display = 'none';
+        console.log('Não remover o post');
         break;
       case 'editar':
-        edit(id);
+        editPost(id);
         break;
       default:
         console.log('clicou em qualquer outra coisa');

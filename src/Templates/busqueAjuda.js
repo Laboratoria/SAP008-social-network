@@ -24,7 +24,7 @@ export default () => {
               <a href="/#momentoCookie" class="link">Momento Cookie</a>
           </li>
           <li class="btn-pages">
-              <a href="/#bemEstar" class="link">Bem Estar</a>
+              <a href="/#busqueAjuda" class="link">Busque Ajuda</a>
           </li>
       </ul>
   </section>
@@ -244,5 +244,12 @@ export default () => {
       msgErro.innerHTML= 'erro ao sair';
     });
 });
+const menu = container.querySelector('#btn-menu');
+
+menu.addEventListener('click', () => {
+  const busqueAjuda = container.querySelector('#feed');
+  busqueAjuda.classList.toggle('active');
+});
+
   return container;
 };

@@ -23,7 +23,7 @@ export default (post) => {
   container.innerHTML = template;
   const postArea = document.getElementById('posts');
   const postDelete = container.querySelectorAll('.botaoDeletar');
-  const postEditar = container.querySelector('#botaoEditar');
+  //const postEditar = container.querySelector('#botaoEditar');
 
   postDelete.forEach((e) =>{
     e.addEventListener('click',(e) =>{
@@ -38,8 +38,6 @@ export default (post) => {
         }) 
     })
   })
-  
-
   postArea.innerHTML = '';
   postArea.appendChild(container);
 };

@@ -45,12 +45,12 @@ export async function createPostMc(text) {
   const auth = getAuth(app);
 
   try {
-    const postRef = collection(db, 'postsMc');
-    const docRef = await addDoc(postRef, {
+    const postRefMc= collection(db, 'postsMc');
+    const docRefMc = await addDoc(postRefMc, {
       name: auth.currentUser.displayName,
-      text:text,
+      text: text,
     });
-    console.log('Document written with ID: ', docRef.id);
+    console.log('Document written with ID: ', docRefMc.id);
     
   } catch (e) {
     console.error('Error adding document: ', e);

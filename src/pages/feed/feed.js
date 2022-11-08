@@ -17,32 +17,32 @@ export default function Feed() {
   feed.classList.add('container-feed');
   feed.innerHTML = `  
   <div class="main-div">
-  <nav class="top-nav">
-  <picture>
-      <img class="logo-feed" src="imagens/logoINspirefeed.png" alt="Logo" />
-  </picture>
-  <picture class= 'btns-nav'>
-    <a href="#login" id="logout">
-      <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
-    </a> 
-    <button class='btn-link' id='btn-link'>
-      <img class='btn-link-img' src='./imagens/btn-link.png'>
-    </button>
-  </picture>
-  </nav>
-        <section id="post" class="post">
-          <div class="post-box">
-            <p id= 'error-message' class = 'error-message'> </p>
-            <p id= 'message-welcome' class = 'welcome-message'> </p>
-            <textarea class="post-textarea" id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
-            <button type="submit" id="post-btn" class="post-btn">Publicar</button>
-          </div>
-        </section>
-      <section class="post-feed">
-        <ul id="box-post"></ul>
-      </section>
-      <p id= 'error-message' class = 'error-message'> </p>
-    `;
+    <nav class="top-nav">
+      <picture>
+        <img class="logo-feed" src="imagens/logoINspirefeed.png" alt="Logo" />
+      </picture>
+      <a href="#login" id="logout">
+        <img  class="button-logout" src="imagens/btnlogout.png" alt="Botão Sair">
+      </a> 
+    </nav>
+    <section id="post" class="post">
+      <div class="post-box">
+        <p id= 'error-message' class = 'error-message'> </p>
+        <p id= 'message-welcome' class = 'welcome-message'> </p>
+        <textarea class="post-textarea" data-textarea id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
+        <button type="submit" id="post-btn" class="post-btn">Publicar</button>
+      </div>
+    </section>
+    <section class="post-feed">
+      <ul id="box-post"></ul>
+    </section>
+    <nav class=''>
+      <button class='btn-link' id='btn-link'>
+        <img class='btn-link-img' src='./imagens/btn-link.png'>
+      </button>
+    </nav>
+    <p id= 'error-message' class = 'error-message'> </p>
+  `;
 
   const postBtn = feed.querySelector('#post-btn');
   const postFeed = feed.querySelector('#post-textarea');
@@ -117,7 +117,7 @@ export default function Feed() {
         } else {
           postEdit.contentEditable = true;
           postEdit.style.background = 'white';
-          btnEdit.setAttribute('src', './imagens/botao-salvar.png');
+          btnEdit.setAttribute('src', './imagens/edit.png');
         }
       });
     });
@@ -195,6 +195,9 @@ export default function Feed() {
       createPost(postFeed.value)
         .then(() => {
           printPosts();
+          postFeed.value = '';
+          // troquei o reload e chamei //
+          // novamente a função de printar os posts para ser atualizada //
         })
         .catch((error) => {
           const errorCode = errorsFirebase(error.code);

@@ -12,15 +12,6 @@
   padding: 1em;
 }
 
-/* tag picture que envolvi os dois botões, o de logout e o da pagina de links para 
-colocar um abaixo do outro*/
-.btns-nav{
-  display: flex;
-  flex-direction:column;
-  justify-content: end;
-  margin-top: 4%;
-}
-
 .logo-feed {
   width: 80px;
   margin-top: 20px;
@@ -31,6 +22,7 @@ colocar um abaixo do outro*/
   background: transparent;
   border:none;
 }
+
 .button-logout, .btn-link-img {
   width: 35px;
   margin-top: 35px;
@@ -72,7 +64,6 @@ ul {
 
 
 .allposts {
-  border: 2px solid black;
   width: 80%;
   height: 70%;
   border: none;
@@ -146,7 +137,6 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  display: block;
 }
 
 .post-print{

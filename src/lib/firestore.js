@@ -5,7 +5,6 @@ import {
   query,
   orderBy,
   doc,
-  onAuthStateChanged,
   updateDoc,
   arrayUnion,
   arrayRemove,
@@ -42,17 +41,6 @@ export async function getAllPosts() {
     return post;
   });
   return listPost;
-}
-
-export const logout = () => {
-  const logoutUser = auth.signOut();
-  return logoutUser;
-};
-
-export function stayLoggedIn(callback) {
-  return onAuthStateChanged(auth, (user) => {
-    callback(user !== null);
-  });
 }
 
 // função de like//

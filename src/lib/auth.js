@@ -4,6 +4,7 @@ import {
   updateProfile,
   signInWithPopup,
   sendPasswordResetEmail,
+  onAuthStateChanged,
 } from './export.js';
 
 import { auth, provider } from './config.js';
@@ -35,3 +36,10 @@ export const logout = () => {
   const logoutUser = auth.signOut();
   return logoutUser;
 };
+
+// função observador do usuário logado //
+export function stayLoggedIn(callback) {
+  return onAuthStateChanged(auth, (user) => {
+    callback(user !== null);
+  });
+}

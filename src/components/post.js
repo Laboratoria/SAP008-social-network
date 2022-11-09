@@ -12,8 +12,8 @@ export default (post) => {
           <p>${pt.text}</p><br>
         </form>
           <div>
-            <button type="button" id="botaoEditar" class="botaoEditar">Editar</button>
-            <button type="button" data-id="${pt.id}" id="botaoDeletar" class="botaoDeletar">Deletar</button>
+            <button type="submit" id="botaoEditar">Editar</button>
+            <button type="submit" data-id="${pt.id}" id="botaoDeletar" class="botaoDeletar">Deletar</button>
           </div>
       </div>
      </section>
@@ -32,6 +32,7 @@ export default (post) => {
       deletePost(postId)
         .then((result) =>{
           document.location.reload(true)
+          console.log("delete")
         })
         .catch((error) =>{
           console.log("deu ruim")

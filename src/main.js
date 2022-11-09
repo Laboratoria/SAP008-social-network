@@ -3,8 +3,6 @@ import feed from './Templates/feed.js';
 import login from './Templates/login.js';
 import momentoCookie from './Templates/momentoCookie.js';
 import busqueAjuda from './Templates/busqueAjuda.js';
-import perfil from './Templates/perfil.js';
-
 
 const main = document.querySelector('#root');
 const init = () => {

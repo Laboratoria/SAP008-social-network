@@ -33,7 +33,7 @@ export default () => {
             <div class="criar-posts">
                 <form class="form-post">
                     <input type="text" placeholder="Digite..." class="caixa-de-texto" id="caixa-de-post">
-                    <button type="submit" id="submit-post">></button>
+                    <button type="submit" id="submit-post"><img src="img/seta-direita.png" alt="postar" class="seta-postar"></button>
                 </form>
             </div>
             <div class="posts" id="posts">
@@ -44,13 +44,13 @@ export default () => {
             `;
   container.innerHTML = template;
 
-  const caixaPost = container.querySelector('#caixa-de-post');
-  const botaoPost = container.querySelector('#submit-post');
-  const botaoLogout = container.querySelector('#logout');
+  const caixaPostMc = container.querySelector('#caixa-de-post');
+  const botaoPostMc = container.querySelector('#submit-post');
+  const botaoLogoutMc = container.querySelector('#logout');
   
-  botaoPost.addEventListener('click', async (e) => {
+  botaoPostMc.addEventListener('click', async (e) => {
     e.preventDefault();
-    await createPostMc(caixaPost.value);
+    await createPostMc(caixaPostMc.value);
     const posts = await getPostsMc()
     post(posts);
     console.log(posts);
@@ -61,7 +61,7 @@ export default () => {
   }
   listPosts();
 
-  botaoLogout.addEventListener('click', async() =>{
+  botaoLogoutMc.addEventListener('click', async() =>{
     await signOutUser()
     .then(() => {
       window.location.hash = '#login';

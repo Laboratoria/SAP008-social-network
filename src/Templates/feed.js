@@ -33,7 +33,7 @@ export default () => {
             <div class="criar-posts">
                 <form class="form-post">
                     <input type="text" placeholder="Digite..." class="caixa-de-texto" id="caixa-de-post">
-                    <button type="submit" id="submit-post">></button>
+                    <button type="submit" id="submit-post"><img src="img/seta-direita.png" alt="postar" class="seta-postar"></button>
                 </form>
             </div>
             <div class="posts" id="posts">

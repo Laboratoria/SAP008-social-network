@@ -17,27 +17,33 @@ const getPostsTemplate = (posts) => {
   const postTemplate = posts.map((post) => {
     const user = current().uid;
     const crud = post.author === user ? `
-    <p class='sectionBtn' id='${post.id}'>
-
+    <p class='sectionBtn' data-id='${post.id}' >
       <div class='modal'>
-        <button class='btnDelete' id='${post.id}' data-action='delete-Post'><img class='imgDelete' src='../../img/delete.png' alt='Editar'></button>
-        <button class='btnEditar' id='${post.id}' data-action='editar'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
+        <button class='btnDelete' data-id='${post.id}' data-action='delete-Post'><img class='imgDelete' src='../../img/delete.png' alt='Excluir'></button>
+        <button class='btnEditar' data-id='${post.id}' data-action='edit-post'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
       </div>
       <section>
         <div class='modal-confirm'>
           <section class='boxModelConfirm'>
             <p class='textConfirm'> Tem certeza que deseja excluir este post? </p>
-            <button class='btn-del' data-action='yes-Delete'> SIM </button>
+            <button class='btn-del' data-id='${post.id}' data-action='yes-Delete'> SIM </button>
             <button class='btn-del' data-action='no-Delete'> NÃO </button>
           </section>
+        </div>
+      </section>
+      <section class='modal-edit'>
+        <div class='boxSaveCancel'>
+          <button class='btnSalvarCancelar' data-action='yes-edit'>SALVAR</button>
+          <button class='btnSalvarCancelar' data-action='no-edit'>CANCELAR</button>
         </div>
       </section>
     </p>
     ` : '';
     return `
-      <section class='sectionPost'>
-        <section class='boxModelPost' id='${post.id}'>
+      <section class='sectionPost' data-id='${post.id}'>
+        <section class='boxModelPost' data-id='${post.id}'>
           <div class='headerPost'>
+            <img src=${post.photo} alt='User' class='fotoUserLogado'>
             <p class='userName'>${post.name}</p>
             <p class='date'>${post.date}</p>
           </div>
@@ -46,7 +52,7 @@ const getPostsTemplate = (posts) => {
         </section>
         <section class='sectionBtnLikeDeslike'>
           <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
-        </section>`;
+      </section>`;
   })
     .join('');
   return postTemplate;
@@ -80,7 +86,7 @@ export default () => {
             </p>
             <p class='sectionBtnPubli'>
               <button type='submit' id='publish-btn' class='publicBtn'>Publicar</button>
-            <p>
+            </p>
           </form>
         </section>
         <section class='principalTimeline' id='post-feed'></section>
@@ -108,9 +114,20 @@ export default () => {
     const actionElement = element.dataset.action;
     const id = element.dataset.id;
     const modalDelete = elementPost.querySelector('.modal-confirm');
+    const postElement = elementPost.querySelector(`.sectionPost[data-id='${id}']`);// eslint-disable-line
+    const modalEdit = elementPost.querySelector('.modal-edit');
 
-    /*
-    const edit = (id) => {
+    const deletePost = () => {
+      removePost(id)
+        .then(() => {
+          postElement.remove();
+        })
+        .catch((error) => {
+          console.log('caiu no catch do delete', error);
+        });
+    };
+
+    const edit = () => {
       editPost(id)
         .then(() => {
           console.log('abriu a textarea para editar', id);
@@ -119,7 +136,6 @@ export default () => {
           console.log('caiu no erro do editar', error);
         });
     };
-    */
 
     switch (actionElement) {
       case 'delete-Post':
@@ -128,19 +144,28 @@ export default () => {
         break;
       case 'yes-Delete':
         modalDelete.style.display = 'none';
-        removePost();
-        id.remove();
+        deletePost();
         console.log('remover o post');
         break;
       case 'no-Delete':
         modalDelete.style.display = 'none';
         console.log('Não remover o post');
         break;
-      case 'editar':
-        editPost(id);
+      case 'edit-post':
+        modalEdit.style.display = 'flex';
+        console.log('abrir textarea');
+        break;
+      case 'yes-edit':
+        modalEdit.style.display = 'none';
+        edit();
+        console.log('salvou o post');
+        break;
+      case 'no-edit':
+        modalEdit.style.display = 'none';
+        console.log('cancelar edição post');
         break;
       default:
-        console.log('clicou em qualquer outra coisa');
+        console.log('clicou em qualquer outro elemento');
         break;
     }
   });

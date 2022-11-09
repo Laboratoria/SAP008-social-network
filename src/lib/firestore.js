@@ -20,13 +20,12 @@ export const nameUser = () => auth.currentUser.displayName;
 
 export const createPost = async (textPost) => {
   addDoc(collection(db, 'posts'), {
-    photoURL: auth.currentUser.photoURL,
+    photo: current().photoURL,
     name: auth.currentUser.displayName,
     date: new Date().toLocaleDateString('pt-BR'),
     author: auth.currentUser.uid,
     text: textPost,
     like: [],
-    id: auth.currentUser.uid,
   })
     .then(() => true)
     .catch((e) => { throw e; });
@@ -45,8 +44,8 @@ export const postScreen = async () => {
   }
 };
 
-export const removePost = async (postId) => {
-  const deletePost = await deleteDoc(doc(db, 'posts', postId));
+export const removePost = async (id) => {
+  const deletePost = await deleteDoc(doc(db, 'posts', id));
   return deletePost;
 };
 

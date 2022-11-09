@@ -28,11 +28,14 @@
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
     "regenerator-runtime": "^0.13.1",
-    "serve": "^13.0.2",
+    "serve": "^14.1.0",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0"
   },
   "engines": {
     "node": ">=16.x"
+  },
+  "dependencies": {
+    "firebase": "^9.13.0"
   }
 }

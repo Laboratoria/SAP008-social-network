@@ -2,10 +2,11 @@ export const mainFeed = () => {
   const sectionFeed = document.createElement('section');
   sectionFeed.innerHTML = `
   <form class="feed">
-    <input class="input-post"></input>
-    <button class="btn-post">Publicar</button>
+    <label class="feed-post" for="feed-post">Publique aqui:</label>
+    <input class="input-post" type="text" id="feed-post"/>
+    <button class="btn-post" type="button">Publicar</button>
     <a href="#login">
-    <button type="button" class="btn-return">Sair</button>
+    <button class="btn-return" type="button">Sair</button>
     </a>
   </form>
   `;

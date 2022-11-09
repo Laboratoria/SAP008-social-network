@@ -4,7 +4,6 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-
 import { mainLogin } from './pages/login/login.js';
 import { mainRegister } from './pages/cadastro/cad.js';
 import { mainFeed } from './pages/feed/feed.js';

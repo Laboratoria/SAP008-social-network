@@ -1,6 +1,6 @@
 export default () => {
-    const container = document.createElement('div')
-    const template = `
+  const container = document.createElement('div');
+  const template = `
        <div class="box">    
         <h2>login</h2>
         <form>
@@ -16,8 +16,6 @@ export default () => {
         </form>
        </div>
        `;
-    container.innerHTML = template;
-    return container;
-  
-  }
-  
+  container.innerHTML = template;
+  return container;
+};

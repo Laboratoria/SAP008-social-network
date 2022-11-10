@@ -33,7 +33,7 @@ const getPostsTemplate = (posts) => {
       </section>
       <section class='modal-edit'>
         <div class='boxSaveCancel'>
-          <button class='btnSalvarCancelar' data-action='yes-edit'>SALVAR</button>
+          <button class='btnSalvarCancelar' data-id='${post.id}' data-action='yes-edit'>SALVAR</button>
           <button class='btnSalvarCancelar' data-action='no-edit'>CANCELAR</button>
         </div>
       </section>
@@ -81,9 +81,9 @@ export default () => {
       <form id='create-Post'>
         <section class='boxModelPost'>
           <form>
-            <p class='sectionTextarea'>
+            <form class='sectionTextarea'>
               <textarea id='text-publish' style='resize: none' class='inputText' rows='3' cols='40' placeholder='Escreva detalhes sobre a estadia em sua residência...'></textarea>
-            </p>
+            </form>
             <p class='sectionBtnPubli'>
               <button type='submit' id='publish-btn' class='publicBtn'>Publicar</button>
             </p>
@@ -100,75 +100,6 @@ export default () => {
   const createform = sectionFeed.querySelector('#create-Post');
   const textAreaPost = sectionFeed.querySelector('#text-publish');
   const btnLogOut = sectionFeed.querySelector('#logOut');
-
-  //btn deslogar
-  btnLogOut.addEventListener('click', () => {
-    logOutUser().then(() => {
-      window.location.hash = '#home';
-    });
-  });
-
-  const elementPost = sectionFeed.querySelector('#post-feed');
-  elementPost.addEventListener('click', (e) => {
-    const element = e.target;
-    const actionElement = element.dataset.action;
-    const id = element.dataset.id;
-    const modalDelete = elementPost.querySelector('.modal-confirm');
-    const postElement = elementPost.querySelector(`.sectionPost[data-id='${id}']`);// eslint-disable-line
-    const modalEdit = elementPost.querySelector('.modal-edit');
-
-    const deletePost = () => {
-      removePost(id)
-        .then(() => {
-          postElement.remove();
-        })
-        .catch((error) => {
-          console.log('caiu no catch do delete', error);
-        });
-    };
-
-    const edit = () => {
-      editPost(id)
-        .then(() => {
-          console.log('abriu a textarea para editar', id);
-        })
-        .catch((error) => {
-          console.log('caiu no erro do editar', error);
-        });
-    };
-
-    switch (actionElement) {
-      case 'delete-Post':
-        modalDelete.style.display = 'flex';
-        console.log('abrir o modal');
-        break;
-      case 'yes-Delete':
-        modalDelete.style.display = 'none';
-        deletePost();
-        console.log('remover o post');
-        break;
-      case 'no-Delete':
-        modalDelete.style.display = 'none';
-        console.log('Não remover o post');
-        break;
-      case 'edit-post':
-        modalEdit.style.display = 'flex';
-        console.log('abrir textarea');
-        break;
-      case 'yes-edit':
-        modalEdit.style.display = 'none';
-        edit();
-        console.log('salvou o post');
-        break;
-      case 'no-edit':
-        modalEdit.style.display = 'none';
-        console.log('cancelar edição post');
-        break;
-      default:
-        console.log('clicou em qualquer outro elemento');
-        break;
-    }
-  });
 
   //printando post na tela
   async function printPost() {
@@ -188,6 +119,73 @@ export default () => {
         const errorCode = errorFire(error.code);
         console.log(errorCode);
       });
+  });
+
+  //btn deslogar
+  btnLogOut.addEventListener('click', () => {
+    logOutUser().then(() => {
+      window.location.hash = '#home';
+    });
+  });
+
+  const elementPost = sectionFeed.querySelector('#post-feed');
+  elementPost.addEventListener('click', (e) => {
+    const element = e.target;
+    const actionElement = element.dataset.action;
+    const id = element.dataset.id;
+    const modalDelete = elementPost.querySelector('.modal-confirm');
+    const postElement = elementPost.querySelector(`.sectionPost[data-id='${id}']`);
+    const modalEdit = elementPost.querySelector('.modal-edit');
+
+    const deletePost = () => {
+      removePost(id)
+        .then(() => {
+          postElement.remove();
+          printPost();
+        })
+        .catch(() => {
+          alert('Não foi possivel excluir o post');
+        });
+    };
+
+    const edit = () => {
+      editPost(id)
+        .then(() => {
+          console.log('abriu a textarea para editar', id);
+        })
+        .catch((error) => {
+          console.log('caiu no erro do editar', error);
+        });
+    };
+
+    switch (actionElement) {
+      case 'delete-Post':
+        modalDelete.style.display = 'flex';
+        break;
+      case 'yes-Delete':
+        modalDelete.style.display = 'none';
+        deletePost();
+        break;
+      case 'no-Delete':
+        modalDelete.style.display = 'none';
+        break;
+      case 'edit-post':
+        modalEdit.style.display = 'flex';
+        console.log('abrir textarea');
+        break;
+      case 'yes-edit':
+        modalEdit.style.display = 'none';
+        edit();
+        console.log('salvou o post');
+        break;
+      case 'no-edit':
+        modalEdit.style.display = 'none';
+        console.log('cancelar edição post');
+        break;
+      default:
+        console.log('clicou em qualquer outro elemento');
+        break;
+    }
   });
 
   printPost();

@@ -2,14 +2,18 @@ import {
   signInWithGoogle,
   logInUser,
   logOutUser,
+  createRegister,
   resetPassword,
+  statusUser,
 } from '../src/lib/auth.js';
 
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
   signOut,
+  createUserWithEmailAndPassword,
   sendPasswordResetEmail,
+  onAuthStateChanged,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -41,6 +45,26 @@ describe('logOutUser', () => {
   it('Deve chamar a função signOut ao ser executado', () => {
     logOutUser();
     expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('createRegister', () => {
+  it('Deve ser uma função', () => {
+    expect(typeof createRegister).toBe('function');
+  });
+  it('Deve chamar a função createUserWithEmailAndPassword ao ser executado', () => {
+    createRegister();
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('statusUser', () => {
+  it('Deve ser uma função', () => {
+    expect(typeof statusUser).toBe('function');
+  });
+  it('Deve chamar a função onAuthStateChanged ao ser executado', () => {
+    statusUser();
+    expect(onAuthStateChanged).toHaveBeenCalledTimes(2);
   });
 });
 

@@ -21,7 +21,7 @@ export const mainRegister = () => {
   </a>
 </form>
 `;
-  const btnRegister = mainRegister.querySelector('#btn-register');
+  const btnRegister = sectionRegister.querySelector('#btn-register');
   btnRegister.addEventListener('click', async () => {
     const nameUser = mainRegister.querySelector('#input-name').value;
     const email = mainRegister.querySelector('#input-email').value;

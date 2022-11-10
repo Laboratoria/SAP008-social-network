@@ -1,4 +1,6 @@
-import { initializeApp, getAuth, signInWithEmailAndPassword } from './exports.js';
+import {
+  initializeApp, getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+} from './exports.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,3 +22,7 @@ export const signIn = async (email, password) => {
   const useCredential = await signInWithEmailAndPassword(auth, email, password);
   return useCredential.user;
 };
+
+export async function signinUserEmail(email, password) {
+  return createUserWithEmailAndPassword(auth, email, password);
+}

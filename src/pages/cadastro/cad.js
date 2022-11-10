@@ -1,4 +1,3 @@
-
 /* eslint-disable no-alert */
 
 import { signinUserEmail } from '../../lib/index.js';
@@ -15,7 +14,7 @@ export const mainRegister = () => {
   <input class="input-password" type="password" id="input-password"/>
   <label for="text-password-repeat" class="text-password-repeat">Confirme sua senha:</label>
   <input class="input-password-repeat" type="password" id="input-password-repeat"/>
-  <a class="btn" id="btn-register" href="login">Cadastrar</a>
+  <button type="button" class="btn" id="btn-register">Cadastrar</a>
   <a href="#login">
   <button type="button" class="btn" id="btn-back">Voltar</button>
   </a>
@@ -23,14 +22,13 @@ export const mainRegister = () => {
 `;
   const btnRegister = sectionRegister.querySelector('#btn-register');
   btnRegister.addEventListener('click', async () => {
-    const nameUser = mainRegister.querySelector('#input-name').value;
-    const email = mainRegister.querySelector('#input-email').value;
-    const password = mainRegister.querySelector('#input-password').value;
+    const email = sectionRegister.querySelector('#input-email').value;
+    const password = sectionRegister.querySelector('#input-password').value;
 
     try {
-      const user = await signinUserEmail(nameUser, email, password);
+      const user = await signinUserEmail(email, password);
       alert(`Bem vinda ${user.email}`);
-      window.location.href = '/#feed';
+      window.location.href = '/#login';
     } catch (error) {
       alert(error.message);
     }

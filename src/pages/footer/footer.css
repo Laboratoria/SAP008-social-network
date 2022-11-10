@@ -1,0 +1,71 @@
+.footer-nav {
+  background-color: #e9e9e9;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+
+  padding: 0.7rem 0rem 0rem 0rem;
+}
+
+.footer-nav a {
+  color: #00a57a;
+  text-decoration: none;
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+  height: 4rem; 
+}
+
+.footer-icon {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.footer-icon ion-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-list {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-desk-all {
+    box-shadow: 0.1rem 0 0 #d2d0d0;
+  }
+
+  .footer-nav {
+    background-color: none;
+    padding: 0rem;
+  }
+
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    max-width: 10rem;
+    margin-top: -15rem;
+  }
+
+  .footer-nav li a {
+    display: flex;
+  }
+
+  .footer-icon ion-icon {
+    height: 1.7rem;
+    width: 1.7rem;
+    color: #00a57a;
+    margin-right: 0.5rem;
+  }
+
+  .footer-list {
+    color: #535050;
+  }
+
+}

@@ -1,0 +1,105 @@
+.header-body {
+  background-color: #e9e9e9;
+  
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+.header-menu-and-logo {
+  position: relative;
+  display: flex;
+}
+
+.header-logo {
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+.header-menu {
+  color: #00a57a;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.header-body-menu {
+  background-color: #d9d9d9;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  height: 9rem;
+  width: 12rem;
+  margin-top: 0.5rem;
+  padding: 1.5rem;
+
+  display: none;
+}
+
+.header-body-menu ul li a {
+  color: #535050;
+  text-decoration: none;
+  line-height: 2rem;
+}
+
+.side-internal-icon {
+  font-weight: bold;
+}
+
+.side-internal-list {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+    .header-menu {
+      display: none;
+    }
+
+  .header-body {
+      display: flex;
+      justify-content: left;
+      font-size: 2rem;
+    }
+  
+  .header-main {
+    box-shadow: 0.1rem 0 0 #d2d0d0;
+    min-width: 15rem;
+    min-height: 100vw;
+    position: fixed;    
+  }
+
+  .header-logo {
+    display: block;
+    height: 6rem;
+    width: 6rem;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    position: absolute;    
+  }
+
+  .header-menu-and-logo ion-icon {
+    color: #00a57a;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .header-body-menu {
+    background-color: #e9e9e9;
+    border-radius: 0;
+    padding: 0;
+    display: block;
+    position: fixed;
+    margin-top: 22.5rem;
+    margin-left: 2rem;
+    width: 10rem;
+  }
+
+}
+  

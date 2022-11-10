@@ -1,3 +1,6 @@
+
+/* eslint-disable no-alert */
+
 import { signinUserEmail } from '../../lib/index.js';
 
 export const mainRegister = () => {

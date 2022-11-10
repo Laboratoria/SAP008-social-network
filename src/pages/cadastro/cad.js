@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from '../../lib/index.js';
+import { signinUserEmail } from '../../lib/index.js';
 
 export const mainRegister = () => {
   const sectionRegister = document.createElement('section');
@@ -23,6 +23,14 @@ export const mainRegister = () => {
     const nameUser = mainRegister.querySelector('#input-name').value;
     const email = mainRegister.querySelector('#input-email').value;
     const password = mainRegister.querySelector('#input-password').value;
+
+    try {
+      const user = await signinUserEmail(nameUser, email, password);
+      alert(`Bem vinda ${user.email}`);
+      window.location.href = '/#feed';
+    } catch (error) {
+      alert(error.message);
+    }
   });
 
   return sectionRegister;

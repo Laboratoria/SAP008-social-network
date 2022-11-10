@@ -6,7 +6,7 @@ export const mainLogin = () => {
   const printElements = document.createElement('div');
   printElements.innerHTML = `
     <div class='logo'>
-    <p>LOGO</p>
+    <p>LOGO!</p>
     </div>
   <form class='input-container'> 
     <input class='input-email' type='text' id='email'/>

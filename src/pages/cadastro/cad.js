@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+
 export const mainRegister = () => {
   const sectionRegister = document.createElement('section');
   sectionRegister.innerHTML = `

@@ -9,8 +9,8 @@ export const mainLogin = () => {
     <p>LOGO!</p>
     </div>
   <form class='input-container'> 
-    <input class='input-email' type='text' id='email'/>
-    <input class='input-password' type='text' id='password'/>
+    <input class='input-email' type='text' id='login-email'/>
+    <input class='input-password' type='password' id='login-password'/>
     <a id='btn-cadastro'href='#register'>Cadastre-se</a>
     <button type='button' class='btn-enter' id='btnEnter'>Entrar</button>
   </form>
@@ -18,8 +18,8 @@ export const mainLogin = () => {
 
   const btnEnter = printElements.querySelector('#btnEnter');
   btnEnter.addEventListener('click', async () => {
-    const email = printElements.querySelector('#email').value;
-    const password = printElements.querySelector('#password').value;
+    const email = printElements.querySelector('#login-email').value;
+    const password = printElements.querySelector('#login-password').value;
 
     try {
       const user = await signIn(email, password);

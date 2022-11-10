@@ -16,14 +16,6 @@ import {
 
 const auth = getAuth(app);
 
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    console.log('Usuário logado,', user);
-  } else {
-    console.log('Não há usuários logado');
-  }
-});
-
 const logInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
 const provider = new GoogleAuthProvider();
@@ -37,6 +29,17 @@ const updateDisplayName = (user, displayName) => updateProfile(user, { displayNa
 
 const resetPassword = (email) => sendPasswordResetEmail(auth, email);
 
+function statusUser() {
+  return onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      console.log('Usuário logado,', user);
+    } else {
+      console.log('Não há usuários logado');
+    }
+  });
+}
+statusUser();
+
 export {
   logInUser,
   signInWithGoogle,
@@ -44,4 +47,5 @@ export {
   createRegister,
   updateDisplayName,
   resetPassword,
+  statusUser,
 };

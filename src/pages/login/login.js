@@ -9,6 +9,7 @@ export const mainLogin = () => {
     <p>LOGO!</p>
     </div>
   <form class='input-container'> 
+
     <input class='input-email' type='text' id='login-email'/>
     <input class='input-password' type='password' id='login-password'/>
     <a id='btn-cadastro'href='#register'>Cadastre-se</a>

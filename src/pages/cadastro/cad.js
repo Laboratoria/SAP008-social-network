@@ -1,11 +1,14 @@
+
 /* eslint-disable no-alert */
+
+import { signinUserEmail } from '../../lib/index.js';
 
 export const mainRegister = () => {
   const sectionRegister = document.createElement('section');
   sectionRegister.innerHTML = `
   <form class='register'>
   <label for="text-name" class="text-name">Nome:</label>
-  <input class="input-email" type="email" id="input-email"/>
+  <input class="input-name" type="email" id="input-name"/>
   <label for="text-email" class="text-email">Email:</label>
   <input class="input-email" type="email" id="input-email"/>
   <label for="text-password" class="text-password">Senha:</label>
@@ -18,6 +21,20 @@ export const mainRegister = () => {
   </a>
 </form>
 `;
+  const btnRegister = mainRegister.querySelector('#btn-register');
+  btnRegister.addEventListener('click', async () => {
+    const nameUser = mainRegister.querySelector('#input-name').value;
+    const email = mainRegister.querySelector('#input-email').value;
+    const password = mainRegister.querySelector('#input-password').value;
+
+    try {
+      const user = await signinUserEmail(nameUser, email, password);
+      alert(`Bem vinda ${user.email}`);
+      window.location.href = '/#feed';
+    } catch (error) {
+      alert(error.message);
+    }
+  });
 
   return sectionRegister;
 };

@@ -99,7 +99,7 @@
   width: 40%;
   height: 20%;
   font-size: 13px;
-  margin: 0% 30% 1% 20%;
+  margin: 0% 30% 1% 25%;
 }
 .SectionCriarPost{
   display: flex;
@@ -358,9 +358,16 @@
     flex-direction: column;
     justify-content: center;
   }
+  .create-Post{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   .boxModelPost {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #eeeeee;
     border-color: black;
     border-style: solid;
@@ -368,8 +375,8 @@
     border-radius: 10px;
     width: 70%;
     height: 20%;
-    margin: 1% auto;
-    padding: 15px;
+    margin: 1%;
+    padding: 15px 10px 0px 10px;
     font-size: 40px;
   }
   .publicBtn {
@@ -391,18 +398,16 @@
     padding: 0% 0% 2% 0%;
   }
   .textTitle {
+    justify-content: center;
     font-weight: bold;
     border-color: black;
     border-radius: 5px;
-    padding: 1%;
     font-size: 20px;
   }
   .inputText {
-    width: 100%;
     border-radius: 5px;
     border-color: black;
     border-style: solid;
-    padding: 10px 0px 5px 0px;
     text-align: center;
     outline: none;
     border-color: #1fa48c;
@@ -421,11 +426,6 @@
     padding: 1%;
     font-size: 15px;
     margin: auto;
-  }
-  .create-Post{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
   }
   #userName {
     margin: 3%;

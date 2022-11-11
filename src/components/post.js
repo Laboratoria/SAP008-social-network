@@ -1,4 +1,4 @@
-import { deletePost } from '../lib/firestore.js';
+import { deletePost, editarPost, curtirPost } from '../lib/firestore.js';
 
 export default (post) => {
   console.log(post);
@@ -11,9 +11,13 @@ export default (post) => {
           <h4>Enviado por: ${pt.name}</h4>
           <p>${pt.text}</p><br>
         </form>
-          <div>
-            <button type="submit" id="botaoEditar">Editar</button>
+          <div class="conjPost" >
+            <button type="submit" data-id="${pt.id}" id="botaoEditar" class="botaoEditar">Editar</button>
             <button type="submit" data-id="${pt.id}" id="botaoDeletar" class="botaoDeletar">Deletar</button>
+            <div class="like">
+            <button type= "button"  class="botaoCurtir" id="botaoCurtir"><i class="fa-regular fa-heart" data-id="${post.id}" data-like="${post.like}"></i></button>
+            <span class="contadoLike">${post.like}</span>
+            </div>
           </div>
       </div>
      </section>
@@ -23,7 +27,8 @@ export default (post) => {
   container.innerHTML = template;
   const postArea = document.getElementById('posts');
   const postDelete = container.querySelectorAll('.botaoDeletar');
-  //const postEditar = container.querySelector('#botaoEditar');
+  const postEditar = container.querySelectorAll('.botaoEditar');
+  const postCurtir = container.querySelectorAll('.botaoCurtir');
 
   postDelete.forEach((e) =>{
     e.addEventListener('click',(e) =>{
@@ -38,7 +43,35 @@ export default (post) => {
           console.log("deu ruim")
         }) 
     })
-  })
+  });
+  postEditar.forEach((e) =>{
+    e.addEventListener('click',(e) =>{
+      const postId = e.target.dataset.id;
+      console.log(postId)
+      const textoNovo = prompt("editar seu post")
+      editarPost(postId, textoNovo)
+        .then((result) =>{
+          document.location.reload(true)
+          console.log("editar")
+        })
+        .catch((error) =>{
+          console.log("deu ruim")
+        }) 
+    })
+  });
+  postCurtir.forEach((e)=>{
+    e.addEventListener('click', (e) =>{
+      const postId = e.target.dataset.id;
+
+      curtirPost(postId)
+      console.log("curtir")
+            .then((result) =>{
+                document.location.reload(true);
+            }).catch((error) =>{
+                console.log("deu ruim")
+            });
+    })
+  });
   postArea.innerHTML = '';
   postArea.appendChild(container);
 };

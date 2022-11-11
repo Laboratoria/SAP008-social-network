@@ -1,7 +1,4 @@
-import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,
-  GoogleAuthProvider, updateProfile, signOut, 
-} from './exports.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,GoogleAuthProvider, updateProfile, signOut, } from './exports.js';
 
 import app from './config-firebase.js';
 

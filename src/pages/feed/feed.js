@@ -47,11 +47,12 @@ const getPostsTemplate = (posts) => {
             <p class='userName'>${post.name}</p>
             <p class='date'>${post.date}</p>
           </div>
-          <textarea id='${post.id} 'class='textPost' id='textPost' disabled='' style='resize: none' rows='3' cols='40'>${post.text}</textarea>
+          <textarea data-id='${post.id}'class='textPost' disabled='' style='resize: none' rows='3' cols='40'>${post.text}</textarea>
           <section>${crud}</section>
         </section>
         <section class='sectionBtnLikeDeslike'>
           <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
+        </section>
       </section>`;
   })
     .join('');
@@ -136,6 +137,8 @@ export default () => {
     const modalDelete = elementPost.querySelector('.modal-confirm');
     const postElement = elementPost.querySelector(`.sectionPost[data-id='${id}']`);
     const modalEdit = elementPost.querySelector('.modal-edit');
+    const textEdit = elementPost.querySelector(`.textPost[data-id='${id}']`);
+    console.log(textEdit);
 
     const deletePost = () => {
       removePost(id)
@@ -149,9 +152,9 @@ export default () => {
     };
 
     const edit = () => {
-      editPost(id)
+      editPost(textEdit.value, id)
         .then(() => {
-          console.log('abriu a textarea para editar', id);
+          textEdit.setAttribute('disabled', '');
         })
         .catch((error) => {
           console.log('caiu no erro do editar', error);
@@ -171,6 +174,7 @@ export default () => {
         break;
       case 'edit-post':
         modalEdit.style.display = 'flex';
+        textEdit.removeAttribute('disabled');
         console.log('abrir textarea');
         break;
       case 'yes-edit':

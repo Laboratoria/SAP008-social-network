@@ -29,7 +29,7 @@ const updateDisplayName = (user, displayName) => updateProfile(user, { displayNa
 
 const resetPassword = (email) => sendPasswordResetEmail(auth, email);
 
-function statusUser() {
+function observerLogin() {
   return onAuthStateChanged(auth, (user) => {
     if (user != null) {
       console.log('Usuário logado,', user);
@@ -38,7 +38,7 @@ function statusUser() {
     }
   });
 }
-statusUser();
+observerLogin();
 
 export {
   logInUser,
@@ -47,5 +47,5 @@ export {
   createRegister,
   updateDisplayName,
   resetPassword,
-  statusUser,
+  observerLogin,
 };

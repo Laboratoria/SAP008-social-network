@@ -73,6 +73,10 @@ describe('postLike', () => {
 
 // teste da função deletar posts //
 describe('deletePost', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
   it('a função deletar um post recebendo o Id do post', async () => {
     const posts = {
       idPost: '123456',

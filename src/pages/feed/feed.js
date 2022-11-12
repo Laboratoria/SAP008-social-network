@@ -28,7 +28,6 @@ export default function Feed() {
     <section id="post" class="post">
       <div class="post-box">
         <p id= 'error-message' class = 'error-message'> </p>
-        <p id= 'message-welcome' class = 'welcome-message'> </p>
         <textarea class="post-textarea" data-textarea id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
         <button type="submit" id="post-btn" class="post-btn">Publicar</button>
       </div>

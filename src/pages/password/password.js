@@ -6,9 +6,9 @@ export default () => {
   const containerPassword = document.createElement('div');
   const password = `
   <main class = 'container-password'>
-  <figure>
-    <img class='logo' src="imagens/logoINspire.png" alt="Logo palavra Inspire com as letras I e N maiúsculas e o restante minísculas" />
-  </figure>
+  <div class = 'field-logo'>
+    <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
+  </div>
 
   <p class = 'message-password'>
     Problemas para entrar?
@@ -23,7 +23,7 @@ export default () => {
   </form>
 
   
-  <button id="reset-button" class='reset-button'>Enviar
+  <button id="reset-button" class='reset-btn'>Enviar
   </button>        
   </main>
   `;

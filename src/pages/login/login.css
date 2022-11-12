@@ -105,7 +105,8 @@ telas grandes: acima de 1200 */
 
   }
   .login-form{
-    margin-top: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
     display: block;
   }
 
@@ -115,16 +116,21 @@ telas grandes: acima de 1200 */
   
   } 
   .logo {
-    margin-top: 20%;
-    width: 20%;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 30%;
   }
 
   .google-button {
-    width: 75%;
+    width: 60%;
   }
 
   .field-logo{
     margin: 5%;
     width: 75%;
+  }
+
+  .signin-button {
+    width: 40%;
   }
 }

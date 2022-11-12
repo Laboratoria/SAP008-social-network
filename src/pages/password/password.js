@@ -23,7 +23,7 @@ export default () => {
   </form>
 
   
-  <button id="reset-button" class="reset-button btn">Enviar
+  <button id="reset-button" class='reset-button'>Enviar
   </button>        
   </main>
   `;

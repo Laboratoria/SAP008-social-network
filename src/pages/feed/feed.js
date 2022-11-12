@@ -28,7 +28,6 @@ export default function Feed() {
     <section id="post" class="post">
       <div class="post-box">
         <p id= 'error-message' class = 'error-message'> </p>
-        <p id= 'message-welcome' class = 'welcome-message'> </p>
         <textarea class="post-textarea" data-textarea id="post-textarea" placeholder="O que deseja compartilhar?"></textarea>
         <button type="submit" id="post-btn" class="post-btn">Publicar</button>
       </div>
@@ -53,7 +52,7 @@ export default function Feed() {
   const buttonLogout = feed.querySelector('.button-logout');
   const messageError = feed.querySelector('#error-message');
   const btnLink = feed.querySelector('#btn-link');
-  const btnHome = feed.querySelector('.btn-home');
+  const btnAbout = feed.querySelector('.btn-about');
   const user = current().uid;
   // colocar o template dentro de uma função exemplo a função faz mágica e chama a função //
   // getAllPosts embaixo com um then chamando a função fazMagica por exemplo e faz o cath //
@@ -178,7 +177,7 @@ export default function Feed() {
   });
 
   // botao navegar para a página about //
-  btnLink.addEventListener('click', () => {
+  btnAbout.addEventListener('click', () => {
     window.location.hash = '#about';
   });
 

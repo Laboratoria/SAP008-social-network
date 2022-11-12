@@ -16,6 +16,8 @@ export const errorsFirebase = (errorCode) => {
       return ' Senha é fraca, use letras e números.';
     case 'auth/too-many-requests':
       return 'Muitas tentativas de login realizadas. faça uma nova senha.';
+    case 'auth/unauthorized-domain':
+      return 'autenticação de domínio não autorizado. Por favor entre em contato com o nosso suporte.';
     default:
       return `Algo inexperado aconteceu. Por favor entre em contato com o suporte e informe o código ${errorCode}`;
   }

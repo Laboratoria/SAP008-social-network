@@ -82,24 +82,33 @@
 
  @media screen and (min-width: 1024px) {
 
+  body{
+    justify-content:space-around;
+  
+  }
+
   .register{
-    margin-bottom: 10%; 
+    margin-right: 10%;
+    margin-top: 10%;
     display: block;
     
   }
-  .field-logo-register{
-    margin-right: 20%;
-  } 
   
-
-  .logo-e-form-register{
-    display: inline-flex;
+  .logo-e-form {
+    margin: 5%;
+    width: 75%;
   } 
+
+  .logo {
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 30%;
+  }
 
   .logo-page-register {
-    margin-top: 25%;
-    margin-right: 9vw;
-    width: 120%;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 30%;
     
   }
 

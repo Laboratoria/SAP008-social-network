@@ -37,7 +37,10 @@ export default function Feed() {
     </section>
     <nav class=''>
       <button class='btn-link' id='btn-link'>
-        <img class='btn-link-img' src='./imagens/btn-link.png'>
+        <img class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
+        <img class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
+        <img class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
+
       </button>
     </nav>
     <p id= 'error-message' class = 'error-message'> </p>
@@ -49,6 +52,7 @@ export default function Feed() {
   const buttonLogout = feed.querySelector('.button-logout');
   const messageError = feed.querySelector('#error-message');
   const btnLink = feed.querySelector('#btn-link');
+  const btnAbout = feed.querySelector('.btn-about');
   const user = current().uid;
   // colocar o template dentro de uma função exemplo a função faz mágica e chama a função //
   // getAllPosts embaixo com um then chamando a função fazMagica por exemplo e faz o cath //
@@ -170,6 +174,11 @@ export default function Feed() {
   // botao navegar para a página de links //
   btnLink.addEventListener('click', () => {
     window.location.hash = '#links';
+  });
+
+  // botao navegar para a página about //
+  btnAbout.addEventListener('click', () => {
+    window.location.hash = '#about';
   });
 
   // função para printar pos posts na tela //

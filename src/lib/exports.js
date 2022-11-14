@@ -19,6 +19,6 @@ export {
   getDocs,
   doc,
   deleteDoc,
-  increment,
   updateDoc,
+  arrayUnion,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';

@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, getAuth, query, getDocs, deleteDoc, doc, updateDoc,increment} from './exports.js';
+import { getFirestore, collection, addDoc, getAuth, query, getDocs, deleteDoc, doc, updateDoc,arrayUnion} from './exports.js';
 import app from './config-firebase.js';
 
 export async function getPosts(){
@@ -21,6 +21,7 @@ export async function createPost(text) {
     const docRef = await addDoc(postRef, {
       name: auth.currentUser.displayName,
       text: text,
+      like:[],
     });
     console.log('Document written with ID: ', docRef.id);
 
@@ -42,7 +43,8 @@ export async function editarPost(postId, textoNovo){
 export async function curtirPost(postId){
   const db = getFirestore(app)
   const docRef = doc(db, "posts", postId);
+  console.log(docRef,"aaaaaaaa")
   await updateDoc(docRef, {
-    like: increment(1),
-  });
+    like: arrayUnion("")
+});
 };

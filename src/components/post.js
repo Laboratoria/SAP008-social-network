@@ -15,8 +15,13 @@ export default (post) => {
             <button type="submit" data-id="${pt.id}" id="botaoEditar" class="botaoEditar">Editar</button>
             <button type="submit" data-id="${pt.id}" id="botaoDeletar" class="botaoDeletar">Deletar</button>
             <div class="like">
-            <button type= "button"  class="botaoCurtir" id="botaoCurtir"><i class="fa-regular fa-heart" data-id="${post.id}" data-like="${post.like}"></i></button>
-            <span class="contadoLike">${post.like}</span>
+            <button type= "button"  class="botaoCurtir" id="botaoCurtir" 
+              data-id="${pt.id}" 
+              data-like="${pt.like}" 
+              data-likecount= ${pt.like.length}>
+              <span class='like-icon ${pt.like ? 'liked-red' : ''}'>&#10084;</span>
+                <span class='like-count'>${pt.like.length}</span>
+            </button>
             </div>
           </div>
       </div>
@@ -62,9 +67,7 @@ export default (post) => {
   postCurtir.forEach((e)=>{
     e.addEventListener('click', (e) =>{
       const postId = e.target.dataset.id;
-
       curtirPost(postId)
-      console.log("curtir")
             .then((result) =>{
                 document.location.reload(true);
             }).catch((error) =>{

@@ -98,3 +98,61 @@ button#btnEnter {
   background-color: #1e1e1e;
   color: #ffd1b3;
 }
+
+@media (min-width: 320px) and (max-width: 400px) {
+  #root {
+    width: 90%;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.64rem;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+  #root {
+    width: 90%;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #root {
+    width: 90%;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  img {
+    width: 35%;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.0rem;
+  }
+}

@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #636363;
+}
+
+#root {
+  background-color: #ffecd1;
+  width: 40%;
+  height: 90%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  height: 80vh;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 50%;
+}
+
+h1 {
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+h3 {
+  font-size: 15px;
+  color: #1e1e1e;
+}
+
+form.input-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+input#email {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #d1b39f;
+  color: #fff;
+}
+
+input#password {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: none;
+  background-color: #d1b39f;
+  color: #fff;
+}
+
+a#btn-cadastro {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 4px;
+  color: #1e1e1e;
+}
+
+button#btnEnter {
+  width: 100px;
+  height: 30px;
+  margin: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #1e1e1e;
+  color: #ffd1b3;
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+  #root {
+    width: 90%;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.64rem;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+  #root {
+    width: 90%;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #root {
+    width: 90%;
+  }
+
+  div {
+    width: 80%;
+  }
+
+  img {
+    width: 35%;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.0rem;
+  }
+}

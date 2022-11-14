@@ -152,7 +152,7 @@ export default () => {
     };
 
     const edit = () => {
-      editPost(textEdit.value, id)
+      editPost(id, textEdit.value)
         .then(() => {
           textEdit.setAttribute('disabled', '');
         })

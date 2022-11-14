@@ -1,12 +1,19 @@
-/* eslint-disable no-alert */
+import {
+  signIn,
+} from '../../lib/index.js';
 
-import { signIn } from '../../lib/index.js';
+import {
+  errorsFirebase,
+  validateLogin,
+} from '../../validations.js';
+
+import { redirect } from '../../redirect.js';
 
 export const mainLogin = () => {
   const printElements = document.createElement('div');
   printElements.innerHTML = `
     <div class='logo'>
-    <img src="/src/img/Logo.png" alt="logo borboleta" />
+    <img src="/src/img/Logo-borboleta.png" alt="logo borboleta" />
     <h1>"Nome da Marca"</h1>
     <h3>Mulheres que se transformam através da tecnologia.</h3>
     </div>
@@ -18,20 +25,30 @@ export const mainLogin = () => {
     <button type='button' class='btn-enter' id='btnEnter'>Entrar</button>
     </a>
   </form>
+  <p class="msg-error"></p>
     `;
-
   const btnEnter = printElements.querySelector('#btnEnter');
-  btnEnter.addEventListener('click', async () => {
-    const email = printElements.querySelector('#email').value;
-    const password = printElements.querySelector('#password').value;
+  const email = printElements.querySelector('#email');
+  const password = printElements.querySelector('#password');
+  const errorMessage = printElements.querySelector('.msg-error');
 
-    try {
-      const user = await signIn(email, password);
-      alert(`Bem vinda ${user.email}`);
-      window.location.href = '/#feed';
-    } catch (error) {
-      alert(error.message);
+  btnEnter.addEventListener('click', (event) => {
+    event.preventDefault();
+    const validation = validateLogin(email.value, password.value);
+    if (validation === '') {
+      signIn(email.value, password.value)
+        .then(() => {
+          printElements.innerHTML = '';
+          redirect('#feed');
+        })
+        .catch((error) => {
+          const errorFirebase = errorsFirebase(error.code);
+          errorMessage.innerHTML = errorFirebase;
+        });
+    } else {
+      errorMessage.innerHTML = validation;
     }
   });
+
   return printElements;
 };

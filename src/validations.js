@@ -41,3 +41,22 @@ export function validateRegister(name, email, password, passwordRepeat) {
   }
   return '';
 }
+
+export function validateLogin(email, password) {
+  const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
+  const emailValid = regexEmail.test(email);
+
+  if (email === '') {
+    return 'Preencha o campo de e-mail!';
+  }
+  if (password === '') {
+    return 'Digite sua senha!';
+  }
+  if (emailValid === false) {
+    return 'Insira um e-mail válido (ex: nome@email.com)';
+  }
+  if (!email && !password) {
+    return 'Por favor, preencha todos os campos!';
+  }
+  return '';
+}

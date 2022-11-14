@@ -174,7 +174,6 @@ export default () => {
       case 'edit-post':
         modalEdit.style.display = 'flex';
         textEdit.removeAttribute('disabled');
-        console.log(id);
         break;
       case 'yes-edit':
         modalEdit.style.display = 'none';
@@ -183,7 +182,6 @@ export default () => {
       case 'no-edit':
         modalEdit.style.display = 'none';
         textEdit.setAttribute('disabled', '');
-        console.log(id);
         break;
       default:
         break;

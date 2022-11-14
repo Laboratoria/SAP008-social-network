@@ -31,10 +31,10 @@ const getPostsTemplate = (posts) => {
           </section>
         </div>
       </section>
-      <section class='modal-edit'>
+      <section class='modal-edit' data-id='${post.id}'> 
         <div class='boxSaveCancel'>
           <button class='btnSalvarCancelar' data-id='${post.id}' data-action='yes-edit'>SALVAR</button>
-          <button class='btnSalvarCancelar' data-action='no-edit'>CANCELAR</button>
+          <button class='btnSalvarCancelar' data-id='${post.id}' data-action='no-edit'>CANCELAR</button>
         </div>
       </section>
     </p>
@@ -136,9 +136,8 @@ export default () => {
     const id = element.dataset.id;
     const modalDelete = elementPost.querySelector('.modal-confirm');
     const postElement = elementPost.querySelector(`.sectionPost[data-id='${id}']`);
-    const modalEdit = elementPost.querySelector('.modal-edit');
+    const modalEdit = elementPost.querySelector(`.modal-edit[data-id='${id}']`);
     const textEdit = elementPost.querySelector(`.textPost[data-id='${id}']`);
-    console.log(textEdit);
 
     const deletePost = () => {
       removePost(id)
@@ -152,12 +151,12 @@ export default () => {
     };
 
     const edit = () => {
-      editPost(textEdit.value, id)
+      editPost(id, textEdit.value)
         .then(() => {
           textEdit.setAttribute('disabled', '');
         })
         .catch((error) => {
-          console.log('caiu no erro do editar', error);
+          alert('caiu no erro do editar', error);
         });
     };
 
@@ -175,19 +174,18 @@ export default () => {
       case 'edit-post':
         modalEdit.style.display = 'flex';
         textEdit.removeAttribute('disabled');
-        console.log('abrir textarea');
+        console.log(id);
         break;
       case 'yes-edit':
         modalEdit.style.display = 'none';
         edit();
-        console.log('salvou o post');
         break;
       case 'no-edit':
         modalEdit.style.display = 'none';
-        console.log('cancelar edição post');
+        textEdit.setAttribute('disabled', '');
+        console.log(id);
         break;
       default:
-        console.log('clicou em qualquer outro elemento');
         break;
     }
   });

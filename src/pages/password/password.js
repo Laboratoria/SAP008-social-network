@@ -26,7 +26,7 @@ export default () => {
           <input id="btn-reset" class="ResetPassword" type="button" value="Enviar email">
         </p>
         <p class="sectionBackBtn">
-          <a class="btnBackPass" id="btn-home"><img src='../../img/btnSair.png' alt='seta para sair'</a>
+          <a class="btnBackPass" id="btn-home"><img src='img/btnSair.png' alt='seta para sair'</a>
         </p>
         <div class='sectionSobrePassword'>
           <a href='#sobre' class='sobrepagePassword'>Sobre</a>

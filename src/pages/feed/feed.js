@@ -19,8 +19,8 @@ const getPostsTemplate = (posts) => {
     const crud = post.author === user ? `
     <p class='sectionBtn' data-id='${post.id}' >
       <div class='modal'>
-        <button class='btnDelete' data-id='${post.id}' data-action='delete-Post'><img class='imgDelete' src='../../img/delete.png' alt='Excluir'></button>
-        <button class='btnEditar' data-id='${post.id}' data-action='edit-post'><img class='imgEditar' src='../../img/editar.png' alt='Editar'></button>
+        <button class='btnDelete' data-id='${post.id}'><img class='imgDelete' src='img/delete.png' data-action='delete-Post' alt='Excluir'></button>
+        <button class='btnEditar' data-id='${post.id}'><img class='imgEditar' src='img/editar.png' data-action='edit-post' data-id='${post.id}' alt='Editar'></button>
       </div>
       <section>
         <div class='modal-confirm'>
@@ -51,7 +51,7 @@ const getPostsTemplate = (posts) => {
           <section>${crud}</section>
         </section>
         <section class='sectionBtnLikeDeslike'>
-          <button class='btnLike' id='btn-like'><img src='../../img/like.png' alt='Like'></button>
+          <button class='btnLike' id='btn-like'><img src='img/like.png' alt='Like'></button>
         </section>
       </section>`;
   })
@@ -64,11 +64,11 @@ export default () => {
   //Template do feed
   sectionFeed.innerHTML = `
   <header class='headerFeed'>
-    <img src='../../img/logoTranp.png' class='loginhoFeed' alt='Logo Peq Wanderlust'>
+    <img src='img/logoTranp.png' class='loginhoFeed' alt='Logo Peq Wanderlust'>
   </header>
   <nav class='navBar'>
     <ul class='sectionSobreEperfil'>
-      <a class='btnSIgnInOut' id='logOut'><img src='../../img/btnSair.png' alt='seta para sair'</a>
+      <a class='btnSIgnInOut' id='logOut'><img src='img/btnSair.png' alt='seta para sair'</a>
       <a href='#sobre' class='sobrepageFeed'>SOBRE</a>
       <a href='#perfil' class='perfilFeed'>PERFIL</a>
     </ul>

@@ -12,36 +12,26 @@ import {
   updateDoc,
 } from './firebase.js';
 
-export const auth = getAuth(app);
+export const current = () => getAuth(app).currentUser;
 
-export const current = () => auth.currentUser;
+export const nameUser = () => current().displayName;
 
-export const nameUser = () => auth.currentUser.displayName;
-
-export const createPost = async (textPost) => {
-  addDoc(collection(db, 'posts'), {
-    photo: current().photoURL,
-    name: auth.currentUser.displayName,
-    date: new Date().toLocaleDateString('pt-BR'),
-    author: auth.currentUser.uid,
-    text: textPost,
-    like: [],
-  })
-    .then(() => true)
-    .catch((e) => { throw e; });
-};
+export const createPost = (textPost) => addDoc(collection(db, 'posts'), {
+  photo: current().photoURL,
+  name: current().displayName,
+  date: new Date().toLocaleDateString('pt-BR'),
+  author: current().uid,
+  text: textPost,
+  like: [],
+});
 
 export const postScreen = async () => {
-  try {
-    const querySnapshot = await getDocs(collection(db, 'posts'));
-    const arrayPost = [];
-    querySnapshot.forEach((posts) => {
-      arrayPost.push({ ...posts.data(), id: posts.id });
-    });
-    return arrayPost;
-  } catch (e) {
-    console.log(e);
-  }
+  const querySnapshot = await getDocs(collection(db, 'posts'));
+  const arrayPost = [];
+  querySnapshot.forEach((posts) => {
+    arrayPost.push({ ...posts.data(), id: posts.id });
+  });
+  return arrayPost;
 };
 
 export const removePost = async (id) => {

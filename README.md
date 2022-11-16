@@ -1,19 +1,44 @@
+<div align="center">
+
+  ![logo](https://user-images.githubusercontent.com/109089136/202313770-142fc0da-823c-4ec3-8463-e3a495d13af1.png)
+
+  # Wanderlust: Viajar, viver e colecionar experiências!
+  
+ <br>
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" alt="Node.js" style="height: 30px;"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest" style="height: 30px;"/> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height: 30px;"/> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" style="height: 30px;"/>
+
+  <br>
+
+  Terceiro projeto da turma SAP008 da Laboratoria - https:// 
+  
+</div>
+
+
 # Social-network 🏖️🏞️ Wanderlust ✈️
-Terceiro projeto da turma SAP008 da Laboratoria - https://
+
 
 ## Índice
 
 * [1. Definição de produto](#1-Definição-de-pronto)
-* [2. História de usuário](#2-História-de-usuário)
-* [3. Protótipo](#3-Protótipo)
-* [4. Usabilidade](#4-Usabilidade)
-* [5. Objetivos de aprendizagem](#5-Objetivos-de-aprendizagem)
+* [2. Planejamento](#2-Planejamento)
+* [3. História de usuário](#3-História-de-usuário)
+* [4. Protótipo](#4-Protótipo)
+* [5. Usabilidade](#5-Usabilidade)
+* [6. Objetivos de aprendizagem](#6-Objetivos-de-aprendizagem)
 
 
 ***
 
 ## 🚀 1. Definição de produto
-O Wanderlust vem para ajudar as mulheres a poderem "Viajar, viver e colecionar experiêncioas!"
+O Wanderlust vem para ajudar as mulheres a poderem "Viajar, viver e colecionar experiências!"
 Percebemos em pesquisas que as pessoas estão buscando mais as viagens após a pandemia. E numa pesquisa do IBGE com o Ministério do Turismo, a grande maioria das pessoas (48,9%)* apontam a falta de dinheiro como principal empecilho para viajar.
 E no Booking.com 39%* dos viajantes brasileiros afirmaram que planejavam fazer uma viagem solo no futuro.
 
@@ -22,7 +47,13 @@ Aliando essas informações, encontramos uma forma de viagem que é chamada de '
 Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que desejam viajar, de uma forma mais econômica, mais segura, podendo vivienciar a cultura do local, e assim possam encontrar outras mulheres dispostas a cederem um sofá, uma cama para que estas possam se hospedar.
 
 
-## 📋 2. Histórias de usuários
+## 📑 2. Planejmaneto
+
+Todo o planejmaneto do projeto foi feito no NOTION, em Quadro Kanban, com tasks em 'baby steps', divididas em 'to do' (por fazer), 'doing' (fazendo) e 'done' (feito)
+https://www.notion.so/60fd93e2249243c6ad92e355f74598ef?v=7369f737e22d49d08cef86daca461bd1
+
+
+## 📋 3. Histórias de usuários
 
 - Quero poder me cadastrar e participar de uma rede social, para encontrar mulheres como eu, que estão disposta a ceder um local em sua casa ou se hospedar em casa de outras mulheres, e para isso gostaria de entrar me cadastrando com meu email e senha ou acessar através da minha conta google.
 (Cadastro / Login / Login com o Google / Esqueci minha senha)
@@ -34,7 +65,7 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 (Like / Dislike)
 
 
-## 🖼️ 3. Protótipo
+## 🖼️ 4. Protótipo
 
 ### Baixa fidelidade
 
@@ -62,19 +93,78 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 ![Prot Desk 4](https://user-images.githubusercontent.com/109089136/202287007-4ab1b576-c035-49ed-9d86-0ab71c268c7a.JPG)
 
 
-## 4. Usabilidade
+## 5. Usabilidade
 
-## 5. Objetivos de aprendizagem
+Após fazermos os testes manuais e de usabilidade, incorporamos os feedbacks dados pelos usuários, e fizemos as seguintes mudanças:
+- Inserimos a página de 'esqueci minha senha', para casos que o usuário esqueça a senha e receba um email para poder alterar a mesma.
+- Trocamos o layout e as cores da palheta, para tornar o visual mais clean.
+- Colocamos os botões de editar e excluir o post somente para as usuárias que publicaram o post.
 
-### Ferramentas utilizadas
+
+## 6. Objetivos de aprendizagem
+
+#### HTML: 
+* Uso de HTML semântico
+
+#### CSS:
+* Uso de seletores de CSS;
+* Empregar o modelo de caixa (box model): borda, margem, preenchimento;
+* Uso de flexbox em CSS
+
+#### Web APIs
+* Uso de seletores de DOM
+* Manipulação de eventos de DOM (<i>Objeto Event: EventTarget.addEventListener(), EventTarget.removeEventListener() </i>)
+* Manipulação dinâmica de DOM (<i>Node.appendChild(), Document.createElement(), Node.textContent, Element.innerHTML</i>)
+* Routing (History API, evento hashchange, window.location)
+
+#### JavaScript
+* Diferenciar entre tipos de dados primitivos e não primitivos
+* Manipular arrays (filter, map, sort, reduce)
+* Manipular objects (key | value)
+* Variáveis (declaração, atribuição, escopo)
+* Uso de condicionais (if-else, switch, operador ternário, lógica booleana)
+* Uso de laços (for, for..of)
+* Uso de funções (parâmetros, argumentos, valor de retorno)
+* Testes unitários (Introdução ao Jest)
+* Testes assíncronos
+* Uso de mocks e espiões
+* Módulos de ECMAScript (ES modules: import, export)
+* Uso de linter (ESLINT)
+* Uso de identificadores descritivos (Nomenclatura | Semântica)
+* Diferença entre expression e statements
+* Callbacks
+* Promessas
+
+#### Controle de Versões (Git e GitHub)
+* Git: Instalação e configuração
+* Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)
+* Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)
+* GitHub: Criação de contas e repositórios, configuração de chave SSH
+* GitHub: Implantação com GitHub Pages
+* GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)
+* GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)
+
+#### user-centricity
+* Desenhar a aplicação pensando e entendendo a usuária
+
+#### product-design
+* Criar protótipos para obter feedback e iterar
+* Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)
+
+#### Firebase
+* Firebase Auth
+* Firestore
 
 
 
-Fontes
+### Desenvolvedoras👩
+* Aghatha Silva [Linkedin](https://www.linkedin.com/in/aghatha-silva/) | [GitHub](https://github.com/AghathaK)
+* Andresa Vieira [Linkedin](https://www.linkedin.com/in/andresa-vieira/) | [GitHub](https://github.com/Andresavieira28)
+* Ariane Costa Machado [Linkedin](https://www.linkedin.com/in/arianecmachado/)) | [GitHub](https://github.com/ArianeCMachado)
 
+#######Fontes
 *Resultados da PNAD Contínua Turismo – 3º trimestre de 2019, divulgada 12/08/2020 pelo IBGE, em convênio com o Ministério do Turismo.
 *Booking.com https://viagemegastronomia.cnnbrasil.com.br/noticias/dia-das-mulheres-o-turismo-especializado-no-publico-feminino-ganha-espaco/.
 
-## Desenvolvedoras
 
 

@@ -69,7 +69,9 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 ### Ferramentas utilizadas
 
 
+
 Fontes
+
 *Resultados da PNAD Contínua Turismo – 3º trimestre de 2019, divulgada 12/08/2020 pelo IBGE, em convênio com o Ministério do Turismo.
 *Booking.com https://viagemegastronomia.cnnbrasil.com.br/noticias/dia-das-mulheres-o-turismo-especializado-no-publico-feminino-ganha-espaco/.
 

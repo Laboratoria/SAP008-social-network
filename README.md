@@ -43,10 +43,14 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 
 #### Mobile
 ![Prototipo mobile 1](https://user-images.githubusercontent.com/109089136/202285498-a7cf719c-d136-4837-b03c-591734705ac8.JPG)
-![Prototipo mobile 2](https://user-images.githubusercontent.com/109089136/202285598-3b1d5de1-bab4-402e-8ccf-518cb65867d2.JPG)
+![Prototipo mobile 2](https://user-images.githubusercontent.com/109089136/202286014-e497a0b6-c69d-4700-a8d8-ab873d73ca5a.JPG)
 
 #### Desktop
 
+![Prot Desk 1](https://user-images.githubusercontent.com/109089136/202286977-aa9c113e-0e16-44e4-9c42-c8adcfb00edd.JPG)
+![Prot Desk 2](https://user-images.githubusercontent.com/109089136/202286990-8e3eae49-af00-4622-b743-f3895cad0230.JPG)
+![Prot Desk 3](https://user-images.githubusercontent.com/109089136/202287001-04b3e9dc-ed79-4538-81c7-16b53ff5e54d.JPG)
+![Prot Desk 4](https://user-images.githubusercontent.com/109089136/202287007-4ab1b576-c035-49ed-9d86-0ab71c268c7a.JPG)
 
 
 ## 4. Usabilidade

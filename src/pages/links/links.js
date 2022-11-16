@@ -9,9 +9,11 @@ export default () => {
         <picture>
           <img class='logo-feed' src='imagens/logoINspirefeed.png' alt='Logo' />
         </picture>
-          <button class='btn-link' id='btn-link'>
-            <img class='btn-link-img' src='./imagens/btn-link.png'>
-          </button>
+        <nav class='btn-link'>
+          <img id='btn-link-img' class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
+          <img id='btn-about-link' class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
+          <img id='btn-home' class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
+        </nav>
           <a href='#login' id='logout'>
             <img  class='button-logout' src='imagens/btnlogout.png' alt='Botão Sair'>
           </a> 
@@ -56,11 +58,7 @@ export default () => {
               basta abrir o aplicativo e escolher entre as opções que ele oferece 
               para manter seu diário.
             </p>
-        </section>
-        <button id='back-feed' class='signin-button btn'>Voltar para o feed
-        </button>        
-      </button>        
-        </button>        
+        </section>      
       </div>
     </main>
     
@@ -68,13 +66,10 @@ export default () => {
 
   containerLink.innerHTML = templateLink;
 
-  const btnFeedLinks = containerLink.querySelector('#back-feed');
   const buttonLogout = containerLink.querySelector('.button-logout');
   const messageError = containerLink.querySelector('#error-message');
-
-  btnFeedLinks.addEventListener('click', () => {
-    window.location.hash = '#feed';
-  });
+  const btnAbout = containerLink.querySelector('#btn-about-link');
+  const btnHome = containerLink.querySelector('#btn-home');
 
   buttonLogout.addEventListener('click', (e) => {
     e.preventDefault();
@@ -85,6 +80,16 @@ export default () => {
         messageError.innerHTML = errorCode;
         messageError.classList.add('show');
       });
+  });
+
+  // botao navegar para a página about //
+  btnAbout.addEventListener('click', () => {
+    window.location.hash = '#about';
+  });
+
+  // botao navegar para a página feed //
+  btnHome.addEventListener('click', () => {
+    window.location.hash = '#feed';
   });
 
   return containerLink;

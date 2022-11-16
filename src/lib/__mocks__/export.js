@@ -1,6 +1,7 @@
 export const initializeApp = jest.fn();
 export const mockAuth = {
   currentUser: {},
+  signOut: jest.fn(),
 };
 export const getAuth = jest.fn(() => mockAuth);
 export const createUserWithEmailAndPassword = jest.fn();

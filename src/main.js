@@ -6,6 +6,7 @@ import welcome from './pages/welcome/welcome.js';
 import password from './pages/password/password.js';
 import { stayLoggedIn } from './lib/auth.js';
 import links from './pages/links/links.js';
+import about from './pages/about/about.js';
 
 const container = document.querySelector('.root');
 
@@ -51,6 +52,15 @@ const redirect = () => {
           container.appendChild(links());
         } else {
           container.appendChild(login());
+        }
+      });
+      break;
+    case '#about':
+      stayLoggedIn((loggedIn) => {
+        if (loggedIn) {
+          container.appendChild(about());
+        } else {
+          container.appendChild(about());
         }
       });
       break;

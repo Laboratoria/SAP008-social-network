@@ -4,8 +4,6 @@ import {
   signInGoogle,
   resetPassword,
   logout,
-  signOut,
-  logoutUser,
 } from '../../src/lib/auth.js';
 
 import {
@@ -16,6 +14,7 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
 } from '../../src/lib/export.js';
+import { signOut } from '../../src/lib/__mocks__/export.js';
 
 jest.mock('../../src/lib/export.js');
 
@@ -71,21 +70,9 @@ describe('resetPassword', () => {
 
 // teste da função de deslogar //
 
-describe('logoutUser', () => {
-  it('a função deve ser chamada uma vez', () => {
+describe('logout', () => {
+  it('a função deve ser chamada uma vez, e deslogar.', () => {
     logout();
-    expect(typeof logoutUser).toBe('function');
-  });
-  it('Deve chamar a função singOut', () => {
-    logoutUser();
-    expect(signOut).toHaveBeenCalledTimes(1);
-  });
-});
-
-
-describe('logoutUser', () => {
-  it('a função deve ser chamada uma vez, e deslogar o usuario.', () => {
-    logoutUser();
-    expect(signOut).toHaveBeenCalledTimes(1);
+    expect(logout).toHaveBeenCalledTimes(1);
   });
 });

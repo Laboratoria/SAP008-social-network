@@ -65,17 +65,3 @@ describe('observerLogin', () => {
     expect(onAuthStateChanged).toHaveBeenCalledTimes(2);
   });
 });
-
-/*
-describe('resetPassword', () => {
-  it('Deve ser uma função', () => {
-    expect(typeof resetPassword).toBe('function');
-  });
-  it('a função deve enviar um e-mail com link para redefinição de senha', () => {
-    const email = 'wanderlust@gmail.com';
-    const auth = getAuth(app);
-    resetPassword(auth, email);
-    expect(sendPasswordResetEmail).toHaveBeenCalledTimes(1);
-  });
-});
-*/

@@ -31,12 +31,24 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 (Publicar Posts no Feed / Editar Post / Deletar Post)
 
 - Pensando em economizar na viagem e conhecer novas culturas e pessoas de diferentes locais do mundo, quero poder, com a rede social, achar ver facilmente posts de outras mulheres que estejam cedendo um espaço em sua casa e após a hospedagem poder curtir o post do local gerando assim mais confiança para a escolha de todas.
-- (Like / Dislike)
+(Like / Dislike)
 
 
 ## 🖼️ 3. Protótipo
 
 ### Baixa fidelidade
+
+#### Mobile
+
+![Mobile 1](https://user-images.githubusercontent.com/109089136/202288449-47caac3d-8b80-4df9-8d6e-909ba5871b7e.jpeg)
+![Mobile 2](https://user-images.githubusercontent.com/109089136/202288456-c7397a62-dfe2-4175-a5ae-28d1abbea507.jpeg)
+![Mobile 3](https://user-images.githubusercontent.com/109089136/202288461-bfe03ba8-6a64-4640-816b-6b2fc3e63500.jpeg)
+
+#### Desktop
+
+![Desktop 1](https://user-images.githubusercontent.com/109089136/202288494-d54a4952-f9cd-4896-963a-cd0991438849.jpeg)
+![Desktop 2](https://user-images.githubusercontent.com/109089136/202288501-4a52fbef-d599-4d13-bce4-5bb02d8f1ba3.jpeg)
+![Desktop 3](https://user-images.githubusercontent.com/109089136/202288504-d81ceba3-8bfe-495a-b1d1-7ed6993417de.jpeg)
 
 
 ### Alta fidelidade

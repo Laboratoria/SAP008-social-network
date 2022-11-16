@@ -2,8 +2,8 @@
 
 import {
   auth,
-  signinUserEmail,
-} from '../../lib/index.js';
+  createUser,
+} from '../../lib/auth.js';
 
 import {
   errorsFirebase,
@@ -48,7 +48,7 @@ export const mainRegister = () => {
       passwordRepeat.value,
     );
     if (validation === '') {
-      signinUserEmail(email.value, password.value, name.value)
+      createUser(email.value, password.value, name.value)
         .then(() => updateProfile(auth.currentUser, {
           displayName: name.value,
         }))

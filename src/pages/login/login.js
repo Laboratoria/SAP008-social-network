@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 
-import { signIn } from '../../lib/index.js';
+import { signIn } from '../../lib/auth.js';
 
 export const mainLogin = () => {
   const printElements = document.createElement('div');

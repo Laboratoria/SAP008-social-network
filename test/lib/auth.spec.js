@@ -3,6 +3,8 @@ import {
   signIn,
   signInGoogle,
   resetPassword,
+  logout,
+  stayLoggedIn,
 } from '../../src/lib/auth.js';
 
 import {
@@ -12,6 +14,7 @@ import {
   mockAuth, // eslint-disable-line
   signInWithPopup,
   sendPasswordResetEmail,
+  onAuthStateChanged,
 } from '../../src/lib/export.js';
 
 jest.mock('../../src/lib/export.js');
@@ -67,5 +70,18 @@ describe('resetPassword', () => {
 });
 
 // teste da função de deslogar //
+describe('logout', () => {
+  it('a função deve deslogar o usuário', () => {
+    logout();
+    expect(mockAuth.signOut).toHaveBeenCalledTimes(1);
+  });
+});
 
 // teste da função do observador do usuário logado //
+
+describe('stayLoggedIn', () => {
+  it('a função deve verificar se o usuário esta logado', () => {
+    stayLoggedIn();
+    expect(onAuthStateChanged).toHaveBeenCalledTimes(1);
+  });
+});

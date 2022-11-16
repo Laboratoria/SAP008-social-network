@@ -164,7 +164,6 @@ Após fazermos os testes manuais e de usabilidade, incorporamos os feedbacks dad
 * Ariane Costa Machado [Linkedin](https://www.linkedin.com/in/arianecmachado/)) | [GitHub](https://github.com/ArianeCMachado)
 
 
-Fontes utilizadas nas pesquisas:
 [^1]: Resultados da PNAD Contínua Turismo – 3º trimestre de 2019, divulgada 12/08/2020 pelo IBGE, em convênio com o Ministério do Turismo.
 [^2]: Booking.com https://viagemegastronomia.cnnbrasil.com.br/noticias/dia-das-mulheres-o-turismo-especializado-no-publico-feminino-ganha-espaco/.
 

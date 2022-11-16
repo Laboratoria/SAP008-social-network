@@ -3,6 +3,9 @@ import {
   signIn,
   signInGoogle,
   resetPassword,
+  logout,
+  signOut,
+  logoutUser,
 } from '../../src/lib/auth.js';
 
 import {
@@ -68,4 +71,21 @@ describe('resetPassword', () => {
 
 // teste da função de deslogar //
 
-// teste da função do observador do usuário logado //
+describe('logoutUser', () => {
+  it('a função deve ser chamada uma vez', () => {
+    logout();
+    expect(typeof logoutUser).toBe('function');
+  });
+  it('Deve chamar a função singOut', () => {
+    logoutUser();
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});
+
+
+describe('logoutUser', () => {
+  it('a função deve ser chamada uma vez, e deslogar o usuario.', () => {
+    logoutUser();
+    expect(signOut).toHaveBeenCalledTimes(1);
+  });
+});

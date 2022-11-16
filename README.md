@@ -40,8 +40,8 @@
 
 ## 🚀 1. Definição de produto
 O Wanderlust vem para ajudar as mulheres a poderem "Viajar, viver e colecionar experiências!"
-Percebemos em pesquisas que as pessoas estão buscando mais as viagens após a pandemia. E numa pesquisa do IBGE com o Ministério do Turismo, a grande maioria das pessoas (48,9%)* apontam a falta de dinheiro como principal empecilho para viajar.
-E no Booking.com 39%* dos viajantes brasileiros afirmaram que planejavam fazer uma viagem solo no futuro.
+Percebemos em pesquisas que as pessoas estão buscando mais as viagens após a pandemia. E numa pesquisa do IBGE com o Ministério do Turismo, a grande maioria das pessoas (48,9%)[^1] apontam a falta de dinheiro como principal empecilho para viajar.
+E no Booking.com 39%[^2] dos viajantes brasileiros afirmaram que planejavam fazer uma viagem solo no futuro.
 
 Aliando essas informações, encontramos uma forma de viagem que é chamada de 'couchsurfing', onde as pessoas viajam para outros locais e se hospedagem em casas de conhecidos para, assim, ter uma economia.
 
@@ -51,7 +51,7 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 ## 📑 2. Planejmaneto
 
 Todo o planejmaneto do projeto foi feito no NOTION, em Quadro Kanban, com tasks em 'baby steps', divididas em 'to do' (por fazer), 'doing' (fazendo) e 'done' (feito)
-https://www.notion.so/60fd93e2249243c6ad92e355f74598ef?v=7369f737e22d49d08cef86daca461bd1
+[Notion](https://www.notion.so/60fd93e2249243c6ad92e355f74598ef?v=7369f737e22d49d08cef86daca461bd1)
 
 
 ## 📋 3. Histórias de usuários
@@ -164,9 +164,9 @@ Após fazermos os testes manuais e de usabilidade, incorporamos os feedbacks dad
 * Ariane Costa Machado [Linkedin](https://www.linkedin.com/in/arianecmachado/)) | [GitHub](https://github.com/ArianeCMachado)
 
 
-[^1]: Fontes utilizadas nas pesquisas:
-Resultados da PNAD Contínua Turismo – 3º trimestre de 2019, divulgada 12/08/2020 pelo IBGE, em convênio com o Ministério do Turismo.
-Booking.com https://viagemegastronomia.cnnbrasil.com.br/noticias/dia-das-mulheres-o-turismo-especializado-no-publico-feminino-ganha-espaco/.
+Fontes utilizadas nas pesquisas:
+[^1]: Resultados da PNAD Contínua Turismo – 3º trimestre de 2019, divulgada 12/08/2020 pelo IBGE, em convênio com o Ministério do Turismo.
+[^2]: Booking.com https://viagemegastronomia.cnnbrasil.com.br/noticias/dia-das-mulheres-o-turismo-especializado-no-publico-feminino-ganha-espaco/.
 
 
 

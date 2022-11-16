@@ -35,12 +35,11 @@ export default function Feed() {
     <section class="post-feed">
       <ul id="box-post"></ul>
     </section>
-    <nav class=''>
-      <button class='btn-link' id='btn-link'>
-        <img id='btn-link-img' class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
-        <img id='btn-about-link' class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
-        <img id='btn-home' class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
-      </button>
+    <nav class='btn-link'>
+      <img id='btn-link-img' class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
+      <img id='btn-about-link' class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
+      <img id='btn-home' class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
+      
     </nav>
     <p id= 'error-message' class = 'error-message'> </p>
   `;
@@ -183,7 +182,6 @@ export default function Feed() {
 
   // botao navegar para a página feed //
   btnHome.addEventListener('click', () => {
-    console.log(btnHome);
     window.location.hash = '#feed';
   });
 

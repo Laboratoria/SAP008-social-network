@@ -1,17 +1,11 @@
-import {
-  signIn,
-} from '../../lib/index.js';
-
-<<<<<<< HEAD
 import { signIn } from '../../lib/auth.js';
-=======
+
 import {
   errorsFirebase,
   validateLogin,
 } from '../../validations.js';
 
 import { redirect } from '../../redirect.js';
->>>>>>> c6508bce69e397b115cd158f25e89eee2985378d
 
 export const mainLogin = () => {
   const printElements = document.createElement('div');

@@ -9,7 +9,7 @@ function createTemplate() {
   <div class='container' id='template-form'>
     <div class='boxModelForm'>
       <form class='form' id='form'>
-        <img class='logo' src='../../img/logoTranp.png' alt='Logo Wanderlust'>
+        <img class='logo' src='img/logoTranp.png' alt='Logo Wanderlust'>
         <p class='register'>
           <input id='email-login' class='emailSenha' name='email-login' required='required' type='text' placeholder='Digite seu email'/>
         </p>
@@ -33,7 +33,7 @@ function createTemplate() {
         <div class='textEntrarGlg'>Entre também com:</div>
       </p>
       <p class='form'>
-        <a class='loginGoogle' id='btn-google'><img src='../../img/logoGoogle.jpg' alt='Logo Google'></a>
+        <a class='loginGoogle' id='btn-google'><img src='img/logoGoogle.jpg' alt='Logo Google'></a>
       </p>
       <p class='form'>
         <div class='sectionSobre'>

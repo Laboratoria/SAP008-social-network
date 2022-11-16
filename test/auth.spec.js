@@ -3,22 +3,15 @@ import {
   logInUser,
   logOutUser,
   createRegister,
-  resetPassword,
   observerLogin,
 } from '../src/lib/auth.js';
 
 import {
-  app,
-} from '../src/lib/configuration.js';
-
-import {
-  getAuth,
   signInWithPopup,
   signInWithEmailAndPassword,
   signOut,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
 } from '../src/lib/firebase.js';
 
 jest.mock('../src/lib/firebase.js');
@@ -73,6 +66,7 @@ describe('observerLogin', () => {
   });
 });
 
+/*
 describe('resetPassword', () => {
   it('Deve ser uma função', () => {
     expect(typeof resetPassword).toBe('function');
@@ -84,3 +78,4 @@ describe('resetPassword', () => {
     expect(sendPasswordResetEmail).toHaveBeenCalledTimes(1);
   });
 });
+*/

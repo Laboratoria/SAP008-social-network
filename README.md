@@ -44,9 +44,11 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 
 #### Desktop
 
+![Desk 1](https://user-images.githubusercontent.com/109089136/202291236-7b5e6394-0e9d-4162-81d2-6147b6acfd91.JPG)
+![Desk2](https://user-images.githubusercontent.com/109089136/202291240-9ecc28bb-4271-47f8-9044-b894525bed00.JPG)
+![Desk 3](https://user-images.githubusercontent.com/109089136/202291241-eb3aa6ab-6d34-4b1f-b231-ef1bc951316b.JPG)
 
-
-### Alta fidelidade
+## Alta fidelidade
 
 #### Mobile
 ![Prototipo mobile 1](https://user-images.githubusercontent.com/109089136/202285498-a7cf719c-d136-4837-b03c-591734705ac8.JPG)

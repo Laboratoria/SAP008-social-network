@@ -10,9 +10,15 @@ import {
   getDocs,
   getAuth,
   updateDoc,
+  getFirestore,
+  getDoc,
 } from './firebase.js';
 
+export const auth = getAuth(app);
+
 export const current = () => getAuth(app).currentUser;
+
+export const dataBase = getFirestore(app);
 
 export const nameUser = () => current().displayName;
 
@@ -25,7 +31,7 @@ export const createPost = (textPost) => addDoc(collection(db, 'posts'), {
   like: [],
 });
 
-export const postScreen = async () => {
+export const getPosts = async () => {
   const querySnapshot = await getDocs(collection(db, 'posts'));
   const arrayPost = [];
   querySnapshot.forEach((posts) => {
@@ -41,4 +47,24 @@ export const removePost = async (id) => {
 
 export const editPost = async (postId, newText) => {
   updateDoc(doc(db, 'posts', postId), { text: newText });
+};
+
+export const getPostById = async (postID) => {
+  const docRef = doc(dataBase, 'posts', postID);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+};
+
+export const likePost = async (postId, userId) => {
+  const post = await getPostById(postId);
+  let likes = post.like;
+  const liking = !likes.includes(userId);
+  if (liking) {
+    likes.push(userId);
+  } else {
+    likes = likes.filter((id) => id !== userId);
+  }
+  return updateDoc(doc(dataBase, 'posts', postId), {
+    like: likes,
+  });
 };

@@ -2,6 +2,7 @@ import {
   createPost,
   getAllPosts,
   postLike,
+  postDislike,
   deletePost,
 } from '../../src/lib/firestore.js';
 
@@ -14,6 +15,7 @@ import {
   deleteDoc,
   collection,
   doc,
+  arrayRemove,
 } from '../../src/lib/export.js';
 
 jest.mock('../../src/lib/export.js');
@@ -70,6 +72,23 @@ describe('postLike', () => {
 });
 
 // teste da função remover likes //
+describe('dislike', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+  it('a função deve remover id do usuário do array de likes', async () => {
+    const posts = {
+      idPost: '123456',
+      idUser: 'abc123',
+    };
+    await postDislike(posts.idPost, posts.idUser);
+
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      like: arrayRemove(posts.idUser),
+    });
+  });
+});
 
 // teste da função deletar posts //
 describe('deletePost', () => {

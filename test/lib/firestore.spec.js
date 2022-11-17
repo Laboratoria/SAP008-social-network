@@ -73,6 +73,10 @@ describe('postLike', () => {
 
 // teste da função remover likes //
 describe('postDislike', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
   it('a função deve remover id do usuário no array de likes', async () => {
     const posts = {
       idPost: '123456',
@@ -80,7 +84,7 @@ describe('postDislike', () => {
     };
     await postDislike(posts.idPost, posts.idUser);
 
-    expect(updateDoc).toHaveBeenCalledTimes(2);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
     expect(updateDoc).toHaveBeenCalledWith(undefined, {
       like: arrayRemove(posts.idUser),
     });

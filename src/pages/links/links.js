@@ -5,19 +5,21 @@ export default () => {
   const containerLink = document.createElement('div');
   const templateLink = `
     <main class = 'main-div'>
-      <nav class='top-nav'>
+      <header class='top-nav'>
         <picture>
           <img class='logo-feed' src='imagens/logoINspirefeed.png' alt='Logo' />
         </picture>
-        <nav class='btn-link'>
-          <img id='btn-link-img' class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
-          <img id='btn-about-link' class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
-          <img id='btn-home' class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
-        </nav>
+        
           <a href='#login' id='logout'>
             <img  class='button-logout' src='imagens/btnlogout.png' alt='Botão Sair'>
           </a> 
+      </header>
+      <nav class='btn-link'>
+        <img id='btn-link-img' class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
+        <img id='btn-about-link' class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
+        <img id='btn-home' class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
       </nav>
+        
       <div class='mental-health-links'>
         <h1 class = 'title-page-link'>
           Como você esta?

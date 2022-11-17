@@ -12,10 +12,10 @@ import {
   getDocs,
   updateDoc,
   arrayUnion,
+  arrayRemove,
   deleteDoc,
   collection,
   doc,
-  arrayRemove,
 } from '../../src/lib/export.js';
 
 jest.mock('../../src/lib/export.js');
@@ -72,11 +72,12 @@ describe('postLike', () => {
 });
 
 // teste da função remover likes //
-describe('dislike', () => {
+describe('postDislike', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
-  it('a função deve remover id do usuário do array de likes', async () => {
+
+  it('a função deve remover id do usuário no array de likes', async () => {
     const posts = {
       idPost: '123456',
       idUser: 'abc123',

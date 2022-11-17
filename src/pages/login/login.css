@@ -113,8 +113,9 @@ telas grandes: acima de 1200 */
   .logo-e-form{
   margin-right: 15%;
   display: inline-flex;
-  
+  align-items: center;  
   } 
+  
   .logo {
     margin-left: 10%;
     margin-top: 10%;

@@ -1,7 +1,9 @@
 .mental-health-links{
-  
+  margin: 2% 8% 0 8%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   
 }
@@ -14,4 +16,29 @@
   text-align: justify;
   margin-top: 1%;
   margin-bottom: 5%;
+}
+
+.btn-link{
+  background: #dabbdf;
+  border:none;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1700px) {      
+
+  .btn-link {
+      margin: 0;
+      flex-direction: column;
+      width: 3%;
+      height: 93%;
+      padding:2%;
+  }
+
 }

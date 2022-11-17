@@ -35,13 +35,11 @@ export default function Feed() {
     <section class="post-feed">
       <ul id="box-post"></ul>
     </section>
-    <nav class=''>
-      <button class='btn-link' id='btn-link'>
-        <img class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
-        <img class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
-        <img class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
-
-      </button>
+    <nav class='btn-link'>
+      <img id='btn-link-img' class='btn-link-img' alt='links' src='./imagens/btn-link.png'>
+      <img id='btn-about-link' class='btn-about' alt='desenvolvedoras da aplicação' src="./imagens/aboutt.png">
+      <img id='btn-home' class='btn-home' alt='feed da aplicação' src="./imagens/home.png">
+      
     </nav>
     <p id= 'error-message' class = 'error-message'> </p>
   `;
@@ -51,8 +49,9 @@ export default function Feed() {
   const postList = feed.querySelector('#box-post');
   const buttonLogout = feed.querySelector('.button-logout');
   const messageError = feed.querySelector('#error-message');
-  const btnLink = feed.querySelector('#btn-link');
-  const btnAbout = feed.querySelector('.btn-about');
+  const btnLink = feed.querySelector('#btn-link-img');
+  const btnAbout = feed.querySelector('#btn-about-link');
+  const btnHome = feed.querySelector('#btn-home');
   const user = current().uid;
   // colocar o template dentro de uma função exemplo a função faz mágica e chama a função //
   // getAllPosts embaixo com um then chamando a função fazMagica por exemplo e faz o cath //
@@ -148,23 +147,23 @@ export default function Feed() {
 
     // like //
     btnsLike.forEach((btnLike) => {
-      btnLike.addEventListener('click', async (e) => {
+      btnLike.addEventListener('click', async () => {
         const userId = user;
         const idPost = btnLike.id;
-        let likesCount = parseInt(e.target.dataset.likecount, 10);
+        let likesCount = parseInt(btnLike.dataset.likecount, 10);
         if (btnLike.dataset.liked === 'true') {
           await postDislike(idPost, userId);
           btnLike.querySelector('.like-icon').classList.remove('liked-red');
           btnLike.dataset.liked = 'false';//eslint-disable-line
           likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
-          e.target.dataset.likecount = parseInt(likesCount, 10);
+          btnLike.dataset.likecount = likesCount;//eslint-disable-line
           btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
         } else {
           await postLike(idPost, userId);
           btnLike.querySelector('.like-icon').classList.add('liked-red');
           btnLike.dataset.liked = 'true';//eslint-disable-line
           likesCount += 1;
-          e.target.dataset.likecount = likesCount;
+          btnLike.dataset.likecount = likesCount;//eslint-disable-line
           btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
         }
       });
@@ -179,6 +178,11 @@ export default function Feed() {
   // botao navegar para a página about //
   btnAbout.addEventListener('click', () => {
     window.location.hash = '#about';
+  });
+
+  // botao navegar para a página feed //
+  btnHome.addEventListener('click', () => {
+    window.location.hash = '#feed';
   });
 
   // função para printar pos posts na tela //

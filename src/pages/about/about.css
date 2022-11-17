@@ -1,3 +1,95 @@
-body{
-    background-color: aliceblue;
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 1em;
+}
+
+.logo {
+  width: 80px;
+  margin-top: 20px;
+  padding: 5px
+}
+
+
+.Andressa, .Juliene {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+}
+
+.title-container {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  background: #dabbdf;  
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+  padding: 5%;
+}
+
+.name {
+  color: white;
+  margin: 2%;
+}
+
+.all-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.507);
+  margin-bottom: 2%;
+}
+
+.link-github {
+  text-decoration:none;
+  color: #693d70;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+/* TELAS GRANDES */
+  @media screen and (min-width: 768px) {
+    .about-us {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .title-container {
+      margin-bottom: 0;
+      width: 40%;
+      background: #dabbdf;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+      padding: 1%;
+      }
+    
+    .Andressa, .Juliene {
+      margin-bottom: -4%;
+      flex-direction:row;
+    }
+
+    .name {
+      margin:5%;
+    }
+
+    .all-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0 0 2em rgba(0, 0, 0, 0.507);
+      margin-bottom: 2%;
+      flex-direction:row;
+    }
+
+
+    .logo {
+      width: 120px;
+      margin: 100px;
+    }
+  
 }

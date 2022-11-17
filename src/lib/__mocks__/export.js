@@ -1,6 +1,7 @@
 export const initializeApp = jest.fn();
 export const mockAuth = {
   currentUser: {},
+  signOut: jest.fn(),
 };
 export const getAuth = jest.fn(() => mockAuth);
 export const createUserWithEmailAndPassword = jest.fn();
@@ -27,5 +28,3 @@ export const arrayUnion = jest.fn();
 export const arrayRemove = jest.fn();
 export const deleteDoc = jest.fn();
 export const current = jest.fn(() => mockAuth);
-export const logout = jest.fn();
-export const signOut = jest.fn();

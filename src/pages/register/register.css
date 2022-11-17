@@ -35,7 +35,7 @@
 .form-register{
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
+  margin: 3%;
   align-items: center;
 }
 .register{
@@ -58,7 +58,7 @@
   border-radius: 10px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: white;
-  margin: 3% 0;
+  margin: 2% 0;
 }
 
 .field-button{
@@ -81,7 +81,6 @@
 }
 
  @media screen and (min-width: 1024px) {
-
   body{
     justify-content:space-around;
   
@@ -91,30 +90,28 @@
     margin-right: 10%;
     margin-top: 10%;
     display: block;
-    
   }
   
   .logo-e-form {
-    margin: 5%;
     width: 75%;
   } 
 
   .logo {
     margin-left: 10%;
-    margin-top: 10%;
     width: 30%;
   }
 
   .logo-page-register {
     margin-left: 10%;
-    margin-top: 10%;
     width: 30%;
+    
     
   }
 
   .text {
+    margin:15%;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 }
+

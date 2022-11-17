@@ -16,7 +16,7 @@ export default () => {
     Insire seu e-mail cadastrado e enviaremos um link para fazer uma nova senha.
   </p>
 
-  <form class = 'input-reset-password'>
+  <form class = 'input-reset'>
     <p id= 'error-message' class = 'error-message'></p>
     <p id= 'message-welcome' class = 'welcome-message'></p>
     <input class='input' type='email' name='email' id='input-email-password-reset' placeholder='Digite seu email'>

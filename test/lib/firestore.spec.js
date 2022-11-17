@@ -2,6 +2,7 @@ import {
   createPost,
   getAllPosts,
   postLike,
+  postDislike,
   deletePost,
 } from '../../src/lib/firestore.js';
 
@@ -11,6 +12,7 @@ import {
   getDocs,
   updateDoc,
   arrayUnion,
+  arrayRemove,
   deleteDoc,
   collection,
   doc,
@@ -70,6 +72,20 @@ describe('postLike', () => {
 });
 
 // teste da função remover likes //
+describe('postDislike', () => {
+  it('a função deve remover id do usuário no array de likes', async () => {
+    const posts = {
+      idPost: '123456',
+      idUser: 'abc123',
+    };
+    await postDislike(posts.idPost, posts.idUser);
+
+    expect(updateDoc).toHaveBeenCalledTimes(2);
+    expect(updateDoc).toHaveBeenCalledWith(undefined, {
+      like: arrayRemove(posts.idUser),
+    });
+  });
+});
 
 // teste da função deletar posts //
 describe('deletePost', () => {

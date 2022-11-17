@@ -19,17 +19,16 @@
 }
 
 .btn-link{
-  /*background: linear-gradient(to bottom right, rgb(199, 163, 232), #49AAD7, rgb(233, 173, 233), rgb(199, 163, 232)) no-repeat;*/
-  background: white;
-  border:none;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 20px;
-  padding: 10%;
-  position: fixed;
-  bottom: 0;
+   background: #dabbdf;
+   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+   border:none;
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 50px;
+   position: fixed;
+   bottom: 0;
 }
 
 .button-logout {
@@ -41,6 +40,7 @@
 .btn-about, .btn-link-img, .btn-home {
   width: 35px;
   cursor: pointer;
+  margin:5%;
 }
 
 ul {
@@ -169,32 +169,38 @@ ul {
   /* TELAS GRANDES */
   @media screen and (min-width: 1024px) and (max-width: 1700px) {      
    
-      .post-textarea {
-        width: 70%;
-        height: 40%;
-        margin-left: 5%;
-      }
+    .post-textarea {
+      width: 70%;
+      height: 40%;
+      margin-left: 10%;
+    }
 
-      .logo-feed, .button-logout {
-        width: 35%;
-        margin-left: 17%;
+    .logo-feed, .button-logout {
+      width: 35%;
+      margin-left: 30%;
 
-      }
-  
-      .allposts {
-        margin-left: 5%;
-        width: 70%;
-        height: 70%;
-      }
+    }
+    .post-btn {
+      margin-left: 10%;
+    }
 
-      .btn-link {
+    .allposts {
+      margin-left: 10%;
+      width: 70%;
+      height: 70%;
+    }
+
+    .btn-link {
         margin: 0;
-        display: flex;
         flex-direction: column;
         width: 3%;
-        height: 100%;
-        padding: 2%;
-      }
-  
+        height: 93%;
+        padding:1%;
+        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+        background-color: rgb(52 52 52 / 27%);
     }
+
+  }
+
+  
 

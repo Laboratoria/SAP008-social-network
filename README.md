@@ -48,7 +48,8 @@ Assim, foi a ideia do produto Wanderlust, um website, voltado para mulheres que 
 
 ## 📑 2. Planejmaneto
 
-Todo o planejmaneto do projeto foi feito no NOTION, em Quadro Kanban, com tasks em 'baby steps', divididas em 'to do' (por fazer), 'doing' (fazendo) e 'done' (feito)
+Todo o planejmaneto do projeto foi feito no NOTION, em Quadro Kanban, com tasks em 'baby steps', divididas em 'to do' (por fazer), 'doing' (fazendo) e 'done' (feito).
+
 [Notion](https://www.notion.so/60fd93e2249243c6ad92e355f74598ef?v=7369f737e22d49d08cef86daca461bd1)
 
 
@@ -159,7 +160,7 @@ Após fazermos os testes manuais e de usabilidade, incorporamos os feedbacks dad
 ## Desenvolvedoras👩
 * Aghatha Silva [Linkedin](https://www.linkedin.com/in/aghatha-silva/) | [GitHub](https://github.com/AghathaK)
 * Andresa Vieira [Linkedin](https://www.linkedin.com/in/andresa-vieira/) | [GitHub](https://github.com/Andresavieira28)
-* Ariane Costa Machado [Linkedin](https://www.linkedin.com/in/arianecmachado/)) | [GitHub](https://github.com/ArianeCMachado)
+* Ariane Costa Machado [Linkedin](https://www.linkedin.com/in/arianecmachado/) | [GitHub](https://github.com/ArianeCMachado)
 
 
 [^1]: Resultados da PNAD Contínua Turismo – 3º trimestre de 2019, divulgada 12/08/2020 pelo IBGE, em convênio com o Ministério do Turismo.

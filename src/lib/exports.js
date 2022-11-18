@@ -14,6 +14,5 @@ export {
 export {
   addDoc,
   collection,
-  getDocs,
   getFirestore,
 } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js';

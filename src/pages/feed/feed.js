@@ -4,7 +4,7 @@
 import { logOutUser } from '../../lib/auth.js';
 import {
   createPost,
-  getPosts
+  getPosts,
   current,
   removePost,
   editPost,

@@ -25,7 +25,7 @@ export const createPost = (textPost) => addDoc(collection(db, 'posts'), {
   like: [],
 });
 
-export const postScreen = async () => {
+export const getPostId = async () => {
   const querySnapshot = await getDocs(collection(db, 'posts'));
   const arrayPost = [];
   querySnapshot.forEach((posts) => {

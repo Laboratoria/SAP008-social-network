@@ -4,7 +4,7 @@
 import { logOutUser } from '../../lib/auth.js';
 import {
   createPost,
-  postScreen,
+  getPostId,
   current,
   removePost,
   editPost,
@@ -104,7 +104,7 @@ export default () => {
 
   //printando post na tela
   async function printPost() {
-    const posts = await postScreen();
+    const posts = await getPostId();
     sectionFeed.querySelector('#post-feed').innerHTML = getPostsTemplate(posts);
   }
 

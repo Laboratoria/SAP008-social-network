@@ -4,11 +4,13 @@
 import { logOutUser } from '../../lib/auth.js';
 import {
   createPost,
-  getPostId,
+  getPosts
   current,
   removePost,
   editPost,
   nameUser,
+  likePost,
+  auth,
 } from '../../lib/firestore.js';
 import { errorFire } from '../../lib/errorFirebase.js';
 
@@ -16,6 +18,7 @@ import { errorFire } from '../../lib/errorFirebase.js';
 const getPostsTemplate = (posts) => {
   const postTemplate = posts.map((post) => {
     const user = current().uid;
+    const liked = post.like.includes(user);
     const crud = post.author === user ? `
     <p class='sectionBtn' data-id='${post.id}' >
       <div class='modal'>
@@ -51,9 +54,10 @@ const getPostsTemplate = (posts) => {
           <section>${crud}</section>
         </section>
         <section class='sectionBtnLikeDeslike'>
-          <button class='btnLike' id='btn-like'><img src='img/like.png' alt='Like'></button>
-        </section>
-      </section>`;
+        <button class='btnLike' style="font-size:24px">
+        <i data-id='${post.id}' data-action='${liked ? 'dislike' : 'like'}' class="fa fa-heart-o"></i></button>
+      <div class='like-number'>${post.like.length}</div>
+        </section>`;
   })
     .join('');
   return postTemplate;
@@ -104,7 +108,7 @@ export default () => {
 
   //printando post na tela
   async function printPost() {
-    const posts = await getPostId();
+    const posts = await getPosts();
     sectionFeed.querySelector('#post-feed').innerHTML = getPostsTemplate(posts);
   }
 
@@ -160,7 +164,29 @@ export default () => {
         });
     };
 
+    const mostraLike = () => {
+      const conta = element.parentElement.nextElementSibling.textContent;
+      const soma = Number(conta) + 1;
+      element.parentElement.nextElementSibling.textContent = soma;
+    };
+
+    const esconderLike = () => {
+      const conta = element.parentElement.nextElementSibling.textContent;
+      const soma = Number(conta) - 1;
+      element.parentElement.nextElementSibling.textContent = soma;
+    };
+
     switch (actionElement) {
+      case 'like':
+        likePost(id, auth.currentUser.uid).then(() => mostraLike());
+        element.setAttribute('class', 'fa fa-heart');
+        element.dataset.action = 'dislike';
+        break;
+      case 'dislike':
+        likePost(id, auth.currentUser.uid).then(() => esconderLike());
+        element.setAttribute('class', 'fa fa-heart-o');
+        element.dataset.action = 'like';
+        break;
       case 'delete-Post':
         modalDelete.style.display = 'flex';
         break;

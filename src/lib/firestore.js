@@ -31,6 +31,7 @@ export const createPost = (textPost) => addDoc(collection(db, 'posts'), {
   like: [],
 });
 
+
 export const getPosts = async () => {
   const querySnapshot = await getDocs(collection(db, 'posts'));
   const arrayPost = [];

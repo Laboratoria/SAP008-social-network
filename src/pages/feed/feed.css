@@ -1,3 +1,13 @@
+
+
+.liked-red {
+  color: red;
+}
+
+.liked-white {
+  color: white;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -114,9 +124,6 @@ ul {
   font-size: 25px;
 }
 
-.liked-red {
-  color: red;
-}
 
 .modal{
   top: 0;

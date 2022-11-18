@@ -59,7 +59,7 @@ export default function Feed() {
 
   const templatePosts = (posts) => {
     const postsCreated = posts.map((post) => {
-      const liked = post.like ? post.like.includes(user) : false;
+      const liked = post.like ? post.like.includes(user) : 'false';
       const iteration = post.user === user ? `  
           <div class="iteration-btn">
             <img class="delete-post" data-delete="true" src="./imagens/btndelete.png" alt="Botão de deletar">
@@ -84,7 +84,7 @@ export default function Feed() {
                 data-liked='${liked}' 
                 data-likecount= ${post.like.length} 
                 id =${post.id}>
-                <span class='like-icon ${liked ? 'liked-red' : ''}'>&#10084;</span>
+                <span class='like-icon ${liked ? 'liked-red' : 'liked-white'}'>&#10084;</span>
                 <span class='like-count'>${post.like.length}</span>
               </button>
             </div>
@@ -153,13 +153,15 @@ export default function Feed() {
         let likesCount = parseInt(btnLike.dataset.likecount, 10);
         if (btnLike.dataset.liked === 'true') {
           await postDislike(idPost, userId);
-          btnLike.querySelector('.like-icon').classList.remove('liked-red');
           btnLike.dataset.liked = 'false';//eslint-disable-line
+          btnLike.querySelector('.like-icon').classList.remove('liked-red');
+          btnLike.querySelector('.like-icon').classList.add('liked-white');
           likesCount = likesCount - 1 < 0 ? 0 : likesCount - 1;
           btnLike.dataset.likecount = likesCount;//eslint-disable-line
           btnLike.querySelector('.like-count').textContent = likesCount;//eslint-disable-line
         } else {
           await postLike(idPost, userId);
+          btnLike.querySelector('.like-icon').classList.remove('liked-white');
           btnLike.querySelector('.like-icon').classList.add('liked-red');
           btnLike.dataset.liked = 'true';//eslint-disable-line
           likesCount += 1;

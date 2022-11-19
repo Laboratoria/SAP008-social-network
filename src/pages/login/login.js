@@ -12,7 +12,7 @@ export default function Login() {
             <img class="logo" src="imagens/logoINspire.png" alt="Logo" />
           </div>
     
-          <form class="login-form">
+          <form class="login-form forms-inputs">
             <p id= 'error-message' class = 'error-message'></p>
             <input class="login-input email" type="email" placeholder="E-mail do usuário" required>
             <input class="login-input password" type="password" placeholder="Senha" required>

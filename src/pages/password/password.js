@@ -21,7 +21,9 @@ export default () => {
         <p id= 'message-welcome' class = 'welcome-message'></p>
         <input class='email' type='email' name='email' id='input-email-password-reset' placeholder='Digite seu email'>
         <button id="reset-button" class='reset-btn'>Enviar</button> 
-        <a href="#login" class= "link">Faça seu login.</a></p>
+        <div>
+          <a href="#login" class= "link">Faça seu login.</a>
+        </div>
       </form>
     </div>       
   </main>

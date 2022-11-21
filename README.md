@@ -67,7 +67,6 @@ COLOCAR GIF DO RESULTADO (VER COMO SE FAZ)
   <img width="460" heigth="300" src='./src/imagens/GifResultadoDaPesquisa.gif'>
 </p>
 
-
 ## 4. Histórias de usuários
 
 Com base nas pesquisas com os usuários, elaboramos 3 histórias de usuário:

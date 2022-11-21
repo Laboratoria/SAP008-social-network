@@ -20,7 +20,7 @@ export default function about() {
     </nav>
 
     <section id="about-us" class="about-us">
-    <p class="title-container"><b> Projeto desenvolvido por: </b></p>
+    <p class="title-container"><b> Desenvolvedoras </b></p>
     <div class="Andressa">
         <img class="all-img" src="./imagens/Andressa.png" alt="Imagem de Aldressa Oliveira">
         <p class="name"><b>Andressa Oliveira</b></p>

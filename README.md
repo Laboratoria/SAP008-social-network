@@ -3,7 +3,7 @@
 <div align="center">
   <img src='./src/imagens/InspireReadme.jpeg' style="altura: 12rem;">
 
-  Confira [ aqui ](https://github.com/Juliene-Araujo/SAP008-social-network / ) o resultado final! 
+  Confira [ aqui ](https://juliene-araujo.github.io/SAP008-social-network/) o resultado final! 
 
 </div>
 

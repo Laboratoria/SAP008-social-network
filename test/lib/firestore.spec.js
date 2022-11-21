@@ -4,6 +4,7 @@ import {
   postLike,
   postDislike,
   deletePost,
+  editPost,
 } from '../../src/lib/firestore.js';
 
 import {
@@ -97,7 +98,7 @@ describe('deletePost', () => {
     jest.resetAllMocks();
   });
 
-  it('a função deletar um post recebendo o Id do post', async () => {
+  it('a função deve deletar um post recebendo o Id do post', async () => {
     const posts = {
       idPost: '123456',
     };
@@ -110,4 +111,23 @@ describe('deletePost', () => {
 });
 
 // teste da função de editar posts //
+describe('editPost', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
+  it('a função deve atualizar o valor do texto do post', async () => {
+    const posts = {
+      idPost: '123456',
+      text: 'abc123',
+    };
+    await editPost(posts.idPost, posts.text);
+
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(undefined);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', posts.idPost, {
+      post: posts.text,
+    });
+  });
+});
 // commit //

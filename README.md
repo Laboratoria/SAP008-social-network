@@ -1,7 +1,7 @@
 # INspire - Uma rede que inspira e conecta pessoas que buscam melhorar sua qualidade de vida e saúde mental
 
 <div align="center">
-  <img src='./src/imagens/InspireReadme.jpeg' style="altura: 12rem;">
+  <img src='./src/imagens/InspireReadme.png' style="altura: 12rem;">
 
   Confira [ aqui ](https://juliene-araujo.github.io/SAP008-social-network/) o resultado final! 
 

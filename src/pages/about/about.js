@@ -22,7 +22,7 @@ export default function about() {
     <section id="about-us" class="about-us">
     <p class="title-container"><b> Projeto desenvolvido por: </b></p>
     <div class="Andressa">
-        <img class="all-img" src="./imagens/Andressa1.png" alt="Imagem de Aldressa Oliveira">
+        <img class="all-img" src="./imagens/Andressa.png" alt="Imagem de Aldressa Oliveira">
         <p class="name"><b>Andressa Oliveira</b></p>
         <a class="link-github" href="https://github.com/Andressaolive" target="_blank">github.com/Andressaolive</a>
     </div>  

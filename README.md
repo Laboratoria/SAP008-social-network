@@ -52,16 +52,18 @@ Por meio de um ambiente seguro, construímos um espaço com informações relaci
 
 Para conhecer os usuários, realizamos uma pesquisa utilizando a ferramenta Google Forms. A partir desta pesquisa foi possível traçar o perfil das personas, identificar as necessidades dos usuários e elaborar a interface da aplicação.
 
+
 - Formulário da pesquisa aplicado com os possíveis usuários:
 
-COLOCAR GIF DA PESQUISA (VER COMO SE FAZ)
-
-  <>
+<p>
+  <img width="460" heigth="300" src='./src/imagens/pesquisa-inspire.gif'>
+</p>
 
 - Resultado da pesquisa:
 
-COLOCAR GIF DO RESULTADO (VER COMO SE FAZ)
-
+<p>
+  <img width="460" heigth="300" src='./src/imagens/resposta-pesquisa.gif'>
+</p>
 
 
 ## 4. Histórias de usuários

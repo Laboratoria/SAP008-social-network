@@ -56,13 +56,16 @@ Para conhecer os usuários, realizamos uma pesquisa utilizando a ferramenta Goog
 
 COLOCAR GIF DA PESQUISA (VER COMO SE FAZ)
 
-  <img src='./src/imagens/GifDaPesquisa.mp4'>
+<p>
+  <img width="460" heigth="300" src='./src/imagens/GifDaPesquisa.mp4'>
+</p>
 
 - Resultado da pesquisa:
 
 COLOCAR GIF DO RESULTADO (VER COMO SE FAZ)
-
-  <img src='./src/imagens/GifResultadoDaPesquisa.mp4'>
+<p>
+  <img width="460" heigth="300" src='./src/imagens/GifResultadoDaPesquisa.mp4'>
+</p>
 
 
 ## 4. Histórias de usuários

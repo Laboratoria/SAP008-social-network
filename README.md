@@ -62,7 +62,9 @@ COLOCAR GIF DA PESQUISA (VER COMO SE FAZ)
 
 COLOCAR GIF DO RESULTADO (VER COMO SE FAZ)
 
-  <img src='./src/imagens/GifResultadoDaPesquisa.mp4'>
+<p>
+  <img width="460" heigth="300" src='./src/imagens/GifResultadoDaPesquisa.mp4'>
+</p>
 
 
 ## 4. Histórias de usuários

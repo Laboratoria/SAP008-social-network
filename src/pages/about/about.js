@@ -23,7 +23,7 @@ export default () => {
         <img src="img/casa4.jpg" class="foto5" alt="hospedagem">
       </main>
       <footer>
-        <p class="footer">&copy;2022 Criado e desenvolvido por <a href="https://www.linkedin.com/in/andresa-vieira/" target="tela">Andresa </a>,<a href="https://www.linkedin.com/in/arianecmachado/" target="tela">Ariane </a> e <a href="https://www.linkedin.com/in/aghatha-silva/" target="tela"> Aghatha</a></p>
+        <p class="footer">&copy;2022 Criado e desenvolvido por <a href="https://www.linkedin.com/in/andresa-vieira/" target="tela"> Andresa </a>,<a href="https://www.linkedin.com/in/arianecmachado/" target="tela"> Ariane </a> e <a href="https://www.linkedin.com/in/aghatha-silva/" target="tela"> Aghatha.</a></p>
         <br>
         <img src="img/logoLab.png" class="logoLab" alt="Logo Wanderlust"></p>
       </footer>

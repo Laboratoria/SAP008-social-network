@@ -16,11 +16,11 @@ export default (post) => {
             <button type="submit" data-id="${pt.id}" id="botaoDeletar" class="botaoDeletar">Deletar</button>
             <div class="like">
             <button type= "button"  class="botaoCurtir" id="botaoCurtir" 
-              data-id="${pt.id}" 
-              data-like="${pt.like}" 
-              data-likecount= ${pt.like.length}>
+               data-id="${pt.id}" 
+               data-like="${pt.like}" 
+               data-likecount= ${pt.like.length}>
               <span class='like-icon ${pt.like ? 'liked-red' : ''}'>&#10084;</span>
-                <span class='like-count'>${pt.like.length}</span>
+              <span class='like-count'>${pt.like.length}</span>
             </button>
             </div>
           </div>

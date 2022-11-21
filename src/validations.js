@@ -17,7 +17,7 @@ export function errorsFirebase(error) {
   }
 }
 
-export function validateRegister(name, email, password, passwordRepeat) {
+export const validateRegister = (name, email, password, passwordRepeat) => {
   const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
   const emailValid = regexEmail.test(email);
 
@@ -40,9 +40,9 @@ export function validateRegister(name, email, password, passwordRepeat) {
     return 'Por favor, preencha todos os campos!';
   }
   return '';
-}
+};
 
-export function validateLogin(email, password) {
+export const validateLogin = (email, password) => {
   const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
   const emailValid = regexEmail.test(email);
 
@@ -59,4 +59,12 @@ export function validateLogin(email, password) {
     return 'Por favor, preencha todos os campos!';
   }
   return '';
-}
+};
+
+export const validatePost = (tip) => {
+  if (tip === '') {
+    return 'Preencha o campo de post antes de publicar!';
+  }
+
+  return '';
+};

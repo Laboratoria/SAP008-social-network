@@ -1,9 +1,9 @@
 # INspire - Uma rede que inspira e conecta pessoas que buscam melhorar sua qualidade de vida e saúde mental
 
 <div align="center">
-  <img src='./src/imagens/InspireReadme.jpeg' style="altura: 12rem;">
+  <img src='./src/imagens/InspireReadme.png' style="altura: 12rem;">
 
-  Confira [ aqui ](https://github.com/Juliene-Araujo/SAP008-social-network / ) o resultado final! 
+  Confira [ aqui ](https://juliene-araujo.github.io/SAP008-social-network/) o resultado final! 
 
 </div>
 
@@ -62,7 +62,6 @@ COLOCAR GIF DA PESQUISA (VER COMO SE FAZ)
 
 COLOCAR GIF DO RESULTADO (VER COMO SE FAZ)
 
-  <img src="url/home/laboratoria/Desktop/SAP008-social-network/src/imagens/GifResultadoDaPesquisa.mp4" alt="Alt text" title="Title text" />
 
 
 ## 4. Histórias de usuários

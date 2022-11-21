@@ -50,11 +50,11 @@
 }
 
 .input {
-  width: 250px;
+  width: 200px;
   height: 40px;
   border: none;
   font-size: 14px;
-  padding: 3%;
+  padding: 1%;
   border-radius: 10px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
   background-color: white;
@@ -74,7 +74,7 @@
   font-weight: 60px;
   width: 60%;
   height: 40px;
-  margin-top: 4%;
+  margin-top: 3%;
   border: none;
   cursor: pointer;
   

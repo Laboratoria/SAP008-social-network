@@ -54,15 +54,15 @@ Para conhecer os usuários, realizamos uma pesquisa utilizando a ferramenta Goog
 
 - Formulário da pesquisa aplicado com os possíveis usuários:
 
-COLOCAR GIF DA PESQUISA (VER COMO SE FAZ)
-
-  <>
+<p>
+  <img width="460" heigth="300" src='./src/imagens/pesquisa-inspire.gif'>
+</p>
 
 - Resultado da pesquisa:
 
-COLOCAR GIF DO RESULTADO (VER COMO SE FAZ)
-
-
+<p>
+  <img width="460" heigth="300" src='./src/imagens/resposta-pesquisa.gif'>
+</p>
 
 ## 4. Histórias de usuários
 

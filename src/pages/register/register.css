@@ -1,0 +1,69 @@
+
+@media only screen and (max-width: 1500px) and (min-width: 257px) {
+    * {
+        margin: 0;
+        padding: 0;
+      }
+      .container-register {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-image: url(../../img/backnovo.png);
+        background-repeat: no-repeat;
+        justify-content: start;
+        padding: 2% 0% 2% 10%;
+      }
+      .boxModelFormRegistro {
+        display: flex;
+        text-align: center;
+        height: 80%;
+        align-content: center;
+        flex-direction: column;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.87);
+        width: 35%;
+        border-radius: 40px;
+      }
+      .logoRegistro {
+        width: 50%;
+        height: 40%;
+        margin: 5% 5% 5% 10%;
+      }
+      .inputCadastro {
+        width: 70%;
+        height: 4vh;
+        text-align: center;
+        border-color: black;
+        border-radius: 1vh;
+        margin: 2%;
+      }
+      .btn-cadastre {
+        border-radius: 9px;
+        border: 1px solid;
+        color: black;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #e96f2c;
+        border-color: black;
+        margin: 5% 0% 10% 0%;
+        width: 25%;
+        height: 20px;
+      }
+      .voltar {
+        margin: 0% 0% 10% 0%;
+        justify-content: center;
+      }
+      .btnBack img{
+        width: 15%;
+        height: 15%;
+      }
+      .sobrepageRegister {
+        color: grey;
+        text-decoration: none;
+      }
+      .sectionSobreRegiter {
+        margin: 0% 0% 5% 0%;
+        justify-content: center;
+      }
+}

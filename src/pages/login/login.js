@@ -46,6 +46,7 @@ export default function Login() {
     messageError.classList.remove('show');
     const validate = validateFormlogin(email.value, password.value);
     if (validate) {
+      messageError.classList.add('show');
       messageError.innerHTML = validate;
     } else {
       signIn(email.value, password.value)

@@ -19,15 +19,15 @@ export const validateEmail = (email) => {
   return '';
 };
 
-const validateName = (publish) => {
-  if (publish === '') {
+const validateName = (nameProfile) => {
+  if (nameProfile === '') {
     return 'Digite seu nome de perfil';
   }
   return '';
 };
 
-export const validatePublish = (nameProfile) => {
-  if (nameProfile === '') {
+export const validatePublish = (publish) => {
+  if (publish === '') {
     return 'Escreva sua publicação.';
   }
   return '';

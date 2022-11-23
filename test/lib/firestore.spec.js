@@ -124,10 +124,7 @@ describe('editPost', () => {
     await editPost(posts.idPost, posts.text);
 
     expect(updateDoc).toHaveBeenCalledTimes(1);
-    expect(updateDoc).toHaveBeenCalledWith(undefined);
-    expect(doc).toHaveBeenCalledWith(undefined, 'posts', posts.idPost, {
-      post: posts.text,
-    });
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', posts.idPost);
   });
 });
 // commit //

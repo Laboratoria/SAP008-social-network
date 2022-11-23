@@ -5,60 +5,61 @@ import {
 
 import {
   createPost,
+  printPosts,
 } from '../../lib/firestore.js';
 
 import { redirect } from '../../redirect.js';
 import { validatePost } from '../../validations.js';
 
-export const mainFeed = () => {
-  const sectionFeed = document.createElement('section');
-  sectionFeed.setAttribute('id', 'feed');
-  sectionFeed.innerHTML = `
+const sectionCreatePost = document.createElement('section');
+
+const timeline = (arrPosts) => {
+  console.log(arrPosts);
+  const feedPostContainer = sectionCreatePost.querySelector('.feed');
+  const postsTemplate = arrPosts.map((post) => `
+    <div>${post.tip}</div>
+  `).join('');
+  feedPostContainer.innerHTML = postsTemplate;
+};
+
+export const mainFeed = async () => {
+  sectionCreatePost.setAttribute('id', 'feed');
+  sectionCreatePost.innerHTML = `
   <a href="#login">
     <button class="btn-return" type="button">Sair</button>
   </a>
     <p>Olá, ${auth.currentUser.displayName}!
     <label class="feed-post" for="feed-post">Publique aqui:</label>
     <input class="input-post" type="text"/>
-    <p class="msg-error" id="msg-error-post"></p>
+    <p class="msg-error"></p>
     <button class="btn-post" type="button">Publicar</button>
-    <section class="post-feed">
-    
+    <section class="feed"></section>    
   `;
 
-  const timeLine = async () => {
-    const container = document.createElement('div');
-    container.setAttribute('id', 'container-timeline');
-
-    container.innerHTML = `
-    <div class="template-post">
-      <p class="author-post">${doc.author}</p>
-    </div>
-  
-    `;
-  };
-
-  const btnPost = sectionFeed.querySelector('.btn-post');
-  const inputPost = sectionFeed.querySelector('.input-post');
-  const fillField = sectionFeed.querySelector('#msg-error-post');
-  // const feedPost = sectionFeed.querySelector('.post-feed');
-  const tip = inputPost.value;
+  const btnPost = sectionCreatePost.querySelector('.btn-post');
+  const inputPost = sectionCreatePost.querySelector('.input-post');
+  const fillField = sectionCreatePost.querySelector('.msg-error');
 
   btnPost.addEventListener('click', async () => {
-    const validation = validatePost(tip);
+    const validation = validatePost(inputPost.value);
     if (validation === '') {
-      createPost(tip)
-        .then(() => {
-          inputPost.reset();
-          window.location.reload();
-          sectionFeed.style.display = 'none';
+      createPost(inputPost.value)
+        .then(async () => {
+          inputPost.value = '';
+          sectionCreatePost.style.display = 'none';
+          const posts = await printPosts();
+          timeline(posts);
         });
     } else {
       fillField.innerHTML = validation;
     }
   });
 
-  const btnLogout = sectionFeed.querySelector('.btn-return');
+  /* btnPost.addEventListener('click', async () => {
+    await createPost(inputPost.value);
+  }); */
+
+  const btnLogout = sectionCreatePost.querySelector('.btn-return');
 
   btnLogout.addEventListener('click', () => {
     logout()
@@ -66,5 +67,8 @@ export const mainFeed = () => {
         redirect('#login');
       });
   });
-  return sectionFeed;
+
+  const posts = await printPosts();
+  timeline(posts);
+  return sectionCreatePost;
 };

@@ -127,4 +127,3 @@ describe('editPost', () => {
     expect(doc).toHaveBeenCalledWith(undefined, 'posts', posts.idPost);
   });
 });
-// commit //

@@ -13,7 +13,6 @@ import {
 import { auth, db } from './config.js';
 
 export const current = () => auth.currentUser;
-
 export const createPost = (postText) => addDoc(collection(db, 'posts'), {
   displayName: current().displayName,
   email: current().email,

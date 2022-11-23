@@ -11,9 +11,9 @@ export const createPost = async (tip) => {
   return postTip;
 };
 
-export async function printPost() {
+export async function printPosts() {
   const arrayTips = [];
-  const querySnapshot = await getDocs(collection(db, 'Tips'));
+  const querySnapshot = await getDocs(collection(db, 'tip'));
   querySnapshot.forEach((tip) => {
     const data = tip.data();
     data.id = tip.id;

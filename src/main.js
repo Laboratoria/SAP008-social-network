@@ -11,7 +11,7 @@ import { mainFeed } from './pages/feed/feed.js';
 const root = document.querySelector('#root');
 
 const init = () => {
-  window.addEventListener('hashchange', () => {
+  window.addEventListener('hashchange', async () => {
     root.innerHTML = '';
     switch (window.location.hash) {
       case '#register':
@@ -21,7 +21,7 @@ const init = () => {
         root.appendChild(mainLogin());
         break;
       case '#feed':
-        root.appendChild(mainFeed());
+        root.appendChild(await mainFeed());
         break;
     }
   });

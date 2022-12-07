@@ -11,8 +11,8 @@ export const mainLogin = () => {
   const printElements = document.createElement('div');
   printElements.innerHTML = `
     <div class='logo'>
-    <img src="/src/img/Logo-borboleta.png" alt="logo borboleta" />
-    <h1>"Nome da Marca"</h1>
+    <img src="./../img/Logo.png" alt="logo borboleta">
+    <h1>Code Girls</h1>
     <h3>Mulheres que se transformam através da tecnologia.</h3>
     </div>
   <form class='input-container'> 

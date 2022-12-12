@@ -1,0 +1,110 @@
+/* estilização da página principal do container */
+
+.main{
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.field-logo-register{
+  text-align: center;
+} 
+
+.logo {
+  margin-top: 2%;
+  width: 35%;
+}
+
+.logo-e-form{
+  width:100%;
+}
+
+.root{
+  width:100%;
+}
+
+.error-message, .welcome-message{
+  display: none;
+}
+
+.show{
+  display: block;
+  text-align: center;
+}
+
+.form-register{
+  display: flex;
+  flex-direction: column;
+  margin: 3%;
+  align-items: center;
+}
+.register{
+  text-align: center;
+  margin-top: 3%;
+  display: block;
+
+}
+
+.container-register{
+  width:100%;
+}
+
+.input {
+  width: 200px;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  padding: 1%;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+  background-color: white;
+  margin: 2% 0;
+}
+
+.field-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-register{
+  background: #49AAD7;
+  color: aliceblue;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+  font-size: 15px;
+  font-weight: 60px;
+  width: 60%;
+  height: 40px;
+  margin-top: 3%;
+  border: none;
+  cursor: pointer;
+  
+}
+
+ @media screen and (min-width: 1024px) {
+  body{
+    justify-content:space-around;
+  
+  }
+
+  .register{
+    margin-right: 10%;
+    margin-top: 10%;
+    display: block;
+  }
+  
+  .logo-e-form {
+    width: 75%;
+  } 
+
+  .logo {
+    margin-left: 10%;
+  }
+
+  .text {
+    margin:15%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+

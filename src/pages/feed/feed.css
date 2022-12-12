@@ -1,0 +1,202 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 1em;
+}
+
+.logo-feed {
+  width: 80px;
+  margin-top: 20px;
+  padding: 5px
+}
+
+.btn-link{
+   background: #dabbdf;
+   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+   border:none;
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 50px;
+   position: fixed;
+   bottom: 0;
+}
+
+.button-logout {
+  width: 35px;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.btn-about, .btn-link-img, .btn-home {
+  width: 35px;
+  cursor: pointer;
+  margin:5%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.post-textarea {
+  margin-left: 5%;
+  margin-top: 3%;
+  width: 260px;
+  height: 80px;
+  border: none;
+  font-size: 16px;
+  padding: 2%;
+  border-radius: 5px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+  cursor: text;
+}
+
+.post-btn {
+  margin-left: 5%;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+  color: #fefefe;
+  background: #e335dc;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+  font-size: 14px;
+  font-weight: 600;
+  right: 125px;
+  margin-top: 1%;
+  margin-bottom: 9%;
+}
+
+
+.allposts {
+  margin-left: 5%;
+  width: 80%;
+  height: 70%;
+  border: none;
+  font-size: 16px;
+  padding: 2%;
+  border-radius: 5px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+  background-color: rgb(52 52 52 / 27%);
+  cursor: text;
+  color: white;
+  margin-bottom: 5%;
+}
+
+.data-post {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.field-btn-like{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;  
+}
+
+.btn-like {
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+}
+
+.modal{
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000000aa;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.internal-modal{
+  padding: 16px;
+  background-color: rgba(52, 52, 52, 0.5);
+  border-radius: 8px;
+}
+.btn-del{
+  background-color: #3d77dc;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: #fefefe;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.delete-post, .post-edit{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.interation-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-print{
+  background: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  resize: none;
+  height: 100%;
+  width: 100%;
+}
+  
+  /* TELAS GRANDES */
+  @media screen and (min-width: 1024px) and (max-width: 1700px) {      
+   
+    .post-textarea {
+      width: 70%;
+      height: 40%;
+      margin-left: 10%;
+    }
+
+    .logo-feed, .button-logout {
+      width: 35%;
+      margin-left: 30%;
+
+    }
+    .post-btn {
+      margin-left: 10%;
+    }
+
+    .allposts {
+      margin-left: 10%;
+      width: 70%;
+      height: 70%;
+    }
+
+    .btn-link {
+        margin: 0;
+        flex-direction: column;
+        width: 3%;
+        height: 93%;
+        padding:1%;
+        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.507);
+        background-color: rgb(52 52 52 / 27%);
+    }
+
+  }
+
+  
+

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contenderRegister { 
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/mulheres.png);
+    background-size: 100%;
+}
+.navRegister{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+}
+.btnRegister{
+    width: 2%;
+    height: 47.14px;
+    left: 81.13px;
+    top: 293.85px;
+}
+
+.tituloRegister {
+    width: 50%;
+    height: 100%;
+    font-size: 2.4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px 10px #20a2b8;
+    margin: 15% 0 0 28%;
+}
+
+#voltarRegister{
+    width: 25px;
+    margin: 2% 0 0 2%;
+}
+.formRegister{
+    background-color: white;
+    border-radius: 0.8rem;
+    width: 80%;
+    height: 26rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% auto;
+    gap:2rem;
+    box-shadow: #20a2b8 2px 2px;
+}
+#cadastrarRegister{
+    border-radius: 10px;
+    width: 70%;
+    height: 1.8rem;
+    background: #20a2b8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0px 35px;
+}
+#cadastrarRegister:hover{
+    background: #3F5494;
+    transition: 0.2s;
+}
+.btnRegister{
+    border-radius: 3px;
+    height: 1.5rem;
+    width: 90%;
+     border: 1px solid #20a2b8;
+}
+.btnRegister:hover{
+    background-color: #e7e7e7;
+    transition: 0.2s;
+}
+
+.legendaRegister{
+    display: block;
+    font-size: 0.9rem;
+    color: #1f2d2f;
+}
+.boxLegendaInput{
+    margin: 0% 0 0 8%;
+}
+.botaoRegister{
+    margin: -6% 0% 0 5%;
+}
+@media only screen and (min-width: 600px) {
+    .navRegister {
+        width: 50%;
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+    }
+    .tituloRegister{
+        width: 100%;
+        height: 100%;
+        font-size: 3.3rem;
+        margin: 8% 0 0 83%;
+    }
+    .formRegister {
+        width: 35%;
+        height: 25rem;
+        margin: 0% 0 0 32%;
+    }
+    .boxLegendaInput{
+        margin: 0% 0 0 8%;
+    }
+    .botaoRegister{
+        margin: -5% 0% 0 12%;
+    }
+}
